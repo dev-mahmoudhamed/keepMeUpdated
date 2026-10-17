@@ -1,0 +1,131 @@
+.editor {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.editor:focus-within {
+  border-color: var(--accent);
+}
+
+.editor--disabled {
+  opacity: 0.6;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1) var(--s-3);
+  padding: var(--s-1) var(--s-2);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-raised);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.group {
+  display: flex;
+  gap: 2px;
+}
+
+.group + .group {
+  padding-left: var(--s-3);
+  border-left: 1px solid var(--rule);
+}
+
+.toolbar button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-soft);
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.toolbar button:hover:not(:disabled) {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.toolbar button[aria-pressed='true'] {
+  background: var(--accent-wash);
+  color: var(--accent);
+}
+
+.toolbar button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.surface {
+  padding: var(--s-4) var(--s-5);
+}
+
+/* Tiptap renders the content outside Angular's view encapsulation. */
+.surface ::ng-deep .prose {
+  min-height: 320px;
+  outline: none;
+  font-size: var(--step-read);
+  line-height: 1.7;
+}
+
+.surface ::ng-deep .prose > * + * {
+  margin-top: 0.75em;
+}
+
+.surface ::ng-deep .prose :where(h2, h3, h4) {
+  margin-top: 1.2em;
+}
+
+.surface ::ng-deep .prose :where(ul, ol) {
+  padding-left: 1.25em;
+}
+
+.surface ::ng-deep .prose a {
+  color: var(--accent);
+}
+
+.surface ::ng-deep .prose blockquote {
+  margin-inline: 0;
+  padding-left: var(--s-4);
+  border-left: 2px solid var(--rule);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.surface ::ng-deep .prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+.surface ::ng-deep .prose pre {
+  padding: var(--s-3) var(--s-4);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.surface ::ng-deep .prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.surface ::ng-deep .prose img.ProseMirror-selectednode {
+  outline: 2px solid var(--accent);
+}
+
+.surface ::ng-deep .prose p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: var(--ink-muted);
+  pointer-events: none;
+}

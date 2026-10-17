@@ -1,18 +1,10 @@
 import { randomUUID, randomBytes } from 'node:crypto';
+import { slugify } from '../../shared/slug';
+
+export { slugify };
 
 export function newId(): string {
   return randomUUID();
-}
-
-export function slugify(text: string): string {
-  return text
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 80)
-    .replace(/-+$/g, '');
 }
 
 export function uniqueSlug(text: string, taken: Set<string>): string {

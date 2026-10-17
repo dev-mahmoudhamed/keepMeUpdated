@@ -1,0 +1,176 @@
+@if (loadError()) {
+  <div class="missing">
+    <h1>{{ loadError() }}</h1>
+    <a routerLink="/admin" class="btn">Back to posts</a>
+  </div>
+} @else {
+  <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+    <header class="head">
+      <a routerLink="/admin" class="back">
+        <svg lucideArrowLeft [size]="16" aria-hidden="true"></svg>
+        Posts
+      </a>
+      <h1>{{ isNew() ? 'New post' : 'Edit post' }}</h1>
+      <div class="actions">
+        @if (loaded()?.status === 'published') {
+          <a class="btn btn--ghost" [href]="'/p/' + loaded()!.slug" target="_blank" rel="noopener">
+            View
+            <svg lucideExternalLink [size]="16" aria-hidden="true"></svg>
+            <span class="visually-hidden">(opens in a new tab)</span>
+          </a>
+        }
+        <a routerLink="/admin" class="btn btn--ghost">Cancel</a>
+        <button type="submit" class="btn btn--primary" [attr.aria-busy]="saving()">{{ saving() ? 'Saving…' : 'Save' }}</button>
+      </div>
+    </header>
+
+    @if (formError()) {
+      <p class="error-text banner" role="alert">{{ formError() }}</p>
+    }
+
+    <div class="layout">
+      <div class="main">
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" class="input input--title" formControlName="title" [attr.aria-invalid]="showError('title')" aria-describedby="title-error" />
+          @if (showError('title')) {
+            <p id="title-error" class="error-text">Add a title.</p>
+          }
+        </div>
+
+        <div class="field">
+          <label for="tldr">TL;DR</label>
+          <textarea id="tldr" class="input" rows="3" formControlName="tldr" [attr.aria-invalid]="showError('tldr')" aria-describedby="tldr-help tldr-error"></textarea>
+          <p id="tldr-help" class="hint">One or two sentences readers see first. {{ tldrLeft() }} characters left.</p>
+          @if (showError('tldr')) {
+            <p id="tldr-error" class="error-text">{{ form.controls.tldr.hasError('maxlength') ? 'Keep it under 400 characters.' : 'Add a short summary.' }}</p>
+          }
+        </div>
+
+        <div class="field">
+          <span class="label" id="body-label">Story</span>
+          @defer (on idle) {
+            <app-rich-editor formControlName="bodyHtml" labelledBy="body-label" />
+          } @placeholder {
+            <div class="skeleton" style="height: 380px"></div>
+          }
+        </div>
+      </div>
+
+      <aside class="side">
+        <section class="panel">
+          <div class="field">
+            <label for="status">Status</label>
+            <select id="status" class="input" formControlName="status">
+              <option value="draft">Draft (not on the site)</option>
+              <option value="published">Published</option>
+              <option value="hidden">Hidden (taken down)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="slug">Link</label>
+            <div class="slug">
+              <span class="mono prefix">/p/</span>
+              <input
+                id="slug"
+                class="input mono"
+                formControlName="slug"
+                (input)="slugEdited.set(true)"
+                [attr.aria-invalid]="showError('slug')"
+                aria-describedby="slug-error"
+                spellcheck="false"
+              />
+            </div>
+            @if (showError('slug')) {
+              <p id="slug-error" class="error-text">
+                {{ form.controls.slug.getError('server') ?? 'Use lowercase letters, numbers and dashes.' }}
+              </p>
+            }
+          </div>
+
+          <div class="field">
+            <label for="tags">Tags</label>
+            @if (form.controls.tags.value.length) {
+              <div class="chips">
+                @for (tag of form.controls.tags.value; track tag) {
+                  <span class="chip-tag">
+                    #{{ tag }}
+                    <button type="button" (click)="removeTag(tag)" [attr.aria-label]="'Remove tag ' + tag">
+                      <svg lucideX [size]="14" aria-hidden="true"></svg>
+                    </button>
+                  </span>
+                }
+              </div>
+            }
+            <input
+              id="tags"
+              class="input"
+              placeholder="angular, signals"
+              [value]="tagDraft()"
+              (input)="tagDraft.set($any($event.target).value)"
+              (keydown)="onTagKey($event)"
+              (blur)="addTagsFrom(tagDraft())"
+              aria-describedby="tags-help"
+            />
+            <p id="tags-help" class="hint">Press Enter or type a comma to add.</p>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="sources-title">
+          <div class="panel-head">
+            <h2 id="sources-title">Source links</h2>
+            <button type="button" class="btn btn--ghost" data-action="add-source" (click)="addSource()">
+              <svg lucidePlus [size]="16" aria-hidden="true"></svg>
+              Add link
+            </button>
+          </div>
+          @if (!sources.length) {
+            <p class="hint">Readers get a "Read the original" list from these links.</p>
+          }
+          <div formArrayName="sources" class="sources">
+            @for (group of sources.controls; track group; let i = $index) {
+              <fieldset [formGroupName]="i" class="source">
+                <legend class="visually-hidden">Source {{ i + 1 }}</legend>
+                <div class="field">
+                  <label [for]="'src-name-' + i">Site name</label>
+                  <input [id]="'src-name-' + i" class="input" data-field="siteName" formControlName="siteName" placeholder="Angular Blog" [attr.aria-invalid]="sourceInvalid(group, 'siteName')" />
+                </div>
+                <div class="field">
+                  <label [for]="'src-url-' + i">Link</label>
+                  <input [id]="'src-url-' + i" class="input" data-field="url" formControlName="url" placeholder="https://blog.angular.dev/…" inputmode="url" [attr.aria-invalid]="sourceInvalid(group, 'url')" />
+                  @if (sourceInvalid(group, 'url')) {
+                    <p class="error-text">Use a full link starting with https://</p>
+                  }
+                </div>
+                <div class="field">
+                  <label [for]="'src-title-' + i">Article title (optional)</label>
+                  <input [id]="'src-title-' + i" class="input" data-field="title" formControlName="title" />
+                </div>
+                <button type="button" class="btn btn--ghost btn--danger remove" (click)="removeSource(i)">
+                  <svg lucideTrash2 [size]="16" aria-hidden="true"></svg>
+                  Remove link
+                </button>
+              </fieldset>
+            }
+          </div>
+        </section>
+
+        @if (!isNew()) {
+          <section class="panel">
+            <h2>AI summary</h2>
+            @if (geminiReady()) {
+              <p class="hint">Rewrites the TL;DR and story from the source links.</p>
+              <button type="button" class="btn" (click)="resummarize()" [disabled]="!sources.length" [attr.aria-busy]="resummarizing()">
+                <svg lucideSparkles [size]="16" aria-hidden="true"></svg>
+                {{ resummarizing() ? 'Summarizing…' : 'Re-summarize with AI' }}
+              </button>
+            } @else {
+              <p class="hint">Add GEMINI_API_KEY to .env and restart the server to rewrite summaries with AI.</p>
+            }
+          </section>
+        }
+      </aside>
+    </div>
+  </form>
+}

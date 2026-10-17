@@ -1,0 +1,50 @@
+<div class="editor" [class.editor--disabled]="disabled()">
+  <div class="toolbar" role="toolbar" aria-label="Formatting">
+    <div class="group">
+      <button type="button" (click)="run('bold')" [attr.aria-pressed]="active('bold')" aria-label="Bold" title="Bold (Ctrl+B)">
+        <svg lucideBold [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('italic')" [attr.aria-pressed]="active('italic')" aria-label="Italic" title="Italic (Ctrl+I)">
+        <svg lucideItalic [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="link()" [attr.aria-pressed]="active('link')" aria-label="Link" title="Link">
+        <svg lucideLink [size]="16" aria-hidden="true"></svg>
+      </button>
+    </div>
+    <div class="group">
+      <button type="button" (click)="run('h2')" [attr.aria-pressed]="active('heading', { level: 2 })" aria-label="Heading" title="Heading">
+        <svg lucideHeading2 [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('h3')" [attr.aria-pressed]="active('heading', { level: 3 })" aria-label="Subheading" title="Subheading">
+        <svg lucideHeading3 [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('bullets')" [attr.aria-pressed]="active('bulletList')" aria-label="Bulleted list" title="Bulleted list">
+        <svg lucideList [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('numbers')" [attr.aria-pressed]="active('orderedList')" aria-label="Numbered list" title="Numbered list">
+        <svg lucideListOrdered [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('quote')" [attr.aria-pressed]="active('blockquote')" aria-label="Quote" title="Quote">
+        <svg lucideQuote [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('code')" [attr.aria-pressed]="active('codeBlock')" aria-label="Code block" title="Code block">
+        <svg lucideSquareCode [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="image()" aria-label="Insert image" title="Insert image">
+        <svg lucideImage [size]="16" aria-hidden="true"></svg>
+      </button>
+    </div>
+    <div class="group">
+      <button type="button" (click)="run('clear')" aria-label="Clear formatting" title="Clear formatting">
+        <svg lucideRemoveFormatting [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('undo')" [disabled]="!can('undo')" aria-label="Undo" title="Undo (Ctrl+Z)">
+        <svg lucideUndo2 [size]="16" aria-hidden="true"></svg>
+      </button>
+      <button type="button" (click)="run('redo')" [disabled]="!can('redo')" aria-label="Redo" title="Redo (Ctrl+Shift+Z)">
+        <svg lucideRedo2 [size]="16" aria-hidden="true"></svg>
+      </button>
+    </div>
+  </div>
+  <div #host class="surface"></div>
+</div>

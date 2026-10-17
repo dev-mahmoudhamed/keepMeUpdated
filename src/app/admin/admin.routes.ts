@@ -18,6 +18,18 @@ export const adminRoutes: Routes = [
         title: 'Posts · Admin',
         loadComponent: () => import('./posts-list/posts-list').then((m) => m.PostsList),
       },
+      {
+        path: 'posts/new',
+        title: 'New post · Admin',
+        loadComponent: () => import('./post-editor/post-editor').then((m) => m.PostEditor),
+        canDeactivate: [(c: { canLeave(): boolean }) => c.canLeave()],
+      },
+      {
+        path: 'posts/:id',
+        title: 'Edit post · Admin',
+        loadComponent: () => import('./post-editor/post-editor').then((m) => m.PostEditor),
+        canDeactivate: [(c: { canLeave(): boolean }) => c.canLeave()],
+      },
     ],
   },
 ];
