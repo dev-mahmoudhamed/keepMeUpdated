@@ -62,7 +62,7 @@ keepMeUpdated/
 |---|---|---|
 | `PORT` | `3000` | |
 | `GEMINI_API_KEY` | empty | Empty puts the app in fallback mode |
-| `GEMINI_MODEL` | `gemini-2.5-flash` | Free-tier model, verified at implementation time |
+| `GEMINI_MODEL` | `gemini-flash-latest` | Alias that tracks the current free-tier Flash model |
 | `ADMIN_EMAIL` | `admin@keepmeupdated.local` | Dummy, owner changes later |
 | `ADMIN_PASSWORD` | `ChangeMe!2026` | Dummy, owner changes later |
 | `SESSION_SECRET` | random on first boot if missing (with warning) | Signs the session cookie |
@@ -78,7 +78,7 @@ interface Db {
   sources: Source[];
   runs: Run[];            // last 50 kept
   seen: Record<string, string>; // normalizedUrl -> ISO date first seen; pruned after 60 days
-  settings: { relevanceThreshold: number; maxItemAgeHours: number }; // 6, 48
+  settings: { relevanceThreshold: number; maxItemAgeHours: number; maxAiCallsPerRun: number }; // 6, 48, 15
 }
 
 interface Source {
@@ -145,14 +145,16 @@ interface Run {
 4. **Merge or create**
    - Cluster with `existingPostId`: append any new links to that post's `sources`. No re-summary.
    - New cluster: extract article text from up to 3 links (`<article>`/`<main>`/paragraphs,
-     capped at ~12k chars total), then in Gemini mode call summarize → JSON
-     `{ title, tldr, keyPoints[], whyItMatters, tags[] }`, rendered to `bodyHtml`.
+     capped at ~6k chars per story), then in Gemini mode summarize **up to 5 stories per call** → JSON
+     `{ stories: [{ clusterId, title, tldr, keyPoints[], whyItMatters, tags[] }] }`, rendered to `bodyHtml`.
      Fallback: title = the first item's title, tldr = feed snippet (truncated), body = the snippets,
      `aiPending = true`.
 5. **Publish:** new posts are `published` with `publishedAt = now`; `slug` comes from the
    title with a uniqueness suffix.
-6. **Gemini resilience:** throttle to ≤ 8 requests/min; retry 429/5xx with backoff
-   (max 3). If triage fails, that batch uses the fallback. If a summary fails, the post is
+6. **Gemini budget and resilience:** the free tier is small and unstable (daily request caps can be ~20),
+   so each run makes at most `maxAiCallsPerRun` calls (triage first, then summaries by relevance). Once the
+   budget is spent, the remaining stories use the fallback form with `aiPending = true`. Calls are throttled to ≤ 8/min; 429/5xx are retried with backoff
+   (max 3); a 429 that says the daily quota is exhausted stops AI use for the rest of the run. If triage fails, that batch uses the fallback. If a summary fails, the post is
    created in fallback form with `aiPending = true`.
 
 **Scheduler:** `node-cron` using `GATHER_CRON`. On boot, if the last successful/partial run
