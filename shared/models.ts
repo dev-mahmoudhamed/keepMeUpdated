@@ -1,4 +1,4 @@
-// Types shared by the Node server and the Angular app.
+// Types shared by the gather scripts and the Angular app.
 
 export interface Settings {
   relevanceThreshold: number;

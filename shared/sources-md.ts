@@ -1,6 +1,5 @@
-import type { Source, SourceSelectors } from '../../shared/models';
-import { normalizeUrl } from '../gather/dedupe';
-import { newId } from '../util/ids';
+import type { Source, SourceSelectors } from './models';
+import { normalizeUrl } from './url';
 
 /** A source as written in sources.md: configuration only, no fetch history. */
 export type SourceDef = Omit<Source, 'id' | 'lastFetchedAt' | 'lastError' | 'lastItemCount'>;
@@ -160,7 +159,7 @@ export function syncSources(existing: Source[], defs: SourceDef[]): { sources: S
     const prev = byFeed.get(normalizeUrl(def.feedUrl));
     if (!prev || used.has(prev.id)) {
       added++;
-      return { ...def, id: newId() } as Source;
+      return { ...def, id: globalThis.crypto.randomUUID() } as Source;
     }
     used.add(prev.id);
     if (configKey(prev) !== configKey(def)) updated++;

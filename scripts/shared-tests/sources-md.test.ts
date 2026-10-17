@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { Source } from '../../shared/models';
-import { parseSourcesMd, renderSourcesMd, syncSources } from './sources-file';
+import { parseSourcesMd, renderSourcesMd, syncSources } from '../../shared/sources-md';
 
 const MD = `# News sources
 

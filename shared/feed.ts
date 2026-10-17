@@ -1,4 +1,4 @@
-import type { FeedResponse, Post, PostSummary, TagCount } from '../../shared/models';
+import type { FeedResponse, Post, PostSummary, TagCount } from './models';
 
 export interface FeedOptions {
   days: number;

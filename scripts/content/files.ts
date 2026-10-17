@@ -3,7 +3,7 @@ import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import type { ContentState, Db, Post, Settings, Source, SourceStatus } from '../../shared/models';
 import { normalizeUrl } from '../gather/dedupe';
-import { parseSourcesMd } from './sources-file';
+import { parseSourcesMd } from '../../shared/sources-md';
 
 export const POSTS_FILE = 'content/posts.json';
 export const STATE_FILE = 'content/state.json';

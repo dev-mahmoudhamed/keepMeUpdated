@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest';
-import { groupByDay, tagCounts, toSummary } from './feed';
+import { groupByDay, tagCounts, toSummary } from '../../shared/feed';
 import type { Post } from '../../shared/models';
 
 let n = 0;
