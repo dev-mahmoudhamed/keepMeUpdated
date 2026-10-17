@@ -142,9 +142,12 @@ export class GatherService {
       const seen = store.read().seen;
       const cutoff = nowMs - settings.maxItemAgeHours * 3_600_000;
       const runKeys = new Set<string>();
+      // Every link still listed by a source; its "seen" date is refreshed so it never ages out while listed.
+      const listedKeys = new Set<string>();
       const fresh: RawItem[] = [];
       for (const item of fetched) {
         const key = normalizeUrl(item.url);
+        listedKeys.add(key);
         if (seen[key] || runKeys.has(key)) continue;
         runKeys.add(key);
         if (item.publishedAt && Date.parse(item.publishedAt) < cutoff) continue;
@@ -193,8 +196,9 @@ export class GatherService {
 
       // 4b. Pick new stories worth posting
       const candidates = clusters.filter((c) => !merges.includes(c));
+      // Without AI the relevance score is only a guess, so fallback mode posts every fresh story.
       const toCreate = candidates
-        .filter((c) => c.relevance >= settings.relevanceThreshold)
+        .filter((c) => ai.mode === 'fallback' || c.relevance >= settings.relevanceThreshold)
         .sort((a, b) => b.relevance - a.relevance);
       run.stats.skipped = candidates.length - toCreate.length;
       log(`Merged ${merges.length} into existing posts; skipped ${run.stats.skipped} below relevance ${settings.relevanceThreshold}`);
@@ -223,7 +227,7 @@ export class GatherService {
           db.posts.push(post);
           run.stats.created++;
         }
-        for (const key of runKeys) db.seen[key] ??= nowIso;
+        for (const key of listedKeys) db.seen[key] = nowIso;
         const seenCutoff = nowMs - SEEN_TTL_DAYS * DAY_MS;
         for (const [key, at] of Object.entries(db.seen)) if (Date.parse(at) < seenCutoff) delete db.seen[key];
       });

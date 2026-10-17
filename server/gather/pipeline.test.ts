@@ -289,6 +289,24 @@ describe('GatherService', () => {
     });
   });
 
+  it('refreshes seen dates so undated items still listed are never republished', async () => {
+    const db = baseDb([source('a')]);
+    db.seen = { 'https://a.test/undated': '2026-08-20T00:00:00.000Z' };
+    const routes = { 'https://a.test/feed': rss([{ title: 'Undated news', url: 'https://a.test/undated' }]) };
+    const { store, service } = await setup(db, routes, new FakeAi(oneClusterPerItem()));
+    const run = await service.runOnce('manual');
+    expect(run.stats.fresh).toBe(0);
+    expect(store.read().seen['https://a.test/undated']).toBe(NOW.toISOString());
+  });
+
+  it('publishes fresh stories in fallback mode instead of skipping them by relevance', async () => {
+    const fallbackAi: AiClient = { mode: 'fallback', triage: async (items) => oneClusterPerItem(5)(items), summarize: async () => [] };
+    const { store, service } = await setup(baseDb([source('a'), source('b')]), twoSourcesSameStory, fallbackAi);
+    const run = await service.runOnce('manual');
+    expect(run.stats.skipped).toBe(0);
+    expect(store.read().posts).toHaveLength(2);
+  });
+
   it('keeps only the last 50 runs and prunes old seen urls', async () => {
     const db = baseDb([source('a')]);
     db.runs = Array.from({ length: 50 }, (_, i) => ({

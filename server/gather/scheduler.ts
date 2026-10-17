@@ -21,7 +21,18 @@ export interface SchedulerHandle {
   stop(): void;
 }
 
-export function startScheduler(cronExpr: string, service: GatherService, store: JsonStore): SchedulerHandle {
+interface CronTask {
+  on(event: 'execution:missed', fn: () => void): void;
+  getNextRun(): Date | null;
+  stop(): unknown;
+}
+
+export function startScheduler(
+  cronExpr: string,
+  service: GatherService,
+  store: JsonStore,
+  schedule: (expr: string, fn: () => void) => CronTask = (expr, fn) => cron.schedule(expr, fn),
+): SchedulerHandle {
   const trigger = (kind: 'cron' | 'catch-up') => {
     const started = service.start(kind);
     if ('conflict' in started) console.log(`[gather] ${kind} run skipped: run ${started.conflict} is still going`);
@@ -32,7 +43,9 @@ export function startScheduler(cronExpr: string, service: GatherService, store: 
     console.warn(`[gather] GATHER_CRON "${cronExpr}" is not a valid cron expression; automatic runs are off.`);
     return { nextRunAt: () => null, stop: () => undefined };
   }
-  const task = cron.schedule(cronExpr, () => trigger('cron'));
+  const task = schedule(cronExpr, () => trigger('cron'));
+  // node-cron skips a slot the machine slept through; run it as soon as we wake up.
+  task.on('execution:missed', () => trigger('catch-up'));
 
   const last = store.read().runs.find((r) => r.status !== 'failed' && r.status !== 'running');
   if (shouldCatchUp(last?.startedAt, new Date(), cronExpr)) trigger('catch-up');

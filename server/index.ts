@@ -36,9 +36,13 @@ async function main() {
     makeSummarizer: () => gemini(new AiBudget(2)),
   });
 
-  app.listen(config.port, () => {
+  if (config.usingDefaultPassword) {
+    console.warn('[kmu] WARNING: ADMIN_PASSWORD is still the default from .env.example. Change it before sharing this machine or network.');
+  }
+
+  app.listen(config.port, config.host, () => {
     const mode = config.geminiApiKey ? `Gemini (${config.geminiModel})` : 'fallback (no GEMINI_API_KEY)';
-    console.log(`[kmu] API on http://localhost:${config.port} · data ${dbPath} · AI ${mode}`);
+    console.log(`[kmu] API on http://${config.host === '127.0.0.1' ? 'localhost' : config.host}:${config.port} · data ${dbPath} · AI ${mode}`);
     console.log(`[kmu] next gather: ${scheduler.nextRunAt()?.toLocaleString() ?? 'not scheduled'}`);
   });
 }

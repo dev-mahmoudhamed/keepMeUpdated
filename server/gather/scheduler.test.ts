@@ -1,5 +1,7 @@
 import { it, expect } from 'vitest';
-import { shouldCatchUp } from './scheduler';
+import { shouldCatchUp, startScheduler } from './scheduler';
+import type { GatherService } from './pipeline';
+import type { JsonStore } from '../store/json-store';
 
 // Dates without a zone are local time, matching how the cron schedule is interpreted.
 it('catches up when there has never been a run', () => {
@@ -29,4 +31,16 @@ it('ignores schedules that are not daily', () => {
 
 it('catches up when the only recent run was before today’s slot', () => {
   expect(shouldCatchUp('2026-10-16T10:00:00', new Date('2026-10-17T05:00'), '0 4 * * *')).toBe(true);
+});
+
+it('runs a catch-up when the machine slept through the scheduled time', () => {
+  const handlers: Record<string, () => void> = {};
+  const fakeTask = { on: (event: string, fn: () => void) => (handlers[event] = fn), getNextRun: () => null, stop: () => undefined };
+  const started: string[] = [];
+  const service = { start: (t: string) => (started.push(t), { id: 'r' }) } as unknown as GatherService;
+  const store = { read: () => ({ runs: [{ status: 'success', startedAt: new Date().toISOString() }] }) } as unknown as JsonStore;
+  startScheduler('0 4 * * *', service, store, () => fakeTask);
+  expect(started).toEqual([]);
+  handlers['execution:missed']();
+  expect(started).toEqual(['catch-up']);
 });

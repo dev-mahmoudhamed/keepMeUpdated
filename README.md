@@ -34,6 +34,7 @@ Then edit `.env`:
 | `SESSION_SECRET` | Any long random string. Signs the login cookie. |
 | `GATHER_CRON` | When the daily gather runs, in local time. Default `0 4 * * *` (04:00). |
 | `PORT` | Port for `npm start`. Default 3000. |
+| `HOST` | `127.0.0.1` (default) keeps the site and admin private to this computer. Use `0.0.0.0` to open it to your network, after changing the admin password. |
 
 ## Run it
 
@@ -61,7 +62,7 @@ catch-up gather when it starts. You can always run one from **Admin → Gather r
 1. Fetches every enabled source (RSS/Atom, or a web page read with CSS selectors).
 2. Keeps links it hasn't seen before and that are less than 48 hours old.
 3. Gemini groups items about the same news, scores how much each matters to developers (0–10), and tags it. Stories
-   below 6 are skipped. A story that matches a post from the last 7 days adds its link to that post instead of creating
+   below 6 are skipped (with a Gemini key only). A story that matches a post from the last 7 days adds its link to that post instead of creating
    a duplicate.
 4. Gemini reads the articles and writes a TL;DR, key points and "why it matters". Up to 5 stories per request.
 5. New posts are published with links to every source.
@@ -71,8 +72,8 @@ catch-up gather when it starts. You can always run one from **Admin → Gather r
 stories are posted with the sources' own descriptions and marked "summary pending". You can re-summarize any post later
 from its edit page.
 
-**Without a key** the app still works: it groups stories by title similarity, scores them with a simple heuristic
-(releases and stories covered by several sites rank higher), and shows the feed's own description as the summary.
+**Without a key** the app still works: it groups stories by title similarity and publishes every fresh story (it can't
+judge relevance without AI), showing the feed's own description as the summary.
 
 ## Sources
 
