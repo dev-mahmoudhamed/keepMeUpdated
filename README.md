@@ -14,7 +14,7 @@ All data lives in one JSON file: `data/db.json`.
 
 ## Setup
 
-Requires Node 24.15+ (or 26+).
+Requires Node 24 LTS (24.15 or newer). `.nvmrc` pins the major version.
 
 ```bash
 npm install
