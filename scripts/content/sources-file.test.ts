@@ -1,10 +1,6 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { mkdtemp, readFile, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
-import type { Db, Source } from '../../shared/models';
-import { JsonStore } from './json-store';
-import { SourcesFile, parseSourcesMd, renderSourcesMd, syncSources } from './sources-file';
+import { describe, it, expect } from 'vitest';
+import type { Source } from '../../shared/models';
+import { parseSourcesMd, renderSourcesMd, syncSources } from './sources-file';
 
 const MD = `# News sources
 
@@ -106,57 +102,5 @@ describe('syncSources', () => {
       { ...source({}), id: undefined } as never,
     ]);
     expect(result.sources[0].id).toBe('keep');
-  });
-});
-
-describe('SourcesFile', () => {
-  let dir: string;
-  let mdPath: string;
-  let store: JsonStore;
-
-  const db = (sources: Source[]): Db => ({
-    version: 1,
-    posts: [],
-    sources,
-    runs: [],
-    seen: {},
-    settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15 },
-  });
-
-  beforeEach(async () => {
-    dir = await mkdtemp(join(tmpdir(), 'kmu-src-'));
-    mdPath = join(dir, 'sources.md');
-  });
-
-  it('loads the file into the database at start', async () => {
-    await writeFile(mdPath, MD);
-    store = await JsonStore.open(join(dir, 'db.json'), () => db([source({ id: 'old', feedUrl: 'https://old.test/feed' })]));
-    await new SourcesFile(mdPath, store).load();
-    expect(store.read().sources.map((s) => s.name)).toEqual(['Angular Blog', 'Angular releases', 'Some site']);
-  });
-
-  it('writes the file from the database when it does not exist yet', async () => {
-    store = await JsonStore.open(join(dir, 'db.json'), () => db([source({})]));
-    await new SourcesFile(mdPath, store).load();
-    expect(await readFile(mdPath, 'utf8')).toContain('| Angular Blog | https://blog.angular.dev/feed |');
-  });
-
-  it('leaves the database alone when the file has no table', async () => {
-    await writeFile(mdPath, '# Sources\n');
-    store = await JsonStore.open(join(dir, 'db.json'), () => db([source({})]));
-    await new SourcesFile(mdPath, store).load();
-    expect(store.read().sources).toHaveLength(1);
-  });
-
-  it('writes admin changes back to the file', async () => {
-    await writeFile(mdPath, MD);
-    store = await JsonStore.open(join(dir, 'db.json'), () => db([]));
-    const file = new SourcesFile(mdPath, store);
-    await file.load();
-    await store.update((d) => d.sources.push(source({ id: 'new', name: 'Added in admin', feedUrl: 'https://new.test/feed', group: 'Angular' })));
-    await file.save();
-    const md = await readFile(mdPath, 'utf8');
-    expect(md).toContain('Added in admin');
-    expect(parseSourcesMd(md).sources).toHaveLength(4);
   });
 });

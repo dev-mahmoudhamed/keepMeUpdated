@@ -4,6 +4,8 @@ export interface Settings {
   relevanceThreshold: number;
   maxItemAgeHours: number;
   maxAiCallsPerRun: number;
+  /** Posts and seen links older than this are deleted on every gather. */
+  retentionDays: number;
 }
 
 export interface SourceSelectors {
@@ -89,6 +91,22 @@ export interface Db {
   /** normalized url -> ISO date first seen */
   seen: Record<string, string>;
   settings: Settings;
+}
+
+/** Fetch history for one source, keyed by source id in content/state.json. */
+export interface SourceStatus {
+  lastFetchedAt?: string;
+  lastError?: string;
+  lastItemCount?: number;
+}
+
+/** content/state.json */
+export interface ContentState {
+  version: 1;
+  settings: Settings;
+  seen: Record<string, string>;
+  runs: Run[];
+  sourceStatus: Record<string, SourceStatus>;
 }
 
 export type PostSummary = Pick<

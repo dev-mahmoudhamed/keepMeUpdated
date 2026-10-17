@@ -1,8 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { mkdtemp } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
-import { JsonStore } from '../store/json-store';
+import { describe, it, expect } from 'vitest';
+import { MemoryStore } from '../content/store';
 import { GatherService } from './pipeline';
 import type { HttpGet } from './http';
 import type { AiClient, Cluster, RawItem, RecentPostRef, StoryInput, StorySummary } from './types';
@@ -84,7 +81,7 @@ const baseDb = (sources: Source[], posts: Post[] = []): Db => ({
   sources,
   runs: [],
   seen: {},
-  settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15 },
+  settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15, retentionDays: 30 },
 });
 
 const existingPost = (over: Partial<Post> = {}): Post => ({
@@ -106,13 +103,8 @@ const existingPost = (over: Partial<Post> = {}): Post => ({
 });
 
 describe('GatherService', () => {
-  let file: string;
-  beforeEach(async () => {
-    file = join(await mkdtemp(join(tmpdir(), 'kmu-pipe-')), 'db.json');
-  });
-
   const setup = async (db: Db, routes: Record<string, string | Error>, ai: AiClient) => {
-    const store = await JsonStore.open(file, () => db);
+    const store = new MemoryStore(db);
     const service = new GatherService({ store, http: httpFrom(routes), makeAi: () => ai, now: () => NOW });
     return { store, service };
   };
@@ -270,23 +262,6 @@ describe('GatherService', () => {
     expect(run.errors.at(-1)?.message).toBe('kaboom');
     expect(service.isRunning()).toBeNull();
     expect(store.read().runs[0].finishedAt).toBeDefined();
-  });
-
-  it('marks runs left running by a stopped server as failed', async () => {
-    const db = baseDb([source('a')]);
-    db.runs = [
-      {
-        id: 'stale', trigger: 'cron', startedAt: '2026-10-17T04:00:00Z', status: 'running',
-        stats: { fetched: 0, fresh: 0, clusters: 0, created: 0, merged: 0, skipped: 0 }, errors: [], log: [],
-      },
-    ];
-    const { store, service } = await setup(db, {}, new FakeAi(oneClusterPerItem()));
-    await service.recoverInterrupted();
-    expect(store.read().runs[0]).toMatchObject({
-      status: 'failed',
-      finishedAt: NOW.toISOString(),
-      errors: [{ message: 'Interrupted: the server stopped before this run finished' }],
-    });
   });
 
   it('refreshes seen dates so undated items still listed are never republished', async () => {

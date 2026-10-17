@@ -1,9 +1,6 @@
-import { watch, type FSWatcher } from 'node:fs';
-import { readFile, rename, writeFile } from 'node:fs/promises';
 import type { Source, SourceSelectors } from '../../shared/models';
 import { normalizeUrl } from '../gather/dedupe';
 import { newId } from '../util/ids';
-import type { JsonStore } from './json-store';
 
 /** A source as written in sources.md: configuration only, no fetch history. */
 export type SourceDef = Omit<Source, 'id' | 'lastFetchedAt' | 'lastError' | 'lastItemCount'>;
@@ -171,81 +168,4 @@ export function syncSources(existing: Source[], defs: SourceDef[]): { sources: S
     return { ...runtime, ...def, id: prev.id } as Source;
   });
   return { sources, changes: { added, updated, removed: existing.filter((s) => !used.has(s.id)).length } };
-}
-
-/** Keeps sources.md and the database's sources in step. */
-export class SourcesFile {
-  private lastText: string | null = null;
-  private watcher?: FSWatcher;
-  private timer?: ReturnType<typeof setTimeout>;
-
-  constructor(
-    private readonly path: string,
-    private readonly store: JsonStore,
-    private readonly log: (msg: string) => void = (m) => console.log(`[sources] ${m}`),
-  ) {}
-
-  /** Read the file into the database; create the file from the database if it doesn't exist. */
-  async load(): Promise<void> {
-    let text: string;
-    try {
-      text = await readFile(this.path, 'utf8');
-    } catch (err) {
-      if ((err as NodeJS.ErrnoException).code !== 'ENOENT') throw err;
-      await this.save();
-      this.log(`created ${this.path} from the current sources`);
-      return;
-    }
-    this.lastText = text;
-    const parsed = parseSourcesMd(text);
-    parsed.warnings.forEach((w) => this.log(w));
-    if (!parsed.hasTable) {
-      this.log(`${this.path} has no source table; keeping the current sources`);
-      return;
-    }
-    const { changes } = await this.store.update((db) => {
-      const result = syncSources(db.sources, parsed.sources);
-      db.sources = result.sources;
-      return result;
-    });
-    if (changes.added || changes.updated || changes.removed) {
-      this.log(`loaded ${parsed.sources.length} sources (${changes.added} added, ${changes.updated} changed, ${changes.removed} removed)`);
-    }
-  }
-
-  /** Rewrite the file from the database (after admin changes). */
-  async save(): Promise<void> {
-    const text = renderSourcesMd(this.store.read().sources);
-    if (text === this.lastText) return;
-    const tmp = `${this.path}.tmp`;
-    await writeFile(tmp, text, 'utf8');
-    await rename(tmp, this.path);
-    this.lastText = text;
-  }
-
-  /** Reload when the file is edited by hand. */
-  watch(): void {
-    try {
-      this.watcher = watch(this.path, () => {
-        clearTimeout(this.timer);
-        this.timer = setTimeout(() => void this.reloadIfChanged(), 300);
-      });
-    } catch (err) {
-      this.log(`not watching ${this.path}: ${err instanceof Error ? err.message : err}`);
-    }
-  }
-
-  close(): void {
-    clearTimeout(this.timer);
-    this.watcher?.close();
-  }
-
-  private async reloadIfChanged(): Promise<void> {
-    try {
-      const text = await readFile(this.path, 'utf8');
-      if (text !== this.lastText) await this.load();
-    } catch (err) {
-      this.log(`reload failed: ${err instanceof Error ? err.message : err}`);
-    }
-  }
 }

@@ -1,5 +1,5 @@
 import type { Post, PostSource, Run, RunTrigger } from '../../shared/models';
-import type { JsonStore } from '../store/json-store';
+import type { Store } from '../content/store';
 import { newId, uniqueSlug } from '../util/ids';
 import { renderFallbackBody, renderStoryBody, sanitizeHtml } from '../util/sanitize';
 import { AiBudget } from './ai/budget';
@@ -19,7 +19,7 @@ const RUNS_KEPT = 50;
 const DAY_MS = 86_400_000;
 
 export interface GatherDeps {
-  store: JsonStore;
+  store: Store;
   http: HttpGet;
   makeAi: (budget: AiBudget) => AiClient;
   now?: () => Date;
@@ -82,20 +82,6 @@ export class GatherService {
 
   async whenIdle(): Promise<void> {
     await this.current?.done;
-  }
-
-  /** Call once at boot: runs still marked "running" were cut off by a previous process. */
-  async recoverInterrupted(): Promise<void> {
-    if (!this.deps.store.read().runs.some((r) => r.status === 'running')) return;
-    const at = this.now().toISOString();
-    await this.deps.store.update((db) => {
-      for (const run of db.runs) {
-        if (run.status !== 'running') continue;
-        run.status = 'failed';
-        run.finishedAt = at;
-        run.errors.push({ message: 'Interrupted: the server stopped before this run finished' });
-      }
-    });
   }
 
   private async execute(run: Run): Promise<Run> {
