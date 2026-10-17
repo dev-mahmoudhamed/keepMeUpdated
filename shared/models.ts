@@ -93,7 +93,7 @@ export interface Db {
   settings: Settings;
 }
 
-/** Fetch history for one source, keyed by source id in content/state.json. */
+/** Fetch history for one source, keyed by normalized feed url in content/state.json. */
 export interface SourceStatus {
   lastFetchedAt?: string;
   lastError?: string;

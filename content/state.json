@@ -2213,83 +2213,83 @@
     }
   ],
   "sourceStatus": {
-    "0d2eacde2168": {
+    "https://blog.angular.dev/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "5d7162762e53": {
+    "https://github.com/angular/angular/releases.atom": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "2440285b3f25": {
+    "https://github.com/angular/angular-cli/releases.atom": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "56e621a08449": {
+    "https://blog.angulartraining.com/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "62354c88c0e2": {
+    "https://angularaddicts.com/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 20
     },
-    "db25e6c30ce3": {
+    "https://geromegrignon.substack.com/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 6
     },
-    "264e80336763": {
+    "https://syncfusion.com/blogs/category/angular/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 9
     },
-    "131ee1c49b6b": {
+    "https://devblogs.microsoft.com/dotnet/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "73520d89a9de": {
+    "https://devblogs.microsoft.com/visualstudio/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "713280710c85": {
+    "https://github.com/dotnet/runtime/releases.atom": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "dc0707aa2ad1": {
+    "https://github.com/dotnet/aspnetcore/releases.atom": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "5d26ca1ac3d9": {
+    "https://github.com/dotnet/efcore/releases.atom": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "145884eb4af6": {
+    "https://andrewlock.net/rss.xml": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 25
     },
-    "3958049ea454": {
+    "https://milanjovanovic.tech/rss/feed.xml": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 216
     },
-    "b2ecdce82e12": {
+    "https://blog.jetbrains.com/dotnet/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 12
     },
-    "d1237fd7e6fe": {
+    "https://feeds.feedburner.com/rickstrahl": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "6752279e1d66": {
+    "https://damienbod.com/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "613df5cea358": {
+    "https://code-maze.com/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     },
-    "655eccbecb12": {
+    "https://feed.infoq.com/dotnet": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 1
     },
-    "d9a755d55a6a": {
+    "https://devblogs.microsoft.com/typescript/feed": {
       "lastFetchedAt": "2026-10-17T12:11:03.675Z",
       "lastItemCount": 10
     }

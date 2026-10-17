@@ -51,8 +51,7 @@ export async function loadContent(root: string): Promise<Db> {
   const status = state.sourceStatus ?? {};
 
   const sources: Source[] = (sourcesText ? parseSourcesMd(sourcesText).sources : []).map((def) => {
-    const id = sourceIdFor(def.feedUrl);
-    return { ...def, id, ...(status[id] ?? {}) };
+    return { ...def, id: sourceIdFor(def.feedUrl), ...(status[normalizeUrl(def.feedUrl)] ?? {}) };
   });
 
   return {
@@ -75,7 +74,7 @@ function stateOf(db: Db): ContentState {
       ...(s.lastError ? { lastError: s.lastError } : {}),
       ...(s.lastItemCount !== undefined ? { lastItemCount: s.lastItemCount } : {}),
     };
-    if (Object.keys(st).length) sourceStatus[s.id] = st;
+    if (Object.keys(st).length) sourceStatus[normalizeUrl(s.feedUrl)] = st;
   }
   return { version: 1, settings: db.settings, seen: db.seen, runs: db.runs, sourceStatus };
 }

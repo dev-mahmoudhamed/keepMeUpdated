@@ -64,8 +64,9 @@ describe('content files', () => {
 
     const again = await loadContent(root);
     expect(again).toEqual(db);
+    // Keyed by normalized feed url so the browser admin can match status to sources.md rows.
     expect(JSON.parse(await readFile(join(root, 'content/state.json'), 'utf8')).sourceStatus).toEqual({
-      [db.sources[0].id]: { lastFetchedAt: '2026-10-16T03:00:00.000Z', lastItemCount: 10 },
+      'https://blog.angular.dev/feed': { lastFetchedAt: '2026-10-16T03:00:00.000Z', lastItemCount: 10 },
     });
   });
 
