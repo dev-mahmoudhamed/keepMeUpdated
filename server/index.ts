@@ -24,6 +24,7 @@ async function main() {
     http: httpGet,
     makeAi: (budget) => gemini(budget) ?? new FallbackAiClient(),
   });
+  await gather.recoverInterrupted();
   const scheduler = startScheduler(config.gatherCron, gather, store);
 
   const app = createApp({

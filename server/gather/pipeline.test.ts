@@ -272,6 +272,23 @@ describe('GatherService', () => {
     expect(store.read().runs[0].finishedAt).toBeDefined();
   });
 
+  it('marks runs left running by a stopped server as failed', async () => {
+    const db = baseDb([source('a')]);
+    db.runs = [
+      {
+        id: 'stale', trigger: 'cron', startedAt: '2026-10-17T04:00:00Z', status: 'running',
+        stats: { fetched: 0, fresh: 0, clusters: 0, created: 0, merged: 0, skipped: 0 }, errors: [], log: [],
+      },
+    ];
+    const { store, service } = await setup(db, {}, new FakeAi(oneClusterPerItem()));
+    await service.recoverInterrupted();
+    expect(store.read().runs[0]).toMatchObject({
+      status: 'failed',
+      finishedAt: NOW.toISOString(),
+      errors: [{ message: 'Interrupted: the server stopped before this run finished' }],
+    });
+  });
+
   it('keeps only the last 50 runs and prunes old seen urls', async () => {
     const db = baseDb([source('a')]);
     db.runs = Array.from({ length: 50 }, (_, i) => ({

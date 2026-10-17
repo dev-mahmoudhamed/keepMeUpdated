@@ -16,3 +16,7 @@ it('reads env values', () => {
   expect(c.geminiApiKey).toBe('k');
   expect(c.isProd).toBe(true);
 });
+
+it('prefers API_PORT over PORT so the dev server can own PORT', () => {
+  expect(loadConfig({ PORT: '4201', API_PORT: '3000' }).port).toBe(3000);
+});

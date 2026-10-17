@@ -84,6 +84,20 @@ export class GatherService {
     await this.current?.done;
   }
 
+  /** Call once at boot: runs still marked "running" were cut off by a previous process. */
+  async recoverInterrupted(): Promise<void> {
+    if (!this.deps.store.read().runs.some((r) => r.status === 'running')) return;
+    const at = this.now().toISOString();
+    await this.deps.store.update((db) => {
+      for (const run of db.runs) {
+        if (run.status !== 'running') continue;
+        run.status = 'failed';
+        run.finishedAt = at;
+        run.errors.push({ message: 'Interrupted: the server stopped before this run finished' });
+      }
+    });
+  }
+
   private async execute(run: Run): Promise<Run> {
     const { store, http } = this.deps;
     const nowIso = run.startedAt;

@@ -25,7 +25,7 @@ export function loadConfig(env: NodeJS.ProcessEnv): Config {
     warnedSecret = true;
   }
   return {
-    port: Number(env['PORT']) || 3000,
+    port: Number(env['API_PORT']) || Number(env['PORT']) || 3000,
     geminiApiKey: env['GEMINI_API_KEY']?.trim() || undefined,
     geminiModel: env['GEMINI_MODEL']?.trim() || 'gemini-flash-latest',
     adminEmail: env['ADMIN_EMAIL']?.trim() || 'admin@keepmeupdated.local',
