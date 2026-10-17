@@ -61,6 +61,12 @@ describe('PostPage', () => {
     expect(el.textContent).toContain('AI summary pending');
   });
 
+  it('does not credit AI for hand-written posts', async () => {
+    const el = await render((url) => http.expectOne(url).flush({ ...post, origin: 'manual' }));
+    expect(el.querySelector('.note')?.textContent).not.toContain('AI');
+    expect(el.querySelector('.note')?.textContent).toContain('Check the originals');
+  });
+
   it('shows the not-found page for a 404', async () => {
     const el = await render((url) => http.expectOne(url).flush({ error: 'Not found' }, { status: 404, statusText: 'Not Found' }));
     expect(el.querySelector('h1')?.textContent).toContain("This page isn't in any edition");

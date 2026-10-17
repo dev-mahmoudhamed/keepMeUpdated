@@ -60,7 +60,9 @@
     }
 
     <p class="note">
-      @if (p.aiPending) {
+      @if (p.origin === 'manual') {
+        Written by the editor. Check the originals for details.
+      } @else if (p.aiPending) {
         AI summary pending. You're reading the sources' own descriptions.
       } @else {
         Summary written by AI from the sources above. Check the originals for details.
