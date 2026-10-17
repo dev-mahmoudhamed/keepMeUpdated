@@ -30,6 +30,16 @@ export const adminRoutes: Routes = [
         loadComponent: () => import('./post-editor/post-editor').then((m) => m.PostEditor),
         canDeactivate: [(c: { canLeave(): boolean }) => c.canLeave()],
       },
+      {
+        path: 'sources',
+        title: 'Sources · Admin',
+        loadComponent: () => import('./sources/sources').then((m) => m.Sources),
+      },
+      {
+        path: 'runs',
+        title: 'Gather runs · Admin',
+        loadComponent: () => import('./runs/runs').then((m) => m.Runs),
+      },
     ],
   },
 ];

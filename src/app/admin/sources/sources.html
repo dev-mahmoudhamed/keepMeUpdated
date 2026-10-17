@@ -1,0 +1,193 @@
+<header class="head">
+  <div>
+    <h1>Sources</h1>
+    <p class="sub">The sites the daily gather reads. RSS feeds are the most reliable.</p>
+  </div>
+  <button type="button" class="btn btn--primary" data-action="add" (click)="open('new')">
+    <svg lucidePlus [size]="18" aria-hidden="true"></svg>
+    Add source
+  </button>
+</header>
+
+@if (sources.error()) {
+  <div class="empty">
+    <p>Sources didn't load.</p>
+    <button type="button" class="btn" (click)="sources.reload()">Try again</button>
+  </div>
+} @else if (sources.isLoading() && !rows().length) {
+  <div class="skeleton" style="height: 320px"></div>
+} @else if (!rows().length) {
+  <div class="empty">
+    <h2>Add the first source</h2>
+    <p>Paste an RSS feed link, or set CSS selectors for a site without one.</p>
+  </div>
+} @else {
+  <ul class="list" role="list">
+    @for (s of rows(); track s.id) {
+      <li class="source-row" [class.off]="!s.enabled">
+        <button
+          type="button"
+          role="switch"
+          class="switch"
+          [attr.aria-checked]="s.enabled"
+          [attr.aria-label]="(s.enabled ? 'Turn off ' : 'Turn on ') + s.name"
+          (click)="toggle(s)"
+        >
+          <span class="knob"></span>
+        </button>
+        <div class="info">
+          <p class="name">
+            {{ s.name }}
+            <span class="type mono">{{ s.type === 'rss' ? 'RSS' : 'HTML' }}</span>
+          </p>
+          <p class="url mono">{{ s.feedUrl }}</p>
+          @if (s.lastError) {
+            <p class="err" [title]="s.lastError">{{ s.lastError }}</p>
+          } @else {
+            <p class="meta">
+              {{ relative(s.lastFetchedAt) }}
+              @if (s.lastItemCount !== undefined) {
+                <span class="mono">{{ s.lastItemCount }} items</span>
+              }
+            </p>
+          }
+        </div>
+        <div class="tags">
+          @for (t of s.defaultTags; track t) {
+            <span class="tag">{{ t }}</span>
+          }
+        </div>
+        <button type="button" class="btn btn--ghost btn--icon" (click)="open(s)" [attr.aria-label]="'Edit ' + s.name" title="Edit">
+          <svg lucidePencil [size]="16" aria-hidden="true"></svg>
+        </button>
+      </li>
+    }
+  </ul>
+}
+
+@if (editing(); as current) {
+  <div class="scrim" (click)="close()" aria-hidden="true"></div>
+  <section class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" (keydown.escape)="close()">
+    <header class="drawer-head">
+      <h2 id="drawer-title">{{ current === 'new' ? 'Add source' : 'Edit ' + current.name }}</h2>
+      <button type="button" class="btn btn--ghost btn--icon" (click)="close()" aria-label="Close">
+        <svg lucideX [size]="18" aria-hidden="true"></svg>
+      </button>
+    </header>
+
+    <form [formGroup]="form" (ngSubmit)="save()" class="drawer-body" novalidate>
+      <div class="field">
+        <label for="src-name">Name</label>
+        <input #firstField id="src-name" class="input" formControlName="name" placeholder="Bun Blog" [attr.aria-invalid]="invalid('name')" />
+        @if (invalid('name')) {
+          <p class="error-text">Add a name.</p>
+        }
+      </div>
+
+      <div class="field">
+        <label for="src-site">Website</label>
+        <input id="src-site" class="input" formControlName="siteUrl" placeholder="https://bun.sh" inputmode="url" [attr.aria-invalid]="invalid('siteUrl')" />
+        @if (invalid('siteUrl')) {
+          <p class="error-text">Use a full link starting with https://</p>
+        }
+      </div>
+
+      <fieldset class="field">
+        <legend class="label">How to read it</legend>
+        <div class="radios">
+          <label><input type="radio" name="type" value="rss" formControlName="type" /> RSS or Atom feed</label>
+          <label><input type="radio" name="type" value="html" formControlName="type" /> Web page with CSS selectors</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="src-feed">{{ type() === 'rss' ? 'Feed link' : 'Page link' }}</label>
+        <input id="src-feed" class="input" formControlName="feedUrl" placeholder="https://bun.sh/rss.xml" inputmode="url" [attr.aria-invalid]="invalid('feedUrl')" />
+        @if (invalid('feedUrl')) {
+          <p class="error-text">Use a full link starting with https://</p>
+        }
+      </div>
+
+      @if (type() === 'html') {
+        <fieldset class="selectors" formGroupName="selectors">
+          <legend class="label">Selectors</legend>
+          <p class="hint">CSS selector; add &#64;attr to read an attribute, e.g. a&#64;href</p>
+          <div class="field">
+            <label for="sel-item">Each item</label>
+            <input id="sel-item" class="input mono" formControlName="item" placeholder="article.post" />
+          </div>
+          <div class="field">
+            <label for="sel-title">Title (inside the item)</label>
+            <input id="sel-title" class="input mono" formControlName="title" placeholder="h2" />
+          </div>
+          <div class="field">
+            <label for="sel-link">Link</label>
+            <input id="sel-link" class="input mono" formControlName="link" placeholder="a@href" />
+          </div>
+          <div class="field">
+            <label for="sel-date">Date (optional)</label>
+            <input id="sel-date" class="input mono" formControlName="date" placeholder="time@datetime" />
+          </div>
+          <div class="field">
+            <label for="sel-summary">Summary (optional)</label>
+            <input id="sel-summary" class="input mono" formControlName="summary" placeholder=".excerpt" />
+          </div>
+        </fieldset>
+      }
+
+      <div class="field">
+        <label for="src-tags">Default tags</label>
+        <input id="src-tags" class="input" formControlName="tags" placeholder="bun, javascript" />
+        <p class="hint">Comma separated. Used when the AI can't tag a story.</p>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" formControlName="enabled" />
+        Include in the daily gather
+      </label>
+
+      <div class="test">
+        <button type="button" class="btn" data-action="test" (click)="test()" [attr.aria-busy]="testing()">
+          <svg lucideFlaskConical [size]="16" aria-hidden="true"></svg>
+          {{ testing() ? 'Fetching…' : 'Test fetch' }}
+        </button>
+        @if (previewError()) {
+          <p class="error-text" role="alert">{{ previewError() }}</p>
+        }
+        @if (preview(); as items) {
+          <div class="preview" role="status">
+            <p class="hint">{{ items.length ? 'First ' + items.length + ' items it found:' : 'It worked, but found no items.' }}</p>
+            <ol>
+              @for (item of items; track item.url) {
+                <li>
+                  <a [href]="item.url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+                </li>
+              }
+            </ol>
+          </div>
+        }
+      </div>
+
+      @if (formError()) {
+        <p class="error-text" role="alert">{{ formError() }}</p>
+      }
+
+      <footer class="drawer-foot">
+        @if (current !== 'new') {
+          @if (confirmDelete()) {
+            <span class="confirm">
+              Delete this source?
+              <button type="button" class="btn btn--danger" (click)="remove()">Delete</button>
+              <button type="button" class="btn btn--ghost" (click)="confirmDelete.set(false)">Keep</button>
+            </span>
+          } @else {
+            <button type="button" class="btn btn--ghost btn--danger" (click)="confirmDelete.set(true)">Delete source</button>
+          }
+        }
+        <span class="spacer"></span>
+        <button type="button" class="btn btn--ghost" (click)="close()">Cancel</button>
+        <button type="submit" class="btn btn--primary" [attr.aria-busy]="saving()">{{ saving() ? 'Saving…' : current === 'new' ? 'Add source' : 'Save' }}</button>
+      </footer>
+    </form>
+  </section>
+}
