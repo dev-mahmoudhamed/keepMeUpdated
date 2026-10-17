@@ -1,5 +1,5 @@
-import { it, expect } from 'vitest';
-import { groupByDay, tagCounts, toSummary } from '../../shared/feed';
+import { describe, it, expect } from 'vitest';
+import { groupByDay, groupSummaries, summaryTagCounts, tagCounts, toSummary } from '../../shared/feed';
 import type { Post } from '../../shared/models';
 
 let n = 0;
@@ -72,4 +72,24 @@ it('counts tags on published posts only', () => {
     { tag: 'a', count: 2 },
     { tag: 'b', count: 1 },
   ]);
+});
+
+describe('summary helpers (static site index)', () => {
+  const summaries = [
+    toSummary(post('2026-10-17', { title: 'Signals land', tags: ['angular'] })),
+    toSummary(post('2026-10-16', { title: 'Bun 2', tags: ['bun'] })),
+  ];
+
+  it('groups summaries by day with the same paging as groupByDay', () => {
+    expect(groupSummaries(summaries, { days: 1 }).days.map((d) => d.date)).toEqual(['2026-10-17']);
+    expect(groupSummaries(summaries, { days: 1 }).nextBefore).toBe('2026-10-17');
+    expect(groupSummaries(summaries, { days: 7, tag: 'bun' }).days[0].posts[0].title).toBe('Bun 2');
+  });
+
+  it('counts tags across summaries', () => {
+    expect(summaryTagCounts(summaries)).toEqual([
+      { tag: 'angular', count: 1 },
+      { tag: 'bun', count: 1 },
+    ]);
+  });
 });

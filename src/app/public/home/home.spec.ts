@@ -2,27 +2,29 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import type { FeedResponse, PostSummary } from '../../../../shared/models';
+import type { FeedIndex, PostSummary } from '../../../../shared/models';
 import { Home } from './home';
 
-const post = (id: string, relevance = 5): PostSummary => ({
+const post = (id: string, day: string, relevance = 5, tags = ['angular']): PostSummary => ({
   id,
   slug: id,
   title: `Title ${id}`,
   tldr: `Summary ${id}`,
-  tags: ['angular'],
+  tags,
   relevance,
-  publishedAt: '2026-10-17T04:10:00Z',
+  publishedAt: `${day}T10:00:00Z`,
   aiPending: false,
   sourceCount: 2,
 });
 
-const feed: FeedResponse = {
-  days: [
-    { date: '2026-10-17', posts: [post('a', 9), post('b')] },
-    { date: '2026-10-16', posts: [post('c')] },
-  ],
-  nextBefore: '2026-10-16',
+const twoDays: FeedIndex = {
+  generatedAt: '2026-10-17T03:10:00Z',
+  posts: [post('a', '2026-10-17', 9), post('b', '2026-10-17', 5, ['dotnet']), post('c', '2026-10-16')],
+};
+
+const nineDays: FeedIndex = {
+  generatedAt: '2026-10-17T03:10:00Z',
+  posts: Array.from({ length: 9 }, (_, i) => post(`p${i}`, `2026-10-${String(17 - i).padStart(2, '0')}`)),
 };
 
 describe('Home', () => {
@@ -36,12 +38,11 @@ describe('Home', () => {
 
   afterEach(() => http.verify());
 
-  async function render() {
+  async function render(index: FeedIndex = twoDays) {
     const fixture = TestBed.createComponent(Home);
     fixture.detectChanges();
     TestBed.tick();
-    http.expectOne((r) => r.url.startsWith('/api/posts')).flush(feed);
-    http.expectOne('/api/tags').flush([{ tag: 'angular', count: 3 }]);
+    http.expectOne('data/posts.json').flush(index);
     await fixture.whenStable();
     fixture.detectChanges();
     return fixture;
@@ -84,27 +85,34 @@ describe('Home', () => {
     expect((fixture.nativeElement as HTMLElement).querySelector('.lead')).toBeNull();
   });
 
-  it('shows a retry message when the feed fails', async () => {
+  it('builds topic chips from the index and filters without new requests', async () => {
+    const fixture = await render();
+    const el: HTMLElement = fixture.nativeElement;
+    const chips = [...el.querySelectorAll('.chip')].map((c) => c.textContent?.trim());
+    expect(chips).toEqual(['All topics', '#angular', '#dotnet']);
+    (el.querySelectorAll('.chip')[2] as HTMLButtonElement).click();
+    fixture.detectChanges();
+    expect(el.querySelectorAll('app-day-section').length).toBe(1);
+    expect(el.querySelector('.lead h3')?.textContent).toContain('Title b');
+  });
+
+  it('shows a retry message when the index fails to load', async () => {
     const fixture = TestBed.createComponent(Home);
     fixture.detectChanges();
     TestBed.tick();
-    http.expectOne((r) => r.url.startsWith('/api/posts')).flush({ error: 'x' }, { status: 500, statusText: 'Server Error' });
-    http.expectOne('/api/tags').flush([]);
+    http.expectOne('data/posts.json').flush('missing', { status: 404, statusText: 'Not Found' });
     await fixture.whenStable();
     fixture.detectChanges();
-    const el: HTMLElement = fixture.nativeElement;
-    expect(el.querySelector('.state h2')?.textContent).toContain("Updates didn't load");
+    expect((fixture.nativeElement as HTMLElement).querySelector('.state h2')?.textContent).toContain("Updates didn't load");
   });
 
-  it('loads older days and appends them', async () => {
-    const fixture = await render();
+  it('reveals older days from the same index', async () => {
+    const fixture = await render(nineDays);
     const el: HTMLElement = fixture.nativeElement;
+    expect(el.querySelectorAll('app-day-section').length).toBe(7);
     (el.querySelector('.older') as HTMLButtonElement).click();
-    const req = http.expectOne((r) => r.url.includes('before=2026-10-16'));
-    req.flush({ days: [{ date: '2026-10-15', posts: [post('d')] }] });
-    await fixture.whenStable();
     fixture.detectChanges();
-    expect(el.querySelectorAll('app-day-section').length).toBe(3);
+    expect(el.querySelectorAll('app-day-section').length).toBe(9);
     expect(el.querySelector('.older')).toBeNull();
   });
 });

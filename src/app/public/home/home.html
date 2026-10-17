@@ -41,7 +41,7 @@
     }
   </div>
 
-  @if (feed.isLoading() && !feed.hasValue()) {
+  @if (index.isLoading() && !index.hasValue()) {
     <div class="skeletons" aria-busy="true" aria-label="Loading updates">
       @for (i of [1, 2]; track i) {
         <div class="sk-day">
@@ -60,11 +60,11 @@
         </div>
       }
     </div>
-  } @else if (feed.error()) {
+  } @else if (index.error()) {
     <div class="state">
       <h2>Updates didn't load</h2>
-      <p>The server didn't answer. Check that it's running, then try again.</p>
-      <button type="button" class="btn" (click)="feed.reload()">Try again</button>
+      <p>Check your connection, then try again.</p>
+      <button type="button" class="btn" (click)="index.reload()">Try again</button>
     </div>
   } @else if (!days().length) {
     @if (filtered()) {
@@ -76,24 +76,19 @@
     } @else {
       <div class="state">
         <h2>No updates yet</h2>
-        <p>The next gather runs at 04:00. You can also run it from the admin panel.</p>
+        <p>News is gathered every morning. You can also run a gather from the admin panel.</p>
       </div>
     }
   } @else {
-    <div class="days" [attr.aria-busy]="feed.isLoading()">
+    <div class="days">
       @for (day of days(); track day.date) {
         <app-day-section [day]="day" [view]="view()" />
       }
     </div>
 
-    @if (nextBefore()) {
+    @if (hasOlder()) {
       <div class="more">
-        <button type="button" class="btn older" (click)="loadOlder()" [attr.aria-busy]="loadingOlder()">
-          {{ loadingOlder() ? 'Loading…' : 'Load older days' }}
-        </button>
-        @if (olderError()) {
-          <p class="error-text" role="alert">Older days didn't load. Try again.</p>
-        }
+        <button type="button" class="btn older" (click)="loadOlder()">Load older days</button>
       </div>
     }
   }

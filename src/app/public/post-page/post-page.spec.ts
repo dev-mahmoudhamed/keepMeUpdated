@@ -39,7 +39,7 @@ describe('PostPage', () => {
     fixture.componentRef.setInput('slug', 'angular-22');
     fixture.detectChanges();
     TestBed.tick();
-    respond('/api/posts/angular-22');
+    respond('data/p/angular-22.json');
     await fixture.whenStable();
     fixture.detectChanges();
     return fixture.nativeElement as HTMLElement;

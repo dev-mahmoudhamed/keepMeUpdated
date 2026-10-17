@@ -3,24 +3,9 @@ import { Injectable, inject } from '@angular/core';
 import type { Observable } from 'rxjs';
 import type { AdminStatus, Post, PostStatus, Run, Source, SourceSelectors } from '../../../shared/models';
 
-export interface FeedParams {
-  days?: number;
-  before?: string;
-  tag?: string | null;
-  q?: string | null;
-}
-
-export function feedUrl(params: FeedParams = {}): string {
-  const qs = new URLSearchParams();
-  qs.set('days', String(params.days ?? 7));
-  if (params.before) qs.set('before', params.before);
-  if (params.tag) qs.set('tag', params.tag);
-  if (params.q?.trim()) qs.set('q', params.q.trim());
-  return `/api/posts?${qs.toString()}`;
-}
-
-export const postUrl = (slug: string) => `/api/posts/${encodeURIComponent(slug)}`;
-export const tagsUrl = () => '/api/tags';
+/** Static data written by `npm run build:data`. Relative, so it resolves under the GitHub Pages base path. */
+export const dataUrl = (file: string) => `data/${file}`;
+export const postUrl = (slug: string) => dataUrl(`p/${encodeURIComponent(slug)}.json`);
 
 /** What the admin sends when saving a post. */
 export interface PostInput {

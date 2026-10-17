@@ -31,11 +31,12 @@ export function toSummary(p: Post): PostSummary {
 
 const isLive = (p: Post) => p.status === 'published' && !!p.publishedAt;
 
-export function groupByDay(posts: Post[], opts: FeedOptions): FeedResponse {
+/** Day groups from already-published summaries (the static site's index). */
+export function groupSummaries(summaries: PostSummary[], opts: FeedOptions): FeedResponse {
   const q = opts.q?.trim().toLowerCase();
   const tag = opts.tag?.trim().toLowerCase();
-  const matches = posts
-    .filter(isLive)
+  const matches = summaries
+    .filter((p) => !!p.publishedAt)
     .filter((p) => !tag || p.tags.includes(tag))
     .filter(
       (p) =>
@@ -51,7 +52,7 @@ export function groupByDay(posts: Post[], opts: FeedOptions): FeedResponse {
     const date = localDate(p.publishedAt!);
     if (opts.before && date >= opts.before) continue;
     if (!groups.has(date)) groups.set(date, []);
-    groups.get(date)!.push(toSummary(p));
+    groups.get(date)!.push(p);
   }
 
   const dates = [...groups.keys()];
@@ -62,10 +63,18 @@ export function groupByDay(posts: Post[], opts: FeedOptions): FeedResponse {
   };
 }
 
-export function tagCounts(posts: Post[]): TagCount[] {
+export function groupByDay(posts: Post[], opts: FeedOptions): FeedResponse {
+  return groupSummaries(posts.filter(isLive).map(toSummary), opts);
+}
+
+export function summaryTagCounts(summaries: PostSummary[]): TagCount[] {
   const counts = new Map<string, number>();
-  for (const p of posts.filter(isLive)) for (const t of p.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
+  for (const p of summaries) for (const t of p.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
   return [...counts.entries()]
     .map(([tag, count]) => ({ tag, count }))
     .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+}
+
+export function tagCounts(posts: Post[]): TagCount[] {
+  return summaryTagCounts(posts.filter(isLive).map(toSummary));
 }
