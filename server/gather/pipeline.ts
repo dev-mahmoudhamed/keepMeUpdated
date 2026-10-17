@@ -191,7 +191,7 @@ export class GatherService {
         const stories: StoryInput[] = await mapLimit(toCreate, FETCH_CONCURRENCY, async (c) => ({
           clusterId: c.id,
           items: itemsOf(c),
-          text: await this.articleText(itemsOf(c)),
+          text: await collectArticleText(itemsOf(c), this.deps.http),
         }));
         summaries = await ai.summarize(stories);
         log(`Summarized ${summaries.length} of ${toCreate.length} stories (AI calls left: ${budget.remaining})`);
@@ -233,22 +233,24 @@ export class GatherService {
     }
     return run;
   }
+}
 
-  /** Readable text from up to 3 article pages; falls back to feed snippets. */
-  private async articleText(items: RawItem[]): Promise<string> {
-    const perLink = Math.floor(ARTICLE_CHARS / Math.min(items.length, ARTICLE_LINKS));
-    const parts = await Promise.all(
-      items.slice(0, ARTICLE_LINKS).map(async (item) => {
-        try {
-          const { text } = await this.deps.http(item.url, ARTICLE_TIMEOUT_MS);
-          return extractArticleText(text, perLink) || item.snippet;
-        } catch {
-          return item.snippet;
-        }
-      }),
-    );
-    return parts.filter(Boolean).join('\n\n').slice(0, ARTICLE_CHARS);
-  }
+/** Readable text from up to 3 article pages; falls back to feed snippets. */
+export async function collectArticleText(items: RawItem[], http: HttpGet): Promise<string> {
+  const links = items.slice(0, ARTICLE_LINKS);
+  if (!links.length) return '';
+  const perLink = Math.floor(ARTICLE_CHARS / links.length);
+  const parts = await Promise.all(
+    links.map(async (item) => {
+      try {
+        const { text } = await http(item.url, ARTICLE_TIMEOUT_MS);
+        return extractArticleText(text, perLink) || item.snippet;
+      } catch {
+        return item.snippet;
+      }
+    }),
+  );
+  return parts.filter(Boolean).join('\n\n').slice(0, ARTICLE_CHARS);
 }
 
 function toPostSource(item: RawItem): PostSource {
