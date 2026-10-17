@@ -7,8 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Developer news that matters, gathered every morning and summarized." />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#171512" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f7f7f4" />
+    <script>
+      // Apply the saved theme before first paint so dark readers don't see a light flash.
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('kmu.theme') === 'dark' ? 'dark' : 'light';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -1,21 +1,26 @@
 /* keepMeUpdated — design tokens and base styles.
-   Palette: warm paper, ink, one moss accent. Dark mode is warm charcoal, never pure black. */
+   Light (default): near-white paper, white cards, ink text, one moss accent.
+   Dark (opt-in): neutral graphite with raised card surfaces — never brown, never pure black. */
 
 :root {
   color-scheme: light;
-  --paper: #f6f1e7;
-  --paper-raised: #fbf8f2;
-  --ink: #1f1c17;
-  --ink-soft: #4a443b;
-  --ink-muted: #6b6358;
-  --rule: #d9d0bf;
+  --paper: #f7f7f4;
+  --paper-raised: #ffffff;
+  --card: #ffffff;
+  --ink: #1c1d1b;
+  --ink-soft: #474a45;
+  --ink-muted: #696d67;
+  --rule: #e3e3dd;
+  --rule-strong: #cfcfc7;
   --accent: #2e5a3f;
-  --accent-wash: #e3ebdd;
-  --danger: #9b2c1f;
-  --highlight: #efe6cf;
+  --accent-wash: #e4eee6;
+  --danger: #a1301f;
+  --highlight: #f4f1e4;
   /* Highlighter stroke behind TL;DR text. */
-  --marker: #e8dcae;
-  --on-accent: #fbf8f2;
+  --marker: #f2e7a8;
+  --on-accent: #ffffff;
+  --shadow-card: 0 1px 2px rgb(28 29 27 / 0.05), 0 6px 20px -10px rgb(28 29 27 / 0.14);
+  --shadow-card-hover: 0 2px 4px rgb(28 29 27 / 0.06), 0 14px 32px -12px rgb(28 29 27 / 0.2);
 
   --font-head: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-body: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', system-ui, sans-serif;
@@ -40,6 +45,7 @@
   --s-8: 64px;
 
   --radius: 6px;
+  --radius-card: 14px;
   --measure: 68ch;
   --page: 1120px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -47,38 +53,24 @@
   --dur: 180ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    color-scheme: dark;
-    --paper: #171512;
-    --paper-raised: #201d19;
-    --ink: #ece5d8;
-    --ink-soft: #bdb4a4;
-    --ink-muted: #958c7e;
-    --rule: #3a352e;
-    --accent: #8dbf9c;
-    --accent-wash: #24332a;
-    --danger: #e8907f;
-    --highlight: #2a251c;
-    --marker: #4a4126;
-    --on-accent: #171512;
-  }
-}
-
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #171512;
-  --paper-raised: #201d19;
-  --ink: #ece5d8;
-  --ink-soft: #bdb4a4;
-  --ink-muted: #958c7e;
-  --rule: #3a352e;
-  --accent: #8dbf9c;
-  --accent-wash: #24332a;
-  --danger: #e8907f;
-  --highlight: #2a251c;
-  --marker: #4a4126;
-  --on-accent: #171512;
+  --paper: #141615;
+  --paper-raised: #1c1f1d;
+  --card: #1f2321;
+  --ink: #e8eae7;
+  --ink-soft: #b5bab6;
+  --ink-muted: #8c928e;
+  --rule: #2c312e;
+  --rule-strong: #3a403c;
+  --accent: #86c79a;
+  --accent-wash: #1e2d23;
+  --danger: #f09a8a;
+  --highlight: #1d2420;
+  --marker: #3d4a2e;
+  --on-accent: #141615;
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 8px 24px -14px rgb(0 0 0 / 0.7);
+  --shadow-card-hover: 0 1px 0 rgb(255 255 255 / 0.05) inset, 0 16px 36px -16px rgb(0 0 0 / 0.8);
 }
 
 *,
@@ -209,6 +201,30 @@ button {
 .tag::before {
   content: '#';
   opacity: 0.7;
+}
+
+/* A story card: its own surface, lifted slightly off the page. */
+.card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--rule-strong);
+}
+
+/* Makes a whole card clickable through its main link. */
+.card .stretched::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
 }
 
 /* Highlighter stroke for the "what matters" sentence. */

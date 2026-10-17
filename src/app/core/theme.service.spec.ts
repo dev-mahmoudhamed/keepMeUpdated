@@ -7,33 +7,32 @@ describe('ThemeService', () => {
     delete document.documentElement.dataset['theme'];
   });
 
-  it('starts in system mode with no data-theme', () => {
+  it('starts light, whatever the system prefers', () => {
     const theme = TestBed.inject(ThemeService);
-    expect(theme.mode()).toBe('system');
-    expect(document.documentElement.dataset['theme']).toBeUndefined();
+    expect(theme.mode()).toBe('light');
+    expect(document.documentElement.dataset['theme']).toBe('light');
   });
 
-  it('cycles system -> light -> dark -> system and persists the choice', () => {
+  it('toggles between light and dark and remembers the choice', () => {
     const theme = TestBed.inject(ThemeService);
-    theme.cycle();
+    theme.toggle();
+    expect(theme.mode()).toBe('dark');
+    expect(document.documentElement.dataset['theme']).toBe('dark');
+    expect(localStorage.getItem('kmu.theme')).toBe('dark');
+
+    theme.toggle();
     expect(theme.mode()).toBe('light');
     expect(document.documentElement.dataset['theme']).toBe('light');
     expect(localStorage.getItem('kmu.theme')).toBe('light');
-
-    theme.cycle();
-    expect(theme.mode()).toBe('dark');
-    expect(document.documentElement.dataset['theme']).toBe('dark');
-
-    theme.cycle();
-    expect(theme.mode()).toBe('system');
-    expect(document.documentElement.dataset['theme']).toBeUndefined();
-    expect(localStorage.getItem('kmu.theme')).toBe('system');
   });
 
-  it('restores a saved choice', () => {
+  it('restores a saved dark choice', () => {
     localStorage.setItem('kmu.theme', 'dark');
-    const theme = TestBed.inject(ThemeService);
-    expect(theme.mode()).toBe('dark');
-    expect(document.documentElement.dataset['theme']).toBe('dark');
+    expect(TestBed.inject(ThemeService).mode()).toBe('dark');
+  });
+
+  it('treats the old "system" setting as light', () => {
+    localStorage.setItem('kmu.theme', 'system');
+    expect(TestBed.inject(ThemeService).mode()).toBe('light');
   });
 });

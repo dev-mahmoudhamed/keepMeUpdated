@@ -19,13 +19,13 @@
     </label>
 
     <div class="view" role="radiogroup" aria-label="Layout">
-      <label [class.on]="view() === 'edition'">
-        <input type="radio" name="view" value="edition" [checked]="view() === 'edition'" (change)="setView('edition')" />
-        Edition
+      <label [class.on]="view() === 'cards'">
+        <input type="radio" name="view" value="cards" [checked]="view() === 'cards'" (change)="setView('cards')" />
+        Cards
       </label>
-      <label [class.on]="view() === 'compact'">
-        <input type="radio" name="view" value="compact" [checked]="view() === 'compact'" (change)="setView('compact')" />
-        Compact
+      <label [class.on]="view() === 'list'">
+        <input type="radio" name="view" value="list" [checked]="view() === 'list'" (change)="setView('list')" />
+        List
       </label>
     </div>
 

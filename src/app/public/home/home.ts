@@ -22,7 +22,8 @@ export class Home {
 
   protected readonly q = signal('');
   protected readonly tag = signal<string | null>(null);
-  protected readonly view = signal<FeedView>(readPref(VIEW_KEY) === 'compact' ? 'compact' : 'edition');
+  // 'compact' is the old name for List.
+  protected readonly view = signal<FeedView>(['list', 'compact'].includes(readPref(VIEW_KEY) ?? '') ? 'list' : 'cards');
   private readonly debouncedQ = toSignal(toObservable(this.q).pipe(debounceTime(300), distinctUntilChanged()), { initialValue: '' });
 
   protected readonly feed = httpResource<FeedResponse>(() => feedUrl({ days: 7, tag: this.tag(), q: this.debouncedQ() }));

@@ -54,15 +54,34 @@ describe('Home', () => {
     expect(el.querySelector('.lead h3')?.textContent).toContain('Title a');
   });
 
-  it('switches to compact view and remembers it', async () => {
+  it('labels the views Cards and List', async () => {
+    const fixture = await render();
+    const labels = [...(fixture.nativeElement as HTMLElement).querySelectorAll('.view label')].map((l) => l.textContent?.trim());
+    expect(labels).toEqual(['Cards', 'List']);
+  });
+
+  it('shows every story as a card in Cards view', async () => {
     const fixture = await render();
     const el: HTMLElement = fixture.nativeElement;
-    (el.querySelector('input[value="compact"]') as HTMLInputElement).click();
+    expect(el.querySelectorAll('.card').length).toBe(3);
+    expect(el.querySelector('.lead.card')).not.toBeNull();
+  });
+
+  it('switches to List view and remembers it', async () => {
+    const fixture = await render();
+    const el: HTMLElement = fixture.nativeElement;
+    (el.querySelector('input[value="list"]') as HTMLInputElement).click();
     fixture.detectChanges();
     await fixture.whenStable();
-    expect(localStorage.getItem('kmu.view')).toBe('compact');
+    expect(localStorage.getItem('kmu.view')).toBe('list');
     expect(el.querySelectorAll('.row--compact').length).toBe(3);
     expect(el.querySelector('.lead')).toBeNull();
+  });
+
+  it('reads the old "compact" preference as List', async () => {
+    localStorage.setItem('kmu.view', 'compact');
+    const fixture = await render();
+    expect((fixture.nativeElement as HTMLElement).querySelector('.lead')).toBeNull();
   });
 
   it('shows a retry message when the feed fails', async () => {

@@ -4,7 +4,7 @@ Developer news that matters, gathered every morning. Every day at 04:00 the serv
 updates, merges reports of the same story from different sites, writes a short summary with Gemini, and publishes it.
 You manage everything from a private admin panel.
 
-- **Site:** a daily edition (lead story + rows) or compact list, topic filters, search, light and dark themes.
+- **Site:** Cards view (lead story + story cards) or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
 - **Admin (`/admin`):** posts (create, edit, publish, hide, delete) with a rich-text editor, sources (RSS or any web
   page via CSS selectors, with a test fetch), and gather runs (run now, live progress, history and errors).

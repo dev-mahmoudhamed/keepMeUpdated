@@ -10,7 +10,7 @@ import { sourcesLabel, timeOf } from '../feed-utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @let p = post();
-    <a [routerLink]="['/p', p.slug]" class="row" [class.row--compact]="compact()">
+    <a [routerLink]="['/p', p.slug]" class="row" [class.card]="!compact()" [class.row--compact]="compact()">
       <time class="time mono" [attr.datetime]="p.publishedAt">{{ time(p.publishedAt) }}</time>
       <span class="title">{{ p.title }}</span>
       <span class="meta">
@@ -38,14 +38,17 @@ import { sourcesLabel, timeOf } from '../feed-utils';
         '. meta';
       column-gap: var(--s-3);
       row-gap: var(--s-1);
-      padding: var(--s-4) var(--s-3);
-      margin-inline: calc(var(--s-3) * -1);
-      border-radius: var(--radius);
+      padding: var(--s-4);
       text-decoration: none;
+    }
+    .row--compact {
+      margin-inline: calc(var(--s-3) * -1);
+      padding-inline: var(--s-3);
+      border-radius: var(--radius);
       transition: background-color var(--dur) var(--ease);
     }
-    .row:hover {
-      background: var(--paper-raised);
+    .row--compact:hover {
+      background: var(--paper);
     }
     .row:hover .title {
       text-decoration: underline;

@@ -5,7 +5,7 @@ import type { DayGroup } from '../../../../shared/models';
 import { formatDay, pickLead, sourcesLabel, timeOf } from '../feed-utils';
 import { PostRow } from '../post-row/post-row';
 
-export type FeedView = 'edition' | 'compact';
+export type FeedView = 'cards' | 'list';
 
 @Component({
   selector: 'app-day-section',
@@ -18,12 +18,12 @@ export type FeedView = 'edition' | 'compact';
         <p class="count mono">{{ day().posts.length }} {{ day().posts.length === 1 ? 'update' : 'updates' }}</p>
       </header>
 
-      @if (view() === 'edition') {
+      @if (view() === 'cards') {
         <div class="edition" [class.edition--solo]="!split().rest.length">
           @if (split().lead; as lead) {
-            <article class="lead">
+            <article class="lead card">
               <h3>
-                <a [routerLink]="['/p', lead.slug]">{{ lead.title }}</a>
+                <a class="stretched" [routerLink]="['/p', lead.slug]">{{ lead.title }}</a>
               </h3>
               @if (lead.tldr) {
                 <p class="lead-tldr"><span class="marker">{{ lead.tldr }}</span></p>
@@ -44,7 +44,7 @@ export type FeedView = 'edition' | 'compact';
             </article>
           }
           @if (split().rest.length) {
-            <ul class="rows" role="list">
+            <ul class="rows rows--cards" role="list">
               @for (post of split().rest; track post.id) {
                 <li><app-post-row [post]="post" /></li>
               }
@@ -52,7 +52,7 @@ export type FeedView = 'edition' | 'compact';
           }
         </div>
       } @else {
-        <ul class="rows rows--compact" role="list">
+        <ul class="rows rows--compact card" role="list">
           @for (post of day().posts; track post.id) {
             <li><app-post-row [post]="post" [compact]="true" /></li>
           }
@@ -94,7 +94,7 @@ export type FeedView = 'edition' | 'compact';
       max-width: var(--measure);
     }
     .lead {
-      padding-top: var(--s-3);
+      padding: var(--s-6);
     }
     .lead h3 {
       font-size: var(--step-4);
@@ -141,23 +141,32 @@ export type FeedView = 'edition' | 'compact';
       margin: 0;
       padding: 0;
     }
-    .rows > li + li {
-      border-top: 1px solid var(--rule);
+    .rows--cards {
+      display: grid;
+      gap: var(--s-3);
+    }
+    .rows--compact {
+      padding: var(--s-1) var(--s-4);
     }
     .rows--compact > li + li {
-      border-top-style: dotted;
+      border-top: 1px solid var(--rule);
     }
     @media (max-width: 960px) {
       .edition {
         grid-template-columns: minmax(0, 1fr);
-        gap: var(--s-5);
+        gap: var(--s-3);
+      }
+    }
+    @media (max-width: 560px) {
+      .lead {
+        padding: var(--s-5) var(--s-4);
       }
     }
   `,
 })
 export class DaySection {
   readonly day = input.required<DayGroup>();
-  readonly view = input<FeedView>('edition');
+  readonly view = input<FeedView>('cards');
 
   protected readonly split = computed(() => pickLead(this.day().posts));
   protected readonly title = computed(() => formatDay(this.day().date));

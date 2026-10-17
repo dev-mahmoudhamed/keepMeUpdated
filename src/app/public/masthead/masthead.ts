@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideMonitor, LucideMoon, LucideSun } from '@lucide/angular';
+import { LucideMoon, LucideSun } from '@lucide/angular';
 import { ThemeService } from '../../core/theme.service';
 
-const NEXT_LABEL = { system: 'Switch to light theme', light: 'Switch to dark theme', dark: 'Use system theme' } as const;
+const NEXT_LABEL = { light: 'Switch to dark theme', dark: 'Switch to light theme' } as const;
 
 @Component({
   selector: 'app-masthead',
-  imports: [RouterLink, LucideSun, LucideMoon, LucideMonitor],
+  imports: [RouterLink, LucideSun, LucideMoon],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <header class="masthead wrap">
@@ -15,17 +15,11 @@ const NEXT_LABEL = { system: 'Switch to light theme', light: 'Switch to dark the
       <p class="tagline">Developer news that matters, gathered every morning.</p>
       <div class="end">
         <time class="today" [attr.datetime]="isoToday">{{ today }}</time>
-        <button type="button" class="btn btn--ghost btn--icon" (click)="theme.cycle()" [attr.aria-label]="nextLabel()" [title]="nextLabel()">
-          @switch (theme.mode()) {
-            @case ('light') {
-              <svg lucideSun [size]="18" aria-hidden="true"></svg>
-            }
-            @case ('dark') {
-              <svg lucideMoon [size]="18" aria-hidden="true"></svg>
-            }
-            @default {
-              <svg lucideMonitor [size]="18" aria-hidden="true"></svg>
-            }
+        <button type="button" class="btn btn--ghost btn--icon" (click)="theme.toggle()" [attr.aria-label]="nextLabel()" [title]="nextLabel()">
+          @if (theme.mode() === 'light') {
+            <svg lucideMoon [size]="18" aria-hidden="true"></svg>
+          } @else {
+            <svg lucideSun [size]="18" aria-hidden="true"></svg>
           }
         </button>
       </div>
