@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>V8</title><link href="https://v8.test/"/>
+<entry><title>Faster JSON</title><link href="https://v8.test/blog/json"/><updated>2026-10-16T08:00:00Z</updated><summary>JSON.parse got faster.</summary></entry>
+<entry><title>Maglev tiers</title><link href="https://v8.test/blog/maglev"/><updated>2026-10-14T08:00:00Z</updated><content type="html">&lt;p&gt;New tier.&lt;/p&gt;</content></entry>
+</feed>
