@@ -4,7 +4,8 @@ import * as cheerio from 'cheerio';
 export function extractArticleText(html: string, maxChars: number): string {
   const $ = cheerio.load(html);
   $('script, style, noscript, nav, header, footer, aside, form, iframe, svg').remove();
-  const root = [$('article').first(), $('main').first(), $('body').first()].find((el) => el.length) ?? $.root();
+  const candidates: cheerio.Cheerio<any>[] = [$('article').first(), $('main').first(), $('body').first()];
+  const root = candidates.find((el) => el.length) ?? $.root();
   const blocks = root
     .find('p, li, h2, h3')
     .toArray()
