@@ -66,3 +66,13 @@ it('fetchSource dispatches on type', async () => {
   expect(await fetchSource(htmlSource, httpReturning(fixture('listing.html')))).toHaveLength(2);
   expect(await fetchSource(src(), httpReturning(fixture('feed.rss.xml')))).toHaveLength(3);
 });
+
+it('names the project when a release feed titles items with a bare version', async () => {
+  const atom = `<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Release notes</title>
+<entry><title>22.2.3</title><link href="https://github.com/angular/angular-cli/releases/tag/22.2.3"/><updated>2026-10-15T00:00:00Z</updated></entry>
+<entry><title>v10.0.0-rc.2</title><link href="https://github.com/dotnet/runtime/releases/tag/v10.0.0-rc.2"/><updated>2026-10-13T00:00:00Z</updated></entry>
+<entry><title>Big feature release</title><link href="https://github.com/x/y/releases/tag/z"/><updated>2026-10-13T00:00:00Z</updated></entry>
+</feed>`;
+  const items = await fetchRss(src({ name: 'Angular CLI releases' }), httpReturning(atom));
+  expect(items.map((i) => i.title)).toEqual(['Angular CLI 22.2.3', 'Angular CLI v10.0.0-rc.2', 'Big feature release']);
+});
