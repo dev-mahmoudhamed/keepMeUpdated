@@ -21,6 +21,11 @@ it('prefers API_PORT over PORT so the dev server can own PORT', () => {
   expect(loadConfig({ PORT: '4201', API_PORT: '3000' }).port).toBe(3000);
 });
 
+it('reads sources.md from the project root by default', () => {
+  expect(loadConfig({}).sourcesFile).toMatch(/sources\.md$/);
+  expect(loadConfig({ SOURCES_FILE: 'C:/x/my.md' }).sourcesFile).toBe('C:/x/my.md');
+});
+
 it('listens on localhost only unless HOST says otherwise', () => {
   expect(loadConfig({}).host).toBe('127.0.0.1');
   expect(loadConfig({ HOST: '0.0.0.0' }).host).toBe('0.0.0.0');

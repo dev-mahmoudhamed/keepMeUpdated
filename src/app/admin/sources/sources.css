@@ -16,6 +16,26 @@ h1 {
   margin-top: var(--s-1);
 }
 
+.group-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: var(--s-5) 0 var(--s-2);
+}
+
+.group-title .mono {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.sub code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
 .list {
   list-style: none;
   margin: 0;

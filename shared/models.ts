@@ -23,6 +23,8 @@ export interface Source {
   selectors?: SourceSelectors;
   defaultTags: string[];
   enabled: boolean;
+  /** Section heading in sources.md, e.g. "Angular" or ".NET". */
+  group?: string;
   lastFetchedAt?: string;
   lastError?: string;
   lastItemCount?: number;

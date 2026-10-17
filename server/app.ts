@@ -21,6 +21,8 @@ export interface AppDeps {
   scheduler: { nextRunAt(): Date | null };
   http: HttpGet;
   makeSummarizer: () => AiClient | undefined;
+  /** Rewrites sources.md after admin changes. */
+  onSourcesChanged?: () => Promise<void>;
 }
 
 export function createApp(deps: AppDeps): Express {

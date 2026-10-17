@@ -10,11 +10,15 @@ import { GatherService } from './gather/pipeline';
 import { startScheduler } from './gather/scheduler';
 import { JsonStore } from './store/json-store';
 import { createInitialDb } from './store/seed';
+import { SourcesFile } from './store/sources-file';
 
 async function main() {
   const config = loadConfig(process.env);
   const dbPath = join(config.dataDir, 'db.json');
   const store = await JsonStore.open(dbPath, createInitialDb);
+  const sourcesFile = new SourcesFile(config.sourcesFile, store);
+  await sourcesFile.load();
+  sourcesFile.watch();
 
   const gemini = (budget: AiBudget) =>
     config.geminiApiKey ? new GeminiAiClient({ apiKey: config.geminiApiKey, model: config.geminiModel, budget }) : undefined;
@@ -34,6 +38,7 @@ async function main() {
     scheduler,
     http: httpGet,
     makeSummarizer: () => gemini(new AiBudget(2)),
+    onSourcesChanged: () => sourcesFile.save(),
   });
 
   if (config.usingDefaultPassword) {

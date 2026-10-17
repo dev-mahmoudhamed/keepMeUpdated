@@ -74,6 +74,25 @@ describe('Sources', () => {
     expect(el.querySelector('.preview')?.textContent).toContain('Bun 2.0');
   });
 
+  it('saves the section a new source belongs to', async () => {
+    const { fixture, el, type } = await render();
+    (el.querySelector('button[data-action="add"]') as HTMLButtonElement).click();
+    fixture.detectChanges();
+    type('#src-name', 'Bun');
+    type('#src-site', 'https://bun.sh');
+    type('#src-feed', 'https://bun.sh/rss.xml');
+    type('#src-group', 'JavaScript');
+    (el.querySelector('.drawer form') as HTMLFormElement).dispatchEvent(new Event('submit'));
+    const req = http.expectOne('/api/admin/sources');
+    expect(req.request.method).toBe('POST');
+    expect(req.request.body.group).toBe('JavaScript');
+  });
+
+  it('groups sources under their section headings', async () => {
+    const { el } = await render();
+    expect([...el.querySelectorAll('.group-title')].map((h) => h.textContent?.replace(/\s+/g, ' ').trim())).toEqual(['Other 2']);
+  });
+
   it('toggles a source on and off', async () => {
     const { el } = await render();
     (el.querySelector('.source-row [role="switch"]') as HTMLButtonElement).click();

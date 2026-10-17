@@ -26,6 +26,7 @@ const sourceBody = z
       .optional(),
     defaultTags: tagList(z, 6).default([]),
     enabled: z.boolean().default(true),
+    group: z.string().trim().max(60).optional(),
   })
   .refine((s) => s.type === 'rss' || s.selectors, { message: 'HTML sources need item, title and link selectors', path: ['selectors'] });
 
@@ -41,10 +42,25 @@ const toSource = (id: string, body: SourceInput, prev?: Source): Source => ({
   ...(body.type === 'html' && body.selectors ? { selectors: body.selectors } : { selectors: undefined }),
   defaultTags: body.defaultTags,
   enabled: body.enabled,
+  group: body.group || prev?.group || undefined,
 });
 
-export function adminSourcesRouter({ store, http }: { store: JsonStore; http: HttpGet }): Router {
+export interface AdminSourcesDeps {
+  store: JsonStore;
+  http: HttpGet;
+  /** Called after every change so sources.md can be rewritten. */
+  onSourcesChanged?: () => Promise<void>;
+}
+
+export function adminSourcesRouter({ store, http, onSourcesChanged }: AdminSourcesDeps): Router {
   const router = Router();
+  const changed = async () => {
+    try {
+      await onSourcesChanged?.();
+    } catch (err) {
+      console.error('[sources] could not update sources.md:', err);
+    }
+  };
 
   router.get('/', (_req, res) => {
     res.json(store.read().sources);
@@ -66,6 +82,7 @@ export function adminSourcesRouter({ store, http }: { store: JsonStore; http: Ht
     if (!body) return;
     const source = toSource(newId(), body);
     await store.update((db) => db.sources.push(source));
+    await changed();
     res.status(201).json(source);
   });
 
@@ -78,8 +95,12 @@ export function adminSourcesRouter({ store, http }: { store: JsonStore; http: Ht
       db.sources[i] = toSource(db.sources[i].id, body, db.sources[i]);
       return db.sources[i];
     });
-    if (!updated) res.status(404).json({ error: 'Not found' });
-    else res.json(updated);
+    if (!updated) {
+      res.status(404).json({ error: 'Not found' });
+      return;
+    }
+    await changed();
+    res.json(updated);
   });
 
   router.delete('/:id', async (req, res) => {
@@ -87,8 +108,12 @@ export function adminSourcesRouter({ store, http }: { store: JsonStore; http: Ht
       const i = db.sources.findIndex((s) => s.id === req.params.id);
       return i === -1 ? false : (db.sources.splice(i, 1), true);
     });
-    if (!removed) res.status(404).json({ error: 'Not found' });
-    else res.status(204).end();
+    if (!removed) {
+      res.status(404).json({ error: 'Not found' });
+      return;
+    }
+    await changed();
+    res.status(204).end();
   });
 
   return router;

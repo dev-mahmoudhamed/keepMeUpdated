@@ -56,11 +56,13 @@ describe('API', () => {
   let store: JsonStore;
   let gather: FakeGather;
   let aiFactory: (() => AiClient) | undefined;
+  let sourcesChanged: number;
 
   beforeEach(async () => {
     store = await JsonStore.open(join(await mkdtemp(join(tmpdir(), 'kmu-api-')), 'db.json'), db);
     gather = new FakeGather();
     aiFactory = undefined;
+    sourcesChanged = 0;
     app = createApp({
       config,
       store,
@@ -68,6 +70,9 @@ describe('API', () => {
       scheduler: { nextRunAt: () => new Date('2026-10-18T04:00:00Z') },
       http,
       makeSummarizer: () => aiFactory?.(),
+      onSourcesChanged: async () => {
+        sourcesChanged++;
+      },
     });
   });
 
@@ -214,10 +219,21 @@ describe('API', () => {
         .send({ name: 'New', siteUrl: 'https://n.test', type: 'rss', feedUrl: 'https://n.test/feed', defaultTags: ['N'], enabled: true })
         .expect(201);
       expect(created.body.defaultTags).toEqual(['n']);
+      expect(sourcesChanged).toBe(1);
       await agent.put(`/api/admin/sources/${created.body.id}`).send({ ...created.body, enabled: false }).expect(200);
       expect(store.read().sources.find((s) => s.id === created.body.id)!.enabled).toBe(false);
       await agent.delete(`/api/admin/sources/${created.body.id}`).expect(204);
       expect(store.read().sources).toHaveLength(1);
+      expect(sourcesChanged).toBe(3);
+    });
+
+    it('keeps the section a source belongs to', async () => {
+      const agent = await login();
+      const res = await agent
+        .post('/api/admin/sources')
+        .send({ name: 'N', siteUrl: 'https://n.test', type: 'rss', feedUrl: 'https://n.test/feed', defaultTags: [], enabled: true, group: 'Angular' })
+        .expect(201);
+      expect(res.body.group).toBe('Angular');
     });
 
     it('requires selectors for html sources', async () => {

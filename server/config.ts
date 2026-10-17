@@ -12,6 +12,8 @@ export interface Config {
   sessionSecret: string;
   gatherCron: string;
   dataDir: string;
+  /** Markdown list of news sources, kept in sync with the admin panel. */
+  sourcesFile: string;
   isProd: boolean;
   /** True while ADMIN_PASSWORD is still the value published in .env.example. */
   usingDefaultPassword: boolean;
@@ -40,6 +42,7 @@ export function loadConfig(env: NodeJS.ProcessEnv): Config {
     sessionSecret,
     gatherCron: env['GATHER_CRON']?.trim() || '0 4 * * *',
     dataDir: env['DATA_DIR']?.trim() || join(process.cwd(), 'data'),
+    sourcesFile: env['SOURCES_FILE']?.trim() || join(process.cwd(), 'sources.md'),
     isProd: env['NODE_ENV'] === 'production',
     usingDefaultPassword: (env['ADMIN_PASSWORD'] || DEFAULT_PASSWORD) === DEFAULT_PASSWORD,
   };

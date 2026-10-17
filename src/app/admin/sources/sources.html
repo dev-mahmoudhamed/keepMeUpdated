@@ -1,7 +1,7 @@
 <header class="head">
   <div>
     <h1>Sources</h1>
-    <p class="sub">The sites the daily gather reads. RSS feeds are the most reliable.</p>
+    <p class="sub">The sites the daily gather reads. This list is also saved in <code>sources.md</code>, so you can edit it there too.</p>
   </div>
   <button type="button" class="btn btn--primary" data-action="add" (click)="open('new')">
     <svg lucidePlus [size]="18" aria-hidden="true"></svg>
@@ -22,8 +22,10 @@
     <p>Paste an RSS feed link, or set CSS selectors for a site without one.</p>
   </div>
 } @else {
+  @for (g of groups(); track g.name) {
+  <h2 class="group-title">{{ g.name }} <span class="mono">{{ g.sources.length }}</span></h2>
   <ul class="list" role="list">
-    @for (s of rows(); track s.id) {
+    @for (s of g.sources; track s.id) {
       <li class="source-row" [class.off]="!s.enabled">
         <button
           type="button"
@@ -63,6 +65,7 @@
       </li>
     }
   </ul>
+  }
 }
 
 @if (editing(); as current) {
@@ -134,6 +137,17 @@
           </div>
         </fieldset>
       }
+
+      <div class="field">
+        <label for="src-group">Section</label>
+        <input id="src-group" class="input" formControlName="group" placeholder="Angular" list="src-groups" />
+        <datalist id="src-groups">
+          @for (g of groups(); track g.name) {
+            <option [value]="g.name"></option>
+          }
+        </datalist>
+        <p class="hint">The heading it's listed under in sources.md.</p>
+      </div>
 
       <div class="field">
         <label for="src-tags">Default tags</label>

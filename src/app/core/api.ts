@@ -41,6 +41,8 @@ export interface SourceInput {
   selectors?: SourceSelectors;
   defaultTags: string[];
   enabled: boolean;
+  /** Section in sources.md. */
+  group?: string;
 }
 
 export interface PreviewItem {

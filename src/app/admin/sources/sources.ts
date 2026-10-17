@@ -23,6 +23,16 @@ export class Sources {
 
   protected readonly sources = httpResource<Source[]>(() => '/api/admin/sources');
   protected readonly rows = computed(() => (this.sources.hasValue() ? this.sources.value() : []));
+  /** Sources grouped by their sources.md section, in file order. */
+  protected readonly groups = computed(() => {
+    const map = new Map<string, Source[]>();
+    for (const s of this.rows()) {
+      const name = s.group?.trim() || 'Other';
+      if (!map.has(name)) map.set(name, []);
+      map.get(name)!.push(s);
+    }
+    return [...map].map(([name, sources]) => ({ name, sources }));
+  });
 
   /** null = drawer closed, 'new' = adding, otherwise the source being edited. */
   protected readonly editing = signal<Source | 'new' | null>(null);
@@ -40,6 +50,7 @@ export class Sources {
     type: new FormControl<'rss' | 'html'>('rss', { nonNullable: true }),
     feedUrl: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.pattern(URL_PATTERN)] }),
     tags: new FormControl('', { nonNullable: true }),
+    group: new FormControl('', { nonNullable: true, validators: [Validators.maxLength(60)] }),
     enabled: new FormControl(true, { nonNullable: true }),
     selectors: new FormGroup({
       item: new FormControl('', { nonNullable: true }),
@@ -75,6 +86,7 @@ export class Sources {
       type: s?.type ?? 'rss',
       feedUrl: s?.feedUrl ?? '',
       tags: s?.defaultTags.join(', ') ?? '',
+      group: s?.group ?? '',
       enabled: s?.enabled ?? true,
       selectors: {
         item: s?.selectors?.item ?? '',
@@ -109,6 +121,7 @@ export class Sources {
         .map((t) => t.trim().toLowerCase().replace(/^#/, ''))
         .filter(Boolean),
       enabled: v.enabled,
+      ...(v.group.trim() ? { group: v.group.trim() } : {}),
       ...(v.type === 'html'
         ? {
             selectors: {

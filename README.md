@@ -34,6 +34,7 @@ Then edit `.env`:
 | `SESSION_SECRET` | Any long random string. Signs the login cookie. |
 | `GATHER_CRON` | When the daily gather runs, in local time. Default `0 4 * * *` (04:00). |
 | `PORT` | Port for `npm start`. Default 3000. |
+| `SOURCES_FILE` | Path to the sources list. Default `sources.md` in the project root. |
 | `HOST` | `127.0.0.1` (default) keeps the site and admin private to this computer. Use `0.0.0.0` to open it to your network, after changing the admin password. |
 
 ## Run it
@@ -77,20 +78,26 @@ judge relevance without AI), showing the feed's own description as the summary.
 
 ## Sources
 
-Twelve developer feeds are added on first start (Angular, React, Next.js, Node.js, TypeScript, GitHub Changelog, Chrome
-for Developers, V8, MDN, Deno, Bun, Hacker News 200+ points). Manage them in **Admin → Sources**.
+The news sites live in [sources.md](sources.md): one markdown table per section (Angular, .NET, Cross-stack). Edit the
+file or use **Admin → Sources**; they stay in sync. The server reloads the file when you save it, and rewrites it when
+you change sources in the admin panel.
 
-For a site without a feed, choose **Web page with CSS selectors**:
+The list was built from the research in [docs/resources](docs/resources), keeping only feeds that were checked to work.
+High-volume community feeds (DEV tags, .NET Ramblings, Telerik) are listed but switched off; turn them on once a Gemini
+key is set, since the AI filters out the noise.
 
-| Field | Example | Meaning |
+For a site without a feed, fill in the **Selectors** column (or choose **Web page with CSS selectors** in the admin):
+
+| Selector | Example | Meaning |
 |---|---|---|
-| Each item | `article.post` | One match per story on the page |
-| Title | `h2` | Inside the item |
-| Link | `a@href` | `@attr` reads an attribute instead of the text |
-| Date | `time@datetime` | Optional |
-| Summary | `.excerpt` | Optional |
+| `item` | `article.post` | One match per story on the page |
+| `title` | `h2` | Inside the item |
+| `link` | `a@href` | `@attr` reads an attribute instead of the text |
+| `date` | `time@datetime` | Optional |
+| `summary` | `.excerpt` | Optional |
 
-Use **Test fetch** to preview what it finds before saving.
+In sources.md that's written as `item=article.post; title=h2; link=a@href`. Use **Test fetch** in the admin to preview
+what it finds.
 
 ## Data
 
