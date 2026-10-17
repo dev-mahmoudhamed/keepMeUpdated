@@ -1,0 +1,85 @@
+# Daily news gather. Also started from Admin → Gather runs (Run gather now / Dry run / Re-summarize).
+name: Gather news
+
+on:
+  schedule:
+    # 03:00 UTC = 04:00 UK summer time (03:00 in winter). GitHub may start scheduled runs a little late.
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to run
+        type: choice
+        options:
+          - gather
+          - resummarize
+          - dry-run
+        default: gather
+      post_id:
+        description: Post id (only for resummarize)
+        type: string
+        required: false
+
+concurrency:
+  group: gather
+  cancel-in-progress: false
+
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      MODE: ${{ inputs.mode || 'gather' }}
+      BRANCH: ${{ github.event.repository.default_branch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run ${{ env.MODE }}
+        id: run
+        # Inputs go through env vars, never straight into the shell command.
+        run: npm run gather -- --mode "$MODE" --post "$POST_ID"
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          POST_ID: ${{ inputs.post_id }}
+
+      # Saved even when the run reports a failure, so source errors show up in Admin → Sources.
+      - name: Commit content
+        if: ${{ !cancelled() && env.MODE != 'dry-run' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content
+          if git diff --cached --quiet; then
+            echo "No content changes."
+            exit 0
+          fi
+          git commit -m "gather: $(date -u +%F) ($MODE)"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH"; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push the gathered news: the branch kept changing or conflicted with an admin edit. Run the gather again."
+          exit 1
+
+  deploy:
+    needs: gather
+    if: ${{ inputs.mode != 'dry-run' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml

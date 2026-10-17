@@ -1,0 +1,64 @@
+# Builds the static site from content/ and publishes it to GitHub Pages.
+# Runs on every push (admin edits are commits), on demand, and after each gather.
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - 'design-system/**'
+      - 'README.md'
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      # Always build the latest branch tip, so a run called by the gather includes the gather's commit.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate site data
+        run: npm run build:data
+
+      - name: Build site
+        run: npx ng build --base-href "/${{ github.event.repository.name }}/"
+
+      # GitHub Pages serves 404.html for unknown paths; the app then routes deep links itself.
+      - name: SPA fallback
+        run: cp dist/keepMeUpdated/browser/index.html dist/keepMeUpdated/browser/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/keepMeUpdated/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
