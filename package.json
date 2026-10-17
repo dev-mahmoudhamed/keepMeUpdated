@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "dev": "concurrently -k -n api,web -c green,yellow \"cross-env API_PORT=3000 tsx watch server/index.ts\" \"ng serve\"",
-    "build": "ng build",
-    "start": "cross-env NODE_ENV=production tsx server/index.ts",
+    "dev": "npm run build:data && ng serve",
+    "build": "npm run build:data && ng build",
     "test": "ng test",
-    "test:scripts": "vitest run -c vitest.scripts.config.ts"
+    "test:scripts": "vitest run -c vitest.scripts.config.ts",
+    "gather": "tsx scripts/gather.ts",
+    "build:data": "tsx scripts/build-data.ts"
   },
   "private": true,
   "packageManager": "npm@11.19.0",

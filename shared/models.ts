@@ -114,6 +114,22 @@ export type PostSummary = Pick<
   'id' | 'slug' | 'title' | 'tldr' | 'tags' | 'relevance' | 'publishedAt' | 'aiPending'
 > & { sourceCount: number };
 
+/** public/data/posts.json — every published post, newest first. */
+export interface FeedIndex {
+  generatedAt: string;
+  posts: PostSummary[];
+}
+
+/** public/data/site.json — where the admin panel finds the repository. */
+export interface SiteConfig {
+  /** owner/name */
+  repo: string;
+  branch: string;
+  gatherWorkflow: string;
+  /** Cron (UTC) of the daily gather. */
+  schedule: string;
+}
+
 export interface DayGroup {
   /** YYYY-MM-DD in server local time */
   date: string;
