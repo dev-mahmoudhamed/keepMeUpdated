@@ -116,6 +116,18 @@ export class AdminApi {
   }
 }
 
+export function toPostInput(p: Post): PostInput {
+  return {
+    title: p.title,
+    slug: p.slug,
+    tldr: p.tldr,
+    bodyHtml: p.bodyHtml,
+    tags: p.tags,
+    status: p.status,
+    sources: p.sources,
+  };
+}
+
 /** Pull the server's `{ error }` message out of an HttpErrorResponse. */
 export function errorMessage(err: unknown, fallback = 'Something went wrong. Try again.'): string {
   const body = (err as { error?: unknown })?.error;

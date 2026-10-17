@@ -1,0 +1,114 @@
+<header class="head">
+  <div>
+    <h1>Posts</h1>
+    <p class="sub">Everything gathered automatically, plus posts you write yourself.</p>
+  </div>
+  <a routerLink="/admin/posts/new" class="btn btn--primary">
+    <svg lucidePlus [size]="18" aria-hidden="true"></svg>
+    New post
+  </a>
+</header>
+
+<div class="filters">
+  <label class="field grow">
+    <span class="visually-hidden">Search posts</span>
+    <input class="input" type="search" placeholder="Search by title or tag" [value]="q()" (input)="q.set($any($event.target).value)" />
+  </label>
+  <label class="field">
+    <span class="visually-hidden">Status</span>
+    <select class="input" [value]="status()" (change)="status.set($any($event.target).value)">
+      <option value="">All statuses</option>
+      <option value="published">Published</option>
+      <option value="draft">Draft</option>
+      <option value="hidden">Hidden</option>
+    </select>
+  </label>
+</div>
+
+@if (posts.error()) {
+  <div class="empty">
+    <p>Posts didn't load.</p>
+    <button type="button" class="btn" (click)="posts.reload()">Try again</button>
+  </div>
+} @else if (posts.isLoading() && !rows().length) {
+  <div class="skeleton" style="height: 240px"></div>
+} @else if (!rows().length) {
+  <div class="empty">
+    @if (q() || status()) {
+      <p>No posts match these filters.</p>
+    } @else {
+      <h2>Write the first post</h2>
+      <p>Posts also appear here after each gather run.</p>
+      <a routerLink="/admin/posts/new" class="btn btn--primary">New post</a>
+    }
+  </div>
+} @else {
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Status</th>
+          <th scope="col" class="hide-sm">Origin</th>
+          <th scope="col" class="num hide-sm">Sources</th>
+          <th scope="col" class="hide-sm">Updated</th>
+          <th scope="col"><span class="visually-hidden">Actions</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (post of rows(); track post.id) {
+          <tr>
+            <td class="title">
+              <a [routerLink]="['/admin/posts', post.id]">{{ post.title }}</a>
+              @if (post.aiPending) {
+                <span class="pending">summary pending</span>
+              }
+            </td>
+            <td><span class="pill" [attr.data-status]="post.status">{{ label[post.status] }}</span></td>
+            <td class="muted hide-sm">{{ post.origin === 'auto' ? 'Gathered' : 'Written' }}</td>
+            <td class="num mono hide-sm">{{ post.sources.length }}</td>
+            <td class="muted mono hide-sm">{{ date(post.updatedAt) }}</td>
+            <td class="actions">
+              @if (confirming() === post.id) {
+                <span class="confirm" role="group" aria-label="Confirm delete">
+                  <span>Delete this post?</span>
+                  <button type="button" class="btn btn--danger" data-action="confirm-delete" (click)="remove(post)" [attr.aria-busy]="busy() === post.id">Delete</button>
+                  <button type="button" class="btn btn--ghost" (click)="confirming.set(null)">Cancel</button>
+                </span>
+              } @else {
+                <a class="btn btn--ghost btn--icon" [routerLink]="['/admin/posts', post.id]" [attr.aria-label]="'Edit ' + post.title" title="Edit">
+                  <svg lucidePencil [size]="16" aria-hidden="true"></svg>
+                </a>
+                <button
+                  type="button"
+                  class="btn btn--ghost btn--icon"
+                  data-action="toggle"
+                  (click)="togglePublish(post)"
+                  [attr.aria-busy]="busy() === post.id"
+                  [attr.aria-label]="(post.status === 'published' ? 'Unpublish ' : 'Publish ') + post.title"
+                  [title]="post.status === 'published' ? 'Unpublish' : 'Publish'"
+                >
+                  @if (post.status === 'published') {
+                    <svg lucideEyeOff [size]="16" aria-hidden="true"></svg>
+                  } @else {
+                    <svg lucideEye [size]="16" aria-hidden="true"></svg>
+                  }
+                </button>
+                <button
+                  type="button"
+                  class="btn btn--ghost btn--icon btn--danger"
+                  data-action="delete"
+                  (click)="confirming.set(post.id)"
+                  [attr.aria-label]="'Delete ' + post.title"
+                  title="Delete"
+                >
+                  <svg lucideTrash2 [size]="16" aria-hidden="true"></svg>
+                </button>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}

@@ -1,0 +1,152 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+.sub {
+  color: var(--ink-muted);
+  margin-top: var(--s-1);
+}
+
+.filters {
+  display: flex;
+  gap: var(--s-3);
+  margin: var(--s-5) 0 var(--s-4);
+  flex-wrap: wrap;
+}
+
+.grow {
+  flex: 1 1 260px;
+  max-width: 420px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--rule);
+}
+
+td {
+  padding: var(--s-2) var(--s-4);
+  border-bottom: 1px solid var(--rule);
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: var(--paper);
+}
+
+.title {
+  min-width: 260px;
+}
+
+.title a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.title a:hover {
+  text-decoration: underline;
+}
+
+.pending {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.num {
+  text-align: right;
+}
+
+.muted {
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.pill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.pill[data-status='published'] {
+  background: var(--accent-wash);
+  border-color: transparent;
+  color: var(--accent);
+}
+
+.pill[data-status='hidden'] {
+  border-style: dashed;
+  color: var(--ink-muted);
+}
+
+.actions {
+  white-space: nowrap;
+  text-align: right;
+  width: 1%;
+}
+
+.actions .btn {
+  vertical-align: middle;
+}
+
+.confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.empty {
+  display: grid;
+  gap: var(--s-3);
+  justify-items: start;
+  padding: var(--s-7) var(--s-5);
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius);
+}
+
+.empty h2 {
+  font-size: var(--step-2);
+}
+
+@media (max-width: 720px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .title {
+    min-width: 0;
+  }
+}
