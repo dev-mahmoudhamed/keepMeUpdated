@@ -1,14 +1,16 @@
-import { HttpClient, httpResource } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, computed, effect, inject, signal, untracked } from '@angular/core';
+import { httpResource } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, computed, effect, signal, untracked } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { LucideSearch, LucideX } from '@lucide/angular';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import type { DayGroup, FeedResponse, TagCount } from '../../../../shared/models';
-import { feedUrl, tagsUrl } from '../../core/api';
+import { groupSummaries, summaryTagCounts } from '../../../../shared/feed';
+import type { FeedIndex } from '../../../../shared/models';
+import { dataUrl } from '../../core/api';
 import { readPref, writePref } from '../../core/prefs';
 import { DaySection, type FeedView } from '../day-section/day-section';
 
 const VIEW_KEY = 'kmu.view';
+const PAGE_DAYS = 7;
 
 @Component({
   selector: 'app-home',
@@ -18,40 +20,31 @@ const VIEW_KEY = 'kmu.view';
   styleUrl: './home.css',
 })
 export class Home {
-  private readonly http = inject(HttpClient);
-
   protected readonly q = signal('');
   protected readonly tag = signal<string | null>(null);
   // 'compact' is the old name for List.
   protected readonly view = signal<FeedView>(['list', 'compact'].includes(readPref(VIEW_KEY) ?? '') ? 'list' : 'cards');
   private readonly debouncedQ = toSignal(toObservable(this.q).pipe(debounceTime(300), distinctUntilChanged()), { initialValue: '' });
 
-  protected readonly feed = httpResource<FeedResponse>(() => feedUrl({ days: 7, tag: this.tag(), q: this.debouncedQ() }));
-  protected readonly tags = httpResource<TagCount[]>(() => tagsUrl(), { defaultValue: [] });
+  /** Every published post of the last 30 days, as one static file. */
+  protected readonly index = httpResource<FeedIndex>(() => dataUrl('posts.json'));
+  private readonly posts = computed(() => (this.index.hasValue() ? this.index.value().posts : []));
+  private readonly daysShown = signal(PAGE_DAYS);
 
-  private readonly older = signal<DayGroup[]>([]);
-  private readonly olderNext = signal<string | undefined | null>(null);
-  protected readonly loadingOlder = signal(false);
-  protected readonly olderError = signal(false);
-
-  /** The first page, or undefined while loading or after an error (reading value() then would throw). */
-  private readonly firstPage = computed(() => (this.feed.hasValue() ? this.feed.value() : undefined));
-  protected readonly days = computed(() => [...(this.firstPage()?.days ?? []), ...this.older()]);
-  protected readonly nextBefore = computed(() => {
-    const extra = this.olderNext();
-    return extra === null ? this.firstPage()?.nextBefore : extra;
-  });
-  protected readonly topTags = computed(() => (this.tags.hasValue() ? this.tags.value().slice(0, 12) : []));
+  private readonly feed = computed(() =>
+    groupSummaries(this.posts(), { days: this.daysShown(), tag: this.tag() ?? undefined, q: this.debouncedQ() }),
+  );
+  protected readonly days = computed(() => this.feed().days);
+  protected readonly hasOlder = computed(() => !!this.feed().nextBefore);
+  protected readonly topTags = computed(() => summaryTagCounts(this.posts()).slice(0, 12));
   protected readonly filtered = computed(() => !!this.tag() || !!this.debouncedQ().trim());
 
   constructor() {
-    // A new first page (filters changed) discards pages loaded with the old filters.
+    // New filters start again from the newest week.
     effect(() => {
-      this.firstPage();
-      untracked(() => {
-        this.older.set([]);
-        this.olderNext.set(null);
-      });
+      this.tag();
+      this.debouncedQ();
+      untracked(() => this.daysShown.set(PAGE_DAYS));
     });
   }
 
@@ -70,20 +63,6 @@ export class Home {
   }
 
   protected loadOlder(): void {
-    const before = this.nextBefore();
-    if (!before || this.loadingOlder()) return;
-    this.loadingOlder.set(true);
-    this.olderError.set(false);
-    this.http.get<FeedResponse>(feedUrl({ days: 7, before, tag: this.tag(), q: this.debouncedQ() })).subscribe({
-      next: (res) => {
-        this.older.update((d) => [...d, ...res.days]);
-        this.olderNext.set(res.nextBefore);
-        this.loadingOlder.set(false);
-      },
-      error: () => {
-        this.olderError.set(true);
-        this.loadingOlder.set(false);
-      },
-    });
+    this.daysShown.update((d) => d + PAGE_DAYS);
   }
 }

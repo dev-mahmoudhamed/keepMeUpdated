@@ -1,7 +1,7 @@
 <header class="head">
   <div>
     <h1>Sources</h1>
-    <p class="sub">The sites the daily gather reads. This list is also saved in <code>sources.md</code>, so you can edit it there too.</p>
+    <p class="sub">The sites the daily gather reads, saved in <code>sources.md</code> in the repository. Changes are commits; the next gather uses them.</p>
   </div>
   <button type="button" class="btn btn--primary" data-action="add" (click)="open('new')">
     <svg lucidePlus [size]="18" aria-hidden="true"></svg>
@@ -25,7 +25,7 @@
   @for (g of groups(); track g.name) {
   <h2 class="group-title">{{ g.name }} <span class="mono">{{ g.sources.length }}</span></h2>
   <ul class="list" role="list">
-    @for (s of g.sources; track s.id) {
+    @for (s of g.sources; track s.key) {
       <li class="source-row" [class.off]="!s.enabled">
         <button
           type="button"
@@ -160,27 +160,7 @@
         Include in the daily gather
       </label>
 
-      <div class="test">
-        <button type="button" class="btn" data-action="test" (click)="test()" [attr.aria-busy]="testing()">
-          <svg lucideFlaskConical [size]="16" aria-hidden="true"></svg>
-          {{ testing() ? 'Fetching…' : 'Test fetch' }}
-        </button>
-        @if (previewError()) {
-          <p class="error-text" role="alert">{{ previewError() }}</p>
-        }
-        @if (preview(); as items) {
-          <div class="preview" role="status">
-            <p class="hint">{{ items.length ? 'First ' + items.length + ' items it found:' : 'It worked, but found no items.' }}</p>
-            <ol>
-              @for (item of items; track item.url) {
-                <li>
-                  <a [href]="item.url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
-                </li>
-              }
-            </ol>
-          </div>
-        }
-      </div>
+      <p class="hint">After saving, check what the source returns with <strong>Gather runs → Dry run</strong>.</p>
 
       @if (formError()) {
         <p class="error-text" role="alert">{{ formError() }}</p>

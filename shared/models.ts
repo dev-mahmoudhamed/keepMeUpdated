@@ -1,9 +1,11 @@
-// Types shared by the Node server and the Angular app.
+// Types shared by the gather scripts and the Angular app.
 
 export interface Settings {
   relevanceThreshold: number;
   maxItemAgeHours: number;
   maxAiCallsPerRun: number;
+  /** Posts and seen links older than this are deleted on every gather. */
+  retentionDays: number;
 }
 
 export interface SourceSelectors {
@@ -91,10 +93,42 @@ export interface Db {
   settings: Settings;
 }
 
+/** Fetch history for one source, keyed by normalized feed url in content/state.json. */
+export interface SourceStatus {
+  lastFetchedAt?: string;
+  lastError?: string;
+  lastItemCount?: number;
+}
+
+/** content/state.json */
+export interface ContentState {
+  version: 1;
+  settings: Settings;
+  seen: Record<string, string>;
+  runs: Run[];
+  sourceStatus: Record<string, SourceStatus>;
+}
+
 export type PostSummary = Pick<
   Post,
   'id' | 'slug' | 'title' | 'tldr' | 'tags' | 'relevance' | 'publishedAt' | 'aiPending'
 > & { sourceCount: number };
+
+/** public/data/posts.json — every published post, newest first. */
+export interface FeedIndex {
+  generatedAt: string;
+  posts: PostSummary[];
+}
+
+/** public/data/site.json — where the admin panel finds the repository. */
+export interface SiteConfig {
+  /** owner/name */
+  repo: string;
+  branch: string;
+  gatherWorkflow: string;
+  /** Cron (UTC) of the daily gather. */
+  schedule: string;
+}
 
 export interface DayGroup {
   /** YYYY-MM-DD in server local time */

@@ -1,0 +1,195 @@
+[
+  {
+    "id": "d3b09e97-aba0-4457-af60-f28ef7f7ed9f",
+    "slug": "22-3-0-next-2",
+    "title": "Angular CLI 22.3.0-next.2",
+    "tldr": "@schematics/angular Commit Description add use-library-builder migration to migrate from ng-packagr keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manage…",
+    "bodyHtml": "<p><strong>Angular CLI releases:</strong> @schematics/angular Commit Description add use-library-builder migration to migrate from ng-packagr keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manager is not installed resolve package name in npm workspace members @angular-devkit/schematics Commit Description avoid stack overflow when chaining many rules @angular/build Commit Description add CSP n…</p>",
+    "tags": [
+      "angular",
+      "cli",
+      "release"
+    ],
+    "sources": [
+      {
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.2",
+        "title": "22.3.0-next.2"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-17T12:11:43.551Z",
+    "publishedAt": "2026-10-17T12:11:03.675Z",
+    "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
+  },
+  {
+    "id": "064043ad-d580-4df5-b1f2-67bc7e5d4b68",
+    "slug": "22-2-3",
+    "title": "Angular CLI 22.2.3",
+    "tldr": "@schematics/angular Commit Description keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manager is not installed resolve package name in npm workspace memb…",
+    "bodyHtml": "<p><strong>Angular CLI releases:</strong> @schematics/angular Commit Description keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manager is not installed resolve package name in npm workspace members @angular-devkit/schematics Commit Description avoid stack overflow when chaining many rules @angular/build Commit Description add CSP nonce to stylesheet and modulepreload link elements always use…</p>",
+    "tags": [
+      "angular",
+      "cli",
+      "release"
+    ],
+    "sources": [
+      {
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.3",
+        "title": "22.2.3"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-17T12:11:43.579Z",
+    "publishedAt": "2026-10-17T12:11:03.675Z",
+    "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
+  },
+  {
+    "id": "be1e22e7-3a27-49b4-86d7-fbde6ce04126",
+    "slug": "introducing-dotnetup-a-toolchain-manager-for-net",
+    "title": "Introducing dotnetup: A toolchain manager for .NET",
+    "tldr": "Learn how the new dotnetup tool helps macOS and Linux developers install, manage, and update user-local .NET SDKs and runtimes. The post Introducing dotnetup: A toolchain manager for .NET appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> Learn how the new dotnetup tool helps macOS and Linux developers install, manage, and update user-local .NET SDKs and runtimes. The post Introducing dotnetup: A toolchain manager for .NET appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "a5563821-0c39-4e63-b944-dd757856b08e",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/introducing-dotnetup/",
+        "title": "Introducing dotnetup: A toolchain manager for .NET",
+        "publishedAt": "2026-10-15T16:50:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-17T12:11:03.675Z",
+    "publishedAt": "2026-10-17T12:11:03.675Z",
+    "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
+  },
+  {
+    "id": "5c03574b-f077-45f1-833e-17c8270b29cb",
+    "slug": "stop-waiting-on-a-failed-build",
+    "title": "Stop waiting on a failed build",
+    "tldr": "Stop solution builds after the first project failure so you can return to fixing the error sooner. The post Stop waiting on a failed build appeared first on Visual Studio Blog.",
+    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> Stop solution builds after the first project failure so you can return to fixing the error sooner. The post Stop waiting on a failed build appeared first on Visual Studio Blog.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "40f56b7f-dbad-4066-852f-c3dac0ab3b20",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/stop-waiting-on-a-failed-build/",
+        "title": "Stop waiting on a failed build",
+        "publishedAt": "2026-10-15T14:00:50.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-17T12:11:03.675Z",
+    "publishedAt": "2026-10-17T12:11:03.675Z",
+    "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
+  },
+  {
+    "id": "b3e85e10-cc53-4106-8967-a1a7fa43f7b0",
+    "slug": "self-hosting-at-home-with-cloudflare-tunnel",
+    "title": "Self-Hosting at Home With Cloudflare Tunnel",
+    "tldr": "My Linux mini PC can run web apps, but CGNAT stops me from sharing them with a router port forward.",
+    "bodyHtml": "<p><strong>Milan Jovanović:</strong> My Linux mini PC can run web apps, but CGNAT stops me from sharing them with a router port forward.</p>",
+    "tags": [
+      "dotnet",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "5a13a842-0658-4a67-af72-5a75a6040468",
+        "siteName": "Milan Jovanović",
+        "url": "https://milanjovanovic.tech/blog/cloudflare-tunnel-hide-backend-ip",
+        "title": "Self-Hosting at Home With Cloudflare Tunnel",
+        "publishedAt": "2026-10-17T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-17T12:11:03.675Z",
+    "publishedAt": "2026-10-17T12:11:03.675Z",
+    "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
+  },
+  {
+    "id": "78948353-f182-49e1-985b-9f19de2ad7cc",
+    "slug": "improving-navigation-experience-in-v0-with-next-js-16-4",
+    "title": "Improving navigation experience in v0 with Next.js 16.4",
+    "tldr": "How we used Partial Prefetching and a coding agent to improve navigation across v0 with Next.js 16.4.",
+    "bodyHtml": "<p><strong>Next.js Blog:</strong> How we used Partial Prefetching and a coding agent to improve navigation across v0 with Next.js 16.4.</p>",
+    "tags": [
+      "nextjs",
+      "react"
+    ],
+    "sources": [
+      {
+        "sourceId": "997fb929-6360-48fa-831d-a9dfc7750c98",
+        "siteName": "Next.js Blog",
+        "url": "https://nextjs.org/blog/improving-navigation-experience-in-v0-with-nextjs-16-4",
+        "title": "Improving navigation experience in v0 with Next.js 16.4",
+        "publishedAt": "2026-10-16T15:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-17T10:06:13.751Z",
+    "updatedAt": "2026-10-17T10:06:13.751Z",
+    "publishedAt": "2026-10-17T10:06:13.751Z",
+    "runId": "206f6a09-1ad6-4005-a810-d0b0afe08a5d"
+  },
+  {
+    "id": "7fa0614e-6393-4ed0-bd68-cc65e43c9beb",
+    "slug": "upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+    "title": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
+    "tldr": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on November 16th, 2026: Model Deprecation date… The post Upcoming deprecation of selected GitHub Copilot models in mid-November appeared fir…",
+    "bodyHtml": "<p><strong>GitHub Changelog:</strong> We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on November 16th, 2026: Model Deprecation date… The post Upcoming deprecation of selected GitHub Copilot models in mid-November appeared first on The GitHub Blog.</p>",
+    "tags": [
+      "github"
+    ],
+    "sources": [
+      {
+        "sourceId": "7ce08112-1a76-40e5-9192-56b764e02469",
+        "siteName": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+        "title": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
+        "publishedAt": "2026-10-15T19:35:13.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-17T10:06:13.751Z",
+    "updatedAt": "2026-10-17T10:06:13.751Z",
+    "publishedAt": "2026-10-17T10:06:13.751Z",
+    "runId": "206f6a09-1ad6-4005-a810-d0b0afe08a5d"
+  }
+]

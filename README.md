@@ -1,90 +1,70 @@
 # keepMeUpdated
 
-Developer news that matters, gathered every morning. Every day at 04:00 the server reads your sources, keeps only new
-updates, merges reports of the same story from different sites, writes a short summary with Gemini, and publishes it.
-You manage everything from a private admin panel.
+Developer news that matters, gathered every morning. A GitHub Actions workflow reads the sources in
+[sources.md](sources.md), keeps only new updates, merges reports of the same story, writes a short summary with Gemini,
+and publishes a static site on GitHub Pages. News is kept for **30 days**, then deleted. There is no server and no
+database: the data is a couple of JSON files in this repository.
 
-- **Site:** Cards view (lead story + story cards) or List view, topic filters, search, a white theme with an optional dark theme.
+- **Site:** Cards or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
-- **Admin (`/admin`):** posts (create, edit, publish, hide, delete) with a rich-text editor, sources (RSS or any web
-  page via CSS selectors, with a test fetch), and gather runs (run now, live progress, history and errors).
+- **Admin (`/admin`):** write and edit posts with a rich-text editor, publish or hide them, manage sources, and start a
+  gather — all from the browser, signed in with a GitHub token.
 
-Built with Angular 22 (standalone, zoneless, signals, `httpResource`) and a small Node/Express API in `server/`.
-All data lives in one JSON file: `data/db.json`.
+## How it works
 
-## Setup
+```
+GitHub Actions (03:00 UTC daily, or "Run gather now")
+  └─ npm run gather   → reads sources.md, fetches feeds, Gemini summaries, deletes news older than 30 days
+  └─ commits content/posts.json + content/state.json
+  └─ builds the Angular site and deploys it to GitHub Pages
 
-Requires Node 24 LTS (24.15 or newer). `.nvmrc` pins the major version.
-
-```bash
-npm install
+Admin panel (in your browser)
+  └─ reads/edits content/posts.json and sources.md through the GitHub API (each save is a commit)
+  └─ every commit redeploys the site (about 2 minutes)
 ```
 
-```bash
-cp .env.example .env
-```
-
-Then edit `.env`:
-
-| Key | What it does |
+| Path | What it is |
 |---|---|
-| `GEMINI_API_KEY` | Your Gemini key from Google AI Studio. Leave empty to run without AI (see below). |
-| `GEMINI_MODEL` | Defaults to `gemini-flash-latest`, which follows Google's current free Flash model. |
-| `ADMIN_EMAIL`, `ADMIN_PASSWORD` | Admin login. **Change the dummy values.** |
-| `SESSION_SECRET` | Any long random string. Signs the login cookie. |
-| `GATHER_CRON` | When the daily gather runs, in local time. Default `0 4 * * *` (04:00). |
-| `PORT` | Port for `npm start`. Default 3000. |
-| `SOURCES_FILE` | Path to the sources list. Default `sources.md` in the project root. |
-| `HOST` | `127.0.0.1` (default) keeps the site and admin private to this computer. Use `0.0.0.0` to open it to your network, after changing the admin password. |
+| `sources.md` | The news sources. Edit it here or in Admin → Sources. |
+| `content/posts.json` | All posts from the last 30 days (written by the gather and the admin). |
+| `content/state.json` | Seen links, run history, source fetch results, settings. |
+| `scripts/` | The gather and build scripts that Actions runs. |
+| `.github/workflows/` | `gather.yml` (daily gather) and `deploy.yml` (build + Pages). |
+| `src/` | The Angular 22 site and admin panel. |
 
-## Run it
+## Setup (once)
 
-Development (site on http://localhost:4200, API on 3000):
+1. **Make the repository public** — Settings → General → Danger zone → Change visibility. (GitHub Pages is free for
+   public repositories.)
+2. **Turn on Pages** — Settings → Pages → Build and deployment → Source: **GitHub Actions**.
+3. **Add your Gemini key** — Settings → Secrets and variables → Actions → **New repository secret**:
+   name `GEMINI_API_KEY`, value: your key from [Google AI Studio](https://aistudio.google.com/apikey).
+   Without it the gather still runs, using the feeds' own descriptions instead of AI summaries.
+4. **Create your admin token** — GitHub → Settings → Developer settings → Personal access tokens →
+   [Fine-grained tokens → Generate new token](https://github.com/settings/personal-access-tokens/new):
+   - Repository access: **Only select repositories** → this repository.
+   - Repository permissions: **Contents: Read and write**, **Actions: Read and write**.
+   - Save it in your password manager. Sign in at `https://<you>.github.io/keepMeUpdated/admin` by pasting it.
+5. Push to `main`. The deploy workflow publishes the site; the first gather runs at the next 03:00 UTC, or start it
+   from **Actions → Gather news → Run workflow** (or Admin → Gather runs).
 
-```bash
-npm run dev
-```
+No passwords or keys live in this repository or on your computer. The Gemini key is only in GitHub Secrets; the admin
+token is only in your browser (for this tab, or for this device if you tick "Keep me signed in").
 
-Production (builds the site, then serves site and API together on `PORT`):
+## Schedule and retention
 
-```bash
-npm run build
-```
-
-```bash
-npm start
-```
-
-The 04:00 gather only happens while the server is running. If the machine was off or asleep at 04:00, the server runs a
-catch-up gather when it starts. You can always run one from **Admin → Gather runs → Run gather now**.
-
-## How the daily gather works
-
-1. Fetches every enabled source (RSS/Atom, or a web page read with CSS selectors).
-2. Keeps links it hasn't seen before and that are less than 48 hours old.
-3. Gemini groups items about the same news, scores how much each matters to developers (0–10), and tags it. Stories
-   below 6 are skipped (with a Gemini key only). A story that matches a post from the last 7 days adds its link to that post instead of creating
-   a duplicate.
-4. Gemini reads the articles and writes a TL;DR, key points and "why it matters". Up to 5 stories per request.
-5. New posts are published with links to every source.
-
-**Free-tier budget.** Google's free Gemini quota is small and changes often. Each run makes at most 15 AI requests
-(change `maxAiCallsPerRun` in `data/db.json` → `settings`). When the budget or the daily quota runs out, remaining
-stories are posted with the sources' own descriptions and marked "summary pending". You can re-summarize any post later
-from its edit page.
-
-**Without a key** the app still works: it groups stories by title similarity and publishes every fresh story (it can't
-judge relevance without AI), showing the feed's own description as the summary.
+- The gather runs at **03:00 UTC** = 04:00 UK summer time (03:00 in winter). Change the cron in
+  `.github/workflows/gather.yml` and `GATHER_CRON` in `src/app/admin/runs/runs.ts` together.
+- Posts and seen links older than **30 days** are deleted on every run (`retentionDays` in `content/state.json` →
+  `settings`). Git history still contains older versions of the files; they're small text files.
+- Each run makes at most 15 Gemini requests (`maxAiCallsPerRun`), to stay inside the free tier.
 
 ## Sources
 
-The news sites live in [sources.md](sources.md): one markdown table per section (Angular, .NET, Cross-stack). Edit the
-file or use **Admin → Sources**; they stay in sync. The server reloads the file when you save it, and rewrites it when
-you change sources in the admin panel.
-
-The list was built from the research in [docs/resources](docs/resources), keeping only feeds that were checked to work.
-High-volume community feeds (DEV tags, .NET Ramblings, Telerik) are listed but switched off; turn them on once a Gemini
-key is set, since the AI filters out the noise.
+The news sites live in [sources.md](sources.md), one markdown table per section (Angular, .NET, Cross-stack). The list
+was built from the research in [docs/resources](docs/resources), keeping only feeds that were checked to work.
+High-volume community feeds (DEV tags, .NET Ramblings, Telerik) are listed but switched off; turn them on once the
+Gemini key is set, since the AI filters out the noise.
 
 For a site without a feed, fill in the **Selectors** column (or choose **Web page with CSS selectors** in the admin):
 
@@ -96,30 +76,40 @@ For a site without a feed, fill in the **Selectors** column (or choose **Web pag
 | `date` | `time@datetime` | Optional |
 | `summary` | `.excerpt` | Optional |
 
-In sources.md that's written as `item=article.post; title=h2; link=a@href`. Use **Test fetch** in the admin to preview
-what it finds.
+In sources.md that's written as `item=article.post; title=h2; link=a@href`. Check a new source with **Admin → Gather
+runs → Dry run**: it fetches every source and lists what each one returned, without saving anything.
 
-## Data
+## Run it locally
 
-- `data/db.json` holds posts, sources, run history and seen links. Back it up to keep your data. It's git-ignored.
-- If the file is corrupted the server refuses to start rather than overwrite it. Fix or move the file, then restart.
+Requires Node 24 LTS (`.nvmrc`).
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+The site opens at http://localhost:4200 with the data from `content/`. The admin panel works locally too, against the
+real repository on GitHub (sign in with your token).
+
+Run a gather on your machine (changes `content/` files; commit them if you want to keep them):
+
+```bash
+npm run gather -- --mode dry-run
+```
+
+```bash
+GEMINI_API_KEY=your-key npm run gather
+```
 
 ## Tests
 
 ```bash
-npm run test:server
+npm run test:scripts
 ```
 
 ```bash
 npx ng test --watch=false
-```
-
-## Project layout
-
-```
-shared/          types shared by server and site
-server/          Express API, JSON store, gather pipeline (fetchers, dedupe, Gemini, scheduler)
-src/app/public/  the site: home, day sections, post page
-src/app/admin/   admin: login, posts, editor (Tiptap), sources, runs
-docs/superpowers design spec and implementation plan
 ```

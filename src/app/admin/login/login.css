@@ -1,0 +1,133 @@
+.page {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--s-6) var(--s-4);
+}
+
+.login-panel {
+  width: min(100%, 440px);
+  display: grid;
+  gap: var(--s-5);
+  padding: var(--s-6);
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.brand {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-wash);
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.intro {
+  display: grid;
+  gap: var(--s-2);
+}
+
+h1 {
+  font-size: var(--step-2);
+}
+
+.intro p {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+form {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 32px;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.check input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.alert {
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius);
+  color: var(--danger);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.submit {
+  width: 100%;
+  min-height: 44px;
+}
+
+.help {
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--rule);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.help summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.help ol {
+  display: grid;
+  gap: var(--s-2);
+  margin: var(--s-3) 0 0;
+  padding-left: 1.25em;
+  line-height: 1.5;
+}
+
+.help a {
+  color: var(--accent);
+}
+
+.help a svg {
+  display: inline;
+  vertical-align: -1px;
+}
+
+@media (max-width: 480px) {
+  .login-panel {
+    padding: var(--s-5) var(--s-4);
+  }
+}

@@ -26,7 +26,7 @@ import { ToastService } from '../../core/toast';
           </a>
         </nav>
         <div class="side-end">
-          <a routerLink="/" target="_blank" class="nav">
+          <a routerLink="/" target="_blank" rel="noopener" class="nav">
             <svg lucideExternalLink [size]="18" aria-hidden="true"></svg>View site
             <span class="visually-hidden">(opens in a new tab)</span>
           </a>
@@ -202,7 +202,7 @@ export class AdminShell {
   );
 
   protected async signOut(): Promise<void> {
-    await this.auth.logout();
+    this.auth.signOut();
     await this.router.navigateByUrl('/admin/login');
   }
 }

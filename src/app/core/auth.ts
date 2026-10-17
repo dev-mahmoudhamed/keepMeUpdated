@@ -1,45 +1,50 @@
 import { HttpErrorResponse, type HttpInterceptorFn } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { Router, type CanActivateFn } from '@angular/router';
-import { catchError, firstValueFrom, throwError } from 'rxjs';
-import { AdminApi } from './api';
+import { catchError, throwError } from 'rxjs';
+import { GITHUB_API, RepoClient, TokenError, TokenStore } from './github';
 
 export interface AdminUser {
-  email: string;
+  login: string;
 }
 
+/** The admin is whoever holds a GitHub token that can push to this site's repository. */
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private readonly api = inject(AdminApi);
+  private readonly repo = inject(RepoClient);
+  private readonly tokens = inject(TokenStore);
   /** undefined = not checked yet, null = signed out. */
   private readonly _user = signal<AdminUser | null | undefined>(undefined);
   readonly user = this._user.asReadonly();
 
   async check(): Promise<boolean> {
     if (this._user() !== undefined) return !!this._user();
-    try {
-      this._user.set(await firstValueFrom(this.api.me()));
-    } catch {
+    const token = this.tokens.get();
+    if (!token) {
       this._user.set(null);
+      return false;
     }
-    return !!this._user();
-  }
-
-  async login(email: string, password: string): Promise<void> {
-    await firstValueFrom(this.api.login(email, password));
-    this._user.set(await firstValueFrom(this.api.me()));
-  }
-
-  async logout(): Promise<void> {
     try {
-      await firstValueFrom(this.api.logout());
-    } finally {
+      this._user.set(await this.repo.verifyToken(token));
+      return true;
+    } catch (err) {
+      // A network blip shouldn't throw away a good token; a rejected one should.
+      if (err instanceof TokenError && err.reason !== 'network') this.tokens.clear();
       this._user.set(null);
+      return false;
     }
   }
 
-  /** Called when the server says the session is gone. */
-  signedOut(): void {
+  /** Verifies the token with GitHub before keeping it. Throws TokenError. */
+  async signIn(token: string, remember: boolean): Promise<void> {
+    const clean = token.trim();
+    const user = await this.repo.verifyToken(clean);
+    this.tokens.set(clean, remember);
+    this._user.set(user);
+  }
+
+  signOut(): void {
+    this.tokens.clear();
     this._user.set(null);
   }
 }
@@ -51,16 +56,17 @@ export const authGuard: CanActivateFn = async (_route, state) => {
   return router.createUrlTree(['/admin/login'], { queryParams: { next: state.url } });
 };
 
-/** Sends cookies with API calls and bounces to the login page when an admin call gets a 401. */
-export const credentialsInterceptor: HttpInterceptorFn = (req, next) => {
-  if (!req.url.startsWith('/api/')) return next(req);
+/** A 401 from GitHub means the stored token expired or was revoked: sign out and ask for a new one. */
+export const githubErrorInterceptor: HttpInterceptorFn = (req, next) => {
+  if (!req.url.startsWith(GITHUB_API)) return next(req);
   const auth = inject(AuthService);
   const router = inject(Router);
-  return next(req.clone({ withCredentials: true })).pipe(
+  return next(req).pipe(
     catchError((err: unknown) => {
-      if (err instanceof HttpErrorResponse && err.status === 401 && req.url.startsWith('/api/admin/')) {
-        auth.signedOut();
-        void router.navigate(['/admin/login'], { queryParams: { next: router.url } });
+      const onLogin = router.url.startsWith('/admin/login');
+      if (err instanceof HttpErrorResponse && err.status === 401 && !onLogin) {
+        auth.signOut();
+        void router.navigate(['/admin/login'], { queryParams: { expired: 1, next: router.url } });
       }
       return throwError(() => err);
     }),
