@@ -59,6 +59,7 @@
   - `loadContent(root: string): Promise<Db>`:
     - reads `content/posts.json` (missing → `[]`) and `content/state.json` (missing → defaults);
     - reads `sources.md` through `parseSourcesMd`, and assigns each source a stable id = the first 12 hex chars of sha1(normalized feed URL);
+    - merges `state.sourceStatus[id]` (lastFetchedAt / lastError / lastItemCount) back onto each source;
     - invalid JSON → throws `"<file> is not valid JSON"`.
   - `saveContent(root: string, db: Db): Promise<{ changed: string[] }>`:
     - writes `posts.json` (2-space JSON, sorted newest first) and `state.json` atomically (tmp + rename);
