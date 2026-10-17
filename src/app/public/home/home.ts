@@ -33,18 +33,20 @@ export class Home {
   protected readonly loadingOlder = signal(false);
   protected readonly olderError = signal(false);
 
-  protected readonly days = computed(() => [...(this.feed.value()?.days ?? []), ...this.older()]);
+  /** The first page, or undefined while loading or after an error (reading value() then would throw). */
+  private readonly firstPage = computed(() => (this.feed.hasValue() ? this.feed.value() : undefined));
+  protected readonly days = computed(() => [...(this.firstPage()?.days ?? []), ...this.older()]);
   protected readonly nextBefore = computed(() => {
     const extra = this.olderNext();
-    return extra === null ? this.feed.value()?.nextBefore : extra;
+    return extra === null ? this.firstPage()?.nextBefore : extra;
   });
-  protected readonly topTags = computed(() => this.tags.value().slice(0, 12));
+  protected readonly topTags = computed(() => (this.tags.hasValue() ? this.tags.value().slice(0, 12) : []));
   protected readonly filtered = computed(() => !!this.tag() || !!this.debouncedQ().trim());
 
   constructor() {
     // A new first page (filters changed) discards pages loaded with the old filters.
     effect(() => {
-      this.feed.value();
+      this.firstPage();
       untracked(() => {
         this.older.set([]);
         this.olderNext.set(null);

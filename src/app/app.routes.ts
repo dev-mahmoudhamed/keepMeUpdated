@@ -11,6 +11,15 @@ export const routes: Routes = [
         title: 'keepMeUpdated · developer news that matters',
         loadComponent: () => import('./public/home/home').then((m) => m.Home),
       },
+      {
+        path: 'p/:slug',
+        loadComponent: () => import('./public/post-page/post-page').then((m) => m.PostPage),
+      },
+      {
+        path: '**',
+        title: 'Not found · keepMeUpdated',
+        loadComponent: () => import('./public/not-found/not-found').then((m) => m.NotFound),
+      },
     ],
   },
 ];

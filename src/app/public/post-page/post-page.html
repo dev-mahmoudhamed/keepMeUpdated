@@ -1,0 +1,77 @@
+@if (notFound()) {
+  <app-not-found />
+} @else if (post.error()) {
+  <div class="wrap state">
+    <h1>This story didn't load</h1>
+    <p>The server didn't answer. Check that it's running, then try again.</p>
+    <button type="button" class="btn" (click)="post.reload()">Try again</button>
+  </div>
+} @else if (post.value(); as p) {
+  <article class="wrap story">
+    <a routerLink="/" class="back">
+      <svg lucideArrowLeft [size]="16" aria-hidden="true"></svg>
+      All updates
+    </a>
+
+    <header>
+      @if (p.tags.length) {
+        <div class="tags">
+          @for (tag of p.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+      }
+      <h1>{{ p.title }}</h1>
+      <p class="meta">
+        <time [attr.datetime]="p.publishedAt">{{ published() }}</time>
+        <a href="#originals" class="mono">{{ sources(p.sources.length) }}</a>
+      </p>
+    </header>
+
+    @if (p.tldr) {
+      <section class="tldr" aria-label="TL;DR">
+        <p class="tldr-label">TL;DR</p>
+        <p class="tldr-text"><span class="marker">{{ p.tldr }}</span></p>
+      </section>
+    }
+
+    @if (p.bodyHtml) {
+      <div class="body" [innerHTML]="p.bodyHtml"></div>
+    }
+
+    @if (p.sources.length) {
+      <section id="originals" class="originals" aria-labelledby="originals-title">
+        <h2 id="originals-title">Read the original</h2>
+        <ul role="list">
+          @for (s of p.sources; track s.url) {
+            <li>
+              <a [href]="s.url" target="_blank" rel="noopener noreferrer">
+                <img [src]="favicon(s.url)" alt="" width="16" height="16" loading="lazy" referrerpolicy="no-referrer" />
+                <span class="site">{{ s.siteName }}</span>
+                <span class="article">{{ s.title || host(s.url) }}</span>
+                <span class="host mono">{{ host(s.url) }}</span>
+                <svg lucideExternalLink [size]="16" aria-hidden="true"></svg>
+                <span class="visually-hidden">(opens in a new tab)</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </section>
+    }
+
+    <p class="note">
+      @if (p.aiPending) {
+        AI summary pending. You're reading the sources' own descriptions.
+      } @else {
+        Summary written by AI from the sources above. Check the originals for details.
+      }
+    </p>
+  </article>
+} @else {
+  <div class="wrap story" aria-busy="true" aria-label="Loading story">
+    <div class="skeleton" style="height: 1rem; width: 7rem"></div>
+    <div class="skeleton" style="height: 6rem; margin-top: 32px"></div>
+    <div class="skeleton" style="height: 5rem; margin-top: 32px"></div>
+    <div class="skeleton" style="height: 12rem; margin-top: 32px"></div>
+  </div>
+}

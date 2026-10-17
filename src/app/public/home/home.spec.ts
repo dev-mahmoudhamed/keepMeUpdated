@@ -65,6 +65,18 @@ describe('Home', () => {
     expect(el.querySelector('.lead')).toBeNull();
   });
 
+  it('shows a retry message when the feed fails', async () => {
+    const fixture = TestBed.createComponent(Home);
+    fixture.detectChanges();
+    TestBed.tick();
+    http.expectOne((r) => r.url.startsWith('/api/posts')).flush({ error: 'x' }, { status: 500, statusText: 'Server Error' });
+    http.expectOne('/api/tags').flush([]);
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const el: HTMLElement = fixture.nativeElement;
+    expect(el.querySelector('.state h2')?.textContent).toContain("Updates didn't load");
+  });
+
   it('loads older days and appends them', async () => {
     const fixture = await render();
     const el: HTMLElement = fixture.nativeElement;

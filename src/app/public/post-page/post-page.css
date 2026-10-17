@@ -1,0 +1,238 @@
+.story {
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  padding-block: var(--s-4) var(--s-6);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 40px;
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--ink);
+}
+
+header {
+  margin-top: var(--s-5);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-bottom: var(--s-4);
+}
+
+h1 {
+  font-size: clamp(2rem, 1.3rem + 3vw, 3rem);
+  font-weight: 650;
+  font-variation-settings: 'opsz' 72;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  margin-top: var(--s-4);
+  color: var(--ink-muted);
+  font-size: var(--step--1);
+}
+
+.meta a {
+  color: var(--ink-soft);
+}
+
+.tldr {
+  margin-top: var(--s-6);
+  padding: var(--s-5);
+  background: var(--highlight);
+  border-left: 3px solid var(--accent);
+  border-radius: 0;
+}
+
+.tldr-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: var(--s-2);
+}
+
+.tldr-text {
+  font-family: var(--font-head);
+  font-size: var(--step-1);
+  line-height: 1.5;
+}
+
+.body {
+  margin-top: var(--s-6);
+  font-size: var(--step-read);
+  line-height: 1.7;
+}
+
+.body :where(h2, h3, h4) {
+  margin: 1.6em 0 0.5em;
+}
+
+.body :where(h3) {
+  font-size: var(--step-2);
+}
+
+.body :where(p, ul, ol, blockquote, pre) {
+  margin: 0 0 1em;
+}
+
+.body :where(ul, ol) {
+  padding-left: 1.25em;
+}
+
+.body :where(li) + li {
+  margin-top: 0.4em;
+}
+
+.body :where(li)::marker {
+  color: var(--accent);
+}
+
+.body :where(a) {
+  color: var(--accent);
+}
+
+.body :where(blockquote) {
+  padding-left: var(--s-4);
+  border-left: 2px solid var(--rule);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.body :where(code) {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.1em 0.35em;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+.body :where(pre) {
+  padding: var(--s-4);
+  overflow-x: auto;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.body :where(pre code) {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.body :where(img) {
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.body :where(hr) {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2em 0;
+}
+
+.originals {
+  margin-top: var(--s-7);
+  padding-top: var(--s-5);
+  border-top: 2px solid var(--ink);
+}
+
+.originals h2 {
+  font-size: var(--step-2);
+  margin-bottom: var(--s-3);
+}
+
+.originals ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.originals li + li {
+  border-top: 1px solid var(--rule);
+}
+
+.originals a {
+  display: grid;
+  grid-template-columns: 16px 1fr auto;
+  grid-template-areas:
+    'icon site ext'
+    '. article ext'
+    '. host ext';
+  column-gap: var(--s-3);
+  row-gap: 2px;
+  align-items: center;
+  padding: var(--s-4) var(--s-3);
+  margin-inline: calc(var(--s-3) * -1);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background-color var(--dur) var(--ease);
+}
+
+.originals a:hover {
+  background: var(--paper-raised);
+}
+
+.originals a:hover .article {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.originals img {
+  grid-area: icon;
+  border-radius: 3px;
+}
+
+.site {
+  grid-area: site;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.article {
+  grid-area: article;
+  font-family: var(--font-head);
+  font-size: var(--step-1);
+  line-height: 1.3;
+}
+
+.host {
+  grid-area: host;
+  color: var(--ink-muted);
+}
+
+.originals svg {
+  grid-area: ext;
+  color: var(--ink-muted);
+}
+
+.note {
+  margin-top: var(--s-6);
+  color: var(--ink-muted);
+  font-size: var(--step--1);
+}
+
+.state {
+  display: grid;
+  gap: var(--s-3);
+  justify-items: start;
+  padding-block: var(--s-8);
+}
+
+.state h1 {
+  font-size: var(--step-3);
+}
