@@ -1,6 +1,10 @@
+/* Shares the masthead's left edge; the reading column stays at a comfortable measure. */
 .story {
-  max-width: calc(var(--measure) + 2 * var(--gutter));
   padding-block: var(--s-4) var(--s-6);
+}
+
+.story > * {
+  max-width: var(--measure);
 }
 
 .back {
