@@ -1,37 +1,43 @@
-import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import type { Source } from '../../../../shared/models';
+import type { ContentState } from '../../../../shared/models';
+import type { SourceDef } from '../../../../shared/sources-md';
+import { FakeContent, provideFakeContent, settle } from '../testing/fake-content';
 import { Sources } from './sources';
 
-const rss: Source = {
-  id: 's1',
+const rss: SourceDef = {
   name: 'Angular Blog',
   siteUrl: 'https://blog.angular.dev',
   type: 'rss',
   feedUrl: 'https://blog.angular.dev/feed',
   defaultTags: ['angular'],
   enabled: true,
-  lastFetchedAt: '2026-10-17T04:00:00Z',
-  lastItemCount: 10,
+  group: 'Angular',
+};
+
+const state: ContentState = {
+  version: 1,
+  settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15, retentionDays: 30 },
+  seen: {},
+  runs: [],
+  sourceStatus: {
+    'https://blog.angular.dev/feed': { lastFetchedAt: '2026-10-17T03:00:00Z', lastItemCount: 10 },
+    'https://broken.test/feed': { lastError: 'HTTP 403 for x' },
+  },
 };
 
 describe('Sources', () => {
-  let http: HttpTestingController;
+  let fake: FakeContent;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])] });
-    http = TestBed.inject(HttpTestingController);
+    fake = new FakeContent([], [rss, { ...rss, name: 'Broken', feedUrl: 'https://broken.test/feed', group: '.NET' }], state);
+    TestBed.configureTestingModule({ providers: [provideRouter([]), provideFakeContent(fake)] });
   });
 
   async function render() {
     const fixture = TestBed.createComponent(Sources);
     fixture.detectChanges();
-    TestBed.tick();
-    http.expectOne('/api/admin/sources').flush([rss, { ...rss, id: 's2', name: 'Broken', lastError: 'HTTP 403 for x' }]);
-    await fixture.whenStable();
-    fixture.detectChanges();
+    await settle(fixture);
     const el: HTMLElement = fixture.nativeElement;
     const type = (selector: string, value: string) => {
       const input = el.querySelector(selector) as HTMLInputElement;
@@ -42,10 +48,12 @@ describe('Sources', () => {
     return { fixture, el, type };
   }
 
-  it('lists sources with their last error', async () => {
+  it('lists sources under their sections with their last fetch result', async () => {
     const { el } = await render();
     expect(el.querySelectorAll('.source-row').length).toBe(2);
+    expect([...el.querySelectorAll('.group-title')].map((h) => h.textContent?.replace(/\s+/g, ' ').trim())).toEqual(['Angular 1', '.NET 1']);
     expect(el.textContent).toContain('HTTP 403 for x');
+    expect(el.textContent).toContain('10 items');
   });
 
   it('only asks for selectors on html sources', async () => {
@@ -56,25 +64,10 @@ describe('Sources', () => {
     (el.querySelector('input[name="type"][value="html"]') as HTMLInputElement).click();
     fixture.detectChanges();
     expect(el.querySelector('#sel-item')).not.toBeNull();
+    expect(el.querySelector('button[data-action="test"]')).toBeNull();
   });
 
-  it('previews what a source returns with test fetch', async () => {
-    const { fixture, el, type } = await render();
-    (el.querySelector('button[data-action="add"]') as HTMLButtonElement).click();
-    fixture.detectChanges();
-    type('#src-name', 'Bun');
-    type('#src-site', 'https://bun.sh');
-    type('#src-feed', 'https://bun.sh/rss.xml');
-    (el.querySelector('button[data-action="test"]') as HTMLButtonElement).click();
-    const req = http.expectOne('/api/admin/sources/test');
-    expect(req.request.body).toMatchObject({ name: 'Bun', type: 'rss', feedUrl: 'https://bun.sh/rss.xml', enabled: true });
-    req.flush({ items: [{ title: 'Bun 2.0', url: 'https://bun.sh/blog/2', snippet: '' }] });
-    await fixture.whenStable();
-    fixture.detectChanges();
-    expect(el.querySelector('.preview')?.textContent).toContain('Bun 2.0');
-  });
-
-  it('saves the section a new source belongs to', async () => {
+  it('adds a source to sources.md with its section', async () => {
     const { fixture, el, type } = await render();
     (el.querySelector('button[data-action="add"]') as HTMLButtonElement).click();
     fixture.detectChanges();
@@ -83,21 +76,29 @@ describe('Sources', () => {
     type('#src-feed', 'https://bun.sh/rss.xml');
     type('#src-group', 'JavaScript');
     (el.querySelector('.drawer form') as HTMLFormElement).dispatchEvent(new Event('submit'));
-    const req = http.expectOne('/api/admin/sources');
-    expect(req.request.method).toBe('POST');
-    expect(req.request.body.group).toBe('JavaScript');
+    await settle(fixture);
+    expect(fake.sources.at(-1)).toMatchObject({ name: 'Bun', feedUrl: 'https://bun.sh/rss.xml', group: 'JavaScript', type: 'rss', enabled: true });
+    expect(fake.commits).toEqual(['admin: add source "Bun"']);
   });
 
-  it('groups sources under their section headings', async () => {
-    const { el } = await render();
-    expect([...el.querySelectorAll('.group-title')].map((h) => h.textContent?.replace(/\s+/g, ' ').trim())).toEqual(['Other 2']);
+  it('refuses a feed that is already listed', async () => {
+    const { fixture, el, type } = await render();
+    (el.querySelector('button[data-action="add"]') as HTMLButtonElement).click();
+    fixture.detectChanges();
+    type('#src-name', 'Dup');
+    type('#src-site', 'https://blog.angular.dev');
+    type('#src-feed', 'https://www.blog.angular.dev/feed/');
+    (el.querySelector('.drawer form') as HTMLFormElement).dispatchEvent(new Event('submit'));
+    await settle(fixture);
+    expect(fake.commits).toEqual([]);
+    expect(el.querySelector('.drawer [role="alert"]')?.textContent).toContain('already in the list');
   });
 
   it('toggles a source on and off', async () => {
-    const { el } = await render();
+    const { fixture, el } = await render();
     (el.querySelector('.source-row [role="switch"]') as HTMLButtonElement).click();
-    const req = http.expectOne('/api/admin/sources/s1');
-    expect(req.request.method).toBe('PUT');
-    expect(req.request.body.enabled).toBe(false);
+    await settle(fixture);
+    expect(fake.sources[0].enabled).toBe(false);
+    expect(fake.commits).toEqual(['admin: turn off source "Angular Blog"']);
   });
 });

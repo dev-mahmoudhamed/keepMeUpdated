@@ -1,81 +1,92 @@
 <header class="head">
   <div>
     <h1>Gather runs</h1>
-    <p class="sub">Each run reads every source, keeps new stories, and publishes them.</p>
+    <p class="sub">The gather runs on GitHub Actions every day. Each run reads every source, keeps new stories for 30 days, and redeploys the site.</p>
   </div>
-  <button type="button" class="btn btn--primary" data-action="run" (click)="start()" [attr.aria-busy]="busy()">
-    @if (busy()) {
-      <svg lucideLoaderCircle [size]="18" class="spin" aria-hidden="true"></svg>
-      Gathering…
-    } @else {
+  <div class="actions">
+    <button type="button" class="btn" data-action="dry-run" (click)="start('dry-run')" [attr.aria-busy]="dispatching() === 'dry-run'">
+      <svg lucideFlaskConical [size]="18" aria-hidden="true"></svg>
+      Dry run
+    </button>
+    <button type="button" class="btn btn--primary" data-action="run" (click)="start('gather')" [attr.aria-busy]="dispatching() === 'gather'">
       <svg lucidePlay [size]="18" aria-hidden="true"></svg>
-      Run gather now
-    }
-  </button>
+      {{ dispatching() === 'gather' ? 'Starting…' : 'Run gather now' }}
+    </button>
+  </div>
 </header>
 
 <section class="cards" aria-label="Gather settings">
   <div class="card">
-    <p class="k">Summaries</p>
-    @if (info(); as i) {
-      @if (i.geminiConfigured) {
-        <p class="v">Gemini <span class="mono">{{ i.model }}</span></p>
-      } @else {
-        <p class="v">Fallback</p>
-        <p class="hint">Add GEMINI_API_KEY to .env and restart to get AI summaries.</p>
-      }
-    } @else {
-      <p class="v">…</p>
+    <p class="k">Summaries in the last run</p>
+    <p class="v">{{ lastAiMode() ?? 'No runs yet' }}</p>
+    @if (lastAiMode()?.startsWith('Fallback')) {
+      <p class="hint">Add GEMINI_API_KEY in the repository’s Settings → Secrets and variables → Actions.</p>
     }
   </div>
   <div class="card">
     <p class="k">Next scheduled run</p>
-    <p class="v">{{ info()?.nextRunAt ? when(info()!.nextRunAt!) : 'Not scheduled' }}</p>
+    <p class="v">{{ when(nextRun.toISOString()) }}</p>
+    <p class="hint">GitHub can start scheduled runs a little late.</p>
   </div>
 </section>
 
-@if (live(); as run) {
-  @if (run.status === 'running') {
-    <section class="progress" role="status" aria-live="polite">
-      <p class="progress-title">Gathering now</p>
-      <ol class="log mono">
-        @for (line of run.log; track $index) {
-          <li>{{ line }}</li>
-        } @empty {
-          <li>Starting…</li>
-        }
-      </ol>
-    </section>
-  }
+<div class="section-head">
+  <h2>On GitHub</h2>
+  <button type="button" class="btn btn--ghost" (click)="refresh()">
+    <svg lucideRefreshCw [size]="16" aria-hidden="true"></svg>
+    Refresh
+  </button>
+</div>
+@if (live.error()) {
+  <p class="empty">Couldn’t load the workflow runs from GitHub.</p>
+} @else if (!liveRuns().length) {
+  <p class="empty">No workflow runs yet.</p>
+} @else {
+  <ul class="live" role="list">
+    @for (run of liveRuns(); track run.id) {
+      <li>
+        <span class="status" [attr.data-status]="liveLabel(run)">
+          @switch (liveLabel(run)) {
+            @case ('Done') {
+              <svg lucideCircleCheck [size]="16" aria-hidden="true"></svg>
+            }
+            @case ('Failed') {
+              <svg lucideCircleAlert [size]="16" aria-hidden="true"></svg>
+            }
+            @default {
+              <svg lucideLoaderCircle [size]="16" class="spin" aria-hidden="true"></svg>
+            }
+          }
+          {{ liveLabel(run) }}
+        </span>
+        <span class="when">{{ when(run.createdAt) }}</span>
+        <span class="trigger">{{ run.event === 'schedule' ? 'Scheduled' : 'Started by you' }}</span>
+        <a [href]="run.url" target="_blank" rel="noopener noreferrer">
+          View log
+          <svg lucideExternalLink [size]="14" aria-hidden="true"></svg>
+          <span class="visually-hidden">(opens GitHub in a new tab)</span>
+        </a>
+      </li>
+    }
+  </ul>
 }
 
 <h2 class="history-title">History</h2>
-@if (runs.error()) {
-  <div class="empty">
-    <p>Run history didn't load.</p>
-    <button type="button" class="btn" (click)="runs.reload()">Try again</button>
-  </div>
-} @else if (!rows().length) {
-  <div class="empty">
-    <p>No runs yet. The first one starts at the next scheduled time, or run one now.</p>
-  </div>
+@if (state.error()) {
+  <p class="empty">Couldn’t load the run history.</p>
+} @else if (!history().length) {
+  <p class="empty">No gathers have finished yet.</p>
 } @else {
   <ul class="history" role="list">
-    @for (run of rows(); track run.id) {
+    @for (run of history(); track run.id) {
       <li>
         <details>
           <summary>
             <span class="status" [attr.data-status]="run.status">
-              @switch (run.status) {
-                @case ('success') {
-                  <svg lucideCircleCheck [size]="16" aria-hidden="true"></svg>
-                }
-                @case ('running') {
-                  <svg lucideLoaderCircle [size]="16" class="spin" aria-hidden="true"></svg>
-                }
-                @default {
-                  <svg lucideCircleAlert [size]="16" aria-hidden="true"></svg>
-                }
+              @if (run.status === 'success') {
+                <svg lucideCircleCheck [size]="16" aria-hidden="true"></svg>
+              } @else {
+                <svg lucideCircleAlert [size]="16" aria-hidden="true"></svg>
               }
               {{ statusLabel[run.status] }}
             </span>

@@ -1,98 +1,93 @@
-import { HttpErrorResponse, httpResource } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, DestroyRef, computed, effect, inject, signal, untracked } from '@angular/core';
-import { LucideCircleAlert, LucideCircleCheck, LucideLoaderCircle, LucidePlay } from '@lucide/angular';
-import { type Subscription, switchMap, takeWhile, timer } from 'rxjs';
-import type { AdminStatus, Run } from '../../../../shared/models';
-import { AdminApi, errorMessage } from '../../core/api';
+import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, resource, signal } from '@angular/core';
+import { LucideCircleAlert, LucideCircleCheck, LucideExternalLink, LucideFlaskConical, LucideLoaderCircle, LucidePlay, LucideRefreshCw } from '@lucide/angular';
+import type { Run } from '../../../../shared/models';
+import { type WorkflowRun, githubErrorText } from '../../core/github';
 import { ToastService } from '../../core/toast';
+import { ContentRepo } from '../content-repo';
 
-const POLL_MS = 2000;
+/** Must match the cron in .github/workflows/gather.yml (UTC). */
+export const GATHER_CRON = '0 3 * * *';
+const POLL_MS = 10_000;
+const POLL_FOR_MS = 15 * 60_000;
+
 const TRIGGER_LABEL: Record<Run['trigger'], string> = { cron: 'Scheduled', manual: 'Manual', 'catch-up': 'Catch-up' };
 const STATUS_LABEL: Record<Run['status'], string> = { running: 'Running', success: 'Done', partial: 'Done with errors', failed: 'Failed' };
 
+/** Next time a daily "m h * * *" UTC cron fires after `now`. */
+export function nextRunAt(cron: string, now = new Date()): Date {
+  const [m, h] = cron.trim().split(/\s+/).map(Number);
+  const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), h, m));
+  if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
+  return next;
+}
+
 @Component({
   selector: 'app-runs',
-  imports: [LucidePlay, LucideLoaderCircle, LucideCircleCheck, LucideCircleAlert],
+  imports: [LucidePlay, LucideFlaskConical, LucideRefreshCw, LucideLoaderCircle, LucideCircleCheck, LucideCircleAlert, LucideExternalLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './runs.html',
   styleUrl: './runs.css',
 })
 export class Runs {
-  private readonly api = inject(AdminApi);
+  private readonly content = inject(ContentRepo);
   private readonly toast = inject(ToastService);
-  private readonly destroyRef = inject(DestroyRef);
 
-  protected readonly status = httpResource<AdminStatus>(() => '/api/admin/status');
-  protected readonly runs = httpResource<Run[]>(() => '/api/admin/runs');
-  protected readonly rows = computed(() => (this.runs.hasValue() ? this.runs.value() : []));
-  protected readonly info = computed(() => (this.status.hasValue() ? this.status.value() : null));
-
-  /** The run being watched, with its latest progress. */
-  protected readonly live = signal<Run | null>(null);
-  protected readonly starting = signal(false);
-  protected readonly busy = computed(() => this.starting() || this.live()?.status === 'running');
+  protected readonly state = resource({ loader: () => this.content.loadState() });
+  protected readonly live = resource({ loader: () => this.content.listGatherRuns() });
+  protected readonly history = computed(() => (this.state.hasValue() ? (this.state.value()?.runs ?? []) : []));
+  protected readonly liveRuns = computed(() => (this.live.hasValue() ? this.live.value() : []));
+  protected readonly lastAiMode = computed(() => {
+    const line = this.history()[0]?.log.find((l) => /\((gemini|fallback) mode\)/.test(l));
+    if (!line) return null;
+    return line.includes('gemini mode') ? 'Gemini' : 'Fallback (no Gemini key)';
+  });
+  protected readonly nextRun = nextRunAt(GATHER_CRON);
+  protected readonly dispatching = signal<string | null>(null);
   protected readonly triggerLabel = TRIGGER_LABEL;
   protected readonly statusLabel = STATUS_LABEL;
-  private poll?: Subscription;
+  private poll?: ReturnType<typeof setInterval>;
+  private pollUntil = 0;
 
   constructor() {
-    // A run already going when the page opens (e.g. the 04:00 one) gets watched too.
-    effect(() => {
-      const running = this.info()?.running;
-      if (running) untracked(() => !this.poll && this.watch(running));
-    });
-    this.destroyRef.onDestroy(() => this.poll?.unsubscribe());
+    inject(DestroyRef).onDestroy(() => clearInterval(this.poll));
   }
 
-  protected start(): void {
-    if (this.busy()) return;
-    this.starting.set(true);
-    this.api.startRun().subscribe({
-      next: ({ id }) => {
-        this.starting.set(false);
-        this.watch(id);
-      },
-      error: (err: unknown) => {
-        this.starting.set(false);
-        const id = err instanceof HttpErrorResponse && err.status === 409 ? (err.error as { id?: string })?.id : undefined;
-        if (id) this.watch(id);
-        else this.toast.show(errorMessage(err), 'error');
-      },
-    });
+  protected liveLabel(run: WorkflowRun): string {
+    if (run.status === 'queued' || run.status === 'waiting' || run.status === 'pending') return 'Queued';
+    if (run.status !== 'completed') return 'Running';
+    return run.conclusion === 'success' ? 'Done' : run.conclusion === 'cancelled' ? 'Cancelled' : 'Failed';
   }
 
-  private watch(id: string): void {
-    this.poll?.unsubscribe();
-    this.poll = timer(0, POLL_MS)
-      .pipe(
-        switchMap(() => this.api.run(id)),
-        takeWhile((run) => run.status === 'running', true),
-      )
-      .subscribe({
-        next: (run) => {
-          this.live.set(run);
-          if (run.status !== 'running') this.finished(run);
-        },
-        error: () => {
-          this.poll = undefined;
-          this.toast.show('Lost track of the run. Refresh to see its result.', 'error');
-        },
-        complete: () => {
-          this.poll = undefined;
-        },
-      });
+  protected async start(mode: 'gather' | 'dry-run'): Promise<void> {
+    if (this.dispatching()) return;
+    this.dispatching.set(mode);
+    try {
+      await this.content.dispatchGather({ mode });
+      this.toast.show(mode === 'gather' ? 'Gather started on GitHub. It takes a few minutes.' : 'Dry run started. Open it on GitHub to see each source’s results.');
+      this.watch();
+    } catch (err) {
+      this.toast.show(githubErrorText(err), 'error');
+    } finally {
+      this.dispatching.set(null);
+    }
   }
 
-  private finished(run: Run): void {
-    const s = run.stats;
-    this.toast.show(
-      run.status === 'failed'
-        ? 'Gather failed. See the run log below.'
-        : `Gather finished: ${s.created} new, ${s.merged} merged${run.status === 'partial' ? ', some sources failed' : ''}`,
-      run.status === 'failed' ? 'error' : 'ok',
-    );
-    this.runs.reload();
-    this.status.reload();
+  protected refresh(): void {
+    this.live.reload();
+    this.state.reload();
+  }
+
+  /** Refresh the live list while a dispatched run is likely queued or running. */
+  private watch(): void {
+    this.pollUntil = Date.now() + POLL_FOR_MS;
+    clearInterval(this.poll);
+    this.poll = setInterval(() => {
+      if (Date.now() > this.pollUntil) {
+        clearInterval(this.poll);
+        return;
+      }
+      this.refresh();
+    }, POLL_MS);
   }
 
   protected when(iso: string): string {

@@ -13,7 +13,7 @@
       <h1>{{ isNew() ? 'New post' : 'Edit post' }}</h1>
       <div class="actions">
         @if (loaded()?.status === 'published') {
-          <a class="btn btn--ghost" [href]="'/p/' + loaded()!.slug" target="_blank" rel="noopener">
+          <a class="btn btn--ghost" [href]="'p/' + loaded()!.slug" target="_blank" rel="noopener">
             View
             <svg lucideExternalLink [size]="16" aria-hidden="true"></svg>
             <span class="visually-hidden">(opens in a new tab)</span>
@@ -159,15 +159,11 @@
         @if (!isNew()) {
           <section class="panel">
             <h2>AI summary</h2>
-            @if (geminiReady()) {
-              <p class="hint">Rewrites the TL;DR and story from the source links.</p>
-              <button type="button" class="btn" (click)="resummarize()" [disabled]="!sources.length" [attr.aria-busy]="resummarizing()">
-                <svg lucideSparkles [size]="16" aria-hidden="true"></svg>
-                {{ resummarizing() ? 'Summarizing…' : 'Re-summarize with AI' }}
-              </button>
-            } @else {
-              <p class="hint">Add GEMINI_API_KEY to .env and restart the server to rewrite summaries with AI.</p>
-            }
+            <p class="hint">Rewrites the TL;DR and story from the source links. Runs on GitHub and needs the GEMINI_API_KEY secret.</p>
+            <button type="button" class="btn" data-action="resummarize" (click)="resummarize()" [disabled]="!sources.length" [attr.aria-busy]="resummarizing()">
+              <svg lucideSparkles [size]="16" aria-hidden="true"></svg>
+              {{ resummarizing() ? 'Starting…' : 'Re-summarize with AI' }}
+            </button>
           </section>
         }
       </aside>

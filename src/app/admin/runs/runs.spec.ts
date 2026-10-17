@@ -1,71 +1,66 @@
-import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import type { Run } from '../../../../shared/models';
-import { Runs } from './runs';
+import type { ContentState, Run } from '../../../../shared/models';
+import { FakeContent, provideFakeContent, settle } from '../testing/fake-content';
+import { Runs, nextRunAt } from './runs';
 
-const run = (status: Run['status']): Run => ({
+const run: Run = {
   id: 'r1',
-  trigger: 'manual',
-  startedAt: '2026-10-17T10:00:00Z',
-  status,
-  stats: { fetched: 10, fresh: 4, clusters: 3, created: 2, merged: 1, skipped: 0 },
+  trigger: 'cron',
+  startedAt: '2026-10-17T03:00:00Z',
+  finishedAt: '2026-10-17T03:01:10Z',
+  status: 'success',
+  stats: { fetched: 419, fresh: 5, clusters: 5, created: 5, merged: 0, skipped: 0 },
   errors: [],
-  log: ['Fetched 12 sources: 10 items'],
-});
+  log: ['Fetched 20 sources: 419 items', 'Grouped into 5 stories (gemini mode)'],
+};
+
+const state: ContentState = {
+  version: 1,
+  settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15, retentionDays: 30 },
+  seen: {},
+  runs: [run],
+  sourceStatus: {},
+};
 
 describe('Runs', () => {
-  let http: HttpTestingController;
+  let fake: FakeContent;
 
   beforeEach(() => {
-    vi.useFakeTimers();
-    TestBed.configureTestingModule({ providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])] });
-    http = TestBed.inject(HttpTestingController);
+    fake = new FakeContent([], [], state, [
+      { id: 9, status: 'in_progress', conclusion: null, createdAt: '2026-10-17T12:00:00Z', url: 'https://github.com/me/kmu/actions/runs/9', event: 'workflow_dispatch', title: 'Gather news' },
+    ]);
+    TestBed.configureTestingModule({ providers: [provideRouter([]), provideFakeContent(fake)] });
   });
-
-  afterEach(() => vi.useRealTimers());
-
-  /** Let resource promises resolve (timers are fake, microtasks are real), then render. */
-  async function settle(fixture: { detectChanges(): void }) {
-    for (let i = 0; i < 5; i++) await Promise.resolve();
-    TestBed.tick();
-    fixture.detectChanges();
-  }
 
   async function render() {
     const fixture = TestBed.createComponent(Runs);
     fixture.detectChanges();
-    TestBed.tick();
-    http.expectOne('/api/admin/status').flush({ geminiConfigured: false, model: 'gemini-flash-latest', nextRunAt: '2026-10-18T04:00:00Z', running: null });
-    http.expectOne('/api/admin/runs').flush([]);
     await settle(fixture);
-    return fixture;
+    return { fixture, el: fixture.nativeElement as HTMLElement };
   }
 
-  it('starts a run and polls until it finishes', async () => {
-    const fixture = await render();
-    const el: HTMLElement = fixture.nativeElement;
-    expect(el.textContent).toContain('Fallback');
+  it('shows the last AI mode, live GitHub runs and the run history', async () => {
+    const { el } = await render();
+    expect(el.querySelector('.cards')?.textContent).toContain('Gemini');
+    expect(el.querySelector('.live a')?.getAttribute('href')).toBe('https://github.com/me/kmu/actions/runs/9');
+    expect(el.querySelector('.live')?.textContent).toContain('Running');
+    expect(el.querySelector('.history')?.textContent).toContain('+5 new');
+  });
 
+  it('starts a gather and a dry run through the workflow', async () => {
+    const { fixture, el } = await render();
     (el.querySelector('button[data-action="run"]') as HTMLButtonElement).click();
-    const start = http.expectOne('/api/admin/runs');
-    expect(start.request.method).toBe('POST');
-    start.flush({ id: 'r1' });
-
-    vi.advanceTimersByTime(0);
-    http.expectOne('/api/admin/runs/r1').flush(run('running'));
     await settle(fixture);
-    expect(el.querySelector('button[data-action="run"]')?.textContent).toContain('Gathering');
-
-    vi.advanceTimersByTime(2000);
-    http.expectOne('/api/admin/runs/r1').flush(run('success'));
-
-    vi.advanceTimersByTime(4000);
-    http.expectNone('/api/admin/runs/r1');
-
+    (el.querySelector('button[data-action="dry-run"]') as HTMLButtonElement).click();
     await settle(fixture);
-    http.expectOne('/api/admin/runs').flush([run('success')]);
-    http.expectOne('/api/admin/status').flush({ geminiConfigured: false, model: 'm', nextRunAt: null, running: null });
+    expect(fake.dispatched).toEqual([{ mode: 'gather' }, { mode: 'dry-run' }]);
+  });
+});
+
+describe('nextRunAt', () => {
+  it('is today at 03:00 UTC when that is still ahead, otherwise tomorrow', () => {
+    expect(nextRunAt('0 3 * * *', new Date('2026-10-17T01:00:00Z')).toISOString()).toBe('2026-10-17T03:00:00.000Z');
+    expect(nextRunAt('0 3 * * *', new Date('2026-10-17T05:00:00Z')).toISOString()).toBe('2026-10-18T03:00:00.000Z');
   });
 });

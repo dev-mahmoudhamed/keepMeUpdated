@@ -1,28 +1,34 @@
-import { HttpErrorResponse, httpResource } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, DestroyRef, HostListener, computed, effect, inject, input, signal, untracked } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, computed, effect, inject, input, signal, untracked } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { LucideArrowLeft, LucideExternalLink, LucidePlus, LucideSparkles, LucideTrash2, LucideX } from '@lucide/angular';
-import type { AdminStatus, Post, PostStatus } from '../../../../shared/models';
+import type { Post, PostSource, PostStatus } from '../../../../shared/models';
 import { slugify } from '../../../../shared/slug';
-import { AdminApi, type PostInput, errorMessage } from '../../core/api';
+import { SAVED_MESSAGE, githubErrorText } from '../../core/github';
 import { ToastService } from '../../core/toast';
+import { ContentRepo } from '../content-repo';
+import { type PostInput, SlugTakenError, upsertPost } from '../post-changes';
 import { RichEditor } from '../rich-editor/rich-editor';
 
 type SourceForm = FormGroup<{
   siteName: FormControl<string>;
   url: FormControl<string>;
   title: FormControl<string>;
+  /** Not shown in the form, but kept so saving doesn't drop them. */
+  sourceId: FormControl<string | undefined>;
+  publishedAt: FormControl<string | undefined>;
 }>;
 
 const URL_PATTERN = /^https?:\/\/\S+$/i;
 
-const sourceForm = (s: { siteName?: string; url?: string; title?: string } = {}): SourceForm =>
+const sourceForm = (s: Partial<PostSource> = {}): SourceForm =>
   new FormGroup({
     siteName: new FormControl(s.siteName ?? '', { nonNullable: true, validators: [Validators.required, Validators.maxLength(100)] }),
     url: new FormControl(s.url ?? '', { nonNullable: true, validators: [Validators.required, Validators.pattern(URL_PATTERN)] }),
     title: new FormControl(s.title ?? '', { nonNullable: true, validators: [Validators.maxLength(300)] }),
+    sourceId: new FormControl<string | undefined>(s.sourceId, { nonNullable: true }),
+    publishedAt: new FormControl<string | undefined>(s.publishedAt, { nonNullable: true }),
   });
 
 @Component({
@@ -36,13 +42,9 @@ export class PostEditor {
   /** Route param; undefined on /admin/posts/new. */
   readonly id = input<string>();
 
-  private readonly api = inject(AdminApi);
+  private readonly content = inject(ContentRepo);
   private readonly router = inject(Router);
   private readonly toast = inject(ToastService);
-  private readonly destroyRef = inject(DestroyRef);
-
-  protected readonly status = httpResource<AdminStatus>(() => '/api/admin/status');
-  protected readonly geminiReady = computed(() => this.status.hasValue() && this.status.value().geminiConfigured);
 
   protected readonly form = new FormGroup({
     title: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.maxLength(300)] }),
@@ -74,7 +76,7 @@ export class PostEditor {
 
     effect(() => {
       const id = this.id();
-      if (id) untracked(() => this.load(id));
+      if (id) untracked(() => void this.load(id));
     });
   }
 
@@ -138,7 +140,7 @@ export class PostEditor {
     this.form.markAsDirty();
   }
 
-  protected save(): void {
+  protected async save(): Promise<void> {
     this.submitted.set(true);
     this.formError.set('');
     this.addTagsFrom(this.tagDraft());
@@ -155,58 +157,65 @@ export class PostEditor {
       bodyHtml: v.bodyHtml,
       tags: v.tags,
       status: v.status,
-      sources: v.sources.map((s) => ({ siteName: s.siteName.trim(), url: s.url.trim(), title: s.title.trim() })),
+      sources: v.sources.map((s) => ({
+        siteName: s.siteName.trim(),
+        url: s.url.trim(),
+        title: s.title.trim(),
+        ...(s.sourceId ? { sourceId: s.sourceId } : {}),
+        ...(s.publishedAt ? { publishedAt: s.publishedAt } : {}),
+      })),
     };
-    const id = this.id();
+    const isNew = this.isNew();
+    const id = this.id() ?? globalThis.crypto.randomUUID();
+    const now = new Date().toISOString();
+    let saved: Post | undefined;
     this.saving.set(true);
-    (id ? this.api.updatePost(id, body) : this.api.createPost(body)).subscribe({
-      next: (post) => {
-        this.saving.set(false);
-        this.form.markAsPristine();
-        this.toast.show(post.status === 'published' ? 'Saved and published' : 'Saved');
-        if (id) this.apply(post);
-        else void this.router.navigate(['/admin/posts', post.id], { replaceUrl: true });
-      },
-      error: (err: unknown) => {
-        this.saving.set(false);
-        const message = errorMessage(err);
-        if (err instanceof HttpErrorResponse && err.status === 409) {
-          this.form.controls.slug.setErrors({ server: message });
-          this.form.controls.slug.markAsTouched();
-        } else {
-          this.formError.set(message);
-        }
-      },
-    });
+    try {
+      await this.content.savePosts((posts) => {
+        const result = upsertPost(posts, id, body, now);
+        saved = result.post;
+        return result.posts;
+      }, `admin: ${isNew ? 'add' : 'update'} post "${body.title}"`);
+      this.form.markAsPristine();
+      this.toast.show(SAVED_MESSAGE);
+      if (isNew) await this.router.navigate(['/admin/posts', id], { replaceUrl: true });
+      else if (saved) this.apply(saved);
+    } catch (err) {
+      if (err instanceof SlugTakenError) {
+        this.form.controls.slug.setErrors({ server: err.message });
+        this.form.controls.slug.markAsTouched();
+      } else {
+        this.formError.set(githubErrorText(err));
+      }
+    } finally {
+      this.saving.set(false);
+    }
   }
 
-  protected resummarize(): void {
+  protected async resummarize(): Promise<void> {
     const id = this.id();
     if (!id || this.resummarizing()) return;
-    if (!window.confirm('Replace the TL;DR and body with a new AI summary of the source links?')) return;
+    if (!window.confirm('Ask Gemini to rewrite the TL;DR and story from the source links? It runs on GitHub and takes a few minutes.')) return;
     this.resummarizing.set(true);
-    this.api.resummarize(id).subscribe({
-      next: (post) => {
-        this.resummarizing.set(false);
-        this.apply(post);
-        this.toast.show('Summary updated');
-      },
-      error: (err) => {
-        this.resummarizing.set(false);
-        this.toast.show(errorMessage(err), 'error');
-      },
-    });
+    try {
+      await this.content.dispatchGather({ mode: 'resummarize', post_id: id });
+      this.toast.show('Re-summarize started. Reload this post in a few minutes to see it.');
+    } catch (err) {
+      this.toast.show(githubErrorText(err), 'error');
+    } finally {
+      this.resummarizing.set(false);
+    }
   }
 
-  private load(id: string): void {
+  private async load(id: string): Promise<void> {
     this.loadError.set('');
-    this.api
-      .post(id)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe({
-        next: (post) => this.apply(post),
-        error: (err) => this.loadError.set(err instanceof HttpErrorResponse && err.status === 404 ? 'This post no longer exists.' : errorMessage(err)),
-      });
+    try {
+      const post = (await this.content.loadPosts()).find((p) => p.id === id);
+      if (post) this.apply(post);
+      else this.loadError.set('This post no longer exists.');
+    } catch (err) {
+      this.loadError.set(githubErrorText(err));
+    }
   }
 
   private apply(post: Post): void {

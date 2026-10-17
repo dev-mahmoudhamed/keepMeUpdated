@@ -186,3 +186,16 @@ export class RepoClient {
     }));
   }
 }
+
+/** A readable message for a failed GitHub call or commit. */
+export function githubErrorText(err: unknown): string {
+  if (err instanceof HttpErrorResponse) {
+    if (err.status === 0) return 'Couldn’t reach GitHub. Check your connection and try again.';
+    if (err.status === 403) return 'GitHub refused this change. Check the token has Contents and Actions write access.';
+    const message = (err.error as { message?: string } | null)?.message;
+    return message ? `GitHub said: ${message}` : `GitHub returned an error (${err.status}). Try again.`;
+  }
+  return err instanceof Error ? err.message : 'Something went wrong. Try again.';
+}
+
+export const SAVED_MESSAGE = 'Saved. The site updates in about 2 minutes.';
