@@ -60,6 +60,7 @@ export async function loadContent(root: string): Promise<Db> {
     sources,
     runs: state.runs ?? [],
     seen: state.seen ?? {},
+    skipped: state.skipped ?? {},
     settings: { ...DEFAULT_SETTINGS, ...(state.settings ?? {}) },
   };
 }
@@ -76,7 +77,7 @@ function stateOf(db: Db): ContentState {
     };
     if (Object.keys(st).length) sourceStatus[normalizeUrl(s.feedUrl)] = st;
   }
-  return { version: 1, settings: db.settings, seen: db.seen, runs: db.runs, sourceStatus };
+  return { version: 1, settings: db.settings, seen: db.seen, skipped: db.skipped, runs: db.runs, sourceStatus };
 }
 
 async function writeIfChanged(root: string, file: string, text: string): Promise<boolean> {
@@ -109,6 +110,8 @@ export function applyRetention(db: Db, now: Date): { removedPosts: number; remov
       removedSeen++;
     }
   }
+  // Rejected articles older than the window can't come back anyway.
+  for (const [url, at] of Object.entries(db.skipped)) if (Date.parse(at) < cutoff) delete db.skipped[url];
   db.runs.splice(RUNS_KEPT);
   return { removedPosts: before - db.posts.length, removedSeen };
 }

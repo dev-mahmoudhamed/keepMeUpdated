@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { MemoryStore } from '../content/store';
 import { GatherService } from './pipeline';
 import type { HttpGet } from './http';
@@ -81,6 +81,7 @@ const baseDb = (sources: Source[], posts: Post[] = []): Db => ({
   sources,
   runs: [],
   seen: {},
+  skipped: {},
   settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15, retentionDays: 30 },
 });
 
@@ -131,7 +132,8 @@ describe('GatherService', () => {
       aiPending: false,
       tags: ['ai-tag', 'angular'],
       runId: run.id,
-      publishedAt: NOW.toISOString(),
+      publishedAt: '2026-10-17T07:00:00.000Z',
+      createdAt: NOW.toISOString(),
     });
     expect(post.sources.map((s) => s.url)).toEqual(['https://a.test/angular-22', 'https://b.test/ng22']);
     expect(post.bodyHtml).toContain('<h3>Key points</h3>');
@@ -231,16 +233,79 @@ describe('GatherService', () => {
     expect(service.isRunning()).toBeNull();
   });
 
-  it('ignores items older than maxItemAgeHours', async () => {
+  it('keeps every article from the last 30 days, even ones seen before', async () => {
+    const db = baseDb([source('a')]);
+    db.seen = { 'https://a.test/week-old': '2026-10-10T00:00:00.000Z' };
     const routes = {
       'https://a.test/feed': rss([
-        { title: 'Old news', url: 'https://a.test/old', date: '2026-10-14T08:00:00Z' },
-        { title: 'Undated news', url: 'https://a.test/undated' },
+        { title: 'Week old news', url: 'https://a.test/week-old', date: '2026-10-10T08:00:00Z' },
+        { title: 'Too old news', url: 'https://a.test/too-old', date: '2026-09-16T08:00:00Z' },
       ]),
     };
-    const { service } = await setup(baseDb([source('a')]), routes, new FakeAi(oneClusterPerItem()));
+    const { store, service } = await setup(db, routes, new FakeAi(oneClusterPerItem()));
     const run = await service.runOnce('manual');
-    expect(run.stats).toMatchObject({ fetched: 2, fresh: 1 });
+    expect(run.stats).toMatchObject({ fetched: 2, fresh: 1, created: 1 });
+    expect(store.read().posts[0]).toMatchObject({ title: 'Summary of Week old news', publishedAt: '2026-10-10T08:00:00.000Z' });
+  });
+
+  it('does not add an article that is already in a post', async () => {
+    const post = existingPost({ sources: [{ siteName: 'A', url: 'https://a.test/angular-22?utm_source=x', title: 'x' }] });
+    const ai = new FakeAi(oneClusterPerItem());
+    const { store, service } = await setup(baseDb([source('a')], [post]), twoSourcesSameStory, ai);
+    const run = await service.runOnce('manual');
+    expect(run.stats.fresh).toBe(0);
+    expect(ai.triageCalls).toEqual([]);
+    expect(store.read().posts).toHaveLength(1);
+  });
+
+  it('remembers articles the relevance filter rejected so they are not checked again', async () => {
+    const ai = new FakeAi(oneClusterPerItem(3));
+    const { store, service } = await setup(baseDb([source('a')]), twoSourcesSameStory, ai);
+    expect((await service.runOnce('manual')).stats.skipped).toBe(1);
+    expect(store.read().skipped).toEqual({ 'https://a.test/angular-22': '2026-10-17T08:00:00.000Z' });
+    const second = await service.runOnce('manual');
+    expect(second.stats.fresh).toBe(0);
+    expect(ai.triageCalls).toHaveLength(1);
+  });
+
+  it('dates undated articles by when they were first seen', async () => {
+    const db = baseDb([source('a')]);
+    db.seen = { 'https://a.test/older-undated': '2026-10-01T00:00:00.000Z', 'https://a.test/ancient-undated': '2026-09-01T00:00:00.000Z' };
+    const routes = {
+      'https://a.test/feed': rss([
+        { title: 'New undated', url: 'https://a.test/undated' },
+        { title: 'Older undated', url: 'https://a.test/older-undated' },
+        { title: 'Ancient undated', url: 'https://a.test/ancient-undated' },
+      ]),
+    };
+    const { store, service } = await setup(db, routes, new FakeAi(oneClusterPerItem()));
+    const run = await service.runOnce('manual');
+    expect(run.stats.fresh).toBe(2);
+    expect(store.read().seen['https://a.test/undated']).toBe(NOW.toISOString());
+    expect(store.read().seen['https://a.test/older-undated']).toBe('2026-10-01T00:00:00.000Z');
+    expect(store.read().posts.map((p) => p.publishedAt).sort()).toEqual(['2026-10-01T00:00:00.000Z', NOW.toISOString()]);
+  });
+
+  it('uses leftover AI budget to summarize older posts that only have the feed description', async () => {
+    const pending = existingPost({ id: 'p9', slug: 'p9', aiPending: true, tldr: 'feed snippet', bodyHtml: '<p>feed</p>', publishedAt: '2026-10-12T00:00:00.000Z' });
+    const ai = new FakeAi(oneClusterPerItem(), (stories) =>
+      stories.map((s) => ({ clusterId: s.clusterId, title: 'T', tldr: 'AI tldr', keyPoints: ['k'], whyItMatters: 'w', tags: ['new'] })),
+    );
+    const { store, service } = await setup(baseDb([source('a')], [pending]), { 'https://a.test/feed': rss([]) }, ai);
+    const run = await service.runOnce('manual');
+    const p = store.read().posts.find((x) => x.id === 'p9')!;
+    expect(p).toMatchObject({ aiPending: false, tldr: 'AI tldr', title: 'Angular 22 released', updatedAt: NOW.toISOString() });
+    expect(p.bodyHtml).toContain('Key points');
+    expect(ai.summarizeCalls[0].map((s) => s.clusterId)).toEqual(['p9']);
+    expect(run.log.join(' / ')).toContain('Summarized 1 older posts');
+  });
+
+  it('does not try to catch up summaries without AI', async () => {
+    const pending = existingPost({ id: 'p9', aiPending: true });
+    const fallbackAi: AiClient = { mode: 'fallback', triage: async () => [], summarize: vi.fn(async () => []) };
+    const { service } = await setup(baseDb([source('a')], [pending]), { 'https://a.test/feed': rss([]) }, fallbackAi);
+    await service.runOnce('manual');
+    expect(fallbackAi.summarize).not.toHaveBeenCalled();
   });
 
   it('drops duplicate links within one run', async () => {
@@ -264,16 +329,6 @@ describe('GatherService', () => {
     expect(store.read().runs[0].finishedAt).toBeDefined();
   });
 
-  it('refreshes seen dates so undated items still listed are never republished', async () => {
-    const db = baseDb([source('a')]);
-    db.seen = { 'https://a.test/undated': '2026-08-20T00:00:00.000Z' };
-    const routes = { 'https://a.test/feed': rss([{ title: 'Undated news', url: 'https://a.test/undated' }]) };
-    const { store, service } = await setup(db, routes, new FakeAi(oneClusterPerItem()));
-    const run = await service.runOnce('manual');
-    expect(run.stats.fresh).toBe(0);
-    expect(store.read().seen['https://a.test/undated']).toBe(NOW.toISOString());
-  });
-
   it('publishes fresh stories in fallback mode instead of skipping them by relevance', async () => {
     const fallbackAi: AiClient = { mode: 'fallback', triage: async (items) => oneClusterPerItem(5)(items), summarize: async () => [] };
     const { store, service } = await setup(baseDb([source('a'), source('b')]), twoSourcesSameStory, fallbackAi);
@@ -282,18 +337,14 @@ describe('GatherService', () => {
     expect(store.read().posts).toHaveLength(2);
   });
 
-  it('keeps only the last 50 runs and prunes old seen urls', async () => {
+  it('keeps only the last 50 runs', async () => {
     const db = baseDb([source('a')]);
     db.runs = Array.from({ length: 50 }, (_, i) => ({
       id: `r${i}`, trigger: 'cron' as const, startedAt: '2026-01-01T00:00:00Z', status: 'success' as const,
       stats: { fetched: 0, fresh: 0, clusters: 0, created: 0, merged: 0, skipped: 0 }, errors: [], log: [],
     }));
-    db.seen = { 'https://very.old/x': '2026-06-01T00:00:00.000Z', 'https://recent.test/y': '2026-10-10T00:00:00.000Z' };
     const { store, service } = await setup(db, twoSourcesSameStory, new FakeAi(oneClusterPerItem()));
     await service.runOnce('manual');
     expect(store.read().runs).toHaveLength(50);
-    expect(store.read().seen['https://very.old/x']).toBeUndefined();
-    expect(store.read().seen['https://recent.test/y']).toBeDefined();
-    expect(store.read().seen['https://a.test/angular-22']).toBe(NOW.toISOString());
   });
 });

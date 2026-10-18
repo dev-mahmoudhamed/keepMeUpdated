@@ -1,8 +1,8 @@
 import type { Db } from '../../shared/models';
-import { renderStoryBody, sanitizeHtml } from '../util/sanitize';
 import type { HttpGet } from './http';
 import { collectArticleText } from './pipeline';
-import type { AiClient, RawItem } from './types';
+import type { AiClient } from './types';
+import { applySummary, itemsFromPost } from './apply-summary';
 
 export type ResummarizeResult = 'updated' | 'not-found' | 'no-sources' | 'no-ai' | 'no-summary';
 
@@ -13,21 +13,10 @@ export async function resummarizePost(db: Db, postId: string, http: HttpGet, ai:
   if (!post.sources.length) return 'no-sources';
   if (ai.mode !== 'gemini') return 'no-ai';
 
-  const items: RawItem[] = post.sources.map((s, i) => ({
-    id: `i${i}`,
-    sourceId: s.sourceId ?? '',
-    siteName: s.siteName,
-    title: s.title || post.title,
-    url: s.url,
-    snippet: i === 0 ? post.tldr : '',
-  }));
+  const items = itemsFromPost(post);
   const [summary] = await ai.summarize([{ clusterId: post.id, items, text: await collectArticleText(items, http) }]);
   if (!summary) return 'no-summary';
 
-  post.tldr = summary.tldr;
-  post.bodyHtml = sanitizeHtml(renderStoryBody(summary.keyPoints, summary.whyItMatters));
-  post.tags = [...new Set([...post.tags, ...summary.tags])].slice(0, 10);
-  post.aiPending = false;
-  post.updatedAt = now.toISOString();
+  applySummary(post, summary, now.toISOString());
   return 'updated';
 }

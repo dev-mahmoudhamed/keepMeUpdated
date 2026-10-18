@@ -8,13 +8,14 @@ import { extractArticleText } from './extract';
 import { fetchSource } from './fetchers';
 import type { HttpGet } from './http';
 import type { AiClient, Cluster, RawItem, StoryInput, StorySummary } from './types';
+import { applySummary, itemsFromPost } from './apply-summary';
 
 const FETCH_CONCURRENCY = 4;
 const ARTICLE_TIMEOUT_MS = 10_000;
 const ARTICLE_LINKS = 3;
 const ARTICLE_CHARS = 6_000;
-const MERGE_WINDOW_DAYS = 7;
-const SEEN_TTL_DAYS = 60;
+/** Gemini summarizes up to 5 stories per request (see ai/gemini.ts). */
+const CATCH_UP_PER_CALL = 5;
 const RUNS_KEPT = 50;
 const DAY_MS = 86_400_000;
 
@@ -124,32 +125,34 @@ export class GatherService {
       run.stats.fetched = fetched.length;
       log(`Fetched ${enabled.length} sources: ${fetched.length} items${failed.length ? ` (${failed.length} failed)` : ''}`);
 
-      // 2. Keep only fresh, unseen, unique links
-      const seen = store.read().seen;
-      const cutoff = nowMs - settings.maxItemAgeHours * 3_600_000;
+      // 2. Keep every article from the retention window (30 days) that isn't posted or rejected yet
+      const { seen, skipped, posts } = store.read();
+      const cutoff = nowMs - settings.retentionDays * DAY_MS;
+      const posted = new Set(posts.flatMap((p) => p.sources.map((s) => normalizeUrl(s.url))));
       const runKeys = new Set<string>();
-      // Every link still listed by a source; its "seen" date is refreshed so it never ages out while listed.
-      const listedKeys = new Set<string>();
+      /** Undated articles get the date they were first seen, so they still age out. */
+      const firstSeen = new Map<string, string>();
       const fresh: RawItem[] = [];
       for (const item of fetched) {
         const key = normalizeUrl(item.url);
-        listedKeys.add(key);
-        if (seen[key] || runKeys.has(key)) continue;
+        if (runKeys.has(key)) continue;
         runKeys.add(key);
-        if (item.publishedAt && Date.parse(item.publishedAt) < cutoff) continue;
-        fresh.push({ ...item, id: `i${fresh.length}` });
+        let publishedAt = item.publishedAt;
+        if (!publishedAt) {
+          publishedAt = seen[key] ?? nowIso;
+          firstSeen.set(key, publishedAt);
+        }
+        if (Date.parse(publishedAt) < cutoff) continue;
+        if (posted.has(key) || skipped[key]) continue;
+        fresh.push({ ...item, publishedAt, id: `i${fresh.length}` });
       }
       run.stats.fresh = fresh.length;
-      log(`Fresh items: ${fresh.length}`);
+      log(`New articles from the last ${settings.retentionDays} days: ${fresh.length}`);
 
       // 3. Triage
       const budget = new AiBudget(settings.maxAiCallsPerRun);
       const ai = this.deps.makeAi(budget);
-      const recentCutoff = nowMs - MERGE_WINDOW_DAYS * DAY_MS;
-      const recent = store
-        .read()
-        .posts.filter((p) => Date.parse(p.createdAt) >= recentCutoff)
-        .map((p) => ({ id: p.id, title: p.title }));
+      const recent = store.read().posts.map((p) => ({ id: p.id, title: p.title }));
       const defaultTags = Object.fromEntries(store.read().sources.map((s) => [s.id, s.defaultTags]));
       const clusters = fresh.length ? await ai.triage(fresh, recent, defaultTags) : [];
       run.stats.clusters = clusters.length;
@@ -213,11 +216,36 @@ export class GatherService {
           db.posts.push(post);
           run.stats.created++;
         }
-        for (const key of listedKeys) db.seen[key] = nowIso;
-        const seenCutoff = nowMs - SEEN_TTL_DAYS * DAY_MS;
-        for (const [key, at] of Object.entries(db.seen)) if (Date.parse(at) < seenCutoff) delete db.seen[key];
+        for (const c of candidates) {
+          if (toCreate.includes(c)) continue;
+          for (const item of itemsOf(c)) db.skipped[normalizeUrl(item.url)] = item.publishedAt ?? nowIso;
+        }
+        for (const [key, at] of firstSeen) db.seen[key] ??= at;
       });
       log(`Created ${run.stats.created} posts`);
+
+      // 6. Spend leftover AI budget on older posts that still only have the feed's description
+      if (ai.mode === 'gemini' && !budget.exhausted) {
+        const pending = store
+          .read()
+          .posts.filter((p) => p.aiPending && p.origin === 'auto' && p.sources.length)
+          .sort((a, b) => (b.publishedAt ?? b.createdAt).localeCompare(a.publishedAt ?? a.createdAt))
+          .slice(0, budget.remaining * CATCH_UP_PER_CALL);
+        if (pending.length) {
+          const stories: StoryInput[] = await mapLimit(pending, FETCH_CONCURRENCY, async (p) => {
+            const items = itemsFromPost(p);
+            return { clusterId: p.id, items, text: await collectArticleText(items, this.deps.http) };
+          });
+          const done = await ai.summarize(stories);
+          await store.update((db) => {
+            for (const summary of done) {
+              const post = db.posts.find((p) => p.id === summary.clusterId);
+              if (post) applySummary(post, summary, nowIso);
+            }
+          });
+          log(`Summarized ${done.length} older posts (AI calls left: ${budget.remaining})`);
+        }
+      }
 
       run.status = enabled.length > 0 && failed.length === enabled.length ? 'failed' : failed.length ? 'partial' : 'success';
     } catch (err) {
@@ -291,7 +319,8 @@ function buildPost(
     aiPending: !summary,
     createdAt: nowIso,
     updatedAt: nowIso,
-    publishedAt: nowIso,
+    // The story's own date (its earliest report), so it lands on the right day and ages out 30 days after.
+    publishedAt: items.map((i) => i.publishedAt).filter((d): d is string => !!d).sort()[0] ?? nowIso,
     runId,
   };
 }

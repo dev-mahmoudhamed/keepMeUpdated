@@ -2,6 +2,7 @@
 
 export interface Settings {
   relevanceThreshold: number;
+  /** Unused since the gather keeps the whole retention window; kept so older state files still load. */
   maxItemAgeHours: number;
   maxAiCallsPerRun: number;
   /** Posts and seen links older than this are deleted on every gather. */
@@ -88,8 +89,10 @@ export interface Db {
   posts: Post[];
   sources: Source[];
   runs: Run[];
-  /** normalized url -> ISO date first seen */
+  /** normalized url -> ISO date first seen (dates articles that have no date of their own) */
   seen: Record<string, string>;
+  /** normalized url -> article date, for articles the relevance filter rejected (so they aren't sent to the AI again) */
+  skipped: Record<string, string>;
   settings: Settings;
 }
 
@@ -105,6 +108,7 @@ export interface ContentState {
   version: 1;
   settings: Settings;
   seen: Record<string, string>;
+  skipped?: Record<string, string>;
   runs: Run[];
   sourceStatus: Record<string, SourceStatus>;
 }

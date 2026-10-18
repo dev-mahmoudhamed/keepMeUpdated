@@ -48,7 +48,7 @@ describe('content files', () => {
 
   it('loads defaults when content files are missing', async () => {
     const db = await loadContent(root);
-    expect(db).toEqual({ version: 1, posts: [], sources: [], runs: [], seen: {}, settings: DEFAULT_SETTINGS });
+    expect(db).toEqual({ version: 1, posts: [], sources: [], runs: [], seen: {}, skipped: {}, settings: DEFAULT_SETTINGS });
     expect(DEFAULT_SETTINGS.retentionDays).toBe(30);
   });
 
@@ -58,6 +58,7 @@ describe('content files', () => {
     db.posts.push(post('a'));
     db.runs.push(run(1));
     db.seen['https://x.test/a'] = '2026-10-16T04:00:00.000Z';
+    db.skipped['https://x.test/b'] = '2026-10-15T00:00:00.000Z';
     db.sources[0].lastFetchedAt = '2026-10-16T03:00:00.000Z';
     db.sources[0].lastItemCount = 10;
     await saveContent(root, db);
@@ -112,6 +113,7 @@ describe('applyRetention', () => {
     sources: [],
     runs: Array.from({ length: 55 }, (_, i) => run(i)),
     seen: { 'https://old.test': '2026-09-01T00:00:00.000Z', 'https://new.test': '2026-10-16T00:00:00.000Z' },
+    skipped: { 'https://old-skip.test': '2026-09-10T00:00:00.000Z', 'https://new-skip.test': '2026-10-01T00:00:00.000Z' },
     settings: DEFAULT_SETTINGS,
   });
 
@@ -120,6 +122,7 @@ describe('applyRetention', () => {
     expect(applyRetention(d, now)).toEqual({ removedPosts: 2, removedSeen: 1 });
     expect(d.posts.map((p) => p.id)).toEqual(['edge', 'new-draft']);
     expect(Object.keys(d.seen)).toEqual(['https://new.test']);
+    expect(Object.keys(d.skipped)).toEqual(['https://new-skip.test']);
     expect(d.runs).toHaveLength(50);
   });
 });

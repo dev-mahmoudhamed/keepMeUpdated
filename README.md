@@ -1,7 +1,7 @@
 # keepMeUpdated
 
 Developer news that matters, gathered every morning. A GitHub Actions workflow reads the sources in
-[sources.md](sources.md), keeps only new updates, merges reports of the same story, writes a short summary with Gemini,
+[sources.md](sources.md), keeps every article from the last 30 days, merges reports of the same story, writes a short summary with Gemini,
 and commits the result. Netlify then builds and publishes the site. News is kept for **30 days**, then deleted. There is
 no database: the data is a couple of JSON files in this repository.
 
@@ -74,9 +74,15 @@ are only in Netlify's environment variables. The browser never sees any of them.
 
 - The gather runs at **03:00 UTC** = 04:00 UK summer time (03:00 in winter). Change the cron in
   `.github/workflows/gather.yml` and `GATHER_CRON` in `src/app/admin/runs/runs.ts` together.
-- Posts and seen links older than **30 days** are deleted on every run (`retentionDays` in `content/state.json` →
-  `settings`). Git history still contains older versions of the files; they're small text files.
-- Each run makes at most 15 Gemini requests (`maxAiCallsPerRun`), to stay inside the free tier.
+- Every run keeps **every article published in the last 30 days** from the enabled sources (`retentionDays` in
+  `content/state.json` → `settings`), whether or not it was seen before. An article already in a post isn't added
+  again, and several sites covering one story become one post with all their links.
+- Posts carry the article's own date, so they show on the right day and are deleted 30 days after it.
+- With a Gemini key, stories it rates below 6/10 (`relevanceThreshold`) are left out; those links are remembered
+  (`skipped`) so they aren't sent to Gemini again.
+- Each run makes at most 15 Gemini requests (`maxAiCallsPerRun`), to stay inside the free tier. Leftover requests
+  summarize older posts that still only have the feed's description, newest first.
+- Git history still contains older versions of the data files; they're small text files.
 
 ## Sources
 
