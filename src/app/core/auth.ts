@@ -1,50 +1,82 @@
-import { HttpErrorResponse, type HttpInterceptorFn } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, type HttpInterceptorFn } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { Router, type CanActivateFn } from '@angular/router';
-import { catchError, throwError } from 'rxjs';
-import { GITHUB_API, RepoClient, TokenError, TokenStore } from './github';
+import { catchError, firstValueFrom, throwError } from 'rxjs';
+import { ADMIN_API } from './github';
+
+export const AUTH_API = '/api/auth';
 
 export interface AdminUser {
-  login: string;
+  email: string;
 }
 
-/** The admin is whoever holds a GitHub token that can push to this site's repository. */
+export type SignInFailure = 'invalid' | 'expired' | 'locked' | 'unavailable';
+
+export class SignInError extends Error {
+  constructor(
+    readonly reason: SignInFailure,
+    /** The server's explanation, when it gave one (e.g. sign-in isn't set up yet). */
+    readonly detail?: string,
+  ) {
+    super(detail ?? reason);
+    this.name = 'SignInError';
+  }
+}
+
+function toSignInError(err: unknown): SignInError {
+  if (err instanceof HttpErrorResponse) {
+    const body = err.error as { reason?: SignInFailure; message?: string } | null;
+    if (err.status === 400 && body?.reason) return new SignInError(body.reason);
+    return new SignInError('unavailable', body?.message);
+  }
+  return new SignInError('unavailable');
+}
+
+/** The admin is whoever can read the sign-in code mailed to ADMIN_EMAIL. The session lives in an HttpOnly cookie. */
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private readonly repo = inject(RepoClient);
-  private readonly tokens = inject(TokenStore);
+  private readonly http = inject(HttpClient);
   /** undefined = not checked yet, null = signed out. */
   private readonly _user = signal<AdminUser | null | undefined>(undefined);
   readonly user = this._user.asReadonly();
 
   async check(): Promise<boolean> {
     if (this._user() !== undefined) return !!this._user();
-    const token = this.tokens.get();
-    if (!token) {
-      this._user.set(null);
-      return false;
-    }
     try {
-      this._user.set(await this.repo.verifyToken(token));
+      this._user.set(await firstValueFrom(this.http.get<AdminUser>(`${AUTH_API}/session`)));
       return true;
-    } catch (err) {
-      // A network blip shouldn't throw away a good token; a rejected one should.
-      if (err instanceof TokenError && err.reason !== 'network') this.tokens.clear();
+    } catch {
       this._user.set(null);
       return false;
     }
   }
 
-  /** Verifies the token with GitHub before keeping it. Throws TokenError. */
-  async signIn(token: string, remember: boolean): Promise<void> {
-    const clean = token.trim();
-    const user = await this.repo.verifyToken(clean);
-    this.tokens.set(clean, remember);
-    this._user.set(user);
+  /** Asks the server to email a code. It answers the same way for any address, so this can't reveal the admin email. */
+  async requestCode(email: string): Promise<void> {
+    try {
+      await firstValueFrom(this.http.post(`${AUTH_API}/code`, { email: email.trim() }));
+    } catch (err) {
+      throw toSignInError(err);
+    }
   }
 
-  signOut(): void {
-    this.tokens.clear();
+  /** Throws SignInError when the code is wrong, expired or used up. */
+  async verifyCode(email: string, code: string, remember: boolean): Promise<void> {
+    try {
+      const user = await firstValueFrom(this.http.post<AdminUser>(`${AUTH_API}/verify`, { email: email.trim(), code: code.trim(), remember }));
+      this._user.set(user);
+    } catch (err) {
+      throw toSignInError(err);
+    }
+  }
+
+  async signOut(): Promise<void> {
+    this._user.set(null);
+    await firstValueFrom(this.http.post(`${AUTH_API}/sign-out`, {})).catch(() => undefined);
+  }
+
+  /** The server already ended the session (e.g. it expired): forget it here without another request. */
+  forget(): void {
     this._user.set(null);
   }
 }
@@ -56,16 +88,16 @@ export const authGuard: CanActivateFn = async (_route, state) => {
   return router.createUrlTree(['/admin/login'], { queryParams: { next: state.url } });
 };
 
-/** A 401 from GitHub means the stored token expired or was revoked: sign out and ask for a new one. */
-export const githubErrorInterceptor: HttpInterceptorFn = (req, next) => {
-  if (!req.url.startsWith(GITHUB_API)) return next(req);
+/** A 401 from the admin API means the session ended: go back to the sign-in page. */
+export const adminSessionInterceptor: HttpInterceptorFn = (req, next) => {
+  if (!req.url.startsWith(ADMIN_API)) return next(req);
   const auth = inject(AuthService);
   const router = inject(Router);
   return next(req).pipe(
     catchError((err: unknown) => {
       const onLogin = router.url.startsWith('/admin/login');
       if (err instanceof HttpErrorResponse && err.status === 401 && !onLogin) {
-        auth.signOut();
+        auth.forget();
         void router.navigate(['/admin/login'], { queryParams: { expired: 1, next: router.url } });
       }
       return throwError(() => err);

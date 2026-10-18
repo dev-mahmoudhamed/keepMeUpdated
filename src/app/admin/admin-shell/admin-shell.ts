@@ -202,7 +202,7 @@ export class AdminShell {
   );
 
   protected async signOut(): Promise<void> {
-    this.auth.signOut();
+    await this.auth.signOut();
     await this.router.navigateByUrl('/admin/login');
   }
 }

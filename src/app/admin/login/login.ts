@@ -1,15 +1,12 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, computed, inject, input, signal, viewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { LucideExternalLink, LucideKeyRound } from '@lucide/angular';
-import { AuthService } from '../../core/auth';
-import { RepoClient, TokenError } from '../../core/github';
-
-const NEW_TOKEN_URL = 'https://github.com/settings/personal-access-tokens/new';
+import { LucideArrowLeft, LucideKeyRound } from '@lucide/angular';
+import { AuthService, SignInError, type SignInFailure } from '../../core/auth';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, RouterLink, LucideKeyRound, LucideExternalLink],
+  imports: [ReactiveFormsModule, RouterLink, LucideKeyRound, LucideArrowLeft],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './login.html',
   styleUrl: './login.css',
@@ -21,57 +18,110 @@ export class Login {
 
   private readonly auth = inject(AuthService);
   private readonly router = inject(Router);
-  private readonly repo = inject(RepoClient);
+  private readonly codeInput = viewChild<ElementRef<HTMLInputElement>>('codeInput');
 
-  protected readonly newTokenUrl = NEW_TOKEN_URL;
-  protected readonly repoName = signal('this site’s repository');
-  protected readonly form = new FormGroup({
-    token: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.pattern(/\S/)] }),
+  protected readonly step = signal<'email' | 'code'>('email');
+  protected readonly emailForm = new FormGroup({
+    email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+  });
+  protected readonly codeForm = new FormGroup({
+    code: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.pattern(/^\s*\d{6}\s*$/)] }),
     remember: new FormControl(false, { nonNullable: true }),
   });
   protected readonly busy = signal(false);
-  private readonly failure = signal<TokenError['reason'] | null>(null);
+  protected readonly sentTo = signal('');
+  private readonly failure = signal<{ reason: SignInFailure; detail?: string } | null>(null);
   private readonly submitted = signal(false);
+  private readonly resent = signal(false);
 
   protected readonly error = computed(() => {
-    switch (this.failure()) {
+    const f = this.failure();
+    switch (f?.reason) {
       case 'invalid':
-        return 'GitHub didn’t accept this token. Check it was copied in full.';
-      case 'no-access':
-        return `This token can’t edit ${this.repoName()}. Give it Contents and Actions read and write access to this repository.`;
-      case 'network':
-        return 'Couldn’t reach GitHub. Check your connection and try again.';
+        return 'That code isn’t right. Check the latest email and try again.';
+      case 'expired':
+        return 'This code expired or was already used. Send a new one.';
+      case 'locked':
+        return 'Too many wrong codes. Send a new one.';
+      case 'unavailable':
+        return f.detail ?? 'Couldn’t reach the server. Check your connection and try again.';
       default:
-        return this.expired() ? 'Your token expired or was revoked. Sign in with a new one.' : '';
+        return this.expired() && this.step() === 'email' ? 'Your session ended. Sign in again.' : '';
     }
   });
+  protected readonly notice = computed(() => (this.resent() && !this.failure() ? 'A new code is on its way.' : ''));
 
-  constructor() {
-    this.repo
-      .config()
-      .then((c) => this.repoName.set(c.repo))
-      .catch(() => undefined);
-  }
-
-  protected tokenMissing(): boolean {
-    const c = this.form.controls.token;
+  protected emailInvalid(): boolean {
+    const c = this.emailForm.controls.email;
     return c.invalid && (c.touched || this.submitted());
   }
 
-  protected async submit(): Promise<void> {
+  protected codeInvalid(): boolean {
+    const c = this.codeForm.controls.code;
+    return c.invalid && (c.touched || this.submitted());
+  }
+
+  protected async sendCode(): Promise<void> {
     this.submitted.set(true);
     this.failure.set(null);
-    if (this.form.invalid || this.busy()) return;
+    if (this.emailForm.invalid || this.busy()) return;
     this.busy.set(true);
     try {
-      const { token, remember } = this.form.getRawValue();
-      await this.auth.signIn(token, remember);
-      const next = this.next();
-      await this.router.navigateByUrl(next?.startsWith('/admin') && !next.startsWith('/admin/login') ? next : '/admin');
+      const { email } = this.emailForm.getRawValue();
+      await this.auth.requestCode(email);
+      this.sentTo.set(email.trim());
+      this.submitted.set(false);
+      this.codeForm.controls.code.reset();
+      this.step.set('code');
+      setTimeout(() => this.codeInput()?.nativeElement.focus());
     } catch (err) {
-      this.failure.set(err instanceof TokenError ? err.reason : 'network');
+      this.fail(err);
     } finally {
       this.busy.set(false);
     }
+  }
+
+  protected async resend(): Promise<void> {
+    if (this.busy()) return;
+    this.failure.set(null);
+    this.resent.set(false);
+    this.busy.set(true);
+    try {
+      await this.auth.requestCode(this.sentTo());
+      this.resent.set(true);
+    } catch (err) {
+      this.fail(err);
+    } finally {
+      this.busy.set(false);
+    }
+  }
+
+  protected changeEmail(): void {
+    this.failure.set(null);
+    this.resent.set(false);
+    this.submitted.set(false);
+    this.step.set('email');
+  }
+
+  protected async signIn(): Promise<void> {
+    this.submitted.set(true);
+    this.failure.set(null);
+    this.resent.set(false);
+    if (this.codeForm.invalid || this.busy()) return;
+    this.busy.set(true);
+    try {
+      const { code, remember } = this.codeForm.getRawValue();
+      await this.auth.verifyCode(this.sentTo(), code, remember);
+      const next = this.next();
+      await this.router.navigateByUrl(next?.startsWith('/admin') && !next.startsWith('/admin/login') ? next : '/admin');
+    } catch (err) {
+      this.fail(err);
+    } finally {
+      this.busy.set(false);
+    }
+  }
+
+  private fail(err: unknown): void {
+    this.failure.set(err instanceof SignInError ? { reason: err.reason, detail: err.detail } : { reason: 'unavailable' });
   }
 }

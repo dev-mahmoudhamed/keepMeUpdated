@@ -2,7 +2,7 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter, withComponentInputBinding, withInMemoryScrolling, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
-import { githubErrorInterceptor } from './core/auth';
+import { adminSessionInterceptor } from './core/auth';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
       withViewTransitions({ skipInitialTransition: true }),
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' }),
     ),
-    provideHttpClient(withFetch(), withInterceptors([githubErrorInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([adminSessionInterceptor])),
   ],
 };
