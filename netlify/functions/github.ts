@@ -2,6 +2,10 @@
 import type { Config } from '@netlify/functions';
 import { SESSION_COOKIE, cookieValue, readAuthEnv, readSession } from '../lib/auth';
 import { proxyGitHub } from '../lib/github-proxy';
+import { loadDevEnv } from '../../config/dev-env';
+
+// Local only: reads .env when IS_DEV_ENV is true (config/dev-env.ts). A no-op on Netlify.
+loadDevEnv();
 
 const PREFIX = '/api/github';
 

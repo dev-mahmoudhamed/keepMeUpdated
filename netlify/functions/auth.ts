@@ -3,6 +3,10 @@ import type { Config } from '@netlify/functions';
 import { SESSION_COOKIE, clearedCookie, cookieValue, readAuthEnv, readSession, requestCode, sessionCookie, signSession, verifyCode } from '../lib/auth';
 import { blobCodeStore } from '../lib/blob-code-store';
 import { resendMailer } from '../lib/mail';
+import { loadDevEnv } from '../../config/dev-env';
+
+// Local only: reads .env when IS_DEV_ENV is true (config/dev-env.ts). A no-op on Netlify.
+loadDevEnv();
 
 const json = (status: number, body: unknown, headers: Record<string, string> = {}) =>
   new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store', ...headers } });
