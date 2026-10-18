@@ -6,6 +6,10 @@ import type { AiBudget } from './gather/ai/budget';
 import { FallbackAiClient } from './gather/ai/fallback';
 import { GeminiAiClient } from './gather/ai/gemini';
 import { httpGet } from './gather/http';
+import { loadDevEnv } from '../config/dev-env';
+
+// Local only: reads .env when IS_DEV_ENV is true (config/dev-env.ts). A no-op on GitHub Actions.
+loadDevEnv();
 
 const MODES: GatherMode[] = ['gather', 'resummarize', 'dry-run'];
 

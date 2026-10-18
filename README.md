@@ -130,6 +130,17 @@ npm run gather -- --mode dry-run
 GEMINI_API_KEY=your-key npm run gather
 ```
 
+### Local environment variables (`IS_DEV_ENV`)
+
+To use your own values locally instead of Netlify's:
+
+1. Copy `.env.example` to `.env` (git-ignored) and replace the `dummy dummy dummy` values.
+2. In `config/dev-env.ts`, set `IS_DEV_ENV = true`.
+3. Run `npx netlify dev` or `npm run gather`. The log lists the variable names it loaded from `.env`.
+
+Set it back to `false` before committing. A test fails while it's `true`, and on Netlify and GitHub Actions the
+variables always come from their own settings.
+
 ## Tests
 
 ```bash
