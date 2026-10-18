@@ -36,4 +36,5 @@ export default async (req: Request): Promise<Response> => {
   );
 };
 
-export const config: Config = { path: `${PREFIX}/*` };
+// Must be a plain string: Netlify reads this at build time without running the code (a template literal is ignored).
+export const config: Config = { path: '/api/github/*' };

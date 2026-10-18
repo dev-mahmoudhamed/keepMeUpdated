@@ -23,3 +23,18 @@ describe('netlify.toml', () => {
     expect(toml).toMatch(/from = "\/\*"\s+to = "\/index.html"\s+status = 200/);
   });
 });
+
+describe('Netlify function routes', () => {
+  // Netlify reads `export const config` at build time without running the code, so only literal values work.
+  // A template literal like `${PREFIX}/*` is silently ignored and the route falls through to the app.
+  const routes: [file: string, path: string][] = [
+    ['netlify/functions/auth.ts', '/api/auth/*'],
+    ['netlify/functions/github.ts', '/api/github/*'],
+  ];
+
+  it.each(routes)('%s declares its path as a plain string', (file, path) => {
+    const source = readFileSync(join(root, file), 'utf8');
+    const config = /export const config[^=]*=\s*\{\s*path:\s*([^}]*?)\s*\}/.exec(source)?.[1];
+    expect(config).toBe(`'${path}'`);
+  });
+});
