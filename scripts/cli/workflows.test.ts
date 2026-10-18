@@ -22,11 +22,9 @@ describe('gather.yml', () => {
     expect(wf.concurrency).toEqual({ group: 'gather', 'cancel-in-progress': false });
   });
 
-  it('can write content and then deploys through the reusable workflow', () => {
+  it('can write content and leaves deploying to Netlify', () => {
     expect(wf.jobs.gather.permissions).toEqual({ contents: 'write' });
-    expect(wf.jobs.deploy.uses).toBe('./.github/workflows/deploy.yml');
-    expect(wf.jobs.deploy.needs).toBe('gather');
-    expect(wf.jobs.deploy.permissions).toEqual({ contents: 'read', pages: 'write', 'id-token': 'write' });
+    expect(Object.keys(wf.jobs)).toEqual(['gather']);
   });
 
   it('passes the Gemini key from secrets to the gather step only', () => {
@@ -41,32 +39,24 @@ describe('gather.yml', () => {
   });
 });
 
-describe('deploy.yml', () => {
-  const { text, wf } = load('deploy.yml');
-
-  it('deploys on push, on demand and when called by the gather', () => {
-    expect(wf.on.push.branches).toEqual(['main']);
-    expect(wf.on).toHaveProperty('workflow_dispatch');
-    expect(wf.on).toHaveProperty('workflow_call');
-  });
-
-  it('builds with the repo base href and an SPA 404 page', () => {
-    expect(text).toContain('--base-href "/${{ github.event.repository.name }}/"');
-    expect(text).toContain('404.html');
-    expect(text).toContain('actions/deploy-pages@v4');
-  });
-});
-
 it('uses no secrets other than GEMINI_API_KEY', () => {
-  for (const name of ['gather.yml', 'deploy.yml']) {
+  for (const name of ['gather.yml']) {
     const secrets = [...load(name).text.matchAll(/secrets\.([A-Z_]+)/g)].map((m) => m[1]);
     expect(secrets.every((s) => s === 'GEMINI_API_KEY')).toBe(true);
   }
 });
 
 it('never interpolates workflow inputs directly into shell commands', () => {
-  for (const name of ['gather.yml', 'deploy.yml']) {
+  for (const name of ['gather.yml']) {
     const runs = (Object.values(load(name).wf.jobs) as { steps?: { run?: string }[] }[]).flatMap((j) => j.steps ?? []).map((s) => s.run ?? '');
     expect(runs.some((r) => r.includes('${{ inputs.'))).toBe(false);
   }
+});
+
+it('knows the branch on scheduled runs, whose event has no repository info', () => {
+  const { wf } = load('gather.yml');
+  const fallback = '${{ github.event.repository.default_branch || github.ref_name }}';
+  expect(wf.jobs.gather.env.BRANCH).toBe(fallback);
+  const checkout = (wf.jobs.gather.steps as { uses?: string; with?: { ref?: string } }[]).find((s) => s.uses?.startsWith('actions/checkout'));
+  expect(checkout?.with?.ref).toBe(fallback);
 });

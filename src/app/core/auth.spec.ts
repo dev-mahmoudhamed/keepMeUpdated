@@ -3,20 +3,19 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { TestBed } from '@angular/core/testing';
 import { Router, UrlTree, provideRouter, type ActivatedRouteSnapshot, type RouterStateSnapshot } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
-import { AuthService, authGuard, githubErrorInterceptor } from './auth';
-import { RepoClient, TokenError, TokenStore } from './github';
+import { AuthService, SignInError, adminSessionInterceptor, authGuard } from './auth';
 
 function setup() {
-  sessionStorage.clear();
-  localStorage.clear();
   TestBed.configureTestingModule({
     providers: [
       provideRouter([{ path: '**', children: [] }]),
-      provideHttpClient(withInterceptors([githubErrorInterceptor])),
+      provideHttpClient(withInterceptors([adminSessionInterceptor])),
       provideHttpClientTesting(),
     ],
   });
 }
+
+const tick = () => new Promise((r) => setTimeout(r));
 
 describe('authGuard', () => {
   const runGuard = (url: string) =>
@@ -37,50 +36,78 @@ describe('authGuard', () => {
 });
 
 describe('AuthService', () => {
-  beforeEach(setup);
+  let http: HttpTestingController;
+  let auth: AuthService;
 
-  it('signs in with a token that can push', async () => {
-    vi.spyOn(TestBed.inject(RepoClient), 'verifyToken').mockResolvedValue({ login: 'mahmoud' });
-    const auth = TestBed.inject(AuthService);
-    await auth.signIn('  tok  ', false);
-    expect(auth.user()).toEqual({ login: 'mahmoud' });
-    expect(TestBed.inject(TokenStore).get()).toBe('tok');
-    expect(localStorage.getItem('kmu.gh.token')).toBeNull();
+  beforeEach(() => {
+    setup();
+    http = TestBed.inject(HttpTestingController);
+    auth = TestBed.inject(AuthService);
   });
 
-  it('remembers the token only when asked', async () => {
-    vi.spyOn(TestBed.inject(RepoClient), 'verifyToken').mockResolvedValue({ login: 'mahmoud' });
-    await TestBed.inject(AuthService).signIn('tok', true);
-    expect(localStorage.getItem('kmu.gh.token')).toBe('tok');
+  afterEach(() => http.verify());
+
+  it('asks the server once whether there is a session', async () => {
+    const first = auth.check();
+    http.expectOne('/api/auth/session').flush({ email: 'admin@example.com' });
+    expect(await first).toBe(true);
+    expect(await auth.check()).toBe(true);
+    expect(auth.user()).toEqual({ email: 'admin@example.com' });
   });
 
-  it('does not store a rejected token', async () => {
-    vi.spyOn(TestBed.inject(RepoClient), 'verifyToken').mockRejectedValue(new TokenError('no-access'));
-    await expect(TestBed.inject(AuthService).signIn('tok', true)).rejects.toEqual(new TokenError('no-access'));
-    expect(TestBed.inject(TokenStore).get()).toBeNull();
+  it('is signed out when the server says so', async () => {
+    const p = auth.check();
+    http.expectOne('/api/auth/session').flush({ message: 'Signed out.' }, { status: 401, statusText: 'Unauthorized' });
+    expect(await p).toBe(false);
+    expect(auth.user()).toBeNull();
   });
 
-  it('checks a stored token once and forgets a revoked one', async () => {
-    TestBed.inject(TokenStore).set('old', true);
-    const verify = vi.spyOn(TestBed.inject(RepoClient), 'verifyToken').mockRejectedValue(new TokenError('invalid'));
-    const auth = TestBed.inject(AuthService);
-    expect(await auth.check()).toBe(false);
-    expect(await auth.check()).toBe(false);
-    expect(verify).toHaveBeenCalledTimes(1);
-    expect(TestBed.inject(TokenStore).get()).toBeNull();
+  it('requests a code for the trimmed email', async () => {
+    const p = auth.requestCode('  me@example.com ');
+    const req = http.expectOne('/api/auth/code');
+    expect(req.request.method).toBe('POST');
+    expect(req.request.body).toEqual({ email: 'me@example.com' });
+    req.flush({ ok: true });
+    await expect(p).resolves.toBeUndefined();
   });
 
-  it('drops the token and redirects on 401', async () => {
-    TestBed.inject(TokenStore).set('tok', false);
+  it('passes on why the server could not send a code', async () => {
+    const p = auth.requestCode('me@example.com');
+    http.expectOne('/api/auth/code').flush({ message: 'Email isn’t set up yet.' }, { status: 503, statusText: 'Unavailable' });
+    await expect(p).rejects.toEqual(new SignInError('unavailable', 'Email isn’t set up yet.'));
+  });
+
+  it('signs in with a valid code', async () => {
+    const p = auth.verifyCode('me@example.com', ' 123456 ', true);
+    const req = http.expectOne('/api/auth/verify');
+    expect(req.request.body).toEqual({ email: 'me@example.com', code: '123456', remember: true });
+    req.flush({ email: 'me@example.com' });
+    await p;
+    expect(auth.user()).toEqual({ email: 'me@example.com' });
+  });
+
+  it('reports why a code was refused', async () => {
+    const p = auth.verifyCode('me@example.com', '000000', false);
+    http.expectOne('/api/auth/verify').flush({ reason: 'locked' }, { status: 400, statusText: 'Bad Request' });
+    await expect(p).rejects.toEqual(new SignInError('locked'));
+    expect(auth.user()).toBeUndefined();
+  });
+
+  it('signs out on the server too', async () => {
+    const p = auth.signOut();
+    expect(auth.user()).toBeNull();
+    http.expectOne('/api/auth/sign-out').flush({ ok: true });
+    await p;
+  });
+
+  it('goes back to sign-in when the admin API says the session ended', async () => {
     const router = TestBed.inject(Router);
     await router.navigateByUrl('/admin/sources');
-    const call = firstValueFrom(TestBed.inject(HttpClient).get('https://api.github.com/repos/me/kmu/git/ref/heads/main'));
-    TestBed.inject(HttpTestingController)
-      .expectOne('https://api.github.com/repos/me/kmu/git/ref/heads/main')
-      .flush({ message: 'Bad credentials' }, { status: 401, statusText: 'Unauthorized' });
+    const call = firstValueFrom(TestBed.inject(HttpClient).get('/api/github/git/ref/heads/main'));
+    http.expectOne('/api/github/git/ref/heads/main').flush({ message: 'Your session ended.' }, { status: 401, statusText: 'Unauthorized' });
     await expect(call).rejects.toBeTruthy();
-    await new Promise((r) => setTimeout(r));
-    expect(TestBed.inject(TokenStore).get()).toBeNull();
+    await tick();
+    expect(auth.user()).toBeNull();
     expect(router.url).toBe('/admin/login?expired=1&next=%2Fadmin%2Fsources');
   });
 });

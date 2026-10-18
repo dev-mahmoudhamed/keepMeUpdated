@@ -2,13 +2,13 @@
 
 Developer news that matters, gathered every morning. A GitHub Actions workflow reads the sources in
 [sources.md](sources.md), keeps only new updates, merges reports of the same story, writes a short summary with Gemini,
-and publishes a static site on GitHub Pages. News is kept for **30 days**, then deleted. There is no server and no
-database: the data is a couple of JSON files in this repository.
+and commits the result. Netlify then builds and publishes the site. News is kept for **30 days**, then deleted. There is
+no database: the data is a couple of JSON files in this repository.
 
 - **Site:** Cards or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
 - **Admin (`/admin`):** write and edit posts with a rich-text editor, publish or hide them, manage sources, and start a
-  gather — all from the browser, signed in with a GitHub token.
+  gather. Sign in with a 6-digit code emailed to the admin address.
 
 ## How it works
 
@@ -16,11 +16,15 @@ database: the data is a couple of JSON files in this repository.
 GitHub Actions (03:00 UTC daily, or "Run gather now")
   └─ npm run gather   → reads sources.md, fetches feeds, Gemini summaries, deletes news older than 30 days
   └─ commits content/posts.json + content/state.json
-  └─ builds the Angular site and deploys it to GitHub Pages
+
+Netlify (on every push to main)
+  └─ npm run build    → content/ → public/data/, then the Angular site → dist/keepMeUpdated/browser
+  └─ netlify/functions → /api/auth/* (email-code sign-in) and /api/github/* (the admin's repository calls)
 
 Admin panel (in your browser)
-  └─ reads/edits content/posts.json and sources.md through the GitHub API (each save is a commit)
-  └─ every commit redeploys the site (about 2 minutes)
+  └─ signs in with a code sent to ADMIN_EMAIL; the session is an HttpOnly cookie
+  └─ reads/edits content/posts.json and sources.md through /api/github, which uses the site's GitHub token
+  └─ every save is a commit, and every commit redeploys the site (about 2 minutes)
 ```
 
 | Path | What it is |
@@ -28,28 +32,43 @@ Admin panel (in your browser)
 | `sources.md` | The news sources. Edit it here or in Admin → Sources. |
 | `content/posts.json` | All posts from the last 30 days (written by the gather and the admin). |
 | `content/state.json` | Seen links, run history, source fetch results, settings. |
-| `scripts/` | The gather and build scripts that Actions runs. |
-| `.github/workflows/` | `gather.yml` (daily gather) and `deploy.yml` (build + Pages). |
+| `scripts/` | The gather and build scripts. |
+| `netlify/` | The sign-in and admin API functions. |
+| `netlify.toml` | Netlify build, publish folder, functions and SPA routing. |
+| `.github/workflows/gather.yml` | The daily gather. |
 | `src/` | The Angular 22 site and admin panel. |
 
 ## Setup (once)
 
-1. **Make the repository public** — Settings → General → Danger zone → Change visibility. (GitHub Pages is free for
-   public repositories.)
-2. **Turn on Pages** — Settings → Pages → Build and deployment → Source: **GitHub Actions**.
-3. **Add your Gemini key** — Settings → Secrets and variables → Actions → **New repository secret**:
+1. **Connect the repository to Netlify** — Add new project → Import from Git → this repository. The build settings come
+   from `netlify.toml`; leave the build command and publish directory in the UI empty (or set them to `npm run build`
+   and `dist/keepMeUpdated/browser`).
+2. **Add your Gemini key to GitHub** — Settings → Secrets and variables → Actions → **New repository secret**:
    name `GEMINI_API_KEY`, value: your key from [Google AI Studio](https://aistudio.google.com/apikey).
    Without it the gather still runs, using the feeds' own descriptions instead of AI summaries.
-4. **Create your admin token** — GitHub → Settings → Developer settings → Personal access tokens →
+3. **Create a GitHub token for the site** — GitHub → Settings → Developer settings → Personal access tokens →
    [Fine-grained tokens → Generate new token](https://github.com/settings/personal-access-tokens/new):
    - Repository access: **Only select repositories** → this repository.
    - Repository permissions: **Contents: Read and write**, **Actions: Read and write**.
-   - Save it in your password manager. Sign in at `https://<you>.github.io/keepMeUpdated/admin` by pasting it.
-5. Push to `main`. The deploy workflow publishes the site; the first gather runs at the next 03:00 UTC, or start it
-   from **Actions → Gather news → Run workflow** (or Admin → Gather runs).
+4. **Create a [Resend](https://resend.com) account** with the admin email address, and an API key (API Keys → Create).
+   Resend's test sender can mail the account's own address without a domain. To send from your own domain, verify it in
+   Resend and set `EMAIL_FROM`.
+5. **Add the environment variables in Netlify** — Project configuration → Environment variables (scope: Functions):
 
-No passwords or keys live in this repository or on your computer. The Gemini key is only in GitHub Secrets; the admin
-token is only in your browser (for this tab, or for this device if you tick "Keep me signed in").
+   | Name | Value |
+   |---|---|
+   | `ADMIN_EMAIL` | The address that receives sign-in codes. |
+   | `RESEND_API_KEY` | From step 4. |
+   | `AUTH_SECRET` | A random string of 32+ characters, e.g. `openssl rand -base64 48`. Changing it signs everyone out. |
+   | `GITHUB_TOKEN` | From step 3. |
+   | `GITHUB_REPO` | `owner/name` of this repository. |
+   | `EMAIL_FROM` | Optional, e.g. `keepMeUpdated <admin@yourdomain.com>` (needs a verified domain in Resend). |
+
+   Then **Deploys → Trigger deploy** so the functions pick them up.
+6. Open `https://<your-site>.netlify.app/admin`, enter the admin email, and sign in with the code from the email.
+
+No keys live in this repository. The Gemini key is only in GitHub Secrets; the GitHub token, Resend key and auth secret
+are only in Netlify's environment variables. The browser never sees any of them.
 
 ## Schedule and retention
 
@@ -91,8 +110,15 @@ npm install
 npm run dev
 ```
 
-The site opens at http://localhost:4200 with the data from `content/`. The admin panel works locally too, against the
-real repository on GitHub (sign in with your token).
+The site opens at http://localhost:4200 with the data from `content/`. For the admin panel, run the site and the
+functions together with the Netlify CLI (it reads the environment variables from your Netlify project once you've run
+`npx netlify link`):
+
+```bash
+npx netlify dev
+```
+
+That serves everything on http://localhost:8888.
 
 Run a gather on your machine (changes `content/` files; commit them if you want to keep them):
 

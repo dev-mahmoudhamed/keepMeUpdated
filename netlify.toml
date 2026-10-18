@@ -1,0 +1,30 @@
+# Netlify builds the site on every push to main (admin edits and the daily gather are commits).
+[build]
+  command = "npm run build"
+  # The Angular application builder writes the browser files here; @netlify/angular-runtime fails the build otherwise.
+  publish = "dist/keepMeUpdated/browser"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# `netlify dev` runs the Angular dev server and the functions together on http://localhost:8888.
+[dev]
+  command = "npm run dev"
+  targetPort = 4200
+  port = 8888
+  framework = "#custom"
+
+# Deep links (/p/<slug>, /admin/...) are routed by the app. Real files and /api/* functions take precedence.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

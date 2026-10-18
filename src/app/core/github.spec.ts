@@ -2,22 +2,19 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, TestRequest, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import type { SiteConfig } from '../../../shared/models';
-import { RepoClient, TokenError, TokenStore } from './github';
+import { RepoClient } from './github';
 
 const site: SiteConfig = { repo: 'me/kmu', branch: 'main', gatherWorkflow: 'gather.yml', schedule: '0 3 * * *' };
-const API = 'https://api.github.com/repos/me/kmu';
+const API = '/api/github';
 
 describe('RepoClient', () => {
   let http: HttpTestingController;
   let client: RepoClient;
 
   beforeEach(() => {
-    sessionStorage.clear();
-    localStorage.clear();
     TestBed.configureTestingModule({ providers: [provideHttpClient(), provideHttpClientTesting()] });
     http = TestBed.inject(HttpTestingController);
     client = TestBed.inject(RepoClient);
-    TestBed.inject(TokenStore).set('tok', false);
   });
 
   afterEach(() => http.verify());
@@ -42,7 +39,7 @@ describe('RepoClient', () => {
     (await next(`${API}/git/ref/heads/main`)).flush({ object: { sha: 'c1' } });
     const req = await next(`${API}/contents/content/posts.json?ref=c1`);
     expect(req.request.headers.get('Accept')).toBe('application/vnd.github.raw+json');
-    expect(req.request.headers.get('Authorization')).toBe('Bearer tok');
+    expect(req.request.headers.get('Authorization')).toBeNull();
     req.flush('[1,2]');
     expect(await p).toEqual({ text: '[1,2]', sha: 'c1', exists: true });
   });
@@ -102,30 +99,6 @@ describe('RepoClient', () => {
     await expect(p).resolves.toBeUndefined();
   });
 
-  it('verifyToken rejects tokens without push access', async () => {
-    const p = client.verifyToken('ro-token');
-    await flushConfig();
-    const req = await next(API);
-    expect(req.request.headers.get('Authorization')).toBe('Bearer ro-token');
-    req.flush({ permissions: { push: false } });
-    await expect(p).rejects.toEqual(new TokenError('no-access'));
-  });
-
-  it('verifyToken reports an invalid token', async () => {
-    const p = client.verifyToken('bad');
-    await flushConfig();
-    (await next(API)).flush({ message: 'Bad credentials' }, { status: 401, statusText: 'Unauthorized' });
-    await expect(p).rejects.toEqual(new TokenError('invalid'));
-  });
-
-  it('verifyToken accepts a token that can push and returns the user', async () => {
-    const p = client.verifyToken('good');
-    await flushConfig();
-    (await next(API)).flush({ permissions: { push: true } });
-    (await next('https://api.github.com/user')).flush({ login: 'mahmoud' });
-    await expect(p).resolves.toEqual({ login: 'mahmoud' });
-  });
-
   it('dispatches the gather workflow on the configured branch', async () => {
     const p = client.dispatchGather({ mode: 'resummarize', post_id: 'p1' });
     await flushConfig();
@@ -144,24 +117,5 @@ describe('RepoClient', () => {
     expect(await p).toEqual([
       { id: 1, status: 'completed', conclusion: 'success', createdAt: '2026-10-17T03:00:00Z', url: 'https://github.com/x', event: 'schedule', title: 'Gather news' },
     ]);
-  });
-});
-
-describe('TokenStore', () => {
-  beforeEach(() => {
-    sessionStorage.clear();
-    localStorage.clear();
-  });
-
-  it('keeps the token for this tab unless asked to remember it', () => {
-    const store = TestBed.inject(TokenStore);
-    store.set('a', false);
-    expect(sessionStorage.getItem('kmu.gh.token')).toBe('a');
-    expect(localStorage.getItem('kmu.gh.token')).toBeNull();
-    store.set('b', true);
-    expect(localStorage.getItem('kmu.gh.token')).toBe('b');
-    expect(store.get()).toBe('b');
-    store.clear();
-    expect(store.get()).toBeNull();
   });
 });

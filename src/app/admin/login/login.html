@@ -8,62 +8,93 @@
       </span>
     </header>
 
-    <div class="intro">
-      <h1 id="login-title">Sign in to manage posts</h1>
-      <p>Use a GitHub access token that can edit <strong>{{ repoName() }}</strong>. It stays in this browser and is only sent to GitHub.</p>
-    </div>
-
-    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-      <div class="field">
-        <label for="token">GitHub access token</label>
-        <input
-          id="token"
-          class="input mono"
-          type="password"
-          formControlName="token"
-          autocomplete="current-password"
-          spellcheck="false"
-          placeholder="github_pat_…"
-          [attr.aria-invalid]="tokenMissing()"
-          aria-describedby="token-hint token-error"
-        />
-        @if (tokenMissing()) {
-          <p id="token-error" class="error-text">Paste your token to sign in.</p>
-        } @else {
-          <p id="token-hint" class="hint">A fine-grained token with Contents and Actions read and write access.</p>
-        }
+    @if (step() === 'email') {
+      <div class="intro">
+        <h1 id="login-title">Sign in to manage posts</h1>
+        <p>Enter the admin email address. We’ll send it a 6-digit code.</p>
       </div>
 
-      <label class="check">
-        <input id="remember" type="checkbox" formControlName="remember" />
-        <span>Keep me signed in on this device</span>
-      </label>
+      <form [formGroup]="emailForm" (ngSubmit)="sendCode()" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            class="input"
+            type="email"
+            formControlName="email"
+            autocomplete="email"
+            inputmode="email"
+            spellcheck="false"
+            placeholder="you@example.com"
+            [attr.aria-invalid]="emailInvalid()"
+            aria-describedby="email-error"
+          />
+          @if (emailInvalid()) {
+            <p id="email-error" class="error-text">Enter a valid email address.</p>
+          }
+        </div>
 
-      @if (error()) {
-        <p class="alert" role="alert">{{ error() }}</p>
-      }
+        @if (error()) {
+          <p class="alert" role="alert">{{ error() }}</p>
+        }
 
-      <button type="submit" class="btn btn--primary submit" [attr.aria-busy]="busy()">
-        {{ busy() ? 'Checking with GitHub…' : 'Sign in' }}
-      </button>
-    </form>
+        <button type="submit" class="btn btn--primary submit" [attr.aria-busy]="busy()">
+          {{ busy() ? 'Sending…' : 'Email me a code' }}
+        </button>
+      </form>
+    } @else {
+      <div class="intro">
+        <h1 id="login-title">Check your email</h1>
+        <p>
+          If <strong>{{ sentTo() }}</strong> is the admin address, a 6-digit code is on its way. It works for 10 minutes.
+        </p>
+      </div>
 
-    <details class="help">
-      <summary>How to create a token</summary>
-      <ol>
-        <li>
-          Open
-          <a [href]="newTokenUrl" target="_blank" rel="noopener noreferrer">
-            GitHub’s new fine-grained token page
-            <svg lucideExternalLink [size]="13" aria-hidden="true"></svg>
-            <span class="visually-hidden">(opens in a new tab)</span>
-          </a>
-          and pick an expiry date.
-        </li>
-        <li>Under <em>Repository access</em>, choose <em>Only select repositories</em> and select <strong>{{ repoName() }}</strong>.</li>
-        <li>Under <em>Repository permissions</em>, set <em>Contents</em> and <em>Actions</em> to <em>Read and write</em>.</li>
-        <li>Generate the token, copy it into your password manager, and paste it above.</li>
-      </ol>
-    </details>
+      <form [formGroup]="codeForm" (ngSubmit)="signIn()" novalidate>
+        <div class="field">
+          <label for="code">Sign-in code</label>
+          <input
+            #codeInput
+            id="code"
+            class="input mono code"
+            type="text"
+            formControlName="code"
+            autocomplete="one-time-code"
+            inputmode="numeric"
+            maxlength="6"
+            spellcheck="false"
+            placeholder="123456"
+            [attr.aria-invalid]="codeInvalid()"
+            aria-describedby="code-error"
+          />
+          @if (codeInvalid()) {
+            <p id="code-error" class="error-text">Enter the 6 digits from the email.</p>
+          }
+        </div>
+
+        <label class="check">
+          <input id="remember" type="checkbox" formControlName="remember" />
+          <span>Keep me signed in on this device for 30 days</span>
+        </label>
+
+        @if (error()) {
+          <p class="alert" role="alert">{{ error() }}</p>
+        } @else if (notice()) {
+          <p class="notice" role="status">{{ notice() }}</p>
+        }
+
+        <button type="submit" class="btn btn--primary submit" [attr.aria-busy]="busy()">
+          {{ busy() ? 'Checking…' : 'Sign in' }}
+        </button>
+      </form>
+
+      <div class="links">
+        <button type="button" class="link" (click)="changeEmail()">
+          <svg lucideArrowLeft [size]="14" aria-hidden="true"></svg>
+          Use a different email
+        </button>
+        <button type="button" class="link" (click)="resend()" [disabled]="busy()">Send a new code</button>
+      </div>
+    }
   </section>
 </main>
