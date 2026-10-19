@@ -3,12 +3,15 @@
     "id": "d3b09e97-aba0-4457-af60-f28ef7f7ed9f",
     "slug": "22-3-0-next-2",
     "title": "Angular CLI 22.3.0-next.2",
-    "tldr": "@schematics/angular Commit Description add use-library-builder migration to migrate from ng-packagr keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manage…",
-    "bodyHtml": "<p><strong>Angular CLI releases:</strong> @schematics/angular Commit Description add use-library-builder migration to migrate from ng-packagr keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manager is not installed resolve package name in npm workspace members @angular-devkit/schematics Commit Description avoid stack overflow when chaining many rules @angular/build Commit Description add CSP n…</p>",
+    "tldr": "Angular CLI has released version 22.3.0-next.2 with migration and CLI configuration improvements.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Adds a use-library-builder migration to migrate projects from ng-packagr.</li><li>Retains workspace build version settings during the use-application-builder migration.</li><li>Updates @angular/cli to accept multi-digit array indices in ng config.</li><li>Ensures ng version functions properly even if a package manager is not installed.</li></ul><h3>Why it matters</h3><p>This release provides smoother tooling migrations for libraries and improves CLI configuration parsing and stability.</p>",
     "tags": [
       "angular",
       "cli",
-      "release"
+      "release",
+      "angular cli",
+      "javascript",
+      "web development"
     ],
     "sources": [
       {
@@ -20,9 +23,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-17T12:11:43.551Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
@@ -30,12 +33,15 @@
     "id": "064043ad-d580-4df5-b1f2-67bc7e5d4b68",
     "slug": "22-2-3",
     "title": "Angular CLI 22.2.3",
-    "tldr": "@schematics/angular Commit Description keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manager is not installed resolve package name in npm workspace memb…",
-    "bodyHtml": "<p><strong>Angular CLI releases:</strong> @schematics/angular Commit Description keep the workspace build version in the use-application-builder migration @angular/cli Commit Description accept multi-digit array indices in ng config keep ng version working when the package manager is not installed resolve package name in npm workspace members @angular-devkit/schematics Commit Description avoid stack overflow when chaining many rules @angular/build Commit Description add CSP nonce to stylesheet and modulepreload link elements always use…</p>",
+    "tldr": "Angular CLI 22.2.3 introduces bug fixes for application builder migrations, CLI configuration handling, and package manager support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Keeps the workspace build version intact in the use-application-builder migration.</li><li>Supports multi-digit array indices in ng config commands.</li><li>Maintains ng version functionality when no package manager is installed.</li><li>Resolves package names within npm workspace member setups.</li></ul><h3>Why it matters</h3><p>The maintenance release addresses workspace resolution issues and edge-case configuration bugs across Angular CLI tools.</p>",
     "tags": [
       "angular",
       "cli",
-      "release"
+      "release",
+      "angular cli",
+      "javascript",
+      "web development"
     ],
     "sources": [
       {
@@ -47,9 +53,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-17T12:11:43.579Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
@@ -57,11 +63,16 @@
     "id": "be1e22e7-3a27-49b4-86d7-fbde6ce04126",
     "slug": "introducing-dotnetup-a-toolchain-manager-for-net",
     "title": "Introducing dotnetup: A toolchain manager for .NET",
-    "tldr": "Learn how the new dotnetup tool helps macOS and Linux developers install, manage, and update user-local .NET SDKs and runtimes. The post Introducing dotnetup: A toolchain manager for .NET appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> Learn how the new dotnetup tool helps macOS and Linux developers install, manage, and update user-local .NET SDKs and runtimes. The post Introducing dotnetup: A toolchain manager for .NET appeared first on .NET Blog.</p>",
+    "tldr": "Microsoft has introduced dotnetup, a dedicated toolchain manager in public preview for macOS and Linux to manage .NET SDKs and runtimes in user-space.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Installs and manages .NET components entirely within user directories without requiring root or sudo access.</li><li>Allows developers to track major channels or feature bands for automated servicing, alongside side-by-side runtime support.</li><li>Supports daily and preview builds alongside stable releases, and integrates with existing global.json project pinning.</li><li>Provides signature and checksum validation and aims to integrate into CI/CD workflows and Windows in future updates.</li></ul><h3>Why it matters</h3><p>It eliminates friction associated with managing multiple .NET installations across macOS and Linux by providing a unified, non-root CLI experience similar to rustup or nvm.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net",
+      "cli",
+      "developer tools",
+      "linux",
+      "macos"
     ],
     "sources": [
       {
@@ -75,9 +86,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
@@ -85,11 +96,15 @@
     "id": "5c03574b-f077-45f1-833e-17c8270b29cb",
     "slug": "stop-waiting-on-a-failed-build",
     "title": "Stop waiting on a failed build",
-    "tldr": "Stop solution builds after the first project failure so you can return to fixing the error sooner. The post Stop waiting on a failed build appeared first on Visual Studio Blog.",
-    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> Stop solution builds after the first project failure so you can return to fixing the error sooner. The post Stop waiting on a failed build appeared first on Visual Studio Blog.</p>",
+    "tldr": "Visual Studio 2026 version 18.11 adds an opt-in setting that immediately stops solution builds after the first project failure.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Enabled via Tools &gt; Options &gt; Projects and Solutions &gt; Build and Run under 'Stop solution build after first failure'.</li><li>Prevents queued projects from starting and safely stops active project builds upon a failure.</li><li>Builds are reported as failed rather than canceled.</li><li>Reduced post-failure completion times from an average of 26 seconds to 1.5 seconds in test builds.</li></ul><h3>Why it matters</h3><p>Developers can shorten feedback loops during debugging by avoiding unnecessary compilations across remaining projects once an error has occurred.</p>",
     "tags": [
       "visualstudio",
-      "dotnet"
+      "dotnet",
+      "visual studio",
+      "ide",
+      "build systems",
+      "developer tools"
     ],
     "sources": [
       {
@@ -103,9 +118,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
@@ -113,11 +128,16 @@
     "id": "b3e85e10-cc53-4106-8967-a1a7fa43f7b0",
     "slug": "self-hosting-at-home-with-cloudflare-tunnel",
     "title": "Self-Hosting at Home With Cloudflare Tunnel",
-    "tldr": "My Linux mini PC can run web apps, but CGNAT stops me from sharing them with a router port forward.",
-    "bodyHtml": "<p><strong>Milan Jovanović:</strong> My Linux mini PC can run web apps, but CGNAT stops me from sharing them with a router port forward.</p>",
+    "tldr": "Cloudflare Tunnel enables hosting web applications on a home Linux server behind CGNAT without needing port forwarding or a public IP address.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The open-source cloudflared daemon establishes outbound encrypted connections to Cloudflare, bypassing CGNAT and dynamic IP limitations.</li><li>Routers can keep inbound ports closed, preventing direct public exposure of the origin server IP.</li><li>Traffic is terminated and decrypted at Cloudflare, requiring end-to-end security measures if trusting Cloudflare is a constraint.</li><li>Access can be secured using Cloudflare Access for private management, with alternatives like a VPS and WireGuard available for complete TLS passthrough.</li></ul><h3>Why it matters</h3><p>It provides home-lab operators and developers an accessible way to expose internal web services and receive webhooks without ISP-level networking hurdles or exposed router ports.</p>",
     "tags": [
       "dotnet",
-      "architecture"
+      "architecture",
+      "cloudflare",
+      "self-hosting",
+      "networking",
+      "security",
+      "devops"
     ],
     "sources": [
       {
@@ -131,9 +151,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-17T12:11:03.675Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
@@ -141,11 +161,15 @@
     "id": "78948353-f182-49e1-985b-9f19de2ad7cc",
     "slug": "improving-navigation-experience-in-v0-with-next-js-16-4",
     "title": "Improving navigation experience in v0 with Next.js 16.4",
-    "tldr": "How we used Partial Prefetching and a coding agent to improve navigation across v0 with Next.js 16.4.",
-    "bodyHtml": "<p><strong>Next.js Blog:</strong> How we used Partial Prefetching and a coding agent to improve navigation across v0 with Next.js 16.4.</p>",
+    "tldr": "Vercel used Next.js 16.4 Partial Prefetching and an agentic optimizer Skill to improve navigation performance across v0. The refactor prefetched reusable route parts and cached components while reducing unnecessary requests via user-intent prefetching.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Next.js 16.4 enables Cache Components and Partial Prefetching by default in create-next-app, allowing reusable route segments to load prior to a click.</li><li>The team used the next-partial-prefetching-optimizer Skill alongside an instant() Playwright test helper in an automated loop to verify UI availability before navigation.</li><li>Public template data was isolated from personalized viewer state and cached using 'use cache: remote', cacheLife(), and cacheTag().</li><li>To mitigate a 2.9x increase in prefetch requests in large grids, prefetching was updated to trigger on user intent (hover, focus, touch) instead of viewport entry.</li></ul><h3>Why it matters</h3><p>The approach demonstrates how developers can combine Next.js Partial Prefetching, granular cache controls, and coding agents to achieve single-page app navigation speeds without ballooning prefetch network traffic.</p>",
     "tags": [
       "nextjs",
-      "react"
+      "react",
+      "next.js",
+      "web development",
+      "performance",
+      "frontend"
     ],
     "sources": [
       {
@@ -159,9 +183,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-17T10:06:13.751Z",
-    "updatedAt": "2026-10-17T10:06:13.751Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-17T10:06:13.751Z",
     "runId": "206f6a09-1ad6-4005-a810-d0b0afe08a5d"
   },
@@ -169,10 +193,13 @@
     "id": "7fa0614e-6393-4ed0-bd68-cc65e43c9beb",
     "slug": "upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
     "title": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
-    "tldr": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on November 16th, 2026: Model Deprecation date… The post Upcoming deprecation of selected GitHub Copilot models in mid-November appeared fir…",
-    "bodyHtml": "<p><strong>GitHub Changelog:</strong> We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on November 16th, 2026: Model Deprecation date… The post Upcoming deprecation of selected GitHub Copilot models in mid-November appeared first on The GitHub Blog.</p>",
+    "tldr": "GitHub announced that selected models powering GitHub Copilot experiences will be deprecated on November 16, 2026. Claude Opus 4.8 will be retired for most tiers, though individual subscribers on annual plans will retain access.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Deprecations take effect on November 16, 2026, across Copilot Chat, inline edits, ask and agent modes, and completions.</li><li>Claude Opus 4.8 will remain accessible only to individual GitHub Copilot subscribers on annual plans.</li><li>Suggested alternative models are automatically enabled for Copilot Enterprise and Business tiers unless administrators disabled default settings.</li><li>No manual cleanup is required to remove the models after the deprecation date.</li></ul><h3>Why it matters</h3><p>Engineering teams and administrators using GitHub Copilot must review their model configurations and switch workflows to supported models ahead of the November 2026 cutoff.</p>",
     "tags": [
-      "github"
+      "github",
+      "github copilot",
+      "ai tools",
+      "devops"
     ],
     "sources": [
       {
@@ -186,10 +213,798 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-17T10:06:13.751Z",
-    "updatedAt": "2026-10-17T10:06:13.751Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-17T10:06:13.751Z",
     "runId": "206f6a09-1ad6-4005-a810-d0b0afe08a5d"
+  },
+  {
+    "id": "bb84386d-cd89-4a20-a86d-d623b5886026",
+    "slug": "net-10-0-13-released-across-runtime-asp-net-core-and-ef-core",
+    "title": ".NET 10.0.13 Released Across Runtime, ASP.NET Core, and EF Core",
+    "tldr": ".NET 10.0.13 has been released with bug fixes, stability improvements, and dependency updates across the runtime, ASP.NET Core, and Entity Framework Core.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The .NET runtime includes JIT optimizations, QUIC SNI and ephemeral cert key fixes, and a fix for sporadic AccessViolation crashes in compressed single-file apps on Apple Silicon.</li><li>ASP.NET Core resolves certificate manager deadlocks, hardens HTTP/2 against newline characters on trailers and dynamic HPACK tables, and prevents caching truncated responses in OutputCacheMiddleware.</li><li>EF Core updates dependency packages including SQLitePCLRaw and resolves an issue causing DetectChanges failures for nulled nested complex collections.</li></ul><h3>Why it matters</h3><p>This maintenance release addresses runtime crashes, security edge cases in networking protocols, and deadlock bugs across the core .NET ecosystem.</p>",
+    "tags": [
+      ".net",
+      "asp.net core",
+      "ef core",
+      "c#",
+      "releases",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "713280710c85",
+        "siteName": ".NET runtime releases",
+        "url": "https://github.com/dotnet/runtime/releases/tag/v10.0.13",
+        "title": ".NET 10.0.13",
+        "publishedAt": "2026-10-13T22:30:11.000Z"
+      },
+      {
+        "sourceId": "dc0707aa2ad1",
+        "siteName": "ASP.NET Core releases",
+        "url": "https://github.com/dotnet/aspnetcore/releases/tag/v10.0.13",
+        "title": ".NET 10.0.13",
+        "publishedAt": "2026-10-13T22:26:19.000Z"
+      },
+      {
+        "sourceId": "5d26ca1ac3d9",
+        "siteName": "EF Core releases",
+        "url": "https://github.com/dotnet/efcore/releases/tag/v10.0.13",
+        "title": ".NET 10.0.13",
+        "publishedAt": "2026-10-13T22:30:06.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-13T22:26:19.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "94227f80-5596-4e00-b21e-aaeca7f9de95",
+    "slug": "microsoft-releases-net-9-0-21-updates-for-asp-net-core-and-ef-core",
+    "title": "Microsoft Releases .NET 9.0.21 Updates for ASP.NET Core and EF Core",
+    "tldr": "Microsoft has released version 9.0.21 of ASP.NET Core and Entity Framework Core with protocol fixes and dependency bumps. The release addresses HTTP/2 trailer validation, HTTP/3 locking issues, and a SignalR Java client hang.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Hardened HTTP/2 parsing to reject newline characters on trailers and the dynamic HPACK table.</li><li>Resolved an issue with HTTP/3 connection-level and stream-level abort locking.</li><li>Fixed a hang occurring in the SignalR Java client when reading an HTTP response body fails.</li><li>Updated third-party and internal dependencies including OpenApi 1.6.31, MessagePack 2.5.303, SQLitePCLRaw, and Azure Cosmos.</li></ul><h3>Why it matters</h3><p>This maintenance release includes important protocol-level security and stability improvements for HTTP/2 and HTTP/3 handling in ASP.NET Core, along with bug fixes for multi-platform SignalR clients.</p>",
+    "tags": [
+      ".net 9",
+      "asp.net core",
+      "entity framework core",
+      "security",
+      "networking",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "dc0707aa2ad1",
+        "siteName": "ASP.NET Core releases",
+        "url": "https://github.com/dotnet/aspnetcore/releases/tag/v9.0.21",
+        "title": ".NET 9.0.21",
+        "publishedAt": "2026-10-13T21:54:26.000Z"
+      },
+      {
+        "sourceId": "5d26ca1ac3d9",
+        "siteName": "EF Core releases",
+        "url": "https://github.com/dotnet/efcore/releases/tag/v9.0.21",
+        "title": ".NET 9.0.21",
+        "publishedAt": "2026-10-13T21:56:56.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-13T21:54:26.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "7abd2086-b1c1-4e2f-80a2-9fe25ee495f3",
+    "slug": "microsoft-ships-net-8-0-32-servicing-updates-for-asp-net-core-and-ef-core",
+    "title": "Microsoft Ships .NET 8.0.32 Servicing Updates for ASP.NET Core and EF Core",
+    "tldr": "The .NET 8 servicing update 8.0.32 delivers protocol hardening and bug fixes to ASP.NET Core and EF Core. It ports fixes for HTTP/2 newline handling, HTTP/3 locking, and SignalR client hangs to the LTS channel.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Hardened HTTP/2 to reject newline characters on trailers and dynamic HPACK tables.</li><li>Corrected connection-level and stream-level abort locking behavior in HTTP/3.</li><li>Resolved a client hang in the SignalR Java implementation during HTTP response body read failures.</li><li>Updated library dependencies across SQLitePCLRaw, OpenApi, and internal build components.</li></ul><h3>Why it matters</h3><p>Developers running .NET 8 LTS applications receive critical network protocol fixes and stability patches without breaking API changes.</p>",
+    "tags": [
+      ".net 8",
+      "asp.net core",
+      "entity framework core",
+      "lts",
+      "networking",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "dc0707aa2ad1",
+        "siteName": "ASP.NET Core releases",
+        "url": "https://github.com/dotnet/aspnetcore/releases/tag/v8.0.32",
+        "title": ".NET 8.0.32",
+        "publishedAt": "2026-10-13T21:43:01.000Z"
+      },
+      {
+        "sourceId": "5d26ca1ac3d9",
+        "siteName": "EF Core releases",
+        "url": "https://github.com/dotnet/efcore/releases/tag/v8.0.32",
+        "title": ".NET 8.0.32",
+        "publishedAt": "2026-10-13T21:48:15.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-13T21:43:01.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "76a28fba-536b-408e-9f19-74d0a59f3f86",
+    "slug": "microsoft-ships-net-11-release-candidate-2-with-go-live-support",
+    "title": "Microsoft Ships .NET 11 Release Candidate 2 with Go-Live Support",
+    "tldr": "Microsoft has released .NET 11 Release Candidate 2, which includes a go-live license for production environments. The release brings updates to the runtime, SDK, F#, ASP.NET Core, .NET MAUI, and Windows Forms.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Comes with a go-live support license allowing deployment to production applications.</li><li>Supported in the new Visual Studio 2026 Insiders build and Visual Studio Code via the C# Dev Kit.</li><li>Libraries add incremental CBOR reading, configurable HTTP/2 concurrency, and experimental composite ML-KEM and HPKE APIs.</li><li>Runtime disables file locking on iOS and tvOS by default, while MSBuild delivers faster wildcard matching during project evaluation.</li><li>ASP.NET Core marks QuickGrid virtualization APIs as non-experimental, and .NET MAUI adds a C# UI app creation option.</li></ul><h3>Why it matters</h3><p>As the final stages of .NET 11 stabilization wrap up, developers gain access to production-ready bits alongside early testing of post-quantum cryptography APIs and performance improvements across workloads.</p>",
+    "tags": [
+      ".net 11",
+      "c#",
+      "f#",
+      "asp.net core",
+      ".net maui",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-2/",
+        "title": "Announcing .NET 11 Release Candidate 2",
+        "publishedAt": "2026-10-13T19:40:00.000Z"
+      }
+    ],
+    "relevance": 8,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-13T19:40:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "7b02d502-8d02-4eca-b047-60d123dde62d",
+    "slug": "microsoft-issues-october-2026-servicing-updates-for-net-and-net-framework",
+    "title": "Microsoft Issues October 2026 Servicing Updates for .NET and .NET Framework",
+    "tldr": "Microsoft has released its October 2026 servicing updates across supported versions of .NET and .NET Framework. The updates address both security vulnerabilities and non-security runtime bugs.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include updates for ASP.NET Core 10.0.13, Runtime 10.0.13, Runtime 9.0.21, and Runtime 8.0.32.</li><li>Fixes in .NET 9 and .NET 8 address issues with QUIC handling, including not passing empty strings as SNI and detecting ephemeral client certificate keys.</li><li>Resolves hang issues in InvalidClientRequestTests related to oversized Content-Length headers by guarding to managed implementations.</li><li>Servicing also includes security and non-security maintenance updates for .NET Framework.</li></ul><h3>Why it matters</h3><p>Developers maintaining production services on .NET 8, 9, 10, or .NET Framework should apply these servicing updates to address stability and security patches.</p>",
+    "tags": [
+      ".net",
+      ".net framework",
+      "security",
+      "servicing",
+      "runtime",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-october-2026-servicing-updates/",
+        "title": ".NET and .NET Framework October 2026 servicing releases updates",
+        "publishedAt": "2026-10-12T20:00:00.000Z"
+      },
+      {
+        "sourceId": "713280710c85",
+        "siteName": ".NET runtime releases",
+        "url": "https://github.com/dotnet/runtime/releases/tag/v9.0.21",
+        "title": ".NET 9.0.21",
+        "publishedAt": "2026-10-13T21:57:00.000Z"
+      },
+      {
+        "sourceId": "713280710c85",
+        "siteName": ".NET runtime releases",
+        "url": "https://github.com/dotnet/runtime/releases/tag/v8.0.32",
+        "title": ".NET 8.0.32",
+        "publishedAt": "2026-10-13T21:49:28.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-12T20:00:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "e3350629-45fc-4392-8ba7-aff37ba3cd5b",
+    "slug": "analyzing-practical-use-cases-for-durable-task-in-net",
+    "title": "Analyzing Practical Use Cases for Durable Task in .NET",
+    "tldr": "An architectural breakdown explores the practical implementation of durable execution using the Durable Task .NET SDK v1.26.0 and Durable Task Scheduler. The overview contrasts orchestrations with standard queues, focusing on resilient state and human-in-the-loop workflows.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Durable Task manages execution flow and resumption across interruptions using event-driven replay rather than saving CLR thread stacks.</li><li>Durable timers suspend processing without locking runtime threads, providing wait points for asynchronous external inputs like approvals.</li><li>Orchestration history handles coordination only; application logic remains authoritative for deduplication, state store reconciliation, and external side effects.</li></ul><h3>Why it matters</h3><p>It clarifies the architectural boundary between framework-managed execution history and application-level idempotency when building complex distributed workflows or long-running tasks.</p>",
+    "tags": [
+      ".net",
+      "architecture",
+      "durable task",
+      "distributed systems",
+      "distributed-systems"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/durable-task-in-the-real-world/",
+        "title": "Durable Task in the Real World: What Problems Does It Actually Solve?",
+        "publishedAt": "2026-10-12T16:30:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-12T16:30:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "0a780cd4-0f4e-44ef-98e8-72ad5a1adf1c",
+    "slug": "implementing-multiple-authentication-schemes-in-asp-net-core",
+    "title": "Implementing Multiple Authentication Schemes in ASP.NET Core",
+    "tldr": "This guide demonstrates configuring multiple authentication schemes in an ASP.NET Core backend-for-frontend (BFF) application during an identity provider migration. It uses dynamic policy schemes and OpenID Connect token claims to determine which cookie scheme applies to a given request.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Uses AddPolicyScheme to dynamically select from four dedicated cookie schemes based on incoming request cookies, ensuring only one scheme executes per request.</li><li>Evaluates claims such as the identity provider claim in the OnTokenValidated event to sign users into the appropriate scheme.</li><li>Integrates with Duende IdentityServer using OpenID Connect code flow with PKCE, OAuth PAR, and client assertions.</li><li>Controllers are explicitly configured to authorize access using specific schemes or by allowing access via multiple schemes.</li></ul><h3>Why it matters</h3><p>This architecture offers a transitional strategy for large applications migrating across identity providers or consolidating OIDC servers without immediately forcing a single default cookie scheme. It provides a blueprint for dynamically handling federated identity routing in ASP.NET Core.</p>",
+    "tags": [
+      "asp.net core",
+      "authentication",
+      "openid connect",
+      "security",
+      "identityserver",
+      "aspnetcore"
+    ],
+    "sources": [
+      {
+        "sourceId": "6752279e1d66",
+        "siteName": "Damien Bowden",
+        "url": "https://damienbod.com/2026/10/12/use-multiple-schemes-in-an-asp-net-core-web-application/",
+        "title": "Use multiple schemes in an ASP.NET Core Web application",
+        "publishedAt": "2026-10-12T05:22:15.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-12T05:22:15.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "82c55fe0-0562-4812-94f4-68b85727e38a",
+    "slug": "testing-time-dependent-code-in-net-using-timeprovider-and-faketimeprovider",
+    "title": "Testing Time-Dependent Code in .NET Using TimeProvider and FakeTimeProvider",
+    "tldr": "Developers can test time-sensitive logic in .NET 8+ by injecting TimeProvider and manipulating time with FakeTimeProvider. This eliminates real-time delays and allows precise evaluation of boundary conditions.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Replacing direct clock calls like DateTime.UtcNow with injected TimeProvider instances makes time a testable dependency.</li><li>FakeTimeProvider allows tests to advance simulated time programmatically, enabling precise boundary testing for expirations.</li><li>Passing TimeProvider to Task.Delay and CancellationTokenSource enables testing delays and timeouts instantly without real-world waiting.</li><li>Calls using real-time APIs like DateTime.UtcNow or unconfigured Task.Delay calls will bypass the fake provider and continue reading the system clock.</li></ul><h3>Why it matters</h3><p>Relying on thread sleeps or short timeouts makes automated test suites slow and prone to timing flakiness. Built-in time abstraction support simplifies deterministic unit testing for expiring tokens, delays, and cancellation tokens.</p>",
+    "tags": [
+      ".net",
+      "c#",
+      "testing",
+      "unit testing",
+      "software architecture",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "3958049ea454",
+        "siteName": "Milan Jovanović",
+        "url": "https://milanjovanovic.tech/blog/test-time-dependent-code-without-waiting",
+        "title": "Test Time-Dependent Code Without Waiting",
+        "publishedAt": "2026-10-10T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-10T00:00:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "6ab330df-8b87-4f63-a064-c797a7254b25",
+    "slug": "c-dev-kit-11-0-re-architected-for-faster-loads-and-lower-memory-usage",
+    "title": "C# Dev Kit 11.0 Re-Architected for Faster Loads and Lower Memory Usage",
+    "tldr": "Microsoft announced C# Dev Kit 11.0, rebuilt as a single Native AOT executable to decrease solution load times and reduce memory footprint. The release also adds language support for MSBuild files and an environment diagnostics tool.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Consolidates six previous managed processes into a single server process compiled with Native AOT, eliminating JIT overhead at startup.</li><li>Introduces project caching and prioritizes the active file, allowing immediate editing while background projects load.</li><li>Integrates fast up-to-date checks and Build Acceleration into incremental builds.</li><li>Adds editing support for .csproj, .props, and .targets files, including completions, CodeLens vulnerability warnings, and quick fixes.</li><li>Introduces 'C# Doctor' to diagnose environment issues such as missing SDKs, missing runtimes, and package restore failures.</li></ul><h3>Why it matters</h3><p>The structural overhaul significantly speeds up solution load and build times in VS Code, directly addressing latency and resource usage in large enterprise solutions.</p>",
+    "tags": [
+      "c# dev kit",
+      "vs code",
+      "performance",
+      "msbuild",
+      "developer tools",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/faster-lighter-csharp-dev-kit/",
+        "title": "A faster, lighter C# Dev Kit",
+        "publishedAt": "2026-10-06T17:05:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-06T17:05:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "99f3c666-1b72-4d37-85ea-f434fd45bab8",
+    "slug": "trimming-extra-dependencies-in-net-nativeaot-via-linker-substitutions",
+    "title": "Trimming Extra Dependencies in .NET NativeAOT via Linker Substitutions",
+    "tldr": "Developers can use linker method substitutions in NativeAOT to strip unreachable code and reduce binary size when the compiler cannot statically determine unreachability.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Updating Microsoft.Diagnostics.Runtime (ClrMD) in a NativeAOT tool triggered an unexpected ~0.5MB size increase due to unused Azure.Identity and MSAL dependency chains.</li><li>The linker preserved these libraries because runtime string checks prevented static verification of dead code paths.</li><li>Using ILLink.Substitutions.xml allows developers to replace method bodies or property return values with constants to force dead-code elimination.</li><li>For NativeAOT builds, the substitution file must be explicitly passed via the --substitution compiler argument in IlcArg.</li></ul><h3>Why it matters</h3><p>Provides a practical workaround for NativeAOT developers trying to maintain lightweight deployment binaries when third-party libraries introduce heavy, unneeded dependencies.</p>",
+    "tags": [
+      ".net",
+      "nativeaot",
+      "linker",
+      "optimization",
+      "trimming"
+    ],
+    "sources": [
+      {
+        "sourceId": "145884eb4af6",
+        "siteName": "Andrew Lock – .NET Escapades",
+        "url": "https://andrewlock.net/stripping-extra-dependencies-in-.net-nativeaot-apps-using-linker-substitutions/",
+        "title": "Stripping extra dependencies in .NET NativeAOT apps using linker substitutions",
+        "publishedAt": "2026-10-06T10:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-06T10:00:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "a5b20f4a-935d-44c0-87f7-afe379be0923",
+    "slug": "inside-github-s-migration-of-the-copilot-runtime-from-typescript-to-rust",
+    "title": "Inside GitHub's Migration of the Copilot Runtime from TypeScript to Rust",
+    "tldr": "GitHub migrated its Copilot agent runtime from TypeScript on Node.js to more than 800,000 lines of Rust using an incremental, agent-assisted process. The migration allows multi-language SDKs to load the runtime in-process via FFI, reducing latency and memory overhead.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The runtime migration was completed over 14.5 weeks using coding agents that consumed approximately $120,000 in tokens.</li><li>The migration used a strangler fig pattern across 128 pull requests, replacing TypeScript components incrementally while avoiding long-lived branches.</li><li>Rust was selected over .NET to provide a native C ABI without bringing an external garbage collector into foreign host processes like Go, Python, and the JVM.</li><li>Benchmarks showed out-of-process execution ran 3x to 6x faster, while in-process execution achieved 6x to 21x speedups with reduced memory consumption.</li></ul><h3>Why it matters</h3><p>The project demonstrates a production-scale application of AI coding agents combined with the strangler fig architecture to perform major runtime rewrites without halting feature deployment.</p>",
+    "tags": [
+      "rust",
+      "typescript",
+      "github copilot",
+      "architecture",
+      "performance",
+      "github"
+    ],
+    "sources": [
+      {
+        "sourceId": "3958049ea454",
+        "siteName": "Milan Jovanović",
+        "url": "https://milanjovanovic.tech/blog/github-copilot-rust-migration-hype-vs-reality",
+        "title": "What It Actually Took to Port the GitHub Copilot Runtime to Rust",
+        "publishedAt": "2026-10-03T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-03T00:00:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "5f52e340-7c10-4e68-8f31-ec1b62cc7400",
+    "slug": "using-css-container-queries-to-style-resizable-components",
+    "title": "Using CSS @container Queries to Style Resizable Components",
+    "tldr": "CSS container queries offer an alternative to viewport-based media queries by scoping styles to a parent element's dimensions. This resolves layout issues in dynamic, multi-pane, or resizable UI components.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Standard @media queries only evaluate the global viewport dimensions, which fails when individual sub-panels are resized independently.</li><li>@container queries evaluate conditions against a specified parent container instead of the whole browser window.</li><li>Implementation requires designating a parent container using properties such as container-name before writing conditional @container rules.</li><li>The approach enables responsive behavior for nested elements, such as hiding sidebars or reorganizing toolbars inside movable panes.</li></ul><h3>Why it matters</h3><p>Component-driven web applications frequently place modular widgets or resizable splitters inside the layout. Container queries allow these elements to adapt cleanly to their allocated layout space without relying on custom JavaScript listeners.</p>",
+    "tags": [
+      "css",
+      "web development",
+      "frontend",
+      "responsive design",
+      "webdev"
+    ],
+    "sources": [
+      {
+        "sourceId": "d1237fd7e6fe",
+        "siteName": "Rick Strahl's Web Log",
+        "url": "https://weblog.west-wind.com/posts/2026/Oct/02/Back-to-Basics-CSS-container-Filtering",
+        "title": "Back to Basics: CSS @container Filtering",
+        "publishedAt": "2026-10-02T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-10-02T00:00:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "799b9d83-c4e9-4f9b-b432-949b5db0d23c",
+    "slug": "angular-releases-patch-and-prerelease-updates",
+    "title": "Angular Releases Patch and Prerelease Updates",
+    "tldr": "Angular has rolled out updates across multiple branches, including versions 22.3.0-next.2, 22.2.3, and older maintenance releases. The updates focus on template parsing, compiler diagnostics, and platform security improvements.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Hardened parameter encoding and JIT components against prototype pollution across common and compiler packages.</li><li>Added compiler diagnostics for `@boundary` blocks in control flow and extended support for dots in class bindings and popover properties.</li><li>Backported security fixes in maintenance releases, such as XSRF protection for same-origin absolute URLs in HTTP.</li></ul><h3>Why it matters</h3><p>The changes resolve prototype pollution vectors and strengthen compiler diagnostics across both current development and LTS tracks.</p>",
+    "tags": [
+      "angular",
+      "javascript",
+      "security",
+      "compiler",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.2",
+        "title": "Angular 22.3.0-next.2",
+        "publishedAt": "2026-10-14T23:30:09.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.3",
+        "title": "Angular 22.2.3",
+        "publishedAt": "2026-10-14T23:38:58.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v20.3.34",
+        "title": "Angular 20.3.34",
+        "publishedAt": "2026-10-14T23:19:08.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.1",
+        "title": "Angular 22.3.0-next.1",
+        "publishedAt": "2026-10-08T18:07:15.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.2",
+        "title": "Angular 22.2.2",
+        "publishedAt": "2026-10-08T17:50:06.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.0",
+        "title": "Angular 22.3.0-next.0",
+        "publishedAt": "2026-09-30T18:56:15.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.1",
+        "title": "Angular 22.2.1",
+        "publishedAt": "2026-09-30T18:34:00.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v21.2.25",
+        "title": "Angular 21.2.25",
+        "publishedAt": "2026-09-30T18:17:46.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v20.3.33",
+        "title": "Angular 20.3.33",
+        "publishedAt": "2026-09-30T17:52:48.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-30T17:52:48.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "9e879a03-f7f2-428a-9e02-ebd5f4b2c787",
+    "slug": "visual-studio-september-update-adds-byom-support-and-podman-debugging",
+    "title": "Visual Studio September Update Adds BYOM Support and Podman Debugging",
+    "tldr": "The Visual Studio 2026 September update expands AI customization with Bring Your Own Model (BYOM), automates NuGet vulnerability fixes, and adds native Podman container attachment. Debugging is also upgraded with visual branch-evaluating indicators for compound boolean statements.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Bring Your Own Model (BYOM) preview is enabled by default across all SKUs, allowing custom endpoints such as OpenAI, Ollama, Anthropic, and Microsoft Foundry.</li><li>NuGet Audit warnings in the Error List now offer one-click automated fixes via GitHub Copilot Agent Mode using a built-in NuGet MCP server.</li><li>The Git agent allows pull request exploration and opens relevant IDE files directly using GitHub and Azure DevOps MCP servers.</li><li>Conditional if-statement debugging now provides red/green highlights indicating which operand short-circuited or decided an evaluation.</li><li>Attach to Process adds native support for discovering and attaching to Podman containers alongside Docker for .NET and C++.</li></ul><h3>Why it matters</h3><p>This update offers teams flexibility in selecting their own LLM providers, while speeding up everyday debugging and containerized workflows directly inside Visual Studio.</p>",
+    "tags": [
+      "visual studio",
+      "github copilot",
+      "ai",
+      "debugging",
+      "containers",
+      "visual-studio"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-september-update-power-your-workflow-with-your-model/",
+        "title": "Visual Studio September Update – Power Your Workflow with Your Model",
+        "publishedAt": "2026-09-29T16:00:04.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-29T16:00:04.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "4a73608f-72cd-4fb2-826d-fe00a54f188a",
+    "slug": "jetbrains-releases-rider-2026-2-3-with-ai-performance-analysis",
+    "title": "JetBrains Releases Rider 2026.2.3 with AI Performance Analysis",
+    "tldr": "JetBrains Rider 2026.2.3 adds AI-assisted performance analysis inside the Monitoring tool window and resolves an issue with the AI Agent Setup widget on Windows.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Developers can now run AI performance analysis on collected runtime data directly from the Monitoring tool window to locate bottlenecks and hot paths.</li><li>The AI integration uses the dottrace-analyze skill to inspect snapshots and provide code-level performance feedback in chat.</li><li>AI performance analysis is limited to Windows and requires the AI Assistant plugin along with a dotUltimate or All Products Pack license.</li><li>A bug that prevented the AI Agent Setup widget from launching on Windows with display scaling below 175% has been resolved.</li></ul><h3>Why it matters</h3><p>This release streamlines profiling workflows by allowing developers on Windows to inspect diagnostic data and receive contextual optimization guidance via AI agents.</p>",
+    "tags": [
+      "jetbrains rider",
+      "profiling",
+      "ai assistant",
+      "ide",
+      "devtools",
+      "rider"
+    ],
+    "sources": [
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/dotnet/2026/09/28/rd-2026-2-3/",
+        "title": "Rider 2026.2.3 Is Released!",
+        "publishedAt": "2026-09-28T12:25:44.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-28T12:25:44.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "8d938e6f-76d0-4d1b-8d6f-f4c6096aa3c7",
+    "slug": "angular-vs-code-extension-22-2-0-released",
+    "title": "Angular VS Code Extension 22.2.0 Released",
+    "tldr": "Version 22.2.0 of the Angular VS Code extension adds language service support for @boundary blocks along with several editor fixes.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Introduced language service support for `@boundary` blocks.</li><li>Added support for inlay hints in inline templates.</li><li>Resolved folding range calculations for templates with interpolated strings.</li><li>Fixed decorator field detection when working with template literals.</li></ul><h3>Why it matters</h3><p>This release improves developer tooling and code navigation inside templates while adding IDE-level support for emerging Angular template features.</p>",
+    "tags": [
+      "angular",
+      "vs code",
+      "tooling",
+      "vscode"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/vsix-22.2.0",
+        "title": "VSCode Extension: 22.2.0",
+        "publishedAt": "2026-09-25T17:46:04.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-25T17:46:04.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "2529b176-4385-4538-89df-915ad267f5df",
+    "slug": "microsoft-introduces-blazor-ai-components-and-net-sdk-for-ag-ui",
+    "title": "Microsoft Introduces Blazor AI Components and .NET SDK for AG-UI",
+    "tldr": "The .NET team has released experimental Blazor AI components and a new .NET SDK for the Agent-User Interaction Protocol (AG-UI). These tools standardize streaming agent interactions and integrate them directly into .NET and Blazor application architectures.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Blazor AI components introduce the UIAgent and ContentBlock models to convert streamed agent output into reactive UI states.</li><li>The AG-UI .NET SDK standardizes streaming events (such as RUN_STARTED and STATE_DELTA) across frameworks, connecting via Microsoft.Extensions.AI abstractions.</li><li>The SDK supports bi-directional usage through AGUI.Server for hosting endpoints and AGUI.Client for consuming agent endpoints.</li><li>Getting started requires the .NET 11 RC1 SDK alongside prerelease packages.</li></ul><h3>Why it matters</h3><p>These releases eliminate custom parsing boilerplate for agent event streaming and provide a structured approach to rendering asynchronous agent interactions inside C# and Blazor applications.</p>",
+    "tags": [
+      ".net",
+      "blazor",
+      "ai agents",
+      "sdk",
+      "ai"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/build-agentic-ui-blazor/",
+        "title": "Build Agentic UI with the new Blazor AI components",
+        "publishedAt": "2026-09-28T17:05:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/ag-ui-dotnet-sdk/",
+        "title": "AG-UI Protocol now has a first-class .NET SDK",
+        "publishedAt": "2026-09-25T17:05:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-25T17:05:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "f14fca51-6029-4b39-ac21-a9199c0643c8",
+    "slug": "angular-compiler-update-for-typescript-7",
+    "title": "Angular Compiler Update for TypeScript 7",
+    "tldr": "The Angular team published an update regarding an upcoming TypeScript 7-powered compiler.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The Angular Blog posted an update covering its TypeScript 7-powered compiler.</li><li>The announcement focuses on the compiler integration with TypeScript 7 tooling.</li><li>No additional implementation or release details were provided in the source excerpt.</li></ul><h3>Why it matters</h3><p>Tracking compiler changes helps Angular developers anticipate compatibility requirements and tooling improvements tied to upcoming major TypeScript versions.</p>",
+    "tags": [
+      "angular",
+      "typescript",
+      "compilers",
+      "web development",
+      "compiler"
+    ],
+    "sources": [
+      {
+        "sourceId": "0d2eacde2168",
+        "siteName": "Angular Blog",
+        "url": "https://blog.angular.dev/an-update-on-angulars-typescript-7-powered-compiler-9619a35e2b0a?source=rss----447683c3d9a3---4",
+        "title": "An update on Angular’s TypeScript 7-powered Compiler",
+        "publishedAt": "2026-09-25T13:59:11.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-25T13:59:11.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "ca09e123-ce3c-44d0-9c5e-7e23040f2464",
+    "slug": "microsoft-updating-nuget-author-signing-certificate",
+    "title": "Microsoft Updating NuGet Author-Signing Certificate",
+    "tldr": "Microsoft will update its NuGet package author-signing certificate starting September 23, 2026. Developers enforcing trusted signer policies or verifying certificates must register the new SHA-256 fingerprint.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The new author-signing certificate transition takes effect on September 23, 2026.</li><li>New certificate SHA-256 fingerprint: 9A1B131BEE0605433056A4EA3815478A8E177961A968C6C0027C1093D1FEB630.</li><li>Systems enforcing NuGet client allow lists must add the new certificate via `dotnet nuget trust` or config updates, or package installation will fail with error NU3034.</li><li>Existing certificates must be retained alongside the new one to permit installation of older signed packages.</li></ul><h3>Why it matters</h3><p>Environments with strict package signature verification will fail to install newer Microsoft NuGet packages if client policies are not updated with the new certificate fingerprint.</p>",
+    "tags": [
+      "nuget",
+      ".net",
+      "security",
+      "devops"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/microsoft-author-signing-certificate-update-2026/",
+        "title": "Microsoft is updating its author-signing certificate starting September 23, 2026",
+        "publishedAt": "2026-09-23T20:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-23T20:00:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "036653fd-1f24-4bf7-ab0f-132d92b6d580",
+    "slug": "net-11-release-candidate-2-packages-rolled-out-across-runtime-and-frameworks",
+    "title": ".NET 11 Release Candidate 2 Packages Rolled Out Across Runtime and Frameworks",
+    "tldr": "Release tags for .NET 11 RC2 have been published across the core repositories including the runtime, ASP.NET Core, and EF Core. Highlights include managed HPKE APIs and dependency updates.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Build artifacts for v11.0.0-rc.2.26504.105 released across dotnet/runtime, ASP.NET Core, and EF Core.</li><li>Introduces experimental managed HPKE (Hybrid Public Key Encryption) APIs intended for the post-quantum cryptography (PQC) transition.</li><li>ASP.NET Core removes the DeviceBoundSessions implementation.</li><li>Entity Framework Core dependencies refreshed from upstream builds.</li></ul><h3>Why it matters</h3><p>These repository updates deliver the exact build packages necessary for developers preparing their application dependencies and testing the latest cryptographic primitives ahead of the general release.</p>",
+    "tags": [
+      ".net 11",
+      "cryptography",
+      "asp.net core",
+      "entity framework",
+      "open source",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "713280710c85",
+        "siteName": ".NET runtime releases",
+        "url": "https://github.com/dotnet/runtime/releases/tag/v11.0.0-rc.2.26504.105",
+        "title": "v11.0.0-rc.2.26504.105: [release/11.0-rc2] Managed HPKE (#134443)",
+        "publishedAt": "2026-09-23T00:10:01.000Z"
+      },
+      {
+        "sourceId": "dc0707aa2ad1",
+        "siteName": "ASP.NET Core releases",
+        "url": "https://github.com/dotnet/aspnetcore/releases/tag/v11.0.0-rc.2.26504.105",
+        "title": "v11.0.0-rc.2.26504.105: Remove DeviceBoundSessions implementation (#69462) (#69479)",
+        "publishedAt": "2026-09-24T13:55:41.000Z"
+      },
+      {
+        "sourceId": "5d26ca1ac3d9",
+        "siteName": "EF Core releases",
+        "url": "https://github.com/dotnet/efcore/releases/tag/v11.0.0-rc.2.26504.105",
+        "title": "v11.0.0-rc.2.26504.105: [release/11.0-rc2] Source code updates from dotnet/dotnet (#39072)",
+        "publishedAt": "2026-09-23T19:12:15.000Z"
+      },
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/10/dotnet-11-rc-2/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": ".NET 11 Release Candidate 2: Go-Live License and Updates Across Libraries, F#, MAUI, and WinForms",
+        "publishedAt": "2026-10-19T08:00:00.000Z"
+      }
+    ],
+    "relevance": 8,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-23T00:10:01.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "8e794d8d-caa8-4be7-a9a3-f6a05cb58236",
+    "slug": "experimental-support-for-device-bound-session-credentials-in-asp-net-core",
+    "title": "Experimental Support for Device Bound Session Credentials in ASP.NET Core",
+    "tldr": "ASP.NET Core in .NET 11 introduces experimental support for Device Bound Session Credentials (DBSC) to protect against session hijacking and cookie theft.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The Microsoft.AspNetCore.Authentication.DeviceBoundSessions package acts as a drop-in hardening layer over existing cookie authentication schemes.</li><li>DBSC mitigates cookie theft by trading long-lived authentication cookies for short-lived cookies paired with hardware-bound refresh tokens.</li><li>Session refresh requests are validated by having the browser sign challenges using a private key isolated inside a hardware Trusted Platform Module (TPM).</li><li>Integrating DBSC with ASP.NET Core Identity requires manually wiring AddDeviceBoundSession to the IdentityConstants.ApplicationScheme.</li></ul><h3>Why it matters</h3><p>DBSC significantly hardens web applications against credential exfiltration attacks by ensuring session cookies can only be refreshed from the original client hardware.</p>",
+    "tags": [
+      "asp.net core",
+      ".net 11",
+      "security",
+      "authentication",
+      "dbsc",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "145884eb4af6",
+        "siteName": "Andrew Lock – .NET Escapades",
+        "url": "https://andrewlock.net/exploring-the-dotnet-11-preview-8-experimental-support-for-device-bound-session-credentials-in-aspnetcore/",
+        "title": "Experimental support for Device Bound Session Credentials (DBSC) in ASP.NET Core: Exploring the .NET 11 preview - Part 8",
+        "publishedAt": "2026-09-22T10:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "publishedAt": "2026-09-22T10:00:00.000Z",
+    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
   }
 ]
