@@ -1,5 +1,69 @@
 [
   {
+    "id": "b48e068a-6703-45a1-bdb4-c61b5842435b",
+    "slug": "get-your-net-maui-app-ready-for-xcode-27",
+    "title": "Get Your .NET MAUI App Ready for Xcode 27",
+    "tldr": "Apps built with Xcode 27 require adoption of UIKit's scene lifecycle to prevent crashes on launch. A new CLI-installed agent skill helps automate the migration across manifests, delegates, and custom lifecycle callbacks.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Every iOS app built using Xcode 27 must adopt the UIKit scene lifecycle using a scene delegate and Info.plist entries.</li><li>The requirement only affects builds made with Xcode 27; existing binaries compiled with earlier SDKs remain unaffected.</li><li>The maui-xcode27-migration agent skill can be installed via Microsoft.Maui.Cli preview to guide coding agents through the migration.</li><li>Projects targeting .NET 10 must update .NET MAUI packages to version 10.0.110 or higher to preserve features like App Actions and WebAuthenticator forwarding.</li><li>Custom application delegate logic, such as authentication callbacks, notification taps, and deep links, must be verified during migration.</li></ul><h3>Why it matters</h3><p>Developers building .NET MAUI apps with Xcode 27 must update their scene lifecycle configuration to maintain app stability, authentication redirects, and platform integrations on iOS.</p>",
+    "tags": [
+      ".net maui",
+      "ios",
+      "xcode",
+      "mobile development",
+      ".net 10",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/migrate-dotnet-maui-apps-uikit-scene-lifecycle/",
+        "title": "Get Your .NET MAUI App Ready for Xcode 27",
+        "publishedAt": "2026-10-19T16:05:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-20T08:22:52.396Z",
+    "updatedAt": "2026-10-20T08:22:52.396Z",
+    "publishedAt": "2026-10-19T16:05:00.000Z",
+    "runId": "f4129907-46e1-4a90-bf31-a07c1bfdf372"
+  },
+  {
+    "id": "0c505a34-d753-433a-a723-93a7084185e4",
+    "slug": "bring-your-own-model-to-the-github-copilot-sdk-with-c",
+    "title": "Bring Your Own Model to the GitHub Copilot SDK with C#",
+    "tldr": "Developers can route GitHub Copilot SDK model inference to custom endpoints like Microsoft Foundry or Azure OpenAI using ProviderConfig. The approach retains the Copilot runtime and session orchestration while substituting the model provider.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The GitHub Copilot SDK decouples the agent orchestration runtime from model inference through ProviderConfig.</li><li>Supported destinations include Microsoft Foundry, Azure OpenAI, Anthropic, Ollama, and OpenAI-compatible endpoints like LiteLLM or vLLM.</li><li>Authentication supports both Microsoft Entra ID via AzureCliCredential and direct API keys.</li><li>Reasoning models may require adjusting MaxOutputTokens, as reasoning tokens count against the total output limit.</li><li>Sessions can be configured with tools, skills, and configuration discovery disabled for predictable testing.</li></ul><h3>Why it matters</h3><p>This allows teams to use GitHub Copilot SDK's agent runtime while adhering to organizational model deployment, governance, and private infrastructure requirements.</p>",
+    "tags": [
+      ".net",
+      "c#",
+      "github copilot sdk",
+      "azure openai",
+      "ai agents",
+      "github copilot"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/bring-your-own-model-to-the-github-copilot-sdk-with-csharp/",
+        "title": "Bring Your Own Model to the GitHub Copilot SDK with C#",
+        "publishedAt": "2026-10-19T16:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-20T08:22:52.396Z",
+    "updatedAt": "2026-10-20T08:22:52.396Z",
+    "publishedAt": "2026-10-19T16:00:00.000Z",
+    "runId": "f4129907-46e1-4a90-bf31-a07c1bfdf372"
+  },
+  {
     "id": "d3b09e97-aba0-4457-af60-f28ef7f7ed9f",
     "slug": "22-3-0-next-2",
     "title": "Angular CLI 22.3.0-next.2",
