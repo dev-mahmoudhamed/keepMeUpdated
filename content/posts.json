@@ -1,5 +1,66 @@
 [
   {
+    "id": "4c2ab0a3-13a1-469b-898f-250cc94e13ed",
+    "slug": "typescript-7-1-beta-released",
+    "title": "TypeScript 7.1 Beta Released",
+    "tldr": "TypeScript 7.1 Beta has been announced, introducing support for import attributes in ambient modules, source phase imports, and an updated target for ECMAScript 2026. These updates allow better handling of runtime-specific module types and preliminary support for proposed ECMAScript features.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Ambient module declarations now support import attributes to enforce runtime-expected attributes (such as type: 'css') and supply appropriate types.</li><li>Ambient module declarations matching import attributes are not validated against files on disk and are not included in built-in libraries.</li><li>Introduced source phase imports (import source x from ...) returning an AbstractModuleSource object before imports are linked or executed, primarily benefiting WebAssembly modules.</li><li>Added es2026 as a stable --target and --lib option, bringing declarations for Math.sumPrecise(), Iterator.concat(), and JSON methods.</li></ul><h3>Why it matters</h3><p>Developers can now accurately type non-JavaScript file imports based on runtime module attributes rather than just file extensions. Additionally, source phase imports lay the groundwork for better WebAssembly and future JavaScript module instantiation workflows.</p>",
+    "tags": [
+      "typescript",
+      "javascript",
+      "ecmascript",
+      "webassembly",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "d9a755d55a6a",
+        "siteName": "TypeScript Blog",
+        "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-1-beta/",
+        "title": "Announcing TypeScript 7.1 Beta",
+        "publishedAt": "2026-10-20T17:53:06.000Z"
+      }
+    ],
+    "relevance": 8,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-21T08:26:19.447Z",
+    "updatedAt": "2026-10-21T08:26:19.447Z",
+    "publishedAt": "2026-10-20T17:53:06.000Z",
+    "runId": "9988a2d1-1fdb-433f-ac44-640f2fee54a9"
+  },
+  {
+    "id": "ccbbbb6e-7948-4c7e-b329-6192dc229d66",
+    "slug": "an-overview-of-cbor-and-its-characteristics",
+    "title": "An Overview of CBOR and Its Characteristics",
+    "tldr": "Concise Binary Object Representation (CBOR) is an IETF-standardized binary serialization format designed as an efficient alternative to JSON. It provides native binary data handling and smaller payload sizes while remaining self-describing.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>CBOR supports the same data types as JSON while natively accommodating binary data without Base64 overhead.</li><li>The format uses header bytes to encode data types and sizes, enabling decoders to pre-allocate buffers and avoid escape sequences in UTF-8 text.</li><li>CBOR supports indefinite length collections and strings for streaming scenarios.</li><li>Unlike Protocol Buffers, CBOR is self-describing and does not require pre-shared schema files; compared to MessagePack, it is an IETF standard with streaming support.</li></ul><h3>Why it matters</h3><p>CBOR offers a standardized, lightweight serialization format ideal for IoT and resource-constrained systems that need binary efficiency without the tight coupling of pre-shared schemas like Protocol Buffers.</p>",
+    "tags": [
+      "cbor",
+      "json",
+      "serialization",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "145884eb4af6",
+        "siteName": "Andrew Lock – .NET Escapades",
+        "url": "https://andrewlock.net/an-introduction-to-compact-binary-object-notation-in-dotnet/",
+        "title": "An introduction to Compact Binary Object Representation (CBOR) in .NET",
+        "publishedAt": "2026-10-20T10:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-21T08:26:19.447Z",
+    "updatedAt": "2026-10-21T08:26:19.447Z",
+    "publishedAt": "2026-10-20T10:00:00.000Z",
+    "runId": "9988a2d1-1fdb-433f-ac44-640f2fee54a9"
+  },
+  {
     "id": "b48e068a-6703-45a1-bdb4-c61b5842435b",
     "slug": "get-your-net-maui-app-ready-for-xcode-27",
     "title": "Get Your .NET MAUI App Ready for Xcode 27",
@@ -145,6 +206,13 @@
         "url": "https://devblogs.microsoft.com/dotnet/introducing-dotnetup/",
         "title": "Introducing dotnetup: A toolchain manager for .NET",
         "publishedAt": "2026-10-15T16:50:00.000Z"
+      },
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/10/dotnetup-preview/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": "Microsoft Previews dotnetup: Toolchain Manager for .NET SDKs and Runtimes",
+        "publishedAt": "2026-10-21T08:15:00.000Z"
       }
     ],
     "relevance": 5,
@@ -152,7 +220,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-21T08:26:19.447Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
