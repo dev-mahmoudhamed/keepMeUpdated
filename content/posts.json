@@ -1,5 +1,101 @@
 [
   {
+    "id": "7bcb531d-e2ee-4ab5-a69e-fc45a6ecfcb6",
+    "slug": "angular-cli-21-2-28-updates-build-dependencies",
+    "title": "Angular CLI 21.2.28 Updates Build Dependencies",
+    "tldr": "Angular CLI 21.2.28 updates core dependencies across CLI and build packages. It includes upgrades for Vite, Webpack, and the Model Context Protocol SDK.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>@angular/cli updates @modelcontextprotocol/sdk to 1.32.1.</li><li>@angular-devkit/build-angular upgrades Webpack to 5.112.0.</li><li>@angular/build updates Vite to 7.3.7.</li></ul><h3>Why it matters</h3><p>This release maintains parity with upstream tool releases, ensuring underlying bundlers and build tools remain up to date.</p>",
+    "tags": [
+      "angular",
+      "angular cli",
+      "webpack",
+      "vite",
+      "dependencies",
+      "cli"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.28",
+        "title": "Angular CLI 21.2.28",
+        "publishedAt": "2026-10-22T14:00:22.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-10-23T08:25:16.497Z",
+    "publishedAt": "2026-10-22T14:00:22.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
+    "id": "ef6f9aec-533d-4ac4-9a73-c07fe7f444c4",
+    "slug": "angular-cli-20-3-41-updates-upstream-dependencies",
+    "title": "Angular CLI 20.3.41 Updates Upstream Dependencies",
+    "tldr": "Angular CLI 20.3.41 brings dependency updates to Webpack, Vite, and Model Context Protocol packages.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>@angular/cli bumps @modelcontextprotocol/sdk to 1.32.1.</li><li>@angular-devkit/build-angular updates Webpack to 5.112.0.</li><li>@angular/build bumps Vite to 7.3.7.</li></ul><h3>Why it matters</h3><p>The update ensures projects using Angular CLI 20.3 receive recent bug fixes and updates from upstream bundlers.</p>",
+    "tags": [
+      "angular",
+      "angular cli",
+      "webpack",
+      "vite",
+      "dependencies",
+      "cli"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.41",
+        "title": "Angular CLI 20.3.41",
+        "publishedAt": "2026-10-22T13:55:43.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-10-23T08:25:16.497Z",
+    "publishedAt": "2026-10-22T13:55:43.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
+    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
+    "slug": "angular-cli-22-2-4-released",
+    "title": "Angular CLI 22.2.4 Released",
+    "tldr": "Angular CLI 22.2.4 introduces multiple schematic enhancements and CLI behavior adjustments. Key changes include schematic template fixes and restricting shell autocompletion.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>@schematics/angular applies viewEncapsulation to generated components and uses generated class names when declaring in an NgModule.</li><li>Environments schematic corrects error and warning messages, and findModule errors now display routing module suffixes.</li><li>Unit-test builder test targets skip webWorkerTsConfig.</li><li>@angular/cli maintains schematic positional arguments in index order and only loads autocompletion in interactive shells.</li></ul><h3>Why it matters</h3><p>These updates refine schematic generation outputs and improve developer CLI interactions by preventing unintended autocompletion runs in non-interactive environments.</p>",
+    "tags": [
+      "angular",
+      "angular cli",
+      "typescript",
+      "frontend",
+      "cli",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
+        "title": "Angular CLI 22.2.4",
+        "publishedAt": "2026-10-22T13:38:22.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-10-23T08:25:16.497Z",
+    "publishedAt": "2026-10-22T13:38:22.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
     "id": "4c2ab0a3-13a1-469b-898f-250cc94e13ed",
     "slug": "typescript-7-1-beta-released",
     "title": "TypeScript 7.1 Beta Released",
@@ -125,6 +221,38 @@
     "runId": "f4129907-46e1-4a90-bf31-a07c1bfdf372"
   },
   {
+    "id": "6b939755-24ac-4089-821a-04fa4575e27b",
+    "slug": "microsoft-ships-net-11-release-candidate-2-with-go-live-license",
+    "title": "Microsoft Ships .NET 11 Release Candidate 2 with Go-Live License",
+    "tldr": "Microsoft has released .NET 11 Release Candidate 2 under a production-ready go-live license, supported in Visual Studio 2026 Insiders and VS Code. The build focuses on runtime reliability and refinements across libraries, SDK, F#, .NET MAUI, and Windows Forms without adding new C# language features.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>CoreCLR introduces a breaking change by disabling advisory file locking by default on iOS and tvOS to prevent termination when entering the background.</li><li>Libraries introduce chunked reading in CborReader, experimental post-quantum cryptography APIs (CompositeMLKem and Hpke), and SocketsHttpHandler stream caps for HTTP/2.</li><li>MSBuild wildcard matching is optimized to be 10–13% faster with 16–34% fewer allocations, and NuGet introduces package cooldown configurations.</li><li>.NET MAUI adds a C# UI generation flag and Avalonia desktop project support, while Windows Forms adds new visual style modes and Designer round-trip analyzers.</li><li>F# includes preview runtime-async builder primitives, while Apple platform workloads now require Xcode 27.0 and UIKit scene lifecycles.</li></ul><h3>Why it matters</h3><p>The release candidate carries a go-live license, allowing developers to test and deploy .NET 11 in production environments ahead of general availability. It resolves platform-specific stability issues on Apple operating systems and provides early access to experimental post-quantum cryptographic primitives.</p>",
+    "tags": [
+      ".net",
+      ".net 11",
+      "c#",
+      "f#",
+      ".net maui",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/10/dotnet-11-rc-2/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": ".NET 11 Release Candidate 2: Go-Live License and Updates across Libraries, F#, MAUI, and WinForms",
+        "publishedAt": "2026-10-19T08:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-10-23T08:25:16.497Z",
+    "publishedAt": "2026-10-19T08:00:00.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
     "id": "d3b09e97-aba0-4457-af60-f28ef7f7ed9f",
     "slug": "22-3-0-next-2",
     "title": "Angular CLI 22.3.0-next.2",
@@ -143,6 +271,13 @@
         "siteName": "Angular CLI releases",
         "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.2",
         "title": "22.3.0-next.2"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.3",
+        "title": "Angular CLI 22.3.0-next.3",
+        "publishedAt": "2026-10-22T14:04:29.000Z"
       }
     ],
     "relevance": 6,
@@ -150,7 +285,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-23T08:25:16.497Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
@@ -1025,6 +1160,37 @@
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
   },
   {
+    "id": "731d3281-954e-408e-9d7a-4b0b554ce744",
+    "slug": "asp-net-core-v11-0-0-rc-2-26504-105-removes-deviceboundsessions",
+    "title": "ASP.NET Core v11.0.0-rc.2.26504.105 Removes DeviceBoundSessions",
+    "tldr": "ASP.NET Core release candidate v11.0.0-rc.2.26504.105 has been published. The release removes the DeviceBoundSessions implementation.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Released under tag v11.0.0-rc.2.26504.105 with commit 4a70870.</li><li>DeviceBoundSessions implementation has been removed via PR #69462 and PR #69479.</li><li>The commit was signed and verified via GitHub.</li></ul><h3>Why it matters</h3><p>Developers tracking ASP.NET Core v11 release candidates should be aware of the removal of DeviceBoundSessions when testing against upcoming builds.</p>",
+    "tags": [
+      "asp.net core",
+      ".net",
+      "releases",
+      "aspnetcore",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "dc0707aa2ad1",
+        "siteName": "ASP.NET Core releases",
+        "url": "https://github.com/dotnet/aspnetcore/releases/tag/v11.0.0-rc.2.26504.105",
+        "title": "v11.0.0-rc.2.26504.105: Remove DeviceBoundSessions implementation (#69462) (#69479)",
+        "publishedAt": "2026-09-24T13:55:41.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-10-23T08:25:16.497Z",
+    "publishedAt": "2026-09-24T13:55:41.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
     "id": "ca09e123-ce3c-44d0-9c5e-7e23040f2464",
     "slug": "microsoft-updating-nuget-author-signing-certificate",
     "title": "Microsoft Updating NuGet Author-Signing Certificate",
@@ -1055,88 +1221,35 @@
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
   },
   {
-    "id": "036653fd-1f24-4bf7-ab0f-132d92b6d580",
-    "slug": "net-11-release-candidate-2-packages-rolled-out-across-runtime-and-frameworks",
-    "title": ".NET 11 Release Candidate 2 Packages Rolled Out Across Runtime and Frameworks",
-    "tldr": "Release tags for .NET 11 RC2 have been published across the core repositories including the runtime, ASP.NET Core, and EF Core. Highlights include managed HPKE APIs and dependency updates.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Build artifacts for v11.0.0-rc.2.26504.105 released across dotnet/runtime, ASP.NET Core, and EF Core.</li><li>Introduces experimental managed HPKE (Hybrid Public Key Encryption) APIs intended for the post-quantum cryptography (PQC) transition.</li><li>ASP.NET Core removes the DeviceBoundSessions implementation.</li><li>Entity Framework Core dependencies refreshed from upstream builds.</li></ul><h3>Why it matters</h3><p>These repository updates deliver the exact build packages necessary for developers preparing their application dependencies and testing the latest cryptographic primitives ahead of the general release.</p>",
+    "id": "0b830c8a-fbc5-487f-874a-46f2b9ba3ed1",
+    "slug": "ef-core-v11-0-0-rc-2-26504-105-synchronizes-net-dependencies",
+    "title": "EF Core v11.0.0-rc.2.26504.105 Synchronizes .NET Dependencies",
+    "tldr": "Entity Framework Core released v11.0.0-rc.2.26504.105 with upstream source updates from dotnet/dotnet.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Published tag v11.0.0-rc.2.26504.105 under commit f05a97f for release/11.0-rc2.</li><li>Updates dependencies from build 333489 and build 333569 via PR #39072.</li><li>Changes were co-authored with dotnet-maestro[bot].</li></ul><h3>Why it matters</h3><p>This release synchronizes EF Core release candidate builds with corresponding updates across the wider .NET ecosystem.</p>",
     "tags": [
-      ".net 11",
-      "cryptography",
-      "asp.net core",
+      "ef core",
+      ".net",
       "entity framework",
-      "open source",
-      ".net"
+      "releases",
+      "efcore",
+      "release"
     ],
     "sources": [
-      {
-        "sourceId": "713280710c85",
-        "siteName": ".NET runtime releases",
-        "url": "https://github.com/dotnet/runtime/releases/tag/v11.0.0-rc.2.26504.105",
-        "title": "v11.0.0-rc.2.26504.105: [release/11.0-rc2] Managed HPKE (#134443)",
-        "publishedAt": "2026-09-23T00:10:01.000Z"
-      },
-      {
-        "sourceId": "dc0707aa2ad1",
-        "siteName": "ASP.NET Core releases",
-        "url": "https://github.com/dotnet/aspnetcore/releases/tag/v11.0.0-rc.2.26504.105",
-        "title": "v11.0.0-rc.2.26504.105: Remove DeviceBoundSessions implementation (#69462) (#69479)",
-        "publishedAt": "2026-09-24T13:55:41.000Z"
-      },
       {
         "sourceId": "5d26ca1ac3d9",
         "siteName": "EF Core releases",
         "url": "https://github.com/dotnet/efcore/releases/tag/v11.0.0-rc.2.26504.105",
         "title": "v11.0.0-rc.2.26504.105: [release/11.0-rc2] Source code updates from dotnet/dotnet (#39072)",
         "publishedAt": "2026-09-23T19:12:15.000Z"
-      },
-      {
-        "sourceId": "655eccbecb12",
-        "siteName": "InfoQ .NET",
-        "url": "https://www.infoq.com/news/2026/10/dotnet-11-rc-2/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
-        "title": ".NET 11 Release Candidate 2: Go-Live License and Updates Across Libraries, F#, MAUI, and WinForms",
-        "publishedAt": "2026-10-19T08:00:00.000Z"
       }
     ],
-    "relevance": 8,
+    "relevance": 6,
     "status": "published",
     "origin": "auto",
     "aiPending": false,
-    "createdAt": "2026-10-19T08:42:08.996Z",
-    "updatedAt": "2026-10-19T08:42:08.996Z",
-    "publishedAt": "2026-09-23T00:10:01.000Z",
-    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
-  },
-  {
-    "id": "8e794d8d-caa8-4be7-a9a3-f6a05cb58236",
-    "slug": "experimental-support-for-device-bound-session-credentials-in-asp-net-core",
-    "title": "Experimental Support for Device Bound Session Credentials in ASP.NET Core",
-    "tldr": "ASP.NET Core in .NET 11 introduces experimental support for Device Bound Session Credentials (DBSC) to protect against session hijacking and cookie theft.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The Microsoft.AspNetCore.Authentication.DeviceBoundSessions package acts as a drop-in hardening layer over existing cookie authentication schemes.</li><li>DBSC mitigates cookie theft by trading long-lived authentication cookies for short-lived cookies paired with hardware-bound refresh tokens.</li><li>Session refresh requests are validated by having the browser sign challenges using a private key isolated inside a hardware Trusted Platform Module (TPM).</li><li>Integrating DBSC with ASP.NET Core Identity requires manually wiring AddDeviceBoundSession to the IdentityConstants.ApplicationScheme.</li></ul><h3>Why it matters</h3><p>DBSC significantly hardens web applications against credential exfiltration attacks by ensuring session cookies can only be refreshed from the original client hardware.</p>",
-    "tags": [
-      "asp.net core",
-      ".net 11",
-      "security",
-      "authentication",
-      "dbsc",
-      ".net"
-    ],
-    "sources": [
-      {
-        "sourceId": "145884eb4af6",
-        "siteName": "Andrew Lock – .NET Escapades",
-        "url": "https://andrewlock.net/exploring-the-dotnet-11-preview-8-experimental-support-for-device-bound-session-credentials-in-aspnetcore/",
-        "title": "Experimental support for Device Bound Session Credentials (DBSC) in ASP.NET Core: Exploring the .NET 11 preview - Part 8",
-        "publishedAt": "2026-09-22T10:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-19T08:42:08.996Z",
-    "updatedAt": "2026-10-19T08:42:08.996Z",
-    "publishedAt": "2026-09-22T10:00:00.000Z",
-    "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-10-23T08:25:16.497Z",
+    "publishedAt": "2026-09-23T19:12:15.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
   }
 ]
