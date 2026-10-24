@@ -24,7 +24,7 @@
       <h1>{{ p.title }}</h1>
       <p class="meta">
         <time [attr.datetime]="p.publishedAt">{{ published() }}</time>
-        <a href="#originals" class="mono">{{ sources(p.sources.length) }}</a>
+        <a [routerLink]="[]" fragment="originals" class="mono">{{ sources(p.sources.length) }}</a>
       </p>
     </header>
 

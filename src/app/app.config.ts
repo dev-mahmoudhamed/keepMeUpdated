@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withComponentInputBinding(),
       withViewTransitions({ skipInitialTransition: true }),
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' }),
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' }),
     ),
     provideHttpClient(withFetch(), withInterceptors([adminSessionInterceptor])),
   ],

@@ -7,9 +7,9 @@ import { Masthead } from './masthead/masthead';
   imports: [RouterOutlet, RouterLink, Masthead],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main" (click)="$event.preventDefault(); main.focus()">Skip to content</a>
     <app-masthead />
-    <main id="main" tabindex="-1">
+    <main id="main" tabindex="-1" #main>
       <router-outlet />
     </main>
     <footer class="foot wrap">
