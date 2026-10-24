@@ -107,6 +107,34 @@ export function matchExisting(title: string, recent: RecentPostRef[], threshold 
   return best?.id;
 }
 
+export interface ReleaseSeries {
+  /** Product and major version, e.g. "angular cli 22". */
+  key: string;
+  /** The post title for every update of that major version, e.g. "Angular CLI 22 updates". */
+  title: string;
+}
+
+const RELEASE_TITLE =
+  /^(?:(announcing|introducing|releasing|what['’]?s new in)\s+)?(.+?)\s+(v)?(\d+)((?:\.(?:\d+|x))*)((?:[\s.-]+(?:preview|rc|release candidate|beta|alpha|next)(?:[\s.-]*\d+)*)*)\s*(.*)$/i;
+const RELEASE_WORDS = /^(?:(?:is|has been)\s+)?(?:now\s+)?(?:out|here|available|released|release[sd]?|updates?)?\s*[!.?]*$/i;
+
+/**
+ * The release series a title announces: "Angular 22.2.3", "Angular CLI 22.3.0-next.2", "What's new in Angular 22.2?",
+ * ".NET 10 Preview 7 is now available", "Angular 22.2: Error Boundaries…". Every version of one major is one series.
+ */
+export function releaseSeries(title: string): ReleaseSeries | undefined {
+  const m = RELEASE_TITLE.exec(title.trim());
+  if (!m) return undefined;
+  const [, verb, rawProduct, v, major, minor, prerelease, rest] = m;
+  const product = rawProduct.replace(/[\s:–—-]+$/, '').replace(/\s+(releases?|version)$/i, '').trim();
+  if (!/[a-z]/i.test(product) || product.split(/\s+/).length > 4) return undefined;
+  const versioned = !!(minor || v || prerelease);
+  const announced = !!verb || (!!rest && RELEASE_WORDS.test(rest));
+  const ok = !rest ? versioned || !!verb : RELEASE_WORDS.test(rest) ? versioned || announced : versioned && /^[:–—-]/.test(rest);
+  if (!ok) return undefined;
+  return { key: `${product.toLowerCase().replace(/\s+/g, ' ')} ${Number(major)}`, title: `${product} ${Number(major)} updates` };
+}
+
 /** The posts whose titles look a little like any of `items`, most similar first: what triage compares a batch with. */
 export function similarPosts(items: RawItem[], posts: RecentPostRef[], limit = 100, threshold = 0.2): RecentPostRef[] {
   const itemTokens = items.map((i) => titleTokens(i.title));
@@ -210,12 +238,14 @@ export type GenerateFn = (req: GenerateRequest) => Promise<{ text: string | unde
 const TRIAGE_INSTRUCTION =
   'You are an editor for a developer news digest. Group items that report the same news, even from different sites. ' +
   'Score relevance to working software developers 0-10 (releases, breaking changes, security, notable tooling = high; ' +
-  'marketing, hiring, opinion fluff = low). Use short lowercase tags. If a group is the same story as one of ' +
-  'recentPosts, set existingPostId to that post id. Every item id must appear in exactly one group.';
+  'marketing, hiring, opinion fluff = low). Use short lowercase tags. Updates to the same major version of one product ' +
+  '(e.g. Angular 21.0, 21.1 and 21.1.2) are one story. If a group is the same story as one of recentPosts, set ' +
+  'existingPostId to that post id. Every item id must appear in exactly one group.';
 
 const SUMMARY_INSTRUCTION =
   'Write a neutral, factual summary for developers for each story. A story can have several sources: combine them ' +
   'into one summary. If sources disagree on a fact, leave that fact out rather than stating either version. ' +
+  'When the sources are several versions of one product, say what changed across them, newest version first. ' +
   'tldr is at most 2 sentences. 3-5 key points. whyItMatters is 1-3 sentences. No hype, no marketing language. ' +
   'Use only the provided text. Return one entry per clusterId.';
 

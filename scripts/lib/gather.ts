@@ -2,7 +2,7 @@
 // per story with all the sites that reported it; (3) visit the articles and summarize them with Gemini.
 import { normalizeUrl } from '../../shared/feed';
 import type { Db, Post, PostSource, Run, RunTrigger } from '../../shared/models';
-import { type AiClient, AiBudget, type Cluster, type RawItem, type StorySummary, SUMMARY_BATCH, TRIAGE_BATCH, chunk, similarPosts } from './ai';
+import { type AiClient, AiBudget, type Cluster, type RawItem, type StorySummary, SUMMARY_BATCH, TRIAGE_BATCH, chunk, releaseSeries, similarPosts } from './ai';
 import {
   DAY_MS,
   RUNS_KEPT,
@@ -164,14 +164,38 @@ export async function gather(db: Db, deps: GatherDeps, trigger: RunTrigger): Pro
     run.stats.fresh = fresh.length;
     log(`Collected ${fetched.length} links from ${enabled.length} sources${failed ? ` (${failed} failed)` : ''}; ${fresh.length} new from the last ${db.settings.retentionDays} days`);
 
-    // 2. Post: one post per story. Batches see the posts earlier batches made, so a story is never posted twice.
+    // 2. Post: one post per story. Every update of one product's major version ("Angular 22.2.3", "22.3.0-next.1",
+    // "What's new in Angular 22.2?") goes into that version's single post. Batches see the posts earlier batches
+    // made, so a story is never posted twice.
     const budget = new AiBudget(db.settings.maxAiCallsPerRun);
     const ai = deps.makeAi(budget);
     const defaultTags = Object.fromEntries(db.sources.map((s) => [s.id, s.defaultTags]));
-    const byId = new Map(fresh.map((i) => [i.id, i]));
     const taken = new Set(db.posts.map((p) => p.slug));
-    for (const batch of chunk(fresh, TRIAGE_BATCH)) {
-      const clusters = await ai.triage(batch, similarPosts(batch, db.posts), defaultTags);
+    const series = new Map<string, RawItem[]>();
+    const stories: RawItem[] = [];
+    for (const item of fresh) {
+      const key = releaseSeries(item.title)?.key;
+      if (key) series.set(key, [...(series.get(key) ?? []), item]);
+      else stories.push(item);
+    }
+    for (const [key, items] of series) {
+      run.stats.clusters++;
+      const existing = db.posts.find((p) => releaseSeries(p.title)?.key === key);
+      if (existing) {
+        if (addSources(existing, items, nowIso)) run.stats.merged++;
+        continue;
+      }
+      const tags = [...new Set(items.flatMap((i) => defaultTags[i.sourceId] ?? []))];
+      const post = newPost({ id: key, itemIds: [], relevance: 7, tags }, items, run.id, nowIso, taken);
+      taken.add(post.slug);
+      db.posts.push(post);
+      run.stats.created++;
+    }
+    const byId = new Map(stories.map((i) => [i.id, i]));
+    // Title matching alone would file "Upgrading to .NET 10" under ".NET 10 updates"; only Gemini may link to those.
+    const linkable = () => (ai.mode === 'gemini' ? db.posts : db.posts.filter((p) => !releaseSeries(p.title)));
+    for (const batch of chunk(stories, TRIAGE_BATCH)) {
+      const clusters = await ai.triage(batch, similarPosts(batch, linkable()), defaultTags);
       run.stats.clusters += clusters.length;
       for (const c of clusters) {
         const items = c.itemIds.map((id) => byId.get(id)).filter((i): i is RawItem => !!i);
@@ -239,14 +263,29 @@ function addSources(post: Post, items: RawItem[], nowIso: string): boolean {
   const added = items.filter((i) => !have.has(normalizeUrl(i.url)));
   if (!added.length) return false;
   post.sources.push(...added.map(toPostSource));
+  const release = releaseSeries(post.title);
+  if (release) {
+    newestFirst(post.sources);
+    post.publishedAt = post.sources[0].publishedAt ?? post.publishedAt;
+    if (post.origin === 'auto') post.title = release.title;
+  }
   if (post.origin === 'auto') post.aiPending = true;
   post.updatedAt = nowIso;
   return true;
 }
 
-/** A new post with the feed's description; step 3 replaces it with the AI summary. */
+const newestFirst = <T extends { publishedAt?: string }>(list: T[]) =>
+  list.sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''));
+
+/**
+ * A new post with the feed's description; step 3 replaces it with the AI summary. A release series is titled for the
+ * major version, lists the newest update first, and is dated by it.
+ */
 function newPost(cluster: Cluster, items: RawItem[], runId: string, nowIso: string, taken: Set<string>): Post {
-  const title = items[0].title;
+  const release = releaseSeries(items[0].title);
+  if (release) items = newestFirst([...items]);
+  const title = release?.title ?? items[0].title;
+  const dates = items.map((i) => i.publishedAt).filter((d): d is string => !!d).sort();
   return {
     id: newId(),
     slug: uniqueSlug(title, taken),
@@ -262,7 +301,7 @@ function newPost(cluster: Cluster, items: RawItem[], runId: string, nowIso: stri
     createdAt: nowIso,
     updatedAt: nowIso,
     // The story's own date (its earliest report), so it lands on the right day and ages out 30 days after.
-    publishedAt: items.map((i) => i.publishedAt).filter((d): d is string => !!d).sort()[0] ?? nowIso,
+    publishedAt: (release ? dates.at(-1) : dates[0]) ?? nowIso,
     runId,
   };
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { AiBudget, FallbackAiClient, GeminiAiClient, type GenerateFn, type RawItem, type StoryInput, jaccard, titleTokens, clusterByTitle, matchExisting } from './ai';
+import { AiBudget, FallbackAiClient, GeminiAiClient, type GenerateFn, type RawItem, type StoryInput, jaccard, releaseSeries, titleTokens, clusterByTitle, matchExisting } from './ai';
 import { normalizeUrl } from '../../shared/feed';
 
 describe('ai', () => {
@@ -261,4 +261,35 @@ it('matches existing recent posts', () => {
 it('keeps different versions apart', () => {
   expect(clusterByTitle([item('i0', 'Angular 21 released'), item('i1', 'Angular 22 released')])).toHaveLength(2);
 });
+});
+
+describe('releaseSeries', () => {
+  it.each([
+    ['Angular 22.2.3', 'angular 22', 'Angular 22 updates'],
+    ['Angular 22.3.0-next.2', 'angular 22', 'Angular 22 updates'],
+    ["What's new in Angular 22.2?", 'angular 22', 'Angular 22 updates'],
+    ['Angular 22.2: Error Boundaries, Router Resources, and More', 'angular 22', 'Angular 22 updates'],
+    ['Announcing Angular v22', 'angular 22', 'Angular 22 updates'],
+    ['Angular CLI 22.3.0-next.3', 'angular cli 22', 'Angular CLI 22 updates'],
+    ['.NET 11.0 RC 2', '.net 11', '.NET 11 updates'],
+    ['Announcing .NET 11 Release Candidate 2', '.net 11', '.NET 11 updates'],
+    ['.NET 10 Preview 7 is now available', '.net 10', '.NET 10 updates'],
+    ['Rider 2026.2.3 Is Released!', 'rider 2026', 'Rider 2026 updates'],
+    ['Angular 22 updates', 'angular 22', 'Angular 22 updates'],
+    ['VSCode Extension: 22.2.0', 'vscode extension 22', 'VSCode Extension 22 updates'],
+  ])('%s is a release of %s', (title, key, postTitle) => {
+    expect(releaseSeries(title)).toEqual({ key, title: postTitle });
+  });
+
+  it.each([
+    'Top 10 Ways to Reduce .NET Memory Usage in Kubernetes',
+    'Nx 23.3 Is Here: Task-Based Affected, Faster Graph',
+    'Chapter 11 — Encrypt and Persist Feature State',
+    'Ng-News 26/22: TypeScript 7.1, Angular Native and Polymorpheus',
+    'Dew Drop - October 23, 2026 (#4777)',
+    'Upgrading to .NET 10',
+    'Migrating Reactive Forms to Angular 22 Signal Forms: When and How',
+  ])('%s is not a release', (title) => {
+    expect(releaseSeries(title)).toBeUndefined();
+  });
 });

@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { Post } from '../../shared/models';
 import type { HttpGet } from './fetch';
-import type { AiClient, Cluster, RawItem, RecentPostRef, StoryInput, StorySummary } from './ai';
+import { type AiClient, type Cluster, FallbackAiClient, type RawItem, type RecentPostRef, type StoryInput, type StorySummary } from './ai';
 import { gather, runGather } from './gather';
 import type { Db, Source } from '../../shared/models';
 
@@ -71,7 +71,7 @@ describe('runGather', () => {
   it('gather mode prunes, gathers and saves', async () => {
     const result = await runGather({ root, mode: 'gather', http, makeAi: summaryAi, now: () => NOW, trigger: 'cron' });
     const posts = await readPosts();
-    expect(posts.map((p) => p.title)).toEqual(['Angular 23 released', 'recent']);
+    expect(posts.map((p) => p.title)).toEqual(['Angular 23 updates', 'recent']);
     expect(result.changed.sort()).toEqual(['content/posts.json', 'content/state.json']);
     expect(result.failed).toBe(false);
     expect(result.summary).toContain('1 new posts');
@@ -190,12 +190,12 @@ const baseDb = (sources: Source[], posts: Post[] = []): Db => ({
 
 const existingPost = (over: Partial<Post> = {}): Post => ({
   id: 'p1',
-  slug: 'angular-22-released',
-  title: 'Angular 22 released',
+  slug: 'signal-forms-are-stable',
+  title: 'Signal Forms are stable',
   tldr: 't',
   bodyHtml: '<p>b</p>',
   tags: ['angular'],
-  sources: [{ siteName: 'Old', url: 'https://old.test/a22', title: 'Angular 22 released' }],
+  sources: [{ siteName: 'Old', url: 'https://old.test/a22', title: 'Signal Forms are stable' }],
   relevance: 8,
   status: 'published',
   origin: 'auto',
@@ -210,8 +210,8 @@ const run = (db: Db, routes: Record<string, string | Error>, ai: AiClient) =>
   gather(db, { http: httpFrom(routes), makeAi: () => ai, now: () => NOW }, 'manual');
 
 const twoSourcesSameStory = {
-  'https://a.test/feed': rss([{ title: 'Angular 22 released', url: 'https://a.test/angular-22', date: '2026-10-17T08:00:00Z' }]),
-  'https://b.test/feed': rss([{ title: 'Angular 22 is out', url: 'https://b.test/ng22', date: '2026-10-17T07:00:00Z' }]),
+  'https://a.test/feed': rss([{ title: 'Signal Forms are stable', url: 'https://a.test/angular-22', date: '2026-10-17T08:00:00Z' }]),
+  'https://b.test/feed': rss([{ title: 'Signal Forms now stable', url: 'https://b.test/ng22', date: '2026-10-17T07:00:00Z' }]),
 };
 
 it('posts one story per cluster with every site that reported it, then summarizes it', async () => {
@@ -224,8 +224,8 @@ it('posts one story per cluster with every site that reported it, then summarize
   expect(db.posts).toHaveLength(1);
   const [post] = db.posts;
   expect(post).toMatchObject({
-    title: 'Angular 22 released',
-    slug: 'angular-22-released',
+    title: 'Signal Forms are stable',
+    slug: 'signal-forms-are-stable',
     tldr: 'Short version.',
     status: 'published',
     origin: 'auto',
@@ -255,7 +255,7 @@ it('adds another site to an existing post and summarizes it again from all its s
   expect(r.stats.merged).toBe(1);
   expect(db.posts).toHaveLength(1);
   expect(db.posts[0].sources.map((s) => s.url)).toEqual(['https://old.test/a22', 'https://a.test/angular-22']);
-  expect(ai.triageCalls[0].recent).toEqual([{ id: 'p1', title: 'Angular 22 released' }]);
+  expect(ai.triageCalls[0].recent).toEqual([{ id: 'p1', title: 'Signal Forms are stable' }]);
   expect(ai.summarizeCalls[0][0].items.map((i) => i.url)).toEqual(['https://old.test/a22', 'https://a.test/angular-22']);
   expect(db.posts[0]).toMatchObject({ tldr: 'Short version.', aiPending: false });
 });
@@ -314,8 +314,8 @@ it('merges the same story across batches into one post', async () => {
 it('posts stories with the feed description until they are summarized on a later run', async () => {
   const db = baseDb([source('a')]);
   await run(db, twoSourcesSameStory, new FakeAi(oneClusterPerItem(), () => []));
-  expect(db.posts[0]).toMatchObject({ title: 'Angular 22 released', tldr: 'Angular 22 released desc', aiPending: true, tags: ['t'] });
-  expect(db.posts[0].bodyHtml).toBe('<p><strong>A:</strong> Angular 22 released desc</p>');
+  expect(db.posts[0]).toMatchObject({ title: 'Signal Forms are stable', tldr: 'Signal Forms are stable desc', aiPending: true, tags: ['t'] });
+  expect(db.posts[0].bodyHtml).toBe('<p><strong>A:</strong> Signal Forms are stable desc</p>');
 
   const r = await run(db, twoSourcesSameStory, new FakeAi(oneClusterPerItem()));
   expect(db.posts[0]).toMatchObject({ tldr: 'Short version.', aiPending: false });
@@ -452,5 +452,51 @@ it('keeps only the last 50 runs', async () => {
   }));
   await run(db, twoSourcesSameStory, new FakeAi(oneClusterPerItem()));
   expect(db.runs).toHaveLength(50);
+});
+
+it('puts every update of one major version into one post, newest first', async () => {
+  const routes = {
+    'https://a.test/feed': rss([
+      { title: 'Angular 22.2.3', url: 'https://a.test/22.2.3', date: '2026-10-14T08:00:00Z' },
+      { title: 'Angular 22.3.0-next.2', url: 'https://a.test/22.3.0-next.2', date: '2026-10-16T08:00:00Z' },
+      { title: 'Angular 21.2.9', url: 'https://a.test/21.2.9', date: '2026-10-15T08:00:00Z' },
+    ]),
+    'https://b.test/feed': rss([
+      { title: "What's new in Angular 22.2?", url: 'https://b.test/whats-new-22-2', date: '2026-10-10T08:00:00Z' },
+      { title: 'Signals in depth', url: 'https://b.test/signals', date: '2026-10-12T08:00:00Z' },
+    ]),
+  };
+  const ai = new FakeAi(oneClusterPerItem());
+  const db = baseDb([source('a'), source('b')]);
+  const r = await run(db, routes, ai);
+
+  expect(r.stats).toMatchObject({ created: 3, merged: 0 });
+  expect(ai.triageCalls.flatMap((c) => c.items.map((i) => i.title))).toEqual(['Signals in depth']);
+  const v22 = db.posts.find((p) => p.title === 'Angular 22 updates')!;
+  expect(v22.sources.map((s) => s.url)).toEqual(['https://a.test/22.3.0-next.2', 'https://a.test/22.2.3', 'https://b.test/whats-new-22-2']);
+  expect(v22).toMatchObject({ slug: 'angular-22-updates', publishedAt: '2026-10-16T08:00:00.000Z', tags: ['a', 'b', 'ai-tag'] });
+  expect(db.posts.find((p) => p.title === 'Angular 21 updates')!.sources).toHaveLength(1);
+});
+
+it('adds a later update to the existing post for that version and summarizes it again', async () => {
+  const post = existingPost({ id: 'p22', slug: 'angular-22-2-3', title: 'Angular 22.2.3', publishedAt: '2026-10-14T08:00:00.000Z', sources: [{ siteName: 'A', url: 'https://a.test/22.2.3', title: 'Angular 22.2.3', publishedAt: '2026-10-14T08:00:00.000Z' }] });
+  const routes = { 'https://a.test/feed': rss([{ title: 'Angular 22.2.4', url: 'https://a.test/22.2.4', date: '2026-10-20T08:00:00Z' }]) };
+  const ai = new FakeAi(oneClusterPerItem());
+  const db = baseDb([source('a')], [post]);
+  const r = await run(db, routes, ai);
+
+  expect(r.stats).toMatchObject({ created: 0, merged: 1 });
+  expect(db.posts).toHaveLength(1);
+  expect(db.posts[0]).toMatchObject({ title: 'Angular 22 updates', slug: 'angular-22-2-3', publishedAt: '2026-10-20T08:00:00.000Z', aiPending: false });
+  expect(db.posts[0].sources.map((s) => s.url)).toEqual(['https://a.test/22.2.4', 'https://a.test/22.2.3']);
+  expect(ai.summarizeCalls[0][0].items.map((i) => i.title)).toEqual(['Angular 22.2.4', 'Angular 22.2.3']);
+});
+
+it('without AI, does not file an article under a version-update post just because the titles look alike', async () => {
+  const post = existingPost({ id: 'n10', slug: 'net-10-updates', title: '.NET 10 updates' });
+  const routes = { 'https://a.test/feed': rss([{ title: 'Upgrading to .NET 10', url: 'https://a.test/upgrading', date: '2026-10-18T08:00:00Z' }]) };
+  const db = baseDb([source('a')], [post]);
+  await run(db, routes, new FallbackAiClient());
+  expect(db.posts.map((p) => p.title).sort()).toEqual(['.NET 10 updates', 'Upgrading to .NET 10']);
 });
 });

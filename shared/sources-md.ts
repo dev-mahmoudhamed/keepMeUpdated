@@ -116,8 +116,8 @@ const escapeCell = (text: string) => text.replace(/\|/g, '\\|');
 
 const INTRO = `# News sources
 
-The daily gather reads every **enabled** source below. Edit this file or use **Admin → Sources**; the two stay in
-sync (the server reloads this file when you save it, and rewrites it when you change sources in the admin panel).
+The gather reads every **enabled** source below. Edit this file or use **Admin → Sources**, which saves its changes
+to this file.
 
 - One table row per source. \`##\` headings group sources into sections.
 - **Feed**: an RSS/Atom link, or a web page link when **Selectors** is filled in.
@@ -125,6 +125,8 @@ sync (the server reloads this file when you save it, and rewrites it when you ch
 - **Enabled**: \`yes\` or \`no\`.
 - **Selectors** (only for sites without a feed): \`item=…; title=…; link=…; date=…; summary=…\`.
   Add \`@attr\` to read an attribute, e.g. \`link=a@href\`.
+
+Why each site is here (and which were left out) is in [docs/resources/news-sources.md](docs/resources/news-sources.md).
 `;
 
 export function renderSourcesMd(sources: Pick<Source, keyof SourceDef>[]): string {
