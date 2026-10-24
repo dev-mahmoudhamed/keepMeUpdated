@@ -15,11 +15,13 @@ const load = (name: string) => {
 describe('gather.yml', () => {
   const { text, wf } = load('gather.yml');
 
-  it('runs daily at 03:00 UTC, and by hand only from the admin panel (no "Run workflow" button on GitHub)', () => {
-    expect(Object.keys(wf.on).sort()).toEqual(['repository_dispatch', 'schedule']);
+  it('runs daily at 03:00 UTC, and by hand from the admin panel or the Run workflow button on GitHub', () => {
+    expect(Object.keys(wf.on).sort()).toEqual(['repository_dispatch', 'schedule', 'workflow_dispatch']);
     expect(wf.on.schedule).toEqual([{ cron: '0 3 * * *' }]);
     expect(wf.on.repository_dispatch).toEqual({ types: ['gather'] });
-    expect(wf.jobs.gather.env.MODE).toBe("${{ github.event.client_payload.mode || 'gather' }}");
+    expect(wf.on.workflow_dispatch.inputs.mode.options).toEqual(['gather', 'resummarize', 'dry-run']);
+    expect(wf.on.workflow_dispatch.inputs.mode.default).toBe('gather');
+    expect(wf.jobs.gather.env.MODE).toBe("${{ github.event.client_payload.mode || inputs.mode || 'gather' }}");
   });
 
   it('never runs two gathers at once', () => {

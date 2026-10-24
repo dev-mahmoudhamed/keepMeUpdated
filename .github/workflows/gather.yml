@@ -1,5 +1,5 @@
-# Daily news gather. Started by hand only from the admin panel (Gather runs → Run gather now / Dry run, or a post's
-# Re-summarize), through repository_dispatch, so GitHub shows no "Run workflow" button for it.
+# Daily news gather. Also started by hand from the admin panel (Gather runs → Run gather now / Dry run, or a post's
+# Re-summarize, through repository_dispatch) or from GitHub (Actions → Gather news → Run workflow).
 # Its commit to main makes Netlify rebuild and publish the site.
 name: Gather news
 
@@ -10,6 +10,20 @@ on:
   repository_dispatch:
     # client_payload: { mode: gather | resummarize | dry-run, post_id?: string }
     types: [gather]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to run
+        type: choice
+        options:
+          - gather
+          - resummarize
+          - dry-run
+        default: gather
+      post_id:
+        description: Post id (only for resummarize)
+        type: string
+        required: false
 
 concurrency:
   group: gather
@@ -22,7 +36,7 @@ jobs:
     permissions:
       contents: write
     env:
-      MODE: ${{ github.event.client_payload.mode || 'gather' }}
+      MODE: ${{ github.event.client_payload.mode || inputs.mode || 'gather' }}
       BRANCH: ${{ github.event.repository.default_branch || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +56,7 @@ jobs:
         run: npm run gather -- --mode "$MODE" --post "$POST_ID"
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          POST_ID: ${{ github.event.client_payload.post_id }}
+          POST_ID: ${{ github.event.client_payload.post_id || inputs.post_id }}
 
       # Saved even when the run reports a failure, so source errors show up in Admin → Sources.
       - name: Commit content

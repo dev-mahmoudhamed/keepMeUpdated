@@ -8,12 +8,12 @@ News is kept for **4 months** (120 days), then deleted. There is no database: th
 - **Site:** Cards or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
 - **Admin (`/admin`):** write and edit posts with a rich-text editor, publish or hide them, manage sources, and start a
-  gather (the only way to start one by hand). Sign in with a 6-digit code emailed to the admin address.
+  gather. Sign in with a 6-digit code emailed to the admin address.
 
 ## How it works
 
 ```
-GitHub Actions (03:00 UTC daily, or Admin → Gather runs → "Run gather now")
+GitHub Actions (03:00 UTC daily, Admin → Gather runs → "Run gather now", or GitHub → Actions → Gather news → Run workflow)
   └─ npm run gather   1. collect: every enabled source, site by site, every article from the last 4 months
                       2. post:    one post per story; a link already on the site is skipped, another site's
                                   report of the same story is added to its post
