@@ -1,5 +1,5 @@
 import type { Post, PostSource, PostStatus } from '../../../shared/models';
-import { slugify } from '../../../shared/slug';
+import { slugify } from '../../../shared/feed';
 
 /** What the editor saves. */
 export interface PostInput {
@@ -58,6 +58,11 @@ export function upsertPost(posts: Post[], id: string, input: PostInput, now: str
     updatedAt: now,
   } as Post;
   if (input.status === 'published' && !post.publishedAt) post.publishedAt = now;
+  // Edited text is the editor's: the gather no longer summarizes this post again.
+  if (existing && (existing.tldr !== input.tldr || existing.bodyHtml !== input.bodyHtml)) {
+    post.origin = 'manual';
+    post.aiPending = false;
+  }
 
   return { posts: existing ? posts.map((p) => (p.id === id ? post : p)) : [...posts, post], post };
 }

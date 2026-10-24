@@ -1,13 +1,40 @@
-import { describe, it, expect } from 'vitest';
+import { it, expect, vi, afterEach, describe } from 'vitest';
+import { httpGet, fetchRss, fetchHtml, fetchSource, type HttpGet, extractArticleText } from './fetch';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { fetchRss } from './rss';
-import { fetchHtml } from './html';
-import { fetchSource } from './index';
-import type { HttpGet } from '../http';
-import type { Source } from '../../../shared/models';
+import type { Source } from '../../shared/models';
 
-const fixture = (name: string) => readFileSync(join(__dirname, '../../test/fixtures', name), 'utf8');
+describe('httpGet', () => {
+afterEach(() => vi.unstubAllGlobals());
+
+it('explains network failures with the host and cause', async () => {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => {
+      throw Object.assign(new TypeError('fetch failed'), { cause: Object.assign(new Error('getaddrinfo ENOTFOUND'), { code: 'ENOTFOUND' }) });
+    }),
+  );
+  await expect(httpGet('https://feeds.example.test/rss')).rejects.toThrow('Could not reach feeds.example.test (ENOTFOUND)');
+});
+
+it('reports timeouts clearly', async () => {
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => {
+      throw new DOMException('The operation was aborted due to timeout', 'TimeoutError');
+    }),
+  );
+  await expect(httpGet('https://slow.test/feed')).rejects.toThrow('slow.test did not respond within 15s');
+});
+
+it('throws on non-2xx status', async () => {
+  vi.stubGlobal('fetch', vi.fn(async () => new Response('no', { status: 403 })));
+  await expect(httpGet('https://a.test/feed')).rejects.toThrow('HTTP 403 for https://a.test/feed');
+});
+});
+
+describe('fetchers', () => {
+const fixture = (name: string) => readFileSync(join(__dirname, '../test/fixtures', name), 'utf8');
 const httpReturning = (text: string, finalUrl = 'https://site.test/blog/'): HttpGet => async () => ({ status: 200, text, finalUrl });
 
 const src = (over: Partial<Source> = {}): Source => ({
@@ -75,4 +102,20 @@ it('names the project when a release feed titles items with a bare version', asy
 </feed>`;
   const items = await fetchRss(src({ name: 'Angular CLI releases' }), httpReturning(atom));
   expect(items.map((i) => i.title)).toEqual(['Angular CLI 22.2.3', 'Angular CLI v10.0.0-rc.2', 'Big feature release']);
+});
+});
+
+describe('extractArticleText', () => {
+it('prefers article content and drops navigation', () => {
+  expect(extractArticleText('<nav>menu</nav><article><p>One</p><p>Two</p></article>', 100)).toBe('One\nTwo');
+});
+
+it('falls back to main, then body', () => {
+  expect(extractArticleText('<header>h</header><main><p>Main text</p></main>', 100)).toBe('Main text');
+  expect(extractArticleText('<body><script>x()</script><p>Body text</p></body>', 100)).toBe('Body text');
+});
+
+it('truncates to maxChars', () => {
+  expect(extractArticleText('<body><p>' + 'a'.repeat(50) + '</p></body>', 10)).toHaveLength(10);
+});
 });

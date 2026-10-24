@@ -1,4 +1,5 @@
-# Daily news gather. Also started from Admin → Gather runs (Run gather now / Dry run / Re-summarize).
+# Daily news gather. Started by hand only from the admin panel (Gather runs → Run gather now / Dry run, or a post's
+# Re-summarize), through repository_dispatch, so GitHub shows no "Run workflow" button for it.
 # Its commit to main makes Netlify rebuild and publish the site.
 name: Gather news
 
@@ -6,20 +7,9 @@ on:
   schedule:
     # 03:00 UTC = 04:00 UK summer time (03:00 in winter). GitHub may start scheduled runs a little late.
     - cron: '0 3 * * *'
-  workflow_dispatch:
-    inputs:
-      mode:
-        description: What to run
-        type: choice
-        options:
-          - gather
-          - resummarize
-          - dry-run
-        default: gather
-      post_id:
-        description: Post id (only for resummarize)
-        type: string
-        required: false
+  repository_dispatch:
+    # client_payload: { mode: gather | resummarize | dry-run, post_id?: string }
+    types: [gather]
 
 concurrency:
   group: gather
@@ -28,11 +18,11 @@ concurrency:
 jobs:
   gather:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     permissions:
       contents: write
     env:
-      MODE: ${{ inputs.mode || 'gather' }}
+      MODE: ${{ github.event.client_payload.mode || 'gather' }}
       BRANCH: ${{ github.event.repository.default_branch || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
@@ -48,11 +38,11 @@ jobs:
 
       - name: Run ${{ env.MODE }}
         id: run
-        # Inputs go through env vars, never straight into the shell command.
+        # The payload goes through env vars, never straight into the shell command.
         run: npm run gather -- --mode "$MODE" --post "$POST_ID"
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          POST_ID: ${{ inputs.post_id }}
+          POST_ID: ${{ github.event.client_payload.post_id }}
 
       # Saved even when the run reports a failure, so source errors show up in Admin → Sources.
       - name: Commit content

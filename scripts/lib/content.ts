@@ -1,22 +1,33 @@
-import { createHash } from 'node:crypto';
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+// The data files (content/posts.json, content/state.json, sources.md), the site's static data, and HTML helpers.
+import { createHash, randomBytes, randomUUID } from 'node:crypto';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
-import type { ContentState, Db, Post, Settings, Source, SourceStatus } from '../../shared/models';
-import { normalizeUrl } from '../gather/dedupe';
+import sanitize from 'sanitize-html';
+import { normalizeUrl, slugify, toSummary } from '../../shared/feed';
+import type { ContentState, Db, FeedIndex, Post, Settings, SiteConfig, Source, SourceStatus } from '../../shared/models';
 import { parseSourcesMd } from '../../shared/sources-md';
+import type { RawItem } from './ai';
 
 export const POSTS_FILE = 'content/posts.json';
 export const STATE_FILE = 'content/state.json';
 export const SOURCES_FILE = 'sources.md';
-const RUNS_KEPT = 50;
-const DAY_MS = 86_400_000;
+export const RUNS_KEPT = 50;
+export const DAY_MS = 86_400_000;
 
 export const DEFAULT_SETTINGS: Settings = {
-  relevanceThreshold: 6,
-  maxItemAgeHours: 48,
   maxAiCallsPerRun: 15,
   retentionDays: 30,
 };
+
+export const newId = (): string => randomUUID();
+
+export function uniqueSlug(text: string, taken: Set<string>): string {
+  const base = slugify(text) || `post-${randomBytes(4).toString('hex').slice(0, 6)}`;
+  if (!taken.has(base)) return base;
+  let n = 2;
+  while (taken.has(`${base}-${n}`)) n++;
+  return `${base}-${n}`;
+}
 
 /** Stable id for a source, so its fetch history survives edits to sources.md. */
 export function sourceIdFor(feedUrl: string): string {
@@ -60,8 +71,10 @@ export async function loadContent(root: string): Promise<Db> {
     sources,
     runs: state.runs ?? [],
     seen: state.seen ?? {},
-    skipped: state.skipped ?? {},
-    settings: { ...DEFAULT_SETTINGS, ...(state.settings ?? {}) },
+    settings: {
+      maxAiCallsPerRun: state.settings?.maxAiCallsPerRun ?? DEFAULT_SETTINGS.maxAiCallsPerRun,
+      retentionDays: state.settings?.retentionDays ?? DEFAULT_SETTINGS.retentionDays,
+    },
   };
 }
 
@@ -77,7 +90,7 @@ function stateOf(db: Db): ContentState {
     };
     if (Object.keys(st).length) sourceStatus[normalizeUrl(s.feedUrl)] = st;
   }
-  return { version: 1, settings: db.settings, seen: db.seen, skipped: db.skipped, runs: db.runs, sourceStatus };
+  return { version: 1, settings: db.settings, seen: db.seen, runs: db.runs, sourceStatus };
 }
 
 async function writeIfChanged(root: string, file: string, text: string): Promise<boolean> {
@@ -110,8 +123,67 @@ export function applyRetention(db: Db, now: Date): { removedPosts: number; remov
       removedSeen++;
     }
   }
-  // Rejected articles older than the window can't come back anyway.
-  for (const [url, at] of Object.entries(db.skipped)) if (Date.parse(at) < cutoff) delete db.skipped[url];
   db.runs.splice(RUNS_KEPT);
   return { removedPosts: before - db.posts.length, removedSeen };
+}
+
+/** owner/name from an https or ssh GitHub remote url. */
+export function repoFromRemote(remote: string): string | undefined {
+  const m = /github\.com[:/]([^/\s]+)\/([^/\s]+?)(?:\.git)?\/?$/.exec(remote.trim());
+  return m ? `${m[1]}/${m[2]}` : undefined;
+}
+
+/** content/posts.json → the static files the site reads (published posts only, HTML sanitized). */
+export async function buildPublic(opts: { root: string; outDir: string; repo: string; branch: string }): Promise<{ posts: number }> {
+  const db = await loadContent(opts.root);
+  const published = db.posts
+    .filter((p) => p.status === 'published' && p.publishedAt)
+    .sort((a, b) => b.publishedAt!.localeCompare(a.publishedAt!));
+
+  await rm(opts.outDir, { recursive: true, force: true });
+  await mkdir(join(opts.outDir, 'p'), { recursive: true });
+
+  const index: FeedIndex = { generatedAt: new Date().toISOString(), posts: published.map(toSummary) };
+  await writeFile(join(opts.outDir, 'posts.json'), JSON.stringify(index));
+  for (const post of published) {
+    await writeFile(join(opts.outDir, 'p', `${post.slug}.json`), JSON.stringify({ ...post, bodyHtml: sanitizeHtml(post.bodyHtml) }));
+  }
+  const site: SiteConfig = { repo: opts.repo, branch: opts.branch, gatherWorkflow: 'gather.yml', schedule: '0 3 * * *' };
+  await writeFile(join(opts.outDir, 'site.json'), JSON.stringify(site, null, 2));
+  return { posts: published.length };
+}
+
+const SANITIZE_OPTIONS: sanitize.IOptions = {
+  allowedTags: ['h2', 'h3', 'h4', 'p', 'ul', 'ol', 'li', 'blockquote', 'code', 'pre', 'a', 'strong', 'em', 'img', 'hr', 'br', 's'],
+  allowedAttributes: { a: ['href', 'rel', 'target'], img: ['src', 'alt'] },
+  allowedSchemes: ['http', 'https', 'mailto'],
+  allowedSchemesByTag: { img: ['http', 'https'] },
+  transformTags: {
+    a: sanitize.simpleTransform('a', { rel: 'noopener noreferrer', target: '_blank' }),
+  },
+};
+
+export function sanitizeHtml(html: string): string {
+  return sanitize(html, SANITIZE_OPTIONS);
+}
+
+export function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+export function renderStoryBody(keyPoints: string[], whyItMatters: string): string {
+  const points = keyPoints.map((p) => `<li>${escapeHtml(p)}</li>`).join('');
+  return `<h3>Key points</h3><ul>${points}</ul><h3>Why it matters</h3><p>${escapeHtml(whyItMatters)}</p>`;
+}
+
+export function renderFallbackBody(items: RawItem[]): string {
+  return items
+    .filter((i) => i.snippet)
+    .map((i) => `<p><strong>${escapeHtml(i.siteName)}:</strong> ${escapeHtml(i.snippet)}</p>`)
+    .join('');
 }

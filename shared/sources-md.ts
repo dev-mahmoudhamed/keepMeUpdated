@@ -1,5 +1,5 @@
 import type { Source, SourceSelectors } from './models';
-import { normalizeUrl } from './url';
+import { normalizeUrl } from './feed';
 
 /** A source as written in sources.md: configuration only, no fetch history. */
 export type SourceDef = Omit<Source, 'id' | 'lastFetchedAt' | 'lastError' | 'lastItemCount'>;

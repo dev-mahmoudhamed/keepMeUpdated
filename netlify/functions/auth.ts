@@ -1,8 +1,18 @@
 // /api/auth/*: email-code sign-in for the admin panel.
 import type { Config } from '@netlify/functions';
-import { SESSION_COOKIE, clearedCookie, cookieValue, readAuthEnv, readSession, requestCode, sessionCookie, signSession, verifyCode } from '../lib/auth';
-import { blobCodeStore } from '../lib/blob-code-store';
-import { resendMailer } from '../lib/mail';
+import {
+  SESSION_COOKIE,
+  blobCodeStore,
+  clearedCookie,
+  cookieValue,
+  readAuthEnv,
+  readSession,
+  requestCode,
+  resendMailer,
+  sessionCookie,
+  signSession,
+  verifyCode,
+} from '../lib';
 import { loadDevEnv } from '../../config/dev-env';
 
 // Local only: reads .env when IS_DEV_ENV is true (config/dev-env.ts). A no-op on Netlify.

@@ -4,7 +4,7 @@ import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } fr
 import { Router, RouterLink } from '@angular/router';
 import { LucideArrowLeft, LucideExternalLink, LucidePlus, LucideSparkles, LucideTrash2, LucideX } from '@lucide/angular';
 import type { Post, PostSource, PostStatus } from '../../../../shared/models';
-import { slugify } from '../../../../shared/slug';
+import { slugify } from '../../../../shared/feed';
 import { SAVED_MESSAGE, githubErrorText } from '../../core/github';
 import { ToastService } from '../../core/toast';
 import { ContentRepo } from '../content-repo';

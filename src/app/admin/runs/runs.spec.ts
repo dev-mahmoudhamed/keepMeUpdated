@@ -10,14 +10,14 @@ const run: Run = {
   startedAt: '2026-10-17T03:00:00Z',
   finishedAt: '2026-10-17T03:01:10Z',
   status: 'success',
-  stats: { fetched: 419, fresh: 5, clusters: 5, created: 5, merged: 0, skipped: 0 },
+  stats: { fetched: 419, fresh: 5, clusters: 5, created: 5, merged: 0 },
   errors: [],
   log: ['Fetched 20 sources: 419 items', 'Grouped into 5 stories (gemini mode)'],
 };
 
 const state: ContentState = {
   version: 1,
-  settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15, retentionDays: 30 },
+  settings: { maxAiCallsPerRun: 15, retentionDays: 30 },
   seen: {},
   runs: [run],
   sourceStatus: {},

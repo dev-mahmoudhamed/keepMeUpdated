@@ -31,10 +31,16 @@ describe('post changes', () => {
   });
 
   it('keeps createdAt and origin when updating, and sets publishedAt on first publish', () => {
-    const { post: updated } = upsertPost([post('p1')], 'p1', { ...input, slug: 'p1', status: 'published' }, NOW);
+    const same = { ...input, tldr: 't', bodyHtml: '', slug: 'p1', status: 'published' as const };
+    const { post: updated } = upsertPost([post('p1')], 'p1', same, NOW);
     expect(updated).toMatchObject({ createdAt: '2026-10-10T00:00:00.000Z', origin: 'auto', updatedAt: NOW, publishedAt: NOW, title: 'Hello world' });
-    const again = upsertPost([updated], 'p1', { ...input, slug: 'p1', status: 'published' }, '2026-10-18T00:00:00.000Z').post;
+    const again = upsertPost([updated], 'p1', same, '2026-10-18T00:00:00.000Z').post;
     expect(again.publishedAt).toBe(NOW);
+  });
+
+  it('makes a gathered post the editor’s once its text is edited, so the gather won’t rewrite it', () => {
+    const { post: edited } = upsertPost([post('p1', { aiPending: true })], 'p1', { ...input, slug: 'p1' }, NOW);
+    expect(edited).toMatchObject({ origin: 'manual', aiPending: false, tldr: 'Short' });
   });
 
   it('rejects a slug another post uses', () => {

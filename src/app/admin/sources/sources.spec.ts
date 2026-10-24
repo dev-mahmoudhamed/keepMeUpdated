@@ -17,7 +17,7 @@ const rss: SourceDef = {
 
 const state: ContentState = {
   version: 1,
-  settings: { relevanceThreshold: 6, maxItemAgeHours: 48, maxAiCallsPerRun: 15, retentionDays: 30 },
+  settings: { maxAiCallsPerRun: 15, retentionDays: 30 },
   seen: {},
   runs: [],
   sourceStatus: {

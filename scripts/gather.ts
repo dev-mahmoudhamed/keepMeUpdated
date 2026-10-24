@@ -1,11 +1,9 @@
-// Daily gather, run by .github/workflows/gather.yml (or locally: npm run gather -- --mode dry-run).
+// The gather, run by .github/workflows/gather.yml (or locally: npm run gather -- --mode dry-run).
 import { appendFile } from 'node:fs/promises';
 import type { RunTrigger } from '../shared/models';
-import { type GatherMode, runGather } from './cli/run-gather';
-import type { AiBudget } from './gather/ai/budget';
-import { FallbackAiClient } from './gather/ai/fallback';
-import { GeminiAiClient } from './gather/ai/gemini';
-import { httpGet } from './gather/http';
+import { type AiBudget, FallbackAiClient, GeminiAiClient } from './lib/ai';
+import { httpGet } from './lib/fetch';
+import { type GatherMode, runGather } from './lib/gather';
 import { loadDevEnv } from '../config/dev-env';
 
 // Local only: reads .env when IS_DEV_ENV is true (config/dev-env.ts). A no-op on GitHub Actions.

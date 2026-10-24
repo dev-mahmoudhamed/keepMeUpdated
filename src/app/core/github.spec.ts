@@ -99,11 +99,10 @@ describe('RepoClient', () => {
     await expect(p).resolves.toBeUndefined();
   });
 
-  it('dispatches the gather workflow on the configured branch', async () => {
+  it('starts the gather workflow with a repository dispatch', async () => {
     const p = client.dispatchGather({ mode: 'resummarize', post_id: 'p1' });
-    await flushConfig();
-    const req = await next(`${API}/actions/workflows/gather.yml/dispatches`, 'POST');
-    expect(req.request.body).toEqual({ ref: 'main', inputs: { mode: 'resummarize', post_id: 'p1' } });
+    const req = await next(`${API}/dispatches`, 'POST');
+    expect(req.request.body).toEqual({ event_type: 'gather', client_payload: { mode: 'resummarize', post_id: 'p1' } });
     req.flush(null, { status: 204, statusText: 'No Content' });
     await expect(p).resolves.toBeUndefined();
   });

@@ -1,20 +1,24 @@
 # keepMeUpdated
 
 Developer news that matters, gathered every morning. A GitHub Actions workflow reads the sources in
-[sources.md](sources.md), keeps every article from the last 30 days, merges reports of the same story, writes a short summary with Gemini,
-and commits the result. Netlify then builds and publishes the site. News is kept for **30 days**, then deleted. There is
-no database: the data is a couple of JSON files in this repository.
+[sources.md](sources.md), collects every article from the last 30 days, posts each story once (with every site that
+reported it), writes a short summary with Gemini, and commits the result. Netlify then builds and publishes the site.
+News is kept for **30 days**, then deleted. There is no database: the data is a couple of JSON files in this repository.
 
 - **Site:** Cards or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
 - **Admin (`/admin`):** write and edit posts with a rich-text editor, publish or hide them, manage sources, and start a
-  gather. Sign in with a 6-digit code emailed to the admin address.
+  gather (the only way to start one by hand). Sign in with a 6-digit code emailed to the admin address.
 
 ## How it works
 
 ```
-GitHub Actions (03:00 UTC daily, or "Run gather now")
-  └─ npm run gather   → reads sources.md, fetches feeds, Gemini summaries, deletes news older than 30 days
+GitHub Actions (03:00 UTC daily, or Admin → Gather runs → "Run gather now")
+  └─ npm run gather   1. collect: every enabled source, site by site, every article from the last 30 days
+                      2. post:    one post per story; a link already on the site is skipped, another site's
+                                  report of the same story is added to its post
+                      3. summarize: visit the articles of posts still showing the feed text, newest first, Gemini
+                      deletes news older than 30 days
   └─ commits content/posts.json + content/state.json
 
 Netlify (on every push to main)
@@ -32,8 +36,10 @@ Admin panel (in your browser)
 | `sources.md` | The news sources. Edit it here or in Admin → Sources. |
 | `content/posts.json` | All posts from the last 30 days (written by the gather and the admin). |
 | `content/state.json` | Seen links, run history, source fetch results, settings. |
-| `scripts/` | The gather and build scripts. |
-| `netlify/` | The sign-in and admin API functions. |
+| `scripts/gather.ts` | The gather command. Its code is in `scripts/lib/`: `fetch.ts` (sources and articles), `ai.ts` (grouping and summaries), `gather.ts` (the three steps), `content.ts` (data files). |
+| `scripts/build-data.ts` | Writes `public/data/` for the site before every build. |
+| `netlify/` | The sign-in and admin API functions (`functions/`) and their logic (`lib.ts`). |
+| `shared/` | Types and helpers used by both the scripts and the site. |
 | `netlify.toml` | Netlify build, publish folder, functions and SPA routing. |
 | `.github/workflows/gather.yml` | The daily gather. |
 | `src/` | The Angular 22 site and admin panel. |
@@ -49,7 +55,8 @@ Admin panel (in your browser)
 3. **Create a GitHub token for the site** — GitHub → Settings → Developer settings → Personal access tokens →
    [Fine-grained tokens → Generate new token](https://github.com/settings/personal-access-tokens/new):
    - Repository access: **Only select repositories** → this repository.
-   - Repository permissions: **Contents: Read and write**, **Actions: Read and write**.
+   - Repository permissions: **Contents: Read and write** (saving and starting a gather), **Actions: Read-only**
+     (the admin's list of runs).
 4. **Create a [Resend](https://resend.com) account** with the admin email address, and an API key (API Keys → Create).
    Resend's test sender can mail the account's own address without a domain. To send from your own domain, verify it in
    Resend and set `EMAIL_FROM`.
@@ -74,14 +81,18 @@ are only in Netlify's environment variables. The browser never sees any of them.
 
 - The gather runs at **03:00 UTC** = 04:00 UK summer time (03:00 in winter). Change the cron in
   `.github/workflows/gather.yml` and `GATHER_CRON` in `src/app/admin/runs/runs.ts` together.
-- Every run keeps **every article published in the last 30 days** from the enabled sources (`retentionDays` in
-  `content/state.json` → `settings`), whether or not it was seen before. An article already in a post isn't added
-  again, and several sites covering one story become one post with all their links.
+- Every run collects **every article published in the last 30 days** from the enabled sources (`retentionDays` in
+  `content/state.json` → `settings`). Feeds only list their latest items, so older pages are read too while they're
+  still inside the window: WordPress feeds (`?paged=2`), GitHub release feeds (`?page=2`) and feeds with an Atom
+  `rel="next"` link. Other feeds give what their first page has.
+- **Every story is posted.** A link that is already in a post is never opened or summarized again, and its post stays.
+  Several sites reporting one story become one post with all their links, and the post is summarized again from all of
+  them; Gemini is told to leave out facts the sites disagree on. So the site has one card per story.
+- New posts first show the feed's description, then Gemini replaces it with a summary. Each run makes at most 15
+  Gemini requests (`maxAiCallsPerRun`) to stay inside the free tier: grouping uses at most half, the rest summarize up
+  to 10 posts each, newest first. Posts that don't fit wait for the next run.
+- A gathered post whose TL;DR or story you edit becomes yours: the gather won't summarize it again.
 - Posts carry the article's own date, so they show on the right day and are deleted 30 days after it.
-- With a Gemini key, stories it rates below 6/10 (`relevanceThreshold`) are left out; those links are remembered
-  (`skipped`) so they aren't sent to Gemini again.
-- Each run makes at most 15 Gemini requests (`maxAiCallsPerRun`), to stay inside the free tier. Leftover requests
-  summarize older posts that still only have the feed's description, newest first.
 - Git history still contains older versions of the data files; they're small text files.
 
 ## Sources
@@ -146,6 +157,8 @@ To use your own values locally instead of Netlify's:
 
 Set it back to `false` before committing. A test fails while it's `true`, and on Netlify and GitHub Actions the
 variables always come from their own settings.
+
+`.netlify/` (git-ignored) is the Netlify CLI's link to your site, made by `npx netlify link`; `netlify dev` needs it.
 
 ## Tests
 

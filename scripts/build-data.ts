@@ -1,7 +1,7 @@
 // Generates public/data/ (site index, post files, site.json) from content/. Runs before every site build.
 import { execSync } from 'node:child_process';
 import { join } from 'node:path';
-import { buildPublic, repoFromRemote } from './cli/build-public';
+import { buildPublic, repoFromRemote } from './lib/content';
 
 function detectRepo(): string {
   if (process.env['GITHUB_REPOSITORY']) return process.env['GITHUB_REPOSITORY'];

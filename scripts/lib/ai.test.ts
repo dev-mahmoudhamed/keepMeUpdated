@@ -1,9 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { AiBudget } from './budget';
-import { FallbackAiClient } from './fallback';
-import { GeminiAiClient, type GenerateFn } from './gemini';
-import type { RawItem, StoryInput } from '../types';
+import { AiBudget, FallbackAiClient, GeminiAiClient, type GenerateFn, type RawItem, type StoryInput, jaccard, titleTokens, clusterByTitle, matchExisting } from './ai';
+import { normalizeUrl } from '../../shared/feed';
 
+describe('ai', () => {
 const item = (id: string, title: string, sourceId = 's1'): RawItem => ({
   id,
   sourceId,
@@ -139,16 +138,17 @@ describe('GeminiAiClient', () => {
     );
   });
 
-  it('triages in batches of 40', async () => {
+  it('keeps half the calls for summaries: triage falls back to title matching after that', async () => {
     let calls = 0;
+    const budget = freeBudget(4);
     const ai = make(async (req) => {
       calls++;
       const ids = idsIn(req.contents, 'id');
-      return { text: JSON.stringify({ clusters: ids.map((id) => ({ itemIds: [id], relevance: 7, tags: [] })) }) };
-    });
-    const items = Array.from({ length: 45 }, (_, i) => item(`i${i}`, `Story number ${i} unique${i}`));
-    expect(await ai.triage(items, [], {})).toHaveLength(45);
+      return { text: JSON.stringify({ clusters: ids.map((id) => ({ itemIds: [id], relevance: 9, tags: [] })) }) };
+    }, budget);
+    for (let i = 0; i < 3; i++) await ai.triage([item(`i${i}`, `Story ${i}`)], [], {});
     expect(calls).toBe(2);
+    expect(budget.remaining).toBe(2);
   });
 
   it('marks quota exhausted on daily 429 and stops calling', async () => {
@@ -178,36 +178,34 @@ describe('GeminiAiClient', () => {
     expect(clusters[0].relevance).toBe(6);
   });
 
-  it('summarize chunks by 5 and drops unknown cluster ids', async () => {
+  it('summarize chunks by 10 and drops unknown cluster ids', async () => {
     let calls = 0;
     const ai = make(async (req) => {
       calls++;
       const stories: object[] = idsIn(req.contents, 'clusterId').map((id) => ({
         clusterId: id,
-        title: `T ${id}`,
         tldr: 'tl',
         keyPoints: ['k'],
         whyItMatters: 'w',
         tags: ['x'],
       }));
-      stories.push({ clusterId: 'ghost', title: 'G', tldr: 'g', keyPoints: [], whyItMatters: '', tags: [] });
+      stories.push({ clusterId: 'ghost', tldr: 'g', keyPoints: [], whyItMatters: '', tags: [] });
       return { text: JSON.stringify({ stories }) };
     });
-    const stories: StoryInput[] = Array.from({ length: 7 }, (_, i) => ({
+    const stories: StoryInput[] = Array.from({ length: 12 }, (_, i) => ({
       clusterId: `c${i}`,
       items: [item(`i${i}`, 't')],
       text: 'body',
     }));
     const out = await ai.summarize(stories);
     expect(calls).toBe(2);
-    expect(out.map((s) => s.clusterId)).toEqual(['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6']);
+    expect(out.map((s) => s.clusterId)).toEqual(stories.map((s) => s.clusterId));
   });
 
   it('summarize returns what it has when the budget runs out', async () => {
     const ai = make(async (req) => {
       const stories = idsIn(req.contents, 'clusterId').map((id) => ({
         clusterId: id,
-        title: 'T',
         tldr: 't',
         keyPoints: [],
         whyItMatters: 'w',
@@ -215,7 +213,52 @@ describe('GeminiAiClient', () => {
       }));
       return { text: JSON.stringify({ stories }) };
     }, freeBudget(1));
-    const stories: StoryInput[] = Array.from({ length: 7 }, (_, i) => ({ clusterId: `c${i}`, items: [], text: '' }));
-    expect(await ai.summarize(stories)).toHaveLength(5);
+    const stories: StoryInput[] = Array.from({ length: 12 }, (_, i) => ({ clusterId: `c${i}`, items: [], text: '' }));
+    expect(await ai.summarize(stories)).toHaveLength(10);
   });
+});
+});
+
+describe('dedupe', () => {
+const item = (id: string, title: string): RawItem => ({ id, sourceId: 's', siteName: 'S', title, url: `https://x.dev/${id}`, snippet: '' });
+
+it('normalizes urls', () => {
+  expect(normalizeUrl('https://www.Example.com/a/?utm_source=x&b=2&a=1#top')).toBe('https://example.com/a?a=1&b=2');
+  expect(normalizeUrl('https://example.com/')).toBe('https://example.com');
+  expect(normalizeUrl('https://example.com/p?fbclid=1&ref=hn')).toBe('https://example.com/p');
+});
+
+it('returns invalid urls unchanged', () => {
+  expect(normalizeUrl('not a url')).toBe('not a url');
+});
+
+it('computes jaccard similarity', () => {
+  expect(jaccard(new Set(['a', 'b']), new Set(['b', 'c']))).toBeCloseTo(1 / 3);
+  expect(jaccard(new Set(), new Set())).toBe(0);
+});
+
+it('drops stopwords and short words but keeps version numbers', () => {
+  expect([...titleTokens('The Angular 22 is out with a new API')]).toEqual(['angular', '22', 'new', 'api']);
+});
+
+it('clusters similar titles', () => {
+  const items = [
+    item('i0', 'Angular 22 released with zoneless default'),
+    item('i1', 'Angular 22 released: zoneless by default'),
+    item('i2', 'Node 26 LTS'),
+  ];
+  const clusters = clusterByTitle(items);
+  expect(clusters.map((c) => c.length).sort()).toEqual([1, 2]);
+  expect(clusters.find((c) => c.length === 2)).toEqual(['i0', 'i1']);
+});
+
+it('matches existing recent posts', () => {
+  const recent = [{ id: 'p1', title: 'Angular 22 released, zoneless default' }];
+  expect(matchExisting('Angular 22 is released with zoneless', recent)).toBe('p1');
+  expect(matchExisting('Bun 2.0', [{ id: 'p1', title: 'Angular 22 released' }])).toBeUndefined();
+});
+
+it('keeps different versions apart', () => {
+  expect(clusterByTitle([item('i0', 'Angular 21 released'), item('i1', 'Angular 22 released')])).toHaveLength(2);
+});
 });

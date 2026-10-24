@@ -104,10 +104,10 @@ export class RepoClient {
     }
   }
 
-  async dispatchGather(inputs: { mode: string; post_id?: string }): Promise<void> {
-    const { branch, gatherWorkflow } = await this.config();
+  /** Starts the gather workflow (it listens for the "gather" repository_dispatch event). */
+  async dispatchGather(payload: { mode: string; post_id?: string }): Promise<void> {
     await firstValueFrom(
-      this.http.post(this.url(`/actions/workflows/${gatherWorkflow}/dispatches`), { ref: branch, inputs }, { headers: this.headers() }),
+      this.http.post(this.url('/dispatches'), { event_type: 'gather', client_payload: payload }, { headers: this.headers() }),
     );
   }
 
@@ -133,7 +133,7 @@ export class RepoClient {
 export function githubErrorText(err: unknown): string {
   if (err instanceof HttpErrorResponse) {
     if (err.status === 0) return 'Couldn’t reach the server. Check your connection and try again.';
-    if (err.status === 403) return 'GitHub refused this change. Check the site’s GitHub token has Contents and Actions write access.';
+    if (err.status === 403) return 'GitHub refused this change. Check the site’s GitHub token has Contents write and Actions read access.';
     const message = (err.error as { message?: string } | null)?.message;
     if (err.status >= 500 && message) return message;
     return message ? `GitHub said: ${message}` : `GitHub returned an error (${err.status}). Try again.`;

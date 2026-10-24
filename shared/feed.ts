@@ -78,3 +78,35 @@ export function summaryTagCounts(summaries: PostSummary[]): TagCount[] {
 export function tagCounts(posts: Post[]): TagCount[] {
   return summaryTagCounts(posts.filter(isLive).map(toSummary));
 }
+
+
+const TRACKING_PARAMS = /^(utm_.*|ref|fbclid|gclid|mc_cid|mc_eid)$/i;
+
+/** Canonical form used to detect "same link" across sources and runs. */
+export function normalizeUrl(url: string): string {
+  let u: URL;
+  try {
+    u = new URL(url);
+  } catch {
+    return url;
+  }
+  const host = u.hostname.toLowerCase().replace(/^www\./, '');
+  const params = [...u.searchParams.entries()]
+    .filter(([k]) => !TRACKING_PARAMS.test(k))
+    .sort(([a], [b]) => a.localeCompare(b));
+  const path = u.pathname.replace(/\/+$/, '');
+  const query = params.length ? `?${new URLSearchParams(params).toString()}` : '';
+  return `${u.protocol}//${host}${u.port ? `:${u.port}` : ''}${path}${query}`;
+}
+
+/** URL slug from a title: lowercase latin letters, digits and dashes. Empty for non-latin titles. */
+export function slugify(text: string): string {
+  return text
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80)
+    .replace(/-+$/g, '');
+}

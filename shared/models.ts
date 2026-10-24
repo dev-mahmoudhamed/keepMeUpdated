@@ -1,9 +1,7 @@
 // Types shared by the gather scripts and the Angular app.
 
 export interface Settings {
-  relevanceThreshold: number;
-  /** Unused since the gather keeps the whole retention window; kept so older state files still load. */
-  maxItemAgeHours: number;
+  /** Gemini requests per run (free tier). Grouping uses at most half; the rest writes summaries. */
   maxAiCallsPerRun: number;
   /** Posts and seen links older than this are deleted on every gather. */
   retentionDays: number;
@@ -70,7 +68,6 @@ export interface RunStats {
   clusters: number;
   created: number;
   merged: number;
-  skipped: number;
 }
 
 export interface Run {
@@ -91,8 +88,6 @@ export interface Db {
   runs: Run[];
   /** normalized url -> ISO date first seen (dates articles that have no date of their own) */
   seen: Record<string, string>;
-  /** normalized url -> article date, for articles the relevance filter rejected (so they aren't sent to the AI again) */
-  skipped: Record<string, string>;
   settings: Settings;
 }
 
@@ -108,7 +103,6 @@ export interface ContentState {
   version: 1;
   settings: Settings;
   seen: Record<string, string>;
-  skipped?: Record<string, string>;
   runs: Run[];
   sourceStatus: Record<string, SourceStatus>;
 }

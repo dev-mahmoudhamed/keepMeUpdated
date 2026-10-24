@@ -1,7 +1,7 @@
 <header class="head">
   <div>
     <h1>Gather runs</h1>
-    <p class="sub">The gather runs on GitHub Actions every day. Each run reads every source, keeps new stories for 30 days, and redeploys the site.</p>
+    <p class="sub">The gather runs every day, or when you start it here. It collects every article from the last 30 days, posts each story once with every site that reported it, summarizes new posts with Gemini, and redeploys the site.</p>
   </div>
   <div class="actions">
     <button type="button" class="btn" data-action="dry-run" (click)="start('dry-run')" [attr.aria-busy]="dispatching() === 'dry-run'">

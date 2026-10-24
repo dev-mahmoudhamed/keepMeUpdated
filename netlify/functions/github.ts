@@ -1,7 +1,6 @@
 // /api/github/*: the admin panel's repository calls, made with the server's GitHub token after checking the session.
 import type { Config } from '@netlify/functions';
-import { SESSION_COOKIE, cookieValue, readAuthEnv, readSession } from '../lib/auth';
-import { proxyGitHub } from '../lib/github-proxy';
+import { SESSION_COOKIE, cookieValue, readAuthEnv, readSession, proxyGitHub } from '../lib';
 import { loadDevEnv } from '../../config/dev-env';
 
 // Local only: reads .env when IS_DEV_ENV is true (config/dev-env.ts). A no-op on Netlify.

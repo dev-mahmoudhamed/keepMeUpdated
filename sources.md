@@ -1,7 +1,7 @@
 # News sources
 
-The daily gather reads every **enabled** source below. Edit this file or use **Admin → Sources**; the two stay in
-sync (the server reloads this file when you save it, and rewrites it when you change sources in the admin panel).
+The gather reads every **enabled** source below. Edit this file or use **Admin → Sources**, which saves its changes
+to this file.
 
 - One table row per source. `##` headings group sources into sections.
 - **Feed**: an RSS/Atom link, or a web page link when **Selectors** is filled in.

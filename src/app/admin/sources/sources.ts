@@ -4,7 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { LucidePencil, LucidePlus, LucideX } from '@lucide/angular';
 import type { SourceStatus } from '../../../../shared/models';
 import type { SourceDef } from '../../../../shared/sources-md';
-import { normalizeUrl } from '../../../../shared/url';
+import { normalizeUrl } from '../../../../shared/feed';
 import { SAVED_MESSAGE, githubErrorText } from '../../core/github';
 import { ToastService } from '../../core/toast';
 import { ContentRepo } from '../content-repo';
