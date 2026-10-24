@@ -2164,9 +2164,40 @@
     "https://devblogs.microsoft.com/visualstudio/organize-and-revisit-tabs-with-the-keyboard": "2026-10-19T14:00:22.000Z",
     "https://blog.jetbrains.com/dotnet/2026/10/19/jetbrains-dotnet-day-online-2026-watch-the-recordings": "2026-10-19T08:00:00.000Z",
     "https://devblogs.microsoft.com/visualstudio/compare-todays-code-with-an-earlier-commit": "2026-10-21T14:00:30.000Z",
-    "https://devblogs.microsoft.com/visualstudio/what-should-we-blog-about-next": "2026-10-22T14:00:56.000Z"
+    "https://devblogs.microsoft.com/visualstudio/what-should-we-blog-about-next": "2026-10-22T14:00:56.000Z",
+    "https://blog.angular.dev/from-running-edge-rendered-angular-apps-on-cloudflare-workers-to-crafting-lifelike-speech-with-67513b4b85e1?source=rss----447683c3d9a3---4": "2026-10-23T14:58:56.000Z",
+    "https://milanjovanovic.tech/blog/revoke-jwt-before-it-expires-token-version": "2026-10-24T00:00:00.000Z",
+    "https://blog.jetbrains.com/dotnet/2026/10/23/jetbrains-gamedev-day-2026-watch-the-recordings": "2026-10-23T15:04:27.000Z"
   },
   "runs": [
+    {
+      "id": "517aca4f-b5b7-4708-bf8e-5ff0deb34c9f",
+      "trigger": "cron",
+      "startedAt": "2026-10-24T08:00:29.034Z",
+      "status": "partial",
+      "stats": {
+        "fetched": 415,
+        "fresh": 3,
+        "clusters": 3,
+        "created": 0,
+        "merged": 0,
+        "skipped": 3
+      },
+      "errors": [
+        {
+          "sourceId": "db25e6c30ce3",
+          "message": "HTTP 403 for https://geromegrignon.substack.com/feed"
+        }
+      ],
+      "log": [
+        "Fetched 20 sources: 415 items (1 failed)",
+        "New articles from the last 30 days: 3",
+        "Grouped into 3 stories (gemini mode)",
+        "Merged 0 into existing posts; skipped 3 below relevance 6",
+        "Created 0 posts"
+      ],
+      "finishedAt": "2026-10-24T08:00:41.725Z"
+    },
     {
       "id": "1a7ac32b-3a42-492a-84fb-4d9af6a48766",
       "trigger": "cron",
@@ -2468,84 +2499,84 @@
   ],
   "sourceStatus": {
     "https://blog.angular.dev/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular/releases.atom": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular-cli/releases.atom": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://blog.angulartraining.com/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://angularaddicts.com/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 20
     },
     "https://geromegrignon.substack.com/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastError": "HTTP 403 for https://geromegrignon.substack.com/feed",
       "lastItemCount": 6
     },
     "https://syncfusion.com/blogs/category/angular/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 9
     },
     "https://devblogs.microsoft.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://devblogs.microsoft.com/visualstudio/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://github.com/dotnet/runtime/releases.atom": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://github.com/dotnet/aspnetcore/releases.atom": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://github.com/dotnet/efcore/releases.atom": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://andrewlock.net/rss.xml": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 25
     },
     "https://milanjovanovic.tech/rss/feed.xml": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
-      "lastItemCount": 216
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
+      "lastItemCount": 217
     },
     "https://blog.jetbrains.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 12
     },
     "https://feeds.feedburner.com/rickstrahl": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://damienbod.com/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://code-maze.com/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     },
     "https://feed.infoq.com/dotnet": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 2
     },
     "https://devblogs.microsoft.com/typescript/feed": {
-      "lastFetchedAt": "2026-10-23T08:25:16.497Z",
+      "lastFetchedAt": "2026-10-24T08:00:29.034Z",
       "lastItemCount": 10
     }
   }
