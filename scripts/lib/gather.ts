@@ -1,4 +1,4 @@
-// The gather: (1) collect every link from the last 30 days, site by site; (2) put every story on the site, one post
+// The gather: (1) collect every link from the last 4 months (settings.retentionDays), site by site; (2) put every story on the site, one post
 // per story with all the sites that reported it; (3) visit the articles and summarize them with Gemini.
 import { normalizeUrl } from '../../shared/feed';
 import type { Db, Post, PostSource, Run, RunTrigger } from '../../shared/models';
@@ -300,7 +300,7 @@ function newPost(cluster: Cluster, items: RawItem[], runId: string, nowIso: stri
     aiPending: true,
     createdAt: nowIso,
     updatedAt: nowIso,
-    // The story's own date (its earliest report), so it lands on the right day and ages out 30 days after.
+    // The story's own date (its earliest report), so it lands on the right day and ages out with the window.
     publishedAt: (release ? dates.at(-1) : dates[0]) ?? nowIso,
     runId,
   };

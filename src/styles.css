@@ -1,43 +1,54 @@
 /* keepMeUpdated — design tokens and base styles.
-   Arabian craft, not desert cliché: lime-plaster pages, kohl-indigo ink, lapis for links and focus, Iznik turquoise
-   for topics, saffron for what's new. The eight-pointed star (khatam) is the one ornament.
-   Dark: a desert night — deep indigo with moon-sand text. */
+   Nord: arctic greys, frost-blue links, and soft aurora colours that mean something — each stack's tags have their
+   own colour (Angular, .NET, TypeScript, releases), and aurora orange marks what's new. Geist for reading, Geist Mono
+   for the developer details (wordmark, tags, times, counts). Dark is Nord's polar night. */
 
 :root {
   color-scheme: light;
-  --paper: #f5f2ea;
-  --paper-raised: #fbf9f4;
+  --paper: #eceff4;
+  --paper-raised: #f3f5f8;
   --card: #ffffff;
-  --ink: #1a1b3a;
-  --ink-soft: #43456a;
-  --ink-muted: #63657f;
-  --rule: #e4ddcd;
-  --rule-strong: #d0c6b0;
-  --accent: #1f3a93;
-  --accent-wash: #e5e9f6;
-  --turquoise: #0b6e6c;
-  --turquoise-wash: #dcefec;
-  /* What's new: saffron text, saffron star. */
-  --new: #9a5b06;
-  --new-mark: #e0a133;
-  --new-wash: #faf0d9;
-  --danger: #b23a26;
-  --highlight: #eef0f8;
-  /* Highlighter stroke behind TL;DR text. */
-  --marker: #f6e2ae;
+  --ink: #2e3440;
+  --ink-soft: #4c566a;
+  --ink-muted: #656e80;
+  --rule: #d8dee9;
+  --rule-strong: #c4ccda;
+  /* The line under each day's heading. */
+  --day-rule: var(--ink);
+  --accent: #4c6a92;
+  --accent-strong: #3e5f86;
+  --accent-wash: #e1e8f2;
+  /* What's new: aurora orange. */
+  --new: #b4652f;
+  --new-mark: #d08770;
+  --new-wash: #f6e7db;
+  --danger: #a8434d;
+  --highlight: #e5e9f0;
+  /* Highlighter stroke behind TL;DR text: aurora yellow, softened. */
+  --marker: #f1e4bf;
   --on-accent: #ffffff;
+  /* Topic tags, one aurora tone per stack: background / text. */
+  --tag-bg: #e5e9f0;
+  --tag-fg: #4c566a;
+  --tag-angular-bg: #f3e0e2;
+  --tag-angular-fg: #9a3b45;
+  --tag-dotnet-bg: #eee3ec;
+  --tag-dotnet-fg: #7b4e73;
+  --tag-typescript-bg: #e1eaf3;
+  --tag-typescript-fg: #3e5f86;
+  --tag-release-bg: #e6efe0;
+  --tag-release-fg: #4f6b3a;
   /* Behind other sites' icons, which assume a white page — in both themes. */
   --icon-tile: #ffffff;
-  --scrim: rgb(26 27 58 / 0.4);
-  --shadow-card: 0 1px 2px rgb(26 27 58 / 0.05), 0 8px 22px -12px rgb(26 27 58 / 0.18);
-  --shadow-card-hover: 0 2px 4px rgb(26 27 58 / 0.07), 0 16px 34px -14px rgb(26 27 58 / 0.26);
-  /* The khatam: two squares turned 45° to each other. */
-  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5L15.08 4.58L19.42 4.58L19.42 8.92L22.5 12L19.42 15.08L19.42 19.42L15.08 19.42L12 22.5L8.92 19.42L4.58 19.42L4.58 15.08L1.5 12L4.58 8.92L4.58 4.58L8.92 4.58Z'/%3E%3C/svg%3E");
+  --scrim: rgb(46 52 64 / 0.45);
+  --shadow-card: 0 1px 2px rgb(46 52 64 / 0.05), 0 8px 22px -12px rgb(46 52 64 / 0.16);
+  --shadow-card-hover: 0 2px 4px rgb(46 52 64 / 0.07), 0 16px 34px -14px rgb(46 52 64 / 0.24);
 
-  --font-mark: 'Reem Kufi', 'El Messiri', system-ui, sans-serif;
-  --font-head: 'El Messiri', 'Readex Pro', system-ui, sans-serif;
-  --font-body: 'Readex Pro', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-head: 'Geist', system-ui, sans-serif;
+  /* Story titles: a grotesque with a bit of character. */
+  --font-title: 'Bricolage Grotesque', 'Geist', system-ui, sans-serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', monospace;
 
   /* Type scale (major third). */
   --step--1: 0.875rem;
@@ -58,7 +69,7 @@
   --s-8: 64px;
 
   --radius: 6px;
-  --radius-card: 14px;
+  --radius-card: 12px;
   --measure: 68ch;
   --page: 1120px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -68,28 +79,40 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #0e1326;
-  --paper-raised: #141a31;
-  --card: #182039;
-  --ink: #eee7d7;
-  --ink-soft: #c6bfaf;
-  --ink-muted: #9893a3;
-  --rule: #273050;
-  --rule-strong: #364066;
-  --accent: #a4b8ff;
-  --accent-wash: #1d2750;
-  --turquoise: #67d3c8;
-  --turquoise-wash: #13312f;
-  --new: #f2b84b;
-  --new-mark: #f2b84b;
-  --new-wash: #2b2412;
-  --danger: #f19b8a;
-  --highlight: #161e3a;
-  --marker: #4a3b17;
-  --on-accent: #0e1326;
-  --scrim: rgb(0 0 0 / 0.6);
-  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 8px 24px -14px rgb(0 0 0 / 0.7);
-  --shadow-card-hover: 0 1px 0 rgb(255 255 255 / 0.05) inset, 0 16px 36px -16px rgb(0 0 0 / 0.8);
+  /* A deeper polar night than Nord's own #2e3440, so cards (in #2e3440) lift off the page. */
+  --paper: #242933;
+  --paper-raised: #2a303b;
+  --card: #2e3440;
+  --ink: #eceff4;
+  --ink-soft: #d8dee9;
+  --ink-muted: #9aa4b8;
+  --rule: #363d4b;
+  --rule-strong: #465063;
+  --day-rule: #4c566a;
+  --accent: #88c0d0;
+  --accent-strong: #a3d0dc;
+  --accent-wash: rgb(136 192 208 / 0.14);
+  --new: #e8ac90;
+  --new-mark: #d08770;
+  --new-wash: rgb(208 135 112 / 0.14);
+  --danger: #e08a92;
+  --highlight: #2a303b;
+  --marker: rgb(235 203 139 / 0.22);
+  --on-accent: #242933;
+  /* Tags: translucent aurora tints with bright text, not solid blocks. */
+  --tag-bg: rgb(216 222 233 / 0.08);
+  --tag-fg: #d8dee9;
+  --tag-angular-bg: rgb(191 97 106 / 0.22);
+  --tag-angular-fg: #eda7ae;
+  --tag-dotnet-bg: rgb(180 142 173 / 0.22);
+  --tag-dotnet-fg: #d9b9d2;
+  --tag-typescript-bg: rgb(129 161 193 / 0.22);
+  --tag-typescript-fg: #b7cee6;
+  --tag-release-bg: rgb(163 190 140 / 0.2);
+  --tag-release-fg: #c2d9ad;
+  --scrim: rgb(0 0 0 / 0.55);
+  --shadow-card: 0 0 0 1px rgb(255 255 255 / 0.02), 0 10px 26px -16px rgb(0 0 0 / 0.75);
+  --shadow-card-hover: 0 0 0 1px rgb(255 255 255 / 0.04), 0 18px 38px -18px rgb(0 0 0 / 0.85);
 }
 
 *,
@@ -123,7 +146,7 @@ h4 {
   font-family: var(--font-head);
   font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   margin: 0;
   text-wrap: balance;
   font-optical-sizing: auto;
@@ -211,8 +234,8 @@ button {
   line-height: 1;
   padding: 5px 8px;
   border-radius: 999px;
-  background: var(--turquoise-wash);
-  color: var(--turquoise);
+  background: var(--tag-bg);
+  color: var(--tag-fg);
   white-space: nowrap;
   text-decoration: none;
 }
@@ -246,7 +269,28 @@ button {
   border-radius: inherit;
 }
 
-/* The "New" mark: a saffron khatam before the word. */
+/* Each stack's tags in its own aurora tone (see tagTone in feed-utils). */
+.tag[data-tone='angular'] {
+  background: var(--tag-angular-bg);
+  color: var(--tag-angular-fg);
+}
+
+.tag[data-tone='dotnet'] {
+  background: var(--tag-dotnet-bg);
+  color: var(--tag-dotnet-fg);
+}
+
+.tag[data-tone='typescript'] {
+  background: var(--tag-typescript-bg);
+  color: var(--tag-typescript-fg);
+}
+
+.tag[data-tone='release'] {
+  background: var(--tag-release-bg);
+  color: var(--tag-release-fg);
+}
+
+/* The "New" mark: aurora orange, with a dot. */
 .new {
   display: inline-flex;
   align-items: center;
@@ -257,12 +301,11 @@ button {
 
 .new::before {
   content: '';
-  width: 0.85em;
-  height: 0.85em;
+  width: 6px;
+  height: 6px;
   flex: none;
+  border-radius: 50%;
   background: var(--new-mark);
-  -webkit-mask: var(--star) center / contain no-repeat;
-  mask: var(--star) center / contain no-repeat;
 }
 
 /* Highlighter stroke for the "what matters" sentence. */

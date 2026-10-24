@@ -1,5 +1,5 @@
 import type { PostSummary } from '../../../shared/models';
-import { formatDay, isNewSince, sourcesLabel, visitLabel } from './feed-utils';
+import { formatDay, isNewSince, sourcesLabel, tagTone } from './feed-utils';
 
 const p = (id: string, relevance: number, publishedAt: string): PostSummary => ({
   id,
@@ -24,13 +24,6 @@ describe('isNewSince', () => {
   });
 });
 
-describe('visitLabel', () => {
-  const today = new Date('2026-10-17T10:00:00');
-  it('reads naturally after "since your last visit"', () => {
-    expect(visitLabel(new Date('2026-10-17T09:14:00').toISOString(), today)).toBe('today at 09:14');
-    expect(visitLabel(new Date('2026-10-15T18:02:00').toISOString(), today)).toBe('Thursday, 15 October at 18:02');
-  });
-});
 
 describe('formatDay', () => {
   const today = new Date('2026-10-17T10:00:00');
@@ -50,5 +43,18 @@ describe('sourcesLabel', () => {
   it('pluralizes', () => {
     expect(sourcesLabel(1)).toBe('1 source');
     expect(sourcesLabel(3)).toBe('3 sources');
+  });
+});
+
+describe('tagTone', () => {
+  it('gives each stack its colour', () => {
+    expect(['angular', 'angular cli', 'ngrx'].map(tagTone)).toEqual(['angular', 'angular', 'angular']);
+    expect(['.net', 'dotnet', 'c#', 'asp.net core', 'ef core', 'aspire'].map(tagTone)).toEqual(Array(6).fill('dotnet'));
+    expect(['typescript', 'javascript'].map(tagTone)).toEqual(['typescript', 'typescript']);
+    expect(tagTone('release')).toBe('release');
+  });
+
+  it('leaves other topics neutral', () => {
+    expect(['security', 'cbor', 'web development'].map(tagTone)).toEqual([null, null, null]);
   });
 });

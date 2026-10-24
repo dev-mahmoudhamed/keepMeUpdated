@@ -1,10 +1,8 @@
 {
   "version": 1,
   "settings": {
-    "relevanceThreshold": 6,
-    "maxItemAgeHours": 48,
-    "maxAiCallsPerRun": 15,
-    "retentionDays": 30
+    "maxAiCallsPerRun": 60,
+    "retentionDays": 120
   },
   "seen": {
     "https://blog.angular.dev/signal-value-transforms-routing-essentials-and-video-extension-with-veo-3846cae9283a?source=rss----447683c3d9a3---4": "2026-10-18T09:27:13.091Z",

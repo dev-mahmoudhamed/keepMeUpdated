@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 import { RouterLink } from '@angular/router';
 import { LucideLayers, LucidePackage } from '@lucide/angular';
 import type { PostSummary } from '../../../../shared/models';
-import { sourcesLabel, timeOf } from '../feed-utils';
+import { sourcesLabel, tagTone, timeOf } from '../feed-utils';
 
 /** One story: a card (Cards view) or a one-line row (List view). New stories carry a moss edge and "New". */
 @Component({
@@ -36,7 +36,7 @@ import { sourcesLabel, timeOf } from '../feed-utils';
           </span>
           <span class="slot">
             @if (p.tags[0]; as tag) {
-              <span class="tag">{{ tag }}</span>
+              <span class="tag" [attr.data-tone]="tone(tag)">{{ tag }}</span>
             }
           </span>
           <span class="count mono" [title]="sources(p.sourceCount)">
@@ -50,7 +50,7 @@ import { sourcesLabel, timeOf } from '../feed-utils';
       <article class="card story" [class.is-new]="isNew()">
         <header class="top">
           @if (p.tags[0]; as tag) {
-            <span class="tag">{{ tag }}</span>
+            <span class="tag" [attr.data-tone]="tone(tag)">{{ tag }}</span>
           }
           <span class="when">
             @if (isNew()) {
@@ -145,10 +145,11 @@ import { sourcesLabel, timeOf } from '../feed-utils';
     }
     .story .title {
       margin-top: var(--s-3);
-      font-size: var(--step-1);
-      font-weight: 700;
+      font-family: var(--font-title);
+      font-size: 1.125rem;
+      font-weight: 650;
       line-height: 1.3;
-      letter-spacing: 0;
+      letter-spacing: -0.01em;
       overflow-wrap: anywhere;
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -222,6 +223,7 @@ import { sourcesLabel, timeOf } from '../feed-utils';
       min-width: 0;
     }
     .row .title {
+      font-family: var(--font-title);
       font-weight: 600;
       line-height: 1.35;
       text-wrap: pretty;
@@ -284,4 +286,5 @@ export class PostRow {
   protected readonly release = computed(() => this.post().tags.includes('release'));
   protected readonly time = timeOf;
   protected readonly sources = sourcesLabel;
+  protected readonly tone = tagTone;
 }

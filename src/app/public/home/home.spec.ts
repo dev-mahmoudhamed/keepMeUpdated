@@ -89,22 +89,16 @@ describe('Home', () => {
   it('marks nothing new on a first visit', async () => {
     const fixture = await render();
     const el: HTMLElement = fixture.nativeElement;
-    expect(el.querySelector('.fresh')).toBeNull();
     expect(el.querySelectorAll('.is-new').length).toBe(0);
     expect(localStorage.getItem('kmu.lastVisit')).not.toBeNull();
   });
 
-  it('marks what arrived since the last visit and can show only that', async () => {
+  it('marks the stories that arrived since the last visit', async () => {
     localStorage.setItem('kmu.lastVisit', '2026-10-16T12:00:00Z');
     const fixture = await render();
     const el: HTMLElement = fixture.nativeElement;
-    expect(el.querySelector('.fresh')?.textContent).toContain('2 new');
     expect(el.querySelectorAll('.story.is-new').length).toBe(2);
-    (el.querySelector('.fresh .btn') as HTMLButtonElement).click();
-    fixture.detectChanges();
-    expect(el.querySelectorAll('app-day-section').length).toBe(1);
-    expect(el.querySelectorAll('.story').length).toBe(2);
-    expect(el.querySelector('.fresh .btn')?.textContent).toContain('Show all');
+    expect(el.querySelector('.day-head')?.textContent).not.toContain('new');
   });
 
   it('builds topic chips from the index and filters without new requests', async () => {

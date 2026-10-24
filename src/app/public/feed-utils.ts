@@ -29,8 +29,17 @@ export function timeOf(iso: string | undefined): string {
   return new Date(iso).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 }
 
-/** "today at 09:14", "yesterday at 18:02" or "Thursday, 15 October at 09:14". */
-export function visitLabel(iso: string, today = new Date()): string {
-  const day = formatDay(localKey(new Date(iso)), today);
-  return `${day === 'Today' || day === 'Yesterday' ? day.toLowerCase() : day} at ${timeOf(iso)}`;
+export type TagTone = 'angular' | 'dotnet' | 'typescript' | 'release' | null;
+
+const TONES: [TagTone, RegExp][] = [
+  ['release', /^releases?$/],
+  ['angular', /angular|ngrx|rxjs|material|signal|zoneless/],
+  ['dotnet', /\.net|dotnet|c#|csharp|asp|ef ?core|blazor|maui|aspire|nuget|rider|visual ?studio/],
+  ['typescript', /typescript|javascript/],
+];
+
+/** Which stack a tag belongs to, so it gets that stack's colour. Null for everything else. */
+export function tagTone(tag: string): TagTone {
+  const t = tag.toLowerCase();
+  return TONES.find(([, re]) => re.test(t))?.[0] ?? null;
 }

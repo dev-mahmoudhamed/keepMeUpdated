@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 import { LucideArrowLeft, LucideExternalLink } from '@lucide/angular';
 import type { Post } from '../../../../shared/models';
 import { postUrl } from '../../core/api';
-import { sourcesLabel } from '../feed-utils';
+import { sourcesLabel, tagTone } from '../feed-utils';
 import { NotFound } from '../not-found/not-found';
 
 @Component({
@@ -26,6 +26,7 @@ export class PostPage {
     return at ? new Date(at).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : '';
   });
   protected readonly sources = sourcesLabel;
+  protected readonly tone = tagTone;
 
   constructor() {
     effect(() => {

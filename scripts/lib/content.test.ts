@@ -52,7 +52,7 @@ describe('content files', () => {
   it('loads defaults when content files are missing', async () => {
     const db = await loadContent(root);
     expect(db).toEqual({ version: 1, posts: [], sources: [], runs: [], seen: {}, settings: DEFAULT_SETTINGS });
-    expect(DEFAULT_SETTINGS.retentionDays).toBe(30);
+    expect(DEFAULT_SETTINGS.retentionDays).toBe(120);
   });
 
   it('round-trips posts, state and source status', async () => {
@@ -115,7 +115,7 @@ describe('applyRetention', () => {
     sources: [],
     runs: Array.from({ length: 55 }, (_, i) => run(i)),
     seen: { 'https://old.test': '2026-09-01T00:00:00.000Z', 'https://new.test': '2026-10-16T00:00:00.000Z' },
-    settings: DEFAULT_SETTINGS,
+    settings: { ...DEFAULT_SETTINGS, retentionDays: 30 },
   });
 
   it('prunes posts and seen links older than retentionDays', () => {

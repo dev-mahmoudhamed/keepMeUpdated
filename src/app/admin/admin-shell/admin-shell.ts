@@ -75,11 +75,11 @@ import { ToastService } from '../../core/toast';
     }
     .brand {
       display: grid;
-      font-family: var(--font-mark);
+      font-family: var(--font-mono);
       font-weight: 700;
-      font-size: 1.375rem;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
       line-height: 1.1;
-      color: var(--accent);
       text-decoration: none;
       padding-inline: var(--s-3);
     }

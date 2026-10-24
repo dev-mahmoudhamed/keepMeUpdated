@@ -15,8 +15,8 @@ export const RUNS_KEPT = 50;
 export const DAY_MS = 86_400_000;
 
 export const DEFAULT_SETTINGS: Settings = {
-  maxAiCallsPerRun: 15,
-  retentionDays: 30,
+  maxAiCallsPerRun: 60,
+  retentionDays: 120,
 };
 
 export const newId = (): string => randomUUID();

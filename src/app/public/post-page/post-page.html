@@ -17,7 +17,7 @@
       @if (p.tags.length) {
         <div class="tags">
           @for (tag of p.tags; track tag) {
-            <span class="tag">{{ tag }}</span>
+            <span class="tag" [attr.data-tone]="tone(tag)">{{ tag }}</span>
           }
         </div>
       }

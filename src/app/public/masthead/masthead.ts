@@ -23,7 +23,6 @@ const NEXT_LABEL = { light: 'Switch to dark theme', dark: 'Switch to light theme
           }
         </button>
       </div>
-      <div class="band" aria-hidden="true"></div>
     </header>
   `,
   styles: `
@@ -32,39 +31,17 @@ const NEXT_LABEL = { light: 'Switch to dark theme', dark: 'Switch to light theme
       grid-template-columns: auto 1fr auto;
       align-items: baseline;
       gap: var(--s-2) var(--s-5);
-      padding-block: var(--s-6) var(--s-4);
+      padding-block: var(--s-6) var(--s-5);
+      border-bottom: 1px solid var(--rule);
     }
-    /* Kufic letterforms: geometric, square-shouldered. */
+    /* Set in mono, like a package name. */
     .wordmark {
-      font-family: var(--font-mark);
-      font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.25rem);
-      font-weight: 700;
-      letter-spacing: 0.01em;
+      font-family: var(--font-mono);
+      font-size: clamp(1.5rem, 1.15rem + 1.3vw, 1.875rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
       line-height: 1;
-      color: var(--accent);
       text-decoration: none;
-    }
-    /* A frieze of eight-pointed stars on a hairline, like a tile border. */
-    .band {
-      grid-column: 1 / -1;
-      position: relative;
-      height: 16px;
-      margin-top: var(--s-3);
-    }
-    .band::before {
-      content: '';
-      position: absolute;
-      inset: 50% 0 auto;
-      border-top: 1px solid var(--rule-strong);
-    }
-    .band::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--accent);
-      opacity: 0.55;
-      -webkit-mask: var(--star) 0 0 / 34px 16px repeat-x;
-      mask: var(--star) 0 0 / 34px 16px repeat-x;
     }
     .tagline {
       color: var(--ink-muted);
@@ -89,9 +66,6 @@ const NEXT_LABEL = { light: 'Switch to dark theme', dark: 'Switch to light theme
       .tagline {
         grid-column: 1 / -1;
         grid-row: 2;
-      }
-      .band {
-        grid-row: 3;
       }
       .today {
         display: none;

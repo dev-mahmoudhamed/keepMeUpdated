@@ -151,29 +151,6 @@
   margin-top: var(--s-5);
 }
 
-/* What arrived since the last visit, in saffron like every New mark. */
-.fresh {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-2) var(--s-4);
-  margin-top: var(--s-3);
-  padding: var(--s-2) var(--s-2) var(--s-2) var(--s-4);
-  border-left: 4px solid var(--new-mark);
-  border-radius: var(--radius);
-  background: var(--new-wash);
-  color: var(--ink-soft);
-}
-
-.fresh .new {
-  display: inline-flex;
-}
-
-.fresh .btn[aria-pressed='true'] {
-  background: var(--card);
-}
-
 .days[aria-busy='true'] {
   opacity: 0.6;
   transition: opacity var(--dur) var(--ease);

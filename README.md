@@ -1,9 +1,9 @@
 # keepMeUpdated
 
 Developer news that matters, gathered every morning. A GitHub Actions workflow reads the sources in
-[sources.md](sources.md), collects every article from the last 30 days, posts each story once (with every site that
+[sources.md](sources.md), collects every article from the last 4 months, posts each story once (with every site that
 reported it), writes a short summary with Gemini, and commits the result. Netlify then builds and publishes the site.
-News is kept for **30 days**, then deleted. There is no database: the data is a couple of JSON files in this repository.
+News is kept for **4 months** (120 days), then deleted. There is no database: the data is a couple of JSON files in this repository.
 
 - **Site:** Cards or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
@@ -14,11 +14,11 @@ News is kept for **30 days**, then deleted. There is no database: the data is a 
 
 ```
 GitHub Actions (03:00 UTC daily, or Admin → Gather runs → "Run gather now")
-  └─ npm run gather   1. collect: every enabled source, site by site, every article from the last 30 days
+  └─ npm run gather   1. collect: every enabled source, site by site, every article from the last 4 months
                       2. post:    one post per story; a link already on the site is skipped, another site's
                                   report of the same story is added to its post
                       3. summarize: visit the articles of posts still showing the feed text, newest first, Gemini
-                      deletes news older than 30 days
+                      deletes news older than 4 months
   └─ commits content/posts.json + content/state.json
 
 Netlify (on every push to main)
@@ -34,7 +34,7 @@ Admin panel (in your browser)
 | Path | What it is |
 |---|---|
 | `sources.md` | The news sources. Edit it here or in Admin → Sources. |
-| `content/posts.json` | All posts from the last 30 days (written by the gather and the admin). |
+| `content/posts.json` | All posts from the last 4 months (written by the gather and the admin). |
 | `content/state.json` | Seen links, run history, source fetch results, settings. |
 | `scripts/gather.ts` | The gather command. Its code is in `scripts/lib/`: `fetch.ts` (sources and articles), `ai.ts` (grouping and summaries), `gather.ts` (the three steps), `content.ts` (data files). |
 | `scripts/build-data.ts` | Writes `public/data/` for the site before every build. |
@@ -81,10 +81,11 @@ are only in Netlify's environment variables. The browser never sees any of them.
 
 - The gather runs at **03:00 UTC** = 04:00 UK summer time (03:00 in winter). Change the cron in
   `.github/workflows/gather.yml` and `GATHER_CRON` in `src/app/admin/runs/runs.ts` together.
-- Every run collects **every article published in the last 30 days** from the enabled sources (`retentionDays` in
+- Every run collects **every article published in the last 4 months** (120 days) from the enabled sources (`retentionDays` in
   `content/state.json` → `settings`). Feeds only list their latest items, so older pages are read too while they're
   still inside the window: WordPress feeds (`?paged=2`), GitHub release feeds (`?page=2`) and feeds with an Atom
-  `rel="next"` link. Other feeds give what their first page has.
+  `rel="next"` link, up to 30 pages per feed. Other feeds give what their first page has, which is often less than 4
+  months.
 - **Every story is posted.** A link that is already in a post is never opened or summarized again, and its post stays.
   Several sites reporting one story become one post with all their links, and the post is summarized again from all of
   them; Gemini is told to leave out facts the sites disagree on. So the site has one card per story.
@@ -92,11 +93,20 @@ are only in Netlify's environment variables. The browser never sees any of them.
   "What's new in Angular 22.2?" all go into **Angular 22 updates**, newest first, dated by the newest update; Angular 21
   patches go into **Angular 21 updates**. The same works for the CLI, .NET, Aspire, TypeScript and any product whose
   titles read like "Product 1.2.3", "Announcing Product v2", "Product 3 is now available" or "Product 4.1: …".
-- New posts first show the feed's description, then Gemini replaces it with a summary. Each run makes at most 15
-  Gemini requests (`maxAiCallsPerRun`) to stay inside the free tier: grouping uses at most half, the rest summarize up
-  to 10 posts each, newest first. Posts that don't fit wait for the next run.
+- New posts first show the feed's description, then Gemini replaces it with a summary, newest posts first. To make the
+  free tier go further:
+  - **Two models, two quotas.** Each Gemini model has its own free daily quota. The gather uses
+    `gemini-flash-latest` and, when its quota for the day is used up, carries on with `gemini-flash-lite-latest`. Set
+    `GEMINI_MODELS` (comma-separated) to change the list.
+  - **Big batches.** One request summarizes up to 15 posts and groups up to 100 articles, so few requests go a long
+    way. Each run makes at most 60 requests (`maxAiCallsPerRun`), at most 8 a minute; grouping uses at most half.
+  - **Nothing twice.** A summary is written once and kept; a post is only summarized again when another site reports
+    the same story. Links already on the site are never sent to Gemini.
+  - When every model's quota is used up the run stops calling Gemini and finishes normally. The posts still waiting
+    keep the feed's description and are summarized on the next run, newest first.
+  - The first run after widening the window has a large backlog, so summaries fill in over a few days.
 - A gathered post whose TL;DR or story you edit becomes yours: the gather won't summarize it again.
-- Posts carry the article's own date, so they show on the right day and are deleted 30 days after it.
+- Posts carry the article's own date, so they show on the right day and are deleted 4 months after it.
 - Git history still contains older versions of the data files; they're small text files.
 
 ## Sources

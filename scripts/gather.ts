@@ -10,6 +10,8 @@ import { loadDevEnv } from '../config/dev-env';
 loadDevEnv();
 
 const MODES: GatherMode[] = ['gather', 'resummarize', 'dry-run'];
+/** Each model has its own free daily quota; when the first runs out, the next one takes over. */
+const DEFAULT_MODELS = 'gemini-flash-latest,gemini-flash-lite-latest';
 
 function arg(name: string): string | undefined {
   const i = process.argv.indexOf(`--${name}`);
@@ -22,11 +24,14 @@ function arg(name: string): string | undefined {
   if (!MODES.includes(mode)) throw new Error(`Unknown --mode "${mode}". Use one of: ${MODES.join(', ')}`);
 
   const apiKey = process.env['GEMINI_API_KEY']?.trim();
-  const model = process.env['GEMINI_MODEL']?.trim() || 'gemini-flash-latest';
-  const makeAi = (budget: AiBudget) => (apiKey ? new GeminiAiClient({ apiKey, model, budget }) : new FallbackAiClient());
+  const models = (process.env['GEMINI_MODELS'] || process.env['GEMINI_MODEL'] || DEFAULT_MODELS)
+    .split(',')
+    .map((m) => m.trim())
+    .filter(Boolean);
+  const makeAi = (budget: AiBudget) => (apiKey ? new GeminiAiClient({ apiKey, models, budget }) : new FallbackAiClient());
   const trigger: RunTrigger = process.env['GITHUB_EVENT_NAME'] === 'schedule' ? 'cron' : 'manual';
 
-  console.log(`[gather] mode=${mode} ai=${apiKey ? `gemini (${model})` : 'fallback (no GEMINI_API_KEY)'}`);
+  console.log(`[gather] mode=${mode} ai=${apiKey ? `gemini (${models.join(' → ')})` : 'fallback (no GEMINI_API_KEY)'}`);
   const result = await runGather({ root: process.cwd(), mode, postId: arg('post'), http: httpGet, makeAi, trigger });
 
   console.log(result.summary);

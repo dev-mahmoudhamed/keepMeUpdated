@@ -91,7 +91,7 @@ describe('FallbackAiClient', () => {
 
 describe('GeminiAiClient', () => {
   const make = (generate: GenerateFn, budget = freeBudget()) =>
-    new GeminiAiClient({ apiKey: 'k', model: 'gemini-flash-latest', budget, generate, sleep: async () => {} });
+    new GeminiAiClient({ apiKey: 'k', models: ['gemini-flash-latest'], budget, generate, sleep: async () => {} });
 
   const idsIn = (contents: string, key: string) =>
     [...contents.matchAll(new RegExp(`"${key}":"([a-z]\\d+)"`, 'g'))].map((m) => m[1]);
@@ -166,6 +166,26 @@ describe('GeminiAiClient', () => {
     expect(calls).toBe(1);
   });
 
+  it('moves to the next model when the daily quota of one is used up', async () => {
+    const budget = freeBudget();
+    const used: string[] = [];
+    const ai = new GeminiAiClient({
+      apiKey: 'k',
+      models: ['flash', 'flash-lite'],
+      budget,
+      sleep: async () => {},
+      generate: async (req) => {
+        used.push(req.model);
+        if (req.model === 'flash') throw Object.assign(new Error('Quota exceeded for metric GenerateRequestsPerDayPerProjectPerModel'), { status: 429 });
+        return { text: JSON.stringify({ stories: [{ clusterId: 'c0', tldr: 't', keyPoints: [], whyItMatters: 'w', tags: [] }] }) };
+      },
+    });
+    expect(await ai.summarize([{ clusterId: 'c0', items: [item('i0', 'A')], text: 't' }])).toHaveLength(1);
+    await ai.summarize([{ clusterId: 'c1', items: [item('i1', 'B')], text: 't' }]);
+    expect(used).toEqual(['flash', 'flash-lite', 'flash-lite']);
+    expect(budget.exhausted).toBe(false);
+  });
+
   it('retries transient errors up to 3 times', async () => {
     let calls = 0;
     const ai = make(async () => {
@@ -178,7 +198,7 @@ describe('GeminiAiClient', () => {
     expect(clusters[0].relevance).toBe(6);
   });
 
-  it('summarize chunks by 10 and drops unknown cluster ids', async () => {
+  it('summarize chunks by 15 and drops unknown cluster ids', async () => {
     let calls = 0;
     const ai = make(async (req) => {
       calls++;
@@ -192,7 +212,7 @@ describe('GeminiAiClient', () => {
       stories.push({ clusterId: 'ghost', tldr: 'g', keyPoints: [], whyItMatters: '', tags: [] });
       return { text: JSON.stringify({ stories }) };
     });
-    const stories: StoryInput[] = Array.from({ length: 12 }, (_, i) => ({
+    const stories: StoryInput[] = Array.from({ length: 17 }, (_, i) => ({
       clusterId: `c${i}`,
       items: [item(`i${i}`, 't')],
       text: 'body',
@@ -213,8 +233,8 @@ describe('GeminiAiClient', () => {
       }));
       return { text: JSON.stringify({ stories }) };
     }, freeBudget(1));
-    const stories: StoryInput[] = Array.from({ length: 12 }, (_, i) => ({ clusterId: `c${i}`, items: [], text: '' }));
-    expect(await ai.summarize(stories)).toHaveLength(10);
+    const stories: StoryInput[] = Array.from({ length: 17 }, (_, i) => ({ clusterId: `c${i}`, items: [], text: '' }));
+    expect(await ai.summarize(stories)).toHaveLength(15);
   });
 });
 });

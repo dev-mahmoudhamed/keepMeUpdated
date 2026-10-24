@@ -13,12 +13,7 @@ export type FeedView = 'cards' | 'list';
     <section class="day" [attr.aria-labelledby]="headingId()">
       <header class="day-head">
         <h2 [id]="headingId()">{{ title() }}</h2>
-        <p class="count mono">
-          {{ day().posts.length }} {{ day().posts.length === 1 ? 'update' : 'updates' }}
-          @if (newCount()) {
-            <span class="new">{{ newCount() }} new</span>
-          }
-        </p>
+        <p class="count mono">{{ day().posts.length }} {{ day().posts.length === 1 ? 'update' : 'updates' }}</p>
       </header>
 
       @if (view() === 'cards') {
@@ -47,10 +42,12 @@ export type FeedView = 'cards' | 'list';
       gap: var(--s-4);
       padding-bottom: var(--s-3);
       margin-bottom: var(--s-5);
-      border-bottom: 2px solid var(--ink);
+      border-bottom: 2px solid var(--day-rule);
     }
     h2 {
-      font-size: var(--step-3);
+      font-size: var(--step-2);
+      font-weight: 600;
+      letter-spacing: -0.025em;
     }
     .count {
       display: inline-flex;
@@ -102,7 +99,6 @@ export class DaySection {
 
   protected readonly title = computed(() => formatDay(this.day().date));
   protected readonly headingId = computed(() => `day-${this.day().date}`);
-  protected readonly newCount = computed(() => this.day().posts.filter((p) => this.isNew(p)).length);
 
   protected isNew(post: PostSummary): boolean {
     return isNewSince(post, this.since());

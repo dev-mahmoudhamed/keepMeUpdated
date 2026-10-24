@@ -50,7 +50,7 @@ export interface AiClient {
 
 /** Items per triage request, and stories per summary request. */
 export const TRIAGE_BATCH = 100;
-export const SUMMARY_BATCH = 10;
+export const SUMMARY_BATCH = 15;
 /** Grouping may use at most this share of a run's calls; the rest is kept for summaries. */
 const TRIAGE_SHARE = 0.5;
 const MAX_RETRIES = 3;
@@ -324,7 +324,11 @@ const DAILY_QUOTA = /per\s*day|daily/i;
 
 export interface GeminiOptions {
   apiKey: string;
-  model: string;
+  /**
+   * Models to use, in order. Each has its own free-tier daily quota, so when one runs out the next takes over
+   * (e.g. gemini-flash-latest, then gemini-flash-lite-latest).
+   */
+  models: string[];
   budget: AiBudget;
   generate?: GenerateFn;
   sleep?: (ms: number) => Promise<void>;
@@ -335,6 +339,7 @@ export class GeminiAiClient implements AiClient {
   private readonly fallback = new FallbackAiClient();
   private readonly generate: GenerateFn;
   private readonly sleep: (ms: number) => Promise<void>;
+  private modelIndex = 0;
 
   constructor(private readonly opts: GeminiOptions) {
     this.sleep = opts.sleep ?? ((ms) => new Promise((r) => setTimeout(r, ms)));
@@ -407,7 +412,7 @@ export class GeminiAiClient implements AiClient {
       if (!(await this.opts.budget.take(keep))) return undefined;
       try {
         const res = await this.generate({
-          model: this.opts.model,
+          model: this.opts.models[this.modelIndex],
           contents,
           config: { responseMimeType: 'application/json', responseJsonSchema: schema, systemInstruction },
         });
@@ -417,6 +422,12 @@ export class GeminiAiClient implements AiClient {
         const status = (err as { status?: number }).status;
         const message = err instanceof Error ? err.message : String(err);
         if (status === 429 && DAILY_QUOTA.test(message)) {
+          if (this.modelIndex < this.opts.models.length - 1) {
+            this.modelIndex++;
+            console.warn(`[gemini] daily quota used up; switching to ${this.opts.models[this.modelIndex]}`);
+            attempt--;
+            continue;
+          }
           this.opts.budget.markQuotaExhausted();
           return undefined;
         }

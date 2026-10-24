@@ -64,7 +64,7 @@ describe('runGather', () => {
     await mkdir(join(root, 'content'));
     await writeFile(
       join(root, 'content/posts.json'),
-      JSON.stringify([post('ancient', { publishedAt: '2026-09-01T00:00:00.000Z' }), post('recent')]),
+      JSON.stringify([post('ancient', { publishedAt: '2026-05-01T00:00:00.000Z' }), post('recent')]),
     );
   });
 
@@ -75,7 +75,7 @@ describe('runGather', () => {
     expect(result.changed.sort()).toEqual(['content/posts.json', 'content/state.json']);
     expect(result.failed).toBe(false);
     expect(result.summary).toContain('1 new posts');
-    expect(result.summary).toContain('Removed 1 posts older than 30 days');
+    expect(result.summary).toContain('Removed 1 posts older than 120 days');
     const state = JSON.parse(await readFile(join(root, 'content/state.json'), 'utf8'));
     expect(state.runs[0]).toMatchObject({ trigger: 'cron', status: 'success' });
   });

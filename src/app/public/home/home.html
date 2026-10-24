@@ -41,19 +41,6 @@
     }
   </div>
 
-  @if (since && index.hasValue()) {
-    <div class="fresh" role="status">
-      @if (newCount()) {
-        <p><strong class="new">{{ newCount() }} new</strong> since your last visit {{ sinceLabel }}</p>
-        <button type="button" class="btn btn--ghost" [attr.aria-pressed]="onlyNew()" (click)="onlyNew.set(!onlyNew())">
-          {{ onlyNew() ? 'Show all' : 'Show only new' }}
-        </button>
-      } @else {
-        <p>Nothing new since your last visit {{ sinceLabel }}</p>
-      }
-    </div>
-  }
-
   @if (index.isLoading() && !index.hasValue()) {
     <div class="skeletons" aria-busy="true" aria-label="Loading updates">
       @for (i of [1, 2]; track i) {

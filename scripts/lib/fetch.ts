@@ -15,10 +15,10 @@ export type HttpGet = (url: string, timeoutMs?: number) => Promise<HttpResponse>
 export type SourceItem = Omit<RawItem, 'id'>;
 
 /** A feed is followed to older pages until it reaches the start of the window, up to this many pages. */
-const MAX_PAGES = 10;
+const MAX_PAGES = 30;
 const ARTICLE_TIMEOUT_MS = 10_000;
 const ARTICLE_LINKS = 3;
-const ARTICLE_CHARS = 6_000;
+const ARTICLE_CHARS = 4_500;
 
 /** Turn undici's generic "fetch failed" into something an admin can act on. */
 function describeFailure(err: unknown, url: string, timeoutMs: number): Error {
