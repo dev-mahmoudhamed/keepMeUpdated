@@ -51,7 +51,6 @@ export type FeedView = 'cards' | 'list';
     }
     h2 {
       font-size: var(--step-3);
-      font-variation-settings: 'opsz' 60;
     }
     .count {
       display: inline-flex;
@@ -59,10 +58,6 @@ export type FeedView = 'cards' | 'list';
       gap: var(--s-3);
       color: var(--ink-muted);
       white-space: nowrap;
-    }
-    .new {
-      color: var(--accent);
-      font-weight: 700;
     }
     ul {
       list-style: none;

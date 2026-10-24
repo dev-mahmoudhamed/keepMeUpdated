@@ -44,7 +44,7 @@
   @if (since && index.hasValue()) {
     <div class="fresh" role="status">
       @if (newCount()) {
-        <p><strong>{{ newCount() }} new</strong> since your last visit {{ sinceLabel }}</p>
+        <p><strong class="new">{{ newCount() }} new</strong> since your last visit {{ sinceLabel }}</p>
         <button type="button" class="btn btn--ghost" [attr.aria-pressed]="onlyNew()" (click)="onlyNew.set(!onlyNew())">
           {{ onlyNew() ? 'Show all' : 'Show only new' }}
         </button>

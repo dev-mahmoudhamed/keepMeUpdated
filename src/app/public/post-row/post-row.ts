@@ -87,9 +87,7 @@ import { sourcesLabel, timeOf } from '../feed-utils';
       height: 100%;
     }
     .new {
-      color: var(--accent);
       font-size: 0.8125rem;
-      font-weight: 700;
     }
     .kind {
       display: inline-flex;
@@ -122,7 +120,7 @@ import { sourcesLabel, timeOf } from '../feed-utils';
       bottom: var(--s-5);
       width: 4px;
       border-radius: 0 4px 4px 0;
-      background: var(--accent);
+      background: var(--new-mark);
     }
     .top {
       display: flex;
@@ -131,7 +129,14 @@ import { sourcesLabel, timeOf } from '../feed-utils';
       gap: var(--s-3);
       min-height: 24px;
     }
+    .top .tag {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .when {
+      flex: none;
       display: inline-flex;
       align-items: baseline;
       gap: var(--s-2);
@@ -141,9 +146,10 @@ import { sourcesLabel, timeOf } from '../feed-utils';
     .story .title {
       margin-top: var(--s-3);
       font-size: var(--step-1);
-      font-weight: 650;
-      line-height: 1.25;
-      letter-spacing: -0.012em;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
@@ -200,8 +206,12 @@ import { sourcesLabel, timeOf } from '../feed-utils';
     .row:hover {
       background: var(--paper);
     }
+    /* The list clips overflow, so the focus ring is drawn inside the row. */
+    .row:focus-visible {
+      outline-offset: -2px;
+    }
     .row.is-new {
-      box-shadow: inset 4px 0 0 var(--accent);
+      box-shadow: inset 4px 0 0 var(--new-mark);
     }
     .time {
       color: var(--ink-muted);
@@ -242,6 +252,7 @@ import { sourcesLabel, timeOf } from '../feed-utils';
       min-width: 0;
     }
     .slot .tag {
+      display: block;
       overflow: hidden;
       text-overflow: ellipsis;
     }

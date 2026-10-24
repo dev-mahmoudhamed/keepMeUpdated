@@ -91,7 +91,9 @@
   display: flex;
   gap: var(--s-2);
   overflow-x: auto;
-  padding-bottom: var(--s-1);
+  /* Room for the focus ring, which the scroller would clip. */
+  padding: 4px 4px calc(var(--s-1) + 4px);
+  margin: -4px;
   scrollbar-width: thin;
 }
 
@@ -149,7 +151,7 @@
   margin-top: var(--s-5);
 }
 
-/* What arrived since the last visit: the one place the moss accent speaks up. */
+/* What arrived since the last visit, in saffron like every New mark. */
 .fresh {
   display: flex;
   flex-wrap: wrap;
@@ -158,14 +160,14 @@
   gap: var(--s-2) var(--s-4);
   margin-top: var(--s-3);
   padding: var(--s-2) var(--s-2) var(--s-2) var(--s-4);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--new-mark);
   border-radius: var(--radius);
-  background: var(--accent-wash);
+  background: var(--new-wash);
   color: var(--ink-soft);
 }
 
-.fresh strong {
-  color: var(--accent);
+.fresh .new {
+  display: inline-flex;
 }
 
 .fresh .btn[aria-pressed='true'] {

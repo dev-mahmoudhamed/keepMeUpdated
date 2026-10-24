@@ -47,10 +47,12 @@
             <li>
               <a [href]="s.url" target="_blank" rel="noopener noreferrer">
                 <img [src]="favicon(s.url)" alt="" width="16" height="16" loading="lazy" referrerpolicy="no-referrer" />
-                <span class="site">{{ s.siteName }}</span>
                 <span class="article">{{ s.title || host(s.url) }}</span>
-                <span class="host mono">{{ host(s.url) }}</span>
-                <svg lucideExternalLink [size]="16" aria-hidden="true"></svg>
+                <span class="from">
+                  <span class="site">{{ s.siteName }}</span>
+                  <span class="host">{{ host(s.url) }}</span>
+                </span>
+                <svg lucideExternalLink [size]="18" aria-hidden="true"></svg>
                 <span class="visually-hidden">(opens in a new tab)</span>
               </a>
             </li>

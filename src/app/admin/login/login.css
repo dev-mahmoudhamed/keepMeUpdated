@@ -24,10 +24,10 @@
 }
 
 .brand {
-  font-family: var(--font-head);
+  font-family: var(--font-mark);
   font-size: 1.5rem;
-  font-weight: 650;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--accent);
   text-decoration: none;
 }
 

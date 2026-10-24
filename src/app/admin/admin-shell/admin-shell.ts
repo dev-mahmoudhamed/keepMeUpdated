@@ -75,11 +75,11 @@ import { ToastService } from '../../core/toast';
     }
     .brand {
       display: grid;
-      font-family: var(--font-head);
-      font-weight: 650;
+      font-family: var(--font-mark);
+      font-weight: 700;
       font-size: 1.375rem;
-      letter-spacing: -0.03em;
       line-height: 1.1;
+      color: var(--accent);
       text-decoration: none;
       padding-inline: var(--s-3);
     }
@@ -127,13 +127,19 @@ import { ToastService } from '../../core/toast';
     }
     .toasts {
       position: fixed;
+      left: var(--s-5);
       right: var(--s-5);
       bottom: var(--s-5);
       display: grid;
+      justify-items: end;
+      pointer-events: none;
       gap: var(--s-2);
       z-index: 50;
     }
     .toast {
+      max-width: 32rem;
+      overflow-wrap: anywhere;
+      pointer-events: auto;
       display: flex;
       align-items: center;
       gap: var(--s-3);

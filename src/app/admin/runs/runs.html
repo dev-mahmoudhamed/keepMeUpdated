@@ -16,14 +16,14 @@
 </header>
 
 <section class="cards" aria-label="Gather settings">
-  <div class="card">
+  <div class="stat">
     <p class="k">Summaries in the last run</p>
     <p class="v">{{ lastAiMode() ?? 'No runs yet' }}</p>
     @if (lastAiMode()?.startsWith('Fallback')) {
       <p class="hint">Add GEMINI_API_KEY in the repository’s Settings → Secrets and variables → Actions.</p>
     }
   </div>
-  <div class="card">
+  <div class="stat">
     <p class="k">Next scheduled run</p>
     <p class="v">{{ when(nextRun.toISOString()) }}</p>
     <p class="hint">GitHub can start scheduled runs a little late.</p>
@@ -106,7 +106,7 @@
               }
             </ol>
             @if (run.errors.length) {
-              <p class="label">Errors</p>
+              <p class="errors-title">Errors</p>
               <ul class="errors">
                 @for (e of run.errors; track $index) {
                   <li>{{ e.message }}</li>
