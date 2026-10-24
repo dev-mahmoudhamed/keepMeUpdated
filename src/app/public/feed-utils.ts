@@ -1,12 +1,8 @@
 import type { PostSummary } from '../../../shared/models';
 
-/** The day's lead story: highest relevance, newest on ties. `rest` keeps feed order. */
-export function pickLead(posts: PostSummary[]): { lead: PostSummary | null; rest: PostSummary[] } {
-  if (!posts.length) return { lead: null, rest: [] };
-  const lead = posts.reduce((best, p) =>
-    p.relevance > best.relevance || (p.relevance === best.relevance && (p.publishedAt ?? '') > (best.publishedAt ?? '')) ? p : best,
-  );
-  return { lead, rest: posts.filter((p) => p !== lead) };
+/** Published after the reader's previous visit. Nothing is new on a first visit. */
+export function isNewSince(post: PostSummary, since: string | null): boolean {
+  return !!since && !!post.publishedAt && post.publishedAt > since;
 }
 
 const localKey = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -31,4 +27,10 @@ export function sourcesLabel(n: number): string {
 export function timeOf(iso: string | undefined): string {
   if (!iso) return '';
   return new Date(iso).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+}
+
+/** "today at 09:14", "yesterday at 18:02" or "Thursday, 15 October at 09:14". */
+export function visitLabel(iso: string, today = new Date()): string {
+  const day = formatDay(localKey(new Date(iso)), today);
+  return `${day === 'Today' || day === 'Yesterday' ? day.toLowerCase() : day} at ${timeOf(iso)}`;
 }

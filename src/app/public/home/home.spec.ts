@@ -32,6 +32,7 @@ describe('Home', () => {
 
   beforeEach(() => {
     localStorage.clear();
+    sessionStorage.clear();
     TestBed.configureTestingModule({ providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])] });
     http = TestBed.inject(HttpTestingController);
   });
@@ -48,11 +49,11 @@ describe('Home', () => {
     return fixture;
   }
 
-  it('renders one section per day with the lead story first', async () => {
+  it('renders one section per day, newest story first', async () => {
     const fixture = await render();
     const el: HTMLElement = fixture.nativeElement;
     expect(el.querySelectorAll('app-day-section').length).toBe(2);
-    expect(el.querySelector('.lead h3')?.textContent).toContain('Title a');
+    expect(el.querySelector('.story h3')?.textContent).toContain('Title a');
   });
 
   it('labels the views Cards and List', async () => {
@@ -61,11 +62,11 @@ describe('Home', () => {
     expect(labels).toEqual(['Cards', 'List']);
   });
 
-  it('shows every story as a card in Cards view', async () => {
+  it('shows every story as the same kind of card in a grid', async () => {
     const fixture = await render();
     const el: HTMLElement = fixture.nativeElement;
-    expect(el.querySelectorAll('.card').length).toBe(3);
-    expect(el.querySelector('.lead.card')).not.toBeNull();
+    expect(el.querySelectorAll('.grid article.story').length).toBe(3);
+    expect(el.querySelector('.story .tldr')?.textContent).toContain('Summary a');
   });
 
   it('switches to List view and remembers it', async () => {
@@ -75,14 +76,35 @@ describe('Home', () => {
     fixture.detectChanges();
     await fixture.whenStable();
     expect(localStorage.getItem('kmu.view')).toBe('list');
-    expect(el.querySelectorAll('.row--compact').length).toBe(3);
-    expect(el.querySelector('.lead')).toBeNull();
+    expect(el.querySelectorAll('a.row').length).toBe(3);
+    expect(el.querySelector('.story')).toBeNull();
   });
 
   it('reads the old "compact" preference as List', async () => {
     localStorage.setItem('kmu.view', 'compact');
     const fixture = await render();
-    expect((fixture.nativeElement as HTMLElement).querySelector('.lead')).toBeNull();
+    expect((fixture.nativeElement as HTMLElement).querySelectorAll('a.row').length).toBe(3);
+  });
+
+  it('marks nothing new on a first visit', async () => {
+    const fixture = await render();
+    const el: HTMLElement = fixture.nativeElement;
+    expect(el.querySelector('.fresh')).toBeNull();
+    expect(el.querySelectorAll('.is-new').length).toBe(0);
+    expect(localStorage.getItem('kmu.lastVisit')).not.toBeNull();
+  });
+
+  it('marks what arrived since the last visit and can show only that', async () => {
+    localStorage.setItem('kmu.lastVisit', '2026-10-16T12:00:00Z');
+    const fixture = await render();
+    const el: HTMLElement = fixture.nativeElement;
+    expect(el.querySelector('.fresh')?.textContent).toContain('2 new');
+    expect(el.querySelectorAll('.story.is-new').length).toBe(2);
+    (el.querySelector('.fresh .btn') as HTMLButtonElement).click();
+    fixture.detectChanges();
+    expect(el.querySelectorAll('app-day-section').length).toBe(1);
+    expect(el.querySelectorAll('.story').length).toBe(2);
+    expect(el.querySelector('.fresh .btn')?.textContent).toContain('Show all');
   });
 
   it('builds topic chips from the index and filters without new requests', async () => {
@@ -93,7 +115,7 @@ describe('Home', () => {
     (el.querySelectorAll('.chip')[2] as HTMLButtonElement).click();
     fixture.detectChanges();
     expect(el.querySelectorAll('app-day-section').length).toBe(1);
-    expect(el.querySelector('.lead h3')?.textContent).toContain('Title b');
+    expect(el.querySelector('.story h3')?.textContent).toContain('Title b');
   });
 
   it('shows a retry message when the index fails to load', async () => {

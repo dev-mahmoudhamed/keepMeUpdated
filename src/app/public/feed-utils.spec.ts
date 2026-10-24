@@ -1,5 +1,5 @@
 import type { PostSummary } from '../../../shared/models';
-import { formatDay, pickLead, sourcesLabel } from './feed-utils';
+import { formatDay, isNewSince, sourcesLabel, visitLabel } from './feed-utils';
 
 const p = (id: string, relevance: number, publishedAt: string): PostSummary => ({
   id,
@@ -13,18 +13,22 @@ const p = (id: string, relevance: number, publishedAt: string): PostSummary => (
   sourceCount: 1,
 });
 
-describe('pickLead', () => {
-  it('picks the most relevant post, newest on ties, and keeps the rest in order', () => {
-    const a = p('a', 5, '2026-10-17T05:00:00Z');
-    const b = p('b', 8, '2026-10-17T04:00:00Z');
-    const c = p('c', 8, '2026-10-17T06:00:00Z');
-    const { lead, rest } = pickLead([a, b, c]);
-    expect(lead).toBe(c);
-    expect(rest).toEqual([a, b]);
+describe('isNewSince', () => {
+  it('marks posts published after the previous visit', () => {
+    expect(isNewSince(p('a', 5, '2026-10-17T05:00:00Z'), '2026-10-17T04:00:00Z')).toBe(true);
+    expect(isNewSince(p('b', 5, '2026-10-17T03:00:00Z'), '2026-10-17T04:00:00Z')).toBe(false);
   });
 
-  it('handles an empty day', () => {
-    expect(pickLead([])).toEqual({ lead: null, rest: [] });
+  it('marks nothing on a first visit', () => {
+    expect(isNewSince(p('a', 5, '2026-10-17T05:00:00Z'), null)).toBe(false);
+  });
+});
+
+describe('visitLabel', () => {
+  const today = new Date('2026-10-17T10:00:00');
+  it('reads naturally after "since your last visit"', () => {
+    expect(visitLabel(new Date('2026-10-17T09:14:00').toISOString(), today)).toBe('today at 09:14');
+    expect(visitLabel(new Date('2026-10-15T18:02:00').toISOString(), today)).toBe('Thursday, 15 October at 18:02');
   });
 });
 

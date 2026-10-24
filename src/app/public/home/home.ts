@@ -6,8 +6,9 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { groupSummaries, summaryTagCounts } from '../../../../shared/feed';
 import type { FeedIndex } from '../../../../shared/models';
 import { dataUrl } from '../../core/api';
-import { readPref, writePref } from '../../core/prefs';
+import { previousVisit, readPref, writePref } from '../../core/prefs';
 import { DaySection, type FeedView } from '../day-section/day-section';
+import { isNewSince, visitLabel } from '../feed-utils';
 
 const VIEW_KEY = 'kmu.view';
 const PAGE_DAYS = 7;
@@ -31,19 +32,30 @@ export class Home {
   private readonly posts = computed(() => (this.index.hasValue() ? this.index.value().posts : []));
   private readonly daysShown = signal(PAGE_DAYS);
 
+  /** The reader's previous visit: what came after it is marked New. */
+  protected readonly since = previousVisit();
+  protected readonly sinceLabel = this.since ? visitLabel(this.since) : '';
+  protected readonly onlyNew = signal(false);
+  protected readonly newCount = computed(() => this.posts().filter((p) => isNewSince(p, this.since)).length);
+
   private readonly feed = computed(() =>
-    groupSummaries(this.posts(), { days: this.daysShown(), tag: this.tag() ?? undefined, q: this.debouncedQ() }),
+    groupSummaries(this.onlyNew() ? this.posts().filter((p) => isNewSince(p, this.since)) : this.posts(), {
+      days: this.daysShown(),
+      tag: this.tag() ?? undefined,
+      q: this.debouncedQ(),
+    }),
   );
   protected readonly days = computed(() => this.feed().days);
   protected readonly hasOlder = computed(() => !!this.feed().nextBefore);
   protected readonly topTags = computed(() => summaryTagCounts(this.posts()).slice(0, 12));
-  protected readonly filtered = computed(() => !!this.tag() || !!this.debouncedQ().trim());
+  protected readonly filtered = computed(() => !!this.tag() || !!this.debouncedQ().trim() || this.onlyNew());
 
   constructor() {
     // New filters start again from the newest week.
     effect(() => {
       this.tag();
       this.debouncedQ();
+      this.onlyNew();
       untracked(() => this.daysShown.set(PAGE_DAYS));
     });
   }
@@ -60,6 +72,7 @@ export class Home {
   protected clearFilters(): void {
     this.q.set('');
     this.tag.set(null);
+    this.onlyNew.set(false);
   }
 
   protected loadOlder(): void {

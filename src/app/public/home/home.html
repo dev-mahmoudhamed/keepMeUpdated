@@ -41,21 +41,28 @@
     }
   </div>
 
+  @if (since && index.hasValue()) {
+    <div class="fresh" role="status">
+      @if (newCount()) {
+        <p><strong>{{ newCount() }} new</strong> since your last visit {{ sinceLabel }}</p>
+        <button type="button" class="btn btn--ghost" [attr.aria-pressed]="onlyNew()" (click)="onlyNew.set(!onlyNew())">
+          {{ onlyNew() ? 'Show all' : 'Show only new' }}
+        </button>
+      } @else {
+        <p>Nothing new since your last visit {{ sinceLabel }}</p>
+      }
+    </div>
+  }
+
   @if (index.isLoading() && !index.hasValue()) {
     <div class="skeletons" aria-busy="true" aria-label="Loading updates">
       @for (i of [1, 2]; track i) {
         <div class="sk-day">
           <div class="skeleton" style="height: 2.25rem; width: 12rem"></div>
           <div class="sk-grid">
-            <div>
-              <div class="skeleton" style="height: 6.5rem"></div>
-              <div class="skeleton" style="height: 3rem; margin-top: 16px; width: 85%"></div>
-            </div>
-            <div>
-              <div class="skeleton" style="height: 3.5rem"></div>
-              <div class="skeleton" style="height: 3.5rem; margin-top: 12px"></div>
-              <div class="skeleton" style="height: 3.5rem; margin-top: 12px"></div>
-            </div>
+            @for (c of [1, 2, 3]; track c) {
+              <div class="skeleton" style="height: 17rem"></div>
+            }
           </div>
         </div>
       }
@@ -82,7 +89,7 @@
   } @else {
     <div class="days">
       @for (day of days(); track day.date) {
-        <app-day-section [day]="day" [view]="view()" />
+        <app-day-section [day]="day" [view]="view()" [since]="since" />
       }
     </div>
 
