@@ -13,7 +13,7 @@ import { ToastService } from '../../core/toast';
   template: `
     <div class="shell">
       <aside class="side">
-        <a routerLink="/admin" class="brand">keepMeUpdated<span>Admin</span></a>
+        <a routerLink="/admin" class="brand"><img class="logo-mark" src="favicon.svg" alt="" width="32" height="32" />keepMeUpdated<span>Admin</span></a>
         <nav aria-label="Admin">
           <a routerLink="/admin" class="nav" [class.on]="postsActive()" [attr.aria-current]="postsActive() ? 'page' : null">
             <svg lucideFileText [size]="18" aria-hidden="true"></svg>Posts
@@ -75,6 +75,9 @@ import { ToastService } from '../../core/toast';
     }
     .brand {
       display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      column-gap: 10px;
+      align-items: center;
       font-family: var(--font-mono);
       font-weight: 700;
       font-size: 1.25rem;
@@ -83,7 +86,11 @@ import { ToastService } from '../../core/toast';
       text-decoration: none;
       padding-inline: var(--s-3);
     }
+    .brand img {
+      grid-row: span 2;
+    }
     .brand span {
+      grid-column: 2;
       font-family: var(--font-body);
       font-size: 0.8125rem;
       font-weight: 500;

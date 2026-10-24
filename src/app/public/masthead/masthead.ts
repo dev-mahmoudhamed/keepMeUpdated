@@ -11,7 +11,10 @@ const NEXT_LABEL = { light: 'Switch to dark theme', dark: 'Switch to light theme
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <header class="masthead wrap">
-      <a routerLink="/" class="wordmark" aria-label="keepMeUpdated, today's edition">keepMeUpdated</a>
+      <a routerLink="/" class="wordmark" aria-label="keepMeUpdated, today's edition">
+        <img class="logo logo-mark" src="favicon.svg" alt="" width="32" height="32" />
+        keepMeUpdated
+      </a>
       <p class="tagline">Developer news that matters, gathered every morning.</p>
       <div class="end">
         <time class="today" [attr.datetime]="isoToday">{{ today }}</time>
@@ -36,12 +39,19 @@ const NEXT_LABEL = { light: 'Switch to dark theme', dark: 'Switch to light theme
     }
     /* Set in mono, like a package name. */
     .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-family: var(--font-mono);
       font-size: clamp(1.5rem, 1.15rem + 1.3vw, 1.875rem);
       font-weight: 600;
       letter-spacing: -0.04em;
       line-height: 1;
       text-decoration: none;
+    }
+    .logo {
+      width: 1.2em;
+      height: 1.2em;
     }
     .tagline {
       color: var(--ink-muted);
@@ -63,7 +73,11 @@ const NEXT_LABEL = { light: 'Switch to dark theme', dark: 'Switch to light theme
         grid-template-columns: 1fr auto;
         padding-block: var(--s-5) var(--s-4);
       }
-      .tagline {
+      .logo {
+      width: 1.2em;
+      height: 1.2em;
+    }
+    .tagline {
         grid-column: 1 / -1;
         grid-row: 2;
       }

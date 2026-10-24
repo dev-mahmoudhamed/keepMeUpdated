@@ -15,6 +15,8 @@
   --rule-strong: #c4ccda;
   /* The line under each day's heading. */
   --day-rule: var(--ink);
+  /* Outline around the logo's dark tile; only needed on dark pages. */
+  --logo-ring: transparent;
   --accent: #4c6a92;
   --accent-strong: #3e5f86;
   --accent-wash: #e1e8f2;
@@ -89,6 +91,7 @@
   --rule: #363d4b;
   --rule-strong: #465063;
   --day-rule: #4c566a;
+  --logo-ring: #4c566a;
   --accent: #88c0d0;
   --accent-strong: #a3d0dc;
   --accent-wash: rgb(136 192 208 / 0.14);
@@ -259,6 +262,13 @@ button {
 .card:focus-within {
   box-shadow: var(--shadow-card-hover);
   border-color: var(--rule-strong);
+}
+
+/* The logo (public/favicon.svg): a bell in code brackets with an orange "new" dot. */
+.logo-mark {
+  flex: none;
+  border-radius: 22%;
+  box-shadow: 0 0 0 1px var(--logo-ring);
 }
 
 /* Makes a whole card clickable through its main link. */
