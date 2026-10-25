@@ -138,13 +138,13 @@ h1 {
 }
 
 .switch[aria-checked='true'] {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--primary);
+  border-color: var(--primary);
 }
 
 .switch[aria-checked='true'] .knob {
   transform: translateX(18px);
-  background: var(--on-accent);
+  background: var(--on-primary);
 }
 
 .empty {

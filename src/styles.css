@@ -1,56 +1,59 @@
 /* keepMeUpdated — design tokens and base styles.
-   Nord: arctic greys, frost-blue links, and soft aurora colours that mean something — each stack's tags have their
-   own colour (Angular, .NET, TypeScript, releases), and aurora orange marks what's new. Geist for reading, Geist Mono
-   for the developer details (wordmark, tags, times, counts). Dark is Nord's polar night. */
+   The tweakcn "Discord" theme: blurple (#5865f2) for links and primary buttons, cool neutral greys, Discord's red for
+   what's new, and the theme's pastel chart colours for each stack's tags (Angular, .NET, TypeScript, releases).
+   Noto Sans JP throughout, the system monospace for the developer details. Dark is Discord's grey-blue. */
 
 :root {
   color-scheme: light;
-  --paper: #eceff4;
-  --paper-raised: #f3f5f8;
-  --card: #ffffff;
-  --ink: #2e3440;
-  --ink-soft: #4c566a;
-  --ink-muted: #656e80;
-  --rule: #d8dee9;
-  --rule-strong: #c4ccda;
+  --paper: oklch(0.9881 0 0);
+  --paper-raised: oklch(0.9614 0.0013 286.375);
+  --card: oklch(1 0 0);
+  --field: oklch(0.9614 0.0013 286.375);
+  --ink: oklch(0.2789 0.0091 285.7942);
+  --ink-soft: oklch(0.42 0.012 283);
+  --ink-muted: oklch(0.537 0.014 280.8555);
+  --rule: oklch(0.9042 0.0027 286.3457);
+  --rule-strong: oklch(0.8862 0.0041 286.3164);
   /* The line under each day's heading. */
   --day-rule: var(--ink);
-  /* Outline around the logo's dark tile; only needed on dark pages. */
+  /* Outline around the logo's tile; only needed on dark pages. */
   --logo-ring: transparent;
-  --accent: #4c6a92;
-  --accent-strong: #3e5f86;
-  --accent-wash: #e1e8f2;
-  /* What's new: aurora orange. */
-  --new: #b4652f;
-  --new-mark: #d08770;
-  --new-wash: #f6e7db;
-  --danger: #a8434d;
-  --highlight: #e5e9f0;
-  /* Highlighter stroke behind TL;DR text: aurora yellow, softened. */
-  --marker: #f1e4bf;
-  --on-accent: #ffffff;
-  /* Topic tags, one aurora tone per stack: background / text. */
-  --tag-bg: #e5e9f0;
-  --tag-fg: #4c566a;
-  --tag-angular-bg: #f3e0e2;
-  --tag-angular-fg: #9a3b45;
-  --tag-dotnet-bg: #eee3ec;
-  --tag-dotnet-fg: #7b4e73;
-  --tag-typescript-bg: #e1eaf3;
-  --tag-typescript-fg: #3e5f86;
-  --tag-release-bg: #e6efe0;
-  --tag-release-fg: #4f6b3a;
+  /* Blurple as text, links and outlines. */
+  --accent: oklch(0.5774 0.2091 273.8504);
+  --accent-strong: oklch(0.52 0.2091 273.8504);
+  --accent-wash: oklch(0.5774 0.2091 273.8504 / 0.1);
+  /* Blurple as a solid fill (primary buttons, switches). */
+  --primary: oklch(0.5774 0.2091 273.8504);
+  --on-primary: oklch(1 0 0);
+  /* What's new: Discord's unread red. */
+  --new: oklch(0.5156 0.181 22.5393);
+  --new-mark: oklch(0.5156 0.181 22.5393);
+  --new-wash: oklch(0.5156 0.181 22.5393 / 0.1);
+  --danger: oklch(0.5156 0.181 22.5393);
+  --highlight: oklch(0.9497 0.0027 286.349);
+  /* Highlighter stroke behind TL;DR text: the theme's chart yellow, softened. */
+  --marker: oklch(0.8757 0.0979 83.6546 / 0.45);
+  /* Topic tags, one chart colour per stack: background / text. */
+  --tag-bg: oklch(0.9614 0.0013 286.375);
+  --tag-fg: oklch(0.42 0.012 283);
+  --tag-angular-bg: oklch(0.8092 0.1122 345.1956 / 0.3);
+  --tag-angular-fg: oklch(0.45 0.15 345);
+  --tag-dotnet-bg: oklch(0.7865 0.1232 309.4396 / 0.3);
+  --tag-dotnet-fg: oklch(0.45 0.15 309);
+  --tag-typescript-bg: oklch(0.8406 0.0699 242.1914 / 0.35);
+  --tag-typescript-fg: oklch(0.43 0.1 242);
+  --tag-release-bg: oklch(0.9075 0.0946 165.054 / 0.45);
+  --tag-release-fg: oklch(0.42 0.09 165);
   /* Behind other sites' icons, which assume a white page — in both themes. */
   --icon-tile: #ffffff;
-  --scrim: rgb(46 52 64 / 0.45);
-  --shadow-card: 0 1px 2px rgb(46 52 64 / 0.05), 0 8px 22px -12px rgb(46 52 64 / 0.16);
-  --shadow-card-hover: 0 2px 4px rgb(46 52 64 / 0.07), 0 16px 34px -14px rgb(46 52 64 / 0.24);
+  --scrim: oklch(0 0 0 / 0.45);
+  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
 
-  --font-head: 'Geist', system-ui, sans-serif;
-  /* Story titles: a grotesque with a bit of character. */
-  --font-title: 'Bricolage Grotesque', 'Geist', system-ui, sans-serif;
-  --font-body: 'Geist', system-ui, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-head: 'Noto Sans JP', ui-sans-serif, sans-serif, system-ui;
+  --font-title: 'Noto Sans JP', ui-sans-serif, sans-serif, system-ui;
+  --font-body: 'Noto Sans JP', ui-sans-serif, sans-serif, system-ui;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   /* Type scale (major third). */
   --step--1: 0.875rem;
@@ -70,8 +73,8 @@
   --s-7: 48px;
   --s-8: 64px;
 
-  --radius: 6px;
-  --radius-card: 12px;
+  --radius: calc(0.625rem - 2px);
+  --radius-card: calc(0.625rem + 4px);
   --measure: 68ch;
   --page: 1120px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -81,41 +84,43 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  /* A deeper polar night than Nord's own #2e3440, so cards (in #2e3440) lift off the page. */
-  --paper: #242933;
-  --paper-raised: #2a303b;
-  --card: #2e3440;
-  --ink: #eceff4;
-  --ink-soft: #d8dee9;
-  --ink-muted: #9aa4b8;
-  --rule: #363d4b;
-  --rule-strong: #465063;
-  --day-rule: #4c566a;
-  --logo-ring: #4c566a;
-  --accent: #88c0d0;
-  --accent-strong: #a3d0dc;
-  --accent-wash: rgb(136 192 208 / 0.14);
-  --new: #e8ac90;
-  --new-mark: #d08770;
-  --new-wash: rgb(208 135 112 / 0.14);
-  --danger: #e08a92;
-  --highlight: #2a303b;
-  --marker: rgb(235 203 139 / 0.22);
-  --on-accent: #242933;
-  /* Tags: translucent aurora tints with bright text, not solid blocks. */
-  --tag-bg: rgb(216 222 233 / 0.08);
-  --tag-fg: #d8dee9;
-  --tag-angular-bg: rgb(191 97 106 / 0.22);
-  --tag-angular-fg: #eda7ae;
-  --tag-dotnet-bg: rgb(180 142 173 / 0.22);
-  --tag-dotnet-fg: #d9b9d2;
-  --tag-typescript-bg: rgb(129 161 193 / 0.22);
-  --tag-typescript-fg: #b7cee6;
-  --tag-release-bg: rgb(163 190 140 / 0.2);
-  --tag-release-fg: #c2d9ad;
-  --scrim: rgb(0 0 0 / 0.55);
-  --shadow-card: 0 0 0 1px rgb(255 255 255 / 0.02), 0 10px 26px -16px rgb(0 0 0 / 0.75);
-  --shadow-card-hover: 0 0 0 1px rgb(255 255 255 / 0.04), 0 18px 38px -18px rgb(0 0 0 / 0.85);
+  --paper: oklch(0.3225 0.0107 278.2517);
+  --paper-raised: oklch(0.3779 0.0118 285.8207);
+  --card: oklch(0.3502 0.0122 279.2835);
+  --field: oklch(0.3066 0.0108 278.2166);
+  --ink: oklch(1 0 0);
+  --ink-soft: oklch(0.88 0.006 278);
+  --ink-muted: oklch(0.723 0.0087 278.582);
+  --rule: oklch(0.369 0.0103 278.3345);
+  --rule-strong: oklch(0.4074 0.0134 280.1154);
+  --day-rule: oklch(0.4074 0.0134 280.1154);
+  --logo-ring: oklch(0.4074 0.0134 280.1154);
+  /* A lighter blurple for text, so links stay readable on the grey. */
+  --accent: oklch(0.7576 0.1166 274);
+  --accent-strong: oklch(0.82 0.09 274);
+  --accent-wash: oklch(0.5774 0.2091 273.8504 / 0.22);
+  --primary: oklch(0.5774 0.2091 273.8504);
+  --on-primary: oklch(1 0 0);
+  --new: oklch(0.8004 0.1141 23.185);
+  --new-mark: oklch(0.6368 0.2078 25.3313);
+  --new-wash: oklch(0.8004 0.1141 23.185 / 0.14);
+  --danger: oklch(0.8004 0.1141 23.185);
+  --highlight: oklch(0.4074 0.0134 280.1154);
+  --marker: oklch(0.8757 0.0979 83.6546 / 0.22);
+  /* Tags: translucent chart tints with bright text, not solid blocks. */
+  --tag-bg: oklch(0.3779 0.0118 285.8207);
+  --tag-fg: oklch(0.88 0.006 278);
+  --tag-angular-bg: oklch(0.8092 0.1122 345.1956 / 0.18);
+  --tag-angular-fg: oklch(0.86 0.08 345);
+  --tag-dotnet-bg: oklch(0.7865 0.1232 309.4396 / 0.18);
+  --tag-dotnet-fg: oklch(0.86 0.08 309);
+  --tag-typescript-bg: oklch(0.8406 0.0699 242.1914 / 0.18);
+  --tag-typescript-fg: oklch(0.88 0.06 242);
+  --tag-release-bg: oklch(0.9075 0.0946 165.054 / 0.16);
+  --tag-release-fg: oklch(0.9 0.08 165);
+  --scrim: oklch(0 0 0 / 0.55);
+  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
 }
 
 *,
@@ -355,13 +360,14 @@ button {
 }
 
 .btn--primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--on-accent);
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
 }
 
 .btn--primary:hover {
-  border-color: var(--ink);
+  background: color-mix(in oklch, var(--primary) 90%, black);
+  border-color: color-mix(in oklch, var(--primary) 90%, black);
 }
 
 .btn--ghost {
@@ -407,7 +413,7 @@ button {
   padding: 8px 12px;
   border-radius: var(--radius);
   border: 1px solid var(--rule);
-  background: var(--paper-raised);
+  background: var(--field);
   transition: border-color var(--dur) var(--ease);
 }
 
