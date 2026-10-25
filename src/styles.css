@@ -1,59 +1,60 @@
 /* keepMeUpdated — design tokens and base styles.
-   The tweakcn "Discord" theme: blurple (#5865f2) for links and primary buttons, cool neutral greys, Discord's red for
-   what's new, and the theme's pastel chart colours for each stack's tags (Angular, .NET, TypeScript, releases).
-   Noto Sans JP throughout, the system monospace for the developer details. Dark is Discord's grey-blue. */
+   The tweakcn "Apple Liquid Glass" theme: iOS blue for links and primary buttons, cool blue-grey neutrals, very round
+   corners and wide soft shadows. The theme's chart colours give each stack's tags a tone (Angular, .NET, TypeScript,
+   releases) and its orange marks what's new. Inter for reading, JetBrains Mono for the developer details. Dark is
+   near-black with lifted cards. */
 
 :root {
   color-scheme: light;
-  --paper: oklch(0.9881 0 0);
-  --paper-raised: oklch(0.9614 0.0013 286.375);
+  --paper: oklch(0.97 0.0029 264.542);
+  --paper-raised: oklch(0.9394 0.0046 258.3251);
   --card: oklch(1 0 0);
-  --field: oklch(0.9614 0.0013 286.375);
-  --ink: oklch(0.2789 0.0091 285.7942);
-  --ink-soft: oklch(0.42 0.012 283);
-  --ink-muted: oklch(0.537 0.014 280.8555);
-  --rule: oklch(0.9042 0.0027 286.3457);
-  --rule-strong: oklch(0.8862 0.0041 286.3164);
+  --field: oklch(0.9205 0.0052 247.8807);
+  --ink: oklch(0.1801 0.0191 255.7673);
+  --ink-soft: oklch(0.2786 0.0211 257.2774);
+  --ink-muted: oklch(0.4789 0.0204 256.3497);
+  --rule: oklch(0.8994 0.0064 255.4779);
+  --rule-strong: oklch(0.85 0.008 256);
   /* The line under each day's heading. */
   --day-rule: var(--ink);
   /* Outline around the logo's tile; only needed on dark pages. */
   --logo-ring: transparent;
-  /* Blurple as text, links and outlines. */
-  --accent: oklch(0.5774 0.2091 273.8504);
-  --accent-strong: oklch(0.52 0.2091 273.8504);
-  --accent-wash: oklch(0.5774 0.2091 273.8504 / 0.1);
-  /* Blurple as a solid fill (primary buttons, switches). */
-  --primary: oklch(0.5774 0.2091 273.8504);
+  /* Blue as text, links and outlines: a shade deeper than the theme's, to stay readable on the grey page. */
+  --accent: oklch(0.55 0.19 258);
+  --accent-strong: oklch(0.3232 0.1376 260.7577);
+  --accent-wash: oklch(0.9209 0.0294 257.7666);
+  /* Blue as a solid fill (primary buttons, switches). */
+  --primary: oklch(0.6007 0.1903 257.9419);
   --on-primary: oklch(1 0 0);
-  /* What's new: Discord's unread red. */
-  --new: oklch(0.5156 0.181 22.5393);
-  --new-mark: oklch(0.5156 0.181 22.5393);
-  --new-wash: oklch(0.5156 0.181 22.5393 / 0.1);
-  --danger: oklch(0.5156 0.181 22.5393);
-  --highlight: oklch(0.9497 0.0027 286.349);
-  /* Highlighter stroke behind TL;DR text: the theme's chart yellow, softened. */
-  --marker: oklch(0.8757 0.0979 83.6546 / 0.45);
+  /* What's new: the theme's orange. */
+  --new: oklch(0.56 0.17 45);
+  --new-mark: oklch(0.6806 0.1901 45.0513);
+  --new-wash: oklch(0.6806 0.1901 45.0513 / 0.12);
+  --danger: oklch(0.56 0.21 25);
+  --highlight: oklch(0.9209 0.0294 257.7666);
+  /* Highlighter stroke behind TL;DR text: the theme's orange, softened. */
+  --marker: oklch(0.6806 0.1901 45.0513 / 0.18);
   /* Topic tags, one chart colour per stack: background / text. */
-  --tag-bg: oklch(0.9614 0.0013 286.375);
-  --tag-fg: oklch(0.42 0.012 283);
-  --tag-angular-bg: oklch(0.8092 0.1122 345.1956 / 0.3);
-  --tag-angular-fg: oklch(0.45 0.15 345);
-  --tag-dotnet-bg: oklch(0.7865 0.1232 309.4396 / 0.3);
-  --tag-dotnet-fg: oklch(0.45 0.15 309);
-  --tag-typescript-bg: oklch(0.8406 0.0699 242.1914 / 0.35);
-  --tag-typescript-fg: oklch(0.43 0.1 242);
-  --tag-release-bg: oklch(0.9075 0.0946 165.054 / 0.45);
-  --tag-release-fg: oklch(0.42 0.09 165);
+  --tag-bg: oklch(0.9394 0.0046 258.3251);
+  --tag-fg: oklch(0.2786 0.0211 257.2774);
+  --tag-angular-bg: oklch(0.6198 0.2297 5.1656 / 0.12);
+  --tag-angular-fg: oklch(0.5 0.2 5);
+  --tag-dotnet-bg: oklch(0.5495 0.2003 300.1164 / 0.12);
+  --tag-dotnet-fg: oklch(0.5 0.2 300);
+  --tag-typescript-bg: oklch(0.6007 0.1903 257.9419 / 0.12);
+  --tag-typescript-fg: oklch(0.5 0.18 258);
+  --tag-release-bg: oklch(0.6369 0.1247 171.0112 / 0.14);
+  --tag-release-fg: oklch(0.46 0.09 171);
   /* Behind other sites' icons, which assume a white page — in both themes. */
   --icon-tile: #ffffff;
-  --scrim: oklch(0 0 0 / 0.45);
-  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --scrim: oklch(0.1801 0.0191 255.7673 / 0.4);
+  --shadow-card: 0px 2px 28px 0px hsl(214.7368 10.8571% 34.3137% / 0.1), 0px 1px 2px -1px hsl(214.7368 10.8571% 34.3137% / 0.1);
+  --shadow-card-hover: 0px 2px 28px 0px hsl(214.7368 10.8571% 34.3137% / 0.16), 0px 4px 6px -1px hsl(214.7368 10.8571% 34.3137% / 0.1);
 
-  --font-head: 'Noto Sans JP', ui-sans-serif, sans-serif, system-ui;
-  --font-title: 'Noto Sans JP', ui-sans-serif, sans-serif, system-ui;
-  --font-body: 'Noto Sans JP', ui-sans-serif, sans-serif, system-ui;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-head: 'Inter', sans-serif;
+  --font-title: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* Type scale (major third). */
   --step--1: 0.875rem;
@@ -73,8 +74,8 @@
   --s-7: 48px;
   --s-8: 64px;
 
-  --radius: calc(0.625rem - 2px);
-  --radius-card: calc(0.625rem + 4px);
+  --radius: calc(1.5rem - 2px);
+  --radius-card: calc(1.5rem + 4px);
   --measure: 68ch;
   --page: 1120px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -84,43 +85,42 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: oklch(0.3225 0.0107 278.2517);
-  --paper-raised: oklch(0.3779 0.0118 285.8207);
-  --card: oklch(0.3502 0.0122 279.2835);
-  --field: oklch(0.3066 0.0108 278.2166);
-  --ink: oklch(1 0 0);
-  --ink-soft: oklch(0.88 0.006 278);
-  --ink-muted: oklch(0.723 0.0087 278.582);
-  --rule: oklch(0.369 0.0103 278.3345);
-  --rule-strong: oklch(0.4074 0.0134 280.1154);
-  --day-rule: oklch(0.4074 0.0134 280.1154);
-  --logo-ring: oklch(0.4074 0.0134 280.1154);
-  /* A lighter blurple for text, so links stay readable on the grey. */
-  --accent: oklch(0.7576 0.1166 274);
-  --accent-strong: oklch(0.82 0.09 274);
-  --accent-wash: oklch(0.5774 0.2091 273.8504 / 0.22);
-  --primary: oklch(0.5774 0.2091 273.8504);
-  --on-primary: oklch(1 0 0);
-  --new: oklch(0.8004 0.1141 23.185);
-  --new-mark: oklch(0.6368 0.2078 25.3313);
-  --new-wash: oklch(0.8004 0.1141 23.185 / 0.14);
-  --danger: oklch(0.8004 0.1141 23.185);
-  --highlight: oklch(0.4074 0.0134 280.1154);
-  --marker: oklch(0.8757 0.0979 83.6546 / 0.22);
+  --paper: oklch(0.1492 0.0093 263.9667);
+  --paper-raised: oklch(0.2411 0.0097 248.229);
+  --card: oklch(0.1993 0.0111 260.661);
+  --field: oklch(0.2207 0.0091 255.6084);
+  --ink: oklch(0.9602 0.0034 247.8587);
+  --ink-soft: oklch(0.9008 0.0105 247.9427);
+  --ink-muted: oklch(0.6806 0.0194 245.5027);
+  --rule: oklch(0.28 0.0102 260.7048);
+  --rule-strong: oklch(0.34 0.012 260);
+  --day-rule: oklch(0.34 0.012 260);
+  --logo-ring: oklch(0.28 0.0102 260.7048);
+  --accent: oklch(0.6496 0.1885 257.7207);
+  --accent-strong: oklch(0.8435 0.0803 251.0277);
+  --accent-wash: oklch(0.2804 0.0598 257.709);
+  --primary: oklch(0.6496 0.1885 257.7207);
+  --on-primary: oklch(0.1205 0.0097 252.8876);
+  --new: oklch(0.7171 0.1878 45.3388);
+  --new-mark: oklch(0.7171 0.1878 45.3388);
+  --new-wash: oklch(0.7171 0.1878 45.3388 / 0.14);
+  --danger: oklch(0.6789 0.2096 21.9475);
+  --highlight: oklch(0.2804 0.0598 257.709);
+  --marker: oklch(0.7171 0.1878 45.3388 / 0.22);
   /* Tags: translucent chart tints with bright text, not solid blocks. */
-  --tag-bg: oklch(0.3779 0.0118 285.8207);
-  --tag-fg: oklch(0.88 0.006 278);
-  --tag-angular-bg: oklch(0.8092 0.1122 345.1956 / 0.18);
-  --tag-angular-fg: oklch(0.86 0.08 345);
-  --tag-dotnet-bg: oklch(0.7865 0.1232 309.4396 / 0.18);
-  --tag-dotnet-fg: oklch(0.86 0.08 309);
-  --tag-typescript-bg: oklch(0.8406 0.0699 242.1914 / 0.18);
-  --tag-typescript-fg: oklch(0.88 0.06 242);
-  --tag-release-bg: oklch(0.9075 0.0946 165.054 / 0.16);
-  --tag-release-fg: oklch(0.9 0.08 165);
-  --scrim: oklch(0 0 0 / 0.55);
-  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --tag-bg: oklch(0.2411 0.0097 248.229);
+  --tag-fg: oklch(0.9008 0.0105 247.9427);
+  --tag-angular-bg: oklch(0.6604 0.2297 5.1368 / 0.18);
+  --tag-angular-fg: oklch(0.82 0.11 5);
+  --tag-dotnet-bg: oklch(0.6203 0.1997 300.1454 / 0.2);
+  --tag-dotnet-fg: oklch(0.82 0.11 300);
+  --tag-typescript-bg: oklch(0.6496 0.1885 257.7207 / 0.18);
+  --tag-typescript-fg: oklch(0.82 0.1 258);
+  --tag-release-bg: oklch(0.6943 0.1346 171.9868 / 0.16);
+  --tag-release-fg: oklch(0.84 0.1 172);
+  --scrim: oklch(0 0 0 / 0.6);
+  --shadow-card: 0px 4px 40px 0px hsl(0 0% 0% / 0.45), 0px 1px 2px -1px hsl(0 0% 0% / 0.45);
+  --shadow-card-hover: 0px 4px 40px 0px hsl(0 0% 0% / 0.6), 0px 4px 6px -1px hsl(0 0% 0% / 0.45);
 }
 
 *,
