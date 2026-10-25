@@ -1,60 +1,59 @@
 /* keepMeUpdated — design tokens and base styles.
-   The tweakcn "Apple Liquid Glass" theme: iOS blue for links and primary buttons, cool blue-grey neutrals, very round
-   corners and wide soft shadows. The theme's chart colours give each stack's tags a tone (Angular, .NET, TypeScript,
-   releases) and its orange marks what's new. Inter for reading, JetBrains Mono for the developer details. Dark is
-   near-black with lifted cards. */
+   The tweakcn "Google" theme: a white page, Google blue (#1a73e8) for links and primary buttons, and Google's red,
+   yellow and green as the tag tones for each stack (Angular, .NET, TypeScript, releases); yellow marks what's new.
+   The device's own system font, as Google's products use. Dark is Google's #202124 with lighter blues for text. */
 
 :root {
   color-scheme: light;
-  --paper: oklch(0.97 0.0029 264.542);
-  --paper-raised: oklch(0.9394 0.0046 258.3251);
+  --paper: oklch(1 0 0);
+  --paper-raised: oklch(0.9629 0.0025 228.7843);
   --card: oklch(1 0 0);
-  --field: oklch(0.9205 0.0052 247.8807);
-  --ink: oklch(0.1801 0.0191 255.7673);
-  --ink-soft: oklch(0.2786 0.0211 257.2774);
-  --ink-muted: oklch(0.4789 0.0204 256.3497);
-  --rule: oklch(0.8994 0.0064 255.4779);
-  --rule-strong: oklch(0.85 0.008 256);
+  --field: oklch(0.9629 0.0025 228.7843);
+  --ink: oklch(0.2479 0.0058 271.1764);
+  --ink-soft: oklch(0.37 0.008 262);
+  --ink-muted: oklch(0.4979 0.0094 253.9144);
+  --rule: oklch(0.8941 0.0059 264.5303);
+  --rule-strong: oklch(0.84 0.007 264);
   /* The line under each day's heading. */
   --day-rule: var(--ink);
   /* Outline around the logo's tile; only needed on dark pages. */
   --logo-ring: transparent;
-  /* Blue as text, links and outlines: a shade deeper than the theme's, to stay readable on the grey page. */
-  --accent: oklch(0.55 0.19 258);
-  --accent-strong: oklch(0.3232 0.1376 260.7577);
-  --accent-wash: oklch(0.9209 0.0294 257.7666);
+  /* Blue as text, links and outlines. */
+  --accent: oklch(0.5737 0.1946 257.8578);
+  --accent-strong: oklch(0.5 0.19 258);
+  --accent-wash: oklch(0.9532 0.0207 261.7717);
   /* Blue as a solid fill (primary buttons, switches). */
-  --primary: oklch(0.6007 0.1903 257.9419);
+  --primary: oklch(0.5737 0.1946 257.8578);
   --on-primary: oklch(1 0 0);
-  /* What's new: the theme's orange. */
-  --new: oklch(0.56 0.17 45);
-  --new-mark: oklch(0.6806 0.1901 45.0513);
-  --new-wash: oklch(0.6806 0.1901 45.0513 / 0.12);
-  --danger: oklch(0.56 0.21 25);
-  --highlight: oklch(0.9209 0.0294 257.7666);
-  /* Highlighter stroke behind TL;DR text: the theme's orange, softened. */
-  --marker: oklch(0.6806 0.1901 45.0513 / 0.18);
-  /* Topic tags, one chart colour per stack: background / text. */
-  --tag-bg: oklch(0.9394 0.0046 258.3251);
-  --tag-fg: oklch(0.2786 0.0211 257.2774);
-  --tag-angular-bg: oklch(0.6198 0.2297 5.1656 / 0.12);
-  --tag-angular-fg: oklch(0.5 0.2 5);
-  --tag-dotnet-bg: oklch(0.5495 0.2003 300.1164 / 0.12);
-  --tag-dotnet-fg: oklch(0.5 0.2 300);
-  --tag-typescript-bg: oklch(0.6007 0.1903 257.9419 / 0.12);
-  --tag-typescript-fg: oklch(0.5 0.18 258);
-  --tag-release-bg: oklch(0.6369 0.1247 171.0112 / 0.14);
-  --tag-release-fg: oklch(0.46 0.09 171);
+  /* What's new: Google yellow for the dot, a deeper amber for the text. */
+  --new: oklch(0.55 0.13 70);
+  --new-mark: oklch(0.8304 0.1699 84.0143);
+  --new-wash: oklch(0.8304 0.1699 84.0143 / 0.16);
+  --danger: oklch(0.5785 0.2063 29.0133);
+  --highlight: oklch(0.9532 0.0207 261.7717);
+  /* Highlighter stroke behind TL;DR text: Google yellow, softened. */
+  --marker: oklch(0.8304 0.1699 84.0143 / 0.3);
+  /* Topic tags, one Google colour per stack: background / text. */
+  --tag-bg: oklch(0.9629 0.0025 228.7843);
+  --tag-fg: oklch(0.37 0.008 262);
+  --tag-angular-bg: oklch(0.6257 0.2058 29.0773 / 0.1);
+  --tag-angular-fg: oklch(0.52 0.19 29);
+  --tag-dotnet-bg: oklch(0.8304 0.1699 84.0143 / 0.2);
+  --tag-dotnet-fg: oklch(0.48 0.11 70);
+  --tag-typescript-bg: oklch(0.6304 0.18 259.956 / 0.1);
+  --tag-typescript-fg: oklch(0.5 0.18 259);
+  --tag-release-bg: oklch(0.6475 0.1603 148.4955 / 0.12);
+  --tag-release-fg: oklch(0.47 0.12 148);
   /* Behind other sites' icons, which assume a white page — in both themes. */
   --icon-tile: #ffffff;
-  --scrim: oklch(0.1801 0.0191 255.7673 / 0.4);
-  --shadow-card: 0px 2px 28px 0px hsl(214.7368 10.8571% 34.3137% / 0.1), 0px 1px 2px -1px hsl(214.7368 10.8571% 34.3137% / 0.1);
-  --shadow-card-hover: 0px 2px 28px 0px hsl(214.7368 10.8571% 34.3137% / 0.16), 0px 4px 6px -1px hsl(214.7368 10.8571% 34.3137% / 0.1);
+  --scrim: oklch(0.2479 0.0058 271.1764 / 0.45);
+  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
 
-  --font-head: 'Inter', sans-serif;
-  --font-title: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-head: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-title: var(--font-head);
+  --font-body: var(--font-head);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   /* Type scale (major third). */
   --step--1: 0.875rem;
@@ -74,8 +73,8 @@
   --s-7: 48px;
   --s-8: 64px;
 
-  --radius: calc(1.5rem - 2px);
-  --radius-card: calc(1.5rem + 4px);
+  --radius: calc(0.625rem - 2px);
+  --radius-card: calc(0.625rem + 4px);
   --measure: 68ch;
   --page: 1120px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -85,42 +84,44 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: oklch(0.1492 0.0093 263.9667);
-  --paper-raised: oklch(0.2411 0.0097 248.229);
-  --card: oklch(0.1993 0.0111 260.661);
-  --field: oklch(0.2207 0.0091 255.6084);
-  --ink: oklch(0.9602 0.0034 247.8587);
-  --ink-soft: oklch(0.9008 0.0105 247.9427);
-  --ink-muted: oklch(0.6806 0.0194 245.5027);
-  --rule: oklch(0.28 0.0102 260.7048);
-  --rule-strong: oklch(0.34 0.012 260);
-  --day-rule: oklch(0.34 0.012 260);
-  --logo-ring: oklch(0.28 0.0102 260.7048);
-  --accent: oklch(0.6496 0.1885 257.7207);
-  --accent-strong: oklch(0.8435 0.0803 251.0277);
-  --accent-wash: oklch(0.2804 0.0598 257.709);
-  --primary: oklch(0.6496 0.1885 257.7207);
-  --on-primary: oklch(0.1205 0.0097 252.8876);
-  --new: oklch(0.7171 0.1878 45.3388);
-  --new-mark: oklch(0.7171 0.1878 45.3388);
-  --new-wash: oklch(0.7171 0.1878 45.3388 / 0.14);
-  --danger: oklch(0.6789 0.2096 21.9475);
-  --highlight: oklch(0.2804 0.0598 257.709);
-  --marker: oklch(0.7171 0.1878 45.3388 / 0.22);
-  /* Tags: translucent chart tints with bright text, not solid blocks. */
-  --tag-bg: oklch(0.2411 0.0097 248.229);
-  --tag-fg: oklch(0.9008 0.0105 247.9427);
-  --tag-angular-bg: oklch(0.6604 0.2297 5.1368 / 0.18);
-  --tag-angular-fg: oklch(0.82 0.11 5);
-  --tag-dotnet-bg: oklch(0.6203 0.1997 300.1454 / 0.2);
-  --tag-dotnet-fg: oklch(0.82 0.11 300);
-  --tag-typescript-bg: oklch(0.6496 0.1885 257.7207 / 0.18);
-  --tag-typescript-fg: oklch(0.82 0.1 258);
-  --tag-release-bg: oklch(0.6943 0.1346 171.9868 / 0.16);
-  --tag-release-fg: oklch(0.84 0.1 172);
-  --scrim: oklch(0 0 0 / 0.6);
-  --shadow-card: 0px 4px 40px 0px hsl(0 0% 0% / 0.45), 0px 1px 2px -1px hsl(0 0% 0% / 0.45);
-  --shadow-card-hover: 0px 4px 40px 0px hsl(0 0% 0% / 0.6), 0px 4px 6px -1px hsl(0 0% 0% / 0.45);
+  --paper: oklch(0.2479 0.0058 271.1764);
+  --paper-raised: oklch(0.3334 0.0071 274.7646);
+  --card: oklch(0.2852 0.0056 271.2163);
+  --field: oklch(0.3334 0.0071 274.7646);
+  --ink: oklch(0.9364 0.0046 258.3251);
+  --ink-soft: oklch(0.86 0.007 258);
+  --ink-muted: oklch(0.7028 0.0111 247.9859);
+  --rule: oklch(0.3688 0.0074 240.0188);
+  --rule-strong: oklch(0.43 0.008 240);
+  --day-rule: oklch(0.43 0.008 240);
+  --logo-ring: oklch(0.3688 0.0074 240.0188);
+  /* Google's lighter dark-mode blue (#8ab4f8) for text, so links stay readable. */
+  --accent: oklch(0.7735 0.1 258);
+  --accent-strong: oklch(0.84 0.07 258);
+  --accent-wash: oklch(0.3467 0.0731 256.6895);
+  --primary: oklch(0.6304 0.18 259.956);
+  --on-primary: oklch(1 0 0);
+  --new: oklch(0.8304 0.1699 84.0143);
+  --new-mark: oklch(0.8304 0.1699 84.0143);
+  --new-wash: oklch(0.8304 0.1699 84.0143 / 0.14);
+  /* Google's dark-mode red (#f28b82). */
+  --danger: oklch(0.7461 0.1314 23.6);
+  --highlight: oklch(0.3467 0.0731 256.6895);
+  --marker: oklch(0.8304 0.1699 84.0143 / 0.2);
+  /* Tags: translucent Google tints with bright text, not solid blocks. */
+  --tag-bg: oklch(0.3334 0.0071 274.7646);
+  --tag-fg: oklch(0.86 0.007 258);
+  --tag-angular-bg: oklch(0.6257 0.2058 29.0773 / 0.2);
+  --tag-angular-fg: oklch(0.8 0.11 29);
+  --tag-dotnet-bg: oklch(0.8304 0.1699 84.0143 / 0.16);
+  --tag-dotnet-fg: oklch(0.86 0.13 84);
+  --tag-typescript-bg: oklch(0.6304 0.18 259.956 / 0.2);
+  --tag-typescript-fg: oklch(0.8 0.1 259);
+  --tag-release-bg: oklch(0.6475 0.1603 148.4955 / 0.18);
+  --tag-release-fg: oklch(0.82 0.13 148);
+  --scrim: oklch(0 0 0 / 0.55);
+  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
 }
 
 *,
