@@ -4,7 +4,7 @@ import { firstValueFrom } from 'rxjs';
 import type { SiteConfig } from '../../../shared/models';
 import { dataUrl } from './api';
 
-/** The site's own API (a Netlify Function) that makes GitHub calls with the server's token for a signed-in admin. */
+/** The site's own API (a Cloudflare Pages Function) that makes GitHub calls with the server's token for a signed-in admin. */
 export const ADMIN_API = '/api/github';
 const COMMIT_ATTEMPTS = 3;
 

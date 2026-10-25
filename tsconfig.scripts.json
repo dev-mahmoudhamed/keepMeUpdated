@@ -6,5 +6,5 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["scripts", "shared", "netlify", "config"]
+  "include": ["scripts", "shared", "server", "functions", "config"]
 }

@@ -5,9 +5,6 @@ import { buildPublic, repoFromRemote } from './lib/content';
 
 function detectRepo(): string {
   if (process.env['GITHUB_REPOSITORY']) return process.env['GITHUB_REPOSITORY'];
-  // Set by Netlify during a build.
-  const fromNetlify = repoFromRemote(process.env['REPOSITORY_URL'] ?? '');
-  if (fromNetlify) return fromNetlify;
   try {
     const remote = execSync('git remote get-url origin', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
     return repoFromRemote(remote) ?? 'owner/keepMeUpdated';

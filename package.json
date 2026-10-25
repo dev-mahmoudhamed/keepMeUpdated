@@ -8,7 +8,8 @@
     "test": "ng test",
     "test:scripts": "vitest run -c vitest.scripts.config.ts",
     "gather": "tsx scripts/gather.ts",
-    "build:data": "tsx scripts/build-data.ts"
+    "build:data": "tsx scripts/build-data.ts",
+    "preview": "npm run build && npx -y wrangler@4.152.0 pages dev dist/keepMeUpdated/browser --d1 DB"
   },
   "private": true,
   "packageManager": "npm@11.19.0",
@@ -21,7 +22,6 @@
     "@angular/router": "^22.2.0",
     "@google/genai": "^2.30.0",
     "@lucide/angular": "^1.59.0",
-    "@netlify/blobs": "^11.1.4",
     "@tiptap/core": "^3.32.0",
     "@tiptap/extension-image": "^3.32.0",
     "@tiptap/extension-link": "^3.32.0",
@@ -39,7 +39,6 @@
     "@angular/build": "^22.2.3",
     "@angular/cli": "^22.2.3",
     "@angular/compiler-cli": "^22.2.0",
-    "@netlify/functions": "^6.0.2",
     "@types/node": "^24.19.2",
     "@types/sanitize-html": "^2.16.2",
     "jsdom": "^30.0.0",

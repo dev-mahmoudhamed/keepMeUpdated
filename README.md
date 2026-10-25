@@ -2,8 +2,9 @@
 
 Developer news that matters, gathered every morning. A GitHub Actions workflow reads the sources in
 [sources.md](sources.md), collects every article from the last 4 months, posts each story once (with every site that
-reported it), writes a short summary with Gemini, and commits the result. Netlify then builds and publishes the site.
-News is kept for **4 months** (120 days), then deleted. There is no database: the data is a couple of JSON files in this repository.
+reported it), writes a short summary with Gemini, and commits the result. Cloudflare Pages then builds and publishes the site.
+News is kept for **4 months** (120 days), then deleted. The news is a couple of JSON files in this repository; the only
+database is a one-row D1 table holding the admin's pending sign-in code.
 
 - **Site:** Cards or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
@@ -21,9 +22,9 @@ GitHub Actions (03:00 UTC daily, Admin → Gather runs → "Run gather now", or 
                       deletes news older than 4 months
   └─ commits content/posts.json + content/state.json
 
-Netlify (on every push to main)
+Cloudflare Pages (on every push to main)
   └─ npm run build    → content/ → public/data/, then the Angular site → dist/keepMeUpdated/browser
-  └─ netlify/functions → /api/auth/* (email-code sign-in) and /api/github/* (the admin's repository calls)
+  └─ functions/api/[[path]].ts → /api/auth/* (email-code sign-in) and /api/github/* (the admin's repository calls)
 
 Admin panel (in your browser)
   └─ signs in with a code sent to ADMIN_EMAIL; the session is an HttpOnly cookie
@@ -38,17 +39,28 @@ Admin panel (in your browser)
 | `content/state.json` | Seen links, run history, source fetch results, settings. |
 | `scripts/gather.ts` | The gather command. Its code is in `scripts/lib/`: `fetch.ts` (sources and articles), `ai.ts` (grouping and summaries), `gather.ts` (the three steps), `content.ts` (data files). |
 | `scripts/build-data.ts` | Writes `public/data/` for the site before every build. |
-| `netlify/` | The sign-in and admin API functions (`functions/`) and their logic (`lib.ts`). |
+| `functions/api/[[path]].ts` | The admin API: one Cloudflare Pages Function for everything under `/api/`. |
+| `server/lib.ts` | Its logic: sign-in codes and sessions (Web Crypto, D1) and the GitHub proxy. |
 | `shared/` | Types and helpers used by both the scripts and the site. |
-| `netlify.toml` | Netlify build, publish folder, functions and SPA routing. |
+| `public/_headers` | Cloudflare response headers (the data files are never cached). |
 | `.github/workflows/gather.yml` | The daily gather. |
 | `src/` | The Angular 22 site and admin panel. |
 
 ## Setup (once)
 
-1. **Connect the repository to Netlify** — Add new project → Import from Git → this repository. The build settings come
-   from `netlify.toml`; leave the build command and publish directory in the UI empty (or set them to `npm run build`
-   and `dist/keepMeUpdated/browser`).
+1. **Create the Pages project** — Cloudflare dashboard → Workers & Pages → Create → **Pages** tab →
+   **Import an existing Git repository** → this repository. (Not the Workers flow: it deploys with `wrangler deploy`
+   and doesn't run the build below.) Build settings:
+
+   | Setting | Value |
+   |---|---|
+   | Framework preset | None |
+   | Build command | `npm run build` |
+   | Build output directory | `dist/keepMeUpdated/browser` |
+   | Root directory | (empty) |
+
+   Node 24 comes from `.nvmrc`. Deep links like `/p/<slug>` and `/admin` work by themselves: without a `404.html`,
+   Pages serves `index.html` for them.
 2. **Add your Gemini key to GitHub** — Settings → Secrets and variables → Actions → **New repository secret**:
    name `GEMINI_API_KEY`, value: your key from [Google AI Studio](https://aistudio.google.com/apikey).
    Without it the gather still runs, using the feeds' own descriptions instead of AI summaries.
@@ -60,7 +72,11 @@ Admin panel (in your browser)
 4. **Create a [Resend](https://resend.com) account** with the admin email address, and an API key (API Keys → Create).
    Resend's test sender can mail the account's own address without a domain. To send from your own domain, verify it in
    Resend and set `EMAIL_FROM`.
-5. **Add the environment variables in Netlify** — Project configuration → Environment variables (scope: Functions):
+5. **Create the sign-in database** — Workers & Pages → D1 SQL Database → Create → name it `keepmeupdated`. Then in the
+   Pages project → Settings → Bindings → Add → D1 database: variable name **`DB`**, database `keepmeupdated`. The
+   table is created on the first sign-in.
+6. **Add the variables in Cloudflare** — the Pages project → Settings → Variables and Secrets (Production), type
+   **Secret** for the keys:
 
    | Name | Value |
    |---|---|
@@ -71,11 +87,11 @@ Admin panel (in your browser)
    | `GITHUB_REPO` | `owner/name` of this repository. |
    | `EMAIL_FROM` | Optional, e.g. `keepMeUpdated <admin@yourdomain.com>` (needs a verified domain in Resend). |
 
-   Then **Deploys → Trigger deploy** so the functions pick them up.
-6. Open `https://<your-site>.netlify.app/admin`, enter the admin email, and sign in with the code from the email.
+   Then Deployments → the latest one → **Retry deployment** so the function picks them up.
+7. Open `https://<your-project>.pages.dev/admin`, enter the admin email, and sign in with the code from the email.
 
 No keys live in this repository. The Gemini key is only in GitHub Secrets; the GitHub token, Resend key and auth secret
-are only in Netlify's environment variables. The browser never sees any of them.
+are only in Cloudflare's variables and secrets. The browser never sees any of them.
 
 ## Schedule and retention
 
@@ -141,15 +157,14 @@ npm install
 npm run dev
 ```
 
-The site opens at http://localhost:4200 with the data from `content/`. For the admin panel, run the site and the
-functions together with the Netlify CLI (it reads the environment variables from your Netlify project once you've run
-`npx netlify link`):
+The site opens at http://localhost:4200 with the data from `content/`. For the admin panel, build the site and serve it
+with the function and a local D1 database the way Cloudflare does (Wrangler reads the variables from `.env`, see below):
 
 ```bash
-npx netlify dev
+npm run preview
 ```
 
-That serves everything on http://localhost:8888.
+That serves everything on http://localhost:8788. Rebuild (run it again) after changing the site.
 
 Run a gather on your machine (changes `content/` files; commit them if you want to keep them):
 
@@ -163,16 +178,16 @@ GEMINI_API_KEY=your-key npm run gather
 
 ### Local environment variables (`IS_DEV_ENV`)
 
-To use your own values locally instead of Netlify's:
+Copy `.env.example` to `.env` (git-ignored) and replace the `dummy dummy dummy` values. `npm run preview` always reads
+it. For `npm run gather`:
 
-1. Copy `.env.example` to `.env` (git-ignored) and replace the `dummy dummy dummy` values.
-2. In `config/dev-env.ts`, set `IS_DEV_ENV = true`.
-3. Run `npx netlify dev` or `npm run gather`. The log lists the variable names it loaded from `.env`.
+1. In `config/dev-env.ts`, set `IS_DEV_ENV = true`.
+2. Run `npm run gather`. The log lists the variable names it loaded from `.env`.
 
-Set it back to `false` before committing. A test fails while it's `true`, and on Netlify and GitHub Actions the
-variables always come from their own settings.
+Set it back to `false` before committing. A test fails while it's `true`, and on GitHub Actions the variables always
+come from its own settings.
 
-`.netlify/` (git-ignored) is the Netlify CLI's link to your site, made by `npx netlify link`; `netlify dev` needs it.
+`.wrangler/` (git-ignored) holds the local D1 database `npm run preview` uses.
 
 ## Tests
 

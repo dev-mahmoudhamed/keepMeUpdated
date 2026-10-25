@@ -5,9 +5,9 @@ import * as util from 'node:util';
 
 /**
  * Set to `true` ONLY on your own machine to read the variables from `.env` (copy `.env.example`)
- * when running `netlify dev` or `npm run gather` locally.
+ * when running `npm run gather` locally. (`npm run preview` reads `.env` by itself.)
  *
- * Keep it `false` in git: on Netlify and GitHub Actions the variables come from their settings.
+ * Keep it `false` in git: on GitHub Actions the variables come from its settings.
  * A test fails while it is `true`, so it can't be committed by accident.
  */
 export const IS_DEV_ENV = false;

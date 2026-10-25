@@ -1,6 +1,6 @@
 # Daily news gather. Also started by hand from the admin panel (Gather runs → Run gather now / Dry run, or a post's
 # Re-summarize, through repository_dispatch) or from GitHub (Actions → Gather news → Run workflow).
-# Its commit to main makes Netlify rebuild and publish the site.
+# Its commit to main makes Cloudflare Pages rebuild and publish the site.
 name: Gather news
 
 on:
