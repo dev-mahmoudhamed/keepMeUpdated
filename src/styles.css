@@ -1,59 +1,56 @@
 /* keepMeUpdated — design tokens and base styles.
-   The tweakcn "Google" theme: a white page, Google blue (#1a73e8) for links and primary buttons, and Google's red,
-   yellow and green as the tag tones for each stack (Angular, .NET, TypeScript, releases); yellow marks what's new.
-   The device's own system font, as Google's products use. Dark is Google's #202124 with lighter blues for text. */
+   Nord: arctic greys, frost-blue links, and soft aurora colours that mean something — each stack's tags have their
+   own colour (Angular, .NET, TypeScript, releases), and aurora orange marks what's new. Geist for reading, Geist Mono
+   for the developer details (wordmark, tags, times, counts). Dark is Nord's polar night. */
 
 :root {
   color-scheme: light;
-  --paper: oklch(1 0 0);
-  --paper-raised: oklch(0.9629 0.0025 228.7843);
-  --card: oklch(1 0 0);
-  --field: oklch(0.9629 0.0025 228.7843);
-  --ink: oklch(0.2479 0.0058 271.1764);
-  --ink-soft: oklch(0.37 0.008 262);
-  --ink-muted: oklch(0.4979 0.0094 253.9144);
-  --rule: oklch(0.8941 0.0059 264.5303);
-  --rule-strong: oklch(0.84 0.007 264);
+  --paper: #eceff4;
+  --paper-raised: #f3f5f8;
+  --card: #ffffff;
+  --ink: #2e3440;
+  --ink-soft: #4c566a;
+  --ink-muted: #656e80;
+  --rule: #d8dee9;
+  --rule-strong: #c4ccda;
   /* The line under each day's heading. */
   --day-rule: var(--ink);
-  /* Outline around the logo's tile; only needed on dark pages. */
+  /* Outline around the logo's dark tile; only needed on dark pages. */
   --logo-ring: transparent;
-  /* Blue as text, links and outlines. */
-  --accent: oklch(0.5737 0.1946 257.8578);
-  --accent-strong: oklch(0.5 0.19 258);
-  --accent-wash: oklch(0.9532 0.0207 261.7717);
-  /* Blue as a solid fill (primary buttons, switches). */
-  --primary: oklch(0.5737 0.1946 257.8578);
-  --on-primary: oklch(1 0 0);
-  /* What's new: Google yellow for the dot, a deeper amber for the text. */
-  --new: oklch(0.55 0.13 70);
-  --new-mark: oklch(0.8304 0.1699 84.0143);
-  --new-wash: oklch(0.8304 0.1699 84.0143 / 0.16);
-  --danger: oklch(0.5785 0.2063 29.0133);
-  --highlight: oklch(0.9532 0.0207 261.7717);
-  /* Highlighter stroke behind TL;DR text: Google yellow, softened. */
-  --marker: oklch(0.8304 0.1699 84.0143 / 0.3);
-  /* Topic tags, one Google colour per stack: background / text. */
-  --tag-bg: oklch(0.9629 0.0025 228.7843);
-  --tag-fg: oklch(0.37 0.008 262);
-  --tag-angular-bg: oklch(0.6257 0.2058 29.0773 / 0.1);
-  --tag-angular-fg: oklch(0.52 0.19 29);
-  --tag-dotnet-bg: oklch(0.8304 0.1699 84.0143 / 0.2);
-  --tag-dotnet-fg: oklch(0.48 0.11 70);
-  --tag-typescript-bg: oklch(0.6304 0.18 259.956 / 0.1);
-  --tag-typescript-fg: oklch(0.5 0.18 259);
-  --tag-release-bg: oklch(0.6475 0.1603 148.4955 / 0.12);
-  --tag-release-fg: oklch(0.47 0.12 148);
+  --accent: #4c6a92;
+  --accent-strong: #3e5f86;
+  --accent-wash: #e1e8f2;
+  /* What's new: aurora orange. */
+  --new: #b4652f;
+  --new-mark: #d08770;
+  --new-wash: #f6e7db;
+  --danger: #a8434d;
+  --highlight: #e5e9f0;
+  /* Highlighter stroke behind TL;DR text: aurora yellow, softened. */
+  --marker: #f1e4bf;
+  --on-accent: #ffffff;
+  /* Topic tags, one aurora tone per stack: background / text. */
+  --tag-bg: #e5e9f0;
+  --tag-fg: #4c566a;
+  --tag-angular-bg: #f3e0e2;
+  --tag-angular-fg: #9a3b45;
+  --tag-dotnet-bg: #eee3ec;
+  --tag-dotnet-fg: #7b4e73;
+  --tag-typescript-bg: #e1eaf3;
+  --tag-typescript-fg: #3e5f86;
+  --tag-release-bg: #e6efe0;
+  --tag-release-fg: #4f6b3a;
   /* Behind other sites' icons, which assume a white page — in both themes. */
   --icon-tile: #ffffff;
-  --scrim: oklch(0.2479 0.0058 271.1764 / 0.45);
-  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --scrim: rgb(46 52 64 / 0.45);
+  --shadow-card: 0 1px 2px rgb(46 52 64 / 0.05), 0 8px 22px -12px rgb(46 52 64 / 0.16);
+  --shadow-card-hover: 0 2px 4px rgb(46 52 64 / 0.07), 0 16px 34px -14px rgb(46 52 64 / 0.24);
 
-  --font-head: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-title: var(--font-head);
-  --font-body: var(--font-head);
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-head: 'Geist', system-ui, sans-serif;
+  /* Story titles: a grotesque with a bit of character. */
+  --font-title: 'Bricolage Grotesque', 'Geist', system-ui, sans-serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', monospace;
 
   /* Type scale (major third). */
   --step--1: 0.875rem;
@@ -73,8 +70,8 @@
   --s-7: 48px;
   --s-8: 64px;
 
-  --radius: calc(0.625rem - 2px);
-  --radius-card: calc(0.625rem + 4px);
+  --radius: 6px;
+  --radius-card: 12px;
   --measure: 68ch;
   --page: 1120px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -84,44 +81,41 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: oklch(0.2479 0.0058 271.1764);
-  --paper-raised: oklch(0.3334 0.0071 274.7646);
-  --card: oklch(0.2852 0.0056 271.2163);
-  --field: oklch(0.3334 0.0071 274.7646);
-  --ink: oklch(0.9364 0.0046 258.3251);
-  --ink-soft: oklch(0.86 0.007 258);
-  --ink-muted: oklch(0.7028 0.0111 247.9859);
-  --rule: oklch(0.3688 0.0074 240.0188);
-  --rule-strong: oklch(0.43 0.008 240);
-  --day-rule: oklch(0.43 0.008 240);
-  --logo-ring: oklch(0.3688 0.0074 240.0188);
-  /* Google's lighter dark-mode blue (#8ab4f8) for text, so links stay readable. */
-  --accent: oklch(0.7735 0.1 258);
-  --accent-strong: oklch(0.84 0.07 258);
-  --accent-wash: oklch(0.3467 0.0731 256.6895);
-  --primary: oklch(0.6304 0.18 259.956);
-  --on-primary: oklch(1 0 0);
-  --new: oklch(0.8304 0.1699 84.0143);
-  --new-mark: oklch(0.8304 0.1699 84.0143);
-  --new-wash: oklch(0.8304 0.1699 84.0143 / 0.14);
-  /* Google's dark-mode red (#f28b82). */
-  --danger: oklch(0.7461 0.1314 23.6);
-  --highlight: oklch(0.3467 0.0731 256.6895);
-  --marker: oklch(0.8304 0.1699 84.0143 / 0.2);
-  /* Tags: translucent Google tints with bright text, not solid blocks. */
-  --tag-bg: oklch(0.3334 0.0071 274.7646);
-  --tag-fg: oklch(0.86 0.007 258);
-  --tag-angular-bg: oklch(0.6257 0.2058 29.0773 / 0.2);
-  --tag-angular-fg: oklch(0.8 0.11 29);
-  --tag-dotnet-bg: oklch(0.8304 0.1699 84.0143 / 0.16);
-  --tag-dotnet-fg: oklch(0.86 0.13 84);
-  --tag-typescript-bg: oklch(0.6304 0.18 259.956 / 0.2);
-  --tag-typescript-fg: oklch(0.8 0.1 259);
-  --tag-release-bg: oklch(0.6475 0.1603 148.4955 / 0.18);
-  --tag-release-fg: oklch(0.82 0.13 148);
-  --scrim: oklch(0 0 0 / 0.55);
-  --shadow-card: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-card-hover: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  /* A deeper polar night than Nord's own #2e3440, so cards (in #2e3440) lift off the page. */
+  --paper: #242933;
+  --paper-raised: #2a303b;
+  --card: #2e3440;
+  --ink: #eceff4;
+  --ink-soft: #d8dee9;
+  --ink-muted: #9aa4b8;
+  --rule: #363d4b;
+  --rule-strong: #465063;
+  --day-rule: #4c566a;
+  --logo-ring: #4c566a;
+  --accent: #88c0d0;
+  --accent-strong: #a3d0dc;
+  --accent-wash: rgb(136 192 208 / 0.14);
+  --new: #e8ac90;
+  --new-mark: #d08770;
+  --new-wash: rgb(208 135 112 / 0.14);
+  --danger: #e08a92;
+  --highlight: #2a303b;
+  --marker: rgb(235 203 139 / 0.22);
+  --on-accent: #242933;
+  /* Tags: translucent aurora tints with bright text, not solid blocks. */
+  --tag-bg: rgb(216 222 233 / 0.08);
+  --tag-fg: #d8dee9;
+  --tag-angular-bg: rgb(191 97 106 / 0.22);
+  --tag-angular-fg: #eda7ae;
+  --tag-dotnet-bg: rgb(180 142 173 / 0.22);
+  --tag-dotnet-fg: #d9b9d2;
+  --tag-typescript-bg: rgb(129 161 193 / 0.22);
+  --tag-typescript-fg: #b7cee6;
+  --tag-release-bg: rgb(163 190 140 / 0.2);
+  --tag-release-fg: #c2d9ad;
+  --scrim: rgb(0 0 0 / 0.55);
+  --shadow-card: 0 0 0 1px rgb(255 255 255 / 0.02), 0 10px 26px -16px rgb(0 0 0 / 0.75);
+  --shadow-card-hover: 0 0 0 1px rgb(255 255 255 / 0.04), 0 18px 38px -18px rgb(0 0 0 / 0.85);
 }
 
 *,
@@ -361,14 +355,13 @@ button {
 }
 
 .btn--primary {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: var(--on-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
 }
 
 .btn--primary:hover {
-  background: color-mix(in oklch, var(--primary) 90%, black);
-  border-color: color-mix(in oklch, var(--primary) 90%, black);
+  border-color: var(--ink);
 }
 
 .btn--ghost {
@@ -414,7 +407,7 @@ button {
   padding: 8px 12px;
   border-radius: var(--radius);
   border: 1px solid var(--rule);
-  background: var(--field);
+  background: var(--paper-raised);
   transition: border-color var(--dur) var(--ease);
 }
 

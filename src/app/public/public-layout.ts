@@ -32,8 +32,8 @@ import { Masthead } from './masthead/masthead';
       left: var(--s-4);
       top: -60px;
       padding: var(--s-2) var(--s-4);
-      background: var(--primary);
-      color: var(--on-primary);
+      background: var(--accent);
+      color: var(--on-accent);
       border-radius: var(--radius);
       z-index: 10;
     }
