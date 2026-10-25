@@ -1,5 +1,33 @@
 [
   {
+    "id": "89ce06ce-1bdc-4969-9023-9eb6dd48ac35",
+    "slug": "net-october-2026-out-of-band-security-updates",
+    "title": ".NET October 2026 Out-of-Band Security Updates",
+    "tldr": "Out-of-band security updates for .NET address the Brotli decoder vulnerability and tarball ownership vulnerability. The post .NET October 2026 Out-of-Band Security Updates appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> Out-of-band security updates for .NET address the Brotli decoder vulnerability and tarball ownership vulnerability. The post .NET October 2026 Out-of-Band Security Updates appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-october-2026-oob-security-updates/",
+        "title": ".NET October 2026 Out-of-Band Security Updates",
+        "publishedAt": "2026-10-25T18:45:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-25T20:07:53.331Z",
+    "updatedAt": "2026-10-25T20:07:53.331Z",
+    "publishedAt": "2026-10-25T18:45:00.000Z",
+    "runId": "927fd6ea-b0ae-47cc-885c-e787874ff36b"
+  },
+  {
     "id": "f9dbb26e-116e-42e3-9347-d892e37b0356",
     "slug": "aspire-13-updates",
     "title": "Aspire 13 updates",
