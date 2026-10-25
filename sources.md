@@ -27,7 +27,7 @@ Why each site is here (and which were left out) is in [docs/resources/news-sourc
 | Angular University | https://blog.angular-university.io/rss/ | https://blog.angular-university.io | angular | yes |  |
 | Angular Training Blog | https://blog.angulartraining.com/feed | https://blog.angulartraining.com | angular | yes |  |
 | Angular Addicts | https://www.angularaddicts.com/feed | https://www.angularaddicts.com | angular, newsletter | yes |  |
-| Angular in Depth | https://angularindepth.com/feed.xml | https://angularindepth.com | angular, community | no |  |
+| Angular in Depth | https://angularindepth.com/feed.xml | https://angularindepth.com | angular, community | yes |  |
 
 ## .NET
 
