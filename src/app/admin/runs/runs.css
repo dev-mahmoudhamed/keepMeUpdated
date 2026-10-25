@@ -143,6 +143,13 @@ summary:hover {
   gap: var(--s-2);
 }
 
+.report-link {
+  justify-self: start;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .errors-title {
   font-size: 0.8125rem;
   font-weight: 600;

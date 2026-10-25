@@ -8,8 +8,9 @@ database is a one-row D1 table holding the admin's pending sign-in code.
 
 - **Site:** Cards or List view, topic filters, search, a white theme with an optional dark theme.
 - **Post page:** TL;DR, AI summary, and a "Read the original" list with every site that covered the story.
-- **Admin (`/admin`):** write and edit posts with a rich-text editor, publish or hide them, manage sources, and start a
-  gather. Sign in with a 6-digit code emailed to the admin address.
+- **Admin (`/admin`):** write and edit posts with a rich-text editor, publish or hide them, manage sources, start a
+  gather, and see in **Report** where every link of a gather went (already on the site, too old, or into which post,
+  and the day that post shows under). Sign in with a 6-digit code emailed to the admin address.
 
 ## How it works
 

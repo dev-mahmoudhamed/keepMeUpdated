@@ -36,6 +36,11 @@ export const adminRoutes: Routes = [
         loadComponent: () => import('./sources/sources').then((m) => m.Sources),
       },
       {
+        path: 'report',
+        title: 'Report · Admin',
+        loadComponent: () => import('./report/report').then((m) => m.Report),
+      },
+      {
         path: 'runs',
         title: 'Gather runs · Admin',
         loadComponent: () => import('./runs/runs').then((m) => m.Runs),

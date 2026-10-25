@@ -1,0 +1,186 @@
+<header class="head">
+  <div>
+    <h1>Report</h1>
+    <p class="sub">Where every link of a gather went: already on the site, too old, repeated, or into a post, and the day each new post shows under. Posts are dated by their article, so a gather can add posts to days and months in the past.</p>
+  </div>
+  @if (runs().length) {
+    <div class="field picker">
+      <label for="run-picker">Gather run</label>
+      <select id="run-picker" class="input" [value]="selected()?.id" (change)="pick($any($event.target).value)">
+        @for (r of runs(); track r.id) {
+          <option [value]="r.id">{{ when(r.startedAt) }} · {{ triggerLabel[r.trigger] }} · {{ r.stats.created }} new posts</option>
+        }
+      </select>
+    </div>
+  }
+</header>
+
+@if (data.isLoading()) {
+  <div class="skeleton" style="height: 320px"></div>
+} @else if (data.error()) {
+  <p class="empty">Couldn’t load the gather history from GitHub. Try again in a moment.</p>
+} @else if (!selected()) {
+  <p class="empty">No gathers have run yet. Start one from Gather runs.</p>
+} @else if (!view()) {
+  @let run = selected()!;
+  <p class="empty">
+    This run finished before detailed reports were added, so only its totals were kept: it read {{ run.stats.fetched }} links, found
+    {{ run.stats.fresh }} new, made {{ run.stats.created }} new posts and added links to {{ run.stats.merged }} existing posts. Runs from now on
+    show where every link went.
+  </p>
+} @else {
+  @let v = view()!;
+
+  <section aria-labelledby="funnel-title">
+    <h2 id="funnel-title" class="section-title">Where the links went</h2>
+    <ol class="funnel" role="list">
+      <li class="row row--total">
+        <span class="label">Read from {{ v.sourceCount }} sources</span>
+        <span class="num mono">{{ v.read }}</span>
+        <span class="bar" style="--w: 100%"></span>
+      </li>
+      <li class="row">
+        <span class="label">Already on the site <span class="why">posted by an earlier gather</span></span>
+        <span class="num mono">{{ v.onSite }}</span>
+        <span class="bar bar--muted" [style.--w.%]="share(v.onSite, v)"></span>
+      </li>
+      <li class="row">
+        <span class="label">Older than {{ retentionDays() }} days <span class="why">outside the window the site keeps</span></span>
+        <span class="num mono">{{ v.tooOld }}</span>
+        <span class="bar bar--muted" [style.--w.%]="share(v.tooOld, v)"></span>
+      </li>
+      <li class="row">
+        <span class="label">Repeated <span class="why">two feeds, or one feed twice, listed the same link</span></span>
+        <span class="num mono">{{ v.repeated }}</span>
+        <span class="bar bar--muted" [style.--w.%]="share(v.repeated, v)"></span>
+      </li>
+      @if (v.failedSources) {
+        <li class="row row--warn">
+          <span class="label">Sources that failed <span class="why">their links weren’t read</span></span>
+          <span class="num mono">{{ v.failedSources }}</span>
+          <span class="bar bar--warn" style="--w: 2%"></span>
+        </li>
+      }
+      <li class="row row--fresh">
+        <span class="label">New links</span>
+        <span class="num mono">{{ v.fresh }}</span>
+        <span class="bar" [style.--w.%]="share(v.fresh, v)"></span>
+      </li>
+      <li class="row row--sub">
+        <span class="label">New posts <span class="why">from {{ count(v.newPostLinks, 'link') }}; links about one story share a post</span></span>
+        <span class="num mono">{{ v.newPosts }}</span>
+        <span class="bar bar--accent" [style.--w.%]="share(v.newPostLinks, v)"></span>
+      </li>
+      <li class="row row--sub">
+        <span class="label">Added to existing posts <span class="why">{{ count(v.addedLinks, 'link') }} into {{ count(v.addedPosts, 'post') }}</span></span>
+        <span class="num mono">{{ v.addedLinks }}</span>
+        <span class="bar bar--accent" [style.--w.%]="share(v.addedLinks, v)"></span>
+      </li>
+    </ol>
+
+    @if (v.months.length) {
+      <div class="months">
+        <p class="k">The new posts show under these months on the site</p>
+        <ul role="list">
+          @for (m of v.months; track m.label) {
+            <li><span>{{ m.label }}</span><span class="mono">{{ m.count }}</span></li>
+          }
+        </ul>
+      </div>
+    }
+  </section>
+
+  <section aria-labelledby="attention-title">
+    <h2 id="attention-title" class="section-title">Needs attention</h2>
+    @if (!v.attention.length) {
+      <p class="all-good">
+        <svg lucideCircleCheck [size]="18" aria-hidden="true"></svg>
+        Nothing is missing. Every new link from this run is in a published post.
+      </p>
+    } @else {
+      <ul class="attention" role="list">
+        @for (a of v.attention; track $index) {
+          <li [attr.data-kind]="a.kind">
+            <svg lucideTriangleAlert [size]="16" aria-hidden="true"></svg>
+            <span>{{ a.text }}</span>
+            @if (a.postId) {
+              <a [routerLink]="['/admin/posts', a.postId]">Open post</a>
+            }
+          </li>
+        }
+      </ul>
+    }
+  </section>
+
+  <section aria-labelledby="sources-title">
+    <h2 id="sources-title" class="section-title">By source</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Source</th>
+            <th scope="col" class="n">Read</th>
+            <th scope="col" class="n">On site</th>
+            <th scope="col" class="n">Too old</th>
+            <th scope="col" class="n">Repeated</th>
+            <th scope="col" class="n">New</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (s of v.sources; track s.sourceId) {
+            <tr [class.failed]="s.error">
+              <th scope="row">
+                {{ s.name }}
+                @if (s.error) {
+                  <span class="err">{{ s.error }}</span>
+                }
+              </th>
+              <td class="n mono">{{ s.read }}</td>
+              <td class="n mono">{{ s.onSite }}</td>
+              <td class="n mono">{{ s.tooOld }}</td>
+              <td class="n mono">{{ s.repeated }}</td>
+              <td class="n mono" [class.has-new]="s.fresh">{{ s.fresh }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="links-title">
+    <h2 id="links-title" class="section-title">New links and their posts</h2>
+    @if (!v.groups.length) {
+      <p class="empty">This run found no new links. Everything its sources listed was already on the site.</p>
+    } @else {
+      <ul class="groups" role="list">
+        @for (g of v.groups; track g.postId) {
+          <li>
+            <div class="group-head">
+              <span class="badge" [class.badge--new]="g.newPost">{{ g.newPost ? 'New post' : 'Added to post' }}</span>
+              @if (g.post) {
+                <a class="post-title" [routerLink]="['/admin/posts', g.post.id]">{{ g.post.title }}</a>
+                <span class="meta mono">shows on {{ day(postDate(g.post)) }}</span>
+                @if (g.post.status === 'published') {
+                  <a class="icon-link" [href]="'/p/' + g.post.slug" target="_blank" rel="noopener">
+                    <svg lucideExternalLink [size]="14" aria-hidden="true"></svg>
+                    <span class="visually-hidden">View “{{ g.post.title }}” on the site (opens in a new tab)</span>
+                  </a>
+                }
+              } @else {
+                <span class="post-title gone">Post deleted</span>
+              }
+            </div>
+            <ul class="links" role="list">
+              @for (l of g.links; track l.url) {
+                <li>
+                  <a [href]="l.url" target="_blank" rel="noopener noreferrer">{{ l.title }}</a>
+                  <span class="meta">{{ sourceNames().get(l.sourceId) ?? '' }}</span>
+                </li>
+              }
+            </ul>
+          </li>
+        }
+      </ul>
+    }
+  </section>
+}

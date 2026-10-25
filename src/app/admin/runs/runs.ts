@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, resource, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LucideCircleAlert, LucideCircleCheck, LucideExternalLink, LucideFlaskConical, LucideLoaderCircle, LucidePlay, LucideRefreshCw } from '@lucide/angular';
 import type { Run } from '../../../../shared/models';
 import { type WorkflowRun, githubErrorText } from '../../core/github';
@@ -23,7 +24,7 @@ export function nextRunAt(cron: string, now = new Date()): Date {
 
 @Component({
   selector: 'app-runs',
-  imports: [LucidePlay, LucideFlaskConical, LucideRefreshCw, LucideLoaderCircle, LucideCircleCheck, LucideCircleAlert, LucideExternalLink],
+  imports: [RouterLink, LucidePlay,LucideFlaskConical, LucideRefreshCw, LucideLoaderCircle, LucideCircleCheck, LucideCircleAlert, LucideExternalLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './runs.html',
   styleUrl: './runs.css',

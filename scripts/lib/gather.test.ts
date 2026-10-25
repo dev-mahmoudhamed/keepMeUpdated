@@ -454,6 +454,58 @@ it('keeps only the last 50 runs', async () => {
   expect(db.runs).toHaveLength(50);
 });
 
+it('reports what every link of each source became', async () => {
+  const db = baseDb([source('a'), source('b'), source('c')], [existingPost()]);
+  db.seen['https://a.test/undated'] = '2026-08-01T00:00:00.000Z';
+  const routes = {
+    'https://a.test/feed': rss([
+      { title: 'Signal Forms are stable', url: 'https://old.test/a22', date: '2026-10-16T05:00:00Z' },
+      { title: 'Undated', url: 'https://a.test/undated' },
+      { title: 'Signal inputs explained', url: 'https://a.test/inputs', date: '2026-10-17T08:00:00Z' },
+    ]),
+    'https://b.test/feed': rss([{ title: 'Signal inputs explained', url: 'https://a.test/inputs', date: '2026-10-17T08:00:00Z' }]),
+    'https://c.test/feed': new Error('HTTP 500 for https://c.test/feed'),
+  };
+  const r = await run(db, routes, new FakeAi(oneClusterPerItem()));
+
+  expect(r.report!.sources).toEqual([
+    { sourceId: 'a', name: 'A', read: 3, onSite: 1, tooOld: 1, repeated: 0, fresh: 1 },
+    { sourceId: 'b', name: 'B', read: 1, onSite: 0, tooOld: 0, repeated: 1, fresh: 0 },
+    { sourceId: 'c', name: 'C', read: 0, onSite: 0, tooOld: 0, repeated: 0, fresh: 0, error: 'HTTP 500 for https://c.test/feed' },
+  ]);
+  const created = db.posts.find((p) => p.title === 'Signal inputs explained')!;
+  expect(r.report!.links).toEqual([
+    { sourceId: 'a', title: 'Signal inputs explained', url: 'https://a.test/inputs', postId: created.id, newPost: true },
+  ]);
+});
+
+it('reports links that joined an existing post', async () => {
+  const db = baseDb([source('a'), source('b')], [existingPost()]);
+  const r = await run(db, twoSourcesSameStory, new FakeAi(sameAsP1));
+  expect(r.report!.links).toEqual([
+    { sourceId: 'a', title: 'Signal Forms are stable', url: 'https://a.test/angular-22', postId: 'p1' },
+    { sourceId: 'b', title: 'Signal Forms now stable', url: 'https://b.test/ng22', postId: 'p1' },
+  ]);
+});
+
+it('keeps the detailed report for the last 10 runs only', async () => {
+  const db = baseDb([source('a')]);
+  db.runs = Array.from({ length: 10 }, (_, i) => ({
+    id: `r${i}`,
+    trigger: 'cron' as const,
+    startedAt: '2026-01-01T00:00:00Z',
+    status: 'success' as const,
+    stats: { fetched: 0, fresh: 0, clusters: 0, created: 0, merged: 0 },
+    errors: [],
+    log: [],
+    report: { sources: [], links: [] },
+  }));
+  await run(db, twoSourcesSameStory, new FakeAi(oneClusterPerItem()));
+  expect(db.runs).toHaveLength(11);
+  expect(db.runs.slice(0, 10).every((r) => r.report)).toBe(true);
+  expect(db.runs[10].report).toBeUndefined();
+});
+
 it('puts every update of one major version into one post, newest first', async () => {
   const routes = {
     'https://a.test/feed': rss([

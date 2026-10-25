@@ -12,6 +12,7 @@ export const POSTS_FILE = 'content/posts.json';
 export const STATE_FILE = 'content/state.json';
 export const SOURCES_FILE = 'sources.md';
 export const RUNS_KEPT = 50;
+export const REPORTS_KEPT = 10;
 export const DAY_MS = 86_400_000;
 
 export const DEFAULT_SETTINGS: Settings = {

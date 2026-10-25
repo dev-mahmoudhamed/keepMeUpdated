@@ -1,10 +1,11 @@
 // The gather: (1) collect every link from the last 4 months (settings.retentionDays), site by site; (2) put every story on the site, one post
 // per story with all the sites that reported it; (3) visit the articles and summarize them with Gemini.
 import { normalizeUrl } from '../../shared/feed';
-import type { Db, Post, PostSource, Run, RunTrigger } from '../../shared/models';
+import type { Db, Post, PostSource, Run, RunReport, RunTrigger, SourceReport } from '../../shared/models';
 import { type AiClient, AiBudget, type Cluster, type RawItem, type StorySummary, SUMMARY_BATCH, TRIAGE_BATCH, chunk, releaseSeries, similarPosts } from './ai';
 import {
   DAY_MS,
+  REPORTS_KEPT,
   RUNS_KEPT,
   applyRetention,
   loadContent,
@@ -147,6 +148,25 @@ export async function gather(db: Db, deps: GatherDeps, trigger: RunTrigger): Pro
     const failed = results.filter((r) => r.error !== undefined).length;
     const fetched = results.flatMap((r) => r.items ?? []);
     run.stats.fetched = fetched.length;
+    const report: RunReport = {
+      sources: results.map((r) => ({
+        sourceId: r.source.id,
+        name: r.source.name,
+        read: r.items?.length ?? 0,
+        onSite: 0,
+        tooOld: 0,
+        repeated: 0,
+        fresh: 0,
+        ...(r.error !== undefined ? { error: r.error } : {}),
+      })),
+      links: [],
+    };
+    run.report = report;
+    const bySource = new Map(report.sources.map((s) => [s.sourceId, s]));
+    const tally = (sourceId: string, outcome: 'onSite' | 'tooOld' | 'repeated' | 'fresh') => {
+      const counts: SourceReport | undefined = bySource.get(sourceId);
+      if (counts) counts[outcome]++;
+    };
 
     // A link that is already in a post is on the site: it isn't opened or summarized again.
     const posted = new Set(db.posts.flatMap((p) => p.sources.map((s) => normalizeUrl(s.url))));
@@ -154,11 +174,22 @@ export async function gather(db: Db, deps: GatherDeps, trigger: RunTrigger): Pro
     const fresh: RawItem[] = [];
     for (const item of fetched) {
       const key = normalizeUrl(item.url);
-      if (runKeys.has(key)) continue;
+      if (runKeys.has(key)) {
+        tally(item.sourceId, 'repeated');
+        continue;
+      }
       runKeys.add(key);
       // Undated articles get the date they were first seen, so they still age out.
       const publishedAt = item.publishedAt ?? (db.seen[key] ??= nowIso);
-      if (Date.parse(publishedAt) < cutoff || posted.has(key)) continue;
+      if (posted.has(key)) {
+        tally(item.sourceId, 'onSite');
+        continue;
+      }
+      if (Date.parse(publishedAt) < cutoff) {
+        tally(item.sourceId, 'tooOld');
+        continue;
+      }
+      tally(item.sourceId, 'fresh');
       fresh.push({ ...item, publishedAt, id: `i${fresh.length}` });
     }
     run.stats.fresh = fresh.length;
@@ -213,6 +244,18 @@ export async function gather(db: Db, deps: GatherDeps, trigger: RunTrigger): Pro
     }
     log(`Grouped into ${run.stats.clusters} stories (${ai.mode} mode): ${run.stats.created} new posts, ${run.stats.merged} posts got another site's link`);
 
+    const postFor = new Map(db.posts.flatMap((p) => p.sources.map((s) => [normalizeUrl(s.url), p] as const)));
+    report.links = fresh.map((item) => {
+      const post = postFor.get(normalizeUrl(item.url));
+      return {
+        sourceId: item.sourceId,
+        title: item.title,
+        url: item.url,
+        ...(post ? { postId: post.id } : {}),
+        ...(post?.runId === run.id ? { newPost: true } : {}),
+      };
+    });
+
     // 3. Summarize: visit the articles of posts still showing the feed's description, newest first
     if (ai.mode === 'gemini') {
       const queue = db.posts
@@ -242,6 +285,7 @@ export async function gather(db: Db, deps: GatherDeps, trigger: RunTrigger): Pro
     log(`Run failed: ${errorMessage(err)}`);
   } finally {
     run.finishedAt = now().toISOString();
+    for (const old of db.runs.slice(REPORTS_KEPT)) delete old.report;
     db.runs.splice(RUNS_KEPT);
   }
   return run;

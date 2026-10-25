@@ -70,6 +70,40 @@ export interface RunStats {
   merged: number;
 }
 
+/** What one source's links became in a run. */
+export interface SourceReport {
+  sourceId: string;
+  name: string;
+  /** Links the source listed in the window. */
+  read: number;
+  /** Already in a post from an earlier run. */
+  onSite: number;
+  /** Older than settings.retentionDays. */
+  tooOld: number;
+  /** Listed earlier in the same run, by this source or another. */
+  repeated: number;
+  /** New links: each went into a post. */
+  fresh: number;
+  error?: string;
+}
+
+/** One new link of a run and the post that holds it. */
+export interface ReportLink {
+  sourceId: string;
+  title: string;
+  url: string;
+  /** Missing when the link went into no post. */
+  postId?: string;
+  /** The post was created by this run (otherwise the link joined an existing post). */
+  newPost?: boolean;
+}
+
+/** Where every link of a run went (the admin's Report tab). Kept for the last REPORTS_KEPT runs. */
+export interface RunReport {
+  sources: SourceReport[];
+  links: ReportLink[];
+}
+
 export interface Run {
   id: string;
   trigger: RunTrigger;
@@ -79,6 +113,7 @@ export interface Run {
   stats: RunStats;
   errors: { sourceId?: string; message: string }[];
   log: string[];
+  report?: RunReport;
 }
 
 export interface Db {

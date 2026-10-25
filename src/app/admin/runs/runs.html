@@ -100,6 +100,7 @@
             <span class="dur mono">{{ duration(run) }}</span>
           </summary>
           <div class="detail">
+            <a class="report-link" routerLink="/admin/report" [queryParams]="{ run: run.id }">See where every link went</a>
             <ol class="log mono">
               @for (line of run.log; track $index) {
                 <li>{{ line }}</li>

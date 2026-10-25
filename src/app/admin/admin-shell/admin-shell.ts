@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter, map, startWith } from 'rxjs';
-import { LucideExternalLink, LucideFileText, LucideLogOut, LucideRefreshCw, LucideRss, LucideX } from '@lucide/angular';
+import { LucideClipboardList, LucideExternalLink, LucideFileText, LucideLogOut, LucideRefreshCw, LucideRss, LucideX } from '@lucide/angular';
 import { AuthService } from '../../core/auth';
 import { ToastService } from '../../core/toast';
 
 @Component({
   selector: 'app-admin-shell',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, LucideFileText, LucideRss, LucideRefreshCw, LucideExternalLink, LucideLogOut, LucideX],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, LucideFileText, LucideRss, LucideClipboardList, LucideRefreshCw, LucideExternalLink, LucideLogOut, LucideX],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="shell">
@@ -20,6 +20,9 @@ import { ToastService } from '../../core/toast';
           </a>
           <a routerLink="/admin/sources" routerLinkActive="on" class="nav">
             <svg lucideRss [size]="18" aria-hidden="true"></svg>Sources
+          </a>
+          <a routerLink="/admin/report" routerLinkActive="on" class="nav">
+            <svg lucideClipboardList [size]="18" aria-hidden="true"></svg>Report
           </a>
           <a routerLink="/admin/runs" routerLinkActive="on" class="nav">
             <svg lucideRefreshCw [size]="18" aria-hidden="true"></svg>Gather runs
