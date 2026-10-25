@@ -593,13 +593,15 @@
     "id": "5dffe0a9-ac5f-4026-bf69-bb8f806bb108",
     "slug": "from-running-edge-rendered-angular-apps-on-cloudflare-workers-to-crafting-lifeli",
     "title": "From running edge-rendered Angular apps on Cloudflare Workers to crafting lifelike speech with…",
-    "tldr": "From running edge-rendered Angular apps on Cloudflare Workers to crafting lifelike speech with…",
-    "bodyHtml": "",
+    "tldr": "An Angular blog post covers running edge-rendered Angular applications on Cloudflare Workers alongside speech generation capabilities.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Focuses on deploying and running edge-rendered Angular applications on Cloudflare Workers.</li><li>Discusses creating speech with modern tooling.</li></ul><h3>Why it matters</h3><p>Running Angular applications on edge compute platforms like Cloudflare Workers can decrease latency and improve performance for globally distributed users.</p>",
     "tags": [
       "angular",
       "cloudflare-workers",
       "edge",
-      "speech-synthesis"
+      "speech-synthesis",
+      "cloudflare workers",
+      "edge computing"
     ],
     "sources": [
       {
@@ -613,9 +615,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-10-23T14:58:56.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -687,15 +689,16 @@
     "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
     "slug": "angular-cli-22-2-4-released",
     "title": "Angular CLI 22 updates",
-    "tldr": "Angular CLI 22.2.4 introduces multiple schematic enhancements and CLI behavior adjustments. Key changes include schematic template fixes and restricting shell autocompletion.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>@schematics/angular applies viewEncapsulation to generated components and uses generated class names when declaring in an NgModule.</li><li>Environments schematic corrects error and warning messages, and findModule errors now display routing module suffixes.</li><li>Unit-test builder test targets skip webWorkerTsConfig.</li><li>@angular/cli maintains schematic positional arguments in index order and only loads autocompletion in interactive shells.</li></ul><h3>Why it matters</h3><p>These updates refine schematic generation outputs and improve developer CLI interactions by preventing unintended autocompletion runs in non-interactive environments.</p>",
+    "tldr": "Angular CLI releases include version 22.2.4 alongside preview and prior patch releases.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI 22.2.4 includes schematic template adjustments and behavioral fixes.</li><li>Version 22.2.4 restricts shell autocompletion behavior.</li><li>Affects packages including @schematics/angular, @angular/cli, @angular/build, and @angular/ssr.</li></ul><h3>Why it matters</h3><p>These maintenance updates resolve template issues in schematics and fine-tune CLI interaction behavior across Angular tooling packages.</p>",
     "tags": [
       "angular",
       "angular cli",
       "typescript",
       "frontend",
       "cli",
-      "release"
+      "release",
+      "tooling"
     ],
     "sources": [
       {
@@ -723,9 +726,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-23T08:25:16.497Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-10-22T13:38:22.000Z",
     "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
   },
@@ -764,12 +767,15 @@
     "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
     "slug": "angular-components-22-updates",
     "title": "Angular components 22 updates",
-    "tldr": "material Commit Description stepper: add a styling token for header icon shape (#33963) datepicker: increse specificity of period button styles (#33970) datepicker: update parse error with signal forms when value stays null (#33951) aria Commit Description combobox: error when popup is destroyed be…",
-    "bodyHtml": "<p><strong>Angular components releases:</strong> material Commit Description stepper: add a styling token for header icon shape (#33963) datepicker: increse specificity of period button styles (#33970) datepicker: update parse error with signal forms when value stays null (#33951) aria Commit Description combobox: error when popup is destroyed before first change detection (#33974)</p><p><strong>Angular components releases:</strong> material Commit Description datepicker: increse specificity of period button styles (#33970) datepicker: update parse error with signal forms when value stays null (#33951) aria Commit Description combobox: error when popup is destroyed before first change detection (#33974)</p><p><strong>Angular components releases:</strong> material Commit Description chips: implement touch-target pattern/styles on chip component (#33614) cdk Commit Description a11y: treat inert elements as non-focusable (#33846)</p><p><strong>Angular components releases:</strong> material Commit Description chips: implement touch-target pattern/styles on chip component (#33614) cdk Commit Description a11y: treat inert elements as non-focusable (#33846)</p><p><strong>Angular components releases:</strong> google-maps Commit Description use console.error instead of hard error (#33917) material Commit Description icon: do not copy event attributes (#33929) cdk Commit Description drag-drop: remove old prefixes for fullscreen elements drag-drop: use consistent touch coordinates for bounded dragging (#33928) overlay: remove old prefixes for fullscreen elements</p><p><strong>Angular components releases:</strong> google-maps Commit Description use console.error instead of hard error (#33917) material Commit Description icon: do not copy event attributes (#33929) cdk Commit Description drag-drop: remove old prefixes for fullscreen elements drag-drop: use consistent touch coordinates for bounded dragging (#33928) overlay: remove old prefixes for fullscreen elements</p><p><strong>Angular components releases:</strong> No user facing changes in this release</p><p><strong>Angular components releases:</strong> material Commit Description icon: keep FuncIRI references on current origin (#33812) select: glitchy animation when legacy animations are enabled (#33874) cdk Commit Description overlay: allow users to opt into closing on any URL change (#33893)</p><p><strong>Angular components releases:</strong> material-luxon-adapter Commit Description add option to set zone (#33579) material Commit Description icon: add material symbol classes automatically (#33750) menu: add disabledInteractive input to MatMenuItem (#33693) core: generate Material Symbols in schematic (#33797) form-field: support signal forms in MatFormFieldControl icon: false positive in font detection (#33805) menu: allow focus to land on disabledInteractive items (#33749) cdk Commit Description overlay: temporarily hide getAttach…</p><p><strong>Angular components releases:</strong> aria Commit Description accordion: ensure right attribute is set when used as a host directive (#33839)</p>",
+    "tldr": "Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Adds a styling token for the stepper header icon shape in the Material package.</li><li>Increases the specificity of period button styles in the datepicker.</li><li>Updates datepicker parse error handling with signal forms when the value remains null.</li><li>Fixes an ARIA combobox error occurring when a popup is destroyed.</li></ul><h3>Why it matters</h3><p>The changes refine component styling customization, enhance form integration with Angular signals, and improve accessibility handling in dynamic UI states.</p>",
     "tags": [
       "angular",
       "material",
-      "release"
+      "release",
+      "angular components",
+      "angular material",
+      "accessibility"
     ],
     "sources": [
       {
@@ -846,9 +852,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-10-21T10:01:13.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -1183,11 +1189,16 @@
     "id": "f018e524-b4e2-4921-8d83-eda97eebe8d9",
     "slug": "net-10-updates",
     "title": ".NET 10 updates",
-    "tldr": "Release Notes Install Instructions Repos Aspnetcore dotnet dotnet EF Core Runtime SDK SDK Templating Templating Winforms WindowsDesktop WPF What's Changed https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-october-2026-servicing-updates/#release-changelogs",
-    "bodyHtml": "<p><strong>.NET releases:</strong> Release Notes Install Instructions Repos Aspnetcore dotnet dotnet EF Core Runtime SDK SDK Templating Templating Winforms WindowsDesktop WPF What's Changed https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-october-2026-servicing-updates/#release-changelogs</p><p><strong>.NET releases:</strong> Release Notes Install Instructions Repos Aspnetcore dotnet dotnet EF Core Runtime SDK SDK Templating Templating Winforms WindowsDesktop WPF What's Changed https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/#release-changelogs</p><p><strong>.NET releases:</strong> Release Notes Install Instructions Repos Aspnetcore dotnet dotnet dotnet EF Core Runtime SDK SDK SDK Templating Templating Templating Winforms WindowsDesktop WPF What's Changed https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-august-2026-servicing-updates/#release-changelogs</p>",
+    "tldr": "Upgrading to .NET 10 involves addressing runtime-only breaking changes, while early .NET 11 previews reveal styling, tooling, and analyzer updates.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 8 and .NET 9 reach end of support on November 10, 2026.</li><li>.NET 10 introduces runtime changes such as altered EF Core collection query translations, new SQLite timezone offset handling, and ASP.NET Core returning 401 instead of redirecting unauthenticated API requests.</li><li>In .NET 11 previews, complex controls like DataGridView were removed from Fluent styling due to pixel layout breakages.</li><li>NuGet adds functionality allowing teams to block packages younger than a designated age in hours to mitigate supply chain attacks.</li><li>New Roslyn analyzers identify AI-generated code that damages the visual designer.</li></ul><h3>Why it matters</h3><p>Because .NET 10 breaking changes occur at runtime rather than compile time, teams must perform functional testing before .NET 8 and .NET 9 reach end-of-support deadlines.</p>",
     "tags": [
       "dotnet",
-      "release"
+      "release",
+      ".net",
+      ".net 10",
+      ".net 11",
+      "security",
+      "ef core"
     ],
     "sources": [
       {
@@ -1222,9 +1233,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-10-18T18:15:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -5913,13 +5924,16 @@
     "id": "4440ed87-4599-4103-8b0e-c83ee480089f",
     "slug": "reactive-flows-ai-agents-and-state-events-this-week-s-angular-masterclass",
     "title": "Reactive Flows, AI Agents, and State Events: This Week’s Angular Masterclass! ⚡",
-    "tldr": "Reactive Flows, AI Agents, and State Events: This Week’s Angular Masterclass! ⚡",
-    "bodyHtml": "",
+    "tldr": "An Angular masterclass covers state management, reactive patterns, and AI integration.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Highlights reactive flows within Angular architecture.</li><li>Explores integration and patterns with AI agents.</li><li>Covers state events handling.</li></ul><h3>Why it matters</h3><p>The topics address evolving architecture patterns in Angular, integrating reactive mechanisms with AI-oriented application flows.</p>",
     "tags": [
       "angular",
       "reactive",
       "ai-agents",
-      "state-management"
+      "state-management",
+      "ai",
+      "reactive programming",
+      "state management"
     ],
     "sources": [
       {
@@ -5933,9 +5947,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-07-17T10:01:04.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -6303,12 +6317,16 @@
     "id": "bacfc3aa-2e72-4914-9250-d991fd118703",
     "slug": "improvements-to-reading-process-outputs-exploring-the-net-11-preview-part-5",
     "title": "Improvements to reading Process outputs: Exploring the .NET 11 preview - Part 5",
-    "tldr": "In this post I show some of the improvements to the Process API in .NET 11 for running processes and reading their outputs without risk of deadlock",
-    "bodyHtml": "<p><strong>Andrew Lock – .NET Escapades:</strong> In this post I show some of the improvements to the Process API in .NET 11 for running processes and reading their outputs without risk of deadlock</p>",
+    "tldr": ".NET 11 introduces new Process APIs to simplify reading process output and prevent deadlocks.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>In .NET 10, incorrectly using ReadToEnd on standard output and error streams can cause deadlocks if stream buffers fill before the process exits.</li><li>Prior deadlock workarounds required running ReadToEndAsync tasks on background threads or subscribing to output events.</li><li>.NET 11 introduces dedicated helper methods including Process.ReadAllText, Process.RunAndCaptureText, Process.ReadAllLines, Process.ReadAllBytes, and their async equivalents.</li><li>Additional .NET 11 process features include fire-and-forget capabilities and child termination on parent exit.</li></ul><h3>Why it matters</h3><p>The new APIs provide safe, simplified primitives for running external processes, eliminating common stream buffer deadlocks without requiring manual asynchronous boilerplate.</p>",
     "tags": [
       "dotnet",
       "csharp",
-      "api"
+      "api",
+      ".net",
+      ".net 11",
+      "process api",
+      "asynchronous programming"
     ],
     "sources": [
       {
@@ -6322,9 +6340,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-07-07T10:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -6610,37 +6628,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-06-29T14:00:25.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "1f929e63-df26-4223-b919-52996f5ca007",
-    "slug": "getting-started-with-nats-jetstream-in-net",
-    "title": "Getting Started With NATS JetStream in .NET",
-    "tldr": "NATS JetStream provides .NET developers with a lightweight, high-performance messaging system and durable persistence layer for handling event streams and message queues. Handlers consuming messages must ensure idempotency and acknowledge messages only after side effects complete.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>NATS runs as a single Go binary with minimal resource overhead, while JetStream adds disk persistence for durable queues.</li><li>The .NET client integrates smoothly into dependency injection and supports typed messaging via JSON serialization.</li><li>Background services can consume messages in a competing worker pattern using work queue stream retention settings.</li><li>Messages should be acknowledged after processing side effects to ensure reliable at-least-once delivery.</li></ul><h3>Why it matters</h3><p>NATS JetStream offers a fast, resource-efficient alternative to heavier message brokers, fitting easily into .NET application architectures for background job processing.</p>",
-    "tags": [
-      "nats",
-      "messaging",
-      "dotnet",
-      ".net",
-      "queue"
-    ],
-    "sources": [
-      {
-        "sourceId": "3958049ea454",
-        "siteName": "Milan Jovanović",
-        "url": "https://milanjovanovic.tech/blog/getting-started-with-nats-jetstream-in-dotnet",
-        "title": "Getting Started With NATS JetStream in .NET",
-        "publishedAt": "2026-06-27T00:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-27T00:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
