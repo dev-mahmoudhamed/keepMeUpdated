@@ -2141,6 +2141,665 @@
   },
   "runs": [
     {
+      "id": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b",
+      "trigger": "cron",
+      "startedAt": "2026-10-26T08:44:24.936Z",
+      "status": "success",
+      "stats": {
+        "fetched": 687,
+        "fresh": 60,
+        "clusters": 55,
+        "created": 34,
+        "merged": 21
+      },
+      "errors": [],
+      "log": [
+        "Collected 687 links from 26 sources; 60 new from the last 120 days",
+        "Grouped into 55 stories (gemini mode): 34 new posts, 21 posts got another site's link",
+        "Summarized 41 posts; 15 wait for the next run (AI calls left: 49)"
+      ],
+      "report": {
+        "sources": [
+          {
+            "sourceId": "0d2eacde2168",
+            "name": "Angular Blog",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "5d7162762e53",
+            "name": "Angular releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "name": "Angular CLI releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "3c1512ebc31b",
+            "name": "Angular components releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "8c7a15586b92",
+            "name": "NgRx releases",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73a4e84eff6d",
+            "name": "Ninja Squad",
+            "read": 30,
+            "onSite": 2,
+            "tooOld": 28,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6b4f9823bf00",
+            "name": "Angular Architects",
+            "read": 20,
+            "onSite": 10,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "cc5b5afd9ba7",
+            "name": "Angular Space",
+            "read": 15,
+            "onSite": 6,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d48b82c3affe",
+            "name": "Angular University",
+            "read": 15,
+            "onSite": 1,
+            "tooOld": 14,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "56e621a08449",
+            "name": "Angular Training Blog",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "62354c88c0e2",
+            "name": "Angular Addicts",
+            "read": 20,
+            "onSite": 3,
+            "tooOld": 17,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "17470cea5951",
+            "name": "Angular in Depth",
+            "read": 60,
+            "onSite": 0,
+            "tooOld": 3,
+            "repeated": 0,
+            "fresh": 57
+          },
+          {
+            "sourceId": "131ee1c49b6b",
+            "name": ".NET Blog",
+            "read": 50,
+            "onSite": 44,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "a34c00441c6d",
+            "name": ".NET releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "87b273ebaa32",
+            "name": "Aspire releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "name": "Visual Studio Blog",
+            "read": 30,
+            "onSite": 28,
+            "tooOld": 2,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "b2ecdce82e12",
+            "name": "JetBrains .NET Blog",
+            "read": 12,
+            "onSite": 12,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "655eccbecb12",
+            "name": "InfoQ .NET",
+            "read": 3,
+            "onSite": 2,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "name": "Visual Studio Magazine",
+            "read": 60,
+            "onSite": 60,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "145884eb4af6",
+            "name": "Andrew Lock – .NET Escapades",
+            "read": 25,
+            "onSite": 10,
+            "tooOld": 15,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "3958049ea454",
+            "name": "Milan Jovanović",
+            "read": 217,
+            "onSite": 17,
+            "tooOld": 200,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d1237fd7e6fe",
+            "name": "Rick Strahl's Web Log",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6752279e1d66",
+            "name": "Damien Bowden",
+            "read": 10,
+            "onSite": 5,
+            "tooOld": 5,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "4ed3c18fe2b2",
+            "name": "elmah.io blog",
+            "read": 15,
+            "onSite": 10,
+            "tooOld": 5,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "612edc942ee0",
+            "name": "C# Digest",
+            "read": 5,
+            "onSite": 4,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "d9a755d55a6a",
+            "name": "TypeScript Blog",
+            "read": 10,
+            "onSite": 2,
+            "tooOld": 8,
+            "repeated": 0,
+            "fresh": 0
+          }
+        ],
+        "links": [
+          {
+            "sourceId": "6b4f9823bf00",
+            "title": "Clef, Clairic, and CopilotKit: A Promising Trio and the Road to Local Hosting",
+            "url": "https://www.angulararchitects.io/en/blog/clef-clairic-and-copilotkit-a-promising-trio-and-the-road-to-local-hosting/",
+            "postId": "62c8507a-83e2-46f1-ac3f-5f5767a17535",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Clef, Clairic, and CopilotKit: A Promising Trio and the Road to Local Hosting",
+            "url": "https://angularindepth.com/article/clef-clairic-and-copilotkit-a-promising-trio-and-the-road-to-local-hos/",
+            "postId": "62c8507a-83e2-46f1-ac3f-5f5767a17535",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "From running edge-rendered Angular apps on Cloudflare Workers to crafting lifelike speech with…",
+            "url": "https://angularindepth.com/article/from-running-edge-rendered-angular-apps-on-cloudflare-workers-to-craft/",
+            "postId": "5dffe0a9-ac5f-4026-bf69-bb8f806bb108"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "AI in Recruitment. How to use it wisely without shooting yourself in the foot",
+            "url": "https://angularindepth.com/article/ai-in-recruitment-how-to-use-it-wisely-without-shooting-yourself-in-th/",
+            "postId": "b7995e58-b1c0-49c6-858b-ce65be691476",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Forms for Beginners – Angular",
+            "url": "https://angularindepth.com/article/forms-for-beginners-angular/",
+            "postId": "02e751c4-e632-4391-b686-94722ef338ac",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/22: TypeScript 7.1, Angular Native and Polymorpheus",
+            "url": "https://angularindepth.com/article/ng-news-26-22-typescript-7-1-angular-native-and-polymorpheus/",
+            "postId": "59e9c2db-8c59-493d-87de-a568ad6a0012",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular Router with Signals: Complete Guide",
+            "url": "https://angularindepth.com/article/angular-router-with-signals-complete-guide/",
+            "postId": "a9fbce63-8d46-40f2-b904-eb61fd66fa83",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Signal Value Transforms, Routing Essentials, and Video Extension with Veo! ⚡",
+            "url": "https://angularindepth.com/article/signal-value-transforms-routing-essentials-and-video-extension-with-ve/",
+            "postId": "22d38819-2922-43a0-b2c9-a849fbc3c12b"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "HR Interview. What are we REALLY asking during recruitment, and how to prepare?",
+            "url": "https://angularindepth.com/article/hr-interview-what-are-we-really-asking-during-recruitment-and-how-to-p/",
+            "postId": "fa956140-6e0e-4bcb-9332-202414a9a617",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Getting Started with the Angular CLI: Beginner-friendly Guide",
+            "url": "https://angularindepth.com/article/getting-started-with-the-angular-cli-beginner-friendly-guide/",
+            "postId": "f885e3f3-4ca6-4bf8-8c5e-012628522d5e",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Routing for beginners – Angular",
+            "url": "https://angularindepth.com/article/routing-for-beginners-angular/",
+            "postId": "02e751c4-e632-4391-b686-94722ef338ac",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/21: Angular 22.2 — Router Resources, Error Boundaries, and Private Template Members",
+            "url": "https://angularindepth.com/article/ng-news-26-21-angular-22-2-router-resources-error-boundaries-and-priva/",
+            "postId": "0fb907c1-efe2-4911-aa17-af477065529e",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/21: Angular 22.2: Router Resources, Error Boundaries, and Private Template Members",
+            "url": "https://angularindepth.com/article/ng-news-26-21-angular-22-2-router-resources-error-boundaries-and-priva-e928a/",
+            "postId": "0fb907c1-efe2-4911-aa17-af477065529e",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
+            "url": "https://angularindepth.com/article/angular-addicts-53-ngrx-22-webmcp-copilotkit-more/",
+            "postId": "8d7a4875-1b73-4b8e-984b-30b63ee61945"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "5 Real-World Angular + AI Case Studies Worth Reading in 2026",
+            "url": "https://angularindepth.com/article/5-real-world-angular-ai-case-studies-worth-reading-in-2026/",
+            "postId": "ee23adda-2062-46ed-a71a-277d0da9e369"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+            "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
+            "postId": "21636411-4af1-4385-804b-f77387875b7c"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Architecting the Modern Web: Debounce APIs, Rendering Strategies, and Automated AI Setup! ⚡",
+            "url": "https://angularindepth.com/article/architecting-the-modern-web-debounce-apis-rendering-strategies-and-aut/",
+            "postId": "a35fee77-225d-433d-ad0f-bf575d8fd3dd"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "An update on Angular’s TypeScript 7-powered Compiler",
+            "url": "https://angularindepth.com/article/an-update-on-angulars-typescript-7-powered-compiler/",
+            "postId": "f14fca51-6029-4b39-ac21-a9199c0643c8"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Polymorpheus: a tiny tool you didn’t know you needed",
+            "url": "https://angularindepth.com/article/polymorpheus-a-tiny-tool-you-didnt-know-you-needed/",
+            "postId": "75205d84-b4b5-4aef-8788-1b8c3bbc9d3c"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Using Jev for Agentic UI: Just a Trend or a Game Changer?",
+            "url": "https://angularindepth.com/article/using-jev-for-agentic-ui-just-a-trend-or-a-game-changer/",
+            "postId": "dd35e053-ab37-4104-bec8-b346a26e7ed6"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Component Harness: Writing Tests That Survive Refactors",
+            "url": "https://angularindepth.com/article/component-harness-writing-tests-that-survive-refactors/",
+            "postId": "916f45bb-f93c-498b-b048-4cc043025806",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Route Resources in Angular: what the Router actually does with your Signal under the hood",
+            "url": "https://angularindepth.com/article/route-resources-in-angular-what-the-router-actually-does-with-your-sig/",
+            "postId": "30357943-3575-4465-990e-0147596635e2",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Optimus UI, NG Switzerland, and NgRx 22",
+            "url": "https://angularindepth.com/article/optimus-ui-ng-switzerland-and-ngrx-22/",
+            "postId": "b7aa1e8e-f1eb-450e-b20b-505348d4152c",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Router Resources: Daten laden mit dem Angular Router",
+            "url": "https://angularindepth.com/article/router-resources-daten-laden-mit-dem-angular-router/",
+            "postId": "8821477b-8201-44ae-9ac0-8fa0df219568",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Agentic Engineering: Skills for Angular Development",
+            "url": "https://angularindepth.com/article/agentic-engineering-skills-for-angular-development/",
+            "postId": "4d056660-0bfa-44ee-889e-39627afa2811",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Customizing Angular Aria Tabs Quickly with Google Antigravity CLI",
+            "url": "https://angularindepth.com/article/customizing-angular-aria-tabs-quickly-with-google-antigravity-cli/",
+            "postId": "889a1733-2f23-43a0-8dd2-66f00e5fa6bc"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Want to Speak at a Conferences? Here’s What I’ve Learned",
+            "url": "https://angularindepth.com/article/want-to-speak-at-a-conferences-heres-what-ive-learned/",
+            "postId": "510ec857-097a-4b9f-9c72-ca993b1c9b38"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Agentic Engineering: Summer ’26 Update",
+            "url": "https://angularindepth.com/article/agentic-engineering-summer-26-update/",
+            "postId": "e6bb1de9-d327-4d70-b988-60d46a80ea7f",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Styling Mastery and Declarative Form Submissions",
+            "url": "https://angularindepth.com/article/styling-mastery-and-declarative-form-submissions/",
+            "postId": "f22e2a7a-7b45-433e-849d-eea259e6f465"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
+            "url": "https://angularindepth.com/article/angular-addicts-52-angular-addicts-52-angular-22-1-copilotkit-mcp-apps/",
+            "postId": "089a0412-2e17-4951-8efd-63f5cfdae2ea",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "The best API integration platforms for SaaS apps and agents in 2026",
+            "url": "https://angularindepth.com/article/the-best-api-integration-platforms-for-saas-apps-and-agents-in-2026/",
+            "postId": "dc2714e4-26b6-4614-8ea1-dd782af4e5ce"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Code Became Cheap. Did Developer Knowledge Too?",
+            "url": "https://angularindepth.com/article/code-became-cheap-did-developer-knowledge-too/",
+            "postId": "8007de47-d00c-4cce-82ef-3564c336392b"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/19: Angular 22.1",
+            "url": "https://angularindepth.com/article/ng-news-26-19-angular-22-1/",
+            "postId": "218a2182-94bf-4faa-9458-284142279add",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "The Angular pattern that needs no Provider",
+            "url": "https://angularindepth.com/article/the-angular-pattern-that-needs-no-provider/",
+            "postId": "5cee54be-0b42-4803-97da-6c3aa9645449",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "The Forms Evolution, Web AI, and Architectural Vision! 🧬🤖",
+            "url": "https://angularindepth.com/article/the-forms-evolution-web-ai-and-architectural-vision/",
+            "postId": "fbf5dfe2-4ccf-453e-8435-9aaa6debfc85"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Loop Engineering mit Super Mario und zwölf KI-Coding-Agenten",
+            "url": "https://angularindepth.com/article/loop-engineering-mit-super-mario-und-zw-lf-ki-coding-agenten/",
+            "postId": "1ce49ecc-de11-45bb-ac12-5b6943447d6f"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Lazy Loading Services in Angular 22",
+            "url": "https://angularindepth.com/article/lazy-loading-services-in-angular-22/",
+            "postId": "2cefc86a-286c-4aac-8f58-878dc7a59788",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/18: Angular Annual Releases, CopilotKit Integration",
+            "url": "https://angularindepth.com/article/ng-news-26-18-angular-annual-releases-copilotkit-integration/",
+            "postId": "ff45aa9e-beda-4a14-a4f3-6a809d379413",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular New Release Cycle: Release Schedule Change Explained",
+            "url": "https://angularindepth.com/article/angular-new-release-cycle-release-schedule-change-explained/",
+            "postId": "8d2d566b-0a9b-47e4-b459-d1dc4aa6f31c",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "How to Handle Global Errors in Modern Zoneless Angular",
+            "url": "https://angularindepth.com/article/how-to-handle-global-errors-in-modern-zoneless-angular/",
+            "postId": "b6eb66c0-80e3-47fe-9699-962dea90a9aa"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "CopilotKit für Angular: Der Missing Link für Agentic UI",
+            "url": "https://angularindepth.com/article/copilotkit-f-r-angular-der-missing-link-f-r-agentic-ui/",
+            "postId": "35225fe7-8fce-4b57-b7c0-38e2ae6777c4"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Give Your Angular Modal a URL: Three Router-Based Approaches",
+            "url": "https://angularindepth.com/article/give-your-angular-modal-a-url-three-router-based-approaches/",
+            "postId": "5ae3d746-f7c9-48e0-bb1e-41c740154c9b",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Free Book Chapters, Better Testing Control, and Smart MCP Configuration! 📚🧪",
+            "url": "https://angularindepth.com/article/free-book-chapters-better-testing-control-and-smart-mcp-configuration/",
+            "postId": "54c3f88d-8d76-4a17-90f3-26bcb53558f3"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "MCP Apps in Angular mit CopilotKit: Rich Chat Interfaces Instead of Text Responses",
+            "url": "https://angularindepth.com/article/mcp-apps-in-angular-mit-copilotkit-rich-chat-interfaces-instead-of-tex/",
+            "postId": "c9ba9839-72b5-4596-9e0f-676d301593f6",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Agentic UI mit MCP Apps: Tool-Ergebnisse als interaktive Widgets",
+            "url": "https://angularindepth.com/article/agentic-ui-mit-mcp-apps-tool-ergebnisse-als-interaktive-widgets/",
+            "postId": "7f33946b-64bb-467e-aedc-636d43a03fc1",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "From DOM Scraping to Contracts: Understanding WebMCP (Part 1)",
+            "url": "https://angularindepth.com/article/from-dom-scraping-to-contracts-understanding-webmcp-part-1/",
+            "postId": "df41c884-c71e-4a37-9174-3e11b3a39f24",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Choosing the right RxJS Operator for Action Streams",
+            "url": "https://angularindepth.com/article/choosing-the-right-rxjs-operator-for-action-streams/",
+            "postId": "ec4456db-392c-43f2-8c61-842fd0c7fd76",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Architektur als Guardrail: Fehlerklassen strukturell ausschließen",
+            "url": "https://angularindepth.com/article/architektur-als-guardrail-fehlerklassen-strukturell-ausschlie-en/",
+            "postId": "a2913b56-6bf5-4b9f-b323-aaddc5834f39",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "One Validator to Rule Them All — Part 2: Advanced Error Handling with multi-language support.",
+            "url": "https://angularindepth.com/article/one-validator-to-rule-them-all-part-2-advanced-error-handling-with-mul/",
+            "postId": "c02a288a-8041-48ac-948c-6ba70fa6deac",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Reactive Flows, AI Agents, and State Events: This Week’s Angular Masterclass! ⚡",
+            "url": "https://angularindepth.com/article/reactive-flows-ai-agents-and-state-events-this-weeks-angular-mastercla/",
+            "postId": "4440ed87-4599-4103-8b0e-c83ee480089f"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular Addicts #51: spartan/ui 1.0, A2UI, Signal Debouncing & more",
+            "url": "https://angularindepth.com/article/angular-addicts-51-spartan-ui-1-0-a2ui-signal-debouncing-more/",
+            "postId": "30419d13-f6b3-469a-b198-60e389d771dc",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/17: PrimeNG’s New Licensing, and A2UI for Angular",
+            "url": "https://angularindepth.com/article/ng-news-26-17-primengs-new-licensing-and-a2ui-for-angular/",
+            "postId": "7b9c4840-2009-4383-ae8e-b289912d5713",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/17: PrimeNG's New Licensing, and A2UI for Angular",
+            "url": "https://angularindepth.com/article/ng-news-26-17-primengs-new-licensing-and-a2ui-for-angular-78920/",
+            "postId": "7b9c4840-2009-4383-ae8e-b289912d5713",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "One Validator to Rule Them All",
+            "url": "https://angularindepth.com/article/one-validator-to-rule-them-all/",
+            "postId": "2323fd5f-192e-41a3-9e7c-6237ba671c02",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Community Engineering, Agentic Coding, and Real-User Component Testing ️",
+            "url": "https://angularindepth.com/article/community-engineering-agentic-coding-and-real-user-component-testing/",
+            "postId": "a41d9384-880e-4134-af1f-f4e21db7f4f7"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui, AnalogJS in Storybook",
+            "url": "https://angularindepth.com/article/ng-news-26-16-openng-foundation-spartan-ui-analogjs-in-storybook/",
+            "postId": "459acbb7-2127-4d4d-a0d3-ec9e897c3f56",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular Handbook: The Ultimate Guide to Angular Evolution (v22 Update)",
+            "url": "https://angularindepth.com/article/angular-handbook-the-ultimate-guide-to-angular-evolution-v22-update/",
+            "postId": "227102dc-87d4-4a4d-9d83-d32f24bc632a",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui",
+            "url": "https://angularindepth.com/article/ng-news-26-16-openng-foundation-spartan-ui/",
+            "postId": "459acbb7-2127-4d4d-a0d3-ec9e897c3f56",
+            "newPost": true
+          },
+          {
+            "sourceId": "655eccbecb12",
+            "title": "MCP C# SDK 2.0 Makes HTTP Stateless by Default and Adds Multi Round-Trip Requests",
+            "url": "https://www.infoq.com/news/2026/10/MCP-CSharp-SDK-Stateless/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+            "postId": "8a3155e0-2ffc-43dd-9079-d676ed23a6be",
+            "newPost": true
+          },
+          {
+            "sourceId": "612edc942ee0",
+            "title": "Aspect-oriented programming with Metalama in .NET",
+            "url": "https://csharpdigest.net/newsletters/2393-aspect-oriented-programming-with-metalama-in-net",
+            "postId": "49221e04-5ac7-43a3-ab75-84e9f5ae028e",
+            "newPost": true
+          }
+        ]
+      },
+      "finishedAt": "2026-10-26T09:03:10.610Z"
+    },
+    {
       "id": "927fd6ea-b0ae-47cc-885c-e787874ff36b",
       "trigger": "manual",
       "startedAt": "2026-10-25T20:07:53.331Z",
@@ -2549,103 +3208,107 @@
   ],
   "sourceStatus": {
     "https://blog.angular.dev/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular/releases.atom": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular-cli/releases.atom": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/components/releases.atom": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://github.com/ngrx/platform/releases.atom": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://blog.ninja-squad.com/atom.xml": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 30
     },
     "https://angulararchitects.io/en/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 20
     },
     "https://angularspace.com/rss": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 15
     },
     "https://blog.angular-university.io/rss": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 15
     },
     "https://blog.angulartraining.com/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://angularaddicts.com/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 20
     },
+    "https://angularindepth.com/feed.xml": {
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
+      "lastItemCount": 60
+    },
     "https://devblogs.microsoft.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 50
     },
     "https://github.com/dotnet/core/releases.atom": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://github.com/dotnet/aspire/releases.atom": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://devblogs.microsoft.com/visualstudio/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 30
     },
     "https://blog.jetbrains.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 12
     },
     "https://feed.infoq.com/dotnet": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
-      "lastItemCount": 2
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
+      "lastItemCount": 3
     },
     "https://visualstudiomagazine.com/rss-feeds/news.aspx": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 60
     },
     "https://andrewlock.net/rss.xml": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 25
     },
     "https://milanjovanovic.tech/rss/feed.xml": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 217
     },
     "https://feeds.feedburner.com/rickstrahl": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://damienbod.com/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     },
     "https://blog.elmah.io/rss": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 15
     },
     "https://csharpdigest.net/newsletters.rss": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 5
     },
     "https://devblogs.microsoft.com/typescript/feed": {
-      "lastFetchedAt": "2026-10-25T20:07:53.331Z",
+      "lastFetchedAt": "2026-10-26T08:44:24.936Z",
       "lastItemCount": 10
     }
   }

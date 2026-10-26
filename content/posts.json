@@ -1,13 +1,81 @@
 [
   {
+    "id": "8a3155e0-2ffc-43dd-9079-d676ed23a6be",
+    "slug": "mcp-c-sdk-2-0-makes-http-stateless-by-default-and-adds-multi-round-trip-requests",
+    "title": "MCP C# SDK 2.0 Makes HTTP Stateless by Default and Adds Multi Round-Trip Requests",
+    "tldr": "Microsoft released version 2.0 of the official MCP C# SDK, implementing the 2026-07-28 Model Context Protocol specification revision. The update transitions Streamable HTTP servers to be stateless by default and introduces Multi Round-Trip Requests.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>HttpServerTransportOptions.Stateless defaults to true, removing the initialize handshake and session ID headers while passing protocol versions per request.</li><li>Introduces Multi Round-Trip Requests (MRTR) with InputRequiredException to allow servers to request client input without persistent sessions.</li><li>Standardizes HTTP headers (such as Mcp-Method and Mcp-Name) enabling gateways and load balancers to route traffic without inspecting payload bodies.</li><li>Tasks moved to an opt-in package incompatible with earlier experimental versions, while roots, sampling, and logging APIs are deprecated under MCP9005.</li><li>Subsequent releases 2.1 through 2.3 added custom notification streams, hybrid session modes, nullable server identity metadata, and deterministic test helpers.</li></ul><h3>Why it matters</h3><p>By adopting a stateless HTTP architecture, MCP servers can now scale horizontally behind standard load balancers without requiring sticky sessions or distributed session state.</p>",
+    "tags": [
+      "dotnet",
+      ".net",
+      "c#",
+      "model context protocol",
+      "api"
+    ],
+    "sources": [
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/10/MCP-CSharp-SDK-Stateless/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": "MCP C# SDK 2.0 Makes HTTP Stateless by Default and Adds Multi Round-Trip Requests",
+        "publishedAt": "2026-10-26T08:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-26T08:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
+    "id": "49221e04-5ac7-43a3-ab75-84e9f5ae028e",
+    "slug": "aspect-oriented-programming-with-metalama-in-net",
+    "title": "Aspect-oriented programming with Metalama in .NET",
+    "tldr": "Issue #631 of C# Digest highlights compile-time aspect-oriented programming with Metalama alongside experiments in C# 14, Roslyn analyzers, and binary formats. It also reviews ASP.NET Core API versioning practices.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Metalama brings Aspect-Oriented Programming to C# by generating repetitive logging, validation, and timing code at compile time.</li><li>Experimental C# 14 techniques demonstrate attaching properties to existing types using ConditionalWeakTable or Unsafe.As.</li><li>ASP.NET Core API versioning techniques detail generating OpenAPI documentation, integrating Swagger UI, and automated linting.</li><li>Roslyn analyzer rule MA0240 enables enforcing syntax rules and matching compiler operation trees via XPath expressions in text files.</li><li>System.Formats.Cbor offers low-level streaming support for compact binary object representation as a lightweight alternative to JSON.</li></ul><h3>Why it matters</h3><p>The featured tools and techniques show developers how to eliminate repetitive boilerplate and enforce architecture constraints without introducing complex runtime overhead.</p>",
+    "tags": [
+      "csharp",
+      "newsletter",
+      ".net",
+      "c#",
+      "metalama",
+      "roslyn",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2393-aspect-oriented-programming-with-metalama-in-net",
+        "title": "Aspect-oriented programming with Metalama in .NET",
+        "publishedAt": "2026-10-25T19:15:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-25T19:15:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "89ce06ce-1bdc-4969-9023-9eb6dd48ac35",
     "slug": "net-october-2026-out-of-band-security-updates",
     "title": ".NET October 2026 Out-of-Band Security Updates",
-    "tldr": "Out-of-band security updates for .NET address the Brotli decoder vulnerability and tarball ownership vulnerability. The post .NET October 2026 Out-of-Band Security Updates appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> Out-of-band security updates for .NET address the Brotli decoder vulnerability and tarball ownership vulnerability. The post .NET October 2026 Out-of-Band Security Updates appeared first on .NET Blog.</p>",
+    "tldr": "Microsoft issued out-of-band security updates for .NET 8, 9, 10, and .NET 11 Release Candidate 3. The patch addresses vulnerabilities in Brotli decompression and Linux tarball ownership, alongside earlier socket and WebAssembly issues.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Fixes CVE-2026-111497, a vulnerability affecting Brotli decompression across ASP.NET Core request decompression, HttpClient, and System.IO.Compression.</li><li>Addresses CVE-2026-114148 concerning Linux tarball ownership, which impacts source-build tarballs on .NET 10/11 and ASP.NET Core runtime tarballs on .NET 8/9.</li><li>Provides refreshed resolutions for CVE-2026-70197 (SocketAsyncEventArgs memory corruption) and CVE-2026-102870 (Blazor WebAssembly debugger).</li><li>.NET Framework is not affected by the Brotli decompression issue.</li><li>Requires updating host runtimes for framework-dependent apps and rebuilding/redeploying self-contained apps and container images.</li></ul><h3>Why it matters</h3><p>Applications handling Brotli decompression or installed via specific Linux tarballs face security risks and require immediate patching across target runtimes and container images.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net",
+      "security",
+      "vulnerabilities",
+      "patches"
     ],
     "sources": [
       {
@@ -21,11 +89,51 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-25T20:07:53.331Z",
-    "updatedAt": "2026-10-25T20:07:53.331Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-10-25T18:45:00.000Z",
     "runId": "927fd6ea-b0ae-47cc-885c-e787874ff36b"
+  },
+  {
+    "id": "62c8507a-83e2-46f1-ac3f-5f5767a17535",
+    "slug": "clef-clairic-and-copilotkit-a-promising-trio-and-the-road-to-local-hosting",
+    "title": "Clef, Clairic, and CopilotKit: A Promising Trio and the Road to Local Hosting",
+    "tldr": "Cloudflare's Clef and Clairic models offer open-weight, low-latency options for agentic user interfaces. Paired with Angular and CopilotKit, they handle fast classification and parameter extraction on local hardware.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>TypeSafe's Jev and Cloudflare's Clef function as 'System One' decision models, classifying inputs into predefined options within hundreds of milliseconds.</li><li>Clef is open-weight and shares an API similar to Jev, enabling local hosting for decision-making tasks.</li><li>Cloudflare's Clairic complements classification by extracting, deriving, and computing parameters (such as relative dates) from user text.</li><li>In a demonstration flight assistant, CopilotKit and Angular render streaming AG-UI events and UI widgets while Clef and Clairic determine tools and parameters in parallel.</li></ul><h3>Why it matters</h3><p>Combining specialized classification and extraction models allows developers to run sub-second, local agentic UI decision workflows without relying on large, expensive generative LLMs.</p>",
+    "tags": [
+      "angular",
+      "architecture",
+      "community",
+      "ai",
+      "cloudflare",
+      "copilotkit",
+      "machine learning"
+    ],
+    "sources": [
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/clef-clairic-and-copilotkit-a-promising-trio-and-the-road-to-local-hosting/",
+        "title": "Clef, Clairic, and CopilotKit: A Promising Trio and the Road to Local Hosting",
+        "publishedAt": "2026-10-25T20:47:19.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/clef-clairic-and-copilotkit-a-promising-trio-and-the-road-to-local-hos/",
+        "title": "Clef, Clairic, and CopilotKit: A Promising Trio and the Road to Local Hosting",
+        "publishedAt": "2026-10-25T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-25T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "f9dbb26e-116e-42e3-9347-d892e37b0356",
@@ -621,15 +729,18 @@
     "id": "5dffe0a9-ac5f-4026-bf69-bb8f806bb108",
     "slug": "from-running-edge-rendered-angular-apps-on-cloudflare-workers-to-crafting-lifeli",
     "title": "From running edge-rendered Angular apps on Cloudflare Workers to crafting lifelike speech with…",
-    "tldr": "An Angular blog post covers running edge-rendered Angular applications on Cloudflare Workers alongside speech generation capabilities.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Focuses on deploying and running edge-rendered Angular applications on Cloudflare Workers.</li><li>Discusses creating speech with modern tooling.</li></ul><h3>Why it matters</h3><p>Running Angular applications on edge compute platforms like Cloudflare Workers can decrease latency and improve performance for globally distributed users.</p>",
+    "tldr": "Recent Angular community resources demonstrate running server-side rendered Angular apps on Cloudflare Workers and synthesizing expressive speech with Gemini 3.1 Flash. Other guides focus on monorepo architectures, state modeling, and interview preparations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Nicolas Molina published tutorials detailing low-latency Angular SSR deployments on Cloudflare Workers and scaling Angular/NestJS setups with Nx monorepos.</li><li>A multimodal implementation from Connie Leung pairs Angular with Gemini 3.1 Flash TTS and Firebase Cloud Functions to generate dynamically tuned audio.</li><li>A new German-language book covers Angular architectures transitioning from core building blocks up through Signals.</li><li>Eduardo Roth and Alejandro Cuba Ruiz released a guide addressing real-world Angular technical interview scenarios and framework quirks.</li></ul><h3>Why it matters</h3><p>These guides show how Angular is increasingly integrated into modern edge deployments and multimodal AI workflows while evolving enterprise repository architectures.</p>",
     "tags": [
       "angular",
       "cloudflare-workers",
       "edge",
       "speech-synthesis",
       "cloudflare workers",
-      "edge computing"
+      "edge computing",
+      "gemini",
+      "nx",
+      "server-side rendering"
     ],
     "sources": [
       {
@@ -638,6 +749,13 @@
         "url": "https://blog.angular.dev/from-running-edge-rendered-angular-apps-on-cloudflare-workers-to-crafting-lifelike-speech-with-67513b4b85e1?source=rss----447683c3d9a3---4",
         "title": "From running edge-rendered Angular apps on Cloudflare Workers to crafting lifelike speech with…",
         "publishedAt": "2026-10-23T14:58:56.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/from-running-edge-rendered-angular-apps-on-cloudflare-workers-to-craft/",
+        "title": "From running edge-rendered Angular apps on Cloudflare Workers to crafting lifelike speech with…",
+        "publishedAt": "2026-10-23T00:00:00.000Z"
       }
     ],
     "relevance": 6,
@@ -645,7 +763,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-25T08:17:19.192Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-10-23T14:58:56.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -885,6 +1003,38 @@
     "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-10-21T10:01:13.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "b7995e58-b1c0-49c6-858b-ce65be691476",
+    "slug": "ai-in-recruitment-how-to-use-it-wisely-without-shooting-yourself-in-the-foot",
+    "title": "AI in Recruitment. How to use it wisely without shooting yourself in the foot",
+    "tldr": "Using AI during recruitment is broadly accepted by hiring teams when used as a preparation aid, but relying on it to generate applications directly can harm candidate success. Practical guidance focuses on maintaining authenticity while practicing for interviews.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>AI is effective as a sparring partner for mock interviews when supplied with full context, including the target job description and candidate CV.</li><li>Job seekers can use AI to extract achievements from past project work and structure answers using the STAR method.</li><li>Completely delegating cover letters or bios to AI generates recognizable, generic text that recruiters readily detect.</li><li>Failing to review AI-generated CV additions can lead to hallucinations about skills and responsibilities that unravel during technical conversations.</li><li>Mass-producing and submitting untargeted applications using automated tools is easily identified by applicant tracking systems.</li></ul><h3>Why it matters</h3><p>Candidates who use AI to rehearse and structure their real-world experience stand out, while candidates who submit AI-generated materials risk immediate disqualification.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "career",
+      "recruitment",
+      "ai",
+      "interviews"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ai-in-recruitment-how-to-use-it-wisely-without-shooting-yourself-in-th/",
+        "title": "AI in Recruitment. How to use it wisely without shooting yourself in the foot",
+        "publishedAt": "2026-10-21T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-21T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "4c2ab0a3-13a1-469b-898f-250cc94e13ed",
@@ -1572,6 +1722,69 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "59e9c2db-8c59-493d-87de-a568ad6a0012",
+    "slug": "ng-news-26-22-typescript-7-1-angular-native-and-polymorpheus",
+    "title": "Ng-News 26/22: TypeScript 7.1, Angular Native and Polymorpheus",
+    "tldr": "Angular's compiler is adapting to TypeScript 7.1's Go-based architecture by integrating the Rust-based Oxc tool, while community project Angular Native introduces native mobile rendering via React Native Fabric.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>TypeScript 7 ported the compiler to Go for up to 10x faster execution, requiring Angular to adapt its compiler across language boundaries for the TypeScript 7.1 programmatic API.</li><li>Angular will utilize Oxc, a Rust-based tool, to handle code analysis and transformations previously performed by TypeScript transformer APIs.</li><li>The compiler updates have merged into Angular's main branch and could arrive as early as Angular 22.3.</li><li>Angular Native is a community alpha project that bypasses WebViews by using React Native's Fabric rendering engine without running React's reconciler.</li><li>Angular Native supports Expo, Metro, Tailwind, the Angular Router, and allows embedding web components using a dom-component fallback.</li></ul><h3>Why it matters</h3><p>Adopting Oxc preserves compilation performance alongside TypeScript's Go rewrite, while Angular Native offers a viable path to direct native rendering outside WebView wrappers.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "typescript",
+      "angular native",
+      "compilers",
+      "rust"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-22-typescript-7-1-angular-native-and-polymorpheus/",
+        "title": "Ng-News 26/22: TypeScript 7.1, Angular Native and Polymorpheus",
+        "publishedAt": "2026-10-15T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-15T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
+    "id": "a9fbce63-8d46-40f2-b904-eb61fd66fa83",
+    "slug": "angular-router-with-signals-complete-guide",
+    "title": "Angular Router with Signals: Complete Guide",
+    "tldr": "The Angular Router provides an opt-in, signals-first approach for managing parameters and navigation data. By leveraging naming conventions, route properties can be bound directly to signal inputs instead of Observables.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Enabling withComponentInputBinding() maps URL path parameters, query parameters, and route resource data directly to component input signals.</li><li>Signal inputs bound to route data eliminate the need for injecting ActivatedRoute, subscribing to paramMap, or copying parameters manually.</li><li>The withRouterResources() configuration provides a signal-based replacement for traditional route resolvers.</li><li>Query parameter inputs are marked optional and update their signal values automatically whenever the URL changes.</li><li>The standalone isActive function provides a signal-based method to monitor whether a URL or route is currently active.</li></ul><h3>Why it matters</h3><p>Signal-based routing simplifies Angular component code by replacing Observable subscriptions with direct, reactive input properties, eliminating boilerplate in page components.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "angular signals",
+      "angular router",
+      "web development"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-router-with-signals-complete-guide/",
+        "title": "Angular Router with Signals: Complete Guide",
+        "publishedAt": "2026-10-15T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-15T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "28aefabb-fed1-408e-bad9-78985119124e",
     "slug": "angular-cli-20-updates",
     "title": "Angular CLI 20 updates",
@@ -2187,14 +2400,18 @@
     "id": "22d38819-2922-43a0-b2c9-a849fbc3c12b",
     "slug": "signal-value-transforms-routing-essentials-and-video-extension-with-veo",
     "title": "Signal Value Transforms, Routing Essentials, and Video Extension with Veo! ⚡",
-    "tldr": "Recent Angular updates focus on signal value transforms, routing essentials, and video extensions.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces signal value transforms.</li><li>Highlights core routing essentials.</li><li>Integrates video extensions using Veo.</li></ul><h3>Why it matters</h3><p>Highlights ongoing feature enhancements and tooling integrations in the Angular ecosystem.</p>",
+    "tldr": "Recent updates across the Angular ecosystem highlight new form handling features, routing tutorials, and multimodal video generation integrations. Notable features include transformedValue and integration with Google's Veo model.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The transformedValue primitive, introduced in Angular v21, simplifies data formatting and parsing between UI controls and reactive form models.</li><li>Angular 22 introduces enhancements to Signal Forms, removing manual validation workarounds for complex inputs such as numeric controls.</li><li>New comprehensive community guides explore routing best practices and the growing developer-friendly ecosystem of the framework.</li><li>Developers can execute multimodal AI video extensions directly from Angular using Veo 3.1 Lite and Firebase Cloud services.</li></ul><h3>Why it matters</h3><p>These additions improve form usability and offer blueprints for connecting frontend Angular apps directly to serverless generative media services.</p>",
     "tags": [
       "angular",
       "signals",
       "routing",
       "video",
-      "web development"
+      "web development",
+      "angular signals",
+      "veo",
+      "forms",
+      "firebase"
     ],
     "sources": [
       {
@@ -2203,6 +2420,13 @@
         "url": "https://blog.angular.dev/signal-value-transforms-routing-essentials-and-video-extension-with-veo-3846cae9283a?source=rss----447683c3d9a3---4",
         "title": "Signal Value Transforms, Routing Essentials, and Video Extension with Veo! ⚡",
         "publishedAt": "2026-10-09T14:01:05.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/signal-value-transforms-routing-essentials-and-video-extension-with-ve/",
+        "title": "Signal Value Transforms, Routing Essentials, and Video Extension with Veo! ⚡",
+        "publishedAt": "2026-10-09T00:00:00.000Z"
       }
     ],
     "relevance": 6,
@@ -2210,9 +2434,72 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-10-09T14:01:05.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "fa956140-6e0e-4bcb-9332-202414a9a617",
+    "slug": "hr-interview-what-are-we-really-asking-during-recruitment-and-how-to-prepare",
+    "title": "HR Interview. What are we REALLY asking during recruitment, and how to prepare?",
+    "tldr": "HR and culture fit interviews are pragmatic evaluations designed to determine mutual compatibility, work preferences, and team communication styles. Understanding recruiter intent helps candidates avoid friction and convey clear collaboration habits.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Questions regarding disliked work tasks are used to verify alignment with day-to-day job requirements or adjust the position's scope for strong candidates.</li><li>Recruiters evaluate culture fit based on team collaboration, dialogue, and willingness to share ownership rather than individualistic 'I did this' framing.</li><li>Candidates reading AI-generated answers during interviews are easily identified through unnatural rhythm, language shifts, and eye tracking.</li><li>Unwillingness to admit past mistakes or blaming teammates signals a poor culture match and harms trust building.</li><li>Good interviewers actively help nervous candidates settle down by rephrasing questions, giving extra time, and clarifying question context.</li></ul><h3>Why it matters</h3><p>Technical proficiency alone is insufficient for hiring; understanding the intent behind HR questions allows candidates to communicate their teamwork and problem-solving skills effectively.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "career",
+      "recruitment",
+      "interviews",
+      "hr"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/hr-interview-what-are-we-really-asking-during-recruitment-and-how-to-p/",
+        "title": "HR Interview. What are we REALLY asking during recruitment, and how to prepare?",
+        "publishedAt": "2026-10-09T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-09T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
+    "id": "f885e3f3-4ca6-4bf8-8c5e-012628522d5e",
+    "slug": "getting-started-with-the-angular-cli-beginner-friendly-guide",
+    "title": "Getting Started with the Angular CLI: Beginner-friendly Guide",
+    "tldr": "The Angular CLI is the official command-line interface for scaffolding, building, testing, and updating Angular applications. It automates repetitive setup, enforces architectural conventions, and manages dependencies across different runtime environments.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The CLI eliminates the need to configure build systems, compilers, and test runners manually.</li><li>Key commands include ng new for scaffolding, ng serve for local development with live reload, ng generate for building blocks, and ng build for production output.</li><li>Requires a supported version of Node.js and npm, and can be installed globally via npm or run on demand using npx.</li><li>The interactive project scaffolding prompt configures styling frameworks (CSS, SCSS, Tailwind), optional SSR/SSG prerendering, and AI tooling best-practice configs.</li><li>Using npx ng inside a project ensures execution against the locally pinned CLI version rather than a conflicting global version.</li></ul><h3>Why it matters</h3><p>Mastering the Angular CLI is essential for modern Angular development, standardizing project structure across teams while automating complex build and upgrade pipelines.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "angular cli",
+      "web development",
+      "node.js"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/getting-started-with-the-angular-cli-beginner-friendly-guide/",
+        "title": "Getting Started with the Angular CLI: Beginner-friendly Guide",
+        "publishedAt": "2026-10-08T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-08T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "6ab330df-8b87-4f63-a064-c797a7254b25",
@@ -2380,6 +2667,44 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "02e751c4-e632-4391-b686-94722ef338ac",
+    "slug": "forms-for-beginners-angular",
+    "title": "Forms for Beginners – Angular",
+    "tldr": "Angular offers three approaches to managing forms alongside an integrated routing mechanism for single-page applications. Signal forms, which became stable in Angular 22, join template-driven and reactive forms.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular provides three form APIs: traditional template-driven forms, reactive forms, and newly stabilized signal forms (experimental in v21, stable in v22).</li><li>Form abstractions track field values, validation rules, and user interaction states (such as invalid, touched, and valueChanges).</li><li>The Angular Router facilitates client-side single-page application navigation without triggering full page reloads.</li><li>Routing configurations define rules that match specific URL paths to corresponding standalone components.</li><li>The Router handles navigation mechanics, supporting structures like nested paths, route guards, resolvers, and lazy loading.</li></ul><h3>Why it matters</h3><p>Understanding Angular's core routing and form abstractions allows developers to maintain legacy codebases while adopting modern, signal-based architectural paradigms.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "angular forms",
+      "angular router",
+      "web development"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/forms-for-beginners-angular/",
+        "title": "Forms for Beginners – Angular",
+        "publishedAt": "2026-10-19T00:00:00.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/routing-for-beginners-angular/",
+        "title": "Routing for beginners – Angular",
+        "publishedAt": "2026-10-05T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-05T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "e4eb3169-81ed-4d6f-bd6f-f13ad0688adc",
     "slug": "what-is-middleware-in-asp-net-core-and-the-gotchas",
     "title": "What is middleware in ASP.NET Core and the gotchas",
@@ -2442,6 +2767,44 @@
     "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-03T00:00:00.000Z",
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
+  },
+  {
+    "id": "0fb907c1-efe2-4911-aa17-af477065529e",
+    "slug": "ng-news-26-21-angular-22-2-router-resources-error-boundaries-and-private-templat",
+    "title": "Ng-News 26/21: Angular 22.2 — Router Resources, Error Boundaries, and Private Template Members",
+    "tldr": "Angular 22.2 introduces router resources and error boundaries in developer preview, while permitting TypeScript private members to be referenced in templates. Router resources simplify data loading by integrating directly into route configurations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Router resources allow asynchronous data fetching at the routing level, blocking route activation until data loads by default.</li><li>Multiple router resources across routes or nested routes execute data fetches in parallel to minimize wait times.</li><li>Data fetched via router resources maps directly to component input signals using component input binding.</li><li>Component templates can now directly access TypeScript private class members.</li><li>Error boundaries are introduced to capture unhandled render and change-detection errors within template sections.</li></ul><h3>Why it matters</h3><p>Declaring resources at the route level eliminates manual loading-state boilerplate from components, while error boundaries protect entire pages from crashing due to localized render failures.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "angular 22",
+      "router resources",
+      "web development"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-21-angular-22-2-router-resources-error-boundaries-and-priva/",
+        "title": "Ng-News 26/21: Angular 22.2 — Router Resources, Error Boundaries, and Private Template Members",
+        "publishedAt": "2026-10-03T00:00:00.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-21-angular-22-2-router-resources-error-boundaries-and-priva-e928a/",
+        "title": "Ng-News 26/21: Angular 22.2: Router Resources, Error Boundaries, and Private Template Members",
+        "publishedAt": "2026-10-03T00:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-10-03T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "5f52e340-7c10-4e68-8f31-ec1b62cc7400",
@@ -2721,13 +3084,16 @@
     "id": "21636411-4af1-4385-804b-f77387875b7c",
     "slug": "angular-22-updates",
     "title": "Angular 22 updates",
-    "tldr": "Angular 22.2 introduces developer previews for error boundaries and router resources.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Adds @boundary blocks for localized template error handling</li><li>Adds Router Resources to load route data in parallel</li><li>Allows private properties inside templates</li></ul><h3>Why it matters</h3><p>These preview features give developers finer control over application rendering failures and parallel data loading.</p>",
+    "tldr": "Angular 22.2 introduces error boundaries and router resources as developer previews, alongside template access for private class members. These additions enhance component error handling and streamline parallel route data fetching.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The new @boundary syntax traps rendering and change-detection exceptions within specific template sections, rendering fallback UI via @error blocks.</li><li>@boundary blocks support error aliasing and typed conditional handling using 'when' statements to capture specific error types.</li><li>Router Resources replace sequential route resolvers with parallel resource loading executed automatically during navigation.</li><li>Resource errors throw exceptions when reading value(), making them natural targets for containment inside @boundary blocks.</li><li>Templates can now reference private class members directly without exposing them through public properties.</li></ul><h3>Why it matters</h3><p>Developer preview features like @boundary and router resources introduce React-like failure isolation and clean, declarative data fetching directly to Angular's template syntax.</p>",
     "tags": [
       "angular",
       "architecture",
       "web development",
-      "frontend"
+      "frontend",
+      "angular 22",
+      "error boundaries",
+      "router resources"
     ],
     "sources": [
       {
@@ -2736,6 +3102,13 @@
         "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
         "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
         "publishedAt": "2026-09-28T15:45:57.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T00:00:00.000Z"
       },
       {
         "sourceId": "73a4e84eff6d",
@@ -2764,7 +3137,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-28T15:45:57.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -2804,14 +3177,16 @@
     "id": "ee23adda-2062-46ed-a71a-277d0da9e369",
     "slug": "5-real-world-angular-ai-case-studies-worth-reading-in-2026",
     "title": "5 Real-World Angular + AI Case Studies Worth Reading in 2026",
-    "tldr": "Recent case studies demonstrate that agentic AI workflows can reduce framework upgrade effort and delivery times by up to 90%.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Netsmart utilized AWS Transform and Amazon Q to reduce Angular upgrade effort by up to 90%</li><li>DXC lowered enterprise Angular migration hours by 60-75%</li><li>Controlled enterprise tests showed design-system-aware AI reduced time-to-delivery significantly</li></ul><h3>Why it matters</h3><p>Large-scale enterprise software migrations can be heavily automated using multi-tool AI workflows under standard testing controls.</p>",
+    "tldr": "Real-world enterprise case studies show engineering teams using agentic AI workflows to modernize legacy Angular codebases, cutting upgrade effort by up to 90%. Platforms like Netsmart and DXC deployed multi-agent setups for multi-version framework migrations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Netsmart utilized AWS Transform, Kiro, and Amazon Q Developer to modernize more than 2 million lines of code across three large Angular systems.</li><li>Netsmart reported an 85% to 90% reduction in migration effort, including upgrading over 100,000 lines of AngularJS to Angular 21 in five months instead of eighteen.</li><li>The migration pipeline distributed responsibilities: AWS Transform tackled breaking changes, Kiro verified UI consistency, and Amazon Q Developer handled reviews.</li><li>DXC Technology migrated legacy Angular 9 and 15 microfrontends to Angular 20 using Amazon Q Developer to resolve dependency conflicts and deprecations.</li><li>These implementations reflect a transition in AI usage from basic autocomplete to executing repeatable, end-to-end modernization workflows.</li></ul><h3>Why it matters</h3><p>Agentic AI workflows make complex, large-scale framework migrations financially and operationally viable by automating dependency resolutions, breaking API transformations, and build fixes.</p>",
     "tags": [
       "angular",
       "ai",
       "case-studies",
       "enterprise migration",
-      "aws"
+      "aws",
+      "enterprise",
+      "software architecture"
     ],
     "sources": [
       {
@@ -2820,6 +3195,13 @@
         "url": "https://www.angularspace.com/angular-ai-case-studies/",
         "title": "5 Real-World Angular + AI Case Studies Worth Reading in 2026",
         "publishedAt": "2026-09-28T08:00:16.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/5-real-world-angular-ai-case-studies-worth-reading-in-2026/",
+        "title": "5 Real-World Angular + AI Case Studies Worth Reading in 2026",
+        "publishedAt": "2026-09-28T00:00:00.000Z"
       }
     ],
     "relevance": 5,
@@ -2827,7 +3209,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-28T08:00:16.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -2981,14 +3363,21 @@
         "url": "https://blog.angular.dev/architecting-the-modern-web-debounce-apis-rendering-strategies-and-automated-ai-setup-826bc54ae3a9?source=rss----447683c3d9a3---4",
         "title": "Architecting the Modern Web: Debounce APIs, Rendering Strategies, and Automated AI Setup! ⚡",
         "publishedAt": "2026-09-25T13:59:49.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/architecting-the-modern-web-debounce-apis-rendering-strategies-and-aut/",
+        "title": "Architecting the Modern Web: Debounce APIs, Rendering Strategies, and Automated AI Setup! ⚡",
+        "publishedAt": "2026-09-25T00:00:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-25T13:59:49.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -3012,14 +3401,21 @@
         "url": "https://blog.angular.dev/an-update-on-angulars-typescript-7-powered-compiler-9619a35e2b0a?source=rss----447683c3d9a3---4",
         "title": "An update on Angular’s TypeScript 7-powered Compiler",
         "publishedAt": "2026-09-25T13:59:11.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/an-update-on-angulars-typescript-7-powered-compiler/",
+        "title": "An update on Angular’s TypeScript 7-powered Compiler",
+        "publishedAt": "2026-09-25T00:00:00.000Z"
       }
     ],
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-19T08:42:08.996Z",
-    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-25T13:59:11.000Z",
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
   },
@@ -3043,14 +3439,21 @@
         "url": "https://www.angularspace.com/polymorpheus-a-tiny-tool-you-didnt-know-you-needed/",
         "title": "Polymorpheus: a tiny tool you didn’t know you needed",
         "publishedAt": "2026-09-25T09:18:54.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/polymorpheus-a-tiny-tool-you-didnt-know-you-needed/",
+        "title": "Polymorpheus: a tiny tool you didn’t know you needed",
+        "publishedAt": "2026-09-25T00:00:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-25T09:18:54.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -3238,14 +3641,21 @@
         "url": "https://www.angulararchitects.io/en/blog/using-jev-for-agentic-ui-just-a-trend-or-a-game-changer/",
         "title": "Using Jev for Agentic UI: Just a Trend or a Game Changer?",
         "publishedAt": "2026-09-20T21:19:35.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/using-jev-for-agentic-ui-just-a-trend-or-a-game-changer/",
+        "title": "Using Jev for Agentic UI: Just a Trend or a Game Changer?",
+        "publishedAt": "2026-09-20T00:00:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-20T21:19:35.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -3351,6 +3761,62 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-09-15T10:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "916f45bb-f93c-498b-b048-4cc043025806",
+    "slug": "component-harness-writing-tests-that-survive-refactors",
+    "title": "Component Harness: Writing Tests That Survive Refactors",
+    "tldr": "If you’ve ever worked on a large Angular codebase, you’ve probably experienced this frustration: you change a component’s internal structure – maybe by wrapping an element in a div …",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> If you’ve ever worked on a large Angular codebase, you’ve probably experienced this frustration: you change a component’s internal structure – maybe by wrapping an element in a div …</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/component-harness-writing-tests-that-survive-refactors/",
+        "title": "Component Harness: Writing Tests That Survive Refactors",
+        "publishedAt": "2026-09-15T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-09-15T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
+    "id": "30357943-3575-4465-990e-0147596635e2",
+    "slug": "route-resources-in-angular-what-the-router-actually-does-with-your-signal-under",
+    "title": "Route Resources in Angular: what the Router actually does with your Signal under the hood",
+    "tldr": "Introduction Route resolvers have been around in Angular for years, and they do their job,...",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> Introduction Route resolvers have been around in Angular for years, and they do their job,...</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/route-resources-in-angular-what-the-router-actually-does-with-your-sig/",
+        "title": "Route Resources in Angular: what the Router actually does with your Signal under the hood",
+        "publishedAt": "2026-09-15T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-09-15T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "c5f45a68-4894-402a-a49b-f16098553537",
@@ -3579,6 +4045,34 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "b7aa1e8e-f1eb-450e-b20b-505348d4152c",
+    "slug": "optimus-ui-ng-switzerland-and-ngrx-22",
+    "title": "Optimus UI, NG Switzerland, and NgRx 22",
+    "tldr": "Optimus UI, NG Switzerland, and NgRx 22 headline this episode. Also in brief: new Angular Space...",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> Optimus UI, NG Switzerland, and NgRx 22 headline this episode. Also in brief: new Angular Space...</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/optimus-ui-ng-switzerland-and-ngrx-22/",
+        "title": "Optimus UI, NG Switzerland, and NgRx 22",
+        "publishedAt": "2026-09-10T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-09-10T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "12936995-8659-422c-8c4d-11138186a3c1",
     "slug": "why-rider-and-resharper-were-slow-to-start-and-how-microsoft-helped-fix-the-prob",
     "title": "Why Rider and ReSharper Were Slow to Start, and How Microsoft Helped Fix the Problem",
@@ -3760,6 +4254,34 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "8821477b-8201-44ae-9ac0-8fa0df219568",
+    "slug": "router-resources-daten-laden-mit-dem-angular-router",
+    "title": "Router Resources: Daten laden mit dem Angular Router",
+    "tldr": "Resolver auf Signal-Basis: parallel statt Wasserfall, blockierend oder nicht blockierend Resolver sind so alt wie der Angular Router selbst. Sie laden Daten, bevor eine Route aktiviert wird, und liefern dafür ein Observable oder Promise. In einer Welt, in der Datenzugriff zunehmend über resource, rx",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> Resolver auf Signal-Basis: parallel statt Wasserfall, blockierend oder nicht blockierend Resolver sind so alt wie der Angular Router selbst. Sie laden Daten, bevor eine Route aktiviert wird, und liefern dafür ein Observable oder Promise. In einer Welt, in der Datenzugriff zunehmend über resource, rx</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/router-resources-daten-laden-mit-dem-angular-router/",
+        "title": "Router Resources: Daten laden mit dem Angular Router",
+        "publishedAt": "2026-09-08T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-09-08T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "3e0fede9-8e73-4136-ae34-7690e23f3a6a",
     "slug": "four-years-of-writing-every-week",
     "title": "Four Years of Writing Every Week",
@@ -3827,6 +4349,34 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-09-04T08:16:59.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "4d056660-0bfa-44ee-889e-39627afa2811",
+    "slug": "agentic-engineering-skills-for-angular-development",
+    "title": "Agentic Engineering: Skills for Angular Development",
+    "tldr": "Putting LLM progress into practice: what agent skills are, why they outlive model generations, and my open catalogue of 27 skills for Angular development.",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> Putting LLM progress into practice: what agent skills are, why they outlive model generations, and my open catalogue of 27 skills for Angular development.</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/agentic-engineering-skills-for-angular-development/",
+        "title": "Agentic Engineering: Skills for Angular Development",
+        "publishedAt": "2026-09-04T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-09-04T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "84409107-6d8e-4edf-9523-89da9a65739e",
@@ -3981,14 +4531,21 @@
         "url": "https://blog.angular.dev/customizing-angular-aria-tabs-quickly-with-google-antigravity-cli-39ff8e0271a4?source=rss----447683c3d9a3---4",
         "title": "Customizing Angular Aria Tabs Quickly with Google Antigravity CLI",
         "publishedAt": "2026-09-02T01:50:59.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/customizing-angular-aria-tabs-quickly-with-google-antigravity-cli/",
+        "title": "Customizing Angular Aria Tabs Quickly with Google Antigravity CLI",
+        "publishedAt": "2026-09-02T00:00:00.000Z"
       }
     ],
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-02T01:50:59.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4051,14 +4608,21 @@
         "url": "https://www.angularspace.com/want-to-speak-at-a-conferences-heres-what-ive-learned/",
         "title": "Want to Speak at a Conferences? Here’s What I’ve Learned",
         "publishedAt": "2026-09-01T14:00:06.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/want-to-speak-at-a-conferences-heres-what-ive-learned/",
+        "title": "Want to Speak at a Conferences? Here’s What I’ve Learned",
+        "publishedAt": "2026-09-01T00:00:00.000Z"
       }
     ],
     "relevance": 2,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-09-01T14:00:06.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4158,6 +4722,34 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "e6bb1de9-d327-4d70-b988-60d46a80ea7f",
+    "slug": "agentic-engineering-summer-26-update",
+    "title": "Agentic Engineering: Summer ’26 Update",
+    "tldr": "Dies ist Beitrag 8 von 8 der Serie “Agentic Engineering” Agentic Engineering: Which LLM Is Best for Angular Development? Agentic: Which App/Harness Is Best for Angular Development? Agentic Engineering: What Does AI Coding Really Cost? Agentic Engineering: What Do AI Coding Tools Do With Your Code? A",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> Dies ist Beitrag 8 von 8 der Serie “Agentic Engineering” Agentic Engineering: Which LLM Is Best for Angular Development? Agentic: Which App/Harness Is Best for Angular Development? Agentic Engineering: What Does AI Coding Really Cost? Agentic Engineering: What Do AI Coding Tools Do With Your Code? A</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/agentic-engineering-summer-26-update/",
+        "title": "Agentic Engineering: Summer ’26 Update",
+        "publishedAt": "2026-08-29T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-29T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "79194206-39b8-4ded-85fb-2b03b29534ff",
     "slug": "microsoft-makes-the-case-for-vslive-in-the-ai-era",
     "title": "Microsoft Makes the Case for VSLive! in the AI Era",
@@ -4214,14 +4806,21 @@
         "url": "https://blog.angular.dev/styling-mastery-and-declarative-form-submissions-743bb9bd0b0e?source=rss----447683c3d9a3---4",
         "title": "Styling Mastery and Declarative Form Submissions",
         "publishedAt": "2026-08-28T11:01:01.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/styling-mastery-and-declarative-form-submissions/",
+        "title": "Styling Mastery and Declarative Form Submissions",
+        "publishedAt": "2026-08-28T00:00:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-08-28T11:01:01.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4330,6 +4929,34 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "089a0412-2e17-4951-8efd-63f5cfdae2ea",
+    "slug": "angular-addicts-52-angular-addicts-52-angular-22-1-copilotkit-mcp-apps-signal-fo",
+    "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
+    "tldr": "My favorite Angular resources of July, 2026",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> My favorite Angular resources of July, 2026</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-addicts-52-angular-addicts-52-angular-22-1-copilotkit-mcp-apps/",
+        "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
+        "publishedAt": "2026-08-27T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-27T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "e8b1a445-de46-443c-9aff-979766887765",
     "slug": "microsoft-formalizes-vs-code-agent-host-as-open-architecture-for-persistent-ai-s",
     "title": "Microsoft Formalizes VS Code Agent Host as Open Architecture for Persistent AI Sessions",
@@ -4382,14 +5009,21 @@
         "url": "https://www.angularspace.com/best-api-integration-platforms-for-saas-and-agents/",
         "title": "The best API integration platforms for SaaS apps and agents in 2026",
         "publishedAt": "2026-08-26T17:40:00.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/the-best-api-integration-platforms-for-saas-apps-and-agents-in-2026/",
+        "title": "The best API integration platforms for SaaS apps and agents in 2026",
+        "publishedAt": "2026-08-26T00:00:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-08-26T17:40:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4611,15 +5245,16 @@
     "id": "8007de47-d00c-4cce-82ef-3564c336392b",
     "slug": "code-became-cheap-did-developer-knowledge-too",
     "title": "Code Became Cheap. Did Developer Knowledge Too?",
-    "tldr": "While generative AI makes code implementation cheaper, deep developer knowledge remains valuable for architectural decisions, system context, and problem definition.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>AI tools significantly lower the cost of writing syntax, boilerplate implementations, and exploring unfamiliar APIs.</li><li>Generating code differs fundamentally from deciding whether a solution belongs in a specific system architecture.</li><li>Empirical productivity studies show mixed results depending on the specific task, repository familiarity, and AI model used.</li><li>Foundational domain knowledge (such as concurrency and time management in data streams) remains essential for making sound engineering choices.</li></ul><h3>Why it matters</h3><p>As code generation becomes commoditized, a developer's value shifts from rote syntax reproduction toward architectural judgment, critical problem analysis, and system design.</p>",
+    "tldr": "Generative AI significantly reduces the cost of producing code, shifting developer value away from API memorization toward architectural decisions and system context. However, real-world studies show AI assistance does not guarantee immediate productivity gains.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>AI agents can rapidly inspect packages, read documentation, and write implementations, making syntax recall and routine coding less scarce.</li><li>Developer value is shifting from raw implementation speed to selection, problem definition, and assessing whether code fits into existing systems.</li><li>A 2025 randomized study by METR found experienced open-source maintainers took 19% longer to complete tasks in familiar repositories when using early-2025 AI tools.</li></ul><h3>Why it matters</h3><p>As implementation becomes automated, engineers must focus on system architecture, context evaluation, and integration trade-offs rather than rote memorization.</p>",
     "tags": [
       "opinion",
       "career",
       "ai",
       "software engineering",
       "architecture",
-      "productivity"
+      "productivity",
+      "developer productivity"
     ],
     "sources": [
       {
@@ -4628,6 +5263,13 @@
         "url": "https://www.angularspace.com/code-became-cheap-did-developer-knowledge-too/",
         "title": "Code Became Cheap. Did Developer Knowledge Too?",
         "publishedAt": "2026-08-24T15:52:12.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/code-became-cheap-did-developer-knowledge-too/",
+        "title": "Code Became Cheap. Did Developer Knowledge Too?",
+        "publishedAt": "2026-08-24T00:00:00.000Z"
       }
     ],
     "relevance": 4,
@@ -4635,7 +5277,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-08-24T15:52:12.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4707,6 +5349,37 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-08-22T00:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "218a2182-94bf-4faa-9458-284142279add",
+    "slug": "ng-news-26-19-angular-22-1",
+    "title": "Ng-News 26/19: Angular 22.1",
+    "tldr": "Angular 22.1 introduces a custom set function for linkedSignal, enabling bidirectional signal updates with a single source of truth. This replaces asynchronous effect-based synchronization with synchronous write-back handling.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular 22.1 is the first minor release of Angular 22, adding features without breaking changes.</li><li>linkedSignal previously only derived a writable value from a source signal, requiring an effect to propagate changes back to the source.</li><li>The custom setter defines write-back logic directly within the linkedSignal declaration, removing the need for effects, untracked(), or circular dependency checks.</li><li>Writes to the linked signal update the source signal, which synchronously triggers recomputation of the linked value.</li></ul><h3>Why it matters</h3><p>This feature simplifies state synchronization in Angular applications by providing a declarative, synchronous mechanism to reflect derived state changes back into a single source of truth.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "angular 22",
+      "signals",
+      "state management"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-19-angular-22-1/",
+        "title": "Ng-News 26/19: Angular 22.1",
+        "publishedAt": "2026-08-22T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-22T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "b5b0a42f-225f-4a72-8e28-492be9a5a7ab",
@@ -4859,6 +5532,37 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "5cee54be-0b42-4803-97da-6c3aa9645449",
+    "slug": "the-angular-pattern-that-needs-no-provider",
+    "title": "The Angular pattern that needs no Provider",
+    "tldr": "Custom inject functions can manage component-scoped logic directly in field initializers without declaring a service provider or host directive. This approach ties isolated state, lifecycle cleanup, and element references directly to the caller's injection context.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Component-scoped services require provider declarations on element injectors, which can silently break if omitted.</li><li>Host directives encapsulate element-level behavior but introduce extra metadata boilerplate.</li><li>Angular's inject() can run inside standalone functions invoked during field initialization when the injection context is active.</li><li>The custom inject function pattern can access ElementRef and DestroyRef while returning plain values, Signals, or Observables without dedicated classes.</li></ul><h3>Why it matters</h3><p>Developers can create lightweight, reusable component features without introducing unnecessary classes, providers, or directive metadata into the DI container.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "dependency injection",
+      "signals",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/the-angular-pattern-that-needs-no-provider/",
+        "title": "The Angular pattern that needs no Provider",
+        "publishedAt": "2026-08-16T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-16T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "dbf9c9f5-6f30-4d86-928e-508eb4f2ea65",
     "slug": "how-do-you-build-a-social-media-feed-system-design",
     "title": "How Do You Build a Social Media Feed? (System Design)",
@@ -4891,14 +5595,16 @@
     "id": "fbf5dfe2-4ccf-453e-8435-9aaa6debfc85",
     "slug": "the-forms-evolution-web-ai-and-architectural-vision",
     "title": "The Forms Evolution, Web AI, and Architectural Vision!",
-    "tldr": "The Angular blog highlights ongoing updates around form architectures, web AI integration, and architectural vision.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Focuses on the evolution of Angular forms.</li><li>Discusses the integration of Web AI capabilities.</li><li>Outlines broad architectural visions for the framework.</li></ul><h3>Why it matters</h3><p>Tracking these architectural updates helps developers prepare for upcoming shifts in Angular application design and tool integration.</p>",
+    "tldr": "The Angular blog highlighted community developments covering the evolution of Angular forms toward Signal Forms, client-side Web AI integration, and modern architectural practices. New tutorials and podcast discussions also focused on pragmatic AI tooling and test suites.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Form architectures have shifted from legacy template-driven patterns toward reactive Signal Forms APIs.</li><li>Client-side machine learning and Web AI features enable faster, privacy-oriented processing directly in the browser.</li><li>The Dev Life podcast released episodes focusing on the v21 roadmap, modern architecture, and AI strategies in production.</li><li>Community coding challenges were released covering nested structures and dynamic form arrays using modern primitives.</li></ul><h3>Why it matters</h3><p>It outlines the broader Angular ecosystem's transition toward signal-based reactivity and client-side AI integration in web development.</p>",
     "tags": [
       "angular",
       "forms",
       "ai",
       "architecture",
-      "web development"
+      "web development",
+      "web ai",
+      "signal forms"
     ],
     "sources": [
       {
@@ -4907,6 +5613,13 @@
         "url": "https://blog.angular.dev/the-forms-evolution-web-ai-and-architectural-vision-4f96634b0ae3?source=rss----447683c3d9a3---4",
         "title": "The Forms Evolution, Web AI, and Architectural Vision!",
         "publishedAt": "2026-08-14T13:01:03.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/the-forms-evolution-web-ai-and-architectural-vision/",
+        "title": "The Forms Evolution, Web AI, and Architectural Vision! 🧬🤖",
+        "publishedAt": "2026-08-14T00:00:00.000Z"
       }
     ],
     "relevance": 6,
@@ -4914,7 +5627,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-08-14T13:01:03.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4952,14 +5665,16 @@
     "id": "1ce49ecc-de11-45bb-ac12-5b6943447d6f",
     "slug": "loop-engineering-with-super-mario-and-twelve-ai-coding-agents",
     "title": "Loop Engineering with Super Mario and Twelve AI Coding Agents",
-    "tldr": "An experiment testing twelve AI coding agents on identical Angular tasks revealed a 160-fold cost spread and a 19-fold wall-clock time difference. The findings demonstrate that token consumption heavily depends on how agents accumulate context across loops rather than just raw turn counts.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Twelve agents implemented the same features (a Koopa Troopa enemy and bounce mechanics) in an Angular Mario clone.</li><li>All models ran within identical Sandcastle loops encompassing planning, implementation, review, and merging stages.</li><li>Models varied significantly in cost and execution speed, primarily driven by context window accumulation rather than turn volume.</li><li>Evaluations relied on manual code reviews and gameplay testing since automated test suites missed visual bugs.</li></ul><h3>Why it matters</h3><p>Quantifying agent loop behavior helps engineering teams evaluate the real-world operational costs and reliability of using LLM coding agents in complex codebases.</p>",
+    "tldr": "An experiment evaluating twelve AI coding agents on identical Angular tasks revealed large variances in cost and execution time. Agents were tasked with implementing game mechanics deep inside an existing Super Mario clone codebase.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Twelve agents implemented a Koopa Troopa enemy and jump-bounce mechanics in a single Angular-based Super Mario clone.</li><li>Tasks required modifying core game loops, physics, and collision systems rather than isolated CRUD functionality.</li><li>The evaluation showed a 160-fold spread in cost and a 19-fold difference in wall-clock completion time across the agents.</li><li>Token consumption was heavily driven by how agents managed context accumulation across iterative loops rather than turn count alone.</li></ul><h3>Why it matters</h3><p>The test highlights how context accumulation and agent loop designs dramatically impact the cost and speed of using AI models in complex codebases.</p>",
     "tags": [
       "angular",
       "ai-agents",
       "benchmarking",
       "ai",
-      "development"
+      "development",
+      "ai agents",
+      "software development"
     ],
     "sources": [
       {
@@ -4968,6 +5683,13 @@
         "url": "https://www.angulararchitects.io/en/blog/loop-engineering-with-super-mario-and-twelve-ai-coding-agents/",
         "title": "Loop Engineering with Super Mario and Twelve AI Coding Agents",
         "publishedAt": "2026-08-12T22:25:30.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/loop-engineering-mit-super-mario-und-zw-lf-ki-coding-agenten/",
+        "title": "Loop Engineering mit Super Mario und zwölf KI-Coding-Agenten",
+        "publishedAt": "2026-08-13T00:00:00.000Z"
       }
     ],
     "relevance": 6,
@@ -4975,7 +5697,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-08-12T22:25:30.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -5157,6 +5879,37 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-08-11T07:45:20.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "2cefc86a-286c-4aac-8f58-878dc7a59788",
+    "slug": "lazy-loading-services-in-angular-22",
+    "title": "Lazy Loading Services in Angular 22",
+    "tldr": "Angular 22 introduces injectAsync to allow on-demand, lazy loading of root services without manual import boilerplate. Services must be self-provided and can optionally leverage prefetching during idle browser time.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Previously, services provided in root were bundled into the main bundle even if rarely used; workarounds required manual dynamic import() calls.</li><li>injectAsync from @angular/core is invoked in a field initializer and returns a function that resolves the lazily loaded service instance.</li><li>The loaded service must be auto-provided using @Injectable({ providedIn: 'root' }) or the @Service() decorator introduced in Angular 22.</li><li>An optional prefetch parameter allows downloading code ahead of time, such as during browser idle phases using onIdle.</li></ul><h3>Why it matters</h3><p>injectAsync reduces initial application bundle sizes by deferring the download and instantiation of heavy services until they are needed.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "angular 22",
+      "performance",
+      "lazy loading"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/lazy-loading-services-in-angular-22/",
+        "title": "Lazy Loading Services in Angular 22",
+        "publishedAt": "2026-08-11T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-11T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "0beff31d-35b4-4d01-8dff-eecb50c915d8",
@@ -5441,6 +6194,37 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "ff45aa9e-beda-4a14-a4f3-6a809d379413",
+    "slug": "ng-news-26-18-angular-annual-releases-copilotkit-integration",
+    "title": "Ng-News 26/18: Angular Annual Releases, CopilotKit Integration",
+    "tldr": "Angular is moving to a 12-month major release cycle, delaying Angular 23 to 2027, while CopilotKit has released official open-source Angular integration for agent-driven UIs.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular's major release frequency is changing from every six months to once per year to reduce maintenance burdens for enterprise users and library authors.</li><li>Angular 23 will not release in late 2026; it is scheduled for May or early June 2027, with minor releases handling ongoing feature additions.</li><li>CopilotKit has made its Angular implementation open source to support dynamic interfaces and agentic UI via the AG-UI protocol.</li><li>The CopilotKit Angular integration is maintained in partnership with Soverius AI and supports tool calling, A2UI, and generative UI.</li></ul><h3>Why it matters</h3><p>Teams gain a more predictable, annual upgrade schedule for breaking changes alongside native tooling to embed AI agent interfaces directly in Angular.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "releases",
+      "copilotkit",
+      "agentic ai"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-18-angular-annual-releases-copilotkit-integration/",
+        "title": "Ng-News 26/18: Angular Annual Releases, CopilotKit Integration",
+        "publishedAt": "2026-08-06T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-06T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "415cc0dd-c3ef-43de-b1a5-4b50a89f7f3e",
     "slug": "vs-code-1-132-sharpens-agent-workflows-with-side-chats-browser-comments",
     "title": "VS Code 1.132 Sharpens Agent Workflows with Side Chats, Browser Comments",
@@ -5470,6 +6254,37 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-08-05T16:13:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "8d2d566b-0a9b-47e4-b459-d1dc4aa6f31c",
+    "slug": "angular-new-release-cycle-release-schedule-change-explained",
+    "title": "Angular New Release Cycle: Release Schedule Change Explained",
+    "tldr": "The Angular team has changed its release schedule from six-month to twelve-month cycles starting after Angular 22, pushing Angular 23 to June 2027. Each major version will now receive 24 months of total support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Major versions will ship once per year instead of twice, with breaking changes confined strictly to annual releases.</li><li>Angular 22 is extended across a 12-month window with minor releases 22.1 through 22.5, scheduling Angular 23 for June 2027.</li><li>Minor releases will arrive approximately every eight weeks, delivering 4 to 6 minor updates per major cycle.</li><li>The total support window expands from 18 to 24 months, comprising 12 months of active support and 12 months of LTS.</li><li>The deprecation policy has been updated to keep deprecated APIs in place for at least one major release, preserving a 12-month minimum transition period.</li></ul><h3>Why it matters</h3><p>The lengthened release and support cycle reduces upgrade fatigue for developers and enterprises while preserving regular, non-breaking feature rollouts.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "releases",
+      "lts",
+      "framework strategy"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-new-release-cycle-release-schedule-change-explained/",
+        "title": "Angular New Release Cycle: Release Schedule Change Explained",
+        "publishedAt": "2026-08-05T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-05T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "5d84ed5e-a327-4fa7-b1cb-ae7d1667cab0",
@@ -5508,14 +6323,16 @@
     "id": "b6eb66c0-80e3-47fe-9699-962dea90a9aa",
     "slug": "how-to-handle-global-errors-in-modern-zoneless-angular",
     "title": "How to Handle Global Errors in Modern Zoneless Angular",
-    "tldr": "Angular v20 introduces provideBrowserGlobalErrorListeners to handle global errors in zoneless applications.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Zone.js previously intercepted unhandled promise rejections automatically</li><li>Zoneless applications remove Zone.js, necessitating explicit error handling tools</li><li>provideBrowserGlobalErrorListeners catches unhandled errors in modern Angular apps</li></ul><h3>Why it matters</h3><p>As Angular moves toward a zoneless future, explicit error-handling primitives ensure application stability without relying on implicit framework magic.</p>",
+    "tldr": "Angular v20 introduces provideBrowserGlobalErrorListeners to handle global unhandled errors in zoneless applications. The utility restores centralized error capture previously provided implicitly by Zone.js.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Zone.js traditionally intercepted unhandled asynchronous errors and promise rejections by monkey-patching browser APIs.</li><li>As Angular moves toward zoneless architectures, implicit Zone.js error interception is no longer available.</li><li>provideBrowserGlobalErrorListeners provides explicit mechanisms to capture and centralize unhandled asynchronous exceptions in zoneless setups.</li></ul><h3>Why it matters</h3><p>It establishes a standardized approach for catching uncaught asynchronous errors as applications migrate away from Zone.js.</p>",
     "tags": [
       "angular",
       "error-handling",
       "zoneless",
       "javascript",
-      "web development"
+      "web development",
+      "angular v20",
+      "error handling"
     ],
     "sources": [
       {
@@ -5531,6 +6348,13 @@
         "url": "https://blog.angulartraining.com/how-to-use-error-boundaries-in-angular-caf9ffd7a3c5?source=rss----8725e60f0d54---4",
         "title": "How to use error boundaries in Angular?",
         "publishedAt": "2026-10-02T14:01:11.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/how-to-handle-global-errors-in-modern-zoneless-angular/",
+        "title": "How to Handle Global Errors in Modern Zoneless Angular",
+        "publishedAt": "2026-08-04T00:00:00.000Z"
       }
     ],
     "relevance": 7,
@@ -5538,7 +6362,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-08-04T11:51:30.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -5614,6 +6438,37 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "5ae3d746-f7c9-48e0-bb1e-41c740154c9b",
+    "slug": "give-your-angular-modal-a-url-three-router-based-approaches",
+    "title": "Give Your Angular Modal a URL: Three Router-Based Approaches",
+    "tldr": "Synchronizing modals with the Angular Router ensures dialog state survives refreshes, back/forward navigation, and deep linking. Developers can manage modal state either through query parameters or nested child routes.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Treating the URL as the single source of truth ensures modal open and close actions are driven exclusively by navigation events.</li><li>Using query parameters suits optional UI states over existing views and preserves standard browser history behavior.</li><li>Employing replaceUrl when closing a modal prevents cluttering the browser history with redundant close steps.</li><li>Child routes provide explicit URLs and isolated component lifecycles for complex modal interactions like editing entities.</li></ul><h3>Why it matters</h3><p>Routing modals makes complex dialog flows bookmarkable, compatible with standard browser navigation, and easier to track in analytics.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "routing",
+      "ui components",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/give-your-angular-modal-a-url-three-router-based-approaches/",
+        "title": "Give Your Angular Modal a URL: Three Router-Based Approaches",
+        "publishedAt": "2026-08-02T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-08-02T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "9f9607c0-c1dc-4de2-93d7-5ce0e321bb9a",
     "slug": "should-you-split-that-into-microservices-ask-these-5-questions-first",
     "title": "Should You Split That Into Microservices? Ask These 5 Questions First",
@@ -5646,13 +6501,15 @@
     "id": "54c3f88d-8d76-4a17-90f3-26bcb53558f3",
     "slug": "free-book-chapters-better-testing-control-and-smart-mcp-configuration",
     "title": "Free Book Chapters, Better Testing Control, and Smart MCP Configuration!",
-    "tldr": "Angular published updates regarding free book chapters, testing controls, and MCP configuration.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Provides resources for testing control and MCP configuration</li><li>Includes free book chapters</li></ul><h3>Why it matters</h3><p>Provides educational and configuration resources for Angular developers.</p>",
+    "tldr": "Recent Angular community resources include free architectural chapters covering interceptors, i18n, and SSR, along with new guidance on test time control and MCP server configurations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Three free book chapters were released exploring key architectural concepts: Interceptors, Internationalization (i18n), and Server-Side Rendering (SSR).</li><li>The Mini TypeScript Hero VS Code extension was released to automate and clean up import management.</li><li>Guidance was published on configuring Model Context Protocol (MCP) servers, contrasting skills against tools for AI agent setups.</li><li>New testing tutorials detail managing asynchronous time in test suites and using Vitest's Fast-Forward functionality to bypass timers.</li></ul><h3>Why it matters</h3><p>These community resources offer actionable tooling and guides for optimizing testing routines, server configurations, and core Angular architectures.</p>",
     "tags": [
       "angular",
       "testing",
       "mcp",
-      "documentation"
+      "documentation",
+      "vitest",
+      "tooling"
     ],
     "sources": [
       {
@@ -5661,6 +6518,13 @@
         "url": "https://blog.angular.dev/free-book-chapters-better-testing-control-and-smart-mcp-configuration-ebc715561ca1?source=rss----447683c3d9a3---4",
         "title": "Free Book Chapters, Better Testing Control, and Smart MCP Configuration!",
         "publishedAt": "2026-07-31T15:20:46.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/free-book-chapters-better-testing-control-and-smart-mcp-configuration/",
+        "title": "Free Book Chapters, Better Testing Control, and Smart MCP Configuration! 📚🧪",
+        "publishedAt": "2026-07-31T00:00:00.000Z"
       }
     ],
     "relevance": 5,
@@ -5668,7 +6532,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-31T15:20:46.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -5708,15 +6572,16 @@
     "id": "35225fe7-8fce-4b57-b7c0-38e2ae6777c4",
     "slug": "copilotkit-for-angular-the-missing-link-for-agentic-ui",
     "title": "CopilotKit for Angular: The Missing Link for Agentic UI",
-    "tldr": "CopilotKit for Angular and the AG-UI protocol provide client-side infrastructure for consuming AI agents.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Bridges the gap between server-side AI agents and Angular user interfaces</li><li>Uses the AG-UI protocol for standardized event streaming</li><li>Supports interactive UI widgets via Model Context Protocol (MCP) apps</li></ul><h3>Why it matters</h3><p>Standardized client libraries allow developers to render rich agentic UI elements instead of plain text responses.</p>",
+    "tldr": "CopilotKit for Angular and the open AG-UI protocol provide frontend infrastructure to stream and render AI agent responses. In addition, MCP Apps extend the Model Context Protocol by turning tool output into interactive UI widgets.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Consuming AI agents requires handling event streams such as text fragments, tool calls, and approval signals without bloating application code.</li><li>AG-UI provides a backend-agnostic, open protocol connecting client applications to agent frameworks like Mastra, LangGraph, or Microsoft Agent Framework.</li><li>The Model Context Protocol (MCP) standardizes agent access to external tools, data sources, and resources.</li><li>MCP Apps extend MCP to deliver interactive web widgets inside sandboxed iframes rather than plain text responses, using postMessage communication.</li></ul><h3>Why it matters</h3><p>The combination of CopilotKit, AG-UI, and MCP Apps enables developers to build rich, interactive user interfaces for AI agents instead of plain chat text.</p>",
     "tags": [
       "angular",
       "mcp",
       "copilotkit",
       "agentic-ui",
       "ai",
-      "ui"
+      "ui",
+      "agentic ui"
     ],
     "sources": [
       {
@@ -5739,6 +6604,13 @@
         "url": "https://www.angulararchitects.io/en/blog/agentic-ui-with-mcp-apps-tool-results-as-interactive-widgets/",
         "title": "Agentic UI with MCP Apps: Tool Results as Interactive Widgets",
         "publishedAt": "2026-07-30T08:01:43.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/copilotkit-f-r-angular-der-missing-link-f-r-agentic-ui/",
+        "title": "CopilotKit für Angular: Der Missing Link für Agentic UI",
+        "publishedAt": "2026-08-03T00:00:00.000Z"
       }
     ],
     "relevance": 7,
@@ -5746,9 +6618,73 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-30T08:01:43.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "c9ba9839-72b5-4596-9e0f-676d301593f6",
+    "slug": "mcp-apps-in-angular-mit-copilotkit-rich-chat-interfaces-instead-of-text-response",
+    "title": "MCP Apps in Angular mit CopilotKit: Rich Chat Interfaces Instead of Text Responses",
+    "tldr": "A detailed case study demonstrates integrating an MCP server with an Angular client using CopilotKit, Mastra, and the AG-UI protocol. The implementation uses MCP Apps to display tool execution results as interactive interfaces.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The project integrates an external partner's hotel booking MCP server into an existing flight portal application.</li><li>MCP tools are declared with input and result schemas defined using Zod, along with a resourceUri pointing to the app's HTML assets.</li><li>Tools are registered via registerAppTool and corresponding UI resources via registerAppResource on a Node.js McpServer instance.</li><li>The MCP Inspector tool (npx @modelcontextprotocol/inspector) allows developers to inspect metadata, verify resources, and test tool invocations directly.</li></ul><h3>Why it matters</h3><p>This pattern demonstrates how full-stack developers can connect structured agent tool pipelines directly to custom web UIs across distributed services.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "copilotkit",
+      "mcp",
+      "mastra",
+      "typescript"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/mcp-apps-in-angular-mit-copilotkit-rich-chat-interfaces-instead-of-tex/",
+        "title": "MCP Apps in Angular mit CopilotKit: Rich Chat Interfaces Instead of Text Responses",
+        "publishedAt": "2026-07-30T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-30T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
+    "id": "7f33946b-64bb-467e-aedc-636d43a03fc1",
+    "slug": "agentic-ui-mit-mcp-apps-tool-ergebnisse-als-interaktive-widgets",
+    "title": "Agentic UI mit MCP Apps: Tool-Ergebnisse als interaktive Widgets",
+    "tldr": "MCP Apps extend the Model Context Protocol to present tool outputs as interactive UI widgets within sandboxed host environments. Communication between the host and embedded app relies on postMessage and the MCP Apps SDK.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>MCP, originally introduced by Anthropic in late 2024, provides tools, resources, and prompts, and is now governed under the Linux Foundation's Agentic AI Foundation.</li><li>MCP Apps allow tools to return interactive user interfaces referenced by a resourceUri in tool metadata.</li><li>The host renders the application in an iframe secured with sandbox attributes, typically relaxed with allow-scripts and allow-same-origin.</li><li>The MCP Apps SDK uses an App object in the widget and an AppBridge in the host, exchanging JSON messages via window.postMessage for data, sizing, and theme context.</li></ul><h3>Why it matters</h3><p>This architecture standardizes how host applications can securely render interactive, dynamic tool interfaces generated by external AI integrations.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "mcp",
+      "mcp apps",
+      "agentic ui",
+      "web security"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/agentic-ui-mit-mcp-apps-tool-ergebnisse-als-interaktive-widgets/",
+        "title": "Agentic UI mit MCP Apps: Tool-Ergebnisse als interaktive Widgets",
+        "publishedAt": "2026-07-30T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-30T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "85b0cae9-04fb-4f1a-a669-a0b4e1fc84a4",
@@ -5821,6 +6757,38 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "df41c884-c71e-4a37-9174-3e11b3a39f24",
+    "slug": "from-dom-scraping-to-contracts-understanding-webmcp-part-1",
+    "title": "From DOM Scraping to Contracts: Understanding WebMCP (Part 1)",
+    "tldr": "WebMCP is an emerging W3C draft proposal enabling web applications to expose structured, schema-typed tools directly to browser-based AI agents. Angular has introduced experimental support for the draft specification.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>WebMCP aims to replace brittle DOM scraping and visual guessing by letting web pages explicitly declare tools, parameter schemas, and return types.</li><li>The draft is in development within the W3C Web Machine Learning Community Group with participation from Google and Microsoft, and is in Chrome origin trials.</li><li>Angular is the first framework with built-in experimental support, marked with 'Experimental' naming that remains subject to breaking changes.</li><li>WebMCP uses MCP tool concepts but omits the JSON-RPC wire protocol, resources, and prompts, as it is designed for interactive, tab-scoped browser environments.</li></ul><h3>Why it matters</h3><p>Exposing structured API contracts to in-browser agents significantly reduces model latency, token costs, and errors associated with reverse-engineering web pages.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "webmcp",
+      "ai agents",
+      "w3c",
+      "web standards"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/from-dom-scraping-to-contracts-understanding-webmcp-part-1/",
+        "title": "From DOM Scraping to Contracts: Understanding WebMCP (Part 1)",
+        "publishedAt": "2026-07-28T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-28T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "baba1550-57a1-4864-bc1b-a7edd126fb43",
     "slug": "implement-saml-as-an-external-provider-in-an-asp-net-core-identity-application-u",
     "title": "Implement SAML as an external provider in an ASP.NET Core Identity application using Duende as an OIDC server",
@@ -5855,6 +6823,37 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "ec4456db-392c-43f2-8c61-842fd0c7fd76",
+    "slug": "choosing-the-right-rxjs-operator-for-action-streams",
+    "title": "Choosing the right RxJS Operator for Action Streams",
+    "tldr": "Implementing keyed concurrency with RxJS operators such as groupBy, switchMap, and concatMap isolates stream operations per entity ID. Choosing distinct operators across creates, updates, and deletes prevents race conditions and stale client-side states.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Keyed concurrency via groupBy enables concurrent execution for distinct entity IDs while applying operators like switchMap internally to handle actions for the same ID.</li><li>Unbounded groupBy groups can leak memory over time, but arbitrary duration timeouts can prematurely break isolation if requests are still in-flight.</li><li>Entity updates for the same ID are more robust when serialized rather than relying on a 'latest wins' switchMap strategy that risks stale server-side overwrites.</li><li>Entity creation generally warrants mergeMap, concatMap for ordered execution, or exhaustMap for single-submission protections, while deletes benefit from per-key exhaustMap.</li></ul><h3>Why it matters</h3><p>Properly structuring RxJS action streams prevents out-of-order API responses and unwanted request cancellations in complex applications. Aligning concurrency operators with domain actions ensures robust client-side state management alongside backend constraints.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "rxjs",
+      "state management",
+      "web development"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/choosing-the-right-rxjs-operator-for-action-streams/",
+        "title": "Choosing the right RxJS Operator for Action Streams",
+        "publishedAt": "2026-07-27T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-27T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "b7751454-5854-44fd-93bf-56ec7e7e2571",
     "slug": "architecture-as-a-guardrail-structurally-ruling-out-entire-classes-of-errors",
     "title": "Architecture as a Guardrail: Structurally Ruling Out Entire Classes of Errors",
@@ -5887,6 +6886,37 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "a2913b56-6bf5-4b9f-b323-aaddc5834f39",
+    "slug": "architektur-als-guardrail-fehlerklassen-strukturell-ausschlie-en",
+    "title": "Architektur als Guardrail: Fehlerklassen strukturell ausschließen",
+    "tldr": "Architectural boundaries like compact, schema-validated DSLs can structurally eliminate error classes in agentic UI systems instead of relying solely on runtime checks. In the Flight42 demo, shifting from direct markup generation to a Zod-validated DSL significantly reduced token usage, latency, and unwanted outputs.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Direct A2UI markup generation by AI models required substantial tokens and up to 37 seconds per dashboard assembly due to correction loops.</li><li>Restricting the agent to an application-specific DSL defined via a Zod schema enables the application to deterministically compile the interface layout and resolve data dependencies.</li><li>Structural constraints structurally prevent models from introducing invalid layouts, unknown components, or unauthorized content.</li><li>Compact DSLs improve cacheability for known interfaces, separating cached interface structure from freshly loaded bound data.</li></ul><h3>Why it matters</h3><p>Enforcing architectural constraints rather than dynamic runtime validation bounds AI agent output predictably and reduces operational latency. This pattern ensures business applications remain secure and deterministic when using generative UI frameworks.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "ai agents",
+      "a2ui",
+      "software architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/architektur-als-guardrail-fehlerklassen-strukturell-ausschlie-en/",
+        "title": "Architektur als Guardrail: Fehlerklassen strukturell ausschließen",
+        "publishedAt": "2026-07-26T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-26T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "74b01edc-e049-412d-9cda-2ede4299bdc7",
     "slug": "the-system-design-behind-my-new-saas",
     "title": "The System Design Behind My New SaaS",
@@ -5916,6 +6946,38 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-25T00:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "c02a288a-8041-48ac-948c-6ba70fa6deac",
+    "slug": "one-validator-to-rule-them-all-part-2-advanced-error-handling-with-multi-languag",
+    "title": "One Validator to Rule Them All — Part 2: Advanced Error Handling with multi-language support.",
+    "tldr": "Integrating internationalization into full-stack shared Zod schemas requires separating descriptive error codes from localized UI text. Custom errorCode metadata preserves machine-readable error identification without polluting backend-shared validation modules with UI-specific translations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Hardcoding localized strings directly into shared Zod schema messages inappropriately spreads frontend concerns to backend consumers.</li><li>Standard Zod error codes like 'custom' or 'too_small' lack descriptive precision for frontend form validation mapping.</li><li>Adding a reusable, machine-readable errorCode property to schema issues provides a distinct identifier for each validation rule failure.</li><li>Transformer functions convert schema issues into localized token structures (such as TranslocoToken) that pair translation keys with dynamic parameters.</li></ul><h3>Why it matters</h3><p>Decoupling validation metadata from UI localization ensures that schemas remain cleanly reusable across full-stack applications. This architecture avoids duplicate DTO mappers while ensuring the frontend can flexibly manage translations.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "zod",
+      "i18n",
+      "nestjs",
+      "typescript"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/one-validator-to-rule-them-all-part-2-advanced-error-handling-with-mul/",
+        "title": "One Validator to Rule Them All — Part 2: Advanced Error Handling with multi-language support.",
+        "publishedAt": "2026-07-23T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-23T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "51c05fd4-8b47-4f63-b55b-f0d78ab3555a",
@@ -5952,8 +7014,8 @@
     "id": "4440ed87-4599-4103-8b0e-c83ee480089f",
     "slug": "reactive-flows-ai-agents-and-state-events-this-week-s-angular-masterclass",
     "title": "Reactive Flows, AI Agents, and State Events: This Week’s Angular Masterclass! ⚡",
-    "tldr": "An Angular masterclass covers state management, reactive patterns, and AI integration.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Highlights reactive flows within Angular architecture.</li><li>Explores integration and patterns with AI agents.</li><li>Covers state events handling.</li></ul><h3>Why it matters</h3><p>The topics address evolving architecture patterns in Angular, integrating reactive mechanisms with AI-oriented application flows.</p>",
+    "tldr": "Recent community updates in the Angular ecosystem highlight new tutorials and tooling centered around signals, reactive workflows, and AI integration. Resources detail SignalStore event handling, CLI agents, error monitoring, and modern form accessibility.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Educational guides cover modern Angular (v19+) workflows and command-line AI integration via Claude Code.</li><li>Arcadio Quintero introduced a SignalStore plugin designed to handle side effects and pipe event signals directly into state.</li><li>Technical guides cover signal-driven asynchronous error debugging and form control accessibility using FocusBoundControl.</li></ul><h3>Why it matters</h3><p>Tracking developer-contributed tooling and signal architectures helps teams integrate newer reactive patterns and debugging practices into their development stacks.</p>",
     "tags": [
       "angular",
       "reactive",
@@ -5961,7 +7023,10 @@
       "state-management",
       "ai",
       "reactive programming",
-      "state management"
+      "state management",
+      "signals",
+      "ngrx",
+      "ai agents"
     ],
     "sources": [
       {
@@ -5970,6 +7035,13 @@
         "url": "https://blog.angular.dev/angular-weekly-july-17-2026-05440da623ad?source=rss----447683c3d9a3---4",
         "title": "Reactive Flows, AI Agents, and State Events: This Week’s Angular Masterclass! ⚡",
         "publishedAt": "2026-07-17T10:01:04.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/reactive-flows-ai-agents-and-state-events-this-weeks-angular-mastercla/",
+        "title": "Reactive Flows, AI Agents, and State Events: This Week’s Angular Masterclass! ⚡",
+        "publishedAt": "2026-07-17T00:00:00.000Z"
       }
     ],
     "relevance": 6,
@@ -5977,7 +7049,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-25T08:17:19.192Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-17T10:01:04.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -6054,14 +7126,18 @@
     "id": "8d7a4875-1b73-4b8e-984b-30b63ee61945",
     "slug": "angular-addicts-53-ngrx-22-webmcp-copilotkit-more",
     "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
-    "tldr": "Monthly developer newsletters highlight ongoing updates across modern frontend tooling, framework releases, and agentic integrations.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include updates to NgRx v22, Nx 23.1, and Angular minor versions.</li><li>Community discussions cover topics such as CopilotKit integrations, Signal Forms, and AI agent workflows.</li></ul><h3>Why it matters</h3><p>Keeping track of rapidly evolving ecosystem tools helps frontend teams adopt optimal patterns for state management and AI workflows.</p>",
+    "tldr": "The Angular Addicts newsletter series covers ongoing updates across Angular releases, agentic tools, and component libraries. Featured announcements span NgRx v22, Angular 22.1, CopilotKit support, spartan/ui 1.0, and signal-based form handling.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Issue #53 covers NgRx v22 additions including dynamic deep signals, custom signal form controls, and the WebMCP integration.</li><li>Issue #52 highlights Angular 22.1, Nx 23.1 with TypeScript 6 support, and CopilotKit integrations for conversational UI agents.</li><li>Issue #51 tracks the stable 1.0 release of spartan/ui, the A2UI framework for AI-driven interfaces, and signal debouncing techniques.</li></ul><h3>Why it matters</h3><p>The newsletters document continuous shifts toward signal-based architectures, unified schema forms, and LLM integrations within Angular applications, helping teams evaluate modern additions to the frontend ecosystem.</p>",
     "tags": [
       "angular",
       "newsletter",
       "ecosystem",
       "news",
-      "frontend"
+      "frontend",
+      "ngrx",
+      "copilotkit",
+      "spartan/ui",
+      "tooling"
     ],
     "sources": [
       {
@@ -6084,6 +7160,13 @@
         "url": "https://www.angularaddicts.com/p/angular-addicts-51-a2ui-signal-debouncing",
         "title": "Angular Addicts #51: spartan/ui 1.0, A2UI, Signal Debouncing & more",
         "publishedAt": "2026-07-16T08:31:14.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-addicts-53-ngrx-22-webmcp-copilotkit-more/",
+        "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
+        "publishedAt": "2026-09-29T00:00:00.000Z"
       }
     ],
     "relevance": 5,
@@ -6091,9 +7174,40 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-16T08:31:14.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "30419d13-f6b3-469a-b198-60e389d771dc",
+    "slug": "angular-addicts-51-spartan-ui-1-0-a2ui-signal-debouncing-more",
+    "title": "Angular Addicts #51: spartan/ui 1.0, A2UI, Signal Debouncing & more",
+    "tldr": "The 51st issue of the Angular Addicts newsletter surveys major updates in the Angular ecosystem from June 2026. Featured topics include the 1.0 milestone of spartan/ui, agentic engineering setups, and Angular signal management.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Robin Goetz announced the release of spartan/ui 1.0.</li><li>Highlighted engineering guides focus on configuring AI agent harnesses, using tsarch, and implementing A2UI for AI agent interactions.</li><li>Core reactivity topics include debouncing Angular signals, native Angular query-style caching, and limitations of resource patterns in route guards.</li></ul><h3>Why it matters</h3><p>The roundup highlights production patterns for adopting stable signal components and structuring projects for autonomous coding agents.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "spartan/ui",
+      "signals",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-addicts-51-spartan-ui-1-0-a2ui-signal-debouncing-more/",
+        "title": "Angular Addicts #51: spartan/ui 1.0, A2UI, Signal Debouncing & more",
+        "publishedAt": "2026-07-16T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-16T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "927e614a-b6ab-4cee-8733-b5151e8b0ca3",
@@ -6234,6 +7348,45 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "7b9c4840-2009-4383-ae8e-b289912d5713",
+    "slug": "ng-news-26-17-primeng-s-new-licensing-and-a2ui-for-angular",
+    "title": "Ng-News 26/17: PrimeNG’s New Licensing, and A2UI for Angular",
+    "tldr": "PrimeNG is ending its open-source licensing model for upcoming releases in favor of a commercial PrimeUI Community and PRO structure. In response, the OpenNG organization created open-prime, a community-maintained fork targeting Angular 22 support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Future major releases of PrimeNG across Angular, React, and Vue will shift away from open source to a restricted Community license and commercial PrimeUI perpetual seats starting at USD 599.</li><li>PrimeUI PRO bundles specialized components like charts, schedulers, and rich text editors that are excluded from the Community tier.</li><li>OpenNG created an initial fork of PrimeNG's archived repository to provide open-source maintenance and an Angular 22-compatible beta release.</li><li>A2UI framework demonstrations illustrate using AI models to drive dynamic interface rendering within Angular applications.</li></ul><h3>Why it matters</h3><p>Shifting licensing structures in core UI libraries can disrupt existing dependency pipelines and enterprise procurement. Community forks like open-prime offer an alternative path for teams seeking to maintain permissive open-source setups on modern Angular versions.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "primeng",
+      "open source",
+      "licensing",
+      "a2ui"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-17-primengs-new-licensing-and-a2ui-for-angular/",
+        "title": "Ng-News 26/17: PrimeNG’s New Licensing, and A2UI for Angular",
+        "publishedAt": "2026-07-13T00:00:00.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-17-primengs-new-licensing-and-a2ui-for-angular-78920/",
+        "title": "Ng-News 26/17: PrimeNG's New Licensing, and A2UI for Angular",
+        "publishedAt": "2026-07-13T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "41430c97-d7c5-4670-9791-fe77c68932e0",
     "slug": "how-to-test-vertical-slice-architecture",
     "title": "How to Test Vertical Slice Architecture",
@@ -6311,17 +7464,51 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "2323fd5f-192e-41a3-9e7c-6237ba671c02",
+    "slug": "one-validator-to-rule-them-all",
+    "title": "One Validator to Rule Them All",
+    "tldr": "Zod can act as a single source of truth across Angular and NestJS, synchronizing DTO types and validation schemas in an Nx monorepo. This approach avoids boilerplate across client and server validation layers by employing custom NestJS pipes alongside experimental Angular signal forms.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A shared Zod schema eliminates redundant DTO models and inconsistent validation logic across the frontend and backend.</li><li>NestJS controllers integrate schema validation through custom parameter decorators and execution pipes built on Zod's safeParse method.</li><li>Angular v21.2+ signal forms use experimental validateStandardSchema functions to apply Zod schemas directly inside reactive form controls.</li><li>Type generation is handled natively via z.infer, minimizing hand-written mappings between layers.</li></ul><h3>Why it matters</h3><p>Sharing validation logic across full-stack TypeScript projects eliminates subtle behavioral divergences between backend APIs and client-side forms. It accelerates feature development by standardizing validation errors and data transfer definitions.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "nestjs",
+      "zod",
+      "typescript",
+      "nx"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/one-validator-to-rule-them-all/",
+        "title": "One Validator to Rule Them All",
+        "publishedAt": "2026-07-08T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-08T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
     "id": "a41d9384-880e-4134-af1f-f4e21db7f4f7",
     "slug": "community-engineering-agentic-coding-and-real-user-component-testing",
     "title": "Community Engineering, Agentic Coding, and Real-User Component Testing ️",
-    "tldr": "Angular community discussions highlight emerging practices in agentic coding and real-user component testing.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Explores community engineering methodologies for modern frontend architectures.</li><li>Integrates agentic workflows into component testing strategies.</li></ul><h3>Why it matters</h3><p>Adapting component testing practices to support agent-driven code generation helps maintain code quality.</p>",
+    "tldr": "Recent Angular community discussions focus on real-user component testing, agentic coding tools, and modern form ergonomics. Tutorials detail full-browser Vitest configurations, Angular compiler diagnostics, and community-driven framework maintenance.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Younes Jaaidi presented a method for component testing directly in real browsers utilizing Vitest Full Browser Mode.</li><li>Technical posts explore agentic AI assistance for Angular architecture beyond traditional completion models.</li><li>Video guides detail the usage of Signal Forms and extended Angular compiler diagnostics to flag bugs before production.</li></ul><h3>Why it matters</h3><p>Adopting browser-based component tests and extended compiler diagnostics improves testing fidelity and surfaces build-time issues earlier in the release cycle.</p>",
     "tags": [
       "angular",
       "testing",
       "ai-agents",
       "ai agents",
-      "community"
+      "community",
+      "vitest",
+      "signals"
     ],
     "sources": [
       {
@@ -6330,6 +7517,13 @@
         "url": "https://blog.angular.dev/community-engineering-agentic-coding-and-real-user-component-testing-%EF%B8%8F-15c768142043?source=rss----447683c3d9a3---4",
         "title": "Community Engineering, Agentic Coding, and Real-User Component Testing ️",
         "publishedAt": "2026-07-07T15:47:29.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/community-engineering-agentic-coding-and-real-user-component-testing/",
+        "title": "Community Engineering, Agentic Coding, and Real-User Component Testing ️",
+        "publishedAt": "2026-07-07T00:00:00.000Z"
       }
     ],
     "relevance": 5,
@@ -6337,7 +7531,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-07T15:47:29.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -6403,6 +7597,76 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-04T00:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "459acbb7-2127-4d4d-a0d3-ec9e897c3f56",
+    "slug": "ng-news-26-16-openng-foundation-spartan-ui-analogjs-in-storybook",
+    "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui, AnalogJS in Storybook",
+    "tldr": "The OpenNG Foundation has been formed to take over maintenance of abandoned libraries like Spectator and Elf following the shutdown of the ngneat organization. Concurrently, the spartan/ui component suite has launched its stable 1.0 release.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>OpenNG Foundation, founded by Gerome Grignon and Dominic Bachmann, has stepped in as the official custodian for ngneat open-source projects.</li><li>spartan/ui reached version 1.0, supplying over 55 customizable, accessible primitives built for signals, standalone components, zoneless change detection, and SSR.</li><li>AnalogJS is enabling modernized Angular integration within Storybook.</li></ul><h3>Why it matters</h3><p>The creation of OpenNG Foundation provides stability to critical community utilities that faced abandonment. At the same time, spartan/ui reaching 1.0 gives Angular developers an established shadcn-style component baseline tailored to modern zoneless and signal architectures.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "openng",
+      "spartan/ui",
+      "analogjs",
+      "open source"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-16-openng-foundation-spartan-ui-analogjs-in-storybook/",
+        "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui, AnalogJS in Storybook",
+        "publishedAt": "2026-07-02T00:00:00.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-16-openng-foundation-spartan-ui/",
+        "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui",
+        "publishedAt": "2026-07-02T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-02T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
+    "id": "227102dc-87d4-4a4d-9d83-d32f24bc632a",
+    "slug": "angular-handbook-the-ultimate-guide-to-angular-evolution-v22-update",
+    "title": "Angular Handbook: The Ultimate Guide to Angular Evolution (v22 Update)",
+    "tldr": "Angular.love and House of Angular released an updated comprehensive handbook covering the framework's architectural evolution from v14 through v22. The publication structures updates into a problem-solution-benefit format alongside expert commentary and AI integration guidance.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The guide details architectural shifts across versions, covering the removal of NgModules, standalone component adoption, signals, and v22 features.</li><li>Features are arranged into a Problem-Solution-Benefit matrix with searchable tags for Performance, UX, DevEx, and Efficiency.</li><li>A dedicated section includes commentary from Google Developer Experts on integrating AI models and workflows into Angular codebases.</li></ul><h3>Why it matters</h3><p>The handbook provides structured architectural context to help engineering teams migrate away from legacy Angular patterns and adopt contemporary reactivity standards without breaking production stability.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "architecture",
+      "signals",
+      "ebooks"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-handbook-the-ultimate-guide-to-angular-evolution-v22-update/",
+        "title": "Angular Handbook: The Ultimate Guide to Angular Evolution (v22 Update)",
+        "publishedAt": "2026-07-02T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "publishedAt": "2026-07-02T00:00:00.000Z",
+    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
   {
     "id": "13781463-c523-4beb-ac8a-8789f0aa4b26",
