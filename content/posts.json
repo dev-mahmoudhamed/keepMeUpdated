@@ -1,5 +1,477 @@
 [
   {
+    "id": "b3814b31-3d09-423d-8eaf-313ac53fbaf0",
+    "slug": "how-much-faster-is-the-new-angular-compiler",
+    "title": "How much faster is the new Angular compiler?",
+    "tldr": "The Angular team is developing a new compiler called ngp, partially written in Rust, to replace the existing ngc compiler. It separates Angular code generation from TypeScript type-checking to improve build performance.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A large commit of over 370k lines, including around 56k lines of Rust, was added for the new compiler.</li><li>ngp relies on oxc for fast, parallel Rust-based analysis to discover declarations, decorators, and metadata.</li><li>The compilation decouples from the TypeScript Transformer API, separating code generation from type-checking.</li><li>Downstream tools can leverage TypeScript v7 (written in Go) or bundlers like esbuild to speed up type-checking and code emission.</li></ul><h3>Why it matters</h3><p>Decoupling template processing and using native tooling removes longtime compilation bottlenecks for large Angular applications.</p>",
+    "tags": [
+      "angular",
+      "compilers",
+      "rust",
+      "performance",
+      "typescript"
+    ],
+    "sources": [
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/10/27/how-much-faster-is-the-new-angular-compiler",
+        "title": "How much faster is the new Angular compiler?",
+        "publishedAt": "2026-10-27T00:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-27T00:00:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "60585b3c-4f83-46ea-8c7c-f0ace6b2a9e8",
+    "slug": "why-a-com-initialize-spy-cannot-reliably-clean-up-an-apartment-bound-object",
+    "title": "Why a COM Initialize Spy Cannot Reliably Clean Up an Apartment Bound Object",
+    "tldr": "Raymond Chen analyzed why using a COM Initialize Spy cannot reliably clean up apartment-bound COM objects. The issue stems from thread affinity constraints, callback timing, and apartment lifetime mismatches.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Explores thread affinity and apartment lifetime dynamics in COM.</li><li>Identifies timing mismatches during callback sequences for cleanup mechanisms.</li><li>Details why relying on a COM Initialize Spy fails for apartment-bound object destruction.</li></ul><h3>Why it matters</h3><p>Provides technical clarity for Windows developers on apartment-threading models and object lifetime management, helping avoid memory leaks and threading violations.</p>",
+    "tags": [
+      "windows",
+      "com",
+      "win32",
+      "c++"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/why-a-com-initialize-spy-cannot-reliably-clean-up-an-apartment-bound-object.aspx",
+        "title": "Why a COM Initialize Spy Cannot Reliably Clean Up an Apartment Bound Object",
+        "publishedAt": "2026-10-26T22:54:00.000Z"
+      }
+    ],
+    "relevance": 4,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T22:54:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "d5d970e0-2753-4a5d-8606-f3bfe73eb5e3",
+    "slug": "raymond-chen-explains-why-the-com-static-store-misses-apartment-cleanup-timing",
+    "title": "Raymond Chen Explains Why the COM Static Store Misses Apartment Cleanup Timing",
+    "tldr": "Raymond Chen explained why the COM static store fails to meet the cleanup timing required for apartment-bound objects. The design creates a mismatch between process-wide lifetimes and apartment-specific delegate wrappers.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Contrasts process-wide COM cleanup with apartment-specific lifetimes.</li><li>Focuses on lifecycle requirements needed for delegate wrappers.</li><li>Explains why COM static store timings miss appropriate disposal moments.</li></ul><h3>Why it matters</h3><p>Clarifies lifecycle and cleanup boundaries for developers managing COM threading contexts and delegate wrappers.</p>",
+    "tags": [
+      "windows",
+      "com",
+      "win32",
+      "c++"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/raymond-chen-explains-why-the-com-static-store-misses-apartment-cleanup-timing.aspx",
+        "title": "Raymond Chen Explains Why the COM Static Store Misses Apartment Cleanup Timing",
+        "publishedAt": "2026-10-26T22:50:00.000Z"
+      }
+    ],
+    "relevance": 4,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T22:50:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "f14f55c2-66fa-4e02-bcfb-3157b9fcafcd",
+    "slug": "four-part-cosmos-db-series-builds-an-ai-travel-planner-from-prototype-to-operati",
+    "title": "Four-Part Cosmos DB Series Builds an AI Travel Planner from Prototype to Operations",
+    "tldr": "Microsoft published a four-part guide detailing how to build an AI travel planner with Azure Cosmos DB. The series guides developers through local prototyping, hybrid retrieval, multi-agent memory, and production operations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Uses a single recurring AI travel planner application across all four parts.</li><li>Covers local development setups alongside hybrid retrieval approaches.</li><li>Demonstrates implementation of multi-agent memory and operational evaluations.</li></ul><h3>Why it matters</h3><p>Offers architectural guidance for developers deploying end-to-end multi-agent AI systems backed by Azure Cosmos DB.</p>",
+    "tags": [
+      "azure",
+      "cosmos-db",
+      "ai",
+      "azure cosmos db",
+      "cloud"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/four-part-cosmos-db-series-builds-an-ai-travel-planner-from-prototype-to-operations.aspx",
+        "title": "Four-Part Cosmos DB Series Builds an AI Travel Planner from Prototype to Operations",
+        "publishedAt": "2026-10-26T16:32:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T16:32:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "91ea177e-16b2-4546-bc60-d8a88d310ac3",
+    "slug": "microsoft-revisits-the-socrates-design-behind-azure-sql-database-hyperscale",
+    "title": "Microsoft Revisits the Socrates Design Behind Azure SQL Database Hyperscale",
+    "tldr": "A Microsoft research retrospective revisits the Socrates architecture powering Azure SQL Database Hyperscale. It highlights how decoupled components changed scaling dynamics for cloud databases.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Details the separation of query processing, logging, page services, and persistent storage.</li><li>Revisits design decisions from the original Socrates architecture research paper.</li><li>Explains how component isolation influences scaling behaviors in Azure SQL Database Hyperscale.</li></ul><h3>Why it matters</h3><p>Provides architectural insights into how disaggregating database components enhances cloud-native scalability and performance.</p>",
+    "tags": [
+      "azure",
+      "sql-server",
+      "database",
+      "architecture",
+      "azure sql",
+      "databases",
+      "cloud architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-revisits-the-socrates-design-behind-azure-sql-database-hyperscale.aspx",
+        "title": "Microsoft Revisits the Socrates Design Behind Azure SQL Database Hyperscale",
+        "publishedAt": "2026-10-26T16:23:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T16:23:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
+    "slug": "net-11-updates",
+    "title": ".NET 11 updates",
+    "tldr": ".NET 11 has advanced across multiple preview versions and release candidates, introducing performance enhancements and new capabilities. Additions include post-quantum cryptography support and extensive runtime optimizations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 11 introduced hundreds of runtime and standard library performance improvements.</li><li>Release candidates and previews added support for post-quantum cryptography.</li><li>Milestones introduced native tooling and runtime performance updates across the framework.</li></ul><h3>Why it matters</h3><p>Signals the architectural direction and modern cryptographic standards coming to the broader .NET runtime ecosystem.</p>",
+    "tags": [
+      "dotnet",
+      "csharp",
+      "release",
+      ".net",
+      "c#",
+      "performance",
+      "security"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-issues-out-of-band--net-security-fixes-including-new-net-11-rc.aspx",
+        "title": "Microsoft Issues Out-of-Band .NET Security Fixes, Including New .NET 11 RC",
+        "publishedAt": "2026-10-26T16:19:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/14/net-11-rc2-adds-post-quantum-crypto-maui-csharp-ui-and-nuget-controls.aspx",
+        "title": ".NET 11 RC2 Adds Post-Quantum Crypto, .NET MAUI C# UI and NuGet Controls",
+        "publishedAt": "2026-10-14T18:01:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc2",
+        "title": ".NET 11.0 RC 2",
+        "publishedAt": "2026-10-13T22:34:41.000Z"
+      },
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2368-performance-improvements-in-net-11",
+        "title": "Performance improvements in .NET 11",
+        "publishedAt": "2026-09-20T18:15:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/",
+        "title": "Performance Improvements in .NET 11",
+        "publishedAt": "2026-09-15T12:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/09/14/net-11-rc1-gets-go-live-support-ahead-of-november-launch.aspx",
+        "title": ".NET 11 RC1 Gets Go-Live Support Ahead of November Launch",
+        "publishedAt": "2026-09-14T17:13:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-preview.7",
+        "title": ".NET 11 Preview 7",
+        "publishedAt": "2026-09-08T22:27:27.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc.1",
+        "title": ".NET 11.0 RC 1",
+        "publishedAt": "2026-09-08T22:23:12.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/",
+        "title": "Announcing .NET 11 Release Candidate 1",
+        "publishedAt": "2026-09-08T21:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/explore-csharp-15/",
+        "title": "Explore new features available in C# 15 preview",
+        "publishedAt": "2026-08-24T17:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/08/19/net-11-preview-7-turns-on-nativeaot-cli-and-msbuild-server-by-default.aspx",
+        "title": ".NET 11 Preview 7 Turns On NativeAOT CLI and MSBuild Server by Default",
+        "publishedAt": "2026-08-19T19:39:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/",
+        "title": ".NET 11 Preview 7 is now available!",
+        "publishedAt": "2026-08-11T18:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/",
+        "title": "CoreCLR Progress and the Mono Timeline for .NET MAUI",
+        "publishedAt": "2026-07-14T18:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/",
+        "title": ".NET 11 Preview 6 is now available!",
+        "publishedAt": "2026-07-14T17:45:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T16:19:00.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "69aedb5b-2569-46e2-aa28-6298c61ec141",
+    "slug": "azure-devops-users-advised-to-check-php-dependencies-after-critical-flaws",
+    "title": "Azure DevOps Users Advised to Check PHP Dependencies After Critical Flaws",
+    "tldr": "Microsoft advised Azure DevOps users to audit their PHP dependencies following the disclosure of critical vulnerabilities. The company distinguished Azure DevOps core service security from customer-managed PHP runtimes.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Azure DevOps users were warned to review PHP versions across pipelines, containers, and applications.</li><li>Microsoft clarified that the core Azure DevOps service is distinct from user-managed PHP environments.</li><li>Follows the discovery of critical vulnerabilities in PHP runtimes.</li></ul><h3>Why it matters</h3><p>Reminds pipeline maintainers that cloud CI/CD environments require dedicated patching for customer-managed language runtimes.</p>",
+    "tags": [
+      "azure-devops",
+      "php",
+      "security",
+      "ci-cd",
+      "azure devops"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/azure-devops-users-advised-to-check-php-dependencies-after-critical-flaws.aspx",
+        "title": "Azure DevOps Users Advised to Check PHP Dependencies After Critical Flaws",
+        "publishedAt": "2026-10-26T16:08:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T16:08:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "abe9e27f-3381-4bef-9fa4-896a68fa85f1",
+    "slug": "azure-cosmos-db-emulator-walkthrough-connects-local-tests-to-github-actions",
+    "title": "Azure Cosmos DB Emulator Walkthrough Connects Local Tests to GitHub Actions",
+    "tldr": "Microsoft published a walkthrough on using the Azure Cosmos DB Emulator for local testing and CI workflows. The tutorial shows how to validate database-backed AI applications locally and within GitHub Actions.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Focuses on using the Azure Cosmos DB Emulator for AI application testing.</li><li>Walks through local database validation without connecting to cloud services.</li><li>Demonstrates automated test integration using GitHub Actions workflows.</li></ul><h3>Why it matters</h3><p>Allows engineering teams to test Cosmos DB-backed AI workloads locally and in automated pipelines without incurring cloud runtime costs.</p>",
+    "tags": [
+      "azure",
+      "cosmos-db",
+      "github-actions",
+      "testing",
+      "azure cosmos db",
+      "github actions"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/azure-cosmos-db-emulator-walkthrough-connects-local-tests-to-github-actions.aspx",
+        "title": "Azure Cosmos DB Emulator Walkthrough Connects Local Tests to GitHub Actions",
+        "publishedAt": "2026-10-26T15:30:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T15:30:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "806c9fd7-bef3-41b3-83ff-0178994daee8",
+    "slug": "sharepoint-embedded-update-details-scaling-limits-permissions-and-office-co-auth",
+    "title": "SharePoint Embedded Update Details Scaling Limits, Permissions and Office Co-Authoring",
+    "tldr": "Microsoft released updated technical guidance for developers integrating SharePoint Embedded. The update details throttling limits, capacity thresholds, permission scopes, and Office document co-authoring.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Provides guidelines on capacity ceilings and API throttling behavior.</li><li>Details permissions and access control management in custom solutions.</li><li>Explains developer considerations for Office document co-authoring integrations.</li></ul><h3>Why it matters</h3><p>Gives developers building document-centric apps concrete specifications for handling capacity, concurrency, and security in SharePoint Embedded.</p>",
+    "tags": [
+      "sharepoint",
+      "microsoft-365",
+      "api",
+      "microsoft 369",
+      "apis"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/sharepoint-embedded-update-details-scaling-limits-permissions-and-office-co-authoring.aspx",
+        "title": "SharePoint Embedded Update Details Scaling Limits, Permissions and Office Co-Authoring",
+        "publishedAt": "2026-10-26T15:30:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T15:30:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "7d560cb3-f575-4c4b-bf69-1102647f38c3",
+    "slug": "microsoft-highlights-azure-credits-training-and-tools-included-with-visual-studi",
+    "title": "Microsoft Highlights Azure Credits, Training and Tools Included with Visual Studio Subscriptions",
+    "tldr": "Microsoft highlighted available benefits bundled with Visual Studio subscriptions. Eligible subscribers can access Azure cloud credits, developer training platforms, and third-party tools.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Covers Azure cloud service credit allocations for subscribers.</li><li>Lists educational resources and training materials available to members.</li><li>Reminds developers of access to bundled partner and third-party software tools.</li></ul><h3>Why it matters</h3><p>Helps development teams make full use of underutilized development credits and training resources already included with Visual Studio licensing.</p>",
+    "tags": [
+      "visual-studio",
+      "azure",
+      "licensing",
+      "visual studio"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-highlights-azure-credits-training-and-tools-included-with-visual-studio-subscriptions.aspx",
+        "title": "Microsoft Highlights Azure Credits, Training and Tools Included with Visual Studio Subscriptions",
+        "publishedAt": "2026-10-26T15:30:00.000Z"
+      }
+    ],
+    "relevance": 2,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T15:30:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "2bb4c0f6-f2db-4cd0-b2c0-20ef64b0c2dd",
+    "slug": "microsoft-agent-framework-for-go-adds-embeddings-and-vector-search",
+    "title": "Microsoft Agent Framework for Go Adds Embeddings and Vector Search",
+    "tldr": "Microsoft released version 0.2.0 of its Agent Framework for Go, adding embeddings and vector search support. The update provides connectors for in-memory storage, Azure AI Search, and Azure Cosmos DB.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Agent Framework for Go version 0.2.0 is now available.</li><li>Introduces retrieval APIs alongside vector embeddings support.</li><li>Adds built-in connectors for Azure Cosmos DB, Azure AI Search, and in-memory stores.</li></ul><h3>Why it matters</h3><p>Expands Go tooling for developers building retrieval-augmented AI systems across Microsoft's data services.</p>",
+    "tags": [
+      "go",
+      "ai",
+      "vector-search",
+      "llm",
+      "vector search"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-agent-framework-for-go-adds-embeddings-and-vector-search.aspx",
+        "title": "Microsoft Agent Framework for Go Adds Embeddings and Vector Search",
+        "publishedAt": "2026-10-26T15:30:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T15:30:00.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
+    "id": "63d34210-c84a-4112-ab6b-73dcc75cd443",
+    "slug": "keep-your-investigation-between-sessions",
+    "title": "Keep your investigation between sessions",
+    "tldr": "Visual Studio 2026 version 18.11 introduces standalone Markdown note creation paired with an opt-in Hot Exit preview. The feature allows developers to resume unsaved notes and files across IDE sessions without adding them to a project.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Developers can create standalone Markdown files via New File without creating project items or open solutions.</li><li>Hot Exit is an opt-in setting that preserves unsaved files, layouts, and undo history across IDE restarts.</li><li>Undo functionality (Ctrl + Z) remains functional for previously saved files after a session restore.</li><li>The feature separates temporary session persistence from saving to disk or committing to source control.</li></ul><h3>Why it matters</h3><p>Enables developers to maintain scratchpad notes and debugging state during investigations without cluttering project files or losing work on close.</p>",
+    "tags": [
+      "visual-studio",
+      "markdown",
+      "ide",
+      "tooling",
+      "visual studio"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/keep-your-investigation-between-sessions/",
+        "title": "Keep your investigation between sessions",
+        "publishedAt": "2026-10-26T12:00:10.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/visual-studio-adds-a-way-to-resume-unsaved-markdown-investigation-notes.aspx",
+        "title": "Visual Studio Adds a Way to Resume Unsaved Markdown Investigation Notes",
+        "publishedAt": "2026-10-26T16:13:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "publishedAt": "2026-10-26T12:00:10.000Z",
+    "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
+  },
+  {
     "id": "8a3155e0-2ffc-43dd-9079-d676ed23a6be",
     "slug": "mcp-c-sdk-2-0-makes-http-stateless-by-default-and-adds-multi-round-trip-requests",
     "title": "MCP C# SDK 2.0 Makes HTTP Stateless by Default and Adds Multi Round-Trip Requests",
@@ -1815,122 +2287,6 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
-    "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
-    "slug": "net-11-updates",
-    "title": ".NET 11 updates",
-    "tldr": ".NET 11 has progressed through multiple previews and release candidates, bringing hundreds of runtime and library performance improvements alongside new features like post-quantum cryptography.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Includes hundreds of performance improvements across the runtime, JIT, and libraries, alongside runtime async optimizations.</li><li>.NET 11 RC2 adds post-quantum cryptography, .NET MAUI C# UI, and NuGet controls, following Go-Live support in RC1.</li><li>Preview 7 enabled NativeAOT CLI and MSBuild Server by default.</li><li>Introduces C# union types and closed hierarchies.</li></ul><h3>Why it matters</h3><p>The .NET 11 release cycle delivers substantial performance gains, modern cryptographic capabilities, and expanded native compilation options for developers.</p>",
-    "tags": [
-      "dotnet",
-      "csharp",
-      "release",
-      ".net",
-      "c#",
-      "performance"
-    ],
-    "sources": [
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/10/14/net-11-rc2-adds-post-quantum-crypto-maui-csharp-ui-and-nuget-controls.aspx",
-        "title": ".NET 11 RC2 Adds Post-Quantum Crypto, .NET MAUI C# UI and NuGet Controls",
-        "publishedAt": "2026-10-14T18:01:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc2",
-        "title": ".NET 11.0 RC 2",
-        "publishedAt": "2026-10-13T22:34:41.000Z"
-      },
-      {
-        "sourceId": "612edc942ee0",
-        "siteName": "C# Digest",
-        "url": "https://csharpdigest.net/newsletters/2368-performance-improvements-in-net-11",
-        "title": "Performance improvements in .NET 11",
-        "publishedAt": "2026-09-20T18:15:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/",
-        "title": "Performance Improvements in .NET 11",
-        "publishedAt": "2026-09-15T12:00:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/09/14/net-11-rc1-gets-go-live-support-ahead-of-november-launch.aspx",
-        "title": ".NET 11 RC1 Gets Go-Live Support Ahead of November Launch",
-        "publishedAt": "2026-09-14T17:13:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-preview.7",
-        "title": ".NET 11 Preview 7",
-        "publishedAt": "2026-09-08T22:27:27.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc.1",
-        "title": ".NET 11.0 RC 1",
-        "publishedAt": "2026-09-08T22:23:12.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/",
-        "title": "Announcing .NET 11 Release Candidate 1",
-        "publishedAt": "2026-09-08T21:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/explore-csharp-15/",
-        "title": "Explore new features available in C# 15 preview",
-        "publishedAt": "2026-08-24T17:00:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/08/19/net-11-preview-7-turns-on-nativeaot-cli-and-msbuild-server-by-default.aspx",
-        "title": ".NET 11 Preview 7 Turns On NativeAOT CLI and MSBuild Server by Default",
-        "publishedAt": "2026-08-19T19:39:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/",
-        "title": ".NET 11 Preview 7 is now available!",
-        "publishedAt": "2026-08-11T18:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/",
-        "title": "CoreCLR Progress and the Mono Timeline for .NET MAUI",
-        "publishedAt": "2026-07-14T18:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/",
-        "title": ".NET 11 Preview 6 is now available!",
-        "publishedAt": "2026-07-14T17:45:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-10-14T18:01:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
     "id": "bb84386d-cd89-4a20-a86d-d623b5886026",
     "slug": "net-10-0-13-released-across-runtime-asp-net-core-and-ef-core",
     "title": ".NET 10.0.13 Released Across Runtime, ASP.NET Core, and EF Core",
@@ -3347,14 +3703,16 @@
     "id": "a35fee77-225d-433d-ad0f-bf575d8fd3dd",
     "slug": "architecting-the-modern-web-debounce-apis-rendering-strategies-and-automated-ai",
     "title": "Architecting the Modern Web: Debounce APIs, Rendering Strategies, and Automated AI Setup! ⚡",
-    "tldr": "The Angular team published guidance on modern web architecture focusing on debounce APIs and rendering strategies.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Covers modern web architectural patterns</li><li>Discusses debounce APIs and rendering strategies</li></ul><h3>Why it matters</h3><p>Provides structured best practices for modern web application performance.</p>",
+    "tldr": "The Angular team highlighted community resources on modern web architecture and performance primitives. Topics include rendering strategies, native debounce APIs, Analog.js, and scaffolding AI agents.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Articles explain trade-offs among CSR, SSR, and SSG, including combining them in a single workspace.</li><li>A deep dive covers the new native debounced() core API alongside Signal Forms debounce().</li><li>Community content highlights the Analog.js meta-framework for file-based routing and Markdown support.</li><li>Resources provide patterns for automating AI agent scaffolding to reduce boilerplate.</li></ul><h3>Why it matters</h3><p>Guides Angular developers on implementing core performance optimizations like fine-grained rendering and native signal debouncing.</p>",
     "tags": [
       "angular",
       "architecture",
       "debounce",
       "ai",
-      "web architecture"
+      "web architecture",
+      "web development",
+      "performance"
     ],
     "sources": [
       {
@@ -3375,9 +3733,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-25T13:59:49.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -3385,8 +3743,8 @@
     "id": "f14fca51-6029-4b39-ac21-a9199c0643c8",
     "slug": "angular-compiler-update-for-typescript-7",
     "title": "Angular Compiler Update for TypeScript 7",
-    "tldr": "The Angular team published an update regarding an upcoming TypeScript 7-powered compiler.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The Angular Blog posted an update covering its TypeScript 7-powered compiler.</li><li>The announcement focuses on the compiler integration with TypeScript 7 tooling.</li><li>No additional implementation or release details were provided in the source excerpt.</li></ul><h3>Why it matters</h3><p>Tracking compiler changes helps Angular developers anticipate compatibility requirements and tooling improvements tied to upcoming major TypeScript versions.</p>",
+    "tldr": "The Angular team announced plans for a new compiler decoupled from TypeScript's compiler APIs to support native tooling like TypeScript 7. The architecture uses the Rust-based oxc toolchain to handle component compilation.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular's historical reliance on the ts.Transformer API is incompatible with Go-compiled TypeScript 7.</li><li>The team is decoupling Angular compilation from TypeScript's internal APIs.</li><li>The new Angular compiler will emit transformed TypeScript for downstream toolchains to consume.</li><li>The architecture adopts oxc, a native JavaScript parsing and compilation framework, for code transformations.</li></ul><h3>Why it matters</h3><p>Decoupling from TypeScript internals lets Angular adopt high-performance native build tooling and the TypeScript 7 toolchain.</p>",
     "tags": [
       "angular",
       "typescript",
@@ -3413,9 +3771,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-19T08:42:08.996Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-25T13:59:11.000Z",
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
   },
@@ -3423,14 +3781,15 @@
     "id": "75205d84-b4b5-4aef-8788-1b8c3bbc9d3c",
     "slug": "polymorpheus-a-tiny-tool-you-didn-t-know-you-needed",
     "title": "Polymorpheus: a tiny tool you didn’t know you needed",
-    "tldr": "Polymorpheus is a lightweight open-source Angular library designed to streamline dynamic content rendering.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Simplifies dynamic content rendering in Angular</li><li>Provides alternatives to default interpolation and component outlets</li></ul><h3>Why it matters</h3><p>It gives developers a unified approach for handling various types of dynamic templates and components.</p>",
+    "tldr": "Taiga UI maintainers highlighted Polymorpheus, a lightweight open-source Angular library for dynamic content rendering. The library aims to overcome the limitations of built-in template techniques like interpolation and template function calls.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Polymorpheus simplifies handling dynamic content across Angular components.</li><li>Built-in interpolation often requires manual string parsing or custom toString() implementations.</li><li>Function calls in templates are performant for basic logic with OnPush, but creating objects or arrays inside them triggers costly re-renders.</li><li>The library is widely used across the Taiga UI ecosystem to standardize dynamic rendering.</li></ul><h3>Why it matters</h3><p>Provides Angular developers with an established alternative for rendering dynamic content cleanly without common template performance pitfalls.</p>",
     "tags": [
       "angular",
       "open-source",
       "ui",
       "open source",
-      "ui components"
+      "ui components",
+      "frontend"
     ],
     "sources": [
       {
@@ -3451,9 +3810,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-25T09:18:54.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -3625,14 +3984,17 @@
     "id": "dd35e053-ab37-4104-bec8-b346a26e7ed6",
     "slug": "using-jev-for-agentic-ui-just-a-trend-or-a-game-changer",
     "title": "Using Jev for Agentic UI: Just a Trend or a Game Changer?",
-    "tldr": "TypeSafe's Jev model evaluates typed questionnaires instead of freeform text to power fast Agentic UI flows.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>System One model evaluates predefined questionnaires instead of generating tokens</li><li>Responds in approximately 100 milliseconds with typed choices</li><li>Integrated into sample Angular applications using CopilotKit</li></ul><h3>Why it matters</h3><p>Offers a faster and more deterministic alternative to traditional LLM prompts for user interface automation.</p>",
+    "tldr": "TypeSafe has introduced Jev, a fast 'System One' model aimed at Agentic UI that resolves typed questionnaires rather than generating token-by-token text. It returns predefined typed responses with probabilities in roughly 100 milliseconds.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Jev avoids standard LLM text generation, parsing, and validation by answering predefined questions using predefined options.</li><li>Responses are fully typed and resolved in parallel, keeping response times around 100 milliseconds regardless of question count.</li><li>The model acts as an intermediary for UI decisions, deciding whether to call a tool, show a widget, or prompt the user.</li><li>Demonstrated in an Angular flight assistant app using CopilotKit and AG-UI.</li></ul><h3>Why it matters</h3><p>Traditional LLMs introduce latency and financial cost when handling interactive UI state transitions. Jev's fast, typed evaluation model significantly reduces execution overhead for autonomous, agent-driven interfaces.</p>",
     "tags": [
       "angular",
       "agentic-ui",
       "ai",
       "ui",
-      "llm"
+      "llm",
+      "agentic ui",
+      "jev",
+      "typesafe"
     ],
     "sources": [
       {
@@ -3653,9 +4015,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-20T21:19:35.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -3766,11 +4128,14 @@
     "id": "916f45bb-f93c-498b-b048-4cc043025806",
     "slug": "component-harness-writing-tests-that-survive-refactors",
     "title": "Component Harness: Writing Tests That Survive Refactors",
-    "tldr": "If you’ve ever worked on a large Angular codebase, you’ve probably experienced this frustration: you change a component’s internal structure – maybe by wrapping an element in a div …",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> If you’ve ever worked on a large Angular codebase, you’ve probably experienced this frustration: you change a component’s internal structure – maybe by wrapping an element in a div …</p>",
+    "tldr": "Angular CDK component harnesses allow developers to write component tests decoupled from internal DOM structures and CSS selectors. This prevents non-breaking refactors from causing widespread test failures across shared codebases.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Harnesses adapt the Page Object Pattern to isolate test interactions from internal component DOM structures and CSS class names.</li><li>ComponentHarness base classes use factory methods like locatorFor, locatorForOptional, and locatorForAll that query elements dynamically to avoid stale references.</li><li>The documentRootLocatorFactory method enables interaction with overlay elements rendered outside the component host, such as dropdown menus or pop-ups.</li><li>Using harnesses centralizes DOM updates into a single harness definition rather than requiring edits across dozens of individual unit tests.</li></ul><h3>Why it matters</h3><p>Refactoring UI internals often breaks fragile unit tests across large codebases. Harnesses create stable abstraction APIs that improve test maintainability and code reuse.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "angular cdk",
+      "testing",
+      "component harness"
     ],
     "sources": [
       {
@@ -3784,9 +4149,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-15T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -3794,11 +4159,14 @@
     "id": "30357943-3575-4465-990e-0147596635e2",
     "slug": "route-resources-in-angular-what-the-router-actually-does-with-your-signal-under",
     "title": "Route Resources in Angular: what the Router actually does with your Signal under the hood",
-    "tldr": "Introduction Route resolvers have been around in Angular for years, and they do their job,...",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> Introduction Route resolvers have been around in Angular for years, and they do their job,...</p>",
+    "tldr": "Angular's new Route Resources API integrates signal-based data fetching directly into routing configurations using the withRouterResources flag. It replaces sequential resolvers with concurrent loading and supports both blocking and non-blocking data binding.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The resources property on routes accepts an injection-aware function returning a map of Resource instances via a ResourceContext signal wrapper.</li><li>Blocking resources unwrap resolved values directly into component inputs upon completion, while non-blocking resources pass the full Resource object immediately.</li><li>Internal unwrapping and binding logic matches route resource keys directly to component input names without compile-time validation.</li><li>Tracking context values directly by primitive keys (e.g., ctx.params()['id']) prevents redundant resource reloads caused by router object reference changes.</li></ul><h3>Why it matters</h3><p>Unlike legacy route resolvers that execute sequentially, signal-native route resources fetch data concurrently and offer fine-grained control over blocking versus non-blocking page transitions.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "router resources",
+      "signals",
+      "web development"
     ],
     "sources": [
       {
@@ -3812,9 +4180,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-15T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -4048,11 +4416,15 @@
     "id": "b7aa1e8e-f1eb-450e-b20b-505348d4152c",
     "slug": "optimus-ui-ng-switzerland-and-ngrx-22",
     "title": "Optimus UI, NG Switzerland, and NgRx 22",
-    "tldr": "Optimus UI, NG Switzerland, and NgRx 22 headline this episode. Also in brief: new Angular Space...",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> Optimus UI, NG Switzerland, and NgRx 22 headline this episode. Also in brief: new Angular Space...</p>",
+    "tldr": "Recent updates across the Angular ecosystem include the open-source fork Optimus UI, the scheduling of NG Switzerland 2027, and the release of NgRx 22 with experimental Resource Extensions.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Optimus UI launched as an open-source, MIT-licensed fork of PrimeNG to avoid commercial licensing, updating to version 2 for Angular 22 compatibility.</li><li>NgRx 22 shipped experimental Resource Extensions, allowing resources to preserve previous values during reactive parameter updates without manual snapshot tracking.</li><li>NG Switzerland is scheduled for February 11-12, 2027, in Lucerne, Switzerland, with its call for papers open.</li><li>New developer deep-dives covered micro frontend isolation trade-offs (Native Federation vs. iframes) and Native Federation v4.</li></ul><h3>Why it matters</h3><p>These developments expand community-governed UI tooling with Optimus UI and modernize state and data lifecycle management through NgRx 22's integration with Angular's Resource APIs.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "optimus ui",
+      "ngrx",
+      "micro frontends",
+      "conferences"
     ],
     "sources": [
       {
@@ -4066,9 +4438,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-10T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -4257,11 +4629,14 @@
     "id": "8821477b-8201-44ae-9ac0-8fa0df219568",
     "slug": "router-resources-daten-laden-mit-dem-angular-router",
     "title": "Router Resources: Daten laden mit dem Angular Router",
-    "tldr": "Resolver auf Signal-Basis: parallel statt Wasserfall, blockierend oder nicht blockierend Resolver sind so alt wie der Angular Router selbst. Sie laden Daten, bevor eine Route aktiviert wird, und liefern dafür ein Observable oder Promise. In einer Welt, in der Datenzugriff zunehmend über resource, rx",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> Resolver auf Signal-Basis: parallel statt Wasserfall, blockierend oder nicht blockierend Resolver sind so alt wie der Angular Router selbst. Sie laden Daten, bevor eine Route aktiviert wird, und liefern dafür ein Observable oder Promise. In einer Welt, in der Datenzugriff zunehmend über resource, rx</p>",
+    "tldr": "Angular Router introduced an experimental signal-based Router Resources feature in 22.2.0-next.5 that fetches data concurrently instead of sequentially. Routes can specify whether resources block navigation or pass active loading signals to target components.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Available experimentally under withRouterResources, replacing classic Observable-based resolvers with signal-native Resource instances.</li><li>Executes data fetches in parallel across the route hierarchy, cutting navigation latency down to the duration of the slowest resource.</li><li>Supports non-blocking states via nonBlocking(), allowing routes to render instantly while UI components handle pending loading indicators.</li><li>Blocking resources currently fail to block if an httpResource defines a default value, though this behavior is expected to change.</li></ul><h3>Why it matters</h3><p>Sequential resolver waterfalls have historically delayed route transitions. Signal-powered Router Resources streamline data-fetching performance and unify router data with Angular's evolving signal ecosystem.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "angular router",
+      "router resources",
+      "signals"
     ],
     "sources": [
       {
@@ -4275,9 +4650,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-08T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -4354,11 +4729,15 @@
     "id": "4d056660-0bfa-44ee-889e-39627afa2811",
     "slug": "agentic-engineering-skills-for-angular-development",
     "title": "Agentic Engineering: Skills for Angular Development",
-    "tldr": "Putting LLM progress into practice: what agent skills are, why they outlive model generations, and my open catalogue of 27 skills for Angular development.",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> Putting LLM progress into practice: what agent skills are, why they outlive model generations, and my open catalogue of 27 skills for Angular development.</p>",
+    "tldr": "Agentic engineering utilizes modular, versioned 'skills'—self-contained Markdown instructions that activate only when triggered—to encode developer workflows without cluttering LLM context windows.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Skills exist as modular Markdown directories that stay dormant until specifically triggered, saving LLM context space compared to broad instruction files.</li><li>Reusable skills encode team conventions, check sequences, and execution steps that survive across new base model generations.</li><li>The ng-agentic-skills repository maintains an open catalog of 27 development skills across a structured Git commit history.</li></ul><h3>Why it matters</h3><p>Frontier models understand general framework syntax but lack team-specific procedural habits. Skill modules allow teams to systematically standardize automated agent behavior across tasks.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "ai",
+      "agentic engineering",
+      "llm",
+      "tooling"
     ],
     "sources": [
       {
@@ -4372,9 +4751,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-04T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -4515,14 +4894,18 @@
     "id": "889a1733-2f23-43a0-8dd2-66f00e5fa6bc",
     "slug": "customizing-angular-aria-tabs-quickly-with-google-antigravity-cli",
     "title": "Customizing Angular Aria Tabs Quickly with Google Antigravity CLI",
-    "tldr": "An overview details how to use the Google Antigravity CLI to quickly customize Angular Aria Tabs.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Focuses on customizing Angular Aria Tabs.</li><li>Utilizes the Google Antigravity CLI for rapid adjustments.</li></ul><h3>Why it matters</h3><p>Streamlines component customization for developers building accessible Angular applications.</p>",
+    "tldr": "An experiment tested the resilience of Angular Aria tabs by applying a complex neumorphic visual redesign using the Google Antigravity CLI coding agent. The test examined whether accessibility and keyboard interactions could survive heavy CSS modification.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The project tested Angular Aria's headless accessible tab patterns under an extreme neumorphic visual restyling.</li><li>Google Antigravity's autonomous /goal command executed the visual overhaul based on an image benchmark.</li><li>The baseline tabs component maintained a 100 Lighthouse accessibility rating prior to the automated visual overhaul.</li></ul><h3>Why it matters</h3><p>Proving that accessible primitive suites like Angular Aria can endure drastic visual redesigns confirms their suitability for heavily custom enterprise design systems.</p>",
     "tags": [
       "angular",
       "a11y",
       "cli",
       "tabs",
-      "ui components"
+      "ui components",
+      "angular aria",
+      "accessibility",
+      "google antigravity",
+      "css"
     ],
     "sources": [
       {
@@ -4543,9 +4926,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-02T01:50:59.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4593,13 +4976,16 @@
     "id": "510ec857-097a-4b9f-9c72-ca993b1c9b38",
     "slug": "want-to-speak-at-a-conferences-here-s-what-i-ve-learned",
     "title": "Want to Speak at a Conferences? Here’s What I’ve Learned",
-    "tldr": "An experienced conference speaker shares practical advice on selecting talk topics, writing compelling abstracts, and structuring presentations.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Conference topics should stem from real-world day-to-day problem-solving experiences.</li><li>Abstracts must promise clear value to the audience rather than just describing features.</li><li>Presentations should focus on a few key takeaways instead of trying to cover too much information.</li><li>Slides should serve as visual support rather than a teleprompter.</li></ul><h3>Why it matters</h3><p>Helps first-time and experienced developers overcome imposter syndrome and prepare impactful conference presentations.</p>",
+    "tldr": "An experienced conference speaker outlines practical recommendations for developers entering technical speaking, advising candidates to draw from daily problem-solving rather than searching for revolutionary topics.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Standard day-to-day software development solutions and hard-earned troubleshooting experiences often hold significant value for other developers.</li><li>Preparing a submission for a Call for Papers (CFP) requires framing the talk abstract around clear value for attendees rather than pure innovation.</li><li>Speaking anxiety is standard across all career stages and is typically managed through familiarity with the chosen topic.</li></ul><h3>Why it matters</h3><p>Developers often hesitate to present because they assume common operational knowledge is universal; sharing concrete, production-tested solutions fills critical knowledge gaps for peers.</p>",
     "tags": [
       "career",
       "public-speaking",
       "conference",
-      "speaking"
+      "speaking",
+      "public speaking",
+      "angular",
+      "conferences"
     ],
     "sources": [
       {
@@ -4620,9 +5006,9 @@
     "relevance": 2,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-09-01T14:00:06.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4725,11 +5111,15 @@
     "id": "e6bb1de9-d327-4d70-b988-60d46a80ea7f",
     "slug": "agentic-engineering-summer-26-update",
     "title": "Agentic Engineering: Summer ’26 Update",
-    "tldr": "Dies ist Beitrag 8 von 8 der Serie “Agentic Engineering” Agentic Engineering: Which LLM Is Best for Angular Development? Agentic: Which App/Harness Is Best for Angular Development? Agentic Engineering: What Does AI Coding Really Cost? Agentic Engineering: What Do AI Coding Tools Do With Your Code? A",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> Dies ist Beitrag 8 von 8 der Serie “Agentic Engineering” Agentic Engineering: Which LLM Is Best for Angular Development? Agentic: Which App/Harness Is Best for Angular Development? Agentic Engineering: What Does AI Coding Really Cost? Agentic Engineering: What Do AI Coding Tools Do With Your Code? A</p>",
+    "tldr": "An evaluation of Summer 2026 AI coding setups recommends pairing Anthropic's Fable 5 for high-level orchestration with OpenAI's GPT-5.6 Sol as an economical sub-agent for implementation tasks.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Fable 5 is highlighted as the primary model for broad system design, complex refactoring, and hypothesis testing.</li><li>GPT-5.6 Sol functions as a cost-effective, high-throughput sub-agent for targeted implementation, supported by recent API token price cuts.</li><li>GLM-5.3 Flash serves as a viable option for budget-restricted coding workloads.</li><li>The open-source T3 Code leads the applications category for developer workflows, while Codex remains the preferred pick for computer-use tasks.</li></ul><h3>Why it matters</h3><p>Orchestrating multi-tiered model workflows balances output quality against API rate limits and financial expense, allowing teams to run advanced agentic pipelines sustainably.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "ai",
+      "agentic engineering",
+      "llm",
+      "tooling"
     ],
     "sources": [
       {
@@ -4743,9 +5133,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-08-29T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -4791,13 +5181,14 @@
     "id": "f22e2a7a-7b45-433e-849d-eea259e6f465",
     "slug": "styling-mastery-and-declarative-form-submissions",
     "title": "Styling Mastery and Declarative Form Submissions",
-    "tldr": "An Angular blog post covers advanced styling techniques and declarative form submissions.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Focuses on styling mastery in Angular applications.</li><li>Explores patterns for declarative form submissions.</li></ul><h3>Why it matters</h3><p>Improves UI maintainability and form handling logic in modern web development.</p>",
+    "tldr": "Recent Angular community publications highlight advanced component styling practices, reactive form validation techniques, and declarative form submission handling.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A panel discussion detailed component styling architecture, modern CSS features, and encapsulated style management in Angular apps.</li><li>A book excerpt was published covering nested data models and complex validation logic in classic Reactive Forms.</li><li>Tutorial coverage demonstrated Angular v21's formRoot directive for handling form submission events declaratively.</li></ul><h3>Why it matters</h3><p>These community resources offer direct implementation patterns for handling complex forms and component style encapsulation in modern Angular architectures.</p>",
     "tags": [
       "angular",
       "css",
       "forms",
-      "styling"
+      "styling",
+      "reactive forms"
     ],
     "sources": [
       {
@@ -4818,9 +5209,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-08-28T11:01:01.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -4932,11 +5323,15 @@
     "id": "089a0412-2e17-4951-8efd-63f5cfdae2ea",
     "slug": "angular-addicts-52-angular-addicts-52-angular-22-1-copilotkit-mcp-apps-signal-fo",
     "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
-    "tldr": "My favorite Angular resources of July, 2026",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> My favorite Angular resources of July, 2026</p>",
+    "tldr": "The July 2026 issue of the Angular Addicts newsletter rounds up the releases of Angular 22.1, CopilotKit for Angular, and Nx 23.1 alongside articles on agent workflows and signal form validators.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Key ecosystem releases include Angular 22.1, Nx 23.1 (with TypeScript 6 support), and CopilotKit integration for Angular.</li><li>Curated guides cover async HTTP validators in Angular Signal Forms and bundle size optimization strategies.</li><li>Articles also analyze building Model Context Protocol (MCP) chat interfaces and Angular's role in the AI agent ecosystem.</li></ul><h3>Why it matters</h3><p>Aggregations of monthly ecosystem releases track the steady convergence of Angular enterprise tooling with TypeScript 6 and AI-agent development frameworks.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "nx",
+      "copilotkit",
+      "signals",
+      "newsletter"
     ],
     "sources": [
       {
@@ -4950,9 +5345,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-08-27T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -4991,8 +5386,8 @@
     "id": "dc2714e4-26b6-4614-8ea1-dd782af4e5ce",
     "slug": "the-best-api-integration-platforms-for-saas-apps-and-agents-in-2026",
     "title": "The best API integration platforms for SaaS apps and agents in 2026",
-    "tldr": "Choosing between native integrations, unified APIs, and embedded integration platforms depends on scalability, custom field requirements, and the level of backend control needed for SaaS applications.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Embedded integration platforms handle authentication, token refresh, and rate limits while leaving integration logic under team control.</li><li>Unified APIs provide a single shared schema across multiple providers but can struggle with custom fields or provider-specific endpoints.</li><li>Native in-house integrations offer full API access but require continuous manual maintenance of OAuth flows and rate limits.</li><li>Different platforms cater to different needs, ranging from code-customizable integration logic to visual low-code workflows.</li></ul><h3>Why it matters</h3><p>Selecting the right integration approach prevents engineering teams from wasting valuable time on repetitive API maintenance while ensuring sufficient flexibility for enterprise customers.</p>",
+    "tldr": "A technical assessment compares six embedded integration platforms for SaaS applications, evaluating SDK fit, integration depth, and backend control for TypeScript and Angular stacks.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Nango is recommended for teams requiring full code control, custom integration logic, and access to over 900 pre-built APIs.</li><li>Merge offers unified APIs best suited for standard, fixed data models over provider-specific customizations.</li><li>Paragon and Prismatic provide visual and low-code workflow builders, while Apideck focuses on unified categories and Pipedream Connect targets rapid prototyping.</li></ul><h3>Why it matters</h3><p>Deploying embedded integration infrastructure prevents engineering teams from spending critical roadmap time on auth flows, rate limiting, and webhook plumbing across individual third-party enterprise tools.</p>",
     "tags": [
       "api",
       "angular",
@@ -5000,7 +5395,8 @@
       "agents",
       "apis",
       "integration",
-      "typescript"
+      "typescript",
+      "integrations"
     ],
     "sources": [
       {
@@ -5021,9 +5417,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
+    "updatedAt": "2026-10-27T08:50:24.755Z",
     "publishedAt": "2026-08-26T17:40:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
