@@ -2141,6 +2141,508 @@
   },
   "runs": [
     {
+      "id": "ffdd4aa7-788a-4d81-8861-924e4943408e",
+      "trigger": "cron",
+      "startedAt": "2026-10-28T09:30:38.810Z",
+      "status": "success",
+      "stats": {
+        "fetched": 687,
+        "fresh": 35,
+        "clusters": 33,
+        "created": 30,
+        "merged": 3
+      },
+      "errors": [],
+      "log": [
+        "Collected 687 links from 26 sources; 35 new from the last 120 days",
+        "Grouped into 33 stories (gemini mode): 30 new posts, 3 posts got another site's link",
+        "Summarized 33 posts; 0 wait for the next run (AI calls left: 51)"
+      ],
+      "report": {
+        "sources": [
+          {
+            "sourceId": "0d2eacde2168",
+            "name": "Angular Blog",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "5d7162762e53",
+            "name": "Angular releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "name": "Angular CLI releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "3c1512ebc31b",
+            "name": "Angular components releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "8c7a15586b92",
+            "name": "NgRx releases",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73a4e84eff6d",
+            "name": "Ninja Squad",
+            "read": 30,
+            "onSite": 3,
+            "tooOld": 27,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6b4f9823bf00",
+            "name": "Angular Architects",
+            "read": 20,
+            "onSite": 11,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "cc5b5afd9ba7",
+            "name": "Angular Space",
+            "read": 15,
+            "onSite": 6,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d48b82c3affe",
+            "name": "Angular University",
+            "read": 15,
+            "onSite": 1,
+            "tooOld": 14,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "56e621a08449",
+            "name": "Angular Training Blog",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "62354c88c0e2",
+            "name": "Angular Addicts",
+            "read": 20,
+            "onSite": 3,
+            "tooOld": 16,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "17470cea5951",
+            "name": "Angular in Depth",
+            "read": 60,
+            "onSite": 57,
+            "tooOld": 3,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "131ee1c49b6b",
+            "name": ".NET Blog",
+            "read": 50,
+            "onSite": 41,
+            "tooOld": 8,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "a34c00441c6d",
+            "name": ".NET releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "87b273ebaa32",
+            "name": "Aspire releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "name": "Visual Studio Blog",
+            "read": 30,
+            "onSite": 28,
+            "tooOld": 1,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "b2ecdce82e12",
+            "name": "JetBrains .NET Blog",
+            "read": 12,
+            "onSite": 12,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "655eccbecb12",
+            "name": "InfoQ .NET",
+            "read": 3,
+            "onSite": 3,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "name": "Visual Studio Magazine",
+            "read": 60,
+            "onSite": 29,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 31
+          },
+          {
+            "sourceId": "145884eb4af6",
+            "name": "Andrew Lock – .NET Escapades",
+            "read": 25,
+            "onSite": 10,
+            "tooOld": 15,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "3958049ea454",
+            "name": "Milan Jovanović",
+            "read": 217,
+            "onSite": 17,
+            "tooOld": 200,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d1237fd7e6fe",
+            "name": "Rick Strahl's Web Log",
+            "read": 10,
+            "onSite": 3,
+            "tooOld": 7,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6752279e1d66",
+            "name": "Damien Bowden",
+            "read": 10,
+            "onSite": 5,
+            "tooOld": 5,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "4ed3c18fe2b2",
+            "name": "elmah.io blog",
+            "read": 15,
+            "onSite": 10,
+            "tooOld": 4,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "612edc942ee0",
+            "name": "C# Digest",
+            "read": 5,
+            "onSite": 5,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d9a755d55a6a",
+            "name": "TypeScript Blog",
+            "read": 10,
+            "onSite": 2,
+            "tooOld": 8,
+            "repeated": 0,
+            "fresh": 0
+          }
+        ],
+        "links": [
+          {
+            "sourceId": "62354c88c0e2",
+            "title": "Angular Addicts #54: Angular 22.2, TypeScript 7, Agentic UI & more",
+            "url": "https://www.angularaddicts.com/p/angular-addicts-54-angular-22-typescript-7-agentic-ui",
+            "postId": "45c30be6-e8f5-4d56-b2e2-2bb3c9611fd5",
+            "newPost": true
+          },
+          {
+            "sourceId": "131ee1c49b6b",
+            "title": "Blazor Welcomes Open-Source Contributions from Infragistics",
+            "url": "https://devblogs.microsoft.com/dotnet/blazor-welcomes-infragistics/",
+            "postId": "1d4f40b9-f77b-469d-ae71-2355ea148489",
+            "newPost": true
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "title": "Visual Studio October Update – Compare Commits to Your Code, Resolve Conflicts in Bulk, Keep Coding",
+            "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-october-update-compare-commits-to-your-code-resolve-conflicts-in-bulk-keep-coding/",
+            "postId": "92eda6cd-48e8-4d14-b554-989f952b5b38",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Shows Local Cosmos DB Inspection from the Terminal",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-shows-local-cosmos-db-inspection-from-the-terminal.aspx",
+            "postId": "89eeccb9-862b-4f12-b0b5-3ea3b3fa41cd",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Explains MSIX's 'Bring Your Own Installer' Model",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-explains-msis-bring-your-own-installer-model.aspx",
+            "postId": "bd97bdb9-e1f2-4cae-a360-ecc0ef12222e",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Azure DevOps Server 26H2 RC Updates Boards, Pipelines and Test Runs",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/azure-devops-server-26h2-rc-updates-boards-pipelines-and-test-runs.aspx",
+            "postId": "78e8962a-9484-4c6c-b3e0-b069a29aeef8",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Azure Cosmos DB Makes Safe Key Rotation Generally Available",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/azure-cosmos-db-makes-safe-key-rotation-generally-available.aspx",
+            "postId": "904e31d6-e3b0-4407-8bf2-c42579f0c82e",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Urges Java Upgrade Planning Ahead of 2027 Support Deadlines",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-urges-java-upgrade-planning-ahead-of-2027-support-deadlines.aspx",
+            "postId": "cda86f6f-039a-4468-bfc5-7ad7acc151a7",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Shows PostgreSQL Development Inside VS Code",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-shows-postgresql-development-inside-vs-code.aspx",
+            "postId": "60b95723-fc81-43a9-9671-3e25deac7cb4",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Test Finds Local Git Remotes Can Skew Agent Evaluations",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-test-finds-local-git-remotes-can-skew-agent-evaluations.aspx",
+            "postId": "bc4bf34d-9ba0-47b3-bd00-52dfd46e286e",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "React Native Windows 0.85 Removes Legacy Architecture",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/react-native-windows-0-85-removes-legacy-architecture.aspx",
+            "postId": "ed147883-a87a-47ee-b3ba-84ecead556f7",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Adds Agent Skill to Help .NET MAUI Apps Meet Xcode 27 Requirements",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-adds-agent-skill-to-help-maui-apps-meet-xcode-27-requirements.aspx",
+            "postId": "b48e068a-6703-45a1-bdb4-c61b5842435b"
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Foundry Browser Automation Reaches General Availability",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-foundry-browser-automation-reaches-general-availability.aspx",
+            "postId": "6e43263e-bcfd-488b-b83b-7235690ce57c",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft and Meta Bring Pyrefly Type Checking to Pylance",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-and-meta-bring-pyrefly-type-checking-to-pylance.aspx",
+            "postId": "b0a5e130-7897-4340-9fce-a9c22a64dbd7",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Visual Studio October Update Adds Bulk Conflict Resolution and Hot Exit",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/visual-studio-october-update-adds-bulk-conflict-resolution-and-hot-exit.aspx",
+            "postId": "92eda6cd-48e8-4d14-b554-989f952b5b38",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft's Reactor Brings C#-Only UI Development to WinUI",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsofts-reactor-brings-csharp-only-ui-development-to-winui.aspx",
+            "postId": "5020939d-f46d-476f-b484-605a51be85cb",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Applies Copilot Default Policies to Unconfigured Features",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-applies-copilot-default-policies-to-unconfigured-features.aspx",
+            "postId": "e9ab5a4e-1b27-48e7-978f-8615e90d3d8a",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Copilot Adds AI-Assisted Permission Approvals",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-copilot-adds-ai-assisted-permission-approvals.aspx",
+            "postId": "b663b7ae-f99a-4667-a2df-3a4e1fd44f93",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Windows Batch-File Failures May Come Down to the Working Directory",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/windows-batch-file-failures-may-come-down-to-the-working-directory.aspx",
+            "postId": "e9e6f5aa-0ba5-4b94-ac93-671428ad08dd",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Copilot Metrics Identify Custom Skills, Agents and MCP Servers",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/copilot-metrics-identify-custom-skills-agents-and-mcp-servers.aspx",
+            "postId": "11607c68-da71-4ff8-a143-7f194e30e5a1",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Tracks Copilot Model Usage from OpenCode and Other Clients",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-tracks-copilot-model-usage-from-opencode-and-other-clients.aspx",
+            "postId": "ff4269be-0f19-4605-9bac-240a5e34828f"
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Expands Enterprise Automation Through App Installations",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-expands-enterprise-automation-through-app-installations.aspx",
+            "postId": "cc0f345d-c140-442c-8e78-56ec99e45c57",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Adds 25 Languages to Azure AI Speech Transcription",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-adds-25-languages-to-azure-ai-speech-transcription.aspx",
+            "postId": "0046d216-add4-4191-8d2c-747e69c66b4b",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Combines Teams Notifications and Copilot, Sets Legacy App Retirement",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-combines-teams-notifications-and-copilot-sets-legacy-app-retirement.aspx",
+            "postId": "55601eab-1d09-44b2-8c2f-c0b8d5e6821f",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "PowerSync Adds Alpha Support for Offline Apps Using Azure DocumentDB",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/powersync-adds-alpha-support-for-offline-apps-using-azure-documentdb.aspx",
+            "postId": "fbb6ab6c-bdc2-440e-970e-242464b134a4",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Foundry Adds Grounding and Confidence Guidance for Document AI",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-foundry-adds-grounding-and-confidence-guidance-for-document-ai.aspx",
+            "postId": "6a75e02b-4bc7-4161-a61f-6b27930fb41b",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Shows How C++ Can Produce an Immediately Completed Future",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-shows-how-cpp-can-produce-an-immediately-completed-future.aspx",
+            "postId": "a5304065-11c5-4191-a906-522e300ac67f",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "VS Code Modern UI Preview Adds Compact Layout Connected Tabs",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/vs-code-modern-ui-preview-adds-compact-layout-connected-tabs.aspx",
+            "postId": "24113829-5368-4d65-b2b2-eddba083de96",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Agent Framework Brings Vector Stores to Python Agents",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-agent-framework-brings-vector-stores-to-python-agents.aspx",
+            "postId": "d947a768-5267-4621-82e9-a49deb4cfbb0",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Issues SQL Guidance for Canada Time Zone Changes",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-issues-sql-guidance-for-canada-time-zone-changes.aspx",
+            "postId": "06dace71-c4cc-42e5-b990-8084b6d9ee9d",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Cosmos DB Emulator Adds Agent-Friendly Local Testing Features",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/cosmos-db-emulator-adds-agent-friendly-local-testing-features.aspx",
+            "postId": "51c28784-b5d2-4772-b407-9cf36116a675",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Visual Studio 2026 Can Stop Building After the First Failed Project",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/visual-studio-2026-can-stop-building-after-the-first-failed-project.aspx",
+            "postId": "5c03574b-f077-45f1-833e-17c8270b29cb"
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "MSVC 14.52 Release Candidate Makes C++23 Production-Ready",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/msvc-14-52-release-candidate-makes-cpp-23-production-ready.aspx",
+            "postId": "dc7bf3c5-5be0-45b3-a759-397ca15c7602",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Explains When to Use C++ future vs. shared_future",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-explains-when-to-use-cpp-future-vs-shared_future.aspx",
+            "postId": "a5304065-11c5-4191-a906-522e300ac67f",
+            "newPost": true
+          },
+          {
+            "sourceId": "4ed3c18fe2b2",
+            "title": "Why AI-Generated code still needs tests",
+            "url": "https://blog.elmah.io/why-ai-generated-code-still-needs-tests/",
+            "postId": "504a6884-1320-4c7d-9cd2-b76886aba541",
+            "newPost": true
+          }
+        ]
+      },
+      "finishedAt": "2026-10-28T09:45:25.806Z"
+    },
+    {
       "id": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce",
       "trigger": "cron",
       "startedAt": "2026-10-27T08:50:24.755Z",
@@ -3558,107 +4060,107 @@
   ],
   "sourceStatus": {
     "https://blog.angular.dev/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular/releases.atom": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular-cli/releases.atom": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/components/releases.atom": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://github.com/ngrx/platform/releases.atom": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://blog.ninja-squad.com/atom.xml": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 30
     },
     "https://angulararchitects.io/en/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 20
     },
     "https://angularspace.com/rss": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 15
     },
     "https://blog.angular-university.io/rss": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 15
     },
     "https://blog.angulartraining.com/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://angularaddicts.com/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 20
     },
     "https://angularindepth.com/feed.xml": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 60
     },
     "https://devblogs.microsoft.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
-      "lastItemCount": 49
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastItemCount": 50
     },
     "https://github.com/dotnet/core/releases.atom": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://github.com/dotnet/aspire/releases.atom": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://devblogs.microsoft.com/visualstudio/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 30
     },
     "https://blog.jetbrains.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 12
     },
     "https://feed.infoq.com/dotnet": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 3
     },
     "https://visualstudiomagazine.com/rss-feeds/news.aspx": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 60
     },
     "https://andrewlock.net/rss.xml": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 25
     },
     "https://milanjovanovic.tech/rss/feed.xml": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 217
     },
     "https://feeds.feedburner.com/rickstrahl": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://damienbod.com/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     },
     "https://blog.elmah.io/rss": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 15
     },
     "https://csharpdigest.net/newsletters.rss": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 5
     },
     "https://devblogs.microsoft.com/typescript/feed": {
-      "lastFetchedAt": "2026-10-27T08:50:24.755Z",
+      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
       "lastItemCount": 10
     }
   }

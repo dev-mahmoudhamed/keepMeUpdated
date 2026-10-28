@@ -1,5 +1,966 @@
 [
   {
+    "id": "45c30be6-e8f5-4d56-b2e2-2bb3c9611fd5",
+    "slug": "angular-addicts-54-angular-22-2-typescript-7-agentic-ui-more",
+    "title": "Angular Addicts #54: Angular 22.2, TypeScript 7, Agentic UI & more",
+    "tldr": "The September 2026 issue of Angular Addicts highlights updates on Angular 22.2 and the TypeScript 7-powered compiler. It also covers agentic UI workflows, SSR deployment on Cloudflare Workers, and testing practices.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Covers Angular 22.2 release features and an update on Angular's TypeScript 7-powered compiler</li><li>Explores agentic UI topics, including Jev and agent-generated interfaces with local 12B models</li><li>Includes guides on deploying Angular SSR to Cloudflare Workers and building client-side TTS with Gemini</li><li>Highlights testing practices using Component Harness and app security evolution</li></ul><h3>Why it matters</h3><p>The roundup tracks the evolving Angular ecosystem, particularly integrations with newer TypeScript versions, edge deployment targets, and AI-assisted interface development.</p>",
+    "tags": [
+      "angular",
+      "typescript",
+      "frontend",
+      "ssr",
+      "ai"
+    ],
+    "sources": [
+      {
+        "sourceId": "62354c88c0e2",
+        "siteName": "Angular Addicts",
+        "url": "https://www.angularaddicts.com/p/angular-addicts-54-angular-22-typescript-7-agentic-ui",
+        "title": "Angular Addicts #54: Angular 22.2, TypeScript 7, Agentic UI & more",
+        "publishedAt": "2026-10-28T09:07:48.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-28T09:07:48.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "504a6884-1320-4c7d-9cd2-b76886aba541",
+    "slug": "why-ai-generated-code-still-needs-tests",
+    "title": "Why AI-Generated code still needs tests",
+    "tldr": "While AI tooling accelerates development, generated code often hides subtle bugs, edge cases, and architectural gaps that necessitate rigorous human review and testing. Data indicates code churn has increased as unvalidated AI code reaches production.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>AI tools generate contextual, familiar-looking code that can mask missing edge cases and unintended side effects</li><li>A 2025 GitClear analysis showed code churn increased significantly with unvalidated code modified or reverted within two weeks</li><li>AI models lack a true understanding of unique business rules, user context, and security requirements</li><li>Developer experiments show that pairing experienced developers with AI outperforms unverified generation</li></ul><h3>Why it matters</h3><p>Relying purely on generated code without adequate testing increases production churn and introduces hidden flaws into application business logic.</p>",
+    "tags": [
+      "testing",
+      "ai",
+      "opinion",
+      "code quality",
+      "software engineering"
+    ],
+    "sources": [
+      {
+        "sourceId": "4ed3c18fe2b2",
+        "siteName": "elmah.io blog",
+        "url": "https://blog.elmah.io/why-ai-generated-code-still-needs-tests/",
+        "title": "Why AI-Generated code still needs tests",
+        "publishedAt": "2026-10-28T06:39:57.000Z"
+      }
+    ],
+    "relevance": 4,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-28T06:39:57.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "89eeccb9-862b-4f12-b0b5-3ea3b3fa41cd",
+    "slug": "microsoft-shows-local-cosmos-db-inspection-from-the-terminal",
+    "title": "Microsoft Shows Local Cosmos DB Inspection from the Terminal",
+    "tldr": "Microsoft demonstrated terminal-based Cosmos DB inspection using the Cosmos DB Shell. The walkthrough allows point reads and queries directly against an emulator.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Walkthrough covers using the Cosmos DB Shell from the terminal</li><li>Enables queries and point reads directly against the Cosmos DB emulator</li><li>Eliminates the need to write temporary application code for data inspection</li></ul><h3>Why it matters</h3><p>Direct terminal inspection streamlines local development and debugging cycles when working with Cosmos DB emulators.</p>",
+    "tags": [
+      "cosmosdb",
+      "azure",
+      "cli",
+      "database",
+      "cosmos db",
+      "microsoft",
+      "developer tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-shows-local-cosmos-db-inspection-from-the-terminal.aspx",
+        "title": "Microsoft Shows Local Cosmos DB Inspection from the Terminal",
+        "publishedAt": "2026-10-27T22:56:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T22:56:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "bd97bdb9-e1f2-4cae-a360-ecc0ef12222e",
+    "slug": "microsoft-explains-msix-s-bring-your-own-installer-model",
+    "title": "Microsoft Explains MSIX's 'Bring Your Own Installer' Model",
+    "tldr": "Microsoft outlined MSIX's 'Bring Your Own Installer' capability via External Location. This feature allows applications to leverage MSIX platform capabilities without replacing their existing installer.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>External Location feature supports a 'Bring Your Own Installer' deployment model</li><li>Existing installers can continue managing application payload files</li><li>Applications gain access to MSIX platform features alongside existing packaging</li></ul><h3>Why it matters</h3><p>Developers can adopt modern Windows platform capabilities without needing to completely rebuild or replace their existing application deployment pipelines.</p>",
+    "tags": [
+      "msix",
+      "windows",
+      "packaging",
+      "deployment",
+      "desktop"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-explains-msis-bring-your-own-installer-model.aspx",
+        "title": "Microsoft Explains MSIX's 'Bring Your Own Installer' Model",
+        "publishedAt": "2026-10-27T22:52:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T22:52:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "78e8962a-9484-4c6c-b3e0-b069a29aeef8",
+    "slug": "azure-devops-server-26h2-rc-updates-boards-pipelines-and-test-runs",
+    "title": "Azure DevOps Server 26H2 RC Updates Boards, Pipelines and Test Runs",
+    "tldr": "Microsoft has released the release candidate for Azure DevOps Server 26H2. It introduces hosted-service capabilities to self-hosted deployments and includes a supported upgrade path.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Azure DevOps Server 26H2 reaches Release Candidate status</li><li>Updates Boards, Pipelines, and Test Runs</li><li>Brings features from the Azure DevOps hosted service to on-premises installations</li><li>Provides a supported upgrade path to the final release</li></ul><h3>Why it matters</h3><p>Self-hosted environments can access newer collaboration and CI/CD features previously limited to the cloud-hosted Azure DevOps service.</p>",
+    "tags": [
+      "azure devops",
+      "ci/cd",
+      "release",
+      "testing",
+      "pipelines",
+      "devops"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/azure-devops-server-26h2-rc-updates-boards-pipelines-and-test-runs.aspx",
+        "title": "Azure DevOps Server 26H2 RC Updates Boards, Pipelines and Test Runs",
+        "publishedAt": "2026-10-27T22:48:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T22:48:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "904e31d6-e3b0-4407-8bf2-c42579f0c82e",
+    "slug": "azure-cosmos-db-makes-safe-key-rotation-generally-available",
+    "title": "Azure Cosmos DB Makes Safe Key Rotation Generally Available",
+    "tldr": "Azure Cosmos DB has made safe key rotation generally available. The feature tracks last-used timestamps to help administrators identify active keys before credential revocation.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Safe key rotation is now generally available in Azure Cosmos DB</li><li>Provides last-used timestamps for account keys</li><li>Enables teams to verify whether keys are active before regenerating credentials or turning off local authentication</li></ul><h3>Why it matters</h3><p>Visibility into key usage prevents application downtime caused by accidentally regenerating active access keys or prematurely disabling local authentication.</p>",
+    "tags": [
+      "cosmosdb",
+      "azure",
+      "security",
+      "cosmos db",
+      "cloud"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/azure-cosmos-db-makes-safe-key-rotation-generally-available.aspx",
+        "title": "Azure Cosmos DB Makes Safe Key Rotation Generally Available",
+        "publishedAt": "2026-10-27T21:25:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T21:25:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "cda86f6f-039a-4468-bfc5-7ad7acc151a7",
+    "slug": "microsoft-urges-java-upgrade-planning-ahead-of-2027-support-deadlines",
+    "title": "Microsoft Urges Java Upgrade Planning Ahead of 2027 Support Deadlines",
+    "tldr": "Microsoft is advising teams to plan Java upgrades ahead of a September 2027 support deadline. The cutoff affects Java 8, 11, and 17 on Azure App Service and Azure Functions.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Support cutoff set for September 2027 across Azure App Service and Azure Functions</li><li>Impacts legacy and older LTS versions: Java 8, 11, and 17</li><li>Target timelines for OpenJDK distributions are tracked separately</li></ul><h3>Why it matters</h3><p>Teams hosting Java workloads on Azure serverless and app platforms must plan migration paths to newer Java versions to maintain support.</p>",
+    "tags": [
+      "java",
+      "azure",
+      "lifecycle",
+      "azure functions",
+      "app service",
+      "cloud"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-urges-java-upgrade-planning-ahead-of-2027-support-deadlines.aspx",
+        "title": "Microsoft Urges Java Upgrade Planning Ahead of 2027 Support Deadlines",
+        "publishedAt": "2026-10-27T21:23:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T21:23:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "60b95723-fc81-43a9-9671-3e25deac7cb4",
+    "slug": "microsoft-shows-postgresql-development-inside-vs-code",
+    "title": "Microsoft Shows PostgreSQL Development Inside VS Code",
+    "tldr": "Microsoft demonstrated integrated PostgreSQL development workflows within VS Code. The setup covers database browsing, SQL editing, and Copilot support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Walkthrough showcases PostgreSQL integration directly inside VS Code</li><li>Combines database schema exploration and SQL editing</li><li>Integrates GitHub Copilot assistance while distinguishing separate upcoming agent features</li></ul><h3>Why it matters</h3><p>Brings database operations and AI code assistance directly into the primary editor environment, reducing context switching during SQL development.</p>",
+    "tags": [
+      "postgresql",
+      "vscode",
+      "copilot",
+      "vs code",
+      "databases"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-shows-postgresql-development-inside-vs-code.aspx",
+        "title": "Microsoft Shows PostgreSQL Development Inside VS Code",
+        "publishedAt": "2026-10-27T21:19:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T21:19:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "bc4bf34d-9ba0-47b3-bd00-52dfd46e286e",
+    "slug": "microsoft-test-finds-local-git-remotes-can-skew-agent-evaluations",
+    "title": "Microsoft Test Finds Local Git Remotes Can Skew Agent Evaluations",
+    "tldr": "A 340-run Microsoft evaluation showed that testing AI agents against local Git remotes can alter model behavior. One tested model executed unrequested push operations more frequently against GitHub than local repositories.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Study evaluated AI agent behavior over 340 test runs</li><li>Comparing remote GitHub targets to local Git remotes skewed evaluation results</li><li>One model pushed code without an explicit request more often against GitHub than against local repos</li></ul><h3>Why it matters</h3><p>Benchmarking and evaluating coding agents in purely local test harnesses may not accurately reflect how they act against live, remote repository targets.</p>",
+    "tags": [
+      "git",
+      "ai",
+      "benchmarks",
+      "ai agents",
+      "github",
+      "testing"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-test-finds-local-git-remotes-can-skew-agent-evaluations.aspx",
+        "title": "Microsoft Test Finds Local Git Remotes Can Skew Agent Evaluations",
+        "publishedAt": "2026-10-27T21:15:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T21:15:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "ed147883-a87a-47ee-b3ba-84ecead556f7",
+    "slug": "react-native-windows-0-85-removes-legacy-architecture",
+    "title": "React Native Windows 0.85 Removes Legacy Architecture",
+    "tldr": "React Native Windows 0.85 has officially removed the platform's legacy architecture. The update mandates Fabric, requires updated Windows toolchains, and introduces component improvements.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Legacy architecture has been completely removed in version 0.85</li><li>Fabric rendering architecture is now required</li><li>Requires an updated Windows build toolchain</li><li>Delivers reliability fixes and component feature updates</li></ul><h3>Why it matters</h3><p>Developers building Windows apps with React Native must modernize their toolchains and transition to Fabric to remain supported.</p>",
+    "tags": [
+      "react native",
+      "windows",
+      "release",
+      "fabric",
+      "mobile development"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/react-native-windows-0-85-removes-legacy-architecture.aspx",
+        "title": "React Native Windows 0.85 Removes Legacy Architecture",
+        "publishedAt": "2026-10-27T21:12:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T21:12:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "6e43263e-bcfd-488b-b83b-7235690ce57c",
+    "slug": "microsoft-foundry-browser-automation-reaches-general-availability",
+    "title": "Microsoft Foundry Browser Automation Reaches General Availability",
+    "tldr": "Microsoft Foundry's browser automation capability has reached general availability. It allows AI agents to operate within managed browser sessions across websites with options for human takeover.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Browser automation in Microsoft Foundry is now generally available</li><li>Provides managed browser sessions that work on both public and private websites</li><li>Includes real-time monitoring and support for human takeover</li></ul><h3>Why it matters</h3><p>Enterprise agents can interact with external or private web interfaces programmatically while retaining observability and manual intervention controls.</p>",
+    "tags": [
+      "azure",
+      "ai",
+      "automation",
+      "microsoft foundry",
+      "browser automation",
+      "ai agents",
+      "enterprise"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-foundry-browser-automation-reaches-general-availability.aspx",
+        "title": "Microsoft Foundry Browser Automation Reaches General Availability",
+        "publishedAt": "2026-10-27T21:06:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T21:06:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "b0a5e130-7897-4340-9fce-a9c22a64dbd7",
+    "slug": "microsoft-and-meta-bring-pyrefly-type-checking-to-pylance",
+    "title": "Microsoft and Meta Bring Pyrefly Type Checking to Pylance",
+    "tldr": "Microsoft and Meta have integrated Pyrefly type checking into Pylance. The integration uses the Type Server Protocol to decouple type checking from core editor intelligence.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Brings Meta's Pyrefly type checker into Pylance</li><li>Uses the newly introduced Type Server Protocol</li><li>Separates Python type checking processes from Pylance's editor intelligence and Copilot integrations</li></ul><h3>Why it matters</h3><p>Decoupling type checking from language server features allows Python developers to leverage modular type checkers without degrading IDE performance or Copilot functionality.</p>",
+    "tags": [
+      "python",
+      "pylance",
+      "tooling",
+      "meta",
+      "vs code",
+      "type checking"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-and-meta-bring-pyrefly-type-checking-to-pylance.aspx",
+        "title": "Microsoft and Meta Bring Pyrefly Type Checking to Pylance",
+        "publishedAt": "2026-10-27T21:02:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T21:02:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "5020939d-f46d-476f-b484-605a51be85cb",
+    "slug": "microsoft-s-reactor-brings-c-only-ui-development-to-winui",
+    "title": "Microsoft's Reactor Brings C#-Only UI Development to WinUI",
+    "tldr": "Microsoft introduced Reactor, an experimental framework bringing C#-only UI development to WinUI. It adopts a Model-View-Update pattern while preserving underlying native WinUI controls.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Reactor framework provides a pure C# development model for WinUI</li><li>Implements a Model-View-Update (MVU) architectural pattern</li><li>Uses native WinUI controls under the hood</li><li>XAML continues to be fully supported alongside the experimental framework</li></ul><h3>Why it matters</h3><p>Gives .NET desktop developers an alternative to XAML by offering a code-first, functional UI model for Windows applications.</p>",
+    "tags": [
+      "winui",
+      "c#",
+      "dotnet",
+      ".net",
+      "desktop",
+      "ui"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsofts-reactor-brings-csharp-only-ui-development-to-winui.aspx",
+        "title": "Microsoft's Reactor Brings C#-Only UI Development to WinUI",
+        "publishedAt": "2026-10-27T20:55:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T20:55:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "e9ab5a4e-1b27-48e7-978f-8615e90d3d8a",
+    "slug": "github-applies-copilot-default-policies-to-unconfigured-features",
+    "title": "GitHub Applies Copilot Default Policies to Unconfigured Features",
+    "tldr": "GitHub is rolling out default policies for previously unconfigured Copilot features. Existing custom configurations are preserved, and preview capabilities will remain opt-in.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Default policy rollout applies only to unconfigured Copilot settings</li><li>Explicitly defined organization and repository policies are preserved</li><li>Preview features continue to require an explicit opt-in</li></ul><h3>Why it matters</h3><p>Ensures standard security and feature baselines for Copilot across enterprise environments without unintentionally overriding custom policies or enabling preview code.</p>",
+    "tags": [
+      "github copilot",
+      "security",
+      "governance",
+      "github",
+      "copilot",
+      "devops",
+      "ai policy"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-applies-copilot-default-policies-to-unconfigured-features.aspx",
+        "title": "GitHub Applies Copilot Default Policies to Unconfigured Features",
+        "publishedAt": "2026-10-27T19:43:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T19:43:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "b663b7ae-f99a-4667-a2df-3a4e1fd44f93",
+    "slug": "github-copilot-adds-ai-assisted-permission-approvals",
+    "title": "GitHub Copilot Adds AI-Assisted Permission Approvals",
+    "tldr": "GitHub Copilot has made AI-assisted permission approvals generally available. The capability is deployed across VS Code, the Copilot CLI, and the Copilot app.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>AI-assisted permission approvals are now generally available</li><li>Supported environments include Visual Studio Code, Copilot CLI, and the Copilot application</li><li>Assists developers during permission evaluation workflows</li></ul><h3>Why it matters</h3><p>Simplifies authorization workflows across Copilot interfaces while maintaining oversight on developer environment permissions.</p>",
+    "tags": [
+      "github copilot",
+      "ai",
+      "vscode",
+      "vs code",
+      "cli",
+      "security"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-copilot-adds-ai-assisted-permission-approvals.aspx",
+        "title": "GitHub Copilot Adds AI-Assisted Permission Approvals",
+        "publishedAt": "2026-10-27T19:17:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T19:17:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "e9e6f5aa-0ba5-4b94-ac93-671428ad08dd",
+    "slug": "windows-batch-file-failures-may-come-down-to-the-working-directory",
+    "title": "Windows Batch-File Failures May Come Down to the Working Directory",
+    "tldr": "Raymond Chen details how Windows Explorer and batch scripts may launch identical executables using different working directories.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Executable execution behavior can vary between Windows Explorer and batch scripts.</li><li>Discrepancies often stem from differing working directories assigned during launch.</li><li>Raymond Chen provides technical explanations for these script-execution failures.</li></ul><h3>Why it matters</h3><p>Understanding working directory assignment prevents subtle path-resolution bugs when transitioning scripts from interactive shells to automation.</p>",
+    "tags": [
+      "windows",
+      "cmd",
+      "debugging",
+      "batch scripts",
+      "cli"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/windows-batch-file-failures-may-come-down-to-the-working-directory.aspx",
+        "title": "Windows Batch-File Failures May Come Down to the Working Directory",
+        "publishedAt": "2026-10-27T19:06:00.000Z"
+      }
+    ],
+    "relevance": 4,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T19:06:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "11607c68-da71-4ff8-a143-7f194e30e5a1",
+    "slug": "copilot-metrics-identify-custom-skills-agents-and-mcp-servers",
+    "title": "Copilot Metrics Identify Custom Skills, Agents and MCP Servers",
+    "tldr": "GitHub Copilot usage reports now include configured customization names and broader reporting lists. The updates provide visibility into custom skills, agents, and MCP servers.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Usage metrics now reveal the names of configured customizations.</li><li>Telemetry covers custom skills, agents, and MCP servers.</li><li>Reporting lists have been expanded for administrative review.</li></ul><h3>Why it matters</h3><p>Teams gain clearer operational oversight into which custom AI extensions, MCP servers, and agent configurations are being used across their organization.</p>",
+    "tags": [
+      "github copilot",
+      "metrics",
+      "mcp",
+      "devops",
+      "ai"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/copilot-metrics-identify-custom-skills-agents-and-mcp-servers.aspx",
+        "title": "Copilot Metrics Identify Custom Skills, Agents and MCP Servers",
+        "publishedAt": "2026-10-27T19:05:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T19:05:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "cc0f345d-c140-442c-8e78-56ec99e45c57",
+    "slug": "github-expands-enterprise-automation-through-app-installations",
+    "title": "GitHub Expands Enterprise Automation Through App Installations",
+    "tldr": "GitHub enterprise installations are now generally available to expand enterprise automation. The release extends administrative API capabilities beyond personal access tokens.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Enterprise App installations have reached general availability.</li><li>Administrative API coverage is expanded beyond classic personal access tokens.</li><li>The feature targets enterprise-scale governance and automation.</li></ul><h3>Why it matters</h3><p>Organizations can replace brittle personal access tokens with enterprise app identities for broader administrative and CI/CD operations.</p>",
+    "tags": [
+      "github",
+      "api",
+      "enterprise",
+      "apis",
+      "security",
+      "devops"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-expands-enterprise-automation-through-app-installations.aspx",
+        "title": "GitHub Expands Enterprise Automation Through App Installations",
+        "publishedAt": "2026-10-27T19:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T19:00:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "0046d216-add4-4191-8d2c-747e69c66b4b",
+    "slug": "microsoft-adds-25-languages-to-azure-ai-speech-transcription",
+    "title": "Microsoft Adds 25 Languages to Azure AI Speech Transcription",
+    "tldr": "Azure AI Speech Transcription's LLM Speech 09-2026 update adds support for 25 additional languages. The service also reports faster transcription speeds via the Fast Transcription API.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The LLM Speech 09-2026 update adds 25 languages.</li><li>Faster speech transcription is delivered through the existing Fast Transcription API.</li><li>Locale coverage for speech recognition workloads is expanded.</li></ul><h3>Why it matters</h3><p>Developers building multilingual voice applications can process additional locales with reduced latency using existing API endpoints.</p>",
+    "tags": [
+      "azure",
+      "speech",
+      "ai",
+      "speech recognition",
+      "cloud"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-adds-25-languages-to-azure-ai-speech-transcription.aspx",
+        "title": "Microsoft Adds 25 Languages to Azure AI Speech Transcription",
+        "publishedAt": "2026-10-27T18:58:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T18:58:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "55601eab-1d09-44b2-8c2f-c0b8d5e6821f",
+    "slug": "github-combines-teams-notifications-and-copilot-sets-legacy-app-retirement",
+    "title": "GitHub Combines Teams Notifications and Copilot, Sets Legacy App Retirement",
+    "tldr": "GitHub has merged Teams notifications with Copilot into a consolidated application while scheduling the legacy app's retirement. The unified integration connects issue alerts with agent-generated pull requests.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A consolidated GitHub app for Microsoft Teams merges alerts and Copilot workflows.</li><li>Issue notifications are integrated with agent-generated pull requests.</li><li>Retirement plans have been set for the legacy Teams application.</li></ul><h3>Why it matters</h3><p>Developers can streamline issue resolution and review agent-assisted pull requests directly inside chat workflows without jumping between standalone integrations.</p>",
+    "tags": [
+      "github",
+      "teams",
+      "copilot",
+      "microsoft teams",
+      "ai",
+      "collaboration"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-combines-teams-notifications-and-copilot-sets-legacy-app-retirement.aspx",
+        "title": "GitHub Combines Teams Notifications and Copilot, Sets Legacy App Retirement",
+        "publishedAt": "2026-10-27T18:30:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T18:30:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "92eda6cd-48e8-4d14-b554-989f952b5b38",
+    "slug": "visual-studio-october-update-compare-commits-to-your-code-resolve-conflicts-in-b",
+    "title": "Visual Studio October Update – Compare Commits to Your Code, Resolve Conflicts in Bulk, Keep Coding",
+    "tldr": "The Visual Studio October update introduces working-tree commit comparisons, bulk merge conflict resolution, and Hot Exit. It also rolls out a redesigned Copilot chat experience built on the Copilot SDK.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Developers can compare earlier commits directly against the current working tree, including uncommitted edits.</li><li>Merge conflicts can be resolved in bulk across folders or the entire repository using 'Keep All Current' or 'Take All Incoming'.</li><li>The updated Copilot chat uses a shared SDK with Ask and Agent modes, supporting prompt caching and longer sessions.</li><li>Additional features include Hot Exit for preserving unfinished work, keyboard tab navigation, and a refreshed Fonts and Colors panel.</li></ul><h3>Why it matters</h3><p>The Git improvements accelerate merge conflict handling, while the unified Copilot SDK architecture ensures consistent AI agent behavior and context retention across developer tooling.</p>",
+    "tags": [
+      "visual studio",
+      "git",
+      "ide",
+      "release",
+      "github copilot"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-october-update-compare-commits-to-your-code-resolve-conflicts-in-bulk-keep-coding/",
+        "title": "Visual Studio October Update – Compare Commits to Your Code, Resolve Conflicts in Bulk, Keep Coding",
+        "publishedAt": "2026-10-27T16:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/visual-studio-october-update-adds-bulk-conflict-resolution-and-hot-exit.aspx",
+        "title": "Visual Studio October Update Adds Bulk Conflict Resolution and Hot Exit",
+        "publishedAt": "2026-10-27T20:58:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T16:00:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "fbb6ab6c-bdc2-440e-970e-242464b134a4",
+    "slug": "powersync-adds-alpha-support-for-offline-apps-using-azure-documentdb",
+    "title": "PowerSync Adds Alpha Support for Offline Apps Using Azure DocumentDB",
+    "tldr": "PowerSync has introduced alpha support for building offline applications backed by Azure DocumentDB. The system synchronizes Azure document stores with client-side SQLite databases.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>PowerSync added alpha support for Azure DocumentDB.</li><li>Remote Azure document collections sync directly to local SQLite databases.</li><li>Enables offline data access and persistence for client applications.</li></ul><h3>Why it matters</h3><p>Developers can implement offline-first mobile and desktop applications without building custom sync logic between local SQLite files and cloud document databases.</p>",
+    "tags": [
+      "azure",
+      "sqlite",
+      "sync",
+      "database",
+      "powersync",
+      "databases",
+      "mobile"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/powersync-adds-alpha-support-for-offline-apps-using-azure-documentdb.aspx",
+        "title": "PowerSync Adds Alpha Support for Offline Apps Using Azure DocumentDB",
+        "publishedAt": "2026-10-27T15:21:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T15:21:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "6a75e02b-4bc7-4161-a61f-6b27930fb41b",
+    "slug": "microsoft-foundry-adds-grounding-and-confidence-guidance-for-document-ai",
+    "title": "Microsoft Foundry Adds Grounding and Confidence Guidance for Document AI",
+    "tldr": "Microsoft Foundry has introduced new guidance for Document AI workflows focused on grounding and confidence scores. The guidance covers routing low-confidence extracted data to human reviewers.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Provides grounding and confidence evaluation strategies for Document AI.</li><li>Outlines mechanisms to route uncertain extracted values to human review.</li><li>Focuses on improving accuracy and mitigating AI extraction errors.</li></ul><h3>Why it matters</h3><p>Establishing human-in-the-loop fallback strategies based on model confidence prevents erroneous data from corrupting downstream automated pipelines.</p>",
+    "tags": [
+      "ai",
+      "documentdb",
+      "foundry",
+      "microsoft foundry",
+      "document ai",
+      "cloud"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-foundry-adds-grounding-and-confidence-guidance-for-document-ai.aspx",
+        "title": "Microsoft Foundry Adds Grounding and Confidence Guidance for Document AI",
+        "publishedAt": "2026-10-27T15:19:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T15:19:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "24113829-5368-4d65-b2b2-eddba083de96",
+    "slug": "vs-code-modern-ui-preview-adds-compact-layout-connected-tabs",
+    "title": "VS Code Modern UI Preview Adds Compact Layout Connected Tabs",
+    "tldr": "Visual Studio Code's Modern UI Preview now includes a compact layout and connected tabs. The redesign changes address community feedback regarding UI density and usability.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Modern UI Preview adds a compact layout option.</li><li>Connected tabs are introduced to refine tab management.</li><li>Adjustments directly respond to developer feedback regarding editor density.</li></ul><h3>Why it matters</h3><p>The updates allow developers to reclaim screen real estate and improve navigation density on smaller displays or complex multi-file layouts.</p>",
+    "tags": [
+      "vscode",
+      "ide",
+      "ui",
+      "vs code",
+      "developer tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/vs-code-modern-ui-preview-adds-compact-layout-connected-tabs.aspx",
+        "title": "VS Code Modern UI Preview Adds Compact Layout Connected Tabs",
+        "publishedAt": "2026-10-27T15:13:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T15:13:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "d947a768-5267-4621-82e9-a49deb4cfbb0",
+    "slug": "microsoft-agent-framework-brings-vector-stores-to-python-agents",
+    "title": "Microsoft Agent Framework Brings Vector Stores to Python Agents",
+    "tldr": "Microsoft Agent Framework has added experimental vector store integrations for Python agents. The APIs provide searchable data backends and persistent memory contexts.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Experimental vector store APIs are available in Python.</li><li>Provides memory context providers for agent frameworks.</li><li>Enables agent access to searchable external and historical data.</li></ul><h3>Why it matters</h3><p>Python developers can build context-aware AI agents with standardized retrieval-augmented generation (RAG) and long-term memory patterns.</p>",
+    "tags": [
+      "python",
+      "ai",
+      "rag",
+      "microsoft",
+      "ai agents",
+      "vector databases"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-agent-framework-brings-vector-stores-to-python-agents.aspx",
+        "title": "Microsoft Agent Framework Brings Vector Stores to Python Agents",
+        "publishedAt": "2026-10-27T15:02:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T15:02:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "1d4f40b9-f77b-469d-ae71-2355ea148489",
+    "slug": "blazor-welcomes-open-source-contributions-from-infragistics",
+    "title": "Blazor Welcomes Open-Source Contributions from Infragistics",
+    "tldr": "Infragistics has open-sourced over 50 Blazor components under the MIT license and contributed performance analyzers to .NET 11. The collaboration also brings an Ignite UI setup scaffolder and an agent skill.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Over 50 Ignite UI for Blazor controls, including Grid Lite, are released under the MIT license via NuGet.</li><li>Infragistics contributed ASP.NET Core analyzers to .NET 11 to catch issues such as improper StateHasChanged() and stale authentication calls.</li><li>Components require interactive render modes and are audited for accessibility, performance, and WebAssembly trimming.</li><li>Tooling additions include an upcoming setup scaffolder and an AI agent skill in the .NET skills repository.</li></ul><h3>Why it matters</h3><p>Blazor developers receive a production-grade, open-source UI component library alongside core .NET 11 framework analyzers that improve code quality regardless of the component library used.</p>",
+    "tags": [
+      "blazor",
+      ".net",
+      "opensource",
+      "infragistics",
+      "open source",
+      "web development"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/blazor-welcomes-infragistics/",
+        "title": "Blazor Welcomes Open-Source Contributions from Infragistics",
+        "publishedAt": "2026-10-27T15:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T15:00:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "06dace71-c4cc-42e5-b990-8084b6d9ee9d",
+    "slug": "microsoft-issues-sql-guidance-for-canada-time-zone-changes",
+    "title": "Microsoft Issues SQL Guidance for Canada Time Zone Changes",
+    "tldr": "Microsoft published SQL guidance for database administrators dealing with Canadian time zone changes. The advisory highlights the need for interim time zone mappings in impacted regions.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Guidance addresses recent time zone updates in Canada.</li><li>Database administrators may need to apply interim time zone mappings.</li><li>Focuses on maintaining accurate regional time representation in SQL systems.</li></ul><h3>Why it matters</h3><p>Applying proper time zone mappings prevents timestamp corruption and scheduling errors in time-sensitive SQL database records.</p>",
+    "tags": [
+      "sql",
+      "database",
+      "devops",
+      "databases",
+      "sysadmin"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-issues-sql-guidance-for-canada-time-zone-changes.aspx",
+        "title": "Microsoft Issues SQL Guidance for Canada Time Zone Changes",
+        "publishedAt": "2026-10-27T15:00:00.000Z"
+      }
+    ],
+    "relevance": 4,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T15:00:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "51c28784-b5d2-4772-b407-9cf36116a675",
+    "slug": "cosmos-db-emulator-adds-agent-friendly-local-testing-features",
+    "title": "Cosmos DB Emulator Adds Agent-Friendly Local Testing Features",
+    "tldr": "The Azure Cosmos DB Emulator has introduced testing features designed for coding-agent workflows. The update adds dedicated fixture management, execution tracing, and gateway options.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Cosmos DB Emulator introduces features tailored to coding-agent workflows.</li><li>Adds new test fixture capabilities and execution tracing.</li><li>Provides updated gateway options for local environment testing.</li></ul><h3>Why it matters</h3><p>Local emulator improvements facilitate automated integration testing and repeatable data mocking when using AI agents to generate and test database code.</p>",
+    "tags": [
+      "cosmosdb",
+      "testing",
+      "ai",
+      "cosmos db",
+      "cloud"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/cosmos-db-emulator-adds-agent-friendly-local-testing-features.aspx",
+        "title": "Cosmos DB Emulator Adds Agent-Friendly Local Testing Features",
+        "publishedAt": "2026-10-27T14:58:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T14:58:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "dc7bf3c5-5be0-45b3-a759-397ca15c7602",
+    "slug": "msvc-14-52-release-candidate-makes-c-23-production-ready",
+    "title": "MSVC 14.52 Release Candidate Makes C++23 Production-Ready",
+    "tldr": "Microsoft has made C++23 production-ready with the release of the MSVC 14.52 Release Candidate. The toolset includes an officially supported C++23 compiler mode.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>MSVC 14.52 Release Candidate is now available.</li><li>The compiler provides a fully supported, production-ready C++23 mode.</li><li>Updates Microsoft's latest C++ build tools suite.</li></ul><h3>Why it matters</h3><p>C++ developers can now safely adopt C++23 language features in enterprise and production codebases targeting Windows environments.</p>",
+    "tags": [
+      "c++",
+      "c++23",
+      "msvc",
+      "compiler",
+      "compilers"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/msvc-14-52-release-candidate-makes-cpp-23-production-ready.aspx",
+        "title": "MSVC 14.52 Release Candidate Makes C++23 Production-Ready",
+        "publishedAt": "2026-10-27T14:52:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T14:52:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "a5304065-11c5-4191-a906-522e300ac67f",
+    "slug": "microsoft-shows-how-c-can-produce-an-immediately-completed-future",
+    "title": "Microsoft Shows How C++ Can Produce an Immediately Completed Future",
+    "tldr": "A Windows developer tutorial demonstrates how C++ promises can generate immediately completed futures. The method is shown as an alternative to launching tasks using std::async.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Demonstrates producing immediately completed futures in modern C++.</li><li>Highlights std::promise usage instead of on-thread std::async calls.</li><li>Addresses asynchronous patterns for Windows development.</li></ul><h3>Why it matters</h3><p>Using promises to deliver ready futures avoids the unnecessary thread synchronization overhead often incurred by std::async.</p>",
+    "tags": [
+      "c++",
+      "concurrency",
+      "windows"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-shows-how-cpp-can-produce-an-immediately-completed-future.aspx",
+        "title": "Microsoft Shows How C++ Can Produce an Immediately Completed Future",
+        "publishedAt": "2026-10-27T15:15:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-explains-when-to-use-cpp-future-vs-shared_future.aspx",
+        "title": "Microsoft Explains When to Use C++ future vs. shared_future",
+        "publishedAt": "2026-10-27T14:47:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "publishedAt": "2026-10-27T14:47:00.000Z",
+    "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
     "id": "b3814b31-3d09-423d-8eaf-313ac53fbaf0",
     "slug": "how-much-faster-is-the-new-angular-compiler",
     "title": "How much faster is the new Angular compiler?",
@@ -1735,15 +2696,16 @@
     "id": "b48e068a-6703-45a1-bdb4-c61b5842435b",
     "slug": "get-your-net-maui-app-ready-for-xcode-27",
     "title": "Get Your .NET MAUI App Ready for Xcode 27",
-    "tldr": "Apps built with Xcode 27 require adoption of UIKit's scene lifecycle to prevent crashes on launch. A new CLI-installed agent skill helps automate the migration across manifests, delegates, and custom lifecycle callbacks.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Every iOS app built using Xcode 27 must adopt the UIKit scene lifecycle using a scene delegate and Info.plist entries.</li><li>The requirement only affects builds made with Xcode 27; existing binaries compiled with earlier SDKs remain unaffected.</li><li>The maui-xcode27-migration agent skill can be installed via Microsoft.Maui.Cli preview to guide coding agents through the migration.</li><li>Projects targeting .NET 10 must update .NET MAUI packages to version 10.0.110 or higher to preserve features like App Actions and WebAuthenticator forwarding.</li><li>Custom application delegate logic, such as authentication callbacks, notification taps, and deep links, must be verified during migration.</li></ul><h3>Why it matters</h3><p>Developers building .NET MAUI apps with Xcode 27 must update their scene lifecycle configuration to maintain app stability, authentication redirects, and platform integrations on iOS.</p>",
+    "tldr": "Apps built with Xcode 27 must adopt UIKit's scene lifecycle to prevent launch crashes on iOS 27. Microsoft has released an agent skill via the .NET MAUI CLI to help automate the necessary project updates.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Xcode 27 requires all iOS apps to implement the UIKit scene lifecycle rather than relying solely on the older application lifecycle.</li><li>Existing compiled binaries are not impacted, but recompiling with Xcode 27 requires updating the scene delegate, Info.plist, and any lifecycle callbacks like deep links.</li><li>The migration can be automated using the maui-xcode27-migration agent skill, which is installed via the .NET MAUI CLI preview.</li><li>The agent skill acts as instructions and resources for coding agents such as GitHub Copilot CLI rather than a runtime app dependency.</li></ul><h3>Why it matters</h3><p>Developers rebuilding .NET MAUI apps with Xcode 27 face launch crashes if they do not migrate to the scene lifecycle. The new CLI-installed agent skill simplifies updating manifests, delegates, and custom callbacks across existing codebases.</p>",
     "tags": [
       ".net maui",
       "ios",
       "xcode",
       "mobile development",
       ".net 10",
-      ".net"
+      ".net",
+      "developer tools"
     ],
     "sources": [
       {
@@ -1752,6 +2714,13 @@
         "url": "https://devblogs.microsoft.com/dotnet/migrate-dotnet-maui-apps-uikit-scene-lifecycle/",
         "title": "Get Your .NET MAUI App Ready for Xcode 27",
         "publishedAt": "2026-10-19T16:05:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/microsoft-adds-agent-skill-to-help-maui-apps-meet-xcode-27-requirements.aspx",
+        "title": "Microsoft Adds Agent Skill to Help .NET MAUI Apps Meet Xcode 27 Requirements",
+        "publishedAt": "2026-10-27T21:08:00.000Z"
       }
     ],
     "relevance": 6,
@@ -1759,7 +2728,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-20T08:22:52.396Z",
-    "updatedAt": "2026-10-20T08:22:52.396Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
     "publishedAt": "2026-10-19T16:05:00.000Z",
     "runId": "f4129907-46e1-4a90-bf31-a07c1bfdf372"
   },
@@ -2009,15 +2978,16 @@
     "id": "5c03574b-f077-45f1-833e-17c8270b29cb",
     "slug": "stop-waiting-on-a-failed-build",
     "title": "Stop waiting on a failed build",
-    "tldr": "Visual Studio 2026 version 18.11 adds an opt-in setting that immediately stops solution builds after the first project failure.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Enabled via Tools &gt; Options &gt; Projects and Solutions &gt; Build and Run under 'Stop solution build after first failure'.</li><li>Prevents queued projects from starting and safely stops active project builds upon a failure.</li><li>Builds are reported as failed rather than canceled.</li><li>Reduced post-failure completion times from an average of 26 seconds to 1.5 seconds in test builds.</li></ul><h3>Why it matters</h3><p>Developers can shorten feedback loops during debugging by avoiding unnecessary compilations across remaining projects once an error has occurred.</p>",
+    "tldr": "Visual Studio 2026 version 18.11 introduces an opt-in setting that automatically halts a solution build upon the first project failure. This prevents queued and in-progress builds from continuing once an error occurs.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The new feature is enabled via Tools &gt; Options &gt; Projects and Solutions &gt; Build and Run by selecting 'Stop solution build after first failure'.</li><li>When triggered, Visual Studio stops starting queued projects, safely halts active builds, and marks the overall build as failed rather than canceled.</li><li>The option halts the entire solution build, not just downstream projects that depend on the failed component.</li><li>In initial tests, post-failure wait time decreased from an average of 26 seconds to 1.5 seconds.</li></ul><h3>Why it matters</h3><p>This setting reduces idle time spent waiting for unrelated projects to build after a compilation error has already occurred, allowing developers to start debugging immediately.</p>",
     "tags": [
       "visualstudio",
       "dotnet",
       "visual studio",
       "ide",
       "build systems",
-      "developer tools"
+      "developer tools",
+      "build tools"
     ],
     "sources": [
       {
@@ -2026,6 +2996,13 @@
         "url": "https://devblogs.microsoft.com/visualstudio/stop-waiting-on-a-failed-build/",
         "title": "Stop waiting on a failed build",
         "publishedAt": "2026-10-15T14:00:50.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/visual-studio-2026-can-stop-building-after-the-first-failed-project.aspx",
+        "title": "Visual Studio 2026 Can Stop Building After the First Failed Project",
+        "publishedAt": "2026-10-27T14:55:00.000Z"
       }
     ],
     "relevance": 5,
@@ -2033,7 +3010,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-17T12:11:03.675Z",
-    "updatedAt": "2026-10-19T08:42:08.996Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
     "publishedAt": "2026-10-17T12:11:03.675Z",
     "runId": "4a024665-bc4f-424f-8718-8b2ac33a4474"
   },
@@ -6449,13 +7426,14 @@
     "id": "ff4269be-0f19-4605-9bac-240a5e34828f",
     "slug": "bigger-copilot-bills-github-now-lets-you-peek-into-per-model-token-usage",
     "title": "Bigger Copilot Bills? GitHub Now Lets You Peek into Per-Model Token Usage",
-    "tldr": "GitHub has updated its downloadable AI usage reports to include detailed input, output, and cache token counts for individual models.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Adds input, output, and cache token metrics to downloadable reports.</li><li>Provides clearer transparency into how individual models consume AI Credits.</li></ul><h3>Why it matters</h3><p>Detailed token accounting helps developers audit credit usage and optimize prompt costs across different AI models.</p>",
+    "tldr": "GitHub has updated its downloadable AI usage reports to supply granular token statistics by model.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Usage reports now provide specific breakdowns for individual AI models.</li><li>The downloadable reports track input, output, and cache token metrics.</li></ul><h3>Why it matters</h3><p>Developers and organizations gain more transparency into Copilot token consumption and model-level costs.</p>",
     "tags": [
       "copilot",
       "github",
       "billing",
-      "ai"
+      "ai",
+      "cloud costs"
     ],
     "sources": [
       {
@@ -6471,6 +7449,13 @@
         "url": "https://visualstudiomagazine.com/articles/2026/08/07/copilot-credit-complaints-keep-coming-too-expensive-to-use.aspx",
         "title": "Copilot Credit Complaints Keep Coming: 'Too Expensive to Use'",
         "publishedAt": "2026-08-07T16:19:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/27/github-tracks-copilot-model-usage-from-opencode-and-other-clients.aspx",
+        "title": "GitHub Tracks Copilot Model Usage from OpenCode and Other Clients",
+        "publishedAt": "2026-10-27T19:00:00.000Z"
       }
     ],
     "relevance": 5,
@@ -6478,7 +7463,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-28T09:30:38.810Z",
     "publishedAt": "2026-08-07T16:19:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -8156,166 +9141,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-06-30T16:00:45.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "5730bc68-6cd9-4bf5-a4a2-4fcd7045ae5c",
-    "slug": "getting-inherited-controller-routes-to-work-in-asp-net-core",
-    "title": "Getting Inherited Controller Routes to work in ASP.NET Core",
-    "tldr": "Controller inheritance in ASP.NET Core can cause route duplication and 500 Internal Server Error failures due to ambiguous routes when base and concrete controllers both define attributes. Explicit configuration and understanding ASP.NET route scanning are required to handle these scenarios safely.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>ASP.NET automatically scans startup assemblies for concrete controller attribute routes to build the route table.</li><li>Inheriting from a concrete base controller containing attribute routes can lead to ambiguous route exceptions and server errors.</li><li>Controllers in external assemblies must be explicitly added to MVC startup configuration.</li></ul><h3>Why it matters</h3><p>Properly managing controller inheritance prevents cryptic startup routing errors and enables cleaner code reuse for packaged APIs and base templates.</p>",
-    "tags": [
-      "aspnetcore",
-      "routing",
-      "dotnet",
-      "asp.net core",
-      "c#",
-      "web api"
-    ],
-    "sources": [
-      {
-        "sourceId": "d1237fd7e6fe",
-        "siteName": "Rick Strahl's Web Log",
-        "url": "https://weblog.west-wind.com/posts/2026/Jun/30/Getting-Inherited-Controller-Routes-to-work-in-ASPNET-Core",
-        "title": "Getting Inherited Controller Routes to work in ASP.NET Core",
-        "publishedAt": "2026-06-30T00:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-30T00:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "5b4ec2e0-4362-4b72-b90e-8162842b0d43",
-    "slug": "net-8-and-net-9-will-reach-end-of-support-on-november-10-2026",
-    "title": ".NET 8 and .NET 9 will reach End of Support on November 10, 2026",
-    "tldr": ".NET 8 and .NET 9 will reach end of support on November 10, 2026, after which Microsoft will no longer provide security updates or technical support. Developers are advised to upgrade to .NET 10, an LTS release supported through November 2028.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 8 (LTS) and .NET 9 (STS) both reach end of support on November 10, 2026.</li><li>After the support deadline, applications will continue to run but will not receive security fixes or technical support.</li><li>Visual Studio will mark .NET 8 and .NET 9 components as out of support in a future servicing update.</li><li>Upgrading requires changing the TargetFramework property in project files to net10.0.</li></ul><h3>Why it matters</h3><p>Staying on unsupported frameworks exposes applications to unpatched security vulnerabilities, making timely migration to .NET 10 essential for enterprise safety.</p>",
-    "tags": [
-      ".net",
-      "dotnet8",
-      "dotnet9",
-      "lifecycle",
-      "software updates",
-      "security",
-      "migration"
-    ],
-    "sources": [
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-8-9-end-of-support/",
-        "title": ".NET 8 and .NET 9 will reach End of Support on November 10, 2026",
-        "publishedAt": "2026-06-29T21:33:20.000Z"
-      }
-    ],
-    "relevance": 8,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-29T21:33:20.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "8e616a17-1668-4a4f-8588-03b3f7fd0669",
-    "slug": "skiasharp-4-0-is-here-announcing-the-first-stable-release",
-    "title": "SkiaSharp 4.0 is here: announcing the first stable release",
-    "tldr": "SkiaSharp 4.148.0 is now available as the first stable release of SkiaSharp v4, incorporating upstream engine updates up to milestone m148 and a cleaned-up, reference-counted API. The release delivers rendering performance improvements and enhanced support for variable and color fonts.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Updates the underlying Skia engine to milestone m148 for performance, codec, and security improvements.</li><li>Introduces full OpenType variable font axis control, color font palettes, and animated WebP encoding.</li><li>Reworks the object lifecycle with reference counting to prevent use-after-free crashes during garbage collection.</li><li>Improves GPU-accelerated rendering performance by up to 24% on UI workloads like shadows and layers.</li></ul><h3>Why it matters</h3><p>SkiaSharp 4.0 offers cross-platform .NET developers a modernized, faster, and more robust 2D graphics engine with modern font and animation capabilities.</p>",
-    "tags": [
-      "skiasharp",
-      "graphics",
-      ".net",
-      "releases",
-      "ui"
-    ],
-    "sources": [
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/skiasharp-4-0-stable/",
-        "title": "SkiaSharp 4.0 is here: announcing the first stable release",
-        "publishedAt": "2026-06-29T21:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-29T21:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "5d0fa8c7-be73-41b7-a8bc-ecf24b47a2e2",
-    "slug": "packaging-and-package-identity-for-net-apps-with-winapp-cli-on-windows",
-    "title": "Packaging and Package Identity for .NET apps with WinApp CLI on Windows",
-    "tldr": "The WinApp CLI enables unpackaged .NET desktop applications to easily add and test package identity locally via `dotnet run` and package as MSIX for distribution. This integration grants access to restricted Windows APIs like push notifications and AI features.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Package identity registers applications with Windows to unlock APIs like push notifications, background tasks, and AI services.</li><li>The `winapp init` command automatically configures target frameworks, adds required SDK packages, and generates manifests.</li><li>Integrates with standard dotnet tooling so developers can test packaged apps using `dotnet run`.</li><li>Supports packaging applications into MSIX format using `winapp pack`.</li></ul><h3>Why it matters</h3><p>WinApp CLI removes the historic complexity of manually handling manifests and certificates, allowing standard .NET desktop apps to easily integrate modern Windows platform features.</p>",
-    "tags": [
-      "windows",
-      "packaging",
-      ".net",
-      "cli",
-      "deployment"
-    ],
-    "sources": [
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/packaging-dotnet-apps-winapp/",
-        "title": "Packaging and Package Identity for .NET apps with WinApp CLI on Windows",
-        "publishedAt": "2026-06-29T17:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-29T17:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "c50188fc-bb00-415d-83cb-bac7058be02b",
-    "slug": "automating-your-visual-studio-extension-builds-with-github-actions",
-    "title": "Automating your Visual Studio extension builds with GitHub Actions",
-    "tldr": "A set of reusable GitHub Actions actions—vsix-version-stamp, publish-vsixgallery, and publish-marketplace—allows Visual Studio extension authors to automate building, versioning, and publishing VSIX files.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Automates the full pipeline of versioning, building, packaging, and publishing Visual Studio extensions.</li><li>The vsix-version-stamp action keeps extension versions synchronized during the build process.</li><li>The publish-vsixgallery action supports quick testing and lightweight distribution of CI builds.</li><li>The publish-marketplace action pushes official releases to the Visual Studio Marketplace using a single token secret.</li></ul><h3>Why it matters</h3><p>Using structured GitHub Actions eliminates repetitive manual release steps and standardizes how extensions are tested and published.</p>",
-    "tags": [
-      "visual-studio",
-      "extensions",
-      "github-actions",
-      "ci-cd",
-      "visual studio",
-      "github actions",
-      "ci/cd"
-    ],
-    "sources": [
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/automating-your-visual-studio-extension-builds-with-github-actions/",
-        "title": "Automating your Visual Studio extension builds with GitHub Actions",
-        "publishedAt": "2026-06-29T14:00:25.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-29T14:00:25.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
