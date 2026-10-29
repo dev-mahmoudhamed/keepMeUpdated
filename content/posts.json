@@ -1,10 +1,1168 @@
 [
   {
+    "id": "4d4fb079-f549-4f0a-9d09-c79e8ad98f50",
+    "slug": "preparing-for-your-next-certification-could-start-with-your-visual-studio-subscr",
+    "title": "Preparing for Your Next Certification Could Start with Your Visual Studio Subscription",
+    "tldr": "Eligible Visual Studio Subscriptions now offer access to partner learning resources to help developers study for Microsoft certifications. Subscribers can utilize coursework, hands-on labs, and monthly Azure credits from providers like Cloud Academy and Pluralsight.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Visual Studio Subscriptions include preparation materials from Cloud Academy and Pluralsight for exams such as AI-103, AZ-104, and AZ-305.</li><li>Learning features encompass certification-focused courses, structured paths, hands-on labs, and AI-powered learning assistants.</li><li>Eligible subscriptions include monthly Azure credits to test configurations and build projects in sandbox environments.</li><li>Resource availability, course selections, and access durations vary according to the specific subscription tier.</li></ul><h3>Why it matters</h3><p>Subscribers can offset training and lab costs for key cloud and AI certifications by using learning tools already included in their existing visual studio licenses.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet",
+      "visual studio",
+      "microsoft azure",
+      "certifications",
+      "cloud academy",
+      "pluralsight"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/preparing-for-your-next-certification-could-start-with-your-visual-studio-subscription/",
+        "title": "Preparing for Your Next Certification Could Start with Your Visual Studio Subscription",
+        "publishedAt": "2026-10-28T22:30:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T22:30:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "d97e562f-a463-4621-bcdd-41489fcebcbe",
+    "slug": "microsoft-pitches-azure-sql-diagnostics-to-postgresql-developers",
+    "title": "Microsoft Pitches Azure SQL Diagnostics to PostgreSQL Developers",
+    "tldr": "Microsoft published a comparison detailing Azure SQL diagnostic tools for PostgreSQL developers. The guide focuses on operational stats, query plans, and troubleshooting workflows for database migrations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Compares Azure SQL diagnostic workflows against PostgreSQL tooling.</li><li>Details operational statistics, query plan analysis, and system troubleshooting.</li><li>Aims to aid engineering teams evaluating migrations to Azure SQL.</li></ul><h3>Why it matters</h3><p>Clear comparisons help PostgreSQL teams assess observability and operational differences before migrating workloads to Azure SQL.</p>",
+    "tags": [
+      "dotnet",
+      "azure sql",
+      "postgresql",
+      "database migration",
+      "performance tuning"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-pitches-azure-sql-diagnostics-to-postgresql-developers.aspx",
+        "title": "Microsoft Pitches Azure SQL Diagnostics to PostgreSQL Developers",
+        "publishedAt": "2026-10-28T21:26:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:26:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "5834ac77-4ab1-4d31-9520-fcf6c08a9a5f",
+    "slug": "pix-2610-28-expands-shader-profiling-gpu-crash-analysis-and-agent-tools",
+    "title": "PIX 2610.28 Expands Shader Profiling, GPU Crash Analysis and Agent Tools",
+    "tldr": "Microsoft released PIX version 2610.28 with upgraded diagnostic and analysis features. The graphics performance tool adds new capture formats, shader profiling, and automated inspection capabilities.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>PIX 2610.28 introduces expanded shader profiling options.</li><li>Adds new graphics capture formats and GPU crash analysis tools.</li><li>Features automated inspection support via agent tools.</li></ul><h3>Why it matters</h3><p>Graphics developers gain deeper insight and faster profiling workflows when diagnosing GPU performance issues and crashes.</p>",
+    "tags": [
+      "dotnet",
+      "pix",
+      "directx",
+      "gpu profiling",
+      "game development"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/pix-2610-28-expands-shader-profiling-gpu-crash-analysis-and-agent-tools.aspx",
+        "title": "PIX 2610.28 Expands Shader Profiling, GPU Crash Analysis and Agent Tools",
+        "publishedAt": "2026-10-28T21:23:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:23:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "e3deda67-8085-4bca-9002-a1329af748b3",
+    "slug": "directx-dump-files-bring-retail-gpu-crash-analysis-to-pix",
+    "title": "DirectX Dump Files Bring Retail GPU Crash Analysis to PIX",
+    "tldr": "DirectX dump files enable retail GPU crash analysis directly inside PIX. Developers can inspect failures that happen on customer PCs without reproducing the crash locally.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Enables capture of graphics crashes directly on end-user machines.</li><li>DirectX crash dump files can be loaded into PIX for detailed post-mortem debugging.</li><li>Removes the requirement to reproduce intermittent client crashes locally.</li></ul><h3>Why it matters</h3><p>Capturing retail GPU failure state directly shortens the cycle needed to fix hardware-specific and intermittent bugs in deployed games and graphics applications.</p>",
+    "tags": [
+      "dotnet",
+      "directx",
+      "pix",
+      "debugging",
+      "gpu crashes"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-dump-files-bring-retail-gpu-crash-analysis-to-pix.aspx",
+        "title": "DirectX Dump Files Bring Retail GPU Crash Analysis to PIX",
+        "publishedAt": "2026-10-28T21:19:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:19:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "e77d6b36-65d0-4132-9748-ae90632ff8d2",
+    "slug": "directx-async-command-fallback-lets-new-apis-run-on-older-gpus",
+    "title": "DirectX Async Command Fallback Lets New APIs Run on Older GPUs",
+    "tldr": "DirectX introduced an async command fallback compatibility layer for legacy GPUs. The opt-in feature emulates batched command execution on hardware that lacks native architectural support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Provides an opt-in compatibility layer for asynchronous commands.</li><li>Emulates batched execution on graphics hardware without native support.</li><li>Allows newer DirectX APIs to run on older GPU hardware.</li></ul><h3>Why it matters</h3><p>Developers can implement modern DirectX batching APIs without completely dropping compatibility for users running older graphics cards.</p>",
+    "tags": [
+      "dotnet",
+      "directx",
+      "apis",
+      "gpu",
+      "backward compatibility"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-async-command-fallback-lets-new-apis-run-on-older-gpus.aspx",
+        "title": "DirectX Async Command Fallback Lets New APIs Run on Older GPUs",
+        "publishedAt": "2026-10-28T21:14:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:14:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "19310fe6-14b5-4ae7-9a39-f5cc93786934",
+    "slug": "directx-raytracing-preview-targets-large-dynamic-game-worlds",
+    "title": "DirectX Raytracing Preview Targets Large, Dynamic Game Worlds",
+    "tldr": "A preview update to DirectX Raytracing introduces features designed for large, dynamic game scenes. The update uses clustered geometry and partitioned acceleration structures to reduce scene rebuild overhead.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>DirectX Raytracing preview focuses on dynamic and large-scale game environments.</li><li>Implements clustered geometry to better handle dense assets.</li><li>Uses partitioned acceleration structures to cut down rebuild work for changing scenes.</li></ul><h3>Why it matters</h3><p>Reducing acceleration structure rebuild overhead allows real-time ray tracing to run more performantly across expansive, fast-changing game worlds.</p>",
+    "tags": [
+      "dotnet",
+      "directx",
+      "raytracing",
+      "game development",
+      "graphics"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-raytracing-preview-targets-large-dynamic-game-worlds.aspx",
+        "title": "DirectX Raytracing Preview Targets Large, Dynamic Game Worlds",
+        "publishedAt": "2026-10-28T21:12:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:12:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "8abb0e74-3444-479e-9829-69dc049ef073",
+    "slug": "directx-agility-sdk-adds-retail-gpu-diagnostics-previews-new-raytracing",
+    "title": "DirectX Agility SDK Adds Retail GPU Diagnostics, Previews New Raytracing",
+    "tldr": "Microsoft released DirectX Agility SDK 1.620 and SDK 1.722 preview. SDK 1.620 ships retail diagnostics and graphics APIs, while SDK 1.722 previews GPU-driven raytracing capabilities.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Agility SDK 1.620 delivers stable graphics enhancements and retail GPU diagnostic tools.</li><li>Agility SDK 1.722 previews updates centered around GPU-driven raytracing.</li><li>Updates allow developers to integrate modern DirectX capabilities decoupled from OS updates.</li></ul><h3>Why it matters</h3><p>Developers can immediately implement newer retail diagnostics and test upcoming GPU-driven raytracing architectures without waiting on Windows OS releases.</p>",
+    "tags": [
+      "dotnet",
+      "directx",
+      "agility sdk",
+      "raytracing",
+      "graphics apis"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-agility-sdk-adds-retail-gpu-diagnostics-previews-new-raytracing.aspx",
+        "title": "DirectX Agility SDK Adds Retail GPU Diagnostics, Previews New Raytracing",
+        "publishedAt": "2026-10-28T21:09:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:09:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "894ee88f-edde-4b2a-ac33-3e7b326cfc7a",
+    "slug": "visual-studio-marketplace-adds-secretless-extension-publishing",
+    "title": "Visual Studio Marketplace Adds Secretless Extension Publishing",
+    "tldr": "Visual Studio Marketplace now supports secretless extension publishing through Trusted Publishing. Extension authors can authenticate using federated identities rather than managing long-lived tokens.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Trusted Publishing brings federated identity authentication to Visual Studio Marketplace.</li><li>Removes the need for developers to generate and store long-lived publishing tokens.</li><li>Simplifies secure CI/CD publishing workflows for extension developers.</li></ul><h3>Why it matters</h3><p>Eliminating long-lived publishing tokens reduces the risk of credential leakage in build systems and CI/CD deployment pipelines.</p>",
+    "tags": [
+      "dotnet",
+      "visual studio marketplace",
+      "security",
+      "ci/cd",
+      "identity"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/visual-studio-marketplace-adds-secretless-extension-publishing.aspx",
+        "title": "Visual Studio Marketplace Adds Secretless Extension Publishing",
+        "publishedAt": "2026-10-28T21:06:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:06:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "33dc5519-6986-4f96-be02-10b344d68813",
+    "slug": "github-secret-scanning-adds-encoded-token-revocation-audit-log-change",
+    "title": "GitHub Secret Scanning Adds Encoded-Token Revocation, Audit Log Change",
+    "tldr": "GitHub Secret Scanning expanded its automatic protection to cover encoded tokens. GitHub also notified enterprise users of an upcoming audit-log compatibility change set for November.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Secret scanning now detects and automates revocation for encoded-token patterns.</li><li>Enterprise customers are alerted to an audit-log format compatibility change arriving in November.</li><li>Enhancements aim to catch obfuscated or transformed credentials committed to source code.</li></ul><h3>Why it matters</h3><p>Automating token revocation for encoded secrets closes a frequent evasion gap while requiring enterprise admins to adjust their audit log consumption.</p>",
+    "tags": [
+      "dotnet",
+      "github",
+      "secret scanning",
+      "security",
+      "devsecops"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-secret-scanning-adds-encoded-token-revocation-audit-log-change.aspx",
+        "title": "GitHub Secret Scanning Adds Encoded-Token Revocation, Audit Log Change",
+        "publishedAt": "2026-10-28T21:03:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T21:03:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "b28de2fb-2bf7-4285-a27e-8d4f458048e4",
+    "slug": "github-copilot-turns-microsoft-teams-bug-notifications-into-pull-requests",
+    "title": "GitHub Copilot Turns Microsoft Teams Bug Notifications Into Pull Requests",
+    "tldr": "GitHub's consolidated Microsoft Teams app now lets developers triage bug notifications and generate pull requests directly from Teams chats. The feature arrives as the legacy GitHub Teams app approaches retirement on November 16.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The consolidated Teams app allows developers to inspect issues and trigger pull requests in-chat.</li><li>Integrates GitHub Copilot to streamline triage and code generation from alert notifications.</li><li>The legacy GitHub app for Microsoft Teams is scheduled to be retired on November 16.</li></ul><h3>Why it matters</h3><p>Engineers can resolve critical bug alerts directly from collaboration platforms, reducing context switching while transitioning off the deprecated legacy app.</p>",
+    "tags": [
+      "dotnet",
+      "github copilot",
+      "microsoft teams",
+      "devops",
+      "ci/cd"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-turns-microsoft-teams-bug-notifications-into-pull-requests.aspx",
+        "title": "GitHub Copilot Turns Microsoft Teams Bug Notifications Into Pull Requests",
+        "publishedAt": "2026-10-28T20:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T20:00:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "d9ea5b14-9029-4e5f-9a20-681cd02dc004",
+    "slug": "github-copilot-lets-vs-code-developers-dial-ai-suggestions-up-or-down",
+    "title": "GitHub Copilot Lets VS Code Developers Dial AI Suggestions Up or Down",
+    "tldr": "GitHub Copilot for VS Code now includes Low, Medium, and High settings to govern inline suggestions. Microsoft introduced the controls after noting distinct variations in developer workflows and code completion volume.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>New configuration settings provide Low, Medium, and High levels for Copilot suggestions.</li><li>Controls adjust both the frequency and the length of inline AI completions.</li><li>Telemetry showed measurable behavioral differences among developers under varied settings.</li></ul><h3>Why it matters</h3><p>Granular frequency controls allow developers to tune AI suggestions to their personal coding pace, avoiding intrusive or over-eager code generation.</p>",
+    "tags": [
+      "dotnet",
+      "github copilot",
+      "vs code",
+      "developer tools",
+      "ai"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-lets-vs-code-developers-dial-ai-suggestions-up-or-down.aspx",
+        "title": "GitHub Copilot Lets VS Code Developers Dial AI Suggestions Up or Down",
+        "publishedAt": "2026-10-28T19:49:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T19:49:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "da58b1f1-8bf5-494c-9ce2-789ef3bbeba8",
+    "slug": "visual-studio-live-taps-ai-expert-eric-d-boyd-to-help-shape-2027-conferences",
+    "title": "Visual Studio Live! Taps AI Expert Eric D. Boyd to Help Shape 2027 Conferences",
+    "tldr": "Visual Studio Live! selected AI expert Eric D. Boyd to help curate content for its 2027 conference series. The Azure MVP will guide session topics and speaker selection.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Eric D. Boyd has been tapped to shape the Visual Studio Live! 2027 technical schedule.</li><li>Boyd is a long-time conference speaker and Microsoft AI and Azure MVP.</li><li>Role focuses on establishing the speaker roster and technical coverage.</li></ul><h3>Why it matters</h3><p>Involving an Azure and AI MVP early in planning signals a continued focus on enterprise cloud and artificial intelligence topics for the conference.</p>",
+    "tags": [
+      "dotnet",
+      "visual studio live!",
+      "conferences",
+      "azure",
+      "ai"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/visual-studio-live-taps-ai-expert-eric-d-boyd-to-help-shape-2027-conferences.aspx",
+        "title": "Visual Studio Live! Taps AI Expert Eric D. Boyd to Help Shape 2027 Conferences",
+        "publishedAt": "2026-10-28T19:36:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T19:36:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "a3972969-7bc0-4dca-96f8-10926761e7ba",
+    "slug": "vs-code-1-144-unleashes-copilot-fusion-ai-image-generation-and-computer-use",
+    "title": "VS Code 1.144 Unleashes Copilot Fusion, AI Image Generation and Computer Use",
+    "tldr": "Microsoft released Visual Studio Code 1.144, adding significant agentic and orchestration capabilities. The update includes multi-model Copilot fusion, cloud automation, desktop computer use, and an agent customization marketplace.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>VS Code 1.144 introduces Copilot Fusion for orchestrating multiple AI models.</li><li>Adds native capabilities for AI image generation and desktop computer interaction.</li><li>Includes automated cloud workflows and a marketplace dedicated to agent customizations.</li></ul><h3>Why it matters</h3><p>The release shifts VS Code from basic code completion toward an autonomous agent platform capable of handling complex development, system tasks, and orchestration.</p>",
+    "tags": [
+      "dotnet",
+      "vs code",
+      "github copilot",
+      "ai agents",
+      "developer tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/vs-code-1-144-unleashes-copilot-fusion-ai-image-generation-and-computer-use.aspx",
+        "title": "VS Code 1.144 Unleashes Copilot Fusion, AI Image Generation and Computer Use",
+        "publishedAt": "2026-10-28T19:11:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T19:11:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "da29120d-d2a5-4873-8110-ffd6aad6fc96",
+    "slug": "aws-shows-how-to-deploy-blazor-server-apps-on-ecs-with-fargate",
+    "title": "AWS Shows How to Deploy Blazor Server Apps on ECS with Fargate",
+    "tldr": "AWS published a deployment guide for hosting Microsoft Blazor Server applications on Amazon ECS using AWS Fargate. The walkthrough covers container management, session affinity, and stateful connections.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Guide explains containerizing Blazor Server applications on AWS ECS with Fargate.</li><li>Addresses connection handling requirements for stateful Blazor WebSockets.</li><li>Details configurations needed to manage session affinity and persistent server state.</li></ul><h3>Why it matters</h3><p>Blazor Server requires persistent WebSocket connections and state affinity, making container orchestration guidance crucial for developers hosting .NET on AWS.</p>",
+    "tags": [
+      "dotnet",
+      "aws",
+      "blazor",
+      "ecs",
+      "fargate",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/aws-shows-how-to-deploy-blazor-server-apps-on-ecs-with-fargate.aspx",
+        "title": "AWS Shows How to Deploy Blazor Server Apps on ECS with Fargate",
+        "publishedAt": "2026-10-28T19:01:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T19:01:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "f23b7017-52b5-47c8-a72d-187b17f74ef9",
+    "slug": "microsoft-plans-multi-gigawatt-azure-maia-ai-deployments-starting-in-2027",
+    "title": "Microsoft Plans Multi-Gigawatt Azure Maia AI Deployments Starting in 2027",
+    "tldr": "Microsoft announced multi-gigawatt deployments of its custom Azure Maia AI chips starting in 2027. While Maia 200 currently runs production workloads, the upcoming Maia 300 chip will focus on inference efficiency.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Microsoft plans multi-gigawatt Azure Maia hardware deployments beginning in 2027.</li><li>Maia 200 hardware is actively serving live production AI workloads.</li><li>Maia 300 targets enhanced inference efficiency for Copilot, Azure AI Foundry, and agentic systems.</li></ul><h3>Why it matters</h3><p>Deploying first-party silicon at multi-gigawatt scale allows Microsoft to reduce dependence on external GPU vendors and lower the operating cost of running large-scale AI inference.</p>",
+    "tags": [
+      "dotnet",
+      "azure",
+      "hardware",
+      "maia",
+      "ai infrastructure"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-plans-multi-gigawatt-azure-maia-ai-deployments-starting-in-2027.aspx",
+        "title": "Microsoft Plans Multi-Gigawatt Azure Maia AI Deployments Starting in 2027",
+        "publishedAt": "2026-10-28T18:51:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T18:51:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "737975d7-7168-413d-b2fc-ed78f96e0df3",
+    "slug": "microsoft-touts-github-copilot-development-gains-in-enterprise-ai-customer-round",
+    "title": "Microsoft Touts GitHub Copilot Development Gains in Enterprise AI Customer Roundup",
+    "tldr": "Microsoft cites customer-reported software-development improvements alongside deployments of Foundry, Copilot and enterprise agent governance tools.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft cites customer-reported software-development improvements alongside deployments of Foundry, Copilot and enterprise agent governance tools.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-touts-github-copilot-development-gains-in-enterprise-ai-customer-roundup.aspx",
+        "title": "Microsoft Touts GitHub Copilot Development Gains in Enterprise AI Customer Roundup",
+        "publishedAt": "2026-10-28T18:41:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T18:41:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "ada3229a-8f1d-454e-aace-58262c2930c9",
+    "slug": "microsoft-warns-ai-agents-are-becoming-a-new-class-of-insider-security-risk",
+    "title": "Microsoft Warns AI Agents Are Becoming a New Class of Insider Security Risk",
+    "tldr": "Microsoft argues that enterprise AI agents need continuous supervision, risk-aware permissions and controls beyond conventional security monitoring.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft argues that enterprise AI agents need continuous supervision, risk-aware permissions and controls beyond conventional security monitoring.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-warns-ai-agents-are-becoming-a-new-class-of-insider-security-risk.aspx",
+        "title": "Microsoft Warns AI Agents Are Becoming a New Class of Insider Security Risk",
+        "publishedAt": "2026-10-28T18:35:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T18:35:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "b6778ca2-1bf1-4e9f-ae55-7a5929e29d31",
+    "slug": "microsoft-brings-github-copilot-foundry-and-databases-into-sovereign-private-clo",
+    "title": "Microsoft Brings GitHub Copilot, Foundry and Databases Into Sovereign Private Cloud",
+    "tldr": "GitHub Enterprise Local, locally hosted Copilot models and expanded Azure Local services aim to keep development and AI workloads under customer control.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> GitHub Enterprise Local, locally hosted Copilot models and expanded Azure Local services aim to keep development and AI workloads under customer control.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-brings-github-copilot-foundry-and-databases-into-sovereign-private-cloud.aspx",
+        "title": "Microsoft Brings GitHub Copilot, Foundry and Databases Into Sovereign Private Cloud",
+        "publishedAt": "2026-10-28T18:33:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T18:33:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "2224af5a-e2fa-442f-b1f2-9ca190d369d5",
+    "slug": "microsoft-opens-github-built-copilot-harness-to-developers-through-foundry",
+    "title": "Microsoft Opens GitHub-Built Copilot Harness to Developers Through Foundry",
+    "tldr": "Microsoft's unified multi-model agent runtime, already used across its Copilot products, is now available through Microsoft Foundry for building and running AI agents.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft's unified multi-model agent runtime, already used across its Copilot products, is now available through Microsoft Foundry for building and running AI agents.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-opens-github-built-copilot-harness-to-developers-through-foundry.aspx",
+        "title": "Microsoft Opens GitHub-Built Copilot Harness to Developers Through Foundry",
+        "publishedAt": "2026-10-28T18:18:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T18:18:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
+    "slug": "angular-components-22-updates",
+    "title": "Angular components 22 updates",
+    "tldr": "Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Adds a styling token for the stepper header icon shape in the Material package.</li><li>Increases the specificity of period button styles in the datepicker.</li><li>Updates datepicker parse error handling with signal forms when the value remains null.</li><li>Fixes an ARIA combobox error occurring when a popup is destroyed.</li></ul><h3>Why it matters</h3><p>The changes refine component styling customization, enhance form integration with Angular signals, and improve accessibility handling in dynamic UI states.</p>",
+    "tags": [
+      "angular",
+      "material",
+      "release",
+      "angular components",
+      "angular material",
+      "accessibility"
+    ],
+    "sources": [
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
+        "title": "Angular components 22.3.0-next.4",
+        "publishedAt": "2026-10-28T17:44:49.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.5",
+        "title": "Angular components 22.2.5",
+        "publishedAt": "2026-10-28T17:38:26.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
+        "title": "Angular components 22.3.0-next.3",
+        "publishedAt": "2026-10-21T10:01:13.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
+        "title": "Angular components 22.2.4",
+        "publishedAt": "2026-10-21T09:49:03.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
+        "title": "Angular components 22.3.0-next.2",
+        "publishedAt": "2026-10-14T15:24:48.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
+        "title": "Angular components 22.2.3",
+        "publishedAt": "2026-10-14T15:07:56.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
+        "title": "Angular components 22.3.0-next.1",
+        "publishedAt": "2026-10-07T16:24:46.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
+        "title": "Angular components 22.2.2",
+        "publishedAt": "2026-10-07T14:59:58.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
+        "title": "Angular components 22.3.0-next.0",
+        "publishedAt": "2026-09-30T08:15:20.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
+        "title": "Angular components 22.2.1",
+        "publishedAt": "2026-09-30T08:07:47.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
+        "title": "Angular components 22.2.0",
+        "publishedAt": "2026-09-23T12:12:09.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
+        "title": "Angular components 22.1.8",
+        "publishedAt": "2026-09-23T12:03:55.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T17:44:49.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "4266ad3b-b90c-4087-8056-e422ac7f517d",
+    "slug": "microsoft-doubles-down-on-azure-cosmos-db-developer-tools",
+    "title": "Microsoft Doubles Down on Azure Cosmos DB Developer Tools",
+    "tldr": "A burst of Microsoft announcements highlights AI coding agents, local testing, developer tooling, security and expanded language support for its cloud database platform.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A burst of Microsoft announcements highlights AI coding agents, local testing, developer tooling, security and expanded language support for its cloud database platform.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-doubles-down-on-azure-cosmos-db-developer-tools.aspx",
+        "title": "Microsoft Doubles Down on Azure Cosmos DB Developer Tools",
+        "publishedAt": "2026-10-28T17:09:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T17:09:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "49c25c9c-18fc-41bc-9cba-ea4e89da7648",
+    "slug": "github-copilot-adds-gpt-6-1-terra-for-lower-cost-agentic-coding",
+    "title": "GitHub Copilot Adds GPT-6.1 Terra for Lower-Cost Agentic Coding",
+    "tldr": "The model is generally available across Copilot clients, with provider-list-price usage billing and gradual rollout.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The model is generally available across Copilot clients, with provider-list-price usage billing and gradual rollout.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-adds-gpt-6-1-terra-for-lower-cost-agentic-coding.aspx",
+        "title": "GitHub Copilot Adds GPT-6.1 Terra for Lower-Cost Agentic Coding",
+        "publishedAt": "2026-10-28T17:08:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T17:08:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "974e7f8a-dbbd-4fc2-a011-b4bef0daa210",
+    "slug": "azure-cosmos-db-sdk-for-rust-hits-1-0-as-microsoft-updates-authentication-librar",
+    "title": "Azure Cosmos DB SDK for Rust Hits 1.0 as Microsoft Updates Authentication Libraries",
+    "tldr": "Microsoft's October Azure SDK roundup introduces stable Rust libraries for Cosmos DB and authentication improvements across .NET, Python and Java.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft's October Azure SDK roundup introduces stable Rust libraries for Cosmos DB and authentication improvements across .NET, Python and Java.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/azure-cosmos-db-sdk-for-rust-hits-1-0-as-microsoft-updates-authentication-libraries.aspx",
+        "title": "Azure Cosmos DB SDK for Rust Hits 1.0 as Microsoft Updates Authentication Libraries",
+        "publishedAt": "2026-10-28T16:33:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T16:33:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "627507eb-a35c-44e7-b6e7-293b9f4c0f54",
+    "slug": "github-copilot-sdk-adds-server-to-server-authentication-for-agents",
+    "title": "GitHub Copilot SDK Adds Server-to-Server Authentication for Agents",
+    "tldr": "A public preview lets organization-owned GitHub Apps call the Copilot SDK without using an individual developer's login.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A public preview lets organization-owned GitHub Apps call the Copilot SDK without using an individual developer's login.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-sdk-adds-server-to-server-authentication-for-agents.aspx",
+        "title": "GitHub Copilot SDK Adds Server-to-Server Authentication for Agents",
+        "publishedAt": "2026-10-28T16:03:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T16:03:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "0c08612c-65c0-4379-a7c6-44fd917b1685",
+    "slug": "github-copilot-assisted-permissions-reach-general-availability",
+    "title": "GitHub Copilot Assisted Permissions Reach General Availability",
+    "tldr": "An AI-based permission mode approves requests considered safe while keeping manual approval for other agent operations.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> An AI-based permission mode approves requests considered safe while keeping manual approval for other agent operations.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-assisted-permissions-reach-general-availability.aspx",
+        "title": "GitHub Copilot Assisted Permissions Reach General Availability",
+        "publishedAt": "2026-10-28T16:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T16:00:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "5b27975f-7b09-4791-bd11-aefe0777755c",
+    "slug": "why-higher-priority-would-not-always-rescue-windows-task-manager",
+    "title": "Why Higher Priority Would Not Always Rescue Windows Task Manager",
+    "tldr": "Microsoft explains why raising Task Manager or taskbar scheduling priority cannot guarantee responsiveness when shared resources are blocked.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft explains why raising Task Manager or taskbar scheduling priority cannot guarantee responsiveness when shared resources are blocked.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/why-higher-priority-would-not-always-rescue-windows-task-manager.aspx",
+        "title": "Why Higher Priority Would Not Always Rescue Windows Task Manager",
+        "publishedAt": "2026-10-28T15:34:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T15:34:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "53a5b962-0105-4698-b5bf-1f0f64aced05",
+    "slug": "microsoft-details-new-blazor-analyzers-and-free-infragistics-controls",
+    "title": "Microsoft Details New Blazor Analyzers and Free Infragistics Controls",
+    "tldr": "Infragistics has contributed framework analyzers and open-source components while a setup scaffolder remains under review.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Infragistics has contributed framework analyzers and open-source components while a setup scaffolder remains under review.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-details-new-blazor-analyzers-and-free-infragistics-controls.aspx",
+        "title": "Microsoft Details New Blazor Analyzers and Free Infragistics Controls",
+        "publishedAt": "2026-10-28T15:30:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T15:30:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "17edd766-e459-4964-a379-ef3b508b9806",
+    "slug": "visual-studio-october-update-adds-bulk-git-conflict-resolution",
+    "title": "Visual Studio October Update Adds Bulk Git Conflict Resolution",
+    "tldr": "The Stable Channel update brings working-tree comparisons and group conflict resolution, with optional Copilot Chat and Hot Exit experiences.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The Stable Channel update brings working-tree comparisons and group conflict resolution, with optional Copilot Chat and Hot Exit experiences.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/visual-studio-october-update-adds-bulk-git-conflict-resolution.aspx",
+        "title": "Visual Studio October Update Adds Bulk Git Conflict Resolution",
+        "publishedAt": "2026-10-28T15:28:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T15:28:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "e24e4767-5ea3-4482-acc2-af2585421bf6",
+    "slug": "copilot-ux-components-reach-ga-with-sharepoint-framework-1-24",
+    "title": "Copilot UX Components Reach GA with SharePoint Framework 1.24",
+    "tldr": "Developers can deploy interactive forms, dashboards and other web interfaces inside Microsoft Copilot, subject to licensing and client support.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Developers can deploy interactive forms, dashboards and other web interfaces inside Microsoft Copilot, subject to licensing and client support.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/copilot-ux-components-reach-ga-with-sharepoint-framework-1-24.aspx",
+        "title": "Copilot UX Components Reach GA with SharePoint Framework 1.24",
+        "publishedAt": "2026-10-28T15:24:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T15:24:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "e2534e26-8681-4259-81db-514571b60a6e",
+    "slug": "microsoft-tests-isolated-cosmos-db-environments-for-parallel-coding-agents",
+    "title": "Microsoft Tests Isolated Cosmos DB Environments for Parallel Coding Agents",
+    "tldr": "A Microsoft sample combines separate Cosmos DB emulator containers, Git worktrees and GitHub Actions checks to reduce interference between coding tasks.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A Microsoft sample combines separate Cosmos DB emulator containers, Git worktrees and GitHub Actions checks to reduce interference between coding tasks.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-tests-isolated-cosmos-db-environments-for-parallel-coding-agents.aspx",
+        "title": "Microsoft Tests Isolated Cosmos DB Environments for Parallel Coding Agents",
+        "publishedAt": "2026-10-28T15:19:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T15:19:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "2f33111f-8d40-4f40-ac89-f26c14cec010",
+    "slug": "sharepoint-embedded-adds-admin-center-setup-for-custom-apps",
+    "title": "SharePoint Embedded Adds Admin-Center Setup for Custom Apps",
+    "tldr": "Microsoft has centralized administrative workflows for SharePoint Embedded inside its core management suite. Application setup, container management, and billing settings are now integrated directly into Microsoft 365 management tools.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>SharePoint Embedded application setup is now handled within Microsoft 365 management tools.</li><li>Container administration has been consolidated into the centralized admin interface.</li><li>Billing configuration for custom apps is managed from the same admin tools.</li></ul><h3>Why it matters</h3><p>Consolidating container configuration and billing reduces friction for developers and administrators deploying custom SharePoint Embedded applications by eliminating fragmented setup experiences.</p>",
+    "tags": [
+      "dotnet",
+      "sharepoint",
+      "microsoft 365",
+      "cloud architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/sharepoint-embedded-adds-admin-center-setup-for-custom-apps.aspx",
+        "title": "SharePoint Embedded Adds Admin-Center Setup for Custom Apps",
+        "publishedAt": "2026-10-28T15:16:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T15:16:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "a2454667-1d03-4170-9135-d51a0695dde2",
+    "slug": "microsoft-s-october-security-update-fixes-1-400-vulnerabilities-one-exploited-in",
+    "title": "Microsoft's October Security Update Fixes 1,400+ Vulnerabilities, One Exploited in the Wild",
+    "tldr": "Microsoft released an update addressing 1,415 vulnerabilities, including 85 critical flaws and one Windows Shell bug exploited in the wild. The volume of patches has led to reports of regressions and heightened strain on enterprise security operations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The release resolves 1,415 vulnerabilities across Windows, Office, Exchange, .NET, and Edge, with 85 rated critical.</li><li>CVE-2026-96951 in Windows Shell, which bypasses Mark of the Web (MOTW) protections via malicious files, is actively exploited in the wild.</li><li>CVE-2026-108398 in .NET Framework was publicly disclosed before patching, though with no confirmed active exploitation.</li><li>Admins reported functional regressions following patch deployments, including broken WPA-Enterprise Wi-Fi connections and failed IPSec VPN sessions.</li><li>Security analysts recommend staging deployments and prioritizing vulnerabilities with CVSS scores higher than 9.0 due to the high volume of potential RCEs.</li></ul><h3>Why it matters</h3><p>The massive scale of this security update forces teams to prioritize high-severity and zero-day patches immediately while simultaneously testing for critical networking regressions before broad deployment.</p>",
+    "tags": [
+      "dotnet",
+      "security",
+      "windows",
+      ".net",
+      "vulnerabilities"
+    ],
+    "sources": [
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/10/microsoft-october-2026-patch/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": "Microsoft's October Security Update Fixes 1,400+ Vulnerabilities, One Exploited in the Wild",
+        "publishedAt": "2026-10-28T10:30:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T10:30:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
+    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
+    "slug": "angular-cli-22-2-4-released",
+    "title": "Angular CLI 22 updates",
+    "tldr": "Angular CLI has issued new version tags spanning previews and minor releases across the v22 branch. Releases include version 22.3.0-next.4, 22.2.5, 22.2.4, 22.3.0-next.1, and 22.2.2.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Recent releases cover preview lines including 22.3.0-next.4 and 22.3.0-next.1.</li><li>Stable maintenance builds include versions 22.2.5, 22.2.4, and 22.2.2.</li><li>Core workspace packages across @schematics/angular, @angular/cli, @angular/build, and @angular/ssr were updated.</li></ul><h3>Why it matters</h3><p>Tracking Angular CLI releases ensures development environments stay current with incremental fixes across the CLI, server-side rendering, and schematics packages.</p>",
+    "tags": [
+      "angular",
+      "angular cli",
+      "typescript",
+      "frontend",
+      "cli",
+      "release",
+      "tooling",
+      "javascript"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
+        "title": "Angular CLI 22.3.0-next.4",
+        "publishedAt": "2026-10-28T10:05:41.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
+        "title": "Angular CLI 22.2.5",
+        "publishedAt": "2026-10-28T10:00:30.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
+        "title": "Angular CLI 22.2.4",
+        "publishedAt": "2026-10-22T13:38:22.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
+        "title": "Angular CLI 22.3.0-next.1",
+        "publishedAt": "2026-10-07T07:14:29.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
+        "title": "Angular CLI 22.2.2",
+        "publishedAt": "2026-10-07T07:10:57.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T10:05:41.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
+    "id": "a20081f4-17bf-4922-830b-43c5a798d260",
+    "slug": "angular-cli-21-updates",
+    "title": "Angular CLI 21 updates",
+    "tldr": "Angular CLI releases in the 21.2.x stream include version 21.2.29 and version 21.2.27. Version 21.2.27 updates its underlying zod dependency to version 4.6.6.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI releases include versions 21.2.29 and 21.2.27.</li><li>Version 21.2.27 updates the zod schema validation dependency to version 4.6.6.</li><li>Changes affect core build packages including @angular-devkit/build-angular, @angular/build, and @angular/cli.</li></ul><h3>Why it matters</h3><p>Maintaining dependency alignments in build tooling avoids schema validation discrepancies and ensures stable project builds across Angular 21 toolchains.</p>",
+    "tags": [
+      "angular",
+      "cli",
+      "release",
+      "releases",
+      "angular cli",
+      "dependencies",
+      "frontend"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.29",
+        "title": "Angular CLI 21.2.29",
+        "publishedAt": "2026-10-28T09:54:13.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.27",
+        "title": "Angular CLI 21.2.27",
+        "publishedAt": "2026-10-15T02:50:17.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T09:54:13.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "28aefabb-fed1-408e-bad9-78985119124e",
+    "slug": "angular-cli-20-updates",
+    "title": "Angular CLI 20 updates",
+    "tldr": "The Angular CLI v20 maintenance line has published releases 20.3.42 and 20.3.40. Version 20.3.40 bumps the project's zod dependency to version 4.6.6.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI released versions 20.3.42 and 20.3.40.</li><li>Version 20.3.40 updates the dependency on zod to version 4.6.6.</li><li>Updates apply to @angular/cli, @angular/build, and @angular-devkit/build-angular packages.</li></ul><h3>Why it matters</h3><p>These maintenance releases deliver necessary dependency updates to projects still targeting the Angular CLI 20 toolchain.</p>",
+    "tags": [
+      "angular",
+      "cli",
+      "release",
+      "releases",
+      "angular cli",
+      "dependencies",
+      "frontend"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.42",
+        "title": "Angular CLI 20.3.42",
+        "publishedAt": "2026-10-28T09:49:08.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.40",
+        "title": "Angular CLI 20.3.40",
+        "publishedAt": "2026-10-14T22:32:05.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T09:49:08.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
     "id": "45c30be6-e8f5-4d56-b2e2-2bb3c9611fd5",
     "slug": "angular-addicts-54-angular-22-2-typescript-7-agentic-ui-more",
     "title": "Angular Addicts #54: Angular 22.2, TypeScript 7, Agentic UI & more",
-    "tldr": "The September 2026 issue of Angular Addicts highlights updates on Angular 22.2 and the TypeScript 7-powered compiler. It also covers agentic UI workflows, SSR deployment on Cloudflare Workers, and testing practices.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Covers Angular 22.2 release features and an update on Angular's TypeScript 7-powered compiler</li><li>Explores agentic UI topics, including Jev and agent-generated interfaces with local 12B models</li><li>Includes guides on deploying Angular SSR to Cloudflare Workers and building client-side TTS with Gemini</li><li>Highlights testing practices using Component Harness and app security evolution</li></ul><h3>Why it matters</h3><p>The roundup tracks the evolving Angular ecosystem, particularly integrations with newer TypeScript versions, edge deployment targets, and AI-assisted interface development.</p>",
+    "tldr": "The 54th edition of the Angular Addicts newsletter highlights updates across the Angular ecosystem for September 2026. Featured topics include Angular 22.2, a TypeScript 7-based compiler, and agentic UI development.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Highlights the release of Angular 22.2 and progress on an Angular compiler powered by TypeScript 7.</li><li>Covers agentic UI patterns using Jev as well as local agent-generated UI workflows via MacroQuest.</li><li>Features guides on deploying Angular SSR to Cloudflare Workers and client-side TTS using Firebase AI Logic and Gemini.</li><li>Shares testing strategies using Component Harness to build tests that survive refactors.</li></ul><h3>Why it matters</h3><p>The roundup reflects the rapid integration of TypeScript 7 tooling and AI agent workflows into standard Angular architecture, offering practical references for modern frontend development.</p>",
     "tags": [
       "angular",
       "typescript",
@@ -19,6 +1177,13 @@
         "url": "https://www.angularaddicts.com/p/angular-addicts-54-angular-22-typescript-7-agentic-ui",
         "title": "Angular Addicts #54: Angular 22.2, TypeScript 7, Agentic UI & more",
         "publishedAt": "2026-10-28T09:07:48.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-addicts-54-angular-22-2-typescript-7-agentic-ui-more/",
+        "title": "Angular Addicts #54: Angular 22.2, TypeScript 7, Agentic UI & more",
+        "publishedAt": "2026-10-28T00:00:00.000Z"
       }
     ],
     "relevance": 5,
@@ -26,7 +1191,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-28T09:30:38.810Z",
-    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
     "publishedAt": "2026-10-28T09:07:48.000Z",
     "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
   },
@@ -60,6 +1225,37 @@
     "updatedAt": "2026-10-28T09:30:38.810Z",
     "publishedAt": "2026-10-28T06:39:57.000Z",
     "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
+  },
+  {
+    "id": "ab19e06e-cac6-4ff2-8a48-407f69e5920e",
+    "slug": "a-guide-to-state-management-in-angular-for-beginners",
+    "title": "A Guide to State Management in Angular for Beginners",
+    "tldr": "A guide details state management strategies in Angular, moving from localized component state to full store libraries. It covers signal-based approaches in Angular 20+ as well as legacy RxJS BehaviorSubject patterns.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Component-level state using signal() and computed() is recommended when state is not shared between distant components.</li><li>Cross-component state without libraries can be handled via injectable services using BehaviorSubject and asObservable() encapsulation.</li><li>BehaviorSubject is highlighted over plain Subject for state because it requires an initial value and delivers the current state immediately upon subscription.</li><li>As an application grows in complexity, centralized stores such as classic NgRx Store and NgRx SignalStore provide structured read and write boundaries.</li><li>Code examples focus on modern standalone components, Angular 20+, and the new template control flow syntax (@if, @for).</li></ul><h3>Why it matters</h3><p>Understanding the progression from local signals to services and NgRx stores helps Angular developers avoid overengineering small apps while preventing unmaintainable shared services in large codebases.</p>",
+    "tags": [
+      "angular",
+      "community",
+      "state management",
+      "ngrx",
+      "signals"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/a-guide-to-state-management-in-angular-for-beginners/",
+        "title": "A Guide to State Management in Angular for Beginners",
+        "publishedAt": "2026-10-28T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-10-28T00:00:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
   {
     "id": "89eeccb9-862b-4f12-b0b5-3ea3b3fa41cd",
@@ -511,8 +1707,8 @@
     "id": "11607c68-da71-4ff8-a143-7f194e30e5a1",
     "slug": "copilot-metrics-identify-custom-skills-agents-and-mcp-servers",
     "title": "Copilot Metrics Identify Custom Skills, Agents and MCP Servers",
-    "tldr": "GitHub Copilot usage reports now include configured customization names and broader reporting lists. The updates provide visibility into custom skills, agents, and MCP servers.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Usage metrics now reveal the names of configured customizations.</li><li>Telemetry covers custom skills, agents, and MCP servers.</li><li>Reporting lists have been expanded for administrative review.</li></ul><h3>Why it matters</h3><p>Teams gain clearer operational oversight into which custom AI extensions, MCP servers, and agent configurations are being used across their organization.</p>",
+    "tldr": "GitHub Copilot usage reports have been upgraded to provide granular breakdowns of developer extensions. Reports now list customized tools including custom skills, agents, and MCP servers by name.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Copilot usage reports now show configured names of custom extensions.</li><li>Reporting incorporates visibility into custom skills, agents, and MCP servers.</li><li>Reporting lists have been expanded to provide broader administrative tracking.</li></ul><h3>Why it matters</h3><p>Engineering leaders and administrators can now track exactly which custom agents, Model Context Protocol servers, and specialized skills are driving usage across their Copilot developer environments.</p>",
     "tags": [
       "github copilot",
       "metrics",
@@ -527,6 +1723,13 @@
         "url": "https://visualstudiomagazine.com/articles/2026/10/27/copilot-metrics-identify-custom-skills-agents-and-mcp-servers.aspx",
         "title": "Copilot Metrics Identify Custom Skills, Agents and MCP Servers",
         "publishedAt": "2026-10-27T19:05:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-usage-metrics-now-identify-custom-skills-agents-and-mcp-servers.aspx",
+        "title": "GitHub Copilot Usage Metrics Now Identify Custom Skills, Agents and MCP Servers",
+        "publishedAt": "2026-10-28T20:09:00.000Z"
       }
     ],
     "relevance": 5,
@@ -534,7 +1737,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-28T09:30:38.810Z",
-    "updatedAt": "2026-10-28T09:30:38.810Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
     "publishedAt": "2026-10-27T19:05:00.000Z",
     "runId": "ffdd4aa7-788a-4d81-8861-924e4943408e"
   },
@@ -2265,53 +3468,6 @@
     "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
   },
   {
-    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
-    "slug": "angular-cli-22-2-4-released",
-    "title": "Angular CLI 22 updates",
-    "tldr": "Angular CLI releases include version 22.2.4 alongside preview and prior patch releases.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI 22.2.4 includes schematic template adjustments and behavioral fixes.</li><li>Version 22.2.4 restricts shell autocompletion behavior.</li><li>Affects packages including @schematics/angular, @angular/cli, @angular/build, and @angular/ssr.</li></ul><h3>Why it matters</h3><p>These maintenance updates resolve template issues in schematics and fine-tune CLI interaction behavior across Angular tooling packages.</p>",
-    "tags": [
-      "angular",
-      "angular cli",
-      "typescript",
-      "frontend",
-      "cli",
-      "release",
-      "tooling"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
-        "title": "Angular CLI 22.2.4",
-        "publishedAt": "2026-10-22T13:38:22.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
-        "title": "Angular CLI 22.3.0-next.1",
-        "publishedAt": "2026-10-07T07:14:29.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
-        "title": "Angular CLI 22.2.2",
-        "publishedAt": "2026-10-07T07:10:57.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-23T08:25:16.497Z",
-    "updatedAt": "2026-10-25T08:17:19.192Z",
-    "publishedAt": "2026-10-22T13:38:22.000Z",
-    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
-  },
-  {
     "id": "060c4498-d141-4def-864c-6d03792c188f",
     "slug": "vs-code-1-143-makes-copilot-default-adds-ai-model-bake-off-and-local-ai-without",
     "title": "VS Code 1.143 Makes Copilot Default, Adds AI Model 'Bake-Off' and Local AI Without Credits",
@@ -2340,101 +3496,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-10-21T16:50:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
-    "slug": "angular-components-22-updates",
-    "title": "Angular components 22 updates",
-    "tldr": "Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Adds a styling token for the stepper header icon shape in the Material package.</li><li>Increases the specificity of period button styles in the datepicker.</li><li>Updates datepicker parse error handling with signal forms when the value remains null.</li><li>Fixes an ARIA combobox error occurring when a popup is destroyed.</li></ul><h3>Why it matters</h3><p>The changes refine component styling customization, enhance form integration with Angular signals, and improve accessibility handling in dynamic UI states.</p>",
-    "tags": [
-      "angular",
-      "material",
-      "release",
-      "angular components",
-      "angular material",
-      "accessibility"
-    ],
-    "sources": [
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
-        "title": "Angular components 22.3.0-next.3",
-        "publishedAt": "2026-10-21T10:01:13.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
-        "title": "Angular components 22.2.4",
-        "publishedAt": "2026-10-21T09:49:03.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
-        "title": "Angular components 22.3.0-next.2",
-        "publishedAt": "2026-10-14T15:24:48.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
-        "title": "Angular components 22.2.3",
-        "publishedAt": "2026-10-14T15:07:56.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
-        "title": "Angular components 22.3.0-next.1",
-        "publishedAt": "2026-10-07T16:24:46.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
-        "title": "Angular components 22.2.2",
-        "publishedAt": "2026-10-07T14:59:58.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
-        "title": "Angular components 22.3.0-next.0",
-        "publishedAt": "2026-09-30T08:15:20.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
-        "title": "Angular components 22.2.1",
-        "publishedAt": "2026-09-30T08:07:47.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
-        "title": "Angular components 22.2.0",
-        "publishedAt": "2026-09-23T12:12:09.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
-        "title": "Angular components 22.1.8",
-        "publishedAt": "2026-09-23T12:03:55.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-25T08:17:19.192Z",
-    "publishedAt": "2026-10-21T10:01:13.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
@@ -3141,36 +4202,6 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
-    "id": "a20081f4-17bf-4922-830b-43c5a798d260",
-    "slug": "angular-cli-21-updates",
-    "title": "Angular CLI 21 updates",
-    "tldr": "Angular CLI 21.2.27 updates its dependency on zod to version 4.6.6.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Updated zod dependency to version 4.6.6.</li></ul><h3>Why it matters</h3><p>Keeps the underlying dependency up to date with the specified version.</p>",
-    "tags": [
-      "angular",
-      "cli",
-      "release",
-      "releases"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.27",
-        "title": "Angular CLI 21.2.27",
-        "publishedAt": "2026-10-15T02:50:17.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-10-15T02:50:17.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
     "id": "59e9c2db-8c59-493d-87de-a568ad6a0012",
     "slug": "ng-news-26-22-typescript-7-1-angular-native-and-polymorpheus",
     "title": "Ng-News 26/22: TypeScript 7.1, Angular Native and Polymorpheus",
@@ -3232,36 +4263,6 @@
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-10-15T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "28aefabb-fed1-408e-bad9-78985119124e",
-    "slug": "angular-cli-20-updates",
-    "title": "Angular CLI 20 updates",
-    "tldr": "Angular CLI 20.3.40 updates its zod dependency to version 4.6.6.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Updated zod dependency to version 4.6.6.</li></ul><h3>Why it matters</h3><p>Ensures the package uses the updated zod version for improved stability or security.</p>",
-    "tags": [
-      "angular",
-      "cli",
-      "release",
-      "releases"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.40",
-        "title": "Angular CLI 20.3.40",
-        "publishedAt": "2026-10-14T22:32:05.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-10-14T22:32:05.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "bb84386d-cd89-4a20-a86d-d623b5886026",
@@ -6480,6 +7481,38 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "87f8efe1-88f0-4c0a-8c9a-e60922e3e227",
+    "slug": "visual-studio-august-update-work-smarter-across-models-and-branches",
+    "title": "Visual Studio August Update – Work Smarter Across Models and Branches",
+    "tldr": "The Visual Studio August Update introduces thinking effort controls for Copilot models, organization-wide custom agents, and full Git worktree and submodule integration. The release also improves in-editor Copilot usage tracking.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Copilot model thinking effort can now be adjusted to Low, Medium, or High via the model picker to balance reasoning depth, latency, and token consumption.</li><li>GitHub organization and enterprise owners can publish custom agents centrally, which Visual Studio discovers and exposes automatically in eligible repositories.</li><li>In-editor Copilot usage details and threshold notifications can be viewed directly from the prompt box context window.</li><li>Native Git worktree support enables developers to check out and work on multiple branches simultaneously in isolated directories.</li><li>Git submodules receive dedicated UI in the Git Repository window with automated discovery, remaining read-only until multi-repository activation is enabled.</li></ul><h3>Why it matters</h3><p>This update reduces context switching by integrating branch parallelization directly into the IDE while giving organizations unified control over Copilot agent configurations and token usage.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet",
+      "visual studio",
+      "git",
+      "github copilot",
+      "developer tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-august-update-work-smarter-across-models-and-branches/",
+        "title": "Visual Studio August Update – Work Smarter Across Models and Branches",
+        "publishedAt": "2026-08-25T16:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-08-25T16:00:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
     "id": "4d4b43cb-ecfc-4053-9de0-ac8b257d360c",
     "slug": "finding-the-total-number-of-processors-on-a-machine-with-net",
     "title": "Finding the total number of processors on a machine with .NET",
@@ -8138,6 +9171,38 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "543c67b7-8c13-4aac-b2ed-56d15c05633e",
+    "slug": "visual-studio-july-update-meet-the-new-agent-powered-by-the-github-copilot-sdk",
+    "title": "Visual Studio July Update – Meet the New Agent, Powered by the GitHub Copilot SDK",
+    "tldr": "The Visual Studio July Update adds an Agent preview in Copilot Chat built on the GitHub Copilot SDK, alongside built-in .NET and Azure skills. The release also enables organization-wide custom instructions and cross-installation MSVC toolset discovery.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A preview Agent is integrated into Copilot Chat using the GitHub Copilot SDK to provide concise, low-latency code changes compatible with the Copilot CLI workflow.</li><li>Built-in, opt-in .NET and Azure skills authored by Microsoft teams provide specialized domain assistance in agent workflows.</li><li>GitHub organization owners can configure organization-level custom instructions that automatically set Copilot preferences across teams.</li><li>Git branches can now be attached directly to Copilot Chat conversations to provide context before checkout.</li><li>C++ builds can automatically detect and resolve pinned MSVC toolset versions (VCToolsVersion) across separate Visual Studio and Build Tools installations.</li></ul><h3>Why it matters</h3><p>The shared Copilot SDK engine standardizes AI interactions across CLI and IDE environments, while automatic MSVC toolset resolution simplifies environment configuration in complex C++ projects.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet",
+      "visual studio",
+      "github copilot",
+      "c++",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-july-update-meet-the-new-agent-powered-by-copilot-sdk/",
+        "title": "Visual Studio July Update – Meet the New Agent, Powered by the GitHub Copilot SDK",
+        "publishedAt": "2026-07-28T16:00:14.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-07-28T16:00:14.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
+  },
+  {
     "id": "df41c884-c71e-4a37-9174-3e11b3a39f24",
     "slug": "from-dom-scraping-to-contracts-understanding-webmcp-part-1",
     "title": "From DOM Scraping to Contracts: Understanding WebMCP (Part 1)",
@@ -8168,6 +9233,39 @@
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-28T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
+  },
+  {
+    "id": "cbad7c99-54d6-4406-bbfb-a461eb1784a7",
+    "slug": "analyze-msbuild-binary-logs-with-copilot-in-vs-code",
+    "title": "Analyze MSBuild Binary Logs with Copilot in VS Code",
+    "tldr": "Microsoft has released the MSBuild Binlog Analyzer extension in preview for VS Code, providing Copilot-driven diagnostics and automated fixes for MSBuild binary logs. The tool is powered by an auto-installed Model Context Protocol server.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The extension uses the Microsoft.AITools.BinlogMcp Model Context Protocol (MCP) server to query .binlog files directly via Copilot Chat.</li><li>Features one-click root-cause identification and automated code fixes that recompile and compare before/after build logs.</li><li>Includes a Binlog Explorer sidebar breaking down project trees, slow targets, rebuild triggers, and diagnostic errors mapped to the VS Code Problems panel.</li><li>Enables automated build regression comparisons against a designated baseline binlog to highlight duration changes, diagnostic diffs, and package changes.</li><li>The underlying MCP server can run headlessly to evaluate builds in continuous integration environments.</li></ul><h3>Why it matters</h3><p>The tool eliminates the need for separate desktop binlog viewers, using MCP-grounded Copilot queries to rapidly diagnose build bottlenecks and automate build repairs directly in the editor.</p>",
+    "tags": [
+      "dotnet",
+      "csharp",
+      "msbuild",
+      "vs code",
+      "github copilot",
+      "mcp",
+      ".net"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/msbuild-binlog-analyzer-vscode/",
+        "title": "Analyze MSBuild Binary Logs with Copilot in VS Code",
+        "publishedAt": "2026-07-27T17:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "publishedAt": "2026-07-27T17:00:00.000Z",
+    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
   {
     "id": "baba1550-57a1-4864-bc1b-a7edd126fb43",
@@ -9048,99 +10146,5 @@
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-02T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "13781463-c523-4beb-ac8a-8789f0aa4b26",
-    "slug": "analyze-msbuild-binary-logs-with-copilot-in-vs-code",
-    "title": "Analyze MSBuild Binary Logs with Copilot in VS Code",
-    "tldr": "The MSBuild Binlog Analyzer extension for VS Code brings Copilot-powered MSBuild binary log analysis directly into the editor. It is backed by the Microsoft.AITools.BinlogMcp server, which can also run unattended in CI workflows to automatically diagnose build failures.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Analyzes MSBuild binary logs to provide plain-language root causes, performance bottlenecks, and build comparisons.</li><li>Powered by the Microsoft.AITools.BinlogMcp server utilizing Model Context Protocol tools.</li><li>Can be run interactively in VS Code via GitHub Copilot or headlessly in GitHub Actions CI pipelines.</li><li>Requires VS Code 1.99+, GitHub Copilot, and the .NET SDK.</li></ul><h3>Why it matters</h3><p>Automating binary log analysis helps engineering teams bypass tedious manual debugging, reducing time spent resolving build failures locally and in CI.</p>",
-    "tags": [
-      "msbuild",
-      "copilot",
-      "mcp",
-      "ci-cd",
-      "visual studio code",
-      "github copilot",
-      "ci/cd"
-    ],
-    "sources": [
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/msbuild-binlog-analyzer-vscode/",
-        "title": "Analyze MSBuild Binary Logs with Copilot in VS Code",
-        "publishedAt": "2026-07-27T17:00:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/mcp-build-diagnostics-workflows/",
-        "title": "MCP Beyond the Chat Window: Build Diagnostics in CI",
-        "publishedAt": "2026-06-30T17:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-30T17:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "2ec0f2f6-7ace-407f-9c18-7fabe9fd5cc6",
-    "slug": "visual-studio-august-update-work-smarter-across-models-and-branches",
-    "title": "Visual Studio August Update – Work Smarter Across Models and Branches",
-    "tldr": "Recent Visual Studio updates introduce enhanced GitHub Copilot controls including adjustable model thinking effort, organization-level custom agents, usage tracking alerts, and MCP server trust validation. They also add Git worktree management and submodule support.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Allows tuning model thinking effort (Low, Medium, High) for supported AI models.</li><li>Enables organization owners to publish and share custom Copilot agents across teams.</li><li>Adds real-time Copilot usage tracking and proactive quota alerts based on token consumption.</li><li>Introduces trust validation for Model Context Protocol (MCP) servers and expands Git workflows with worktrees and submodules.</li></ul><h3>Why it matters</h3><p>These updates give developers finer-grained control over AI behavior and resource limits while streamlining multi-branch Git development inside Visual Studio.</p>",
-    "tags": [
-      "visual-studio",
-      "releases",
-      "copilot",
-      "visual studio",
-      "github copilot",
-      "git",
-      "ai"
-    ],
-    "sources": [
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-august-update-work-smarter-across-models-and-branches/",
-        "title": "Visual Studio August Update – Work Smarter Across Models and Branches",
-        "publishedAt": "2026-08-25T16:00:00.000Z"
-      },
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-july-update-meet-the-new-agent-powered-by-copilot-sdk/",
-        "title": "Visual Studio July Update – Meet the New Agent, Powered by the GitHub Copilot SDK",
-        "publishedAt": "2026-07-28T16:00:14.000Z"
-      },
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-june-update-track-your-usage-trust-your-tools/",
-        "title": "Visual Studio June Update – Track Your Usage, Trust Your Tools",
-        "publishedAt": "2026-06-30T16:00:45.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/08/26/visual-studio-august-update-adds-more-copilot-controls-git-worktrees.aspx",
-        "title": "Visual Studio August Update Adds More Copilot Controls, Git Worktrees",
-        "publishedAt": "2026-08-26T17:06:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-06-30T16:00:45.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]

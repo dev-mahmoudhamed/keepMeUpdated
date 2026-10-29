@@ -2141,6 +2141,559 @@
   },
   "runs": [
     {
+      "id": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac",
+      "trigger": "cron",
+      "startedAt": "2026-10-29T09:43:28.322Z",
+      "status": "success",
+      "stats": {
+        "fetched": 688,
+        "fresh": 43,
+        "clusters": 41,
+        "created": 35,
+        "merged": 6
+      },
+      "errors": [],
+      "log": [
+        "Collected 688 links from 26 sources; 43 new from the last 120 days",
+        "Grouped into 41 stories (gemini mode): 35 new posts, 6 posts got another site's link",
+        "Summarized 26 posts; 15 wait for the next run (AI calls left: 48)"
+      ],
+      "report": {
+        "sources": [
+          {
+            "sourceId": "0d2eacde2168",
+            "name": "Angular Blog",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "5d7162762e53",
+            "name": "Angular releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "name": "Angular CLI releases",
+            "read": 10,
+            "onSite": 6,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 4
+          },
+          {
+            "sourceId": "3c1512ebc31b",
+            "name": "Angular components releases",
+            "read": 10,
+            "onSite": 8,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 2
+          },
+          {
+            "sourceId": "8c7a15586b92",
+            "name": "NgRx releases",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73a4e84eff6d",
+            "name": "Ninja Squad",
+            "read": 30,
+            "onSite": 3,
+            "tooOld": 27,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6b4f9823bf00",
+            "name": "Angular Architects",
+            "read": 20,
+            "onSite": 11,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "cc5b5afd9ba7",
+            "name": "Angular Space",
+            "read": 15,
+            "onSite": 6,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d48b82c3affe",
+            "name": "Angular University",
+            "read": 15,
+            "onSite": 1,
+            "tooOld": 14,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "56e621a08449",
+            "name": "Angular Training Blog",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "62354c88c0e2",
+            "name": "Angular Addicts",
+            "read": 20,
+            "onSite": 4,
+            "tooOld": 16,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "17470cea5951",
+            "name": "Angular in Depth",
+            "read": 60,
+            "onSite": 57,
+            "tooOld": 1,
+            "repeated": 0,
+            "fresh": 2
+          },
+          {
+            "sourceId": "131ee1c49b6b",
+            "name": ".NET Blog",
+            "read": 50,
+            "onSite": 40,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "a34c00441c6d",
+            "name": ".NET releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "87b273ebaa32",
+            "name": "Aspire releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "name": "Visual Studio Blog",
+            "read": 30,
+            "onSite": 26,
+            "tooOld": 1,
+            "repeated": 0,
+            "fresh": 3
+          },
+          {
+            "sourceId": "b2ecdce82e12",
+            "name": "JetBrains .NET Blog",
+            "read": 12,
+            "onSite": 12,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "655eccbecb12",
+            "name": "InfoQ .NET",
+            "read": 4,
+            "onSite": 3,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "name": "Visual Studio Magazine",
+            "read": 60,
+            "onSite": 30,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 30
+          },
+          {
+            "sourceId": "145884eb4af6",
+            "name": "Andrew Lock – .NET Escapades",
+            "read": 25,
+            "onSite": 10,
+            "tooOld": 15,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "3958049ea454",
+            "name": "Milan Jovanović",
+            "read": 217,
+            "onSite": 17,
+            "tooOld": 200,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d1237fd7e6fe",
+            "name": "Rick Strahl's Web Log",
+            "read": 10,
+            "onSite": 3,
+            "tooOld": 7,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6752279e1d66",
+            "name": "Damien Bowden",
+            "read": 10,
+            "onSite": 5,
+            "tooOld": 5,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "4ed3c18fe2b2",
+            "name": "elmah.io blog",
+            "read": 15,
+            "onSite": 11,
+            "tooOld": 4,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "612edc942ee0",
+            "name": "C# Digest",
+            "read": 5,
+            "onSite": 5,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d9a755d55a6a",
+            "name": "TypeScript Blog",
+            "read": 10,
+            "onSite": 2,
+            "tooOld": 8,
+            "repeated": 0,
+            "fresh": 0
+          }
+        ],
+        "links": [
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 22.3.0-next.4",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
+            "postId": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8"
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 22.2.5",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
+            "postId": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8"
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 21.2.29",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.29",
+            "postId": "a20081f4-17bf-4922-830b-43c5a798d260"
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 20.3.42",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.42",
+            "postId": "28aefabb-fed1-408e-bad9-78985119124e"
+          },
+          {
+            "sourceId": "3c1512ebc31b",
+            "title": "Angular components 22.3.0-next.4",
+            "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
+            "postId": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d"
+          },
+          {
+            "sourceId": "3c1512ebc31b",
+            "title": "Angular components 22.2.5",
+            "url": "https://github.com/angular/components/releases/tag/v22.2.5",
+            "postId": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "A Guide to State Management in Angular for Beginners",
+            "url": "https://angularindepth.com/article/a-guide-to-state-management-in-angular-for-beginners/",
+            "postId": "ab19e06e-cac6-4ff2-8a48-407f69e5920e",
+            "newPost": true
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular Addicts #54: Angular 22.2, TypeScript 7, Agentic UI & more",
+            "url": "https://angularindepth.com/article/angular-addicts-54-angular-22-2-typescript-7-agentic-ui-more/",
+            "postId": "45c30be6-e8f5-4d56-b2e2-2bb3c9611fd5"
+          },
+          {
+            "sourceId": "131ee1c49b6b",
+            "title": "Analyze MSBuild Binary Logs with Copilot in VS Code",
+            "url": "https://devblogs.microsoft.com/dotnet/msbuild-binlog-analyzer-vscode/",
+            "postId": "cbad7c99-54d6-4406-bbfb-a461eb1784a7",
+            "newPost": true
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "title": "Preparing for Your Next Certification Could Start with Your Visual Studio Subscription",
+            "url": "https://devblogs.microsoft.com/visualstudio/preparing-for-your-next-certification-could-start-with-your-visual-studio-subscription/",
+            "postId": "4d4fb079-f549-4f0a-9d09-c79e8ad98f50",
+            "newPost": true
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "title": "Visual Studio August Update – Work Smarter Across Models and Branches",
+            "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-august-update-work-smarter-across-models-and-branches/",
+            "postId": "87f8efe1-88f0-4c0a-8c9a-e60922e3e227",
+            "newPost": true
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "title": "Visual Studio July Update – Meet the New Agent, Powered by the GitHub Copilot SDK",
+            "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-july-update-meet-the-new-agent-powered-by-copilot-sdk/",
+            "postId": "543c67b7-8c13-4aac-b2ed-56d15c05633e",
+            "newPost": true
+          },
+          {
+            "sourceId": "655eccbecb12",
+            "title": "Microsoft's October Security Update Fixes 1,400+ Vulnerabilities, One Exploited in the Wild",
+            "url": "https://www.infoq.com/news/2026/10/microsoft-october-2026-patch/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+            "postId": "a2454667-1d03-4170-9135-d51a0695dde2",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Pitches Azure SQL Diagnostics to PostgreSQL Developers",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-pitches-azure-sql-diagnostics-to-postgresql-developers.aspx",
+            "postId": "d97e562f-a463-4621-bcdd-41489fcebcbe",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "PIX 2610.28 Expands Shader Profiling, GPU Crash Analysis and Agent Tools",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/pix-2610-28-expands-shader-profiling-gpu-crash-analysis-and-agent-tools.aspx",
+            "postId": "5834ac77-4ab1-4d31-9520-fcf6c08a9a5f",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "DirectX Dump Files Bring Retail GPU Crash Analysis to PIX",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-dump-files-bring-retail-gpu-crash-analysis-to-pix.aspx",
+            "postId": "e3deda67-8085-4bca-9002-a1329af748b3",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "DirectX Async Command Fallback Lets New APIs Run on Older GPUs",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-async-command-fallback-lets-new-apis-run-on-older-gpus.aspx",
+            "postId": "e77d6b36-65d0-4132-9748-ae90632ff8d2",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "DirectX Raytracing Preview Targets Large, Dynamic Game Worlds",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-raytracing-preview-targets-large-dynamic-game-worlds.aspx",
+            "postId": "19310fe6-14b5-4ae7-9a39-f5cc93786934",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "DirectX Agility SDK Adds Retail GPU Diagnostics, Previews New Raytracing",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/directx-agility-sdk-adds-retail-gpu-diagnostics-previews-new-raytracing.aspx",
+            "postId": "8abb0e74-3444-479e-9829-69dc049ef073",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Visual Studio Marketplace Adds Secretless Extension Publishing",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/visual-studio-marketplace-adds-secretless-extension-publishing.aspx",
+            "postId": "894ee88f-edde-4b2a-ac33-3e7b326cfc7a",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Secret Scanning Adds Encoded-Token Revocation, Audit Log Change",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-secret-scanning-adds-encoded-token-revocation-audit-log-change.aspx",
+            "postId": "33dc5519-6986-4f96-be02-10b344d68813",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Copilot Usage Metrics Now Identify Custom Skills, Agents and MCP Servers",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-usage-metrics-now-identify-custom-skills-agents-and-mcp-servers.aspx",
+            "postId": "11607c68-da71-4ff8-a143-7f194e30e5a1"
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Copilot Turns Microsoft Teams Bug Notifications Into Pull Requests",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-turns-microsoft-teams-bug-notifications-into-pull-requests.aspx",
+            "postId": "b28de2fb-2bf7-4285-a27e-8d4f458048e4",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Copilot Lets VS Code Developers Dial AI Suggestions Up or Down",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-lets-vs-code-developers-dial-ai-suggestions-up-or-down.aspx",
+            "postId": "d9ea5b14-9029-4e5f-9a20-681cd02dc004",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Visual Studio Live! Taps AI Expert Eric D. Boyd to Help Shape 2027 Conferences",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/visual-studio-live-taps-ai-expert-eric-d-boyd-to-help-shape-2027-conferences.aspx",
+            "postId": "da58b1f1-8bf5-494c-9ce2-789ef3bbeba8",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "VS Code 1.144 Unleashes Copilot Fusion, AI Image Generation and Computer Use",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/vs-code-1-144-unleashes-copilot-fusion-ai-image-generation-and-computer-use.aspx",
+            "postId": "a3972969-7bc0-4dca-96f8-10926761e7ba",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "AWS Shows How to Deploy Blazor Server Apps on ECS with Fargate",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/aws-shows-how-to-deploy-blazor-server-apps-on-ecs-with-fargate.aspx",
+            "postId": "da29120d-d2a5-4873-8110-ffd6aad6fc96",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Plans Multi-Gigawatt Azure Maia AI Deployments Starting in 2027",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-plans-multi-gigawatt-azure-maia-ai-deployments-starting-in-2027.aspx",
+            "postId": "f23b7017-52b5-47c8-a72d-187b17f74ef9",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Touts GitHub Copilot Development Gains in Enterprise AI Customer Roundup",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-touts-github-copilot-development-gains-in-enterprise-ai-customer-roundup.aspx",
+            "postId": "737975d7-7168-413d-b2fc-ed78f96e0df3",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Warns AI Agents Are Becoming a New Class of Insider Security Risk",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-warns-ai-agents-are-becoming-a-new-class-of-insider-security-risk.aspx",
+            "postId": "ada3229a-8f1d-454e-aace-58262c2930c9",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Brings GitHub Copilot, Foundry and Databases Into Sovereign Private Cloud",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-brings-github-copilot-foundry-and-databases-into-sovereign-private-cloud.aspx",
+            "postId": "b6778ca2-1bf1-4e9f-ae55-7a5929e29d31",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Opens GitHub-Built Copilot Harness to Developers Through Foundry",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-opens-github-built-copilot-harness-to-developers-through-foundry.aspx",
+            "postId": "2224af5a-e2fa-442f-b1f2-9ca190d369d5",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Doubles Down on Azure Cosmos DB Developer Tools",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-doubles-down-on-azure-cosmos-db-developer-tools.aspx",
+            "postId": "4266ad3b-b90c-4087-8056-e422ac7f517d",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Copilot Adds GPT-6.1 Terra for Lower-Cost Agentic Coding",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-adds-gpt-6-1-terra-for-lower-cost-agentic-coding.aspx",
+            "postId": "49c25c9c-18fc-41bc-9cba-ea4e89da7648",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Azure Cosmos DB SDK for Rust Hits 1.0 as Microsoft Updates Authentication Libraries",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/azure-cosmos-db-sdk-for-rust-hits-1-0-as-microsoft-updates-authentication-libraries.aspx",
+            "postId": "974e7f8a-dbbd-4fc2-a011-b4bef0daa210",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Copilot SDK Adds Server-to-Server Authentication for Agents",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-sdk-adds-server-to-server-authentication-for-agents.aspx",
+            "postId": "627507eb-a35c-44e7-b6e7-293b9f4c0f54",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "GitHub Copilot Assisted Permissions Reach General Availability",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-assisted-permissions-reach-general-availability.aspx",
+            "postId": "0c08612c-65c0-4379-a7c6-44fd917b1685",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Why Higher Priority Would Not Always Rescue Windows Task Manager",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/why-higher-priority-would-not-always-rescue-windows-task-manager.aspx",
+            "postId": "5b27975f-7b09-4791-bd11-aefe0777755c",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Details New Blazor Analyzers and Free Infragistics Controls",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-details-new-blazor-analyzers-and-free-infragistics-controls.aspx",
+            "postId": "53a5b962-0105-4698-b5bf-1f0f64aced05",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Visual Studio October Update Adds Bulk Git Conflict Resolution",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/visual-studio-october-update-adds-bulk-git-conflict-resolution.aspx",
+            "postId": "17edd766-e459-4964-a379-ef3b508b9806",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Copilot UX Components Reach GA with SharePoint Framework 1.24",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/copilot-ux-components-reach-ga-with-sharepoint-framework-1-24.aspx",
+            "postId": "e24e4767-5ea3-4482-acc2-af2585421bf6",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Microsoft Tests Isolated Cosmos DB Environments for Parallel Coding Agents",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-tests-isolated-cosmos-db-environments-for-parallel-coding-agents.aspx",
+            "postId": "e2534e26-8681-4259-81db-514571b60a6e",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "SharePoint Embedded Adds Admin-Center Setup for Custom Apps",
+            "url": "https://visualstudiomagazine.com/articles/2026/10/28/sharepoint-embedded-adds-admin-center-setup-for-custom-apps.aspx",
+            "postId": "2f33111f-8d40-4f40-ac89-f26c14cec010",
+            "newPost": true
+          }
+        ]
+      },
+      "finishedAt": "2026-10-29T09:47:15.667Z"
+    },
+    {
       "id": "ffdd4aa7-788a-4d81-8861-924e4943408e",
       "trigger": "cron",
       "startedAt": "2026-10-28T09:30:38.810Z",
@@ -4060,107 +4613,107 @@
   ],
   "sourceStatus": {
     "https://blog.angular.dev/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular/releases.atom": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular-cli/releases.atom": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/components/releases.atom": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://github.com/ngrx/platform/releases.atom": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://blog.ninja-squad.com/atom.xml": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 30
     },
     "https://angulararchitects.io/en/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 20
     },
     "https://angularspace.com/rss": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 15
     },
     "https://blog.angular-university.io/rss": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 15
     },
     "https://blog.angulartraining.com/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://angularaddicts.com/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 20
     },
     "https://angularindepth.com/feed.xml": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 60
     },
     "https://devblogs.microsoft.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 50
     },
     "https://github.com/dotnet/core/releases.atom": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://github.com/dotnet/aspire/releases.atom": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://devblogs.microsoft.com/visualstudio/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 30
     },
     "https://blog.jetbrains.com/dotnet/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 12
     },
     "https://feed.infoq.com/dotnet": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
-      "lastItemCount": 3
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
+      "lastItemCount": 4
     },
     "https://visualstudiomagazine.com/rss-feeds/news.aspx": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 60
     },
     "https://andrewlock.net/rss.xml": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 25
     },
     "https://milanjovanovic.tech/rss/feed.xml": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 217
     },
     "https://feeds.feedburner.com/rickstrahl": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://damienbod.com/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     },
     "https://blog.elmah.io/rss": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 15
     },
     "https://csharpdigest.net/newsletters.rss": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 5
     },
     "https://devblogs.microsoft.com/typescript/feed": {
-      "lastFetchedAt": "2026-10-28T09:30:38.810Z",
+      "lastFetchedAt": "2026-10-29T09:43:28.322Z",
       "lastItemCount": 10
     }
   }
