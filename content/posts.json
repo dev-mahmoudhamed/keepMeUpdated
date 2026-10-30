@@ -1,10 +1,380 @@
 [
   {
+    "id": "2f491194-f527-474e-b1d4-5fa379111a30",
+    "slug": "github-lets-developers-control-vs-code-ai-agents-from-their-phones",
+    "title": "GitHub Lets Developers Control VS Code AI Agents from Their Phones",
+    "tldr": "GitHub introduced Agent Host functionality allowing developers to control local AI agents via GitHub Mobile. The feature maintains sessions across VS Code windows and custom clients.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Agent Host allows directing agents running on local machines via GitHub Mobile</li><li>Sessions remain consistent across VS Code windows</li><li>Support extends to custom clients</li></ul><h3>Why it matters</h3><p>Developers can monitor and prompt their local agent workflows remotely without being tied to their primary workstation.</p>",
+    "tags": [
+      "github",
+      "vscode",
+      "ai",
+      "copilot",
+      "vs code",
+      "mobile",
+      "developer tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/29/github-lets-developers-control-vs-code-ai-agents-from-their-phones.aspx",
+        "title": "GitHub Lets Developers Control VS Code AI Agents from Their Phones",
+        "publishedAt": "2026-10-29T21:49:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T21:49:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "b8674223-9fd0-4fc3-87ca-dd17c35078b3",
+    "slug": "github-bug-bounty-interview-highlights-chained-vulnerabilities-and-manual-resear",
+    "title": "GitHub Bug Bounty Interview Highlights Chained Vulnerabilities and Manual Research",
+    "tldr": "A GitHub security interview highlights the importance of exploit chains and reproducible testing in bug bounty research. The interview was published on October 22.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Focuses on chained vulnerabilities over isolated bugs</li><li>Emphasizes the necessity of reproducible testing in vulnerability research</li><li>Published as an interview on October 22</li></ul><h3>Why it matters</h3><p>Understanding how vulnerabilities chain together assists security engineers in finding and mitigating complex exploit paths.</p>",
+    "tags": [
+      "github",
+      "security",
+      "bug-bounty",
+      "bug bounty",
+      "appsec"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/29/github-bug-bounty-interview-highlights-chained-vulnerabilities-and-manual-research.aspx",
+        "title": "GitHub Bug Bounty Interview Highlights Chained Vulnerabilities and Manual Research",
+        "publishedAt": "2026-10-29T20:39:00.000Z"
+      }
+    ],
+    "relevance": 4,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T20:39:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "800ef1e0-8c6f-4ee5-8c72-0023b67889f0",
+    "slug": "vcpkg-october-2026-update-adds-configurable-binary-cache-compression-and-boost-1",
+    "title": "vcpkg October 2026 Update Adds Configurable Binary-Cache Compression and Boost 1.92",
+    "tldr": "Microsoft's vcpkg October 2026 update introduces configurable binary-cache compression and registry updates. It also brings cache fixes and support for Boost 1.92.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces a configurable compression-level option for binary caching</li><li>Fixes issues related to cache management</li><li>Adds updates to the registry, including Boost 1.92</li></ul><h3>Why it matters</h3><p>C++ developers gain better control over binary storage footprints and access to updated third-party dependencies.</p>",
+    "tags": [
+      "vcpkg",
+      "cpp",
+      "boost",
+      "package-manager",
+      "c++",
+      "package management",
+      "microsoft"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/29/vcpkg-october-2026-update-adds-configurable-binary-cache-compression-and-boost-1-92.aspx",
+        "title": "vcpkg October 2026 Update Adds Configurable Binary-Cache Compression and Boost 1.92",
+        "publishedAt": "2026-10-29T20:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T20:00:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "874f65c4-7656-48a6-b52e-a981209e37bc",
+    "slug": "github-universe-details-infrastructure-expansion-for-agent-scale-development",
+    "title": "GitHub Universe Details Infrastructure Expansion for Agent-Scale Development",
+    "tldr": "GitHub announced infrastructure additions at GitHub Universe to support agent-scale development. The expansion covers compute, storage, and networking resources.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Detailed during GitHub Universe alongside product releases</li><li>Expands compute capacity for agent workloads</li><li>Increases storage and networking infrastructure</li></ul><h3>Why it matters</h3><p>Running persistent, background agent workflows requires expanded cloud backend resources to handle higher continuous compute demands.</p>",
+    "tags": [
+      "github",
+      "infrastructure",
+      "ai",
+      "ai agents",
+      "cloud"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/29/github-universe-details-infrastructure-expansion-for-agent-scale-development.aspx",
+        "title": "GitHub Universe Details Infrastructure Expansion for Agent-Scale Development",
+        "publishedAt": "2026-10-29T19:37:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T19:37:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "fd1a2909-d9c5-4546-972e-b1471854147f",
+    "slug": "github-octoverse-agents-started-more-than-40-of-september-pull-requests",
+    "title": "GitHub Octoverse: Agents Started More Than 40% of September Pull Requests",
+    "tldr": "GitHub's Octoverse report indicates that AI agents initiated over 40% of pull requests in September. Overall developer code activity also set new records.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>AI agents started more than 40% of pull requests in September</li><li>GitHub recorded overall record highs for platform code activity</li><li>Data was published as part of the GitHub Octoverse report</li></ul><h3>Why it matters</h3><p>Automated agents are increasingly responsible for initiating code changes, altering traditional code review and collaboration dynamics.</p>",
+    "tags": [
+      "github",
+      "octoverse",
+      "ai",
+      "git",
+      "devops"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/29/github-octoverse-agents-started-more-than-40-percent-of-september-pull-requests.aspx",
+        "title": "GitHub Octoverse: Agents Started More Than 40% of September Pull Requests",
+        "publishedAt": "2026-10-29T19:19:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T19:19:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "e6168490-3992-4ee8-ae0c-5f440975c3f5",
+    "slug": "windows-c-winrt-tip-avoid-an-unnecessary-make-self-conversion",
+    "title": "Windows C++/WinRT Tip: Avoid an Unnecessary make_self Conversion",
+    "tldr": "Raymond Chen published a tip for C++/WinRT developers on optimizing object instantiation. He details when developers can replace make_self followed by conversion with make.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Addresses object creation patterns in C++/WinRT</li><li>Details circumstances where make can directly replace make_self</li><li>Eliminates unnecessary conversion steps</li></ul><h3>Why it matters</h3><p>Using the appropriate construction pattern prevents redundant conversions and clarifies intent in C++/WinRT codebases.</p>",
+    "tags": [
+      "cpp",
+      "winrt",
+      "windows",
+      "c++",
+      "programming"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/29/windows-cpp-winrt-tip-avoid-an-unnecessary-makeself-conversion.aspx",
+        "title": "Windows C++/WinRT Tip: Avoid an Unnecessary make_self Conversion",
+        "publishedAt": "2026-10-29T19:02:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T19:02:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "21636411-4af1-4385-804b-f77387875b7c",
+    "slug": "angular-22-updates",
+    "title": "Angular 22 updates",
+    "tldr": "Angular 22.2 introduces developer previews for template error boundaries and Router Resources, alongside template access for private members. Error boundaries catch render exceptions using @boundary blocks, while Router Resources handle parallel data loading.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces @boundary and @error template blocks to catch render errors locally</li><li>Prevents failed resource loaders from breaking entire component views</li><li>Adds Router Resources to fetch route data concurrently instead of using sequential resolvers</li><li>Enables template access for private class members</li></ul><h3>Why it matters</h3><p>Angular components can now isolate render crashes with fallback UI and fetch routing data faster via concurrent resource loading.</p>",
+    "tags": [
+      "angular",
+      "architecture",
+      "web development",
+      "frontend",
+      "angular 22",
+      "error boundaries",
+      "router resources",
+      "javascript",
+      "typescript"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.3",
+        "title": "Angular 22.3.0-next.3",
+        "publishedAt": "2026-10-29T17:51:29.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.4",
+        "title": "Angular 22.2.4",
+        "publishedAt": "2026-10-29T17:41:23.000Z"
+      },
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T15:45:57.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T00:00:00.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
+        "title": "What's new in Angular 22.2?",
+        "publishedAt": "2026-09-23T00:00:00.000Z"
+      },
+      {
+        "sourceId": "56e621a08449",
+        "siteName": "Angular Training Blog",
+        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
+        "title": "What’s new in Angular 22.1?",
+        "publishedAt": "2026-08-21T13:16:57.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
+        "title": "What's new in Angular 22.1?",
+        "publishedAt": "2026-07-29T00:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T17:51:29.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "591c17b1-e3d0-411c-bddc-1badcea3eeb0",
+    "slug": "blazor-welcomes-open-source-contributions-from-syncfusion",
+    "title": "Blazor Welcomes Open-Source Contributions from Syncfusion",
+    "tldr": "Microsoft and Syncfusion released the free, open-source Syncfusion Toolkit for Blazor under the MIT license. Syncfusion has also contributed fixes directly to ASP.NET Core and .NET scaffolding tools.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Syncfusion Toolkit for Blazor is released under the MIT license without requiring a commercial key</li><li>Includes UI components such as charts, inputs, calendars, dialogs, and loading indicators</li><li>Available via the Syncfusion.Blazor.Toolkit NuGet package alongside starter templates</li><li>Syncfusion engineers contributed upstream fixes and tests to ASP.NET Core and scaffolding tools</li></ul><h3>Why it matters</h3><p>Blazor developers gain access to an open-source, commercially usable UI library while core ASP.NET Core tooling receives vendor-backed upstream improvements.</p>",
+    "tags": [
+      "blazor",
+      "dotnet",
+      "syncfusion",
+      "open source",
+      ".net",
+      "web development"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/blazor-welcomes-syncfusion/",
+        "title": "Blazor Welcomes Open-Source Contributions from Syncfusion",
+        "publishedAt": "2026-10-29T15:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/29/blazor-gets-free-mit-licensed-component-toolkit-from-syncfusion.aspx",
+        "title": "Blazor Gets Free MIT-Licensed Component Toolkit from Syncfusion",
+        "publishedAt": "2026-10-29T17:44:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T15:00:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "ae1716fa-db59-497e-bb15-883feaf09016",
+    "slug": "from-gdscript-to-gdextensions-one-ide-for-your-godot-code",
+    "title": "From GDScript to GDExtensions: One IDE for Your Godot Code",
+    "tldr": "JetBrains has expanded Godot engine support in Rider across GDScript, C#, and C++ GDExtensions, backed by an extended foundation sponsorship into 2027. Rider 2026.2 and 2025 releases introduced integrated scene editing, unified debugging, and test runner support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Rider 2026.2 added node dragging from Scene Preview into scripts, relative path resolution, and a configurable GDScript formatter</li><li>Rider 2025.3 added simultaneous GDScript and C# debugging, GoDotTest integration, and automatic rebuilds on focus loss</li><li>Rider 2025.2 bundled native GDScript language support including refactoring, inspections, and Scene Preview</li><li>An official JetBrains Rider Integration addon is available on the Godot Asset Store</li><li>Rider remains free for non-commercial use, hobby projects, open source, and learning</li></ul><h3>Why it matters</h3><p>Game developers can manage mixed-language Godot codebases within a single IDE with full debugging across native C++, C#, and GDScript.</p>",
+    "tags": [
+      "godot",
+      "rider",
+      "jetbrains",
+      "gamedev",
+      "game development",
+      "gdscript"
+    ],
+    "sources": [
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/dotnet/2026/10/29/from-gdscript-to-gdextensions-one-ide-for-your-godot-code/",
+        "title": "From GDScript to GDExtensions: One IDE for Your Godot Code",
+        "publishedAt": "2026-10-29T13:00:44.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-29T13:00:44.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
+    "id": "86786ba5-b902-4ec1-830d-834a19e13698",
+    "slug": "microsoft-go-builds-patch-macos-cryptography-vulnerability",
+    "title": "Microsoft Go Builds Patch macOS Cryptography Vulnerability",
+    "tldr": "Microsoft released updated Go builds on October 9 to address a vulnerability in macOS native cryptography. The patch resolves an input-validation flaw within Ed25519 operations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Released on October 9 for Microsoft Go builds</li><li>Patches an Ed25519 input-validation vulnerability</li><li>Specifically affects the macOS native cryptography backend</li></ul><h3>Why it matters</h3><p>Developers targeting macOS with Microsoft Go distributions need to update to prevent potential cryptographic validation exploits.</p>",
+    "tags": [
+      "golang",
+      "security",
+      "macos",
+      "cryptography",
+      "go",
+      "microsoft"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/microsoft-go-builds-patch-macos-cryptography-vulnerability.aspx",
+        "title": "Microsoft Go Builds Patch macOS Cryptography Vulnerability",
+        "publishedAt": "2026-10-28T23:08:00.000Z"
+      }
+    ],
+    "relevance": 8,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-30T09:50:03.058Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
+    "publishedAt": "2026-10-28T23:08:00.000Z",
+    "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
+  },
+  {
     "id": "4d4fb079-f549-4f0a-9d09-c79e8ad98f50",
     "slug": "preparing-for-your-next-certification-could-start-with-your-visual-studio-subscr",
     "title": "Preparing for Your Next Certification Could Start with Your Visual Studio Subscription",
-    "tldr": "Eligible Visual Studio Subscriptions now offer access to partner learning resources to help developers study for Microsoft certifications. Subscribers can utilize coursework, hands-on labs, and monthly Azure credits from providers like Cloud Academy and Pluralsight.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Visual Studio Subscriptions include preparation materials from Cloud Academy and Pluralsight for exams such as AI-103, AZ-104, and AZ-305.</li><li>Learning features encompass certification-focused courses, structured paths, hands-on labs, and AI-powered learning assistants.</li><li>Eligible subscriptions include monthly Azure credits to test configurations and build projects in sandbox environments.</li><li>Resource availability, course selections, and access durations vary according to the specific subscription tier.</li></ul><h3>Why it matters</h3><p>Subscribers can offset training and lab costs for key cloud and AI certifications by using learning tools already included in their existing visual studio licenses.</p>",
+    "tldr": "Eligible Visual Studio Subscriptions now bundle partner learning resources for Microsoft certification prep. Offerings include courses, labs, and Azure credits through Pluralsight and Cloud Academy.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Visual Studio subscriptions include partner training paths for Microsoft certifications</li><li>Training materials cover AI-103, AZ-104, and AZ-305 exam preparation</li><li>Includes coursework and hands-on labs from Cloud Academy and Pluralsight</li><li>Access to monthly Azure credits is provided for practical lab work</li></ul><h3>Why it matters</h3><p>Subscribers can prepare for role-based Microsoft cloud and AI certifications without purchasing separate third-party training packages.</p>",
     "tags": [
       "visualstudio",
       "dotnet",
@@ -12,7 +382,10 @@
       "microsoft azure",
       "certifications",
       "cloud academy",
-      "pluralsight"
+      "pluralsight",
+      "azure",
+      "certification",
+      "cloud"
     ],
     "sources": [
       {
@@ -21,6 +394,13 @@
         "url": "https://devblogs.microsoft.com/visualstudio/preparing-for-your-next-certification-could-start-with-your-visual-studio-subscription/",
         "title": "Preparing for Your Next Certification Could Start with Your Visual Studio Subscription",
         "publishedAt": "2026-10-28T22:30:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/28/visual-studio-subscriptions-include-azure-certification-prep-training.aspx",
+        "title": "Visual Studio Subscriptions Include Azure Certification Prep Training",
+        "publishedAt": "2026-10-28T23:41:00.000Z"
       }
     ],
     "relevance": 5,
@@ -28,7 +408,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T22:30:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -471,10 +851,14 @@
     "id": "737975d7-7168-413d-b2fc-ed78f96e0df3",
     "slug": "microsoft-touts-github-copilot-development-gains-in-enterprise-ai-customer-round",
     "title": "Microsoft Touts GitHub Copilot Development Gains in Enterprise AI Customer Roundup",
-    "tldr": "Microsoft cites customer-reported software-development improvements alongside deployments of Foundry, Copilot and enterprise agent governance tools.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft cites customer-reported software-development improvements alongside deployments of Foundry, Copilot and enterprise agent governance tools.</p>",
+    "tldr": "Microsoft highlighted software development improvements reported by enterprise customers adopting GitHub Copilot. The customer roundup covered deployments alongside Foundry and enterprise agent governance tools.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Cites customer-reported gains in software development productivity</li><li>Covers enterprise implementations of GitHub Copilot</li><li>Profiles deployments paired with Foundry and agent governance tools</li></ul><h3>Why it matters</h3><p>The report reflects enterprise adoption metrics combining AI code generation with centralized governance platforms.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github copilot",
+      "microsoft",
+      "enterprise",
+      "ai"
     ],
     "sources": [
       {
@@ -488,9 +872,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T18:41:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -498,10 +882,14 @@
     "id": "ada3229a-8f1d-454e-aace-58262c2930c9",
     "slug": "microsoft-warns-ai-agents-are-becoming-a-new-class-of-insider-security-risk",
     "title": "Microsoft Warns AI Agents Are Becoming a New Class of Insider Security Risk",
-    "tldr": "Microsoft argues that enterprise AI agents need continuous supervision, risk-aware permissions and controls beyond conventional security monitoring.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft argues that enterprise AI agents need continuous supervision, risk-aware permissions and controls beyond conventional security monitoring.</p>",
+    "tldr": "Microsoft warned that enterprise AI agents constitute an emerging category of insider security risks. The company recommends continuous supervision and risk-aware permission models beyond conventional monitoring.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Identifies autonomous AI agents as a new form of enterprise insider risk</li><li>Recommends continuous supervision rather than point-in-time checks</li><li>Advocates for risk-aware permission structures beyond standard security monitoring</li></ul><h3>Why it matters</h3><p>As autonomous agents take programmatic actions inside corporate systems, traditional perimeter and user-based security models must adapt to handle autonomous software identities.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "security",
+      "ai agents",
+      "enterprise",
+      "microsoft"
     ],
     "sources": [
       {
@@ -515,9 +903,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T18:35:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -525,10 +913,15 @@
     "id": "b6778ca2-1bf1-4e9f-ae55-7a5929e29d31",
     "slug": "microsoft-brings-github-copilot-foundry-and-databases-into-sovereign-private-clo",
     "title": "Microsoft Brings GitHub Copilot, Foundry and Databases Into Sovereign Private Cloud",
-    "tldr": "GitHub Enterprise Local, locally hosted Copilot models and expanded Azure Local services aim to keep development and AI workloads under customer control.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> GitHub Enterprise Local, locally hosted Copilot models and expanded Azure Local services aim to keep development and AI workloads under customer control.</p>",
+    "tldr": "Microsoft introduced sovereign private cloud capabilities including GitHub Enterprise Local and locally hosted Copilot models. The release also expands Azure Local services to maintain data boundary controls.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces GitHub Enterprise Local for on-premises development hosting</li><li>Enables locally hosted Copilot models for sovereign deployments</li><li>Expands Azure Local service capabilities to maintain on-premises data isolation</li></ul><h3>Why it matters</h3><p>Organizations with strict regulatory and sovereignty requirements can run Copilot and development tools within their local infrastructure boundaries.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "azure",
+      "github",
+      "copilot",
+      "cloud",
+      "data sovereignty"
     ],
     "sources": [
       {
@@ -542,9 +935,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T18:33:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -552,10 +945,14 @@
     "id": "2224af5a-e2fa-442f-b1f2-9ca190d369d5",
     "slug": "microsoft-opens-github-built-copilot-harness-to-developers-through-foundry",
     "title": "Microsoft Opens GitHub-Built Copilot Harness to Developers Through Foundry",
-    "tldr": "Microsoft's unified multi-model agent runtime, already used across its Copilot products, is now available through Microsoft Foundry for building and running AI agents.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft's unified multi-model agent runtime, already used across its Copilot products, is now available through Microsoft Foundry for building and running AI agents.</p>",
+    "tldr": "Microsoft has made its Copilot agent runtime accessible to third-party developers via Microsoft Foundry. The runtime provides a unified, multi-model execution layer for building and running AI agents.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Opens GitHub-built Copilot harness to developers via Microsoft Foundry</li><li>Provides a unified runtime supporting multiple models</li><li>Exposes the same underlying agent foundation used across Microsoft Copilot tools</li></ul><h3>Why it matters</h3><p>Developers can build custom AI agents on the same core infrastructure and model routing runtime that powers Microsoft's internal Copilot products.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "microsoft foundry",
+      "copilot",
+      "ai agents",
+      "developer tools"
     ],
     "sources": [
       {
@@ -569,9 +966,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T18:18:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -579,15 +976,18 @@
     "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
     "slug": "angular-components-22-updates",
     "title": "Angular components 22 updates",
-    "tldr": "Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Adds a styling token for the stepper header icon shape in the Material package.</li><li>Increases the specificity of period button styles in the datepicker.</li><li>Updates datepicker parse error handling with signal forms when the value remains null.</li><li>Fixes an ARIA combobox error occurring when a popup is destroyed.</li></ul><h3>Why it matters</h3><p>The changes refine component styling customization, enhance form integration with Angular signals, and improve accessibility handling in dynamic UI states.</p>",
+    "tldr": "Angular Components 22.3.0-next.3 has been released with updates targeting Material and ARIA packages. Recent builds also include releases across the 22.3.0-next and 22.2.x branches.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.</li><li>The project has published preview iterations ranging from 22.3.0-next.0 up to 22.3.0-next.4.</li><li>Stable maintenance releases span versions 22.1.8 through 22.2.5.</li></ul><h3>Why it matters</h3><p>Developers testing prerelease Angular components receive targeted updates to core accessibility and Material UI libraries. Tracking these next releases prepares teams for upcoming changes in future stable builds.</p>",
     "tags": [
       "angular",
       "material",
       "release",
       "angular components",
       "angular material",
-      "accessibility"
+      "accessibility",
+      "material design",
+      "aria",
+      "frontend"
     ],
     "sources": [
       {
@@ -678,9 +1078,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T17:44:49.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -688,10 +1088,14 @@
     "id": "4266ad3b-b90c-4087-8056-e422ac7f517d",
     "slug": "microsoft-doubles-down-on-azure-cosmos-db-developer-tools",
     "title": "Microsoft Doubles Down on Azure Cosmos DB Developer Tools",
-    "tldr": "A burst of Microsoft announcements highlights AI coding agents, local testing, developer tooling, security and expanded language support for its cloud database platform.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A burst of Microsoft announcements highlights AI coding agents, local testing, developer tooling, security and expanded language support for its cloud database platform.</p>",
+    "tldr": "Microsoft has released a set of updates for Azure Cosmos DB focused on developer tooling and AI integration. The enhancements target AI coding agents, local testing, security, and broader programming language support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>New announcements introduce dedicated features for AI coding agents.</li><li>Tooling updates improve local database testing workflows.</li><li>Microsoft expanded language support and enhanced security features for the cloud database platform.</li></ul><h3>Why it matters</h3><p>The additions streamline local development and integrate Azure Cosmos DB with modern AI agent workflows. Developers gain improved tooling flexibility and stronger security options.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "azure cosmos db",
+      "microsoft",
+      "databases",
+      "ai"
     ],
     "sources": [
       {
@@ -705,9 +1109,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T17:09:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -715,10 +1119,14 @@
     "id": "49c25c9c-18fc-41bc-9cba-ea4e89da7648",
     "slug": "github-copilot-adds-gpt-6-1-terra-for-lower-cost-agentic-coding",
     "title": "GitHub Copilot Adds GPT-6.1 Terra for Lower-Cost Agentic Coding",
-    "tldr": "The model is generally available across Copilot clients, with provider-list-price usage billing and gradual rollout.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The model is generally available across Copilot clients, with provider-list-price usage billing and gradual rollout.</p>",
+    "tldr": "GitHub Copilot has made GPT-6.1 Terra generally available to provide lower-cost agentic coding. The model is being rolled out gradually across Copilot clients with provider-list-price billing.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>GPT-6.1 Terra is generally available across GitHub Copilot client interfaces.</li><li>The model is aimed at lowering the cost of agentic coding tasks.</li><li>Rollout is occurring gradually, with usage billed at provider list prices.</li></ul><h3>Why it matters</h3><p>Access to lower-cost models lowers the expense barrier for running automated, agentic code tasks in Copilot. A gradual rollout ensures availability across multiple Copilot surfaces.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github copilot",
+      "ai",
+      "llm",
+      "developer tools"
     ],
     "sources": [
       {
@@ -732,9 +1140,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T17:08:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -742,10 +1150,15 @@
     "id": "974e7f8a-dbbd-4fc2-a011-b4bef0daa210",
     "slug": "azure-cosmos-db-sdk-for-rust-hits-1-0-as-microsoft-updates-authentication-librar",
     "title": "Azure Cosmos DB SDK for Rust Hits 1.0 as Microsoft Updates Authentication Libraries",
-    "tldr": "Microsoft's October Azure SDK roundup introduces stable Rust libraries for Cosmos DB and authentication improvements across .NET, Python and Java.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft's October Azure SDK roundup introduces stable Rust libraries for Cosmos DB and authentication improvements across .NET, Python and Java.</p>",
+    "tldr": "Microsoft's October Azure SDK release brings the Azure Cosmos DB SDK for Rust to version 1.0. The release also updates authentication libraries across .NET, Python, and Java.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The Azure Cosmos DB SDK for Rust has reached version 1.0 general availability.</li><li>Authentication libraries were updated across .NET, Python, and Java.</li><li>Updates were delivered as part of Microsoft's October Azure SDK release round.</li></ul><h3>Why it matters</h3><p>Rust developers now have an officially supported, stable SDK to connect directly to Cosmos DB. Multi-language authentication updates ensure uniform security practices across key enterprise platforms.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "azure",
+      "rust",
+      "sdk",
+      "cosmos db",
+      "authentication"
     ],
     "sources": [
       {
@@ -759,9 +1172,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T16:33:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -769,10 +1182,14 @@
     "id": "627507eb-a35c-44e7-b6e7-293b9f4c0f54",
     "slug": "github-copilot-sdk-adds-server-to-server-authentication-for-agents",
     "title": "GitHub Copilot SDK Adds Server-to-Server Authentication for Agents",
-    "tldr": "A public preview lets organization-owned GitHub Apps call the Copilot SDK without using an individual developer's login.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A public preview lets organization-owned GitHub Apps call the Copilot SDK without using an individual developer's login.</p>",
+    "tldr": "A public preview of the GitHub Copilot SDK adds server-to-server authentication for automated agents. The feature enables organization-owned GitHub Apps to interact with the SDK without individual developer credentials.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>GitHub Copilot SDK introduces server-to-server authentication in public preview.</li><li>Organization-owned GitHub Apps can now authenticate directly.</li><li>Eliminates the requirement for agents to use individual developer user credentials.</li></ul><h3>Why it matters</h3><p>Teams building automation agents no longer need to bind background services to individual user accounts. This simplifies access management and improves credential governance in enterprise settings.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github",
+      "copilot sdk",
+      "authentication",
+      "automation"
     ],
     "sources": [
       {
@@ -786,9 +1203,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T16:03:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -796,10 +1213,14 @@
     "id": "0c08612c-65c0-4379-a7c6-44fd917b1685",
     "slug": "github-copilot-assisted-permissions-reach-general-availability",
     "title": "GitHub Copilot Assisted Permissions Reach General Availability",
-    "tldr": "An AI-based permission mode approves requests considered safe while keeping manual approval for other agent operations.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> An AI-based permission mode approves requests considered safe while keeping manual approval for other agent operations.</p>",
+    "tldr": "GitHub Copilot Assisted Permissions have reached general availability. The system automatically permits operations considered safe while keeping manual reviews for higher-risk tasks.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Assisted Permissions in GitHub Copilot are now generally available.</li><li>An AI-based permission mode detects and auto-approves actions categorized as safe.</li><li>Manual approval is retained for remaining agent operations.</li></ul><h3>Why it matters</h3><p>Developers face fewer approval interruptions during routine agent tasks while retaining oversight on sensitive changes. This balances agent velocity with developer control.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github copilot",
+      "security",
+      "ai",
+      "devops"
     ],
     "sources": [
       {
@@ -813,9 +1234,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T16:00:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -823,10 +1244,14 @@
     "id": "5b27975f-7b09-4791-bd11-aefe0777755c",
     "slug": "why-higher-priority-would-not-always-rescue-windows-task-manager",
     "title": "Why Higher Priority Would Not Always Rescue Windows Task Manager",
-    "tldr": "Microsoft explains why raising Task Manager or taskbar scheduling priority cannot guarantee responsiveness when shared resources are blocked.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft explains why raising Task Manager or taskbar scheduling priority cannot guarantee responsiveness when shared resources are blocked.</p>",
+    "tldr": "Microsoft published an explanation on why increasing thread priority for Windows Task Manager cannot ensure responsiveness. When core resources are blocked by contention, elevated scheduling priorities cannot bypass the bottleneck.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Microsoft addressed why raising Task Manager or taskbar priority does not guarantee responsiveness.</li><li>Bottlenecks caused by blocked shared system resources cannot be resolved solely via thread scheduling.</li><li>The explanation clarifies architectural constraints within the Windows desktop subsystem.</li></ul><h3>Why it matters</h3><p>The analysis explains core operating system behavior regarding thread scheduling versus lock contention. It helps systems developers understand the limitations of process priority adjustments.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "windows",
+      "operating systems",
+      "performance",
+      "task manager"
     ],
     "sources": [
       {
@@ -840,9 +1265,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T15:34:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -850,10 +1275,14 @@
     "id": "53a5b962-0105-4698-b5bf-1f0f64aced05",
     "slug": "microsoft-details-new-blazor-analyzers-and-free-infragistics-controls",
     "title": "Microsoft Details New Blazor Analyzers and Free Infragistics Controls",
-    "tldr": "Infragistics has contributed framework analyzers and open-source components while a setup scaffolder remains under review.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Infragistics has contributed framework analyzers and open-source components while a setup scaffolder remains under review.</p>",
+    "tldr": "Infragistics has contributed open-source controls and framework analyzers to the Blazor ecosystem. Meanwhile, an automated setup scaffolder remains under review.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Infragistics introduced new analyzers for the Blazor framework.</li><li>Free, open-source UI controls were contributed to Blazor developers.</li><li>A related setup scaffolding tool remains under review.</li></ul><h3>Why it matters</h3><p>Blazor developers receive additional tooling to detect code issues alongside free UI components. These community contributions expand the out-of-the-box toolkit for .NET web development.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "blazor",
+      ".net",
+      "web development",
+      "infragistics"
     ],
     "sources": [
       {
@@ -867,9 +1296,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T15:30:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -877,10 +1306,14 @@
     "id": "17edd766-e459-4964-a379-ef3b508b9806",
     "slug": "visual-studio-october-update-adds-bulk-git-conflict-resolution",
     "title": "Visual Studio October Update Adds Bulk Git Conflict Resolution",
-    "tldr": "The Stable Channel update brings working-tree comparisons and group conflict resolution, with optional Copilot Chat and Hot Exit experiences.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The Stable Channel update brings working-tree comparisons and group conflict resolution, with optional Copilot Chat and Hot Exit experiences.</p>",
+    "tldr": "The Visual Studio October Stable Channel update adds bulk Git conflict resolution and working-tree comparisons. The release also includes optional Copilot Chat features and a Hot Exit experience.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Developers can now perform bulk resolution on Git conflicts directly within Visual Studio.</li><li>The update adds direct working-tree comparisons.</li><li>Optional features include Hot Exit and Copilot Chat integration.</li></ul><h3>Why it matters</h3><p>Bulk conflict resolution reduces manual overhead when merging complex branches. Working-tree comparison and editor recovery enhancements streamline daily source control and session management.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "visual studio",
+      "git",
+      "ide",
+      "developer tools"
     ],
     "sources": [
       {
@@ -894,9 +1327,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T15:28:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -904,10 +1337,14 @@
     "id": "e24e4767-5ea3-4482-acc2-af2585421bf6",
     "slug": "copilot-ux-components-reach-ga-with-sharepoint-framework-1-24",
     "title": "Copilot UX Components Reach GA with SharePoint Framework 1.24",
-    "tldr": "Developers can deploy interactive forms, dashboards and other web interfaces inside Microsoft Copilot, subject to licensing and client support.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Developers can deploy interactive forms, dashboards and other web interfaces inside Microsoft Copilot, subject to licensing and client support.</p>",
+    "tldr": "SharePoint Framework 1.24 brings Copilot UX components to general availability. Developers can now build interactive forms, dashboards, and custom interfaces directly within Microsoft Copilot.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>SharePoint Framework version 1.24 reaches general availability with Copilot UX components.</li><li>Supported components include custom forms, dashboards, and interactive web elements inside Copilot.</li><li>Availability remains subject to specific client support and licensing conditions.</li></ul><h3>Why it matters</h3><p>Enterprise developers can integrate rich, interactive SharePoint applications straight into Microsoft Copilot conversations. This expands custom interface capabilities within chat-driven workflows.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "sharepoint",
+      "microsoft copilot",
+      "spfx",
+      "web development"
     ],
     "sources": [
       {
@@ -921,9 +1358,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T15:24:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -931,10 +1368,14 @@
     "id": "e2534e26-8681-4259-81db-514571b60a6e",
     "slug": "microsoft-tests-isolated-cosmos-db-environments-for-parallel-coding-agents",
     "title": "Microsoft Tests Isolated Cosmos DB Environments for Parallel Coding Agents",
-    "tldr": "A Microsoft sample combines separate Cosmos DB emulator containers, Git worktrees and GitHub Actions checks to reduce interference between coding tasks.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A Microsoft sample combines separate Cosmos DB emulator containers, Git worktrees and GitHub Actions checks to reduce interference between coding tasks.</p>",
+    "tldr": "Microsoft has demonstrated an architecture using isolated Cosmos DB environments for parallel AI coding agents. The design combines separate emulator containers, Git worktrees, and GitHub Actions checks to prevent workflow conflicts.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The sample tests isolated environments dedicated to individual AI coding agents.</li><li>Isolated Cosmos DB emulator containers run in tandem with Git worktrees.</li><li>GitHub Actions checks are used to validate changes and reduce interference between parallel tasks.</li></ul><h3>Why it matters</h3><p>Running concurrent automated coding tasks often results in local state and database collisions. This pattern provides an architectural blueprint for executing simultaneous agent workflows safely.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "azure cosmos db",
+      "ai agents",
+      "github actions",
+      "git"
     ],
     "sources": [
       {
@@ -948,9 +1389,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
+    "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-28T15:19:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
@@ -5412,67 +5853,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-09-28T18:12:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "21636411-4af1-4385-804b-f77387875b7c",
-    "slug": "angular-22-updates",
-    "title": "Angular 22 updates",
-    "tldr": "Angular 22.2 introduces error boundaries and router resources as developer previews, alongside template access for private class members. These additions enhance component error handling and streamline parallel route data fetching.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The new @boundary syntax traps rendering and change-detection exceptions within specific template sections, rendering fallback UI via @error blocks.</li><li>@boundary blocks support error aliasing and typed conditional handling using 'when' statements to capture specific error types.</li><li>Router Resources replace sequential route resolvers with parallel resource loading executed automatically during navigation.</li><li>Resource errors throw exceptions when reading value(), making them natural targets for containment inside @boundary blocks.</li><li>Templates can now reference private class members directly without exposing them through public properties.</li></ul><h3>Why it matters</h3><p>Developer preview features like @boundary and router resources introduce React-like failure isolation and clean, declarative data fetching directly to Angular's template syntax.</p>",
-    "tags": [
-      "angular",
-      "architecture",
-      "web development",
-      "frontend",
-      "angular 22",
-      "error boundaries",
-      "router resources"
-    ],
-    "sources": [
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T15:45:57.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T00:00:00.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
-        "title": "What's new in Angular 22.2?",
-        "publishedAt": "2026-09-23T00:00:00.000Z"
-      },
-      {
-        "sourceId": "56e621a08449",
-        "siteName": "Angular Training Blog",
-        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
-        "title": "What’s new in Angular 22.1?",
-        "publishedAt": "2026-08-21T13:16:57.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
-        "title": "What's new in Angular 22.1?",
-        "publishedAt": "2026-07-29T00:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-09-28T15:45:57.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
@@ -10076,75 +10456,5 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-04T00:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "459acbb7-2127-4d4d-a0d3-ec9e897c3f56",
-    "slug": "ng-news-26-16-openng-foundation-spartan-ui-analogjs-in-storybook",
-    "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui, AnalogJS in Storybook",
-    "tldr": "The OpenNG Foundation has been formed to take over maintenance of abandoned libraries like Spectator and Elf following the shutdown of the ngneat organization. Concurrently, the spartan/ui component suite has launched its stable 1.0 release.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>OpenNG Foundation, founded by Gerome Grignon and Dominic Bachmann, has stepped in as the official custodian for ngneat open-source projects.</li><li>spartan/ui reached version 1.0, supplying over 55 customizable, accessible primitives built for signals, standalone components, zoneless change detection, and SSR.</li><li>AnalogJS is enabling modernized Angular integration within Storybook.</li></ul><h3>Why it matters</h3><p>The creation of OpenNG Foundation provides stability to critical community utilities that faced abandonment. At the same time, spartan/ui reaching 1.0 gives Angular developers an established shadcn-style component baseline tailored to modern zoneless and signal architectures.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "openng",
-      "spartan/ui",
-      "analogjs",
-      "open source"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/ng-news-26-16-openng-foundation-spartan-ui-analogjs-in-storybook/",
-        "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui, AnalogJS in Storybook",
-        "publishedAt": "2026-07-02T00:00:00.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/ng-news-26-16-openng-foundation-spartan-ui/",
-        "title": "Ng-News 26/16: OpenNG Foundation, spartan/ui",
-        "publishedAt": "2026-07-02T00:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-02T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "227102dc-87d4-4a4d-9d83-d32f24bc632a",
-    "slug": "angular-handbook-the-ultimate-guide-to-angular-evolution-v22-update",
-    "title": "Angular Handbook: The Ultimate Guide to Angular Evolution (v22 Update)",
-    "tldr": "Angular.love and House of Angular released an updated comprehensive handbook covering the framework's architectural evolution from v14 through v22. The publication structures updates into a problem-solution-benefit format alongside expert commentary and AI integration guidance.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The guide details architectural shifts across versions, covering the removal of NgModules, standalone component adoption, signals, and v22 features.</li><li>Features are arranged into a Problem-Solution-Benefit matrix with searchable tags for Performance, UX, DevEx, and Efficiency.</li><li>A dedicated section includes commentary from Google Developer Experts on integrating AI models and workflows into Angular codebases.</li></ul><h3>Why it matters</h3><p>The handbook provides structured architectural context to help engineering teams migrate away from legacy Angular patterns and adopt contemporary reactivity standards without breaking production stability.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "architecture",
-      "signals",
-      "ebooks"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/angular-handbook-the-ultimate-guide-to-angular-evolution-v22-update/",
-        "title": "Angular Handbook: The Ultimate Guide to Angular Evolution (v22 Update)",
-        "publishedAt": "2026-07-02T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-02T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   }
 ]
