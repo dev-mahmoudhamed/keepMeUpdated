@@ -1,5 +1,142 @@
 [
   {
+    "id": "bfcdce88-78b7-4d63-aa75-7a0ecedfd2bc",
+    "slug": "i-turned-off-ci-for-pull-requests-here-s-why",
+    "title": "I Turned Off CI for Pull Requests. Here's Why",
+    "tldr": "My pull requests haven't run GitHub Actions since June. The build and tests run on my machine, and a signoff commit status posted by Basecamp's gh-signoff…",
+    "bodyHtml": "<p><strong>Milan Jovanović:</strong> My pull requests haven't run GitHub Actions since June. The build and tests run on my machine, and a signoff commit status posted by Basecamp's gh-signoff…</p>",
+    "tags": [
+      "dotnet",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "3958049ea454",
+        "siteName": "Milan Jovanović",
+        "url": "https://milanjovanovic.tech/blog/i-turned-off-ci-for-pull-requests",
+        "title": "I Turned Off CI for Pull Requests. Here's Why",
+        "publishedAt": "2026-10-31T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "publishedAt": "2026-10-31T00:00:00.000Z",
+    "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
+  },
+  {
+    "id": "5be3ff52-afba-45e6-8e66-c03d2cbbfa97",
+    "slug": "azure-developer-cli-adds-a-look-before-you-deploy",
+    "title": "Azure Developer CLI Adds a Look Before You Deploy",
+    "tldr": "October updates add deployment previews, Container Apps express support and environment cleanup, alongside stable extension APIs and a breaking Go API migration.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> October updates add deployment previews, Container Apps express support and environment cleanup, alongside stable extension APIs and a breaking Go API migration.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/30/azure-developer-cli-adds-a-look-before-you-deploy.aspx",
+        "title": "Azure Developer CLI Adds a Look Before You Deploy",
+        "publishedAt": "2026-10-30T21:31:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "publishedAt": "2026-10-30T21:31:00.000Z",
+    "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
+  },
+  {
+    "id": "c1b11378-a34d-49ec-9b71-ed15398c6791",
+    "slug": "azure-sql-hyperscale-is-distributed-with-one-writer",
+    "title": "Azure SQL Hyperscale Is Distributed -- With One Writer",
+    "tldr": "Microsoft explains how Hyperscale separates compute, logging and storage while retaining a single primary for writes and SQL Server transaction semantics.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft explains how Hyperscale separates compute, logging and storage while retaining a single primary for writes and SQL Server transaction semantics.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/30/azure-sql-hyperscale-is-distributed-with-one-writer.aspx",
+        "title": "Azure SQL Hyperscale Is Distributed -- With One Writer",
+        "publishedAt": "2026-10-30T21:26:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "publishedAt": "2026-10-30T21:26:00.000Z",
+    "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
+  },
+  {
+    "id": "0a56e04b-7f8f-4ec4-9b71-c27579501985",
+    "slug": "microsoft-tests-whether-eval-folder-names-change-ai-agent-behavior",
+    "title": "Microsoft Tests Whether 'Eval' Folder Names Change AI Agent Behavior",
+    "tldr": "Experiments with GitHub Copilot CLI found greater test awareness but no statistically significant change in agent behavior.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Experiments with GitHub Copilot CLI found greater test awareness but no statistically significant change in agent behavior.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/30/microsoft-tests-whether-eval-folder-names-change-ai-agent-behavior.aspx",
+        "title": "Microsoft Tests Whether 'Eval' Folder Names Change AI Agent Behavior",
+        "publishedAt": "2026-10-30T18:43:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "publishedAt": "2026-10-30T18:43:00.000Z",
+    "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
+  },
+  {
+    "id": "b63dad31-fb30-4f56-8d91-b8cf5fa2fef7",
+    "slug": "compromised-emudhra-certificates-update-your-jetbrains-ides-resharper-net-tools",
+    "title": "Compromised eMudhra Certificates: Update Your JetBrains IDEs, ReSharper, .NET Tools, Toolbox App, and Gateway Now",
+    "tldr": "Summary Available fixed versions The issue is fixed in the following versions: The 2025.2.6.* updates for all IDEs now contain only the JBR fix. They will get a separate hotfix for the JCEF problem. Until then, use a workaround to disable JCEF in your IDE (see instructions below). IDE versions 2025…",
+    "bodyHtml": "<p><strong>JetBrains .NET Blog:</strong> Summary Available fixed versions The issue is fixed in the following versions: The 2025.2.6.* updates for all IDEs now contain only the JBR fix. They will get a separate hotfix for the JCEF problem. Until then, use a workaround to disable JCEF in your IDE (see instructions below). IDE versions 2025.1 and earlier, and Toolbox […]</p>",
+    "tags": [
+      "dotnet",
+      "rider"
+    ],
+    "sources": [
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/security/2026/10/compromised-emudhra-certificates-ides/",
+        "title": "Compromised eMudhra Certificates: Update Your JetBrains IDEs, ReSharper, .NET Tools, Toolbox App, and Gateway Now",
+        "publishedAt": "2026-10-30T15:24:48.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "publishedAt": "2026-10-30T15:24:48.000Z",
+    "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
+  },
+  {
     "id": "2f491194-f527-474e-b1d4-5fa379111a30",
     "slug": "github-lets-developers-control-vs-code-ai-agents-from-their-phones",
     "title": "GitHub Lets Developers Control VS Code AI Agents from Their Phones",
