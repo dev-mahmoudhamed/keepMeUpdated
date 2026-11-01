@@ -3,11 +3,15 @@
     "id": "bfcdce88-78b7-4d63-aa75-7a0ecedfd2bc",
     "slug": "i-turned-off-ci-for-pull-requests-here-s-why",
     "title": "I Turned Off CI for Pull Requests. Here's Why",
-    "tldr": "My pull requests haven't run GitHub Actions since June. The build and tests run on my machine, and a signoff commit status posted by Basecamp's gh-signoff…",
-    "bodyHtml": "<p><strong>Milan Jovanović:</strong> My pull requests haven't run GitHub Actions since June. The build and tests run on my machine, and a signoff commit status posted by Basecamp's gh-signoff…</p>",
+    "tldr": "Developers can replace pull request cloud CI runs by executing test suites locally and uploading passing statuses using Basecamp's gh-signoff extension. This offloads resource-heavy workflows to local machines while retaining merge requirements on GitHub.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>GitHub Actions triggers for pull requests were disabled to lower CI wait times and costs, reserving remote CI exclusively for the main branch.</li><li>Local test runs are orchestrated using a shell script integrated with a pre-push Git hook to automatically validate commits.</li><li>The gh-signoff GitHub CLI extension sends the required commit status check to GitHub to satisfy merge protection requirements.</li><li>The approach relies on local multi-core developer hardware to execute builds and container integration tests faster than standard 2-core cloud runners.</li></ul><h3>Why it matters</h3><p>Running CI locally eliminates cloud queue times and reduces runner costs for teams with fast local hardware. It allows repositories to maintain green-check branch protection rules without executing remote builds for every pull request commit.</p>",
     "tags": [
       "dotnet",
-      "architecture"
+      "architecture",
+      "git",
+      "github actions",
+      "ci/cd",
+      "devops"
     ],
     "sources": [
       {
@@ -21,9 +25,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-31T09:29:14.574Z",
-    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-11-01T10:17:24.599Z",
     "publishedAt": "2026-10-31T00:00:00.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
   },
@@ -31,10 +35,14 @@
     "id": "5be3ff52-afba-45e6-8e66-c03d2cbbfa97",
     "slug": "azure-developer-cli-adds-a-look-before-you-deploy",
     "title": "Azure Developer CLI Adds a Look Before You Deploy",
-    "tldr": "October updates add deployment previews, Container Apps express support and environment cleanup, alongside stable extension APIs and a breaking Go API migration.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> October updates add deployment previews, Container Apps express support and environment cleanup, alongside stable extension APIs and a breaking Go API migration.</p>",
+    "tldr": "The October updates for Azure Developer CLI introduce deployment previews, environment cleanup, and Container Apps express support. The release also stabilizes extension APIs and introduces a breaking Go API migration.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Deployment previews have been added to allow inspection before changes are deployed.</li><li>Container Apps express support and environment cleanup features were introduced.</li><li>Extension APIs have reached stability, accompanied by a breaking migration in the Go API.</li></ul><h3>Why it matters</h3><p>Deployment previews and cleanup tools reduce accidental infrastructure misconfigurations in Azure environments. Developers using the Go API must update their implementations to accommodate breaking changes.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "azure",
+      "cli",
+      "cloud infrastructure",
+      "devops"
     ],
     "sources": [
       {
@@ -48,9 +56,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-31T09:29:14.574Z",
-    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-11-01T10:17:24.599Z",
     "publishedAt": "2026-10-30T21:31:00.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
   },
@@ -58,10 +66,14 @@
     "id": "c1b11378-a34d-49ec-9b71-ed15398c6791",
     "slug": "azure-sql-hyperscale-is-distributed-with-one-writer",
     "title": "Azure SQL Hyperscale Is Distributed -- With One Writer",
-    "tldr": "Microsoft explains how Hyperscale separates compute, logging and storage while retaining a single primary for writes and SQL Server transaction semantics.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft explains how Hyperscale separates compute, logging and storage while retaining a single primary for writes and SQL Server transaction semantics.</p>",
+    "tldr": "Microsoft outlined the architecture of Azure SQL Hyperscale, highlighting its distributed model with separated compute, logging, and storage layers. The service preserves traditional SQL Server transaction semantics by maintaining a single primary writer.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Azure SQL Hyperscale separates compute, logging, and storage across independent layers.</li><li>Write operations are restricted to a single primary compute node.</li><li>Standard SQL Server transaction semantics and consistency guarantees are fully retained.</li></ul><h3>Why it matters</h3><p>Developers get the scaling and durability benefits of decoupled, distributed cloud storage without needing to rewrite application logic to accommodate distributed write consensus or eventual consistency.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "azure",
+      "sql server",
+      "databases",
+      "cloud"
     ],
     "sources": [
       {
@@ -75,9 +87,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-31T09:29:14.574Z",
-    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-11-01T10:17:24.599Z",
     "publishedAt": "2026-10-30T21:26:00.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
   },
@@ -85,10 +97,14 @@
     "id": "0a56e04b-7f8f-4ec4-9b71-c27579501985",
     "slug": "microsoft-tests-whether-eval-folder-names-change-ai-agent-behavior",
     "title": "Microsoft Tests Whether 'Eval' Folder Names Change AI Agent Behavior",
-    "tldr": "Experiments with GitHub Copilot CLI found greater test awareness but no statistically significant change in agent behavior.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Experiments with GitHub Copilot CLI found greater test awareness but no statistically significant change in agent behavior.</p>",
+    "tldr": "Microsoft evaluated whether naming directories 'Eval' impacted GitHub Copilot CLI agent behavior. The experiments observed increased test awareness but found no statistically significant changes in overall agent actions.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Experiments tested GitHub Copilot CLI behavior in response to directory naming conventions such as 'Eval'.</li><li>Agents displayed greater test awareness during the evaluation.</li><li>Changes in agent behavior were not statistically significant overall.</li></ul><h3>Why it matters</h3><p>Understanding prompt and workspace context sensitivity helps developers determine whether directory conventions meaningfully influence AI coding agent performance.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "ai",
+      "github copilot",
+      "testing",
+      "developer tools"
     ],
     "sources": [
       {
@@ -102,9 +118,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-31T09:29:14.574Z",
-    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-11-01T10:17:24.599Z",
     "publishedAt": "2026-10-30T18:43:00.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
   },
@@ -112,11 +128,15 @@
     "id": "b63dad31-fb30-4f56-8d91-b8cf5fa2fef7",
     "slug": "compromised-emudhra-certificates-update-your-jetbrains-ides-resharper-net-tools",
     "title": "Compromised eMudhra Certificates: Update Your JetBrains IDEs, ReSharper, .NET Tools, Toolbox App, and Gateway Now",
-    "tldr": "Summary Available fixed versions The issue is fixed in the following versions: The 2025.2.6.* updates for all IDEs now contain only the JBR fix. They will get a separate hotfix for the JCEF problem. Until then, use a workaround to disable JCEF in your IDE (see instructions below). IDE versions 2025…",
-    "bodyHtml": "<p><strong>JetBrains .NET Blog:</strong> Summary Available fixed versions The issue is fixed in the following versions: The 2025.2.6.* updates for all IDEs now contain only the JBR fix. They will get a separate hotfix for the JCEF problem. Until then, use a workaround to disable JCEF in your IDE (see instructions below). IDE versions 2025.1 and earlier, and Toolbox […]</p>",
+    "tldr": "JetBrains has issued security updates across its IDEs, .NET tools, and utilities after eight eMudhra intermediate certificate private keys were compromised. Because these tools rely on internal trust stores rather than OS certificates, users must update directly.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Compromised private keys from eight eMudhra intermediate certificates could permit network attackers to impersonate remote services accessed by JetBrains products.</li><li>Operating system certificate updates do not protect JetBrains tools because IDEs, Gateway, ReSharper, and Toolbox depend on the JetBrains Runtime (JBR) trust store.</li><li>Updates block the compromised intermediates and untrust four root certificates, including emSign roots and AAA Certificate Services.</li><li>The embedded browser (JCEF) receives certificate updates from Google servers in versions 2025.3 and newer, while the jetbrainsd background service requires version 0.9.9728.</li><li>Versions 2025.1 and earlier of IDEs, alongside Toolbox 3.7 and older, will not receive security patches.</li></ul><h3>Why it matters</h3><p>Without updating the bundled runtime and background daemons, developers face potential man-in-the-middle attacks when their development environments connect to remote repositories and web services.</p>",
     "tags": [
       "dotnet",
-      "rider"
+      "rider",
+      "security",
+      "jetbrains",
+      "vulnerabilities",
+      "certificates"
     ],
     "sources": [
       {
@@ -130,9 +150,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-31T09:29:14.574Z",
-    "updatedAt": "2026-10-31T09:29:14.574Z",
+    "updatedAt": "2026-11-01T10:17:24.599Z",
     "publishedAt": "2026-10-30T15:24:48.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
   },
@@ -10562,36 +10582,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-25T08:17:19.192Z",
     "publishedAt": "2026-07-07T10:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "efa6d51e-467d-4b48-92a8-60e7398d14ae",
-    "slug": "build-your-own-vpn-with-tailscale",
-    "title": "Build Your Own VPN With Tailscale",
-    "tldr": "Using Tailscale allows developers to interconnect private cloud servers over an encrypted WireGuard mesh network, eliminating public exposure for internal services.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Machines join a private tailnet where all traffic dials outward and is encrypted end-to-end.</li><li>Cloud firewalls can drop all inbound traffic rules, disabling public access to ports like SSH and databases.</li><li>Internal services bind exclusively to local tailnet IP addresses rather than public interfaces.</li><li>TLS certificates and reverse proxies can be bypassed for internal communication due to built-in WireGuard encryption.</li></ul><h3>Why it matters</h3><p>Securing backend infrastructure by default prevents automated bots from scanning internal databases and admin tools over public IP ports.</p>",
-    "tags": [
-      "tailscale",
-      "networking",
-      "security",
-      "vpn"
-    ],
-    "sources": [
-      {
-        "sourceId": "3958049ea454",
-        "siteName": "Milan Jovanović",
-        "url": "https://milanjovanovic.tech/blog/build-your-own-vpn-with-tailscale",
-        "title": "Build Your Own VPN With Tailscale",
-        "publishedAt": "2026-07-04T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-04T00:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
