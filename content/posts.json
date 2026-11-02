@@ -1,5 +1,113 @@
 [
   {
+    "id": "69ab3401-16f2-4102-92ba-d14ce755d188",
+    "slug": "use-open-identityserver-for-openid-connect-in-an-aspire-setup",
+    "title": "Use Open.IdentityServer for OpenID Connect in an Aspire setup",
+    "tldr": "A guide demonstrates building an OpenID Connect server using Open.IdentityServer and ASP.NET Core Identity within a .NET Aspire environment. The architecture configures an ASP.NET Core web client and secures a backend Web API with delegated access tokens.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The solution orchestrates an Open.IdentityServer identity provider, an ASP.NET Core web client, and an API using .NET Aspire.</li><li>The web client uses the Authorization Code Flow with PKCE, OAuth Pushed Authorization Requests (PAR), and client assertions instead of client secrets.</li><li>Session state is secured using __Host-Http-ui-web cookies configured with SameSite=Lax.</li><li>Open.IdentityServer currently does not implement the OAuth DPoP or CIBA standards.</li></ul><h3>Why it matters</h3><p>It provides developers using .NET Aspire with a pattern for implementing on-premises, standards-compliant authentication and authorization without relying on external identity services.</p>",
+    "tags": [
+      "dotnet",
+      "aspire",
+      "security",
+      "openid",
+      "asp.net core",
+      ".net aspire",
+      "openid connect",
+      "oauth 2.0"
+    ],
+    "sources": [
+      {
+        "sourceId": "6752279e1d66",
+        "siteName": "Damien Bowden",
+        "url": "https://damienbod.com/2026/11/02/use-open-identityserver-for-openid-connect-in-an-aspire-setup/",
+        "title": "Use Open.IdentityServer for OpenID Connect in an Aspire setup",
+        "publishedAt": "2026-11-02T05:52:20.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-02T10:50:01.934Z",
+    "updatedAt": "2026-11-02T10:50:01.934Z",
+    "publishedAt": "2026-11-02T05:52:20.000Z",
+    "runId": "bc8c15c8-8d73-49d4-b747-e9c96f951d9f"
+  },
+  {
+    "id": "0b48c3d4-d74c-40ea-bbd2-60654e1e24a5",
+    "slug": "what-s-in-a-task",
+    "title": "What's in a task?",
+    "tldr": "The latest C# Digest outlines performance considerations across .NET tasks, constructor execution order, string processing, and collection enumeration. It also covers pattern evaluation for AI agent loops.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Primary constructors store parameters in hidden fields before calling the base constructor, unlike standard constructors which assign fields afterward.</li><li>List iteration benchmarks show CollectionsMarshal.AsSpan is roughly 20% faster than standard for or foreach loops.</li><li>Unawaited tasks must be explicitly inspected for completion, cancellation, or errors to avoid thread blocking and uncaught exceptions.</li><li>The SimdUnicode library leverages processor SIMD instructions to repair malformed UTF-16 surrogate pairs at speeds up to 69 GB/s on Intel hardware.</li><li>Loop programming in the Microsoft Agent Framework uses marker and judge evaluators paired with iteration limits to control agent execution.</li></ul><h3>Why it matters</h3><p>Understanding low-level .NET runtime behaviors and iteration overhead helps developers avoid subtle bugs during object initialization and maximize throughput in performance-critical code.</p>",
+    "tags": [
+      "dotnet",
+      "csharp",
+      "async",
+      "c#",
+      ".net",
+      "performance",
+      "simd",
+      "ai agents"
+    ],
+    "sources": [
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2398-what-s-in-a-task",
+        "title": "What's in a task?",
+        "publishedAt": "2026-11-01T19:35:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-02T10:50:01.934Z",
+    "updatedAt": "2026-11-02T10:50:01.934Z",
+    "publishedAt": "2026-11-01T19:35:00.000Z",
+    "runId": "bc8c15c8-8d73-49d4-b747-e9c96f951d9f"
+  },
+  {
+    "id": "27959ca8-d149-46cc-81e9-bea5f70ed23f",
+    "slug": "optimizing-agentic-applications-for-local-models-patterns-for-speed-and-reliabil",
+    "title": "Optimizing Agentic Applications for Local Models: Patterns for Speed and Reliability",
+    "tldr": "Benchmarking of Google's Gemma 4 model in agentic workflows demonstrates that disabling the built-in thinking step substantially reduces latency without reducing tool-calling reliability. The approach optimizes agentic applications running on local hardware.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Disabling reasoning phases reduced median response latency from 7.8 seconds to 2.5 seconds during flight booking interactions.</li><li>Turning off thinking reduced the volume of generated output tokens by a factor of three to five.</li><li>Evaluations demonstrated no gain in tool-calling reliability when thinking was left enabled.</li><li>Because many agent operations map directly to specific tool selection and parameter extraction, deep reasoning introduces unnecessary overhead.</li></ul><h3>Why it matters</h3><p>Local models provide privacy and predictable costs for regulated industries, but hardware constraints cause latency bottlenecks. Disabling unneeded reasoning modes allows agentic applications to run fast enough for interactive use.</p>",
+    "tags": [
+      "ai",
+      "llm",
+      "architecture",
+      "local models",
+      "gemma 4",
+      "agents",
+      "performance"
+    ],
+    "sources": [
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/optimizing-agentic-applications-for-local-models-patterns-for-speed-and-reliability/",
+        "title": "Optimizing Agentic Applications for Local Models: Patterns for Speed and Reliability",
+        "publishedAt": "2026-11-01T22:13:16.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/optimizing-agentic-applications-for-local-models-patterns-for-speed-an/",
+        "title": "Optimizing Agentic Applications for Local Models: Patterns for Speed and Reliability",
+        "publishedAt": "2026-11-01T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-02T10:50:01.934Z",
+    "updatedAt": "2026-11-02T10:50:01.934Z",
+    "publishedAt": "2026-11-01T00:00:00.000Z",
+    "runId": "bc8c15c8-8d73-49d4-b747-e9c96f951d9f"
+  },
+  {
     "id": "bfcdce88-78b7-4d63-aa75-7a0ecedfd2bc",
     "slug": "i-turned-off-ci-for-pull-requests-here-s-why",
     "title": "I Turned Off CI for Pull Requests. Here's Why",
@@ -30,6 +138,38 @@
     "updatedAt": "2026-11-01T10:17:24.599Z",
     "publishedAt": "2026-10-31T00:00:00.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
+  },
+  {
+    "id": "db08a3df-e311-4ab1-82e7-5342a0c2f71d",
+    "slug": "ng-news-26-23-pangular-inspector-and-angular-compilation-at-viteconf",
+    "title": "Ng-News 26/23: Pangular Inspector and Angular Compilation at ViteConf",
+    "tldr": "Pangular Inspector has been launched as a unified Angular developer tool built on Anthony Fu's Devframe framework. Additionally, details were shared regarding Angular compiler refactoring efforts using Rust and Oxc.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Pangular Inspector provides source scanning and live inspection for Angular components, signals, NgRx stores, services, forms, and routes.</li><li>Application state inspected by Pangular Inspector is made accessible to AI coding agents via the Model Context Protocol (MCP).</li><li>The Angular compiler is being redesigned to move its analysis phase to a native Rust implementation based on Oxc while keeping code generation in Node.js.</li><li>Julian Jandl released material detailing production SSR strategies utilizing custom Incremental Static Regeneration (ISR).</li></ul><h3>Why it matters</h3><p>The migration of compiler analysis to Rust and Oxc aims to accelerate Angular build times, while Devframe and MCP integration connect Angular runtime telemetry directly to AI coding tools.</p>",
+    "tags": [
+      "angular",
+      "devtools",
+      "vite",
+      "compilers",
+      "rust",
+      "oxc"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-23-pangular-inspector-and-angular-compilation-at-viteconf/",
+        "title": "Ng-News 26/23: Pangular Inspector and Angular Compilation at ViteConf",
+        "publishedAt": "2026-10-31T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-02T10:50:01.934Z",
+    "updatedAt": "2026-11-02T10:50:01.934Z",
+    "publishedAt": "2026-10-31T00:00:00.000Z",
+    "runId": "bc8c15c8-8d73-49d4-b747-e9c96f951d9f"
   },
   {
     "id": "5be3ff52-afba-45e6-8e66-c03d2cbbfa97",
