@@ -1,5 +1,200 @@
 [
   {
+    "id": "5abff3a1-241c-45f1-afc2-378f0d666046",
+    "slug": "delivering-skills-in-nuget-packages",
+    "title": "Delivering Skills in NuGet packages",
+    "tldr": "Agent skills can be delivered in NuGet packages as a way to deliver up-to-date library documentation to models. The post Delivering Skills in NuGet packages appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> Agent skills can be delivered in NuGet packages as a way to deliver up-to-date library documentation to models. The post Delivering Skills in NuGet packages appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/delivering-skills-in-nuget-packages/",
+        "title": "Delivering Skills in NuGet packages",
+        "publishedAt": "2026-11-03T19:00:14.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "publishedAt": "2026-11-03T19:00:14.000Z",
+    "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
+  },
+  {
+    "id": "3ed6b176-b980-4f53-929a-c5fbc40489d2",
+    "slug": "get-ready-for-net-conf-2026",
+    "title": "Get Ready for .NET Conf 2026!",
+    "tldr": ".NET Conf is one week away! Join us November 10-13 for the launch of .NET 11, two days of Microsoft sessions, and two days of Community Days. The post Get Ready for .NET Conf 2026! appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> .NET Conf is one week away! Join us November 10-13 for the launch of .NET 11, two days of Microsoft sessions, and two days of Community Days. The post Get Ready for .NET Conf 2026! appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/get-ready-for-dotnet-conf-2026/",
+        "title": "Get Ready for .NET Conf 2026!",
+        "publishedAt": "2026-11-03T17:30:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "publishedAt": "2026-11-03T17:30:00.000Z",
+    "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
+  },
+  {
+    "id": "d725e1fd-7079-4491-b2ef-baac8e26ec04",
+    "slug": "how-to-analyze-your-angular-build-output",
+    "title": "How to analyze your Angular build output?",
+    "tldr": "How to analyze your Angular build output?",
+    "bodyHtml": "",
+    "tags": [
+      "angular"
+    ],
+    "sources": [
+      {
+        "sourceId": "56e621a08449",
+        "siteName": "Angular Training Blog",
+        "url": "https://blog.angulartraining.com/how-to-analyze-your-angular-build-output-1636830dd590?source=rss----8725e60f0d54---4",
+        "title": "How to analyze your Angular build output?",
+        "publishedAt": "2026-11-03T13:11:09.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "publishedAt": "2026-11-03T13:11:09.000Z",
+    "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
+  },
+  {
+    "id": "5d07c6ba-03cc-44b4-8c6d-ba850eb3e618",
+    "slug": "understanding-lazy-thread-safety-modes",
+    "title": "Understanding Lazy thread safety modes",
+    "tldr": "In this post I look at how the different `LazyThreadSafetyMode` values work with `Lazy`, and how exceptions are handled for each mode",
+    "bodyHtml": "<p><strong>Andrew Lock – .NET Escapades:</strong> In this post I look at how the different `LazyThreadSafetyMode` values work with `Lazy`, and how exceptions are handled for each mode</p>",
+    "tags": [
+      "aspnetcore",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "145884eb4af6",
+        "siteName": "Andrew Lock – .NET Escapades",
+        "url": "https://andrewlock.net/understanding-lazy-thread-safety-modes/",
+        "title": "Understanding Lazy thread safety modes",
+        "publishedAt": "2026-11-03T10:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "publishedAt": "2026-11-03T10:00:00.000Z",
+    "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
+  },
+  {
+    "id": "d1c998f7-6610-447e-8d8f-1f1c9c340afe",
+    "slug": "what-is-tool-calling-in-ai-build-a-simple-net-example",
+    "title": "What is tool calling in AI? Build a simple .NET example",
+    "tldr": "LLMs understand language, but they can't query your database or call an API on their own. Tool calling closes that gap: the model names a function and its arguments, and your app runs it. This post walks through a flight booking example, shows a C# tool definition, and covers common use cases.",
+    "bodyHtml": "<p><strong>elmah.io blog:</strong> LLMs understand language, but they can't query your database or call an API on their own. Tool calling closes that gap: the model names a function and its arguments, and your app runs it. This post walks through a flight booking example, shows a C# tool definition, and covers common use cases.</p>",
+    "tags": [
+      "dotnet",
+      "aspnetcore"
+    ],
+    "sources": [
+      {
+        "sourceId": "4ed3c18fe2b2",
+        "siteName": "elmah.io blog",
+        "url": "https://blog.elmah.io/what-is-tool-calling-in-ai-build-a-simple-net-example/",
+        "title": "What is tool calling in AI? Build a simple .NET example",
+        "publishedAt": "2026-11-03T07:58:58.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "publishedAt": "2026-11-03T07:58:58.000Z",
+    "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
+  },
+  {
+    "id": "34e38a91-c765-43e1-b4e9-147a0ff4da21",
+    "slug": "angular-21-updates",
+    "title": "Angular 21 updates",
+    "tldr": "upgrade Commit Description only compile the template contents of a downgraded component",
+    "bodyHtml": "<p><strong>Angular releases:</strong> upgrade Commit Description only compile the template contents of a downgraded component</p>",
+    "tags": [
+      "angular",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v21.2.26",
+        "title": "Angular 21.2.26",
+        "publishedAt": "2026-11-02T22:35:58.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "publishedAt": "2026-11-02T22:35:58.000Z",
+    "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
+  },
+  {
+    "id": "7e8377c1-bbd3-4aca-8da2-8a17358f0d74",
+    "slug": "angular-20-updates",
+    "title": "Angular 20 updates",
+    "tldr": "upgrade Commit Description only compile the template contents of a downgraded component",
+    "bodyHtml": "<p><strong>Angular releases:</strong> upgrade Commit Description only compile the template contents of a downgraded component</p>",
+    "tags": [
+      "angular",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v20.3.35",
+        "title": "Angular 20.3.35",
+        "publishedAt": "2026-11-02T22:08:33.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "publishedAt": "2026-11-02T22:08:33.000Z",
+    "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
+  },
+  {
     "id": "69ab3401-16f2-4102-92ba-d14ce755d188",
     "slug": "use-open-identityserver-for-openid-connect-in-an-aspire-setup",
     "title": "Use Open.IdentityServer for OpenID Connect in an Aspire setup",
@@ -10689,39 +10884,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-07T15:47:29.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "bacfc3aa-2e72-4914-9250-d991fd118703",
-    "slug": "improvements-to-reading-process-outputs-exploring-the-net-11-preview-part-5",
-    "title": "Improvements to reading Process outputs: Exploring the .NET 11 preview - Part 5",
-    "tldr": ".NET 11 introduces new Process APIs to simplify reading process output and prevent deadlocks.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>In .NET 10, incorrectly using ReadToEnd on standard output and error streams can cause deadlocks if stream buffers fill before the process exits.</li><li>Prior deadlock workarounds required running ReadToEndAsync tasks on background threads or subscribing to output events.</li><li>.NET 11 introduces dedicated helper methods including Process.ReadAllText, Process.RunAndCaptureText, Process.ReadAllLines, Process.ReadAllBytes, and their async equivalents.</li><li>Additional .NET 11 process features include fire-and-forget capabilities and child termination on parent exit.</li></ul><h3>Why it matters</h3><p>The new APIs provide safe, simplified primitives for running external processes, eliminating common stream buffer deadlocks without requiring manual asynchronous boilerplate.</p>",
-    "tags": [
-      "dotnet",
-      "csharp",
-      "api",
-      ".net",
-      ".net 11",
-      "process api",
-      "asynchronous programming"
-    ],
-    "sources": [
-      {
-        "sourceId": "145884eb4af6",
-        "siteName": "Andrew Lock – .NET Escapades",
-        "url": "https://andrewlock.net/exploring-the-dotnet-11-preview-5-improvments-to-process-apis/",
-        "title": "Improvements to reading Process outputs: Exploring the .NET 11 preview - Part 5",
-        "publishedAt": "2026-07-07T10:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-25T08:17:19.192Z",
-    "publishedAt": "2026-07-07T10:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
