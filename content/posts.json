@@ -1,5 +1,262 @@
 [
   {
+    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
+    "slug": "angular-cli-22-2-4-released",
+    "title": "Angular CLI 22 updates",
+    "tldr": "Angular CLI has issued new version tags spanning previews and minor releases across the v22 branch. Releases include version 22.3.0-next.4, 22.2.5, 22.2.4, 22.3.0-next.1, and 22.2.2.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Recent releases cover preview lines including 22.3.0-next.4 and 22.3.0-next.1.</li><li>Stable maintenance builds include versions 22.2.5, 22.2.4, and 22.2.2.</li><li>Core workspace packages across @schematics/angular, @angular/cli, @angular/build, and @angular/ssr were updated.</li></ul><h3>Why it matters</h3><p>Tracking Angular CLI releases ensures development environments stay current with incremental fixes across the CLI, server-side rendering, and schematics packages.</p>",
+    "tags": [
+      "angular",
+      "angular cli",
+      "typescript",
+      "frontend",
+      "cli",
+      "release",
+      "tooling",
+      "javascript"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.5",
+        "title": "Angular CLI 22.3.0-next.5",
+        "publishedAt": "2026-11-05T00:11:35.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.6",
+        "title": "Angular CLI 22.2.6",
+        "publishedAt": "2026-11-04T22:41:48.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
+        "title": "Angular CLI 22.3.0-next.4",
+        "publishedAt": "2026-10-28T10:05:41.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
+        "title": "Angular CLI 22.2.5",
+        "publishedAt": "2026-10-28T10:00:30.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
+        "title": "Angular CLI 22.2.4",
+        "publishedAt": "2026-10-22T13:38:22.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
+        "title": "Angular CLI 22.3.0-next.1",
+        "publishedAt": "2026-10-07T07:14:29.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
+        "title": "Angular CLI 22.2.2",
+        "publishedAt": "2026-10-07T07:10:57.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "publishedAt": "2026-11-05T00:11:35.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
+    "id": "fb6a3f06-5288-4372-ae3d-0653e1604ffe",
+    "slug": "vs-code-1-145-expands-remote-agent-workflows-adds-cron-automations",
+    "title": "VS Code 1.145 Expands Remote Agent Workflows, Adds Cron Automations",
+    "tldr": "Visual Studio Code 1.145 adds remote agent browser and canvas support, more flexible local automations, and new controls for agent sessions.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Visual Studio Code 1.145 adds remote agent browser and canvas support, more flexible local automations, and new controls for agent sessions.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/04/vs-code-1-145-expands-remote-agent-workflows-adds-cron-automations.aspx",
+        "title": "VS Code 1.145 Expands Remote Agent Workflows, Adds Cron Automations",
+        "publishedAt": "2026-11-04T20:37:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-05T10:39:50.344Z",
+    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "publishedAt": "2026-11-04T20:37:00.000Z",
+    "runId": "ff7cef0f-879e-450d-ba8a-3034e9c7605f"
+  },
+  {
+    "id": "22d090d6-b0ee-4529-9d9a-79dbe8ad05c7",
+    "slug": "keep-learning-keep-building-make-the-most-of-vslive-with-your-visual-studio-subs",
+    "title": "Keep learning, keep building! Make the most of VSLive! with your Visual Studio Subscription",
+    "tldr": "Keeping up with new technology is one thing. Finding worthwhile opportunities to explore what matters most to your work is another. That’s where VSLive! can help. It brings technical learning, hands-on experience, expert guidance, and a community of developers together in one place, giving you focu…",
+    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> Keeping up with new technology is one thing. Finding worthwhile opportunities to explore what matters most to your work is another. That’s where VSLive! can help. It brings technical learning, hands-on experience, expert guidance, and a community of developers together in one place, giving you focused time to explore evolving technologies and decide what’s worth […] The post Keep learning, keep building! Make the most of VSLive! with your Visual Studio Subscription appeared first on Visual Stud…</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/keep-learning-keep-building-make-the-most-of-vslive-with-your-visual-studio-subscription/",
+        "title": "Keep learning, keep building! Make the most of VSLive! with your Visual Studio Subscription",
+        "publishedAt": "2026-11-04T15:30:28.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-05T10:39:50.344Z",
+    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "publishedAt": "2026-11-04T15:30:28.000Z",
+    "runId": "ff7cef0f-879e-450d-ba8a-3034e9c7605f"
+  },
+  {
+    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
+    "slug": "angular-components-22-updates",
+    "title": "Angular components 22 updates",
+    "tldr": "Angular Components 22.3.0-next.3 has been released with updates targeting Material and ARIA packages. Recent builds also include releases across the 22.3.0-next and 22.2.x branches.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.</li><li>The project has published preview iterations ranging from 22.3.0-next.0 up to 22.3.0-next.4.</li><li>Stable maintenance releases span versions 22.1.8 through 22.2.5.</li></ul><h3>Why it matters</h3><p>Developers testing prerelease Angular components receive targeted updates to core accessibility and Material UI libraries. Tracking these next releases prepares teams for upcoming changes in future stable builds.</p>",
+    "tags": [
+      "angular",
+      "material",
+      "release",
+      "angular components",
+      "angular material",
+      "accessibility",
+      "material design",
+      "aria",
+      "frontend"
+    ],
+    "sources": [
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.5",
+        "title": "Angular components 22.3.0-next.5",
+        "publishedAt": "2026-11-04T12:23:08.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.6",
+        "title": "Angular components 22.2.6",
+        "publishedAt": "2026-11-04T11:58:40.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
+        "title": "Angular components 22.3.0-next.4",
+        "publishedAt": "2026-10-28T17:44:49.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.5",
+        "title": "Angular components 22.2.5",
+        "publishedAt": "2026-10-28T17:38:26.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
+        "title": "Angular components 22.3.0-next.3",
+        "publishedAt": "2026-10-21T10:01:13.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
+        "title": "Angular components 22.2.4",
+        "publishedAt": "2026-10-21T09:49:03.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
+        "title": "Angular components 22.3.0-next.2",
+        "publishedAt": "2026-10-14T15:24:48.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
+        "title": "Angular components 22.2.3",
+        "publishedAt": "2026-10-14T15:07:56.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
+        "title": "Angular components 22.3.0-next.1",
+        "publishedAt": "2026-10-07T16:24:46.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
+        "title": "Angular components 22.2.2",
+        "publishedAt": "2026-10-07T14:59:58.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
+        "title": "Angular components 22.3.0-next.0",
+        "publishedAt": "2026-09-30T08:15:20.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
+        "title": "Angular components 22.2.1",
+        "publishedAt": "2026-09-30T08:07:47.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
+        "title": "Angular components 22.2.0",
+        "publishedAt": "2026-09-23T12:12:09.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
+        "title": "Angular components 22.1.8",
+        "publishedAt": "2026-09-23T12:03:55.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "publishedAt": "2026-11-04T12:23:08.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
     "id": "5abff3a1-241c-45f1-afc2-378f0d666046",
     "slug": "delivering-skills-in-nuget-packages",
     "title": "Delivering Skills in NuGet packages",
@@ -1465,118 +1722,6 @@
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   },
   {
-    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
-    "slug": "angular-components-22-updates",
-    "title": "Angular components 22 updates",
-    "tldr": "Angular Components 22.3.0-next.3 has been released with updates targeting Material and ARIA packages. Recent builds also include releases across the 22.3.0-next and 22.2.x branches.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.</li><li>The project has published preview iterations ranging from 22.3.0-next.0 up to 22.3.0-next.4.</li><li>Stable maintenance releases span versions 22.1.8 through 22.2.5.</li></ul><h3>Why it matters</h3><p>Developers testing prerelease Angular components receive targeted updates to core accessibility and Material UI libraries. Tracking these next releases prepares teams for upcoming changes in future stable builds.</p>",
-    "tags": [
-      "angular",
-      "material",
-      "release",
-      "angular components",
-      "angular material",
-      "accessibility",
-      "material design",
-      "aria",
-      "frontend"
-    ],
-    "sources": [
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
-        "title": "Angular components 22.3.0-next.4",
-        "publishedAt": "2026-10-28T17:44:49.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.5",
-        "title": "Angular components 22.2.5",
-        "publishedAt": "2026-10-28T17:38:26.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
-        "title": "Angular components 22.3.0-next.3",
-        "publishedAt": "2026-10-21T10:01:13.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
-        "title": "Angular components 22.2.4",
-        "publishedAt": "2026-10-21T09:49:03.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
-        "title": "Angular components 22.3.0-next.2",
-        "publishedAt": "2026-10-14T15:24:48.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
-        "title": "Angular components 22.2.3",
-        "publishedAt": "2026-10-14T15:07:56.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
-        "title": "Angular components 22.3.0-next.1",
-        "publishedAt": "2026-10-07T16:24:46.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
-        "title": "Angular components 22.2.2",
-        "publishedAt": "2026-10-07T14:59:58.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
-        "title": "Angular components 22.3.0-next.0",
-        "publishedAt": "2026-09-30T08:15:20.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
-        "title": "Angular components 22.2.1",
-        "publishedAt": "2026-09-30T08:07:47.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
-        "title": "Angular components 22.2.0",
-        "publishedAt": "2026-09-23T12:12:09.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
-        "title": "Angular components 22.1.8",
-        "publishedAt": "2026-09-23T12:03:55.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-30T09:50:03.058Z",
-    "publishedAt": "2026-10-28T17:44:49.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
     "id": "4266ad3b-b90c-4087-8056-e422ac7f517d",
     "slug": "microsoft-doubles-down-on-azure-cosmos-db-developer-tools",
     "title": "Microsoft Doubles Down on Azure Cosmos DB Developer Tools",
@@ -1947,68 +2092,6 @@
     "updatedAt": "2026-10-29T09:43:28.322Z",
     "publishedAt": "2026-10-28T10:30:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
-  },
-  {
-    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
-    "slug": "angular-cli-22-2-4-released",
-    "title": "Angular CLI 22 updates",
-    "tldr": "Angular CLI has issued new version tags spanning previews and minor releases across the v22 branch. Releases include version 22.3.0-next.4, 22.2.5, 22.2.4, 22.3.0-next.1, and 22.2.2.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Recent releases cover preview lines including 22.3.0-next.4 and 22.3.0-next.1.</li><li>Stable maintenance builds include versions 22.2.5, 22.2.4, and 22.2.2.</li><li>Core workspace packages across @schematics/angular, @angular/cli, @angular/build, and @angular/ssr were updated.</li></ul><h3>Why it matters</h3><p>Tracking Angular CLI releases ensures development environments stay current with incremental fixes across the CLI, server-side rendering, and schematics packages.</p>",
-    "tags": [
-      "angular",
-      "angular cli",
-      "typescript",
-      "frontend",
-      "cli",
-      "release",
-      "tooling",
-      "javascript"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
-        "title": "Angular CLI 22.3.0-next.4",
-        "publishedAt": "2026-10-28T10:05:41.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
-        "title": "Angular CLI 22.2.5",
-        "publishedAt": "2026-10-28T10:00:30.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
-        "title": "Angular CLI 22.2.4",
-        "publishedAt": "2026-10-22T13:38:22.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
-        "title": "Angular CLI 22.3.0-next.1",
-        "publishedAt": "2026-10-07T07:14:29.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
-        "title": "Angular CLI 22.2.2",
-        "publishedAt": "2026-10-07T07:10:57.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-23T08:25:16.497Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
-    "publishedAt": "2026-10-28T10:05:41.000Z",
-    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
   },
   {
     "id": "a20081f4-17bf-4922-830b-43c5a798d260",
@@ -10812,78 +10895,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-09T17:05:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "2323fd5f-192e-41a3-9e7c-6237ba671c02",
-    "slug": "one-validator-to-rule-them-all",
-    "title": "One Validator to Rule Them All",
-    "tldr": "Zod can act as a single source of truth across Angular and NestJS, synchronizing DTO types and validation schemas in an Nx monorepo. This approach avoids boilerplate across client and server validation layers by employing custom NestJS pipes alongside experimental Angular signal forms.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>A shared Zod schema eliminates redundant DTO models and inconsistent validation logic across the frontend and backend.</li><li>NestJS controllers integrate schema validation through custom parameter decorators and execution pipes built on Zod's safeParse method.</li><li>Angular v21.2+ signal forms use experimental validateStandardSchema functions to apply Zod schemas directly inside reactive form controls.</li><li>Type generation is handled natively via z.infer, minimizing hand-written mappings between layers.</li></ul><h3>Why it matters</h3><p>Sharing validation logic across full-stack TypeScript projects eliminates subtle behavioral divergences between backend APIs and client-side forms. It accelerates feature development by standardizing validation errors and data transfer definitions.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "nestjs",
-      "zod",
-      "typescript",
-      "nx"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/one-validator-to-rule-them-all/",
-        "title": "One Validator to Rule Them All",
-        "publishedAt": "2026-07-08T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-08T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "a41d9384-880e-4134-af1f-f4e21db7f4f7",
-    "slug": "community-engineering-agentic-coding-and-real-user-component-testing",
-    "title": "Community Engineering, Agentic Coding, and Real-User Component Testing ️",
-    "tldr": "Recent Angular community discussions focus on real-user component testing, agentic coding tools, and modern form ergonomics. Tutorials detail full-browser Vitest configurations, Angular compiler diagnostics, and community-driven framework maintenance.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Younes Jaaidi presented a method for component testing directly in real browsers utilizing Vitest Full Browser Mode.</li><li>Technical posts explore agentic AI assistance for Angular architecture beyond traditional completion models.</li><li>Video guides detail the usage of Signal Forms and extended Angular compiler diagnostics to flag bugs before production.</li></ul><h3>Why it matters</h3><p>Adopting browser-based component tests and extended compiler diagnostics improves testing fidelity and surfaces build-time issues earlier in the release cycle.</p>",
-    "tags": [
-      "angular",
-      "testing",
-      "ai-agents",
-      "ai agents",
-      "community",
-      "vitest",
-      "signals"
-    ],
-    "sources": [
-      {
-        "sourceId": "0d2eacde2168",
-        "siteName": "Angular Blog",
-        "url": "https://blog.angular.dev/community-engineering-agentic-coding-and-real-user-component-testing-%EF%B8%8F-15c768142043?source=rss----447683c3d9a3---4",
-        "title": "Community Engineering, Agentic Coding, and Real-User Component Testing ️",
-        "publishedAt": "2026-07-07T15:47:29.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/community-engineering-agentic-coding-and-real-user-component-testing/",
-        "title": "Community Engineering, Agentic Coding, and Real-User Component Testing ️",
-        "publishedAt": "2026-07-07T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-07T15:47:29.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
