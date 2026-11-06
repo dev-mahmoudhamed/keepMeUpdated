@@ -1,5 +1,280 @@
 [
   {
+    "id": "21636411-4af1-4385-804b-f77387875b7c",
+    "slug": "angular-22-updates",
+    "title": "Angular 22 updates",
+    "tldr": "Angular 22.2 introduces developer previews for template error boundaries and Router Resources, alongside template access for private members. Error boundaries catch render exceptions using @boundary blocks, while Router Resources handle parallel data loading.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces @boundary and @error template blocks to catch render errors locally</li><li>Prevents failed resource loaders from breaking entire component views</li><li>Adds Router Resources to fetch route data concurrently instead of using sequential resolvers</li><li>Enables template access for private class members</li></ul><h3>Why it matters</h3><p>Angular components can now isolate render crashes with fallback UI and fetch routing data faster via concurrent resource loading.</p>",
+    "tags": [
+      "angular",
+      "architecture",
+      "web development",
+      "frontend",
+      "angular 22",
+      "error boundaries",
+      "router resources",
+      "javascript",
+      "typescript"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.4",
+        "title": "Angular 22.3.0-next.4",
+        "publishedAt": "2026-11-05T23:00:46.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.3",
+        "title": "Angular 22.3.0-next.3",
+        "publishedAt": "2026-10-29T17:51:29.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.4",
+        "title": "Angular 22.2.4",
+        "publishedAt": "2026-10-29T17:41:23.000Z"
+      },
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T15:45:57.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T00:00:00.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
+        "title": "What's new in Angular 22.2?",
+        "publishedAt": "2026-09-23T00:00:00.000Z"
+      },
+      {
+        "sourceId": "56e621a08449",
+        "siteName": "Angular Training Blog",
+        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
+        "title": "What’s new in Angular 22.1?",
+        "publishedAt": "2026-08-21T13:16:57.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
+        "title": "What's new in Angular 22.1?",
+        "publishedAt": "2026-07-29T00:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T23:00:46.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "f25baf5d-277f-4318-a12b-6790b5f90723",
+    "slug": "help-shape-the-future-of-net-take-the-2026-net-developer-survey",
+    "title": "Help Shape the Future of .NET: Take the 2026 .NET Developer Survey",
+    "tldr": "Take the 2026 .NET Developer Survey to share your experience, help identify common challenges, and guide future .NET investments. The survey takes about 15 minutes. The post Help Shape the Future of .NET: Take the 2026 .NET Developer Survey appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> Take the 2026 .NET Developer Survey to share your experience, help identify common challenges, and guide future .NET investments. The survey takes about 15 minutes. The post Help Shape the Future of .NET: Take the 2026 .NET Developer Survey appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-developer-survey-2026/",
+        "title": "Help Shape the Future of .NET: Take the 2026 .NET Developer Survey",
+        "publishedAt": "2026-11-05T19:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T19:00:00.000Z",
+    "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
+  },
+  {
+    "id": "112c26bf-3d19-477d-9fdc-845efe8f0a78",
+    "slug": "modernize-your-net-apps-for-windows-arm64-with-github-copilot",
+    "title": "Modernize your .NET apps for Windows Arm64 with GitHub Copilot",
+    "tldr": "Modernize your .NET apps for Windows Arm64 with the GitHub Copilot upgrade agent, from identifying migration blockers to planning and making code changes. The post Modernize your .NET apps for Windows Arm64 with GitHub Copilot appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> Modernize your .NET apps for Windows Arm64 with the GitHub Copilot upgrade agent, from identifying migration blockers to planning and making code changes. The post Modernize your .NET apps for Windows Arm64 with GitHub Copilot appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/modernize-dotnet-apps-for-windows-arm64/",
+        "title": "Modernize your .NET apps for Windows Arm64 with GitHub Copilot",
+        "publishedAt": "2026-11-05T18:05:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T18:05:00.000Z",
+    "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
+  },
+  {
+    "id": "770e2ca7-a2bd-45e1-9293-539a40f440fc",
+    "slug": "microsoft-details-53-gib-local-coding-model-for-github-copilot",
+    "title": "Microsoft Details 53 GiB Local Coding Model for GitHub Copilot",
+    "tldr": "A Foundry on Windows engineering report explains how mixed-precision quantization lets MAI-Code-1.1-Flash run on RTX Spark hardware.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A Foundry on Windows engineering report explains how mixed-precision quantization lets MAI-Code-1.1-Flash run on RTX Spark hardware.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/05/microsoft-details-53-gib-local-coding-model-for-github-copilot.aspx",
+        "title": "Microsoft Details 53 GiB Local Coding Model for GitHub Copilot",
+        "publishedAt": "2026-11-05T17:57:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T17:57:00.000Z",
+    "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
+  },
+  {
+    "id": "284067d8-1edb-43e5-9775-adbadadaec04",
+    "slug": "intelligent-terminal-0-3-adds-agent-sidebar-and-background-sessions",
+    "title": "Intelligent Terminal 0.3 Adds Agent Sidebar and Background Sessions",
+    "tldr": "An experimental Windows terminal update adds agent status, cross-window search and headless execution for long-running sessions.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> An experimental Windows terminal update adds agent status, cross-window search and headless execution for long-running sessions.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/05/intelligent-terminal-0-3-adds-agent-sidebar-and-background-sessions.aspx",
+        "title": "Intelligent Terminal 0.3 Adds Agent Sidebar and Background Sessions",
+        "publishedAt": "2026-11-05T17:55:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T17:55:00.000Z",
+    "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
+  },
+  {
+    "id": "6d8997e5-4fb0-4da6-933a-16a3846b1e89",
+    "slug": "github-copilot-to-end-support-for-jetbrains-2025-2-ide-releases",
+    "title": "GitHub Copilot to End Support for JetBrains 2025.2 IDE Releases",
+    "tldr": "Microsoft says Copilot plugin updates will stop targeting JetBrains 2025.2.x as the minimum supported version moves to 2025.3.x.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft says Copilot plugin updates will stop targeting JetBrains 2025.2.x as the minimum supported version moves to 2025.3.x.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/05/github-copilot-to-end-support-for-jetbrains-2025-2-ide-releases.aspx",
+        "title": "GitHub Copilot to End Support for JetBrains 2025.2 IDE Releases",
+        "publishedAt": "2026-11-05T17:52:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T17:52:00.000Z",
+    "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
+  },
+  {
+    "id": "256265e4-83c6-424a-86fa-7015b1b6f40d",
+    "slug": "microsoft-foundry-october-recap-separates-ai-agent-previews-from-ga-releases",
+    "title": "Microsoft Foundry October Recap Separates AI Agent Previews from GA Releases",
+    "tldr": "The monthly roundup details the Copilot harness preview, generally available browser automation and hosted-agent resilience, and recent model and SDK updates.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The monthly roundup details the Copilot harness preview, generally available browser automation and hosted-agent resilience, and recent model and SDK updates.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/05/microsoft-foundry-october-recap-separates-ai-agent-previews-from-ga-releases.aspx",
+        "title": "Microsoft Foundry October Recap Separates AI Agent Previews from GA Releases",
+        "publishedAt": "2026-11-05T17:50:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T17:50:00.000Z",
+    "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
+  },
+  {
+    "id": "a3fb71d1-1254-4ba5-be3c-306cafdaa709",
+    "slug": "microsoft-shows-how-to-run-qwen-coding-agents-locally-with-github-copilot",
+    "title": "Microsoft Shows How to Run Qwen Coding Agents Locally with GitHub Copilot",
+    "tldr": "A Foundry Local walkthrough connects Qwen3.8-27B to Copilot on NVIDIA hardware using a local model endpoint.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A Foundry Local walkthrough connects Qwen3.8-27B to Copilot on NVIDIA hardware using a local model endpoint.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/05/microsoft-shows-how-to-run-qwen-coding-agents-locally-with-github-copilot.aspx",
+        "title": "Microsoft Shows How to Run Qwen Coding Agents Locally with GitHub Copilot",
+        "publishedAt": "2026-11-05T17:46:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "publishedAt": "2026-11-05T17:46:00.000Z",
+    "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
+  },
+  {
     "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
     "slug": "angular-cli-22-2-4-released",
     "title": "Angular CLI 22 updates",
@@ -937,83 +1212,6 @@
     "updatedAt": "2026-10-30T09:50:03.058Z",
     "publishedAt": "2026-10-29T19:02:00.000Z",
     "runId": "adccf984-a2b1-4d31-b519-00995a28a681"
-  },
-  {
-    "id": "21636411-4af1-4385-804b-f77387875b7c",
-    "slug": "angular-22-updates",
-    "title": "Angular 22 updates",
-    "tldr": "Angular 22.2 introduces developer previews for template error boundaries and Router Resources, alongside template access for private members. Error boundaries catch render exceptions using @boundary blocks, while Router Resources handle parallel data loading.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces @boundary and @error template blocks to catch render errors locally</li><li>Prevents failed resource loaders from breaking entire component views</li><li>Adds Router Resources to fetch route data concurrently instead of using sequential resolvers</li><li>Enables template access for private class members</li></ul><h3>Why it matters</h3><p>Angular components can now isolate render crashes with fallback UI and fetch routing data faster via concurrent resource loading.</p>",
-    "tags": [
-      "angular",
-      "architecture",
-      "web development",
-      "frontend",
-      "angular 22",
-      "error boundaries",
-      "router resources",
-      "javascript",
-      "typescript"
-    ],
-    "sources": [
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.3",
-        "title": "Angular 22.3.0-next.3",
-        "publishedAt": "2026-10-29T17:51:29.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.2.4",
-        "title": "Angular 22.2.4",
-        "publishedAt": "2026-10-29T17:41:23.000Z"
-      },
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T15:45:57.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T00:00:00.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
-        "title": "What's new in Angular 22.2?",
-        "publishedAt": "2026-09-23T00:00:00.000Z"
-      },
-      {
-        "sourceId": "56e621a08449",
-        "siteName": "Angular Training Blog",
-        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
-        "title": "What’s new in Angular 22.1?",
-        "publishedAt": "2026-08-21T13:16:57.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
-        "title": "What's new in Angular 22.1?",
-        "publishedAt": "2026-07-29T00:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-30T09:50:03.058Z",
-    "publishedAt": "2026-10-29T17:51:29.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "591c17b1-e3d0-411c-bddc-1badcea3eeb0",
@@ -7515,14 +7713,21 @@
         "url": "https://blog.jetbrains.com/dotnet/2026/09/08/dotinsights-september-2026/",
         "title": "dotInsights | September 2026",
         "publishedAt": "2026-09-08T14:16:12.000Z"
+      },
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/dotnet/2026/11/05/dotinsights-november-2026/",
+        "title": "dotInsights | November 2026",
+        "publishedAt": "2026-11-05T10:19:14.000Z"
       }
     ],
     "relevance": 4,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-06T10:39:59.989Z",
     "publishedAt": "2026-09-08T14:16:12.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
