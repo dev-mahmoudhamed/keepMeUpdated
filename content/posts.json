@@ -1,5 +1,34 @@
 [
   {
+    "id": "4e2e0a19-51e7-4f97-9146-576d82b04488",
+    "slug": "outbox-pattern-in-postgres-concurrent-workers-vs-reading-the-wal",
+    "title": "Outbox Pattern in Postgres: Concurrent Workers vs Reading the WAL",
+    "tldr": "An API can save an order and crash before publishing the message that tells other services about it.",
+    "bodyHtml": "<p><strong>Milan Jovanović:</strong> An API can save an order and crash before publishing the message that tells other services about it.</p>",
+    "tags": [
+      "postgresql",
+      "architecture",
+      "distributed-systems"
+    ],
+    "sources": [
+      {
+        "sourceId": "3958049ea454",
+        "siteName": "Milan Jovanović",
+        "url": "https://milanjovanovic.tech/blog/outbox-pattern-postgres-workers-vs-wal",
+        "title": "Outbox Pattern in Postgres: Concurrent Workers vs Reading the WAL",
+        "publishedAt": "2026-11-07T00:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "publishedAt": "2026-11-07T00:00:00.000Z",
+    "runId": "d622442d-fca2-493e-8823-e33169012400"
+  },
+  {
     "id": "21636411-4af1-4385-804b-f77387875b7c",
     "slug": "angular-22-updates",
     "title": "Angular 22 updates",
@@ -17,6 +46,13 @@
       "typescript"
     ],
     "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.5",
+        "title": "Angular 22.2.5",
+        "publishedAt": "2026-11-06T19:37:09.000Z"
+      },
       {
         "sourceId": "5d7162762e53",
         "siteName": "Angular releases",
@@ -79,9 +115,125 @@
     "origin": "auto",
     "aiPending": true,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
-    "publishedAt": "2026-11-05T23:00:46.000Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "publishedAt": "2026-11-06T19:37:09.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "8dcac12b-665b-4183-822c-c3ae2cdf6877",
+    "slug": "microsoft-foundry-extension-for-azure-developer-cli-reaches-ga",
+    "title": "Microsoft Foundry Extension for Azure Developer CLI Reaches GA",
+    "tldr": "Version 1.0 adds a generally available workflow for configuring, testing, evaluating and deploying hosted AI agents with Azure Developer CLI.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Version 1.0 adds a generally available workflow for configuring, testing, evaluating and deploying hosted AI agents with Azure Developer CLI.</p>",
+    "tags": [
+      "azure",
+      "ai",
+      "cli"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/06/microsoft-foundry-extension-for-azure-developer-cli-reaches-ga.aspx",
+        "title": "Microsoft Foundry Extension for Azure Developer CLI Reaches GA",
+        "publishedAt": "2026-11-06T16:42:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "publishedAt": "2026-11-06T16:42:00.000Z",
+    "runId": "d622442d-fca2-493e-8823-e33169012400"
+  },
+  {
+    "id": "1349ebc9-b481-4abb-9f84-27ab39aabed1",
+    "slug": "microsoft-adds-sharepoint-agent-tools-to-work-iq-preview",
+    "title": "Microsoft Adds SharePoint Agent Tools to Work IQ Preview",
+    "tldr": "Preview SharePoint tools give Work IQ agents a discoverable interface to more than 60 operations with delegated permission scopes.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Preview SharePoint tools give Work IQ agents a discoverable interface to more than 60 operations with delegated permission scopes.</p>",
+    "tags": [
+      "sharepoint",
+      "ai",
+      "microsoft"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/06/microsoft-adds-sharepoint-agent-tools-to-work-iq-preview.aspx",
+        "title": "Microsoft Adds SharePoint Agent Tools to Work IQ Preview",
+        "publishedAt": "2026-11-06T16:25:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "publishedAt": "2026-11-06T16:25:00.000Z",
+    "runId": "d622442d-fca2-493e-8823-e33169012400"
+  },
+  {
+    "id": "5434f2ee-8a6d-4217-9578-fec64cd9d0dc",
+    "slug": "core-vitals-optimization-ssr-deployments-and-signal-first-architecture",
+    "title": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
+    "tldr": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
+    "bodyHtml": "",
+    "tags": [
+      "angular",
+      "frontend",
+      "webdev"
+    ],
+    "sources": [
+      {
+        "sourceId": "0d2eacde2168",
+        "siteName": "Angular Blog",
+        "url": "https://blog.angular.dev/core-vitals-optimization-ssr-deployments-and-signal-first-architecture-be82fd4a8c87?source=rss----447683c3d9a3---4",
+        "title": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
+        "publishedAt": "2026-11-06T15:01:04.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "publishedAt": "2026-11-06T15:01:04.000Z",
+    "runId": "d622442d-fca2-493e-8823-e33169012400"
+  },
+  {
+    "id": "353164a1-ae9a-4233-b6e6-74900d164bf6",
+    "slug": "microsoft-sets-jan-12-deadline-for-low-trust-sharepoint-add-ins",
+    "title": "Microsoft Sets Jan. 12 Deadline for Low-Trust SharePoint Add-ins",
+    "tldr": "A SharePoint Server Subscription Edition update will disable low-trust add-ins by default as Microsoft directs developers toward supported alternatives.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A SharePoint Server Subscription Edition update will disable low-trust add-ins by default as Microsoft directs developers toward supported alternatives.</p>",
+    "tags": [
+      "sharepoint",
+      "security",
+      "microsoft"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/05/microsoft-sets-jan-12-deadline-for-low-trust-sharepoint-add-ins.aspx",
+        "title": "Microsoft Sets Jan. 12 Deadline for Low-Trust SharePoint Add-ins",
+        "publishedAt": "2026-11-05T23:43:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "publishedAt": "2026-11-05T23:43:00.000Z",
+    "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
   {
     "id": "f25baf5d-277f-4318-a12b-6790b5f90723",
@@ -394,6 +546,13 @@
         "url": "https://devblogs.microsoft.com/visualstudio/keep-learning-keep-building-make-the-most-of-vslive-with-your-visual-studio-subscription/",
         "title": "Keep learning, keep building! Make the most of VSLive! with your Visual Studio Subscription",
         "publishedAt": "2026-11-04T15:30:28.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/06/visual-studio-subscribers-offered-up-to-900-off-vslive-events.aspx",
+        "title": "Visual Studio Subscribers Offered Up to $900 Off VSLive! Events",
+        "publishedAt": "2026-11-06T17:25:00.000Z"
       }
     ],
     "relevance": 5,
@@ -401,7 +560,7 @@
     "origin": "auto",
     "aiPending": true,
     "createdAt": "2026-11-05T10:39:50.344Z",
-    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
     "publishedAt": "2026-11-04T15:30:28.000Z",
     "runId": "ff7cef0f-879e-450d-ba8a-3034e9c7605f"
   },
@@ -10693,6 +10852,42 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "1a9326cb-2732-4134-8633-1bf25ccba821",
+    "slug": "announcing-net-modernization-for-beginners",
+    "title": "Announcing .NET Modernization for Beginners",
+    "tldr": "A free, open-source, hands-on course that walks you through modernizing a real legacy ASP.NET application all the way to .NET 10 using the GitHub Copilot modernization agent, step by step. The post Announcing .NET Modernization for Beginners appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> A free, open-source, hands-on course that walks you through modernizing a real legacy ASP.NET application all the way to .NET 10 using the GitHub Copilot modernization agent, step by step. The post Announcing .NET Modernization for Beginners appeared first on .NET Blog.</p><p><strong>Visual Studio Blog:</strong> Today I will modernize a .NET Framework application to .NET 10 using the GitHub Copilot modernization tooling built-in to Visual Studio. The tooling helps us upgrade applications running on legacy versions of .NET and also migrate them to Azure. Today we’re going to focus on the upgrade portion. And, the tooling will do […] The post Today I will… Modernize a .NET application appeared first on Visual Studio Blog.</p>",
+    "tags": [
+      ".net",
+      "github-copilot",
+      "visual-studio"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-modernization-for-beginners/",
+        "title": "Announcing .NET Modernization for Beginners",
+        "publishedAt": "2026-07-16T17:07:06.000Z"
+      },
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/today-i-will-modernize-a-net-application/",
+        "title": "Today I will… Modernize a .NET application",
+        "publishedAt": "2026-08-21T17:00:45.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "publishedAt": "2026-07-16T17:07:06.000Z",
+    "runId": "d622442d-fca2-493e-8823-e33169012400"
+  },
+  {
     "id": "8ccc38d3-9d36-4c92-a093-60f13247e6a7",
     "slug": "visual-studio-administrator-join-our-private-marketplace-preview",
     "title": "Visual Studio Administrator? Join our Private Marketplace Preview!",
@@ -11054,52 +11249,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-11T00:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "4970bbc1-b479-47d7-b6f5-04dd4fd7ca7c",
-    "slug": "announcing-net-modernization-for-beginners",
-    "title": "Announcing .NET Modernization for Beginners",
-    "tldr": "Microsoft released a free hands-on course demonstrating how to modernize legacy ASP.NET applications to .NET 10 using GitHub Copilot upgrade workflows.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The course utilizes a sample legacy WinForms application called BookCatalog for step-by-step migration exercises.</li><li>GitHub Copilot upgrade agents assess target frameworks, evaluate NuGet packages, and generate structured execution plans.</li><li>Developers can review upgrade canvases to approve changes incrementally and steer code transformations.</li></ul><h3>Why it matters</h3><p>Structured AI coding agents simplify the overwhelming task of upgrading legacy enterprise applications to modern frameworks.</p>",
-    "tags": [
-      ".net",
-      "modernization",
-      "copilot",
-      "migration",
-      "github copilot",
-      "ai"
-    ],
-    "sources": [
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-modernization-for-beginners/",
-        "title": "Announcing .NET Modernization for Beginners",
-        "publishedAt": "2026-07-16T17:07:06.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/modernize-dotnet-in-github-copilot-app/",
-        "title": "Modernize .NET applications in the GitHub Copilot app",
-        "publishedAt": "2026-07-09T17:05:00.000Z"
-      },
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/today-i-will-modernize-a-net-application/",
-        "title": "Today I will… Modernize a .NET application",
-        "publishedAt": "2026-08-21T17:00:45.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-09T17:05:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
