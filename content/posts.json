@@ -3,12 +3,14 @@
     "id": "4e2e0a19-51e7-4f97-9146-576d82b04488",
     "slug": "outbox-pattern-in-postgres-concurrent-workers-vs-reading-the-wal",
     "title": "Outbox Pattern in Postgres: Concurrent Workers vs Reading the WAL",
-    "tldr": "An API can save an order and crash before publishing the message that tells other services about it.",
-    "bodyHtml": "<p><strong>Milan Jovanović:</strong> An API can save an order and crash before publishing the message that tells other services about it.</p>",
+    "tldr": "Implementing the outbox pattern in Postgres can be done via concurrent polling workers using FOR UPDATE SKIP LOCKED or event-driven mechanisms like LISTEN/NOTIFY and WAL reading. Each approach introduces specific tradeoffs regarding throughput, latency, and database locking.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Concurrent workers using FOR UPDATE SKIP LOCKED avoid lock contention and provide at-least-once delivery, requiring consumers to be idempotent.</li><li>Using a database trigger with NOTIFY dropped throughput from 8,070 to 256 orders per second under 100 concurrent users due to lock contention during commits.</li><li>Sending NOTIFY after the transaction commit via a separate connection recovered throughput to 7,674 orders per second with a 1.91 ms commit-to-consumer latency.</li><li>Reading the write-ahead log (WAL) using logical replication delivers messages in about a millisecond at low load, but requires managing a replication slot and running a cleanup job.</li></ul><h3>Why it matters</h3><p>Selecting the right outbox implementation strategy allows distributed architectures to maintain transactional data consistency with message brokers while avoiding severe throughput bottlenecks caused by database locks.</p>",
     "tags": [
       "postgresql",
       "architecture",
-      "distributed-systems"
+      "distributed-systems",
+      "distributed systems",
+      "database"
     ],
     "sources": [
       {
@@ -22,9 +24,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-07T00:00:00.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -32,8 +34,8 @@
     "id": "21636411-4af1-4385-804b-f77387875b7c",
     "slug": "angular-22-updates",
     "title": "Angular 22 updates",
-    "tldr": "Angular 22.2 introduces developer previews for template error boundaries and Router Resources, alongside template access for private members. Error boundaries catch render exceptions using @boundary blocks, while Router Resources handle parallel data loading.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces @boundary and @error template blocks to catch render errors locally</li><li>Prevents failed resource loaders from breaking entire component views</li><li>Adds Router Resources to fetch route data concurrently instead of using sequential resolvers</li><li>Enables template access for private class members</li></ul><h3>Why it matters</h3><p>Angular components can now isolate render crashes with fallback UI and fetch routing data faster via concurrent resource loading.</p>",
+    "tldr": "Angular 22.2 introduces developer previews for template error boundaries and Router Resources, along with template access for private members.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Template error boundaries use @boundary blocks to catch render exceptions.</li><li>Router Resources provide handling for parallel data loading.</li><li>Private members can now be accessed within templates in version 22.2.</li></ul><h3>Why it matters</h3><p>The new developer previews enhance error handling in view rendering and improve asynchronous data loading patterns during routing.</p>",
     "tags": [
       "angular",
       "architecture",
@@ -113,9 +115,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-06T19:37:09.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -123,12 +125,14 @@
     "id": "8dcac12b-665b-4183-822c-c3ae2cdf6877",
     "slug": "microsoft-foundry-extension-for-azure-developer-cli-reaches-ga",
     "title": "Microsoft Foundry Extension for Azure Developer CLI Reaches GA",
-    "tldr": "Version 1.0 adds a generally available workflow for configuring, testing, evaluating and deploying hosted AI agents with Azure Developer CLI.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Version 1.0 adds a generally available workflow for configuring, testing, evaluating and deploying hosted AI agents with Azure Developer CLI.</p>",
+    "tldr": "Microsoft Foundry Extension for Azure Developer CLI has reached general availability with version 1.0. It provides workflows for deploying and managing hosted AI agents.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Version 1.0 of the Microsoft Foundry Extension reaches GA status.</li><li>Adds end-to-end workflows for configuring, testing, evaluating, and deploying hosted AI agents via the Azure Developer CLI.</li></ul><h3>Why it matters</h3><p>The extension provides a standardized, production-ready CLI workflow for lifecycle management of hosted AI agents on Azure.</p>",
     "tags": [
       "azure",
       "ai",
-      "cli"
+      "cli",
+      "ai agents",
+      "devops"
     ],
     "sources": [
       {
@@ -142,9 +146,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-06T16:42:00.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -152,12 +156,14 @@
     "id": "1349ebc9-b481-4abb-9f84-27ab39aabed1",
     "slug": "microsoft-adds-sharepoint-agent-tools-to-work-iq-preview",
     "title": "Microsoft Adds SharePoint Agent Tools to Work IQ Preview",
-    "tldr": "Preview SharePoint tools give Work IQ agents a discoverable interface to more than 60 operations with delegated permission scopes.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Preview SharePoint tools give Work IQ agents a discoverable interface to more than 60 operations with delegated permission scopes.</p>",
+    "tldr": "Microsoft has added preview SharePoint tools to Work IQ, offering an interface to perform over 60 operations using delegated permission scopes.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>SharePoint tools are now available in preview for Work IQ agents.</li><li>Provides a discoverable interface spanning more than 60 operations.</li><li>Operates using delegated permission scopes.</li></ul><h3>Why it matters</h3><p>This enables Work IQ agents to securely integrate with SharePoint data and execute a broad spectrum of enterprise actions under appropriate user permissions.</p>",
     "tags": [
       "sharepoint",
       "ai",
-      "microsoft"
+      "microsoft",
+      "work iq",
+      "enterprise"
     ],
     "sources": [
       {
@@ -171,9 +177,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-06T16:25:00.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -181,12 +187,15 @@
     "id": "5434f2ee-8a6d-4217-9578-fec64cd9d0dc",
     "slug": "core-vitals-optimization-ssr-deployments-and-signal-first-architecture",
     "title": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
-    "tldr": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
-    "bodyHtml": "",
+    "tldr": "Angular Blog has highlighted topics covering Core Vitals optimization, SSR deployments, and signal-first architecture.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Covers optimization techniques for Core Web Vitals.</li><li>Addresses deployment considerations for Server-Side Rendering (SSR).</li><li>Discusses architectural patterns centered around Angular signals.</li></ul><h3>Why it matters</h3><p>These topics guide Angular developers on improving performance benchmarks and adopting reactive architectural practices.</p>",
     "tags": [
       "angular",
       "frontend",
-      "webdev"
+      "webdev",
+      "performance",
+      "ssr",
+      "signals"
     ],
     "sources": [
       {
@@ -200,9 +209,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-06T15:01:04.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -210,12 +219,13 @@
     "id": "353164a1-ae9a-4233-b6e6-74900d164bf6",
     "slug": "microsoft-sets-jan-12-deadline-for-low-trust-sharepoint-add-ins",
     "title": "Microsoft Sets Jan. 12 Deadline for Low-Trust SharePoint Add-ins",
-    "tldr": "A SharePoint Server Subscription Edition update will disable low-trust add-ins by default as Microsoft directs developers toward supported alternatives.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A SharePoint Server Subscription Edition update will disable low-trust add-ins by default as Microsoft directs developers toward supported alternatives.</p>",
+    "tldr": "Microsoft has set a January 12 deadline to disable low-trust SharePoint add-ins by default in SharePoint Server Subscription Edition.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>SharePoint Server Subscription Edition will disable low-trust add-ins by default starting January 12.</li><li>Developers are directed to migrate toward supported alternatives.</li></ul><h3>Why it matters</h3><p>Developers maintaining legacy SharePoint extensions must transition to modern extension models before the default support is turned off.</p>",
     "tags": [
       "sharepoint",
       "security",
-      "microsoft"
+      "microsoft",
+      "legacy support"
     ],
     "sources": [
       {
@@ -229,9 +239,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T23:43:00.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -239,11 +249,14 @@
     "id": "f25baf5d-277f-4318-a12b-6790b5f90723",
     "slug": "help-shape-the-future-of-net-take-the-2026-net-developer-survey",
     "title": "Help Shape the Future of .NET: Take the 2026 .NET Developer Survey",
-    "tldr": "Take the 2026 .NET Developer Survey to share your experience, help identify common challenges, and guide future .NET investments. The survey takes about 15 minutes. The post Help Shape the Future of .NET: Take the 2026 .NET Developer Survey appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> Take the 2026 .NET Developer Survey to share your experience, help identify common challenges, and guide future .NET investments. The survey takes about 15 minutes. The post Help Shape the Future of .NET: Take the 2026 .NET Developer Survey appeared first on .NET Blog.</p>",
+    "tldr": "Microsoft has opened the 2026 .NET Developer Survey to gather developer feedback on tooling, daily challenges, and legacy application maintenance. The survey runs through November 16, 2026.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The 15-minute survey aims to identify common challenges and direct future investments across the .NET ecosystem.</li><li>Feedback is requested from both new projects and developers maintaining legacy applications.</li><li>Eligible U.S. and Puerto Rico residents can enter an optional sweepstakes for one of ten .NET swag packages.</li><li>The survey and sweepstakes close on November 16, 2026, at 5 p.m. PST.</li></ul><h3>Why it matters</h3><p>Survey responses directly inform the .NET team's roadmap and tooling priorities across diverse development environments.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net",
+      "microsoft",
+      "developer survey"
     ],
     "sources": [
       {
@@ -257,9 +270,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-06T10:39:59.989Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T19:00:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
   },
@@ -267,11 +280,16 @@
     "id": "112c26bf-3d19-477d-9fdc-845efe8f0a78",
     "slug": "modernize-your-net-apps-for-windows-arm64-with-github-copilot",
     "title": "Modernize your .NET apps for Windows Arm64 with GitHub Copilot",
-    "tldr": "Modernize your .NET apps for Windows Arm64 with the GitHub Copilot upgrade agent, from identifying migration blockers to planning and making code changes. The post Modernize your .NET apps for Windows Arm64 with GitHub Copilot appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> Modernize your .NET apps for Windows Arm64 with the GitHub Copilot upgrade agent, from identifying migration blockers to planning and making code changes. The post Modernize your .NET apps for Windows Arm64 with GitHub Copilot appeared first on .NET Blog.</p>",
+    "tldr": "The GitHub Copilot upgrade agent now supports assessing and migrating .NET applications from Windows x64 or x86 to Windows Arm64.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The upgrade agent identifies blockers including architecture-specific settings, missing native Arm64 binaries, and incompatible dependencies.</li><li>Creates a migration plan and helps make code, dependency, and project configuration changes.</li><li>Builds migrated components for Windows Arm64 and runs tests on available hardware or CI runners to validate behavior.</li><li>Focuses specifically on application portability and correctness rather than Arm64-specific performance tuning.</li></ul><h3>Why it matters</h3><p>Automating dependency analysis and configuration updates lowers the barrier for teams migrating legacy .NET codebases to cost-efficient Arm64 hardware.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net",
+      "github copilot",
+      "arm64",
+      "migration",
+      "windows"
     ],
     "sources": [
       {
@@ -285,9 +303,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-06T10:39:59.989Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T18:05:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
   },
@@ -295,10 +313,14 @@
     "id": "770e2ca7-a2bd-45e1-9293-539a40f440fc",
     "slug": "microsoft-details-53-gib-local-coding-model-for-github-copilot",
     "title": "Microsoft Details 53 GiB Local Coding Model for GitHub Copilot",
-    "tldr": "A Foundry on Windows engineering report explains how mixed-precision quantization lets MAI-Code-1.1-Flash run on RTX Spark hardware.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A Foundry on Windows engineering report explains how mixed-precision quantization lets MAI-Code-1.1-Flash run on RTX Spark hardware.</p>",
+    "tldr": "A Microsoft engineering report details running the 53 GiB MAI-Code-1.1-Flash local coding model on RTX Spark hardware using mixed-precision quantization.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Features the 53 GiB MAI-Code-1.1-Flash local coding model for GitHub Copilot.</li><li>Employs mixed-precision quantization to reduce memory requirements.</li><li>Runs on RTX Spark hardware via Foundry on Windows.</li></ul><h3>Why it matters</h3><p>Demonstrates practical approaches for deploying large, local coding assistant models onto developer workstations without relying entirely on cloud endpoints.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github copilot",
+      "ai",
+      "local llm",
+      "hardware"
     ],
     "sources": [
       {
@@ -312,9 +334,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-06T10:39:59.989Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T17:57:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
   },
@@ -322,10 +344,14 @@
     "id": "284067d8-1edb-43e5-9775-adbadadaec04",
     "slug": "intelligent-terminal-0-3-adds-agent-sidebar-and-background-sessions",
     "title": "Intelligent Terminal 0.3 Adds Agent Sidebar and Background Sessions",
-    "tldr": "An experimental Windows terminal update adds agent status, cross-window search and headless execution for long-running sessions.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> An experimental Windows terminal update adds agent status, cross-window search and headless execution for long-running sessions.</p>",
+    "tldr": "Intelligent Terminal 0.3 for Windows adds an agent sidebar, headless background execution, and cross-window search.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Introduces agent status monitoring via a dedicated sidebar.</li><li>Adds cross-window search functionality across terminal sessions.</li><li>Supports headless execution intended for long-running terminal tasks.</li></ul><h3>Why it matters</h3><p>These terminal enhancements streamline developer workflows when managing automated background tasks and agent operations.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "windows",
+      "terminal",
+      "developer tools",
+      "cli"
     ],
     "sources": [
       {
@@ -339,9 +365,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-06T10:39:59.989Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T17:55:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
   },
@@ -349,10 +375,14 @@
     "id": "6d8997e5-4fb0-4da6-933a-16a3846b1e89",
     "slug": "github-copilot-to-end-support-for-jetbrains-2025-2-ide-releases",
     "title": "GitHub Copilot to End Support for JetBrains 2025.2 IDE Releases",
-    "tldr": "Microsoft says Copilot plugin updates will stop targeting JetBrains 2025.2.x as the minimum supported version moves to 2025.3.x.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft says Copilot plugin updates will stop targeting JetBrains 2025.2.x as the minimum supported version moves to 2025.3.x.</p>",
+    "tldr": "GitHub Copilot is ending plugin updates for JetBrains 2025.2 IDE releases, increasing its minimum supported version to 2025.3.x.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Copilot plugin updates will cease targeting JetBrains 2025.2.x.</li><li>The minimum required JetBrains IDE version is updated to 2025.3.x.</li></ul><h3>Why it matters</h3><p>Developers using JetBrains environments must upgrade to version 2025.3.x or newer to continue receiving GitHub Copilot plugin updates.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github copilot",
+      "jetbrains",
+      "ides",
+      "dev tools"
     ],
     "sources": [
       {
@@ -366,9 +396,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-06T10:39:59.989Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T17:52:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
   },
@@ -376,10 +406,14 @@
     "id": "256265e4-83c6-424a-86fa-7015b1b6f40d",
     "slug": "microsoft-foundry-october-recap-separates-ai-agent-previews-from-ga-releases",
     "title": "Microsoft Foundry October Recap Separates AI Agent Previews from GA Releases",
-    "tldr": "The monthly roundup details the Copilot harness preview, generally available browser automation and hosted-agent resilience, and recent model and SDK updates.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The monthly roundup details the Copilot harness preview, generally available browser automation and hosted-agent resilience, and recent model and SDK updates.</p>",
+    "tldr": "Microsoft Foundry's October recap separates recent preview releases from general availability milestones across AI tooling.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Details previews such as the Copilot harness.</li><li>Highlights general availability for browser automation and hosted-agent resilience.</li><li>Provides an overview of recent model and SDK updates.</li></ul><h3>Why it matters</h3><p>Provides developers with clear visibility into which agentic automation and AI tools are production-ready versus in preview.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "microsoft foundry",
+      "ai agents",
+      "cloud",
+      "automation"
     ],
     "sources": [
       {
@@ -393,9 +427,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-06T10:39:59.989Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T17:50:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
   },
@@ -403,10 +437,14 @@
     "id": "a3fb71d1-1254-4ba5-be3c-306cafdaa709",
     "slug": "microsoft-shows-how-to-run-qwen-coding-agents-locally-with-github-copilot",
     "title": "Microsoft Shows How to Run Qwen Coding Agents Locally with GitHub Copilot",
-    "tldr": "A Foundry Local walkthrough connects Qwen3.8-27B to Copilot on NVIDIA hardware using a local model endpoint.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> A Foundry Local walkthrough connects Qwen3.8-27B to Copilot on NVIDIA hardware using a local model endpoint.</p>",
+    "tldr": "Microsoft has demonstrated connecting the Qwen3.8-27B model to GitHub Copilot locally on NVIDIA hardware via Foundry Local.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Connects Qwen3.8-27B to GitHub Copilot as an alternative coding agent.</li><li>Utilizes a local model endpoint running on NVIDIA hardware.</li><li>Part of the Foundry Local walkthrough series.</li></ul><h3>Why it matters</h3><p>Provides developers an option to run and test alternative open weights models directly inside GitHub Copilot on local machines.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github copilot",
+      "qwen",
+      "local ai",
+      "nvidia"
     ],
     "sources": [
       {
@@ -420,9 +458,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-06T10:39:59.989Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T17:46:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
   },
@@ -430,8 +468,8 @@
     "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
     "slug": "angular-cli-22-2-4-released",
     "title": "Angular CLI 22 updates",
-    "tldr": "Angular CLI has issued new version tags spanning previews and minor releases across the v22 branch. Releases include version 22.3.0-next.4, 22.2.5, 22.2.4, 22.3.0-next.1, and 22.2.2.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Recent releases cover preview lines including 22.3.0-next.4 and 22.3.0-next.1.</li><li>Stable maintenance builds include versions 22.2.5, 22.2.4, and 22.2.2.</li><li>Core workspace packages across @schematics/angular, @angular/cli, @angular/build, and @angular/ssr were updated.</li></ul><h3>Why it matters</h3><p>Tracking Angular CLI releases ensures development environments stay current with incremental fixes across the CLI, server-side rendering, and schematics packages.</p>",
+    "tldr": "Angular CLI has released version updates across its v22 branch spanning both stable minor releases and previews.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Releases span multiple tags including 22.3.0-next.5, 22.3.0-next.4, 22.3.0-next.1, 22.2.6, 22.2.5, 22.2.4, and 22.2.2.</li><li>Changes cover tooling packages including @angular/cli, @angular/build, @schematics/angular, and @angular/ssr.</li></ul><h3>Why it matters</h3><p>Keeps the Angular CLI toolchain updated with ongoing bug fixes, SSR build improvements, and upcoming v22.3 preview capabilities.</p>",
     "tags": [
       "angular",
       "angular cli",
@@ -496,9 +534,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-23T08:25:16.497Z",
-    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T00:11:35.000Z",
     "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
   },
@@ -506,10 +544,14 @@
     "id": "fb6a3f06-5288-4372-ae3d-0653e1604ffe",
     "slug": "vs-code-1-145-expands-remote-agent-workflows-adds-cron-automations",
     "title": "VS Code 1.145 Expands Remote Agent Workflows, Adds Cron Automations",
-    "tldr": "Visual Studio Code 1.145 adds remote agent browser and canvas support, more flexible local automations, and new controls for agent sessions.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Visual Studio Code 1.145 adds remote agent browser and canvas support, more flexible local automations, and new controls for agent sessions.</p>",
+    "tldr": "Visual Studio Code 1.145 expands remote agent workflows and introduces cron-based automations alongside new session controls.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Adds remote agent browser and canvas support.</li><li>Introduces cron-based and flexible local automations.</li><li>Implements new controls for managing agent sessions.</li></ul><h3>Why it matters</h3><p>The release improves the developer interface for controlling and scheduling autonomous agent activities directly within VS Code.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "vs code",
+      "developer tools",
+      "automation",
+      "ai agents"
     ],
     "sources": [
       {
@@ -523,9 +565,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-05T10:39:50.344Z",
-    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-04T20:37:00.000Z",
     "runId": "ff7cef0f-879e-450d-ba8a-3034e9c7605f"
   },
@@ -533,11 +575,15 @@
     "id": "22d090d6-b0ee-4529-9d9a-79dbe8ad05c7",
     "slug": "keep-learning-keep-building-make-the-most-of-vslive-with-your-visual-studio-subs",
     "title": "Keep learning, keep building! Make the most of VSLive! with your Visual Studio Subscription",
-    "tldr": "Keeping up with new technology is one thing. Finding worthwhile opportunities to explore what matters most to your work is another. That’s where VSLive! can help. It brings technical learning, hands-on experience, expert guidance, and a community of developers together in one place, giving you focu…",
-    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> Keeping up with new technology is one thing. Finding worthwhile opportunities to explore what matters most to your work is another. That’s where VSLive! can help. It brings technical learning, hands-on experience, expert guidance, and a community of developers together in one place, giving you focused time to explore evolving technologies and decide what’s worth […] The post Keep learning, keep building! Make the most of VSLive! with your Visual Studio Subscription appeared first on Visual Stud…</p>",
+    "tldr": "Visual Studio subscribers and Dev Essentials members can access discounts for upcoming VSLive! developer conferences. The events feature hands-on labs and technical sessions centered on modern development and AI tools.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Eligible Dev Essentials members, Visual Studio Professional subscribers, and Enterprise subscribers receive discounts on in-person VSLive! events.</li><li>VSLive! Las Vegas 2027 includes a hands-on lab focused on building an ASP.NET Core Web Assembly SPA from scratch using Copilot.</li><li>Sessions will cover Microsoft Foundry, illustrating how Toolbox, Foundry IQ, and Hosted Agents integrate into AI agent lifecycles.</li><li>A demo-driven comparison session will present major AI coding tools side by side tackling identical tasks.</li></ul><h3>Why it matters</h3><p>The conference offers developers practical, structured training on AI tooling and web stacks. Discounted access lowers the barrier for Visual Studio subscribers seeking continuing technical education.</p>",
     "tags": [
       "visualstudio",
-      "dotnet"
+      "dotnet",
+      "visual studio",
+      "vslive",
+      "ai tools",
+      "asp.net core"
     ],
     "sources": [
       {
@@ -558,9 +604,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-05T10:39:50.344Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-04T15:30:28.000Z",
     "runId": "ff7cef0f-879e-450d-ba8a-3034e9c7605f"
   },
@@ -568,8 +614,8 @@
     "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
     "slug": "angular-components-22-updates",
     "title": "Angular components 22 updates",
-    "tldr": "Angular Components 22.3.0-next.3 has been released with updates targeting Material and ARIA packages. Recent builds also include releases across the 22.3.0-next and 22.2.x branches.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular Components 22.3.0-next.3 introduces updates across Material and ARIA packages.</li><li>The project has published preview iterations ranging from 22.3.0-next.0 up to 22.3.0-next.4.</li><li>Stable maintenance releases span versions 22.1.8 through 22.2.5.</li></ul><h3>Why it matters</h3><p>Developers testing prerelease Angular components receive targeted updates to core accessibility and Material UI libraries. Tracking these next releases prepares teams for upcoming changes in future stable builds.</p>",
+    "tldr": "Angular components releases spanning 22.3.0-next.x and 22.2.x deliver ongoing updates for Material, CDK, and ARIA packages.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include version 22.3.0-next.3 through 22.3.0-next.5.</li><li>Recent builds span versions across the 22.3.0-next and 22.2.x release channels.</li><li>Package changes target Angular Material, CDK, and ARIA components.</li></ul><h3>Why it matters</h3><p>Developers using Angular UI libraries receive ongoing preview and stable improvements across accessibility and core component packages.</p>",
     "tags": [
       "angular",
       "material",
@@ -579,7 +625,8 @@
       "accessibility",
       "material design",
       "aria",
-      "frontend"
+      "frontend",
+      "cdk"
     ],
     "sources": [
       {
@@ -684,9 +731,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-05T10:39:50.344Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-04T12:23:08.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -694,11 +741,15 @@
     "id": "5abff3a1-241c-45f1-afc2-378f0d666046",
     "slug": "delivering-skills-in-nuget-packages",
     "title": "Delivering Skills in NuGet packages",
-    "tldr": "Agent skills can be delivered in NuGet packages as a way to deliver up-to-date library documentation to models. The post Delivering Skills in NuGet packages appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> Agent skills can be delivered in NuGet packages as a way to deliver up-to-date library documentation to models. The post Delivering Skills in NuGet packages appeared first on .NET Blog.</p>",
+    "tldr": "The .NET team is introducing a mechanism to package agent skills directly within NuGet packages using standardized SKILL.md files. This approach allows libraries to co-locate tailored documentation and instructions alongside their binaries.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Skills follow the agentskills.io format using markdown files with YAML frontmatter (SKILL.md).</li><li>Packaging skills with NuGet enables immediate, version-specific knowledge delivery to AI models without waiting for model retraining.</li><li>Skills included in packages are downloaded via standard `dotnet restore` calls and recorded in `project.assets.json`.</li><li>The team is developing tools such as `dotnet-inspect` to discover available skills from project files or directly from package registries.</li></ul><h3>Why it matters</h3><p>Embedding agent skills inside package distributions reduces the tokens and effort AI agents spend reverse-engineering undocumented or newly released library APIs.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net",
+      "nuget",
+      "ai agents",
+      "agent skills"
     ],
     "sources": [
       {
@@ -712,9 +763,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-04T10:43:37.447Z",
-    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-03T19:00:14.000Z",
     "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
   },
@@ -722,11 +773,15 @@
     "id": "3ed6b176-b980-4f53-929a-c5fbc40489d2",
     "slug": "get-ready-for-net-conf-2026",
     "title": "Get Ready for .NET Conf 2026!",
-    "tldr": ".NET Conf is one week away! Join us November 10-13 for the launch of .NET 11, two days of Microsoft sessions, and two days of Community Days. The post Get Ready for .NET Conf 2026! appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> .NET Conf is one week away! Join us November 10-13 for the launch of .NET 11, two days of Microsoft sessions, and two days of Community Days. The post Get Ready for .NET Conf 2026! appeared first on .NET Blog.</p>",
+    "tldr": ".NET Conf 2026 takes place virtually from November 10 to 13, featuring the official release of .NET 11. The schedule includes two days of Microsoft-led presentations followed by two community-organized days.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The conference officially launches .NET 11 starting with a keynote on November 10.</li><li>Microsoft product sessions highlight developments in C#, ASP.NET Core, Blazor, .NET MAUI, Aspire, and the .NET AI stack.</li><li>Visual Studio tooling, debugging enhancements, agentic UI workflows, and the MCP C# SDK are showcased on day two.</li><li>Community Days run November 12-13, organized by a community team in coordination with the .NET Foundation board.</li></ul><h3>Why it matters</h3><p>The event marks the launch of .NET 11 and provides technical roadmaps, architecture patterns, and AI integration best practices across the .NET ecosystem.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net 11",
+      "conferences",
+      "c#",
+      "visual studio"
     ],
     "sources": [
       {
@@ -740,9 +795,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-04T10:43:37.447Z",
-    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-03T17:30:00.000Z",
     "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
   },
@@ -750,10 +805,12 @@
     "id": "d725e1fd-7079-4491-b2ef-baac8e26ec04",
     "slug": "how-to-analyze-your-angular-build-output",
     "title": "How to analyze your Angular build output?",
-    "tldr": "How to analyze your Angular build output?",
-    "bodyHtml": "",
+    "tldr": "A guide addressing techniques for analyzing Angular application build output.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The article discusses how developers can inspect and understand Angular build outputs.</li></ul><h3>Why it matters</h3><p>Build output analysis helps frontend developers diagnose bundle size issues and optimize production deployment footprints.</p>",
     "tags": [
-      "angular"
+      "angular",
+      "build tools",
+      "web performance"
     ],
     "sources": [
       {
@@ -767,9 +824,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-04T10:43:37.447Z",
-    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-03T13:11:09.000Z",
     "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
   },
@@ -777,11 +834,15 @@
     "id": "5d07c6ba-03cc-44b4-8c6d-ba850eb3e618",
     "slug": "understanding-lazy-thread-safety-modes",
     "title": "Understanding Lazy thread safety modes",
-    "tldr": "In this post I look at how the different `LazyThreadSafetyMode` values work with `Lazy`, and how exceptions are handled for each mode",
-    "bodyHtml": "<p><strong>Andrew Lock – .NET Escapades:</strong> In this post I look at how the different `LazyThreadSafetyMode` values work with `Lazy`, and how exceptions are handled for each mode</p>",
+    "tldr": "An overview explains the behavior of `Lazy<T>` and the differences between its `LazyThreadSafetyMode` configurations in .NET. The modes govern initialization access, thread blocking, and race conditions across multiple threads.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>`LazyThreadSafetyMode.None` offers no concurrency safeguards and should only be used in strictly single-threaded scenarios.</li><li>`PublicationOnly` permits multiple threads to run the initialization factory concurrently, but only the first completed result is published while others are discarded.</li><li>`ExecutionAndPublication` ensures only one thread executes the factory function while all other accessing threads block until completion.</li></ul><h3>Why it matters</h3><p>Selecting the correct thread-safety mode is crucial for preventing unexpected exceptions, duplicate work, and race conditions during deferred object creation.</p>",
     "tags": [
       "aspnetcore",
-      "dotnet"
+      "dotnet",
+      ".net",
+      "c#",
+      "concurrency",
+      "multithreading"
     ],
     "sources": [
       {
@@ -795,9 +856,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-04T10:43:37.447Z",
-    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-03T10:00:00.000Z",
     "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
   },
@@ -805,11 +866,15 @@
     "id": "d1c998f7-6610-447e-8d8f-1f1c9c340afe",
     "slug": "what-is-tool-calling-in-ai-build-a-simple-net-example",
     "title": "What is tool calling in AI? Build a simple .NET example",
-    "tldr": "LLMs understand language, but they can't query your database or call an API on their own. Tool calling closes that gap: the model names a function and its arguments, and your app runs it. This post walks through a flight booking example, shows a C# tool definition, and covers common use cases.",
-    "bodyHtml": "<p><strong>elmah.io blog:</strong> LLMs understand language, but they can't query your database or call an API on their own. Tool calling closes that gap: the model names a function and its arguments, and your app runs it. This post walks through a flight booking example, shows a C# tool definition, and covers common use cases.</p>",
+    "tldr": "Tool calling enables large language models to request the execution of application functions, databases, and external APIs. Applications execute the requested functions and return results to the model to produce grounded responses.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>In tool calling, developers define functions with schemas so the LLM can output structured JSON indicating which tool to execute and which parameters to pass.</li><li>The LLM does not execute functions directly; the hosting application performs the operation (often using MCP clients and servers) and passes results back.</li><li>Agentic loops can execute across multiple steps, using intermediate tool results to inform subsequent tool calls before reaching a final response.</li><li>Common use cases encompass querying databases, calling external web APIs, triggering background workflows, and executing specialized computations.</li></ul><h3>Why it matters</h3><p>Tool calling connects language models to operational systems and private data, turning conversational agents into functional software assistants.</p>",
     "tags": [
       "dotnet",
-      "aspnetcore"
+      "aspnetcore",
+      "ai",
+      "llm",
+      "tool calling",
+      ".net"
     ],
     "sources": [
       {
@@ -823,9 +888,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-04T10:43:37.447Z",
-    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-03T07:58:58.000Z",
     "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
   },
@@ -833,11 +898,13 @@
     "id": "34e38a91-c765-43e1-b4e9-147a0ff4da21",
     "slug": "angular-21-updates",
     "title": "Angular 21 updates",
-    "tldr": "upgrade Commit Description only compile the template contents of a downgraded component",
-    "bodyHtml": "<p><strong>Angular releases:</strong> upgrade Commit Description only compile the template contents of a downgraded component</p>",
+    "tldr": "Angular 21.2.26 has been released with a fix to component upgrade behaviors.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Addresses the Angular upgrade package.</li><li>Restricts template compilation to only the template contents of a downgraded component.</li></ul><h3>Why it matters</h3><p>This patch prevents unnecessary compilation overhead and potential errors when integrating Angular components into legacy hybrid applications.</p>",
     "tags": [
       "angular",
-      "release"
+      "release",
+      "releases",
+      "angular upgrade"
     ],
     "sources": [
       {
@@ -851,9 +918,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-04T10:43:37.447Z",
-    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-02T22:35:58.000Z",
     "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
   },
@@ -861,11 +928,13 @@
     "id": "7e8377c1-bbd3-4aca-8da2-8a17358f0d74",
     "slug": "angular-20-updates",
     "title": "Angular 20 updates",
-    "tldr": "upgrade Commit Description only compile the template contents of a downgraded component",
-    "bodyHtml": "<p><strong>Angular releases:</strong> upgrade Commit Description only compile the template contents of a downgraded component</p>",
+    "tldr": "Angular 20.3.35 delivers an update to the component upgrade system.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Targets the Angular upgrade module.</li><li>Limits compilation strictly to the template contents of a downgraded component.</li></ul><h3>Why it matters</h3><p>It ensures stable, targeted template compilation in projects bridging older frameworks with Angular 20 components.</p>",
     "tags": [
       "angular",
-      "release"
+      "release",
+      "releases",
+      "angular upgrade"
     ],
     "sources": [
       {
@@ -879,9 +948,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-04T10:43:37.447Z",
-    "updatedAt": "2026-11-04T10:43:37.447Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-02T22:08:33.000Z",
     "runId": "0db164d7-0e17-47da-becd-9b7e98ea55a1"
   },
@@ -7848,15 +7917,16 @@
     "id": "91b7518a-9f94-46ba-a49d-107d4e0e1c5c",
     "slug": "dotinsights-october-2026",
     "title": "dotInsights | October 2026",
-    "tldr": "Recent .NET community roundups highlight articles on C# 15 features, system performance optimization, microservices, and AI tool integrations.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Explores concurrency patterns like System.Threading.Interlocked for safe multi-threaded updates.</li><li>Surfaces community guides on C# features, closed class hierarchies, extension methods, and configuration models.</li><li>Covers topics on microservices architecture, ASP.NET Core security, and AI coding agent workflows.</li></ul><h3>Why it matters</h3><p>Curated roundups keep developers informed of emerging patterns, performance tips, and community best practices across the .NET ecosystem.</p>",
+    "tldr": "JetBrains community digests curate recent developments in .NET performance, C# language features, and developer tooling.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Recent highlights review C# language evolution, including collection expressions in C# 15, extension properties in C# 14, and primary constructors.</li><li>Architecture articles evaluate event-driven patterns, microservices, obfuscation techniques, and CSRF protection in .NET 11.</li><li>Multiple discussions explore workflows with coding agents, AI agent reliability in production, and MCP server development with .NET.</li></ul><h3>Why it matters</h3><p>These digests aggregate community insights on emerging .NET language features, production architecture, and AI-assisted engineering practices.</p>",
     "tags": [
       ".net",
       "jetbrains",
       "newsletter",
       "c#",
       "software architecture",
-      "community"
+      "community",
+      "architecture"
     ],
     "sources": [
       {
@@ -7884,9 +7954,9 @@
     "relevance": 4,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-06T10:39:59.989Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-09-08T14:16:12.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -10855,12 +10925,15 @@
     "id": "1a9326cb-2732-4134-8633-1bf25ccba821",
     "slug": "announcing-net-modernization-for-beginners",
     "title": "Announcing .NET Modernization for Beginners",
-    "tldr": "A free, open-source, hands-on course that walks you through modernizing a real legacy ASP.NET application all the way to .NET 10 using the GitHub Copilot modernization agent, step by step. The post Announcing .NET Modernization for Beginners appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> A free, open-source, hands-on course that walks you through modernizing a real legacy ASP.NET application all the way to .NET 10 using the GitHub Copilot modernization agent, step by step. The post Announcing .NET Modernization for Beginners appeared first on .NET Blog.</p><p><strong>Visual Studio Blog:</strong> Today I will modernize a .NET Framework application to .NET 10 using the GitHub Copilot modernization tooling built-in to Visual Studio. The tooling helps us upgrade applications running on legacy versions of .NET and also migrate them to Azure. Today we’re going to focus on the upgrade portion. And, the tooling will do […] The post Today I will… Modernize a .NET application appeared first on Visual Studio Blog.</p>",
+    "tldr": "Microsoft has released '.NET Modernization for Beginners', a free open-source course demonstrating how to upgrade legacy ASP.NET apps to .NET 10. The hands-on curriculum uses the GitHub Copilot modernization agent to guide code migrations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The course walks through upgrading a real legacy .NET Framework app, BookCatalog, to .NET 10.</li><li>The modernization agent generates editable documentation artifacts including assessment.md, plan.md, and tasks.md before executing code updates.</li><li>Developers can review, edit, and approve the migration tasks, with an interactive guided mode that pauses between steps.</li><li>The training repository is hosted openly on GitHub and requires Visual Studio 2022+ and a GitHub Copilot subscription.</li></ul><h3>Why it matters</h3><p>Legacy .NET modernization can be complex and risky; structured agentic tooling and practical training help teams upgrade unsupported codebases with greater transparency and control.</p>",
     "tags": [
       ".net",
       "github-copilot",
-      "visual-studio"
+      "visual-studio",
+      "github copilot",
+      "modernization",
+      "asp.net"
     ],
     "sources": [
       {
@@ -10881,9 +10954,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-07T09:50:56.612Z",
+    "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-07-16T17:07:06.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -11219,36 +11292,5 @@
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-13T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "41430c97-d7c5-4670-9791-fe77c68932e0",
-    "slug": "how-to-test-vertical-slice-architecture",
-    "title": "How to Test Vertical Slice Architecture",
-    "tldr": "Testing Vertical Slice Architecture effectively requires treating an entire feature slice as a single unit using real infrastructure via WebApplicationFactory and Testcontainers.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Tests execute through the public entry point via real HTTP requests and assert database side effects.</li><li>WebApplicationFactory hosts the app in memory while Testcontainers provisions a live database instance.</li><li>Running integration tests over real backing services catches SQL, routing, and mapping errors that mocked units miss.</li><li>Test isolation is preserved by resetting table states between runs.</li></ul><h3>Why it matters</h3><p>Moving away from heavy mocking toward behavior-driven slice tests prevents brittle test suites and catches realistic integration defects.</p>",
-    "tags": [
-      "testing",
-      "architecture",
-      "dotnet",
-      ".net",
-      "integration"
-    ],
-    "sources": [
-      {
-        "sourceId": "3958049ea454",
-        "siteName": "Milan Jovanović",
-        "url": "https://milanjovanovic.tech/blog/how-to-test-vertical-slice-architecture",
-        "title": "How to Test Vertical Slice Architecture",
-        "publishedAt": "2026-07-11T00:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-11T00:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
