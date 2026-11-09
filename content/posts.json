@@ -1,5 +1,37 @@
 [
   {
+    "id": "bbe8fc6a-f69f-4fe9-bfc4-20db4e2acaa2",
+    "slug": "a-queue-is-a-shock-absorber-not-a-pump",
+    "title": "A queue is a shock absorber, not a pump",
+    "tldr": "Issue #633 of C# Digest covers queue behavior under load, new collection expression arguments in C# 15, and .NET 11 runtime async benchmarks. It also reviews passive observation techniques for Cursor agent hooks and garbage collection tuning strategies.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Queues only buffer traffic spikes temporarily and cannot increase processing speed, requiring systems to scale consumers or drop work when average load exceeds capacity.</li><li>C# 15 adds the with(...) syntax to collection expressions, allowing constructor or factory arguments such as initial capacity and comparers to be specified directly.</li><li>Benchmarks comparing .NET 10 and .NET 11 show that runtime async reduces memory allocations and executes faster, especially for non-suspending async chains.</li><li>Cursor provides 21 hook points that can be monitored over named pipes to inspect agent activity, prompts, tool executions, and file contents.</li></ul><h3>Why it matters</h3><p>Recognizing queue constraints helps developers avoid runaway backlogs by scaling consumers or rejecting requests early instead of relying on buffering. Keeping up with .NET 11 runtime async and C# 15 syntax changes prepares teams for upcoming performance and language updates.</p>",
+    "tags": [
+      "architecture",
+      "queues",
+      "system-design",
+      "c#",
+      ".net",
+      "performance"
+    ],
+    "sources": [
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2403-a-queue-is-a-shock-absorber-not-a-pump",
+        "title": "A queue is a shock absorber, not a pump",
+        "publishedAt": "2026-11-08T19:15:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-09T11:13:54.516Z",
+    "updatedAt": "2026-11-09T11:13:54.516Z",
+    "publishedAt": "2026-11-08T19:15:00.000Z",
+    "runId": "d58f306e-7f3c-41cc-9a7d-8e925e92e821"
+  },
+  {
     "id": "4e2e0a19-51e7-4f97-9146-576d82b04488",
     "slug": "outbox-pattern-in-postgres-concurrent-workers-vs-reading-the-wal",
     "title": "Outbox Pattern in Postgres: Concurrent Workers vs Reading the WAL",
