@@ -1,5 +1,36 @@
 [
   {
+    "id": "d4747aa5-b736-4099-8ea6-d9ed6828e067",
+    "slug": "github-maps-ai-agents-across-the-full-software-development-cycle",
+    "title": "GitHub Maps AI Agents Across the Full Software Development Cycle",
+    "tldr": "A post-Universe guide positions GitHub Copilot across the full software development lifecycle rather than launching a new product. It outlines the tool's use across planning, coding, verification, and production investigation.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>GitHub published a post-Universe guide focusing on GitHub Copilot's coverage across the development cycle.</li><li>The guide maps Copilot usage to planning, coding, verification, and production investigation.</li><li>The document serves as a positioning guide rather than a new product announcement.</li></ul><h3>Why it matters</h3><p>The guide outlines how GitHub envisions Copilot supporting developer workflows beyond coding, extending into planning, verification, and production tasks.</p>",
+    "tags": [
+      "github",
+      "copilot",
+      "ai",
+      "github copilot",
+      "developer tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/09/github-maps-ai-agents-across-the-full-software-development-cycle.aspx",
+        "title": "GitHub Maps AI Agents Across the Full Software Development Cycle",
+        "publishedAt": "2026-11-09T17:52:00.000Z"
+      }
+    ],
+    "relevance": 3,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-10T10:56:10.129Z",
+    "updatedAt": "2026-11-10T10:56:10.129Z",
+    "publishedAt": "2026-11-09T17:52:00.000Z",
+    "runId": "3f094772-165f-44f9-af48-85d643c257f0"
+  },
+  {
     "id": "bbe8fc6a-f69f-4fe9-bfc4-20db4e2acaa2",
     "slug": "a-queue-is-a-shock-absorber-not-a-pump",
     "title": "A queue is a shock absorber, not a pump",
@@ -11285,44 +11316,5 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-13T22:21:36.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "7b9c4840-2009-4383-ae8e-b289912d5713",
-    "slug": "ng-news-26-17-primeng-s-new-licensing-and-a2ui-for-angular",
-    "title": "Ng-News 26/17: PrimeNG’s New Licensing, and A2UI for Angular",
-    "tldr": "PrimeNG is ending its open-source licensing model for upcoming releases in favor of a commercial PrimeUI Community and PRO structure. In response, the OpenNG organization created open-prime, a community-maintained fork targeting Angular 22 support.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Future major releases of PrimeNG across Angular, React, and Vue will shift away from open source to a restricted Community license and commercial PrimeUI perpetual seats starting at USD 599.</li><li>PrimeUI PRO bundles specialized components like charts, schedulers, and rich text editors that are excluded from the Community tier.</li><li>OpenNG created an initial fork of PrimeNG's archived repository to provide open-source maintenance and an Angular 22-compatible beta release.</li><li>A2UI framework demonstrations illustrate using AI models to drive dynamic interface rendering within Angular applications.</li></ul><h3>Why it matters</h3><p>Shifting licensing structures in core UI libraries can disrupt existing dependency pipelines and enterprise procurement. Community forks like open-prime offer an alternative path for teams seeking to maintain permissive open-source setups on modern Angular versions.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "primeng",
-      "open source",
-      "licensing",
-      "a2ui"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/ng-news-26-17-primengs-new-licensing-and-a2ui-for-angular/",
-        "title": "Ng-News 26/17: PrimeNG’s New Licensing, and A2UI for Angular",
-        "publishedAt": "2026-07-13T00:00:00.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/ng-news-26-17-primengs-new-licensing-and-a2ui-for-angular-78920/",
-        "title": "Ng-News 26/17: PrimeNG's New Licensing, and A2UI for Angular",
-        "publishedAt": "2026-07-13T00:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-13T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   }
 ]
