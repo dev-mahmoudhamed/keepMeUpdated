@@ -1,5 +1,700 @@
 [
   {
+    "id": "f9dbb26e-116e-42e3-9347-d892e37b0356",
+    "slug": "aspire-13-updates",
+    "title": "Aspire 13 updates",
+    "tldr": "Aspire patch releases 13.6.3 through 13.6.5 introduce dashboard security hardening, startup reliability fixes, and DCP updates. Key fixes address watch stalling, startup timeouts, and dashboard authentication.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Aspire 13.6.5 enforces authentication checks on missing and unauthorized routes, and ensures automatic container tunneling exposes only OTLP gRPC and HTTP endpoints.</li><li>Aspire 13.6.4 prevents premature FailedToStart states by checking resource status before retrying timed-out or HTTP 504 DCP requests, adding configurable operation timeouts.</li><li>Aspire 13.6.3 updates bundled DCP to 0.26.6 and closes abandoned watch connections when setup is canceled to prevent stalls.</li><li>Aspire 13.6.4 also fixes TypeScript AppHost publishing with parameterized enum properties and tightens Unix diagnostic log permissions.</li></ul><h3>Why it matters</h3><p>These patches resolve critical resource orchestration stalls and startup timeouts when orchestrating microservices in Aspire. They also close security holes by preventing dashboard exposure through tunnels and strengthening authentication checks.</p>",
+    "tags": [
+      "dotnet",
+      "aspire",
+      "release",
+      "devops",
+      ".net",
+      "releases",
+      "security"
+    ],
+    "sources": [
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.5",
+        "title": "Aspire 13.6.5",
+        "publishedAt": "2026-11-10T21:45:33.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.4",
+        "title": "Aspire 13.6.4",
+        "publishedAt": "2026-10-24T11:45:13.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.3",
+        "title": "Aspire 13.6.3",
+        "publishedAt": "2026-10-23T18:17:33.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.2",
+        "title": "Aspire 13.6.2",
+        "publishedAt": "2026-10-20T23:06:59.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.1",
+        "title": "Aspire 13.6.1",
+        "publishedAt": "2026-10-07T11:06:54.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.0",
+        "title": "Aspire 13.6.0",
+        "publishedAt": "2026-09-29T23:24:04.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.4",
+        "title": "Aspire 13.5.4",
+        "publishedAt": "2026-09-15T21:20:17.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.3",
+        "title": "Aspire 13.5.3",
+        "publishedAt": "2026-08-25T23:35:26.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.2",
+        "title": "Aspire 13.5.2",
+        "publishedAt": "2026-08-21T23:18:18.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.1",
+        "title": "Aspire 13.5.1",
+        "publishedAt": "2026-08-21T16:14:29.000Z"
+      },
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.0",
+        "title": "Aspire 13.5.0",
+        "publishedAt": "2026-08-19T04:22:06.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T21:45:33.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "c81028fa-41aa-4efa-b86c-4d0599854084",
+    "slug": "resharper-2026-updates",
+    "title": "ReSharper 2026 updates",
+    "tldr": "ReSharper 2026.3 adds support for Claude Agent and Codex alongside Junie, plus day-one compatibility with .NET 11 and C# 15. The release also improves code analysis, decompilation of runtime-async methods, and test runner support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Claude Agent and Codex join Junie in the AI Assistant window via the Agent Client Protocol (ACP), capable of executing ReSharper refactorings like Rename.</li><li>AI capabilities require a JetBrains AI subscription (or free Junie Lite); personal subscriptions and BYOK are not supported in this release.</li><li>Full C# 15 support is provided, including union types, closed hierarchies, collection expression arguments, extension indexers, and memory safety previews.</li><li>The decompiler presents preview .NET 11 runtime-async methods as regular async methods, and the test runner adds support for xUnit v3 4.0 and NUnit 5.0.</li></ul><h3>Why it matters</h3><p>Visual Studio developers can now orchestrate multiple third-party AI agents that execute native refactoring commands directly in their IDE. It also ensures immediate readiness for latest C# 15 features and the .NET 11 release.</p>",
+    "tags": [
+      "dotnet",
+      "rider",
+      "resharper",
+      "visual studio",
+      ".net 11",
+      "c# 15",
+      "ai"
+    ],
+    "sources": [
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/dotnet/2026/11/10/resharper-2026-3-release/",
+        "title": "ReSharper 2026.3: Claude Agent and Codex in Visual Studio, .NET 11 and C# 15 Support, and More",
+        "publishedAt": "2026-11-10T21:43:46.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T21:43:46.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
+    "slug": "net-11-updates",
+    "title": ".NET 11 updates",
+    "tldr": ".NET 11 introduces C# 15 unions, post-quantum cryptography, and CoreCLR support for .NET MAUI. The release also delivers broad runtime optimizations and faster developer tools.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 11 integrates support for C# 15 union types and enhanced runtime tooling.</li><li>Security enhancements include the addition of post-quantum cryptography support.</li><li>The runtime receives extensive performance optimizations alongside CoreCLR support for MAUI.</li></ul><h3>Why it matters</h3><p>The release delivers modern language features and forward-looking security capabilities to the .NET ecosystem while enhancing application performance across desktop and mobile platforms.</p>",
+    "tags": [
+      "dotnet",
+      "csharp",
+      "release",
+      ".net",
+      "c#",
+      "performance",
+      "security",
+      ".net 11",
+      "c# 15",
+      "cryptography"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/10/net-11-ships-with-csharp-15-unions-faster-tools-and-coreclr-for-maui.aspx",
+        "title": ".NET 11 Ships with C# 15 Unions, Faster Tools and CoreCLR for MAUI",
+        "publishedAt": "2026-11-10T19:01:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0",
+        "title": ".NET 11.0 GA",
+        "publishedAt": "2026-11-10T17:30:20.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc3",
+        "title": ".NET 11.0 RC 3",
+        "publishedAt": "2026-11-10T17:25:10.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11/",
+        "title": "Announcing .NET 11",
+        "publishedAt": "2026-11-10T16:11:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-issues-out-of-band--net-security-fixes-including-new-net-11-rc.aspx",
+        "title": "Microsoft Issues Out-of-Band .NET Security Fixes, Including New .NET 11 RC",
+        "publishedAt": "2026-10-26T16:19:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/14/net-11-rc2-adds-post-quantum-crypto-maui-csharp-ui-and-nuget-controls.aspx",
+        "title": ".NET 11 RC2 Adds Post-Quantum Crypto, .NET MAUI C# UI and NuGet Controls",
+        "publishedAt": "2026-10-14T18:01:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc2",
+        "title": ".NET 11.0 RC 2",
+        "publishedAt": "2026-10-13T22:34:41.000Z"
+      },
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2368-performance-improvements-in-net-11",
+        "title": "Performance improvements in .NET 11",
+        "publishedAt": "2026-09-20T18:15:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/",
+        "title": "Performance Improvements in .NET 11",
+        "publishedAt": "2026-09-15T12:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/09/14/net-11-rc1-gets-go-live-support-ahead-of-november-launch.aspx",
+        "title": ".NET 11 RC1 Gets Go-Live Support Ahead of November Launch",
+        "publishedAt": "2026-09-14T17:13:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-preview.7",
+        "title": ".NET 11 Preview 7",
+        "publishedAt": "2026-09-08T22:27:27.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc.1",
+        "title": ".NET 11.0 RC 1",
+        "publishedAt": "2026-09-08T22:23:12.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/",
+        "title": "Announcing .NET 11 Release Candidate 1",
+        "publishedAt": "2026-09-08T21:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/explore-csharp-15/",
+        "title": "Explore new features available in C# 15 preview",
+        "publishedAt": "2026-08-24T17:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/08/19/net-11-preview-7-turns-on-nativeaot-cli-and-msbuild-server-by-default.aspx",
+        "title": ".NET 11 Preview 7 Turns On NativeAOT CLI and MSBuild Server by Default",
+        "publishedAt": "2026-08-19T19:39:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/",
+        "title": ".NET 11 Preview 7 is now available!",
+        "publishedAt": "2026-08-11T18:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/",
+        "title": "CoreCLR Progress and the Mono Timeline for .NET MAUI",
+        "publishedAt": "2026-07-14T18:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/",
+        "title": ".NET 11 Preview 6 is now available!",
+        "publishedAt": "2026-07-14T17:45:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T19:01:00.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "0aa4c82c-f290-4094-b7cf-bad4aca3dabc",
+    "slug": "announcing-visual-studio-2026-ltsc-18-11",
+    "title": "Announcing Visual Studio 2026 LTSC 18.11",
+    "tldr": "Microsoft announced Visual Studio 2026 LTSC 18.11, extending its support lifecycle to two years through November 14, 2028. It ships alongside Visual Studio 2026 18.12 on the Stable channel.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>LTSC 18.11 extends the previously planned one-year support window to two years, ending November 14, 2028.</li><li>The LTSC channel includes LTS toolsets for .NET 10 as well as MSVC 14.50 and 14.52.</li><li>LTSC receives servicing and security fixes only, while the Stable channel (recommended default) continues receiving monthly feature updates.</li><li>Existing Visual Studio 2026 product keys are valid across both Stable and LTSC 18.11 channels.</li></ul><h3>Why it matters</h3><p>Enterprise teams migrating from Visual Studio 2022 gain a stable, fixed-feature baseline with long-term support for critical compiler toolsets and extra time to test and deploy updates.</p>",
+    "tags": [
+      "visual-studio",
+      "ide",
+      "ltsc",
+      "visual studio 2026",
+      "dev tools",
+      "enterprise"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/announcing-visual-studio-2026-ltsc-1811/",
+        "title": "Announcing Visual Studio 2026 LTSC 18.11",
+        "publishedAt": "2026-11-10T18:06:36.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T18:06:36.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "f018e524-b4e2-4921-8d83-eda97eebe8d9",
+    "slug": "net-10-updates",
+    "title": ".NET 10 updates",
+    "tldr": "Upgrades to .NET 10 present multiple runtime behavior changes across EF Core, SQLite, and ASP.NET Core that bypass compile-time detection. Meanwhile, early .NET 11 previews reveal styling limitations and new NuGet supply chain safeguards.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 8 and .NET 9 reach end of support on November 10, 2026, prompting migrations to .NET 10.</li><li>.NET 10 introduces silent breaking changes: altered EF Core collection translations, shifted SQLite timezone offset handling, and ASP.NET Core returning 401 instead of redirecting unauthenticated requests.</li><li>In .NET 11 previews, complex controls like DataGridView were pulled from Fluent styling due to broken pixel layouts.</li><li>Upcoming tooling allows NuGet to block packages younger than a designated age, and Roslyn adds analyzers to detect invalid AI-generated designer code.</li></ul><h3>Why it matters</h3><p>Developers migrating to .NET 10 cannot rely on compiler errors to detect regressions and must implement explicit behavioral testing before .NET 8 and 9 reach end of support.</p>",
+    "tags": [
+      "dotnet",
+      "release",
+      ".net",
+      ".net 10",
+      ".net 11",
+      "security",
+      "ef core",
+      "migration"
+    ],
+    "sources": [
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v10.0.15",
+        "title": ".NET 10.0.15",
+        "publishedAt": "2026-11-10T17:14:16.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v10.0.14",
+        "title": ".NET 10.0.14",
+        "publishedAt": "2026-11-10T16:49:22.000Z"
+      },
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2389-upgrading-to-net-10",
+        "title": "Upgrading to .NET 10",
+        "publishedAt": "2026-10-18T18:15:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v10.0.13",
+        "title": ".NET 10.0.13",
+        "publishedAt": "2026-10-13T22:24:29.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v10.0.12",
+        "title": ".NET 10.0.12",
+        "publishedAt": "2026-09-08T22:13:26.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v10.0.11",
+        "title": ".NET 10.0.11",
+        "publishedAt": "2026-08-11T21:37:34.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T17:14:16.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "f0cc618d-d85d-428c-980b-e9a0cf5e8cc8",
+    "slug": "net-9-updates",
+    "title": ".NET 9 updates",
+    "tldr": "Microsoft has released .NET 9 servicing updates through version 9.0.23. The patch updates core framework packages including ASP.NET Core, EF Core, and the .NET Runtime.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 9.0.23 servicing update follows releases 9.0.20 through 9.0.22.</li><li>Changelogs detail updates across ASP.NET Core, EF Core, Runtime, SDK, Templating, WinForms, WindowsDesktop, and WPF.</li><li>The updates deliver monthly servicing fixes for stability and security.</li></ul><h3>Why it matters</h3><p>Maintaining current servicing releases ensures .NET 9 applications receive cumulative stability patches and critical fixes ahead of the framework's retirement.</p>",
+    "tags": [
+      "dotnet",
+      "release",
+      ".net",
+      "servicing",
+      "releases",
+      ".net 9",
+      "patch",
+      "maintenance"
+    ],
+    "sources": [
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v9.0.23",
+        "title": ".NET 9.0.23",
+        "publishedAt": "2026-11-10T17:04:59.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v9.0.22",
+        "title": ".NET 9.0.22",
+        "publishedAt": "2026-11-10T16:42:19.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v9.0.21",
+        "title": ".NET 9.0.21",
+        "publishedAt": "2026-10-13T21:53:37.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v9.0.20",
+        "title": ".NET 9.0.20",
+        "publishedAt": "2026-09-08T22:13:56.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T17:04:59.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "cc14b0fb-3901-45b9-994b-c970fcbeaab4",
+    "slug": "net-8-updates",
+    "title": ".NET 8 updates",
+    "tldr": "Microsoft published monthly servicing updates for .NET 8, advancing the framework up to version 8.0.34. The releases include cumulative bug fixes and security improvements across all major components.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 8 servicing releases span versions 8.0.31 through 8.0.34.</li><li>Components updated include the Runtime, ASP.NET Core, EF Core, SDK, Installer, WindowsDesktop, WinForms, and WPF.</li><li>The releases deliver November and October 2026 cumulative security and reliability fixes.</li></ul><h3>Why it matters</h3><p>Users running .NET 8 LTS workloads must apply servicing patches to keep environments protected from vulnerabilities and ensure runtime reliability.</p>",
+    "tags": [
+      "dotnet",
+      "release",
+      ".net",
+      "lts",
+      "releases",
+      ".net 8",
+      "patch",
+      "security"
+    ],
+    "sources": [
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v8.0.34",
+        "title": ".NET 8.0.34",
+        "publishedAt": "2026-11-10T17:00:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v8.0.33",
+        "title": ".NET 8.0.33",
+        "publishedAt": "2026-11-10T16:27:59.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v8.0.32",
+        "title": ".NET 8.0.32",
+        "publishedAt": "2026-10-13T21:38:46.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v8.0.31",
+        "title": ".NET 8.0.31",
+        "publishedAt": "2026-09-08T21:41:44.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T17:00:00.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "7e75b357-7476-47f5-a9ae-8a7d48411c5c",
+    "slug": "rider-2026-updates",
+    "title": "Rider 2026 updates",
+    "tldr": "JetBrains has released Rider 2026.3 with day-one support for .NET 11 and C# 15, alongside the JetBrains Air agentic development environment. The update also adds new agent skills and game development tooling.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Day-one support is introduced for .NET 11, C# 15 language features (unions, closed hierarchies), and debugging for .NET Runtime Async.</li><li>JetBrains Air provides an agentic environment for directing and verifying agents, accessible directly from the new Welcome screen.</li><li>Rider AI skills now allow agents to run tests via Rider MCP and copy local configurations into new Git worktrees for parallel workflows.</li><li>Game engine enhancements include new plugins for Lua and Verse, Godot debugging improvements, and C++ debugger updates including natvis.</li></ul><h3>Why it matters</h3><p>Rider 2026.3 expands AI assistance into autonomous agent orchestration while giving developers immediate tooling for .NET 11 syntax and modern game engines.</p>",
+    "tags": [
+      "dotnet",
+      "rider",
+      "jetbrains",
+      ".net 11",
+      "c# 15",
+      "game dev"
+    ],
+    "sources": [
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/dotnet/2026/11/10/rider-2026-3-release/",
+        "title": "Rider 2026.3: .NET 11 Support and JetBrains Air",
+        "publishedAt": "2026-11-10T16:59:02.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T16:59:02.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "351abd26-6cb8-47e0-b3cf-0bbff4212ed4",
+    "slug": "resharper-c-2026-updates",
+    "title": "ReSharper C++ 2026 updates",
+    "tldr": "ReSharper C++ 2026.3 introduces a Class Layout tool window for memory visualization, improves format string analysis for C++20/C++23 and Unreal Engine, and updates refactorings.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The Class Layout tool window displays member offsets, sizes, base class subobjects, vtable pointers, and padding to identify wasted memory.</li><li>Format string analysis now supports std::format, std::print, {fmt}, C23 printf specifiers, and Unreal Engine's UE_LOGFMT macros.</li><li>Change Signature refactoring now supports constructors, including updating call sites across direct, braced, and factory initializations.</li><li>Extract Method adds options to specify function placement and add constexpr, while Introduce Using Directive replaces explicit namespace qualifiers.</li></ul><h3>Why it matters</h3><p>Developers can optimize memory cache efficiency and data structures directly in the IDE while avoiding formatting bugs across modern standard library and game engine logging APIs.</p>",
+    "tags": [
+      "dotnet",
+      "rider",
+      "resharper c++",
+      "c++",
+      "memory optimization",
+      "refactoring"
+    ],
+    "sources": [
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/rscpp/2026/11/10/resharper-cpp-2026-3-class-layout-format-string-analysis-and-more/",
+        "title": "ReSharper C++ 2026.3: Class Layout, Format String Analysis, And More",
+        "publishedAt": "2026-11-10T16:37:04.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T16:37:04.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "786647a3-20d5-43e4-84a5-592a082213b0",
+    "slug": "net-and-net-framework-november-2026-servicing-updates",
+    "title": ".NET and .NET Framework November 2026 servicing updates",
+    "tldr": "Microsoft's November 2026 servicing release delivers security and non-security fixes across .NET 8, 9, 10, and 11. Crucial vulnerabilities require explicit updates to NuGet packages and SDK templates beyond standard runtime updates.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>CVE-2026-118747 requires updating the System.Formats.Cbor NuGet package (version 9.0.24 for .NET 9), as updating the runtime alone does not resolve it.</li><li>CVE-2026-118741 impacts ASP.NET Core Identity scaffolding and templates, requiring template/SDK updates followed by rebuilding and redeploying generated applications.</li><li>Servicing releases include ASP.NET Core 11.0.0, EF Core 11.0.0 and 10.0.15, Runtime 11.0.0 and 10.0.15, and SDK 11.0.100.</li><li>Updates also include servicing patches for .NET Framework.</li></ul><h3>Why it matters</h3><p>Admins and developers must manually update specific NuGet packages and regenerate scaffolded application code to remediate vulnerabilities that runtime-only patching leaves unaddressed.</p>",
+    "tags": [
+      ".net",
+      "dotnet",
+      "servicing",
+      "security",
+      "vulnerability",
+      "patch tuesday"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-november-2026-servicing-updates/",
+        "title": ".NET and .NET Framework November 2026 servicing updates",
+        "publishedAt": "2026-11-10T16:10:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T16:10:00.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "8023884d-9af6-4877-bf8e-6ede9c489603",
+    "slug": "a2ui-express-token-optimized-generative-uis-for-local-and-cloud-models",
+    "title": "A2UI Express: Token-Optimized Generative UIs for Local and Cloud Models",
+    "tldr": "The A2UI project has introduced A2UI Express, a compact Domain Specific Language designed to lower LLM token consumption when generating dynamic user interfaces. Server-side Agent SDKs automatically translate this syntax into standard A2UI 1.0 or 0.9 messages.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A2UI Express replaces verbose JSON structures with positional constructor calls (such as Text(\"Flight\", \"caption\", 1)) and variable assignments.</li><li>The DSL reduces characters by over 50% and uses roughly one-third fewer tokens compared to standard JSON representations.</li><li>Server-side translation handles converting A2UI Express into client-ready A2UI formats, with support for data binding expressions using the $ prefix.</li><li>Current Agent SDKs prioritize A2UI Express by default to optimize costs and latency, particularly for compact and local models.</li></ul><h3>Why it matters</h3><p>Generative UIs generated by LLMs often suffer from output token limits and latency; A2UI Express drastically cuts generation overhead, making complex agent-driven UIs faster and cheaper to run.</p>",
+    "tags": [
+      "angular",
+      "ai",
+      "ui",
+      "a2ui",
+      "generative ui",
+      "ai agents",
+      "dsl"
+    ],
+    "sources": [
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/a2ui-express-token-optimized-generative-uis/",
+        "title": "A2UI Express: Token-Optimized Generative UIs for Local and Cloud Models",
+        "publishedAt": "2026-11-10T15:59:47.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T15:59:47.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "e21eafb3-1d2b-43dc-b443-333dee75fe3f",
+    "slug": "mcp-server-vs-rest-api-when-should-you-use-each",
+    "title": "MCP server vs REST API: When should you use each?",
+    "tldr": "While REST APIs remain the standard for client-server architectures with predefined endpoints, the Model Context Protocol (MCP) addresses their lack of runtime discoverability for AI agents. Architectures increasingly combine both protocols.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>REST APIs rely on stateless, predictable endpoints, uniform interfaces, and established caching layers designed for known client integrations.</li><li>Traditional REST endpoints lack dynamic runtime discoverability needed by autonomous LLMs, as static OpenAPI specifications are meant for human implementation.</li><li>MCP provides standardized, dynamic tool and service discovery for agents during execution, including support for mid-task approvals.</li><li>Modern application architectures commonly layer MCP servers on top of existing REST APIs to bridge the gap between AI workflows and existing services.</li></ul><h3>Why it matters</h3><p>Developers building agent-ready platforms need to understand where REST APIs fall short for AI interaction, allowing them to pair MCP layers with existing web APIs without rebuilding core backend infrastructure.</p>",
+    "tags": [
+      "ai",
+      "mcp",
+      "api",
+      "architecture",
+      "rest api",
+      "ai agents"
+    ],
+    "sources": [
+      {
+        "sourceId": "4ed3c18fe2b2",
+        "siteName": "elmah.io blog",
+        "url": "https://blog.elmah.io/mcp-server-vs-rest-api-when-should-you-use-each/",
+        "title": "MCP server vs REST API: When should you use each?",
+        "publishedAt": "2026-11-10T11:41:53.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T11:41:53.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "ce38f9ca-6d37-4e7d-b53f-5df933f71434",
+    "slug": "copilot-in-visual-studio-just-got-a-major-upgrade",
+    "title": "Copilot in Visual Studio Just Got a Major Upgrade",
+    "tldr": "Starting in Visual Studio 2026 version 18.12, Copilot Chat runs on the Microsoft Copilot SDK developed by GitHub. The updated harness improves task resolution rates and adds mid-task steering and subagent visibility.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The new engine is enabled by default and resolved up to 21 more tasks in benchmark tests compared to the previous harness.</li><li>Developers can now steer Copilot mid-task with new instructions without waiting for current tasks to complete.</li><li>Detailed step tracking displays exact executed commands and introduces dedicated cards to inspect subagents live.</li><li>Context capabilities are extended to allow selecting local folders outside the active solution.</li><li>Agent commands such as /security-review and /rubber-duck provide built-in vulnerability auditing and plan critiques.</li></ul><h3>Why it matters</h3><p>By adopting GitHub's Copilot SDK harness, Visual Studio provides developers with higher task completion rates, lower chat verbosity, and cross-platform skill parity with VS Code and GitHub Copilot CLI.</p>",
+    "tags": [
+      "visual-studio",
+      "copilot",
+      "ai",
+      "visual studio 2026",
+      "github copilot",
+      "dev tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/copilot-in-visual-studio-just-got-a-major-upgrade/",
+        "title": "Copilot in Visual Studio Just Got a Major Upgrade",
+        "publishedAt": "2026-11-10T08:00:35.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-11-10T08:00:35.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
     "id": "d4747aa5-b736-4099-8ea6-d9ed6828e067",
     "slug": "github-maps-ai-agents-across-the-full-software-development-cycle",
     "title": "GitHub Maps AI Agents Across the Full Software Development Cycle",
@@ -3824,130 +4519,6 @@
     "runId": "96a30309-0ccb-40fb-a1ea-c0bb21a0d4ce"
   },
   {
-    "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
-    "slug": "net-11-updates",
-    "title": ".NET 11 updates",
-    "tldr": ".NET 11 has advanced across multiple preview versions and release candidates, introducing performance enhancements and new capabilities. Additions include post-quantum cryptography support and extensive runtime optimizations.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 11 introduced hundreds of runtime and standard library performance improvements.</li><li>Release candidates and previews added support for post-quantum cryptography.</li><li>Milestones introduced native tooling and runtime performance updates across the framework.</li></ul><h3>Why it matters</h3><p>Signals the architectural direction and modern cryptographic standards coming to the broader .NET runtime ecosystem.</p>",
-    "tags": [
-      "dotnet",
-      "csharp",
-      "release",
-      ".net",
-      "c#",
-      "performance",
-      "security"
-    ],
-    "sources": [
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-issues-out-of-band--net-security-fixes-including-new-net-11-rc.aspx",
-        "title": "Microsoft Issues Out-of-Band .NET Security Fixes, Including New .NET 11 RC",
-        "publishedAt": "2026-10-26T16:19:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/10/14/net-11-rc2-adds-post-quantum-crypto-maui-csharp-ui-and-nuget-controls.aspx",
-        "title": ".NET 11 RC2 Adds Post-Quantum Crypto, .NET MAUI C# UI and NuGet Controls",
-        "publishedAt": "2026-10-14T18:01:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc2",
-        "title": ".NET 11.0 RC 2",
-        "publishedAt": "2026-10-13T22:34:41.000Z"
-      },
-      {
-        "sourceId": "612edc942ee0",
-        "siteName": "C# Digest",
-        "url": "https://csharpdigest.net/newsletters/2368-performance-improvements-in-net-11",
-        "title": "Performance improvements in .NET 11",
-        "publishedAt": "2026-09-20T18:15:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/",
-        "title": "Performance Improvements in .NET 11",
-        "publishedAt": "2026-09-15T12:00:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/09/14/net-11-rc1-gets-go-live-support-ahead-of-november-launch.aspx",
-        "title": ".NET 11 RC1 Gets Go-Live Support Ahead of November Launch",
-        "publishedAt": "2026-09-14T17:13:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-preview.7",
-        "title": ".NET 11 Preview 7",
-        "publishedAt": "2026-09-08T22:27:27.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc.1",
-        "title": ".NET 11.0 RC 1",
-        "publishedAt": "2026-09-08T22:23:12.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/",
-        "title": "Announcing .NET 11 Release Candidate 1",
-        "publishedAt": "2026-09-08T21:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/explore-csharp-15/",
-        "title": "Explore new features available in C# 15 preview",
-        "publishedAt": "2026-08-24T17:00:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/08/19/net-11-preview-7-turns-on-nativeaot-cli-and-msbuild-server-by-default.aspx",
-        "title": ".NET 11 Preview 7 Turns On NativeAOT CLI and MSBuild Server by Default",
-        "publishedAt": "2026-08-19T19:39:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/",
-        "title": ".NET 11 Preview 7 is now available!",
-        "publishedAt": "2026-08-11T18:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/",
-        "title": "CoreCLR Progress and the Mono Timeline for .NET MAUI",
-        "publishedAt": "2026-07-14T18:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/",
-        "title": ".NET 11 Preview 6 is now available!",
-        "publishedAt": "2026-07-14T17:45:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-27T08:50:24.755Z",
-    "publishedAt": "2026-10-26T16:19:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
     "id": "69aedb5b-2569-46e2-aa28-6298c61ec141",
     "slug": "azure-devops-users-advised-to-check-php-dependencies-after-critical-flaws",
     "title": "Azure DevOps Users Advised to Check PHP Dependencies After Critical Flaws",
@@ -4275,101 +4846,6 @@
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-10-25T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "f9dbb26e-116e-42e3-9347-d892e37b0356",
-    "slug": "aspire-13-updates",
-    "title": "Aspire 13 updates",
-    "tldr": "Aspire 13.6 releases focus on resource startup reliability, updating the Developer Control Plane (DCP), and fixing TypeScript AppHost publishing bugs. Key updates improve watch connection management and introduce configurable timeouts to prevent premature failure states during resource creation.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Resource creation checks if resources exist before retrying timed-out requests to prevent false FailedToStart errors.</li><li>Configurable timeouts added for Kubernetes API operations, initialization, and recovery budgets.</li><li>DCP updated to 0.26.6 to use asynchronous, bounded watch delivery and prevent slow watchers from stalling operations.</li><li>Fixed Azure publishing bugs involving parameterized enum properties in TypeScript AppHosts and tightened Unix CLI log permissions.</li></ul><h3>Why it matters</h3><p>These patches address resource orchestration stalls and startup timeouts, improving stability for complex local environments and cloud deployments.</p>",
-    "tags": [
-      "dotnet",
-      "aspire",
-      "release",
-      "devops",
-      ".net",
-      "releases"
-    ],
-    "sources": [
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.4",
-        "title": "Aspire 13.6.4",
-        "publishedAt": "2026-10-24T11:45:13.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.3",
-        "title": "Aspire 13.6.3",
-        "publishedAt": "2026-10-23T18:17:33.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.2",
-        "title": "Aspire 13.6.2",
-        "publishedAt": "2026-10-20T23:06:59.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.1",
-        "title": "Aspire 13.6.1",
-        "publishedAt": "2026-10-07T11:06:54.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.6.0",
-        "title": "Aspire 13.6.0",
-        "publishedAt": "2026-09-29T23:24:04.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.4",
-        "title": "Aspire 13.5.4",
-        "publishedAt": "2026-09-15T21:20:17.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.3",
-        "title": "Aspire 13.5.3",
-        "publishedAt": "2026-08-25T23:35:26.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.2",
-        "title": "Aspire 13.5.2",
-        "publishedAt": "2026-08-21T23:18:18.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.1",
-        "title": "Aspire 13.5.1",
-        "publishedAt": "2026-08-21T16:14:29.000Z"
-      },
-      {
-        "sourceId": "87b273ebaa32",
-        "siteName": "Aspire releases",
-        "url": "https://github.com/microsoft/aspire/releases/tag/v13.5.0",
-        "title": "Aspire 13.5.0",
-        "publishedAt": "2026-08-19T04:22:06.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-10-24T11:45:13.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "682ffe76-19a8-436a-8ab2-117debf3c612",
@@ -5371,60 +5847,6 @@
     "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
   },
   {
-    "id": "f018e524-b4e2-4921-8d83-eda97eebe8d9",
-    "slug": "net-10-updates",
-    "title": ".NET 10 updates",
-    "tldr": "Upgrading to .NET 10 involves addressing runtime-only breaking changes, while early .NET 11 previews reveal styling, tooling, and analyzer updates.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 8 and .NET 9 reach end of support on November 10, 2026.</li><li>.NET 10 introduces runtime changes such as altered EF Core collection query translations, new SQLite timezone offset handling, and ASP.NET Core returning 401 instead of redirecting unauthenticated API requests.</li><li>In .NET 11 previews, complex controls like DataGridView were removed from Fluent styling due to pixel layout breakages.</li><li>NuGet adds functionality allowing teams to block packages younger than a designated age in hours to mitigate supply chain attacks.</li><li>New Roslyn analyzers identify AI-generated code that damages the visual designer.</li></ul><h3>Why it matters</h3><p>Because .NET 10 breaking changes occur at runtime rather than compile time, teams must perform functional testing before .NET 8 and .NET 9 reach end-of-support deadlines.</p>",
-    "tags": [
-      "dotnet",
-      "release",
-      ".net",
-      ".net 10",
-      ".net 11",
-      "security",
-      "ef core"
-    ],
-    "sources": [
-      {
-        "sourceId": "612edc942ee0",
-        "siteName": "C# Digest",
-        "url": "https://csharpdigest.net/newsletters/2389-upgrading-to-net-10",
-        "title": "Upgrading to .NET 10",
-        "publishedAt": "2026-10-18T18:15:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v10.0.13",
-        "title": ".NET 10.0.13",
-        "publishedAt": "2026-10-13T22:24:29.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v10.0.12",
-        "title": ".NET 10.0.12",
-        "publishedAt": "2026-09-08T22:13:26.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v10.0.11",
-        "title": ".NET 10.0.11",
-        "publishedAt": "2026-08-11T21:37:34.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-25T08:17:19.192Z",
-    "publishedAt": "2026-10-18T18:15:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
     "id": "d3b09e97-aba0-4457-af60-f28ef7f7ed9f",
     "slug": "22-3-0-next-2",
     "title": "Angular CLI 22.3.0-next.2",
@@ -5855,44 +6277,6 @@
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
   },
   {
-    "id": "f0cc618d-d85d-428c-980b-e9a0cf5e8cc8",
-    "slug": "net-9-updates",
-    "title": ".NET 9 updates",
-    "tldr": ".NET 9.0.21 has been released as a servicing update following version 9.0.20, containing changes detailed in the official Microsoft servicing logs.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Servicing update continuing the .NET 9 release train.</li><li>Addresses bug fixes and changes across components like ASP.NET Core, EF Core, Runtime, and SDK.</li></ul><h3>Why it matters</h3><p>Regular servicing updates provide critical bug fixes and stability improvements for production applications running on .NET 9.</p>",
-    "tags": [
-      "dotnet",
-      "release",
-      ".net",
-      "servicing",
-      "releases"
-    ],
-    "sources": [
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v9.0.21",
-        "title": ".NET 9.0.21",
-        "publishedAt": "2026-10-13T21:53:37.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v9.0.20",
-        "title": ".NET 9.0.20",
-        "publishedAt": "2026-09-08T22:13:56.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-10-13T21:53:37.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
     "id": "7abd2086-b1c1-4e2f-80a2-9fe25ee495f3",
     "slug": "microsoft-ships-net-8-0-32-servicing-updates-for-asp-net-core-and-ef-core",
     "title": "Microsoft Ships .NET 8.0.32 Servicing Updates for ASP.NET Core and EF Core",
@@ -5930,44 +6314,6 @@
     "updatedAt": "2026-10-19T08:42:08.996Z",
     "publishedAt": "2026-10-13T21:43:01.000Z",
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
-  },
-  {
-    "id": "cc14b0fb-3901-45b9-994b-c970fcbeaab4",
-    "slug": "net-8-updates",
-    "title": ".NET 8 updates",
-    "tldr": ".NET 8.0.32 has been released as a servicing update following version 8.0.31, incorporating cumulative bug fixes and security updates.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Servicing release for the .NET 8 framework.</li><li>Includes updates across ASP.NET Core, EF Core, runtime, and installer components.</li></ul><h3>Why it matters</h3><p>Applying servicing updates ensures long-term support (LTS) applications remain secure and stable.</p>",
-    "tags": [
-      "dotnet",
-      "release",
-      ".net",
-      "lts",
-      "releases"
-    ],
-    "sources": [
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v8.0.32",
-        "title": ".NET 8.0.32",
-        "publishedAt": "2026-10-13T21:38:46.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v8.0.31",
-        "title": ".NET 8.0.31",
-        "publishedAt": "2026-09-08T21:41:44.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-10-13T21:38:46.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "76a28fba-536b-408e-9f19-74d0a59f3f86",
@@ -10186,6 +10532,52 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "4cfe46aa-22d8-4d6c-b65a-8b82bed1edf9",
+    "slug": "are-you-getting-everything-you-can-from-your-visual-studio-subscription",
+    "title": "Are you getting everything you can from Your Visual Studio Subscription?",
+    "tldr": "Visual Studio Subscriptions provide monthly Azure credits ranging from $50 to $150 and integrated training through Cloud Academy. These resources allow developers to experiment with cloud workloads and prepare for technical certifications without added budget.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Eligible Visual Studio subscribers receive between $50 and $150 in monthly Azure credits for testing services, AI models, and proof-of-concept deployments.</li><li>Cloud Academy benefits include hands-on Azure labs, interactive assessments, open sandboxes, and AI-guided learning.</li><li>Certification paths such as the AZ-104 Microsoft Azure Administrator exam preparation are directly accessible through subscriber benefits.</li></ul><h3>Why it matters</h3><p>Developers can build practical cloud infrastructure skills and prepare for Azure certifications using pre-allocated subscription benefits without needing separate organizational budget approvals.</p>",
+    "tags": [
+      "visual-studio",
+      "azure",
+      "licensing",
+      "visual studio",
+      "cloud",
+      "certification"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/what-should-we-blog-about-next/",
+        "title": "Are you getting everything you can from Your Visual Studio Subscription?",
+        "publishedAt": "2026-10-22T14:00:56.000Z"
+      },
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/what-would-you-build-in-azure-if-you-didnt-have-to-ask-for-a-budget-first/",
+        "title": "What would you build in Azure if you didn’t have to ask for a budget first?",
+        "publishedAt": "2026-10-06T14:00:03.000Z"
+      },
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/build-azure-skills-faster-with-cloud-academy-a-visual-studio-subscriber-benefit/",
+        "title": "Build Azure Skills Faster with Cloud Academy, a Visual Studio Subscriber Benefit",
+        "publishedAt": "2026-08-04T14:00:38.000Z"
+      }
+    ],
+    "relevance": 2,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "publishedAt": "2026-08-04T14:00:38.000Z",
+    "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
     "id": "b6eb66c0-80e3-47fe-9699-962dea90a9aa",
     "slug": "how-to-handle-global-errors-in-modern-zoneless-angular",
     "title": "How to Handle Global Errors in Modern Zoneless Angular",
@@ -11262,59 +11654,6 @@
     "createdAt": "2026-10-24T17:34:52.694Z",
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-14T17:30:57.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "d3ad7c0d-400e-4c08-bad9-e47780324647",
-    "slug": "are-you-getting-everything-you-can-from-your-visual-studio-subscription",
-    "title": "Are You Getting Everything You Can from Your Visual Studio Subscription?",
-    "tldr": "Visual Studio subscribers have access to monthly Azure credits, developer sandboxes, and learning benefits like Cloud Academy to build cloud skills.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Eligible subscribers receive monthly Azure credits for prototyping and experimentation without extra budget approvals.</li><li>Cloud Academy provides hands-on Azure labs, role-based learning paths, and certification prep.</li><li>Subscribers can practice real-world cloud administration tasks in live sandbox environments.</li></ul><h3>Why it matters</h3><p> Leveraging existing subscription perks allows developers to experiment with cloud infrastructure and study for certifications without separate departmental funding.</p>",
-    "tags": [
-      "visual-studio",
-      "azure",
-      "licensing",
-      "cloud",
-      "visual studio",
-      "learning"
-    ],
-    "sources": [
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/what-should-we-blog-about-next/",
-        "title": "Are You Getting Everything You Can from Your Visual Studio Subscription?",
-        "publishedAt": "2026-10-22T14:00:56.000Z"
-      },
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/what-would-you-build-in-azure-if-you-didnt-have-to-ask-for-a-budget-first/",
-        "title": "What Would You Build in Azure If You Didn’t Have to Ask for a Budget First?",
-        "publishedAt": "2026-10-06T14:00:03.000Z"
-      },
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/build-azure-skills-faster-with-cloud-academy-a-visual-studio-subscriber-benefit/",
-        "title": "Build Azure Skills Faster with Cloud Academy, a Visual Studio Subscriber Benefit",
-        "publishedAt": "2026-08-04T14:00:38.000Z"
-      },
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/the-visual-studio-dev-test-benefit-freedom-to-build-test-and-experiment-in-azure/",
-        "title": "The Visual Studio Dev/Test Benefit: Freedom to Build, Test, and Experiment in Azure",
-        "publishedAt": "2026-07-13T22:21:36.000Z"
-      }
-    ],
-    "relevance": 3,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-13T22:21:36.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
