@@ -1,5 +1,363 @@
 [
   {
+    "id": "388d151e-9574-4ece-80e8-522f5cb5f36a",
+    "slug": "fewer-tokens-faster-uis-a2ui-macros-for-local-and-cloud-models",
+    "title": "Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models",
+    "tldr": "This is post 12 of 12 in the series “Agentic UI with Angular” Understanding AG-UI: The Standard for Agentic User Interfaces AG-UI in Practice: The SDK for TypeScript AG-UI End to End: Connecting Server and Client Agentic UI with Angular, CopilotKit, and AG-UI A2UI in Angular: How AI Generates Dynam…",
+    "bodyHtml": "<p><strong>Angular Architects:</strong> This is post 12 of 12 in the series “Agentic UI with Angular” Understanding AG-UI: The Standard for Agentic User Interfaces AG-UI in Practice: The SDK for TypeScript AG-UI End to End: Connecting Server and Client Agentic UI with Angular, CopilotKit, and AG-UI A2UI in Angular: How AI Generates Dynamic UIs at Runtime Integrating A2UI […] The post Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models appeared first on ANGULARarchitects.</p>",
+    "tags": [
+      "angular",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/fewer-tokens-faster-uis-a2ui-macros-for-local-and-cloud-models/",
+        "title": "Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models",
+        "publishedAt": "2026-11-12T00:22:27.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-12T10:50:26.406Z",
+    "updatedAt": "2026-11-12T10:50:26.406Z",
+    "publishedAt": "2026-11-12T00:22:27.000Z",
+    "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
+  },
+  {
+    "id": "21636411-4af1-4385-804b-f77387875b7c",
+    "slug": "angular-22-updates",
+    "title": "Angular 22 updates",
+    "tldr": "Angular 22.2 introduces developer previews for template error boundaries and Router Resources, along with template access for private members.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Template error boundaries use @boundary blocks to catch render exceptions.</li><li>Router Resources provide handling for parallel data loading.</li><li>Private members can now be accessed within templates in version 22.2.</li></ul><h3>Why it matters</h3><p>The new developer previews enhance error handling in view rendering and improve asynchronous data loading patterns during routing.</p>",
+    "tags": [
+      "angular",
+      "architecture",
+      "web development",
+      "frontend",
+      "angular 22",
+      "error boundaries",
+      "router resources",
+      "javascript",
+      "typescript"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-rc.0",
+        "title": "Angular 22.3.0-rc.0",
+        "publishedAt": "2026-11-12T00:07:41.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.6",
+        "title": "Angular 22.2.6",
+        "publishedAt": "2026-11-12T00:01:30.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.5",
+        "title": "Angular 22.2.5",
+        "publishedAt": "2026-11-06T19:37:09.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.4",
+        "title": "Angular 22.3.0-next.4",
+        "publishedAt": "2026-11-05T23:00:46.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.3",
+        "title": "Angular 22.3.0-next.3",
+        "publishedAt": "2026-10-29T17:51:29.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.4",
+        "title": "Angular 22.2.4",
+        "publishedAt": "2026-10-29T17:41:23.000Z"
+      },
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T15:45:57.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T00:00:00.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
+        "title": "What's new in Angular 22.2?",
+        "publishedAt": "2026-09-23T00:00:00.000Z"
+      },
+      {
+        "sourceId": "56e621a08449",
+        "siteName": "Angular Training Blog",
+        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
+        "title": "What’s new in Angular 22.1?",
+        "publishedAt": "2026-08-21T13:16:57.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
+        "title": "What's new in Angular 22.1?",
+        "publishedAt": "2026-07-29T00:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-12T10:50:26.406Z",
+    "publishedAt": "2026-11-12T00:07:41.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "0d9406d1-e9f5-4c37-831e-1b9a0f3fef71",
+    "slug": "bring-your-own-model-is-now-generally-available-in-visual-studio",
+    "title": "Bring Your Own Model is now generally available in Visual Studio",
+    "tldr": "Whether your team hosts its own AI models, you have an API key from a model provider, or you want to experiment with a model running on your machine, Bring Your Own Model (BYOM) lets you use those models without leaving Visual Studio. BYOM is now generally available in Visual Studio 18.12. Since th…",
+    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> Whether your team hosts its own AI models, you have an API key from a model provider, or you want to experiment with a model running on your machine, Bring Your Own Model (BYOM) lets you use those models without leaving Visual Studio. BYOM is now generally available in Visual Studio 18.12. Since the August […] The post Bring Your Own Model is now generally available in Visual Studio appeared first on Visual Studio Blog.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/bring-your-own-model-is-now-generally-available-in-visual-studio/",
+        "title": "Bring Your Own Model is now generally available in Visual Studio",
+        "publishedAt": "2026-11-11T17:00:48.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-12T10:50:26.406Z",
+    "updatedAt": "2026-11-12T10:50:26.406Z",
+    "publishedAt": "2026-11-11T17:00:48.000Z",
+    "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
+  },
+  {
+    "id": "b6629069-26bb-4569-81db-babf6e62657f",
+    "slug": "migrate-a-github-repository-to-github-enterprise",
+    "title": "Migrate a GitHub repository to GitHub Enterprise",
+    "tldr": "This posts shows how to migrate a repository from GitHub.com to GitHub Enterprise Cloud (GHE.com). The migration transfers the repository and its associated data to the GitHub Enterprise environment while preserving project continuity and maintaining access for authorized users. Step 1: Install req…",
+    "bodyHtml": "<p><strong>Damien Bowden:</strong> This posts shows how to migrate a repository from GitHub.com to GitHub Enterprise Cloud (GHE.com). The migration transfers the repository and its associated data to the GitHub Enterprise environment while preserving project continuity and maintaining access for authorized users. Step 1: Install required tools for the GitHub migration. Install the required tools for the GitHub […]</p>",
+    "tags": [
+      "aspnetcore",
+      "security"
+    ],
+    "sources": [
+      {
+        "sourceId": "6752279e1d66",
+        "siteName": "Damien Bowden",
+        "url": "https://damienbod.com/2026/11/11/migrate-github-repository-to-github-enterprise/",
+        "title": "Migrate a GitHub repository to GitHub Enterprise",
+        "publishedAt": "2026-11-11T12:31:24.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-12T10:50:26.406Z",
+    "updatedAt": "2026-11-12T10:50:26.406Z",
+    "publishedAt": "2026-11-11T12:31:24.000Z",
+    "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
+  },
+  {
+    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
+    "slug": "angular-components-22-updates",
+    "title": "Angular components 22 updates",
+    "tldr": "Angular components releases spanning 22.3.0-next.x and 22.2.x deliver ongoing updates for Material, CDK, and ARIA packages.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include version 22.3.0-next.3 through 22.3.0-next.5.</li><li>Recent builds span versions across the 22.3.0-next and 22.2.x release channels.</li><li>Package changes target Angular Material, CDK, and ARIA components.</li></ul><h3>Why it matters</h3><p>Developers using Angular UI libraries receive ongoing preview and stable improvements across accessibility and core component packages.</p>",
+    "tags": [
+      "angular",
+      "material",
+      "release",
+      "angular components",
+      "angular material",
+      "accessibility",
+      "material design",
+      "aria",
+      "frontend",
+      "cdk"
+    ],
+    "sources": [
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-rc.0",
+        "title": "Angular components 22.3.0-rc.0",
+        "publishedAt": "2026-11-11T11:19:52.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.7",
+        "title": "Angular components 22.2.7",
+        "publishedAt": "2026-11-11T11:16:03.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.5",
+        "title": "Angular components 22.3.0-next.5",
+        "publishedAt": "2026-11-04T12:23:08.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.6",
+        "title": "Angular components 22.2.6",
+        "publishedAt": "2026-11-04T11:58:40.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
+        "title": "Angular components 22.3.0-next.4",
+        "publishedAt": "2026-10-28T17:44:49.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.5",
+        "title": "Angular components 22.2.5",
+        "publishedAt": "2026-10-28T17:38:26.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
+        "title": "Angular components 22.3.0-next.3",
+        "publishedAt": "2026-10-21T10:01:13.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
+        "title": "Angular components 22.2.4",
+        "publishedAt": "2026-10-21T09:49:03.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
+        "title": "Angular components 22.3.0-next.2",
+        "publishedAt": "2026-10-14T15:24:48.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
+        "title": "Angular components 22.2.3",
+        "publishedAt": "2026-10-14T15:07:56.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
+        "title": "Angular components 22.3.0-next.1",
+        "publishedAt": "2026-10-07T16:24:46.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
+        "title": "Angular components 22.2.2",
+        "publishedAt": "2026-10-07T14:59:58.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
+        "title": "Angular components 22.3.0-next.0",
+        "publishedAt": "2026-09-30T08:15:20.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
+        "title": "Angular components 22.2.1",
+        "publishedAt": "2026-09-30T08:07:47.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
+        "title": "Angular components 22.2.0",
+        "publishedAt": "2026-09-23T12:12:09.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
+        "title": "Angular components 22.1.8",
+        "publishedAt": "2026-09-23T12:03:55.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-12T10:50:26.406Z",
+    "publishedAt": "2026-11-11T11:19:52.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "8641e15d-9e50-492e-bcf1-a4fe2f950865",
+    "slug": "rider-2026-3-for-game-development-lua-and-verse-plugins-better-c-debugging-and-c",
+    "title": "Rider 2026.3 for Game Development: Lua and Verse Plugins, Better C++ Debugging, and Closer Godot Integration",
+    "tldr": "Rider 2026.3 brings improvements to the workflows you rely on to write, run, and debug games. This release connects Rider more closely with the Godot Editor, improves debugging for Unreal Engine and custom C++ engines, adds support for Unity CoreCLR Players, and introduces new Lua and Verse plugins…",
+    "bodyHtml": "<p><strong>JetBrains .NET Blog:</strong> Rider 2026.3 brings improvements to the workflows you rely on to write, run, and debug games. This release connects Rider more closely with the Godot Editor, improves debugging for Unreal Engine and custom C++ engines, adds support for Unity CoreCLR Players, and introduces new Lua and Verse plugins in Beta. Here’s what’s new for game […]</p>",
+    "tags": [
+      "dotnet",
+      "rider"
+    ],
+    "sources": [
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/dotnet/2026/11/11/rider-2026-3-for-gamedev/",
+        "title": "Rider 2026.3 for Game Development: Lua and Verse Plugins, Better C++ Debugging, and Closer Godot Integration",
+        "publishedAt": "2026-11-11T10:30:56.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-12T10:50:26.406Z",
+    "updatedAt": "2026-11-12T10:50:26.406Z",
+    "publishedAt": "2026-11-11T10:30:56.000Z",
+    "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
+  },
+  {
     "id": "f9dbb26e-116e-42e3-9347-d892e37b0356",
     "slug": "aspire-13-updates",
     "title": "Aspire 13 updates",
@@ -586,14 +944,28 @@
         "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-november-2026-servicing-updates/",
         "title": ".NET and .NET Framework November 2026 servicing updates",
         "publishedAt": "2026-11-10T16:10:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/",
+        "title": ".NET and .NET Framework September 2026 servicing releases updates",
+        "publishedAt": "2026-09-08T20:00:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-august-2026-servicing-updates/",
+        "title": ".NET and .NET Framework August 2026 servicing releases updates",
+        "publishedAt": "2026-08-11T18:28:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-11-11T10:37:44.751Z",
-    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-12T10:50:26.406Z",
     "publishedAt": "2026-11-10T16:10:00.000Z",
     "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
   },
@@ -787,97 +1159,6 @@
     "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-07T00:00:00.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
-  },
-  {
-    "id": "21636411-4af1-4385-804b-f77387875b7c",
-    "slug": "angular-22-updates",
-    "title": "Angular 22 updates",
-    "tldr": "Angular 22.2 introduces developer previews for template error boundaries and Router Resources, along with template access for private members.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Template error boundaries use @boundary blocks to catch render exceptions.</li><li>Router Resources provide handling for parallel data loading.</li><li>Private members can now be accessed within templates in version 22.2.</li></ul><h3>Why it matters</h3><p>The new developer previews enhance error handling in view rendering and improve asynchronous data loading patterns during routing.</p>",
-    "tags": [
-      "angular",
-      "architecture",
-      "web development",
-      "frontend",
-      "angular 22",
-      "error boundaries",
-      "router resources",
-      "javascript",
-      "typescript"
-    ],
-    "sources": [
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.2.5",
-        "title": "Angular 22.2.5",
-        "publishedAt": "2026-11-06T19:37:09.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.4",
-        "title": "Angular 22.3.0-next.4",
-        "publishedAt": "2026-11-05T23:00:46.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.3",
-        "title": "Angular 22.3.0-next.3",
-        "publishedAt": "2026-10-29T17:51:29.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.2.4",
-        "title": "Angular 22.2.4",
-        "publishedAt": "2026-10-29T17:41:23.000Z"
-      },
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T15:45:57.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T00:00:00.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
-        "title": "What's new in Angular 22.2?",
-        "publishedAt": "2026-09-23T00:00:00.000Z"
-      },
-      {
-        "sourceId": "56e621a08449",
-        "siteName": "Angular Training Blog",
-        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
-        "title": "What’s new in Angular 22.1?",
-        "publishedAt": "2026-08-21T13:16:57.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
-        "title": "What's new in Angular 22.1?",
-        "publishedAt": "2026-07-29T00:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-08T10:04:39.315Z",
-    "publishedAt": "2026-11-06T19:37:09.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "8dcac12b-665b-4183-822c-c3ae2cdf6877",
@@ -1367,133 +1648,6 @@
     "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-04T15:30:28.000Z",
     "runId": "ff7cef0f-879e-450d-ba8a-3034e9c7605f"
-  },
-  {
-    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
-    "slug": "angular-components-22-updates",
-    "title": "Angular components 22 updates",
-    "tldr": "Angular components releases spanning 22.3.0-next.x and 22.2.x deliver ongoing updates for Material, CDK, and ARIA packages.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include version 22.3.0-next.3 through 22.3.0-next.5.</li><li>Recent builds span versions across the 22.3.0-next and 22.2.x release channels.</li><li>Package changes target Angular Material, CDK, and ARIA components.</li></ul><h3>Why it matters</h3><p>Developers using Angular UI libraries receive ongoing preview and stable improvements across accessibility and core component packages.</p>",
-    "tags": [
-      "angular",
-      "material",
-      "release",
-      "angular components",
-      "angular material",
-      "accessibility",
-      "material design",
-      "aria",
-      "frontend",
-      "cdk"
-    ],
-    "sources": [
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.5",
-        "title": "Angular components 22.3.0-next.5",
-        "publishedAt": "2026-11-04T12:23:08.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.6",
-        "title": "Angular components 22.2.6",
-        "publishedAt": "2026-11-04T11:58:40.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
-        "title": "Angular components 22.3.0-next.4",
-        "publishedAt": "2026-10-28T17:44:49.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.5",
-        "title": "Angular components 22.2.5",
-        "publishedAt": "2026-10-28T17:38:26.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
-        "title": "Angular components 22.3.0-next.3",
-        "publishedAt": "2026-10-21T10:01:13.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
-        "title": "Angular components 22.2.4",
-        "publishedAt": "2026-10-21T09:49:03.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
-        "title": "Angular components 22.3.0-next.2",
-        "publishedAt": "2026-10-14T15:24:48.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
-        "title": "Angular components 22.2.3",
-        "publishedAt": "2026-10-14T15:07:56.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
-        "title": "Angular components 22.3.0-next.1",
-        "publishedAt": "2026-10-07T16:24:46.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
-        "title": "Angular components 22.2.2",
-        "publishedAt": "2026-10-07T14:59:58.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
-        "title": "Angular components 22.3.0-next.0",
-        "publishedAt": "2026-09-30T08:15:20.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
-        "title": "Angular components 22.2.1",
-        "publishedAt": "2026-09-30T08:07:47.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
-        "title": "Angular components 22.2.0",
-        "publishedAt": "2026-09-23T12:12:09.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
-        "title": "Angular components 22.1.8",
-        "publishedAt": "2026-09-23T12:03:55.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-08T10:04:39.315Z",
-    "publishedAt": "2026-11-04T12:23:08.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "5abff3a1-241c-45f1-afc2-378f0d666046",
@@ -11570,90 +11724,5 @@
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-16T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "927e614a-b6ab-4cee-8733-b5151e8b0ca3",
-    "slug": "net-and-net-framework-september-2026-servicing-releases-updates",
-    "title": ".NET and .NET Framework September 2026 servicing releases updates",
-    "tldr": "The September 2026 .NET servicing updates deliver security patches and bug fixes across the .NET runtime, ASP.NET Core, and Entity Framework Core.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Includes unified security and non-security fixes for the .NET runtime and .NET Framework.</li><li>Provides specific release changelogs for multiple active .NET versions.</li><li>Addresses CVE vulnerabilities identified during the monthly maintenance cycle.</li></ul><h3>Why it matters</h3><p>Applying regular monthly service releases ensures production environments remain patched against emerging vulnerabilities.</p>",
-    "tags": [
-      ".net",
-      ".net-framework",
-      "security",
-      "releases",
-      "updates",
-      "backend"
-    ],
-    "sources": [
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/",
-        "title": ".NET and .NET Framework September 2026 servicing releases updates",
-        "publishedAt": "2026-09-08T20:00:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-august-2026-servicing-updates/",
-        "title": ".NET and .NET Framework August 2026 servicing releases updates",
-        "publishedAt": "2026-08-11T18:28:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-july-2026-servicing-updates/",
-        "title": ".NET and .NET Framework July 2026 servicing releases updates",
-        "publishedAt": "2026-07-14T18:55:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-14T18:55:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "7ef412bd-90f5-48a3-bf24-5072e273d68b",
-    "slug": "built-in-agent-skills-bring-net-and-azure-expertise-into-visual-studio",
-    "title": "Built-in Agent Skills Bring .NET and Azure Expertise into Visual Studio",
-    "tldr": "Visual Studio 18.8 introduces built-in Agent Skills from .NET and Azure experts to help developers automate structured workflows.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Agent Skills are reusable capabilities that guide AI agents through complex development tasks reliably.</li><li>Built-in skills for .NET web APIs and performance analysis are included but disabled by default.</li><li>Token costs and effectiveness are evaluated before enabling skills automatically under usage-based billing.</li></ul><h3>Why it matters</h3><p>Pre-configured domain expertise reduces the friction of prompting AI coding agents for standard framework tasks.</p>",
-    "tags": [
-      "visual-studio",
-      "ai-agents",
-      ".net",
-      "azure",
-      "visual studio",
-      "ai"
-    ],
-    "sources": [
-      {
-        "sourceId": "73520d89a9de",
-        "siteName": "Visual Studio Blog",
-        "url": "https://devblogs.microsoft.com/visualstudio/built-in-agent-skills-in-visual-studio/",
-        "title": "Built-in Agent Skills Bring .NET and Azure Expertise into Visual Studio",
-        "publishedAt": "2026-07-14T17:30:57.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/07/30/visual-studio-july-update-brings-copilot-agent-and-built-in-skills.aspx",
-        "title": "Visual Studio July Update Brings Copilot Agent and Built-In Skills",
-        "publishedAt": "2026-07-30T17:09:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-14T17:30:57.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
