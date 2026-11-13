@@ -1,5 +1,244 @@
 [
   {
+    "id": "5ab0c253-82b3-461d-a92c-e243b67633ed",
+    "slug": "vs-code-1-146-adds-ai-agent-inbox-model-comparisons-and-chat-windows",
+    "title": "VS Code 1.146 Adds AI Agent Inbox, Model Comparisons and Chat Windows",
+    "tldr": "Microsoft's latest Visual Studio Code release expands AI agent management with an experimental inbox, automated model comparisons, customizable chat windows and new security controls while setting a February deadline for retiring the Local agent harness.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft's latest Visual Studio Code release expands AI agent management with an experimental inbox, automated model comparisons, customizable chat windows and new security controls while setting a February deadline for retiring the Local agent harness.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/12/vs-code-1-146-adds-ai-agent-inbox-model-comparisons-and-chat-windows.aspx",
+        "title": "VS Code 1.146 Adds AI Agent Inbox, Model Comparisons and Chat Windows",
+        "publishedAt": "2026-11-12T23:04:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-13T10:46:59.054Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
+    "publishedAt": "2026-11-12T23:04:00.000Z",
+    "runId": "2969319d-f824-4c99-87f5-05b9a920d279"
+  },
+  {
+    "id": "92764868-472b-4a64-ab5c-735da0661043",
+    "slug": "build-better-applications-with-bold-bi-a-visual-studio-subscriber-benefit-from-s",
+    "title": "Build better applications with Bold BI, a Visual Studio subscriber benefit from Syncfusion",
+    "tldr": "I was talking with a developer recently about a project his team was working on. They’d built an application, connected their data sources, and had everything in working order. Then came another request from management: Could they add a dashboard within the app so users could actually see what was…",
+    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> I was talking with a developer recently about a project his team was working on. They’d built an application, connected their data sources, and had everything in working order. Then came another request from management: Could they add a dashboard within the app so users could actually see what was happening with all that data? […] The post Build better applications with Bold BI, a Visual Studio subscriber benefit from Syncfusion appeared first on Visual Studio Blog.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/build-better-applications-with-bold-bi-a-visual-studio-subscriber-benefit-from-syncfusion/",
+        "title": "Build better applications with Bold BI, a Visual Studio subscriber benefit from Syncfusion",
+        "publishedAt": "2026-11-12T15:00:31.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-13T10:46:59.054Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
+    "publishedAt": "2026-11-12T15:00:31.000Z",
+    "runId": "2969319d-f824-4c99-87f5-05b9a920d279"
+  },
+  {
+    "id": "a20081f4-17bf-4922-830b-43c5a798d260",
+    "slug": "angular-cli-21-updates",
+    "title": "Angular CLI 21 updates",
+    "tldr": "Angular CLI releases in the 21.2.x stream include version 21.2.29 and version 21.2.27. Version 21.2.27 updates its underlying zod dependency to version 4.6.6.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI releases include versions 21.2.29 and 21.2.27.</li><li>Version 21.2.27 updates the zod schema validation dependency to version 4.6.6.</li><li>Changes affect core build packages including @angular-devkit/build-angular, @angular/build, and @angular/cli.</li></ul><h3>Why it matters</h3><p>Maintaining dependency alignments in build tooling avoids schema validation discrepancies and ensures stable project builds across Angular 21 toolchains.</p>",
+    "tags": [
+      "angular",
+      "cli",
+      "release",
+      "releases",
+      "angular cli",
+      "dependencies",
+      "frontend"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.30",
+        "title": "Angular CLI 21.2.30",
+        "publishedAt": "2026-11-12T14:33:04.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.29",
+        "title": "Angular CLI 21.2.29",
+        "publishedAt": "2026-10-28T09:54:13.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.27",
+        "title": "Angular CLI 21.2.27",
+        "publishedAt": "2026-10-15T02:50:17.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
+    "publishedAt": "2026-11-12T14:33:04.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "28aefabb-fed1-408e-bad9-78985119124e",
+    "slug": "angular-cli-20-updates",
+    "title": "Angular CLI 20 updates",
+    "tldr": "The Angular CLI v20 maintenance line has published releases 20.3.42 and 20.3.40. Version 20.3.40 bumps the project's zod dependency to version 4.6.6.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI released versions 20.3.42 and 20.3.40.</li><li>Version 20.3.40 updates the dependency on zod to version 4.6.6.</li><li>Updates apply to @angular/cli, @angular/build, and @angular-devkit/build-angular packages.</li></ul><h3>Why it matters</h3><p>These maintenance releases deliver necessary dependency updates to projects still targeting the Angular CLI 20 toolchain.</p>",
+    "tags": [
+      "angular",
+      "cli",
+      "release",
+      "releases",
+      "angular cli",
+      "dependencies",
+      "frontend"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.43",
+        "title": "Angular CLI 20.3.43",
+        "publishedAt": "2026-11-12T14:22:39.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.42",
+        "title": "Angular CLI 20.3.42",
+        "publishedAt": "2026-10-28T09:49:08.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.40",
+        "title": "Angular CLI 20.3.40",
+        "publishedAt": "2026-10-14T22:32:05.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
+    "publishedAt": "2026-11-12T14:22:39.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
+    "slug": "angular-cli-22-2-4-released",
+    "title": "Angular CLI 22 updates",
+    "tldr": "Angular CLI has released version updates across its v22 branch spanning both stable minor releases and previews.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Releases span multiple tags including 22.3.0-next.5, 22.3.0-next.4, 22.3.0-next.1, 22.2.6, 22.2.5, 22.2.4, and 22.2.2.</li><li>Changes cover tooling packages including @angular/cli, @angular/build, @schematics/angular, and @angular/ssr.</li></ul><h3>Why it matters</h3><p>Keeps the Angular CLI toolchain updated with ongoing bug fixes, SSR build improvements, and upcoming v22.3 preview capabilities.</p>",
+    "tags": [
+      "angular",
+      "angular cli",
+      "typescript",
+      "frontend",
+      "cli",
+      "release",
+      "tooling",
+      "javascript"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-rc.0",
+        "title": "Angular CLI 22.3.0-rc.0",
+        "publishedAt": "2026-11-12T14:03:01.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.7",
+        "title": "Angular CLI 22.2.7",
+        "publishedAt": "2026-11-12T13:32:42.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.5",
+        "title": "Angular CLI 22.3.0-next.5",
+        "publishedAt": "2026-11-05T00:11:35.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.6",
+        "title": "Angular CLI 22.2.6",
+        "publishedAt": "2026-11-04T22:41:48.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
+        "title": "Angular CLI 22.3.0-next.4",
+        "publishedAt": "2026-10-28T10:05:41.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
+        "title": "Angular CLI 22.2.5",
+        "publishedAt": "2026-10-28T10:00:30.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
+        "title": "Angular CLI 22.2.4",
+        "publishedAt": "2026-10-22T13:38:22.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
+        "title": "Angular CLI 22.3.0-next.1",
+        "publishedAt": "2026-10-07T07:14:29.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
+        "title": "Angular CLI 22.2.2",
+        "publishedAt": "2026-10-07T07:10:57.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
+    "publishedAt": "2026-11-12T14:03:01.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
     "id": "388d151e-9574-4ece-80e8-522f5cb5f36a",
     "slug": "fewer-tokens-faster-uis-a2ui-macros-for-local-and-cloud-models",
     "title": "Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models",
@@ -149,6 +388,13 @@
         "url": "https://devblogs.microsoft.com/visualstudio/bring-your-own-model-is-now-generally-available-in-visual-studio/",
         "title": "Bring Your Own Model is now generally available in Visual Studio",
         "publishedAt": "2026-11-11T17:00:48.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/12/visual-studio-18,-d-,12-makes-bring-your-own-model-generally-available.aspx",
+        "title": "Visual Studio 18.12 Makes Bring Your Own Model Generally Available",
+        "publishedAt": "2026-11-12T22:04:00.000Z"
       }
     ],
     "relevance": 5,
@@ -156,7 +402,7 @@
     "origin": "auto",
     "aiPending": true,
     "createdAt": "2026-11-12T10:50:26.406Z",
-    "updatedAt": "2026-11-12T10:50:26.406Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
     "publishedAt": "2026-11-11T17:00:48.000Z",
     "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
   },
@@ -1502,82 +1748,6 @@
     "updatedAt": "2026-11-08T10:04:39.315Z",
     "publishedAt": "2026-11-05T17:46:00.000Z",
     "runId": "c98b0d2a-90b8-403b-b761-ae93a0f65558"
-  },
-  {
-    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
-    "slug": "angular-cli-22-2-4-released",
-    "title": "Angular CLI 22 updates",
-    "tldr": "Angular CLI has released version updates across its v22 branch spanning both stable minor releases and previews.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Releases span multiple tags including 22.3.0-next.5, 22.3.0-next.4, 22.3.0-next.1, 22.2.6, 22.2.5, 22.2.4, and 22.2.2.</li><li>Changes cover tooling packages including @angular/cli, @angular/build, @schematics/angular, and @angular/ssr.</li></ul><h3>Why it matters</h3><p>Keeps the Angular CLI toolchain updated with ongoing bug fixes, SSR build improvements, and upcoming v22.3 preview capabilities.</p>",
-    "tags": [
-      "angular",
-      "angular cli",
-      "typescript",
-      "frontend",
-      "cli",
-      "release",
-      "tooling",
-      "javascript"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.5",
-        "title": "Angular CLI 22.3.0-next.5",
-        "publishedAt": "2026-11-05T00:11:35.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.6",
-        "title": "Angular CLI 22.2.6",
-        "publishedAt": "2026-11-04T22:41:48.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
-        "title": "Angular CLI 22.3.0-next.4",
-        "publishedAt": "2026-10-28T10:05:41.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
-        "title": "Angular CLI 22.2.5",
-        "publishedAt": "2026-10-28T10:00:30.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
-        "title": "Angular CLI 22.2.4",
-        "publishedAt": "2026-10-22T13:38:22.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
-        "title": "Angular CLI 22.3.0-next.1",
-        "publishedAt": "2026-10-07T07:14:29.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
-        "title": "Angular CLI 22.2.2",
-        "publishedAt": "2026-10-07T07:10:57.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-23T08:25:16.497Z",
-    "updatedAt": "2026-11-08T10:04:39.315Z",
-    "publishedAt": "2026-11-05T00:11:35.000Z",
-    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
   },
   {
     "id": "fb6a3f06-5288-4372-ae3d-0653e1604ffe",
@@ -3430,86 +3600,6 @@
     "updatedAt": "2026-10-29T09:43:28.322Z",
     "publishedAt": "2026-10-28T10:30:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
-  },
-  {
-    "id": "a20081f4-17bf-4922-830b-43c5a798d260",
-    "slug": "angular-cli-21-updates",
-    "title": "Angular CLI 21 updates",
-    "tldr": "Angular CLI releases in the 21.2.x stream include version 21.2.29 and version 21.2.27. Version 21.2.27 updates its underlying zod dependency to version 4.6.6.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI releases include versions 21.2.29 and 21.2.27.</li><li>Version 21.2.27 updates the zod schema validation dependency to version 4.6.6.</li><li>Changes affect core build packages including @angular-devkit/build-angular, @angular/build, and @angular/cli.</li></ul><h3>Why it matters</h3><p>Maintaining dependency alignments in build tooling avoids schema validation discrepancies and ensures stable project builds across Angular 21 toolchains.</p>",
-    "tags": [
-      "angular",
-      "cli",
-      "release",
-      "releases",
-      "angular cli",
-      "dependencies",
-      "frontend"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.29",
-        "title": "Angular CLI 21.2.29",
-        "publishedAt": "2026-10-28T09:54:13.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.27",
-        "title": "Angular CLI 21.2.27",
-        "publishedAt": "2026-10-15T02:50:17.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
-    "publishedAt": "2026-10-28T09:54:13.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "28aefabb-fed1-408e-bad9-78985119124e",
-    "slug": "angular-cli-20-updates",
-    "title": "Angular CLI 20 updates",
-    "tldr": "The Angular CLI v20 maintenance line has published releases 20.3.42 and 20.3.40. Version 20.3.40 bumps the project's zod dependency to version 4.6.6.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI released versions 20.3.42 and 20.3.40.</li><li>Version 20.3.40 updates the dependency on zod to version 4.6.6.</li><li>Updates apply to @angular/cli, @angular/build, and @angular-devkit/build-angular packages.</li></ul><h3>Why it matters</h3><p>These maintenance releases deliver necessary dependency updates to projects still targeting the Angular CLI 20 toolchain.</p>",
-    "tags": [
-      "angular",
-      "cli",
-      "release",
-      "releases",
-      "angular cli",
-      "dependencies",
-      "frontend"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.42",
-        "title": "Angular CLI 20.3.42",
-        "publishedAt": "2026-10-28T09:49:08.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.40",
-        "title": "Angular CLI 20.3.40",
-        "publishedAt": "2026-10-14T22:32:05.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
-    "publishedAt": "2026-10-28T09:49:08.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "45c30be6-e8f5-4d56-b2e2-2bb3c9611fd5",
@@ -7389,6 +7479,42 @@
     "runId": "b1018e95-07ca-4f9c-a3ef-89a355373759"
   },
   {
+    "id": "0e352f9d-1354-48a3-abf6-9f85dee432e1",
+    "slug": "angular-addicts-53-ngrx-22-webmcp-copilotkit-more",
+    "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
+    "tldr": "My favorite Angular resources of August, 2026",
+    "bodyHtml": "<p><strong>Angular Addicts:</strong> My favorite Angular resources of August, 2026</p><p><strong>Angular in Depth:</strong> My favorite Angular resources of August, 2026</p>",
+    "tags": [
+      "angular",
+      "newsletter",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "62354c88c0e2",
+        "siteName": "Angular Addicts",
+        "url": "https://www.angularaddicts.com/p/angular-addicts-53-ngrx-22-webmcp-copilot-kit",
+        "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
+        "publishedAt": "2026-09-29T07:19:32.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-addicts-53-ngrx-22-webmcp-copilotkit-more/",
+        "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
+        "publishedAt": "2026-09-29T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-13T10:46:59.054Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
+    "publishedAt": "2026-09-29T00:00:00.000Z",
+    "runId": "2969319d-f824-4c99-87f5-05b9a920d279"
+  },
+  {
     "id": "3d8c325b-c1c1-4d6f-b8ed-7343a674e7cc",
     "slug": "hands-on-with-openai-s-mandatory-custom-gpt-to-plugin-migration-deadline-coming",
     "title": "Hands-On With OpenAI's Mandatory Custom GPT-to-Plugin Migration (Deadline Coming)",
@@ -9270,14 +9396,21 @@
         "url": "https://angularindepth.com/article/angular-addicts-52-angular-addicts-52-angular-22-1-copilotkit-mcp-apps/",
         "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
         "publishedAt": "2026-08-27T00:00:00.000Z"
+      },
+      {
+        "sourceId": "62354c88c0e2",
+        "siteName": "Angular Addicts",
+        "url": "https://www.angularaddicts.com/p/angular-addicts-52-copilot-kit-mcp-apps",
+        "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
+        "publishedAt": "2026-08-27T07:39:52.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-27T08:50:24.755Z",
+    "updatedAt": "2026-11-13T10:46:59.054Z",
     "publishedAt": "2026-08-27T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   },
@@ -11637,92 +11770,5 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-16T13:23:23.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "8d7a4875-1b73-4b8e-984b-30b63ee61945",
-    "slug": "angular-addicts-53-ngrx-22-webmcp-copilotkit-more",
-    "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
-    "tldr": "The Angular Addicts newsletter series covers ongoing updates across Angular releases, agentic tools, and component libraries. Featured announcements span NgRx v22, Angular 22.1, CopilotKit support, spartan/ui 1.0, and signal-based form handling.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Issue #53 covers NgRx v22 additions including dynamic deep signals, custom signal form controls, and the WebMCP integration.</li><li>Issue #52 highlights Angular 22.1, Nx 23.1 with TypeScript 6 support, and CopilotKit integrations for conversational UI agents.</li><li>Issue #51 tracks the stable 1.0 release of spartan/ui, the A2UI framework for AI-driven interfaces, and signal debouncing techniques.</li></ul><h3>Why it matters</h3><p>The newsletters document continuous shifts toward signal-based architectures, unified schema forms, and LLM integrations within Angular applications, helping teams evaluate modern additions to the frontend ecosystem.</p>",
-    "tags": [
-      "angular",
-      "newsletter",
-      "ecosystem",
-      "news",
-      "frontend",
-      "ngrx",
-      "copilotkit",
-      "spartan/ui",
-      "tooling"
-    ],
-    "sources": [
-      {
-        "sourceId": "62354c88c0e2",
-        "siteName": "Angular Addicts",
-        "url": "https://www.angularaddicts.com/p/angular-addicts-53-ngrx-22-webmcp-copilot-kit",
-        "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
-        "publishedAt": "2026-09-29T07:19:32.000Z"
-      },
-      {
-        "sourceId": "62354c88c0e2",
-        "siteName": "Angular Addicts",
-        "url": "https://www.angularaddicts.com/p/angular-addicts-52-copilot-kit-mcp-apps",
-        "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
-        "publishedAt": "2026-08-27T07:39:52.000Z"
-      },
-      {
-        "sourceId": "62354c88c0e2",
-        "siteName": "Angular Addicts",
-        "url": "https://www.angularaddicts.com/p/angular-addicts-51-a2ui-signal-debouncing",
-        "title": "Angular Addicts #51: spartan/ui 1.0, A2UI, Signal Debouncing & more",
-        "publishedAt": "2026-07-16T08:31:14.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/angular-addicts-53-ngrx-22-webmcp-copilotkit-more/",
-        "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
-        "publishedAt": "2026-09-29T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-16T08:31:14.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "30419d13-f6b3-469a-b198-60e389d771dc",
-    "slug": "angular-addicts-51-spartan-ui-1-0-a2ui-signal-debouncing-more",
-    "title": "Angular Addicts #51: spartan/ui 1.0, A2UI, Signal Debouncing & more",
-    "tldr": "The 51st issue of the Angular Addicts newsletter surveys major updates in the Angular ecosystem from June 2026. Featured topics include the 1.0 milestone of spartan/ui, agentic engineering setups, and Angular signal management.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Robin Goetz announced the release of spartan/ui 1.0.</li><li>Highlighted engineering guides focus on configuring AI agent harnesses, using tsarch, and implementing A2UI for AI agent interactions.</li><li>Core reactivity topics include debouncing Angular signals, native Angular query-style caching, and limitations of resource patterns in route guards.</li></ul><h3>Why it matters</h3><p>The roundup highlights production patterns for adopting stable signal components and structuring projects for autonomous coding agents.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "spartan/ui",
-      "signals",
-      "architecture"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/angular-addicts-51-spartan-ui-1-0-a2ui-signal-debouncing-more/",
-        "title": "Angular Addicts #51: spartan/ui 1.0, A2UI, Signal Debouncing & more",
-        "publishedAt": "2026-07-16T00:00:00.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-16T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   }
 ]

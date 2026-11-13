@@ -2141,6 +2141,330 @@
   },
   "runs": [
     {
+      "id": "2969319d-f824-4c99-87f5-05b9a920d279",
+      "trigger": "cron",
+      "startedAt": "2026-11-13T10:46:59.054Z",
+      "status": "success",
+      "stats": {
+        "fetched": 689,
+        "fresh": 10,
+        "clusters": 8,
+        "created": 3,
+        "merged": 5
+      },
+      "errors": [],
+      "log": [
+        "Collected 689 links from 26 sources; 10 new from the last 120 days",
+        "Grouped into 8 stories (gemini mode): 3 new posts, 5 posts got another site's link",
+        "Summarized 0 posts; 14 wait for the next run (AI calls left: 52)"
+      ],
+      "report": {
+        "sources": [
+          {
+            "sourceId": "0d2eacde2168",
+            "name": "Angular Blog",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "5d7162762e53",
+            "name": "Angular releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "name": "Angular CLI releases",
+            "read": 10,
+            "onSite": 6,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 4
+          },
+          {
+            "sourceId": "3c1512ebc31b",
+            "name": "Angular components releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "8c7a15586b92",
+            "name": "NgRx releases",
+            "read": 10,
+            "onSite": 4,
+            "tooOld": 6,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73a4e84eff6d",
+            "name": "Ninja Squad",
+            "read": 30,
+            "onSite": 3,
+            "tooOld": 27,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6b4f9823bf00",
+            "name": "Angular Architects",
+            "read": 20,
+            "onSite": 12,
+            "tooOld": 8,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "cc5b5afd9ba7",
+            "name": "Angular Space",
+            "read": 15,
+            "onSite": 6,
+            "tooOld": 9,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d48b82c3affe",
+            "name": "Angular University",
+            "read": 15,
+            "onSite": 1,
+            "tooOld": 14,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "56e621a08449",
+            "name": "Angular Training Blog",
+            "read": 10,
+            "onSite": 5,
+            "tooOld": 5,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "62354c88c0e2",
+            "name": "Angular Addicts",
+            "read": 20,
+            "onSite": 1,
+            "tooOld": 17,
+            "repeated": 0,
+            "fresh": 2
+          },
+          {
+            "sourceId": "17470cea5951",
+            "name": "Angular in Depth",
+            "read": 60,
+            "onSite": 52,
+            "tooOld": 7,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "131ee1c49b6b",
+            "name": ".NET Blog",
+            "read": 50,
+            "onSite": 46,
+            "tooOld": 4,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "a34c00441c6d",
+            "name": ".NET releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "87b273ebaa32",
+            "name": "Aspire releases",
+            "read": 10,
+            "onSite": 10,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "name": "Visual Studio Blog",
+            "read": 30,
+            "onSite": 29,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 1
+          },
+          {
+            "sourceId": "b2ecdce82e12",
+            "name": "JetBrains .NET Blog",
+            "read": 12,
+            "onSite": 12,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "655eccbecb12",
+            "name": "InfoQ .NET",
+            "read": 3,
+            "onSite": 3,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "name": "Visual Studio Magazine",
+            "read": 60,
+            "onSite": 58,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 2
+          },
+          {
+            "sourceId": "145884eb4af6",
+            "name": "Andrew Lock – .NET Escapades",
+            "read": 25,
+            "onSite": 10,
+            "tooOld": 15,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "3958049ea454",
+            "name": "Milan Jovanović",
+            "read": 219,
+            "onSite": 17,
+            "tooOld": 202,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d1237fd7e6fe",
+            "name": "Rick Strahl's Web Log",
+            "read": 10,
+            "onSite": 3,
+            "tooOld": 7,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "6752279e1d66",
+            "name": "Damien Bowden",
+            "read": 10,
+            "onSite": 7,
+            "tooOld": 3,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "4ed3c18fe2b2",
+            "name": "elmah.io blog",
+            "read": 15,
+            "onSite": 13,
+            "tooOld": 2,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "612edc942ee0",
+            "name": "C# Digest",
+            "read": 5,
+            "onSite": 5,
+            "tooOld": 0,
+            "repeated": 0,
+            "fresh": 0
+          },
+          {
+            "sourceId": "d9a755d55a6a",
+            "name": "TypeScript Blog",
+            "read": 10,
+            "onSite": 2,
+            "tooOld": 8,
+            "repeated": 0,
+            "fresh": 0
+          }
+        ],
+        "links": [
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 22.3.0-rc.0",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-rc.0",
+            "postId": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8"
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 22.2.7",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.7",
+            "postId": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8"
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 21.2.30",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.30",
+            "postId": "a20081f4-17bf-4922-830b-43c5a798d260"
+          },
+          {
+            "sourceId": "2440285b3f25",
+            "title": "Angular CLI 20.3.43",
+            "url": "https://github.com/angular/angular-cli/releases/tag/v20.3.43",
+            "postId": "28aefabb-fed1-408e-bad9-78985119124e"
+          },
+          {
+            "sourceId": "62354c88c0e2",
+            "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
+            "url": "https://www.angularaddicts.com/p/angular-addicts-53-ngrx-22-webmcp-copilot-kit",
+            "postId": "0e352f9d-1354-48a3-abf6-9f85dee432e1",
+            "newPost": true
+          },
+          {
+            "sourceId": "62354c88c0e2",
+            "title": "Angular Addicts #52: Angular Addicts #52: Angular 22.1, CopilotKit, MCP Apps, Signal Form Validators & more",
+            "url": "https://www.angularaddicts.com/p/angular-addicts-52-copilot-kit-mcp-apps",
+            "postId": "089a0412-2e17-4951-8efd-63f5cfdae2ea"
+          },
+          {
+            "sourceId": "17470cea5951",
+            "title": "Angular Addicts #53: NgRx 22, WebMCP, CopilotKit & more",
+            "url": "https://angularindepth.com/article/angular-addicts-53-ngrx-22-webmcp-copilotkit-more/",
+            "postId": "0e352f9d-1354-48a3-abf6-9f85dee432e1",
+            "newPost": true
+          },
+          {
+            "sourceId": "73520d89a9de",
+            "title": "Build better applications with Bold BI, a Visual Studio subscriber benefit from Syncfusion",
+            "url": "https://devblogs.microsoft.com/visualstudio/build-better-applications-with-bold-bi-a-visual-studio-subscriber-benefit-from-syncfusion/",
+            "postId": "92764868-472b-4a64-ab5c-735da0661043",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "VS Code 1.146 Adds AI Agent Inbox, Model Comparisons and Chat Windows",
+            "url": "https://visualstudiomagazine.com/articles/2026/11/12/vs-code-1-146-adds-ai-agent-inbox-model-comparisons-and-chat-windows.aspx",
+            "postId": "5ab0c253-82b3-461d-a92c-e243b67633ed",
+            "newPost": true
+          },
+          {
+            "sourceId": "b5b21e937170",
+            "title": "Visual Studio 18.12 Makes Bring Your Own Model Generally Available",
+            "url": "https://visualstudiomagazine.com/articles/2026/11/12/visual-studio-18,-d-,12-makes-bring-your-own-model-generally-available.aspx",
+            "postId": "0d9406d1-e9f5-4c37-831e-1b9a0f3fef71"
+          }
+        ]
+      },
+      "finishedAt": "2026-11-13T11:08:08.813Z"
+    },
+    {
       "id": "bae41a83-f759-4537-9f4b-f6468b10ad2e",
       "trigger": "cron",
       "startedAt": "2026-11-12T10:50:26.406Z",
@@ -4927,281 +5251,6 @@
         "Grouped into 4 stories (gemini mode): 4 new posts, 0 posts got another site's link",
         "Summarized 4 posts; 0 wait for the next run (AI calls left: 55)"
       ],
-      "report": {
-        "sources": [
-          {
-            "sourceId": "0d2eacde2168",
-            "name": "Angular Blog",
-            "read": 10,
-            "onSite": 10,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "5d7162762e53",
-            "name": "Angular releases",
-            "read": 10,
-            "onSite": 10,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "2440285b3f25",
-            "name": "Angular CLI releases",
-            "read": 10,
-            "onSite": 10,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "3c1512ebc31b",
-            "name": "Angular components releases",
-            "read": 10,
-            "onSite": 10,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "8c7a15586b92",
-            "name": "NgRx releases",
-            "read": 10,
-            "onSite": 4,
-            "tooOld": 6,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "73a4e84eff6d",
-            "name": "Ninja Squad",
-            "read": 30,
-            "onSite": 3,
-            "tooOld": 27,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "6b4f9823bf00",
-            "name": "Angular Architects",
-            "read": 20,
-            "onSite": 11,
-            "tooOld": 8,
-            "repeated": 0,
-            "fresh": 1
-          },
-          {
-            "sourceId": "cc5b5afd9ba7",
-            "name": "Angular Space",
-            "read": 15,
-            "onSite": 6,
-            "tooOld": 9,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "d48b82c3affe",
-            "name": "Angular University",
-            "read": 15,
-            "onSite": 1,
-            "tooOld": 14,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "56e621a08449",
-            "name": "Angular Training Blog",
-            "read": 10,
-            "onSite": 4,
-            "tooOld": 6,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "62354c88c0e2",
-            "name": "Angular Addicts",
-            "read": 20,
-            "onSite": 4,
-            "tooOld": 16,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "17470cea5951",
-            "name": "Angular in Depth",
-            "read": 60,
-            "onSite": 56,
-            "tooOld": 2,
-            "repeated": 0,
-            "fresh": 2
-          },
-          {
-            "sourceId": "131ee1c49b6b",
-            "name": ".NET Blog",
-            "read": 50,
-            "onSite": 42,
-            "tooOld": 8,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "a34c00441c6d",
-            "name": ".NET releases",
-            "read": 10,
-            "onSite": 10,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "87b273ebaa32",
-            "name": "Aspire releases",
-            "read": 10,
-            "onSite": 10,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "73520d89a9de",
-            "name": "Visual Studio Blog",
-            "read": 30,
-            "onSite": 29,
-            "tooOld": 1,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "b2ecdce82e12",
-            "name": "JetBrains .NET Blog",
-            "read": 12,
-            "onSite": 12,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "655eccbecb12",
-            "name": "InfoQ .NET",
-            "read": 3,
-            "onSite": 3,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "b5b21e937170",
-            "name": "Visual Studio Magazine",
-            "read": 60,
-            "onSite": 60,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "145884eb4af6",
-            "name": "Andrew Lock – .NET Escapades",
-            "read": 25,
-            "onSite": 10,
-            "tooOld": 15,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "3958049ea454",
-            "name": "Milan Jovanović",
-            "read": 218,
-            "onSite": 17,
-            "tooOld": 201,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "d1237fd7e6fe",
-            "name": "Rick Strahl's Web Log",
-            "read": 10,
-            "onSite": 3,
-            "tooOld": 7,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "6752279e1d66",
-            "name": "Damien Bowden",
-            "read": 10,
-            "onSite": 5,
-            "tooOld": 4,
-            "repeated": 0,
-            "fresh": 1
-          },
-          {
-            "sourceId": "4ed3c18fe2b2",
-            "name": "elmah.io blog",
-            "read": 15,
-            "onSite": 11,
-            "tooOld": 4,
-            "repeated": 0,
-            "fresh": 0
-          },
-          {
-            "sourceId": "612edc942ee0",
-            "name": "C# Digest",
-            "read": 5,
-            "onSite": 4,
-            "tooOld": 0,
-            "repeated": 0,
-            "fresh": 1
-          },
-          {
-            "sourceId": "d9a755d55a6a",
-            "name": "TypeScript Blog",
-            "read": 10,
-            "onSite": 2,
-            "tooOld": 8,
-            "repeated": 0,
-            "fresh": 0
-          }
-        ],
-        "links": [
-          {
-            "sourceId": "6b4f9823bf00",
-            "title": "Optimizing Agentic Applications for Local Models: Patterns for Speed and Reliability",
-            "url": "https://www.angulararchitects.io/en/blog/optimizing-agentic-applications-for-local-models-patterns-for-speed-and-reliability/",
-            "postId": "27959ca8-d149-46cc-81e9-bea5f70ed23f",
-            "newPost": true
-          },
-          {
-            "sourceId": "17470cea5951",
-            "title": "Optimizing Agentic Applications for Local Models: Patterns for Speed and Reliability",
-            "url": "https://angularindepth.com/article/optimizing-agentic-applications-for-local-models-patterns-for-speed-an/",
-            "postId": "27959ca8-d149-46cc-81e9-bea5f70ed23f",
-            "newPost": true
-          },
-          {
-            "sourceId": "17470cea5951",
-            "title": "Ng-News 26/23: Pangular Inspector and Angular Compilation at ViteConf",
-            "url": "https://angularindepth.com/article/ng-news-26-23-pangular-inspector-and-angular-compilation-at-viteconf/",
-            "postId": "db08a3df-e311-4ab1-82e7-5342a0c2f71d",
-            "newPost": true
-          },
-          {
-            "sourceId": "6752279e1d66",
-            "title": "Use Open.IdentityServer for OpenID Connect in an Aspire setup",
-            "url": "https://damienbod.com/2026/11/02/use-open-identityserver-for-openid-connect-in-an-aspire-setup/",
-            "postId": "69ab3401-16f2-4102-92ba-d14ce755d188",
-            "newPost": true
-          },
-          {
-            "sourceId": "612edc942ee0",
-            "title": "What's in a task?",
-            "url": "https://csharpdigest.net/newsletters/2398-what-s-in-a-task",
-            "postId": "0b48c3d4-d74c-40ea-bbd2-60654e1e24a5",
-            "newPost": true
-          }
-        ]
-      },
       "finishedAt": "2026-11-02T11:00:17.346Z"
     },
     {
@@ -5753,107 +5802,107 @@
   ],
   "sourceStatus": {
     "https://blog.angular.dev/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular/releases.atom": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/angular-cli/releases.atom": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://github.com/angular/components/releases.atom": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://github.com/ngrx/platform/releases.atom": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://blog.ninja-squad.com/atom.xml": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 30
     },
     "https://angulararchitects.io/en/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 20
     },
     "https://angularspace.com/rss": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 15
     },
     "https://blog.angular-university.io/rss": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 15
     },
     "https://blog.angulartraining.com/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://angularaddicts.com/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 20
     },
     "https://angularindepth.com/feed.xml": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 60
     },
     "https://devblogs.microsoft.com/dotnet/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 50
     },
     "https://github.com/dotnet/core/releases.atom": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://github.com/dotnet/aspire/releases.atom": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://devblogs.microsoft.com/visualstudio/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
-      "lastItemCount": 40
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
+      "lastItemCount": 30
     },
     "https://blog.jetbrains.com/dotnet/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 12
     },
     "https://feed.infoq.com/dotnet": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 3
     },
     "https://visualstudiomagazine.com/rss-feeds/news.aspx": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 60
     },
     "https://andrewlock.net/rss.xml": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 25
     },
     "https://milanjovanovic.tech/rss/feed.xml": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 219
     },
     "https://feeds.feedburner.com/rickstrahl": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://damienbod.com/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     },
     "https://blog.elmah.io/rss": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 15
     },
     "https://csharpdigest.net/newsletters.rss": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 5
     },
     "https://devblogs.microsoft.com/typescript/feed": {
-      "lastFetchedAt": "2026-11-12T10:50:26.406Z",
+      "lastFetchedAt": "2026-11-13T10:46:59.054Z",
       "lastItemCount": 10
     }
   }
