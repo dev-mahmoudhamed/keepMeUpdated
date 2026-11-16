@@ -1,5 +1,167 @@
 [
   {
+    "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
+    "slug": "net-11-updates",
+    "title": ".NET 11 updates",
+    "tldr": "Microsoft has released .NET 11, introducing language, runtime, and framework enhancements across the ecosystem. Highlights include C# 15 union types, CoreCLR becoming the default runtime for .NET MAUI, and built-in AI development tools.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Language and SDK additions include C# 15 union types, post-quantum cryptography, and faster developer tooling.</li><li>.NET MAUI transitions to CoreCLR as its default runtime.</li><li>ASP.NET Core gains asynchronous validation, OpenAPI 3.2 support, and new AI tooling such as an MCP server template and agent-focused Blazor components.</li><li>Device-bound session credentials (DBSC) were pulled before release due to incompleteness and rescheduled for .NET 12.</li></ul><h3>Why it matters</h3><p>The release delivers core language additions like unions alongside major runtime transitions for MAUI, improving performance and modernizing AI application tooling across the .NET stack.</p>",
+    "tags": [
+      "dotnet",
+      "csharp",
+      "release",
+      ".net",
+      "c#",
+      "performance",
+      "security",
+      ".net 11",
+      "c# 15",
+      "cryptography"
+    ],
+    "sources": [
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2408-announcing-net-11",
+        "title": "Announcing .NET 11",
+        "publishedAt": "2026-11-15T19:35:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/10/net-11-ships-with-csharp-15-unions-faster-tools-and-coreclr-for-maui.aspx",
+        "title": ".NET 11 Ships with C# 15 Unions, Faster Tools and CoreCLR for MAUI",
+        "publishedAt": "2026-11-10T19:01:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0",
+        "title": ".NET 11.0 GA",
+        "publishedAt": "2026-11-10T17:30:20.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc3",
+        "title": ".NET 11.0 RC 3",
+        "publishedAt": "2026-11-10T17:25:10.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11/",
+        "title": "Announcing .NET 11",
+        "publishedAt": "2026-11-10T16:11:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-issues-out-of-band--net-security-fixes-including-new-net-11-rc.aspx",
+        "title": "Microsoft Issues Out-of-Band .NET Security Fixes, Including New .NET 11 RC",
+        "publishedAt": "2026-10-26T16:19:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/10/14/net-11-rc2-adds-post-quantum-crypto-maui-csharp-ui-and-nuget-controls.aspx",
+        "title": ".NET 11 RC2 Adds Post-Quantum Crypto, .NET MAUI C# UI and NuGet Controls",
+        "publishedAt": "2026-10-14T18:01:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc2",
+        "title": ".NET 11.0 RC 2",
+        "publishedAt": "2026-10-13T22:34:41.000Z"
+      },
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2368-performance-improvements-in-net-11",
+        "title": "Performance improvements in .NET 11",
+        "publishedAt": "2026-09-20T18:15:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/",
+        "title": "Performance Improvements in .NET 11",
+        "publishedAt": "2026-09-15T12:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/09/14/net-11-rc1-gets-go-live-support-ahead-of-november-launch.aspx",
+        "title": ".NET 11 RC1 Gets Go-Live Support Ahead of November Launch",
+        "publishedAt": "2026-09-14T17:13:00.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-preview.7",
+        "title": ".NET 11 Preview 7",
+        "publishedAt": "2026-09-08T22:27:27.000Z"
+      },
+      {
+        "sourceId": "a34c00441c6d",
+        "siteName": ".NET releases",
+        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc.1",
+        "title": ".NET 11.0 RC 1",
+        "publishedAt": "2026-09-08T22:23:12.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/",
+        "title": "Announcing .NET 11 Release Candidate 1",
+        "publishedAt": "2026-09-08T21:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/explore-csharp-15/",
+        "title": "Explore new features available in C# 15 preview",
+        "publishedAt": "2026-08-24T17:00:00.000Z"
+      },
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/08/19/net-11-preview-7-turns-on-nativeaot-cli-and-msbuild-server-by-default.aspx",
+        "title": ".NET 11 Preview 7 Turns On NativeAOT CLI and MSBuild Server by Default",
+        "publishedAt": "2026-08-19T19:39:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/",
+        "title": ".NET 11 Preview 7 is now available!",
+        "publishedAt": "2026-08-11T18:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/",
+        "title": "CoreCLR Progress and the Mono Timeline for .NET MAUI",
+        "publishedAt": "2026-07-14T18:30:00.000Z"
+      },
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/",
+        "title": ".NET 11 Preview 6 is now available!",
+        "publishedAt": "2026-07-14T17:45:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-16T10:53:50.767Z",
+    "publishedAt": "2026-11-15T19:35:00.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
     "id": "3e6e4e61-7e52-46dd-8b31-c1ca12898e95",
     "slug": "ef-11-drops-a-redundant-join-from-split-queries",
     "title": "EF 11 Drops a Redundant Join From Split Queries",
@@ -37,8 +199,8 @@
     "id": "11280cd6-2c7a-4e65-8c38-a47d688cbe3e",
     "slug": "uno-platform-7-0-expands-net-maui-reach-as-studio-3-3-adds-ai-workbench",
     "title": "Uno Platform 7.0 Expands .NET MAUI Reach as Studio 3.3 Adds AI Workbench",
-    "tldr": "Uno Platform 7.0 adds support for .NET 11, C#-only UI development, and .NET MAUI controls targeting web and Linux. Accompanying Studio 3.3 tooling introduces an AI Workbench alongside native desktop and mobile companion apps.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Uno Platform 7.0 introduces support for the .NET 11 ecosystem.</li><li>Developers can use pure C# to build user interfaces, alongside expanded .NET MAUI controls running on WebAssembly and Linux.</li><li>Uno Studio 3.3 tooling integrates a new AI Workbench feature.</li><li>Uno Studio expands availability with dedicated desktop and mobile development applications.</li></ul><h3>Why it matters</h3><p>Developers targeting cross-platform environments can utilize native C# UI markup and reuse .NET MAUI components across desktop, Linux, and web ecosystems without additional platform-specific frameworks.</p>",
+    "tldr": "Uno Platform 7.0 has launched with day-zero .NET 11 support, an experimental WebGPU backend, and expanded .NET MAUI control integration. The release also adds Apple TV support while retiring native rendering and Mac Catalyst.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Rendering is unified around SkiaSharp 4 alongside an experimental WebGPU backend across desktop, mobile, and WebAssembly targets.</li><li>.NET MAUI controls from third-party vendors can now run across all Uno Platform targets, including Linux and the web.</li><li>Adds support for Apple TV, the Microsoft.UI.Reactor declarative C# framework, and C#-only UI development.</li><li>Native rendering and Mac Catalyst targets have been retired.</li><li>Accompanying Uno Studio 3.3 introduces an AI Workbench alongside mobile and native desktop companion applications.</li></ul><h3>Why it matters</h3><p>The release broadens cross-platform reach for .NET applications by bringing .NET MAUI controls to Linux and the web while streamlining rendering pipelines through WebGPU and SkiaSharp.</p>",
     "tags": [
       ".net",
       "uno-platform",
@@ -47,7 +209,8 @@
       "uno platform",
       ".net 11",
       ".net maui",
-      "c#"
+      "c#",
+      "webgpu"
     ],
     "sources": [
       {
@@ -56,6 +219,13 @@
         "url": "https://visualstudiomagazine.com/articles/2026/11/13/uno-platform-7-0-expands-net-maui-reach-as-studio-3-3-adds-ai-workbench.aspx",
         "title": "Uno Platform 7.0 Expands .NET MAUI Reach as Studio 3.3 Adds AI Workbench",
         "publishedAt": "2026-11-13T22:15:00.000Z"
+      },
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/11/Uno-Platform-6-7-targets/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": "Uno Platform 7.0 Adds WebGPU Backend, Apple TV and Reactor Support, and Retires Native Rendering",
+        "publishedAt": "2026-11-16T09:00:00.000Z"
       }
     ],
     "relevance": 7,
@@ -63,7 +233,7 @@
     "origin": "auto",
     "aiPending": false,
     "createdAt": "2026-11-14T10:00:45.539Z",
-    "updatedAt": "2026-11-14T10:00:45.539Z",
+    "updatedAt": "2026-11-16T10:53:50.767Z",
     "publishedAt": "2026-11-13T22:15:00.000Z",
     "runId": "1ac5e1c2-0964-48ef-be39-20b08ac64ab9"
   },
@@ -841,161 +1011,6 @@
     "updatedAt": "2026-11-11T10:37:44.751Z",
     "publishedAt": "2026-11-10T21:43:46.000Z",
     "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
-  },
-  {
-    "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
-    "slug": "net-11-updates",
-    "title": ".NET 11 updates",
-    "tldr": ".NET 11 introduces C# 15 unions, post-quantum cryptography, and CoreCLR support for .NET MAUI. The release also delivers broad runtime optimizations and faster developer tools.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 11 integrates support for C# 15 union types and enhanced runtime tooling.</li><li>Security enhancements include the addition of post-quantum cryptography support.</li><li>The runtime receives extensive performance optimizations alongside CoreCLR support for MAUI.</li></ul><h3>Why it matters</h3><p>The release delivers modern language features and forward-looking security capabilities to the .NET ecosystem while enhancing application performance across desktop and mobile platforms.</p>",
-    "tags": [
-      "dotnet",
-      "csharp",
-      "release",
-      ".net",
-      "c#",
-      "performance",
-      "security",
-      ".net 11",
-      "c# 15",
-      "cryptography"
-    ],
-    "sources": [
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/11/10/net-11-ships-with-csharp-15-unions-faster-tools-and-coreclr-for-maui.aspx",
-        "title": ".NET 11 Ships with C# 15 Unions, Faster Tools and CoreCLR for MAUI",
-        "publishedAt": "2026-11-10T19:01:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0",
-        "title": ".NET 11.0 GA",
-        "publishedAt": "2026-11-10T17:30:20.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc3",
-        "title": ".NET 11.0 RC 3",
-        "publishedAt": "2026-11-10T17:25:10.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/announcing-dotnet-11/",
-        "title": "Announcing .NET 11",
-        "publishedAt": "2026-11-10T16:11:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/10/26/microsoft-issues-out-of-band--net-security-fixes-including-new-net-11-rc.aspx",
-        "title": "Microsoft Issues Out-of-Band .NET Security Fixes, Including New .NET 11 RC",
-        "publishedAt": "2026-10-26T16:19:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/10/14/net-11-rc2-adds-post-quantum-crypto-maui-csharp-ui-and-nuget-controls.aspx",
-        "title": ".NET 11 RC2 Adds Post-Quantum Crypto, .NET MAUI C# UI and NuGet Controls",
-        "publishedAt": "2026-10-14T18:01:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc2",
-        "title": ".NET 11.0 RC 2",
-        "publishedAt": "2026-10-13T22:34:41.000Z"
-      },
-      {
-        "sourceId": "612edc942ee0",
-        "siteName": "C# Digest",
-        "url": "https://csharpdigest.net/newsletters/2368-performance-improvements-in-net-11",
-        "title": "Performance improvements in .NET 11",
-        "publishedAt": "2026-09-20T18:15:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/",
-        "title": "Performance Improvements in .NET 11",
-        "publishedAt": "2026-09-15T12:00:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/09/14/net-11-rc1-gets-go-live-support-ahead-of-november-launch.aspx",
-        "title": ".NET 11 RC1 Gets Go-Live Support Ahead of November Launch",
-        "publishedAt": "2026-09-14T17:13:00.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-preview.7",
-        "title": ".NET 11 Preview 7",
-        "publishedAt": "2026-09-08T22:27:27.000Z"
-      },
-      {
-        "sourceId": "a34c00441c6d",
-        "siteName": ".NET releases",
-        "url": "https://github.com/dotnet/core/releases/tag/v11.0.0-rc.1",
-        "title": ".NET 11.0 RC 1",
-        "publishedAt": "2026-09-08T22:23:12.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/",
-        "title": "Announcing .NET 11 Release Candidate 1",
-        "publishedAt": "2026-09-08T21:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/explore-csharp-15/",
-        "title": "Explore new features available in C# 15 preview",
-        "publishedAt": "2026-08-24T17:00:00.000Z"
-      },
-      {
-        "sourceId": "b5b21e937170",
-        "siteName": "Visual Studio Magazine",
-        "url": "https://visualstudiomagazine.com/articles/2026/08/19/net-11-preview-7-turns-on-nativeaot-cli-and-msbuild-server-by-default.aspx",
-        "title": ".NET 11 Preview 7 Turns On NativeAOT CLI and MSBuild Server by Default",
-        "publishedAt": "2026-08-19T19:39:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-7/",
-        "title": ".NET 11 Preview 7 is now available!",
-        "publishedAt": "2026-08-11T18:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/coreclr-progress-and-mono-timeline-dotnet-maui/",
-        "title": "CoreCLR Progress and the Mono Timeline for .NET MAUI",
-        "publishedAt": "2026-07-14T18:30:00.000Z"
-      },
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/",
-        "title": ".NET 11 Preview 6 is now available!",
-        "publishedAt": "2026-07-14T17:45:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-11T10:37:44.751Z",
-    "publishedAt": "2026-11-10T19:01:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "0aa4c82c-f290-4094-b7cf-bad4aca3dabc",
