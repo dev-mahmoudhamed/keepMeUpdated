@@ -1,5 +1,353 @@
 [
   {
+    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
+    "slug": "angular-components-22-updates",
+    "title": "Angular components 22 updates",
+    "tldr": "Angular Components published version 22.3.0-rc.0 along with continuous maintenance releases across the 22.2.x series. The updates provide patches for the Material design library, Component Development Kit (CDK), and ARIA packages.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include version 22.3.0-rc.0 and a series of 22.3.0-next previews.</li><li>Stable maintenance builds range from 22.2.0 up to 22.2.7.</li><li>The package updates focus on Angular Material components, CDK infrastructure, and accessibility (ARIA) modules.</li></ul><h3>Why it matters</h3><p>These continuous updates keep Angular's official UI, accessibility, and component layout libraries synchronized with the primary Angular framework version releases.</p>",
+    "tags": [
+      "angular",
+      "material",
+      "release",
+      "angular components",
+      "angular material",
+      "accessibility",
+      "material design",
+      "aria",
+      "frontend",
+      "cdk"
+    ],
+    "sources": [
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.4.0-next.0",
+        "title": "Angular components 22.4.0-next.0",
+        "publishedAt": "2026-11-18T09:39:45.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0",
+        "title": "Angular components 22.3.0",
+        "publishedAt": "2026-11-18T09:35:47.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-rc.0",
+        "title": "Angular components 22.3.0-rc.0",
+        "publishedAt": "2026-11-11T11:19:52.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.7",
+        "title": "Angular components 22.2.7",
+        "publishedAt": "2026-11-11T11:16:03.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.5",
+        "title": "Angular components 22.3.0-next.5",
+        "publishedAt": "2026-11-04T12:23:08.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.6",
+        "title": "Angular components 22.2.6",
+        "publishedAt": "2026-11-04T11:58:40.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
+        "title": "Angular components 22.3.0-next.4",
+        "publishedAt": "2026-10-28T17:44:49.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.5",
+        "title": "Angular components 22.2.5",
+        "publishedAt": "2026-10-28T17:38:26.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
+        "title": "Angular components 22.3.0-next.3",
+        "publishedAt": "2026-10-21T10:01:13.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
+        "title": "Angular components 22.2.4",
+        "publishedAt": "2026-10-21T09:49:03.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
+        "title": "Angular components 22.3.0-next.2",
+        "publishedAt": "2026-10-14T15:24:48.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
+        "title": "Angular components 22.2.3",
+        "publishedAt": "2026-10-14T15:07:56.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
+        "title": "Angular components 22.3.0-next.1",
+        "publishedAt": "2026-10-07T16:24:46.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
+        "title": "Angular components 22.2.2",
+        "publishedAt": "2026-10-07T14:59:58.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
+        "title": "Angular components 22.3.0-next.0",
+        "publishedAt": "2026-09-30T08:15:20.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
+        "title": "Angular components 22.2.1",
+        "publishedAt": "2026-09-30T08:07:47.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
+        "title": "Angular components 22.2.0",
+        "publishedAt": "2026-09-23T12:12:09.000Z"
+      },
+      {
+        "sourceId": "3c1512ebc31b",
+        "siteName": "Angular components releases",
+        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
+        "title": "Angular components 22.1.8",
+        "publishedAt": "2026-09-23T12:03:55.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-18T09:39:45.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "2eedb5ab-3390-4f70-ac6a-cbe913399945",
+    "slug": "aspire-17-updates",
+    "title": "Aspire 17 updates",
+    "tldr": "Aspire 17.0.0 Aspire 17.0 brings a resource-first dashboard, Go AppHosts in preview, stable .NET project hosting and Kubernetes deployment packages, and new Microsoft Entra ID and Azure API Management integrations. Shell completion, shared team configuration, environment-specific secrets, richer ed…",
+    "bodyHtml": "<p><strong>Aspire releases:</strong> Aspire 17.0.0 Aspire 17.0 brings a resource-first dashboard, Go AppHosts in preview, stable .NET project hosting and Kubernetes deployment packages, and new Microsoft Entra ID and Azure API Management integrations. Shell completion, shared team configuration, environment-specific secrets, richer editor tooling, and a preview tray companion make it easier to build, inspect, and deploy applications across languages. Highlights 📊 Resource-first dashboard — A resource table home page and shared re…</p>",
+    "tags": [
+      "dotnet",
+      "aspire",
+      "release"
+    ],
+    "sources": [
+      {
+        "sourceId": "87b273ebaa32",
+        "siteName": "Aspire releases",
+        "url": "https://github.com/microsoft/aspire/releases/tag/v17.0.0",
+        "title": "Aspire 17.0.0",
+        "publishedAt": "2026-11-18T06:50:03.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-18T06:50:03.000Z",
+    "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
+  },
+  {
+    "id": "c8560c99-5e50-4f56-8846-e06e1d4ad269",
+    "slug": "github-brings-copilot-fusion-model-orchestration-to-visual-studio",
+    "title": "GitHub Brings Copilot Fusion Model Orchestration to Visual Studio",
+    "tldr": "Developers can select Fusion in Visual Studio and let it coordinate AI models, while a separate preview brings local-model routing to VS Code, the Copilot app and CLI.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Developers can select Fusion in Visual Studio and let it coordinate AI models, while a separate preview brings local-model routing to VS Code, the Copilot app and CLI.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/17/github-brings-copilot-fusion-model-orchestration-to-visual-studio.aspx",
+        "title": "GitHub Brings Copilot Fusion Model Orchestration to Visual Studio",
+        "publishedAt": "2026-11-17T21:04:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-17T21:04:00.000Z",
+    "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
+  },
+  {
+    "id": "729e306c-bea1-4f91-a4b6-d67bf7a4903a",
+    "slug": "introducing-staged-publishing-on-nuget-org",
+    "title": "Introducing staged publishing on NuGet.org",
+    "tldr": "Stage and validate packages privately on NuGet.org, then approve their release when you are ready. The post Introducing staged publishing on NuGet.org appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> Stage and validate packages privately on NuGet.org, then approve their release when you are ready. The post Introducing staged publishing on NuGet.org appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/nuget-staged-publishing/",
+        "title": "Introducing staged publishing on NuGet.org",
+        "publishedAt": "2026-11-17T21:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-17T21:00:00.000Z",
+    "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
+  },
+  {
+    "id": "25407c66-082a-4439-b0b3-bf1ced83fbf2",
+    "slug": "microsoft-releases-copilot-sdk-2-0-for-enterprise-ai-agents",
+    "title": "Microsoft Releases Copilot SDK 2.0 for Enterprise AI Agents",
+    "tldr": "Microsoft's rebuilt agent runtime lets developers share one process across sessions, scope tools and credentials to each user, and resume work beyond a single application's lifetime.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft's rebuilt agent runtime lets developers share one process across sessions, scope tools and credentials to each user, and resume work beyond a single application's lifetime.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/17/microsoft-releases-copilot-sdk-2-0-for-enterprise-ai-agents.aspx",
+        "title": "Microsoft Releases Copilot SDK 2.0 for Enterprise AI Agents",
+        "publishedAt": "2026-11-17T20:08:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-17T20:08:00.000Z",
+    "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
+  },
+  {
+    "id": "fba491a9-4e44-4e4a-9950-794f9c305da1",
+    "slug": "building-ai-features-in-net-with-microsoft-extensions-ai",
+    "title": "Building AI features in .NET with Microsoft.Extensions.AI",
+    "tldr": "Microsoft.Extensions.AI gives .NET one set of abstractions for talking to AI providers. This post builds a console chatbot with IChatClient, streaming responses and conversation history. It then adds typed, structured output and handles rate limits, so the demo holds up on a free-tier model.",
+    "bodyHtml": "<p><strong>elmah.io blog:</strong> Microsoft.Extensions.AI gives .NET one set of abstractions for talking to AI providers. This post builds a console chatbot with IChatClient, streaming responses and conversation history. It then adds typed, structured output and handles rate limits, so the demo holds up on a free-tier model.</p>",
+    "tags": [
+      "dotnet",
+      "aspnetcore"
+    ],
+    "sources": [
+      {
+        "sourceId": "4ed3c18fe2b2",
+        "siteName": "elmah.io blog",
+        "url": "https://blog.elmah.io/building-ai-features-in-net-with-microsoft-extensions-ai/",
+        "title": "Building AI features in .NET with Microsoft.Extensions.AI",
+        "publishedAt": "2026-11-17T11:54:39.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-17T11:54:39.000Z",
+    "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
+  },
+  {
+    "id": "1efcc587-6345-4634-8dd6-2d735e72e13f",
+    "slug": "microsoft-releases-net-11-c-15-union-types-native-aot-cli-host-and-coreclr-by-de",
+    "title": "Microsoft Releases .NET 11: C# 15 Union Types, Native AOT CLI Host, and CoreCLR by Default in MAUI",
+    "tldr": "Microsoft has released .NET 11, a Standard Term Support release with two years of support. It ships C# 15 with union types and closed hierarchies, a Native AOT CLI host, a preview of Runtime Async, Zstandard compression, asynchronous validation and OpenAPI 3.2 in ASP.NET Core, CoreCLR as the defaul…",
+    "bodyHtml": "<p><strong>InfoQ .NET:</strong> Microsoft has released .NET 11, a Standard Term Support release with two years of support. It ships C# 15 with union types and closed hierarchies, a Native AOT CLI host, a preview of Runtime Async, Zstandard compression, asynchronous validation and OpenAPI 3.2 in ASP.NET Core, CoreCLR as the default runtime in .NET MAUI, and EF Core 11 with experimental vector search. By Almir Vuk</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/11/dotnet-11-release/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": "Microsoft Releases .NET 11: C# 15 Union Types, Native AOT CLI Host, and CoreCLR by Default in MAUI",
+        "publishedAt": "2026-11-17T10:20:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-17T10:20:00.000Z",
+    "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
+  },
+  {
+    "id": "49b28232-087f-4fd0-91a7-990ee674261d",
+    "slug": "microsoft-gives-ai-agents-more-control-over-azure-infrastructure",
+    "title": "Microsoft Gives AI Agents More Control Over Azure Infrastructure",
+    "tldr": "Azure Resource Manager MCP Server gains resource-changing capabilities as Microsoft expands Azure Copilot deployment and previews new SRE Agent governance features.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Azure Resource Manager MCP Server gains resource-changing capabilities as Microsoft expands Azure Copilot deployment and previews new SRE Agent governance features.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/17/microsoft-gives-ai-agents-more-control-over-azure-infrastructure.aspx",
+        "title": "Microsoft Gives AI Agents More Control Over Azure Infrastructure",
+        "publishedAt": "2026-11-17T08:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "publishedAt": "2026-11-17T08:00:00.000Z",
+    "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
+  },
+  {
     "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
     "slug": "net-11-updates",
     "title": ".NET 11 updates",
@@ -701,147 +1049,6 @@
     "updatedAt": "2026-11-14T10:00:45.539Z",
     "publishedAt": "2026-11-11T12:31:24.000Z",
     "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
-  },
-  {
-    "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
-    "slug": "angular-components-22-updates",
-    "title": "Angular components 22 updates",
-    "tldr": "Angular Components published version 22.3.0-rc.0 along with continuous maintenance releases across the 22.2.x series. The updates provide patches for the Material design library, Component Development Kit (CDK), and ARIA packages.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include version 22.3.0-rc.0 and a series of 22.3.0-next previews.</li><li>Stable maintenance builds range from 22.2.0 up to 22.2.7.</li><li>The package updates focus on Angular Material components, CDK infrastructure, and accessibility (ARIA) modules.</li></ul><h3>Why it matters</h3><p>These continuous updates keep Angular's official UI, accessibility, and component layout libraries synchronized with the primary Angular framework version releases.</p>",
-    "tags": [
-      "angular",
-      "material",
-      "release",
-      "angular components",
-      "angular material",
-      "accessibility",
-      "material design",
-      "aria",
-      "frontend",
-      "cdk"
-    ],
-    "sources": [
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-rc.0",
-        "title": "Angular components 22.3.0-rc.0",
-        "publishedAt": "2026-11-11T11:19:52.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.7",
-        "title": "Angular components 22.2.7",
-        "publishedAt": "2026-11-11T11:16:03.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.5",
-        "title": "Angular components 22.3.0-next.5",
-        "publishedAt": "2026-11-04T12:23:08.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.6",
-        "title": "Angular components 22.2.6",
-        "publishedAt": "2026-11-04T11:58:40.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.4",
-        "title": "Angular components 22.3.0-next.4",
-        "publishedAt": "2026-10-28T17:44:49.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.5",
-        "title": "Angular components 22.2.5",
-        "publishedAt": "2026-10-28T17:38:26.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.3",
-        "title": "Angular components 22.3.0-next.3",
-        "publishedAt": "2026-10-21T10:01:13.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.4",
-        "title": "Angular components 22.2.4",
-        "publishedAt": "2026-10-21T09:49:03.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.2",
-        "title": "Angular components 22.3.0-next.2",
-        "publishedAt": "2026-10-14T15:24:48.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.3",
-        "title": "Angular components 22.2.3",
-        "publishedAt": "2026-10-14T15:07:56.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.1",
-        "title": "Angular components 22.3.0-next.1",
-        "publishedAt": "2026-10-07T16:24:46.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.2",
-        "title": "Angular components 22.2.2",
-        "publishedAt": "2026-10-07T14:59:58.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.3.0-next.0",
-        "title": "Angular components 22.3.0-next.0",
-        "publishedAt": "2026-09-30T08:15:20.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.1",
-        "title": "Angular components 22.2.1",
-        "publishedAt": "2026-09-30T08:07:47.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.2.0",
-        "title": "Angular components 22.2.0",
-        "publishedAt": "2026-09-23T12:12:09.000Z"
-      },
-      {
-        "sourceId": "3c1512ebc31b",
-        "siteName": "Angular components releases",
-        "url": "https://github.com/angular/components/releases/tag/v22.1.8",
-        "title": "Angular components 22.1.8",
-        "publishedAt": "2026-09-23T12:03:55.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-14T10:00:45.539Z",
-    "publishedAt": "2026-11-11T11:19:52.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "8641e15d-9e50-492e-bcf1-a4fe2f950865",
