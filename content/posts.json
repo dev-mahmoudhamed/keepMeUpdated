@@ -1,10 +1,276 @@
 [
   {
+    "id": "efe1d603-6fa2-491d-9a94-96a23d6ec16e",
+    "slug": "netwasm-0-10-speeds-up-c-on-webassembly-now-faster-than-mono-aot",
+    "title": "NetWasm 0.10 Speeds Up C# on WebAssembly, Now Faster Than Mono AOT",
+    "tldr": "NetWasm has documented optimizations in its 0.10 release series covering exception handling, bounds checks, SIMD, and integer division. Across benchmark suites on Wasmtime, the ahead-of-time C# to WebAssembly compiler outperformed Mono AOT on WASI.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Exception handling was reworked in 0.10.1 using a shared throw function to avoid register save-and-restore overhead on every call.</li><li>Version 0.10.2 added method inlining inside loops, redundant bounds check elimination, and optimized value-type accessors.</li><li>SIMD support in 0.10.7 mapped Vector types to 128-bit Wasm instructions, enabling auto-vectorization in element-wise loops.</li><li>Release 0.10.8 optimized integer division and remainder operations to reuse quotients and avoid duplicate checks.</li><li>In 2,213 benchmark cases, NetWasm 0.10.8 achieved a geometric mean runtime 0.41 times that of Mono AOT's WASI build.</li></ul><h3>Why it matters</h3><p>Ahead-of-time WebAssembly compilation for C# historically lagged behind native targets in tight loops and compute workloads. These architectural updates significantly reduce overheads in Wasm runtimes, making browser- and WASI-hosted C# closer to native runtime speeds.</p>",
+    "tags": [
+      "dotnet",
+      "csharp",
+      "webassembly",
+      "compilers",
+      "performance",
+      "c#",
+      "wasi"
+    ],
+    "sources": [
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/11/NetWasm-0-10-Faster/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": "NetWasm 0.10 Speeds Up C# on WebAssembly, Now Faster Than Mono AOT",
+        "publishedAt": "2026-11-19T09:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-19T11:24:02.296Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
+    "publishedAt": "2026-11-19T09:00:00.000Z",
+    "runId": "56bca345-c3e9-40d1-b1e8-fbdaa8e0780b"
+  },
+  {
+    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
+    "slug": "angular-cli-22-2-4-released",
+    "title": "Angular CLI 22 updates",
+    "tldr": "Angular CLI releases in the v22 line introduce deprecations across build schematics and packaging tools. The project plans to require Vitest for new projects and transition library builds to a new builder.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The testRunner option in application, library, and ng-new schematics is deprecated.</li><li>Future Angular CLI releases will configure new projects exclusively with Vitest.</li><li>The @angular/build:ng-packagr builder and its programmatic APIs are deprecated in favor of @angular/build:library.</li></ul><h3>Why it matters</h3><p>Developers creating new Angular applications or maintaining reusable libraries must prepare their toolchains for Vitest and migrate build setups to @angular/build:library ahead of future major releases.</p>",
+    "tags": [
+      "angular",
+      "angular cli",
+      "typescript",
+      "frontend",
+      "cli",
+      "release",
+      "tooling",
+      "javascript",
+      "vitest",
+      "build tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0",
+        "title": "Angular CLI 22.3.0",
+        "publishedAt": "2026-11-19T00:39:02.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.8",
+        "title": "Angular CLI 22.2.8",
+        "publishedAt": "2026-11-18T21:07:50.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-rc.0",
+        "title": "Angular CLI 22.3.0-rc.0",
+        "publishedAt": "2026-11-12T14:03:01.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.7",
+        "title": "Angular CLI 22.2.7",
+        "publishedAt": "2026-11-12T13:32:42.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.5",
+        "title": "Angular CLI 22.3.0-next.5",
+        "publishedAt": "2026-11-05T00:11:35.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.6",
+        "title": "Angular CLI 22.2.6",
+        "publishedAt": "2026-11-04T22:41:48.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
+        "title": "Angular CLI 22.3.0-next.4",
+        "publishedAt": "2026-10-28T10:05:41.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
+        "title": "Angular CLI 22.2.5",
+        "publishedAt": "2026-10-28T10:00:30.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
+        "title": "Angular CLI 22.2.4",
+        "publishedAt": "2026-10-22T13:38:22.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
+        "title": "Angular CLI 22.3.0-next.1",
+        "publishedAt": "2026-10-07T07:14:29.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
+        "title": "Angular CLI 22.2.2",
+        "publishedAt": "2026-10-07T07:10:57.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-23T08:25:16.497Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
+    "publishedAt": "2026-11-19T00:39:02.000Z",
+    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
+  },
+  {
+    "id": "21636411-4af1-4385-804b-f77387875b7c",
+    "slug": "angular-22-updates",
+    "title": "Angular 22 updates",
+    "tldr": "Angular 22.3.0 introduces a performance-oriented Rust compiler, router error boundaries, and stricter template diagnostics. Unfinished prototypes for signal and selectorless components were removed.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A new Rust-based compiler (ngp) accelerates build and rebuild times, omitting TypeScript type checking for templates to optimize performance.</li><li>The optional strictUnknownElements compiler flag identifies unmatched custom tags that were previously accepted when matched by an attribute.</li><li>Signal components and selectorless component prototypes have been removed from the codebase.</li><li>The release adds router error boundaries and a dedicated library builder.</li></ul><h3>Why it matters</h3><p>Build pipelines receive significant performance improvements through the Rust compiler, but developers should note that certain template diagnostics are skipped to achieve faster compile times.</p>",
+    "tags": [
+      "angular",
+      "architecture",
+      "web development",
+      "frontend",
+      "angular 22",
+      "error boundaries",
+      "router resources",
+      "javascript",
+      "typescript",
+      "compilers"
+    ],
+    "sources": [
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0",
+        "title": "Angular 22.3.0",
+        "publishedAt": "2026-11-18T19:26:45.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.7",
+        "title": "Angular 22.2.7",
+        "publishedAt": "2026-11-18T19:14:30.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/11/18/what-is-new-angular-22.3",
+        "title": "What's new in Angular 22.3?",
+        "publishedAt": "2026-11-18T00:00:00.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-rc.0",
+        "title": "Angular 22.3.0-rc.0",
+        "publishedAt": "2026-11-12T00:07:41.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.6",
+        "title": "Angular 22.2.6",
+        "publishedAt": "2026-11-12T00:01:30.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.5",
+        "title": "Angular 22.2.5",
+        "publishedAt": "2026-11-06T19:37:09.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.4",
+        "title": "Angular 22.3.0-next.4",
+        "publishedAt": "2026-11-05T23:00:46.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.3",
+        "title": "Angular 22.3.0-next.3",
+        "publishedAt": "2026-10-29T17:51:29.000Z"
+      },
+      {
+        "sourceId": "5d7162762e53",
+        "siteName": "Angular releases",
+        "url": "https://github.com/angular/angular/releases/tag/v22.2.4",
+        "title": "Angular 22.2.4",
+        "publishedAt": "2026-10-29T17:41:23.000Z"
+      },
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T15:45:57.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
+        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
+        "publishedAt": "2026-09-28T00:00:00.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
+        "title": "What's new in Angular 22.2?",
+        "publishedAt": "2026-09-23T00:00:00.000Z"
+      },
+      {
+        "sourceId": "56e621a08449",
+        "siteName": "Angular Training Blog",
+        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
+        "title": "What’s new in Angular 22.1?",
+        "publishedAt": "2026-08-21T13:16:57.000Z"
+      },
+      {
+        "sourceId": "73a4e84eff6d",
+        "siteName": "Ninja Squad",
+        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
+        "title": "What's new in Angular 22.1?",
+        "publishedAt": "2026-07-29T00:00:00.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
+    "publishedAt": "2026-11-18T19:26:45.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
     "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
     "slug": "angular-components-22-updates",
     "title": "Angular components 22 updates",
-    "tldr": "Angular Components published version 22.3.0-rc.0 along with continuous maintenance releases across the 22.2.x series. The updates provide patches for the Material design library, Component Development Kit (CDK), and ARIA packages.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Releases include version 22.3.0-rc.0 and a series of 22.3.0-next previews.</li><li>Stable maintenance builds range from 22.2.0 up to 22.2.7.</li><li>The package updates focus on Angular Material components, CDK infrastructure, and accessibility (ARIA) modules.</li></ul><h3>Why it matters</h3><p>These continuous updates keep Angular's official UI, accessibility, and component layout libraries synchronized with the primary Angular framework version releases.</p>",
+    "tldr": "Angular Components published version 22.4.0-next.0 alongside maintenance releases across the 22.2.x series. The updates contain patches spanning Angular Material, the CDK, and ARIA support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular Components 22.4.0-next.0 notes indicate no user-facing changes in that specific preview.</li><li>Associated 22.2.x and preview releases deliver maintenance fixes across the Material, CDK, and ARIA libraries.</li></ul><h3>Why it matters</h3><p>These continuous patch releases maintain stability and accessibility standards across core UI component packages.</p>",
     "tags": [
       "angular",
       "material",
@@ -148,9 +414,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-18T09:39:45.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -158,12 +424,16 @@
     "id": "2eedb5ab-3390-4f70-ac6a-cbe913399945",
     "slug": "aspire-17-updates",
     "title": "Aspire 17 updates",
-    "tldr": "Aspire 17.0.0 Aspire 17.0 brings a resource-first dashboard, Go AppHosts in preview, stable .NET project hosting and Kubernetes deployment packages, and new Microsoft Entra ID and Azure API Management integrations. Shell completion, shared team configuration, environment-specific secrets, richer ed…",
-    "bodyHtml": "<p><strong>Aspire releases:</strong> Aspire 17.0.0 Aspire 17.0 brings a resource-first dashboard, Go AppHosts in preview, stable .NET project hosting and Kubernetes deployment packages, and new Microsoft Entra ID and Azure API Management integrations. Shell completion, shared team configuration, environment-specific secrets, richer editor tooling, and a preview tray companion make it easier to build, inspect, and deploy applications across languages. Highlights 📊 Resource-first dashboard — A resource table home page and shared re…</p>",
+    "tldr": "Aspire 17.0 introduces a resource-first observability dashboard, preview Go AppHost support, and stabilized hosting integrations for .NET and Kubernetes. The update raises the minimum required runtime to .NET 10.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The dashboard now features a resource-first layout, pinnable metric cards, live sparklines, and Mermaid architecture graph exports.</li><li>Go AppHosts are available in preview without experimental feature flags, adding VS Code debugging and CLI support.</li><li>Aspire.Hosting.Dotnet and Kubernetes/AKS deployment packages have been graduated to stable.</li><li>Preview cloud integrations include Microsoft Entra ID and Azure API Management hosting models.</li><li>Aspire now requires a minimum of .NET 10, though orchestrated workloads are not required to retarget.</li></ul><h3>Why it matters</h3><p>Aspire is expanding beyond .NET-centric orchestrations by supporting Go and modernizing cloud deployment definitions across Azure and Kubernetes architectures.</p>",
     "tags": [
       "dotnet",
       "aspire",
-      "release"
+      "release",
+      ".net",
+      "kubernetes",
+      "azure",
+      "cloud"
     ],
     "sources": [
       {
@@ -177,9 +447,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-18T11:25:43.947Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-18T06:50:03.000Z",
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
@@ -187,10 +457,14 @@
     "id": "c8560c99-5e50-4f56-8846-e06e1d4ad269",
     "slug": "github-brings-copilot-fusion-model-orchestration-to-visual-studio",
     "title": "GitHub Brings Copilot Fusion Model Orchestration to Visual Studio",
-    "tldr": "Developers can select Fusion in Visual Studio and let it coordinate AI models, while a separate preview brings local-model routing to VS Code, the Copilot app and CLI.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Developers can select Fusion in Visual Studio and let it coordinate AI models, while a separate preview brings local-model routing to VS Code, the Copilot app and CLI.</p>",
+    "tldr": "GitHub Copilot Fusion model orchestration is now available in Visual Studio, while local-model routing enters preview across several developer surfaces.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Visual Studio developers can use Copilot Fusion to orchestrate multiple AI models.</li><li>A separate preview introduces local-model routing to VS Code, the Copilot application, and the CLI.</li></ul><h3>Why it matters</h3><p>Engineers can route and balance between local and cloud-based AI models directly inside their IDEs and terminal environments.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "github copilot",
+      "visual studio",
+      "vs code",
+      "ai"
     ],
     "sources": [
       {
@@ -204,9 +478,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-18T11:25:43.947Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-17T21:04:00.000Z",
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
@@ -214,11 +488,16 @@
     "id": "729e306c-bea1-4f91-a4b6-d67bf7a4903a",
     "slug": "introducing-staged-publishing-on-nuget-org",
     "title": "Introducing staged publishing on NuGet.org",
-    "tldr": "Stage and validate packages privately on NuGet.org, then approve their release when you are ready. The post Introducing staged publishing on NuGet.org appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> Stage and validate packages privately on NuGet.org, then approve their release when you are ready. The post Introducing staged publishing on NuGet.org appeared first on .NET Blog.</p>",
+    "tldr": "NuGet.org has launched staged publishing, allowing maintainers to validate packages privately before making them public. Packages can be grouped for releases and promoted manually via the portal with two-factor authentication.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Staged packages pass full validation—including malware and signature checks—while remaining completely private and unrestorable.</li><li>Publishers can group related dependencies into staging groups under a single owner.</li><li>Promoting a package or group to public release requires two-factor authentication on the NuGet.org website.</li><li>Promotion is not atomic; individual packages flow through public feeds independently once approved.</li></ul><h3>Why it matters</h3><p>Automated CI/CD pipelines can upload artifacts ahead of time without accidentally releasing pre-release bits or security fixes prematurely, adding a verification boundary before public availability.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      "nuget",
+      ".net",
+      "package management",
+      "devops",
+      "security"
     ],
     "sources": [
       {
@@ -232,9 +511,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-18T11:25:43.947Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-17T21:00:00.000Z",
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
@@ -242,10 +521,14 @@
     "id": "25407c66-082a-4439-b0b3-bf1ced83fbf2",
     "slug": "microsoft-releases-copilot-sdk-2-0-for-enterprise-ai-agents",
     "title": "Microsoft Releases Copilot SDK 2.0 for Enterprise AI Agents",
-    "tldr": "Microsoft's rebuilt agent runtime lets developers share one process across sessions, scope tools and credentials to each user, and resume work beyond a single application's lifetime.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Microsoft's rebuilt agent runtime lets developers share one process across sessions, scope tools and credentials to each user, and resume work beyond a single application's lifetime.</p>",
+    "tldr": "Microsoft has released Copilot SDK 2.0 with a rebuilt runtime architecture for enterprise AI agent systems.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Enables a single process to be shared across multiple runtime sessions.</li><li>Scopes credentials and tools per user for isolated enterprise execution.</li><li>Supports persistent state so agent work can resume beyond the lifespan of an individual application.</li></ul><h3>Why it matters</h3><p>The redesigned architecture allows enterprise agent workloads to maintain isolation and persistent execution lifecycles without tying processing to individual application processes.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "copilot",
+      "microsoft",
+      "ai agents",
+      "enterprise"
     ],
     "sources": [
       {
@@ -259,9 +542,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-18T11:25:43.947Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-17T20:08:00.000Z",
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
@@ -269,11 +552,15 @@
     "id": "fba491a9-4e44-4e4a-9950-794f9c305da1",
     "slug": "building-ai-features-in-net-with-microsoft-extensions-ai",
     "title": "Building AI features in .NET with Microsoft.Extensions.AI",
-    "tldr": "Microsoft.Extensions.AI gives .NET one set of abstractions for talking to AI providers. This post builds a console chatbot with IChatClient, streaming responses and conversation history. It then adds typed, structured output and handles rate limits, so the demo holds up on a free-tier model.",
-    "bodyHtml": "<p><strong>elmah.io blog:</strong> Microsoft.Extensions.AI gives .NET one set of abstractions for talking to AI providers. This post builds a console chatbot with IChatClient, streaming responses and conversation history. It then adds typed, structured output and handles rate limits, so the demo holds up on a free-tier model.</p>",
+    "tldr": "The Microsoft.Extensions.AI NuGet library introduces standardized abstractions for AI integration in .NET applications. Developers can use common interfaces to stream text, maintain conversation history, and parse structured output.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Provides the IChatClient interface to abstract interactions across different AI model providers.</li><li>AsIChatClient() adapts vendor SDKs (such as OpenAI-compatible endpoints) into unified interfaces.</li><li>Supports asynchronous streaming responses using GetStreamingResponseAsync.</li><li>Enables strongly typed, structured outputs using generic methods like GetResponseAsync&lt;T&gt;().</li></ul><h3>Why it matters</h3><p>Standardizing AI interactions behind shared interfaces allows .NET developers to switch backend AI providers or models without rewriting application integration logic.</p>",
     "tags": [
       "dotnet",
-      "aspnetcore"
+      "aspnetcore",
+      ".net",
+      "ai",
+      "microsoft.extensions.ai",
+      "software architecture"
     ],
     "sources": [
       {
@@ -287,9 +574,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-18T11:25:43.947Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-17T11:54:39.000Z",
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
@@ -297,10 +584,15 @@
     "id": "1efcc587-6345-4634-8dd6-2d735e72e13f",
     "slug": "microsoft-releases-net-11-c-15-union-types-native-aot-cli-host-and-coreclr-by-de",
     "title": "Microsoft Releases .NET 11: C# 15 Union Types, Native AOT CLI Host, and CoreCLR by Default in MAUI",
-    "tldr": "Microsoft has released .NET 11, a Standard Term Support release with two years of support. It ships C# 15 with union types and closed hierarchies, a Native AOT CLI host, a preview of Runtime Async, Zstandard compression, asynchronous validation and OpenAPI 3.2 in ASP.NET Core, CoreCLR as the defaul…",
-    "bodyHtml": "<p><strong>InfoQ .NET:</strong> Microsoft has released .NET 11, a Standard Term Support release with two years of support. It ships C# 15 with union types and closed hierarchies, a Native AOT CLI host, a preview of Runtime Async, Zstandard compression, asynchronous validation and OpenAPI 3.2 in ASP.NET Core, CoreCLR as the default runtime in .NET MAUI, and EF Core 11 with experimental vector search. By Almir Vuk</p>",
+    "tldr": "Microsoft has released .NET 11 alongside C# 15 as a Standard Term Support release with two years of support. Key updates include C# union types, a Native AOT CLI host, and CoreCLR by default in MAUI.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>C# 15 introduces union types with compiler-enforced exhaustiveness checking and closed inheritance hierarchies.</li><li>The .NET SDK CLI defaults to a Native AOT host, and the minimum hardware baseline increases to x86-64-v2.</li><li>ASP.NET Core 11 generates OpenAPI 3.2 documents by default and adds asynchronous validation.</li><li>.NET MAUI switches to CoreCLR as its default runtime, keeping Mono and Native AOT as options.</li><li>Libraries receive Zstandard compression, a FullJoin LINQ operator, and JSON Lines support in System.Text.Json.</li></ul><h3>Why it matters</h3><p>.NET 11 modernizes core language syntax with union types while elevating build performance and runtime defaults across CLI, desktop, and web platforms.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      ".net",
+      "c#",
+      "asp.net core",
+      "maui",
+      "software development"
     ],
     "sources": [
       {
@@ -314,9 +606,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-18T11:25:43.947Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-17T10:20:00.000Z",
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
@@ -324,10 +616,14 @@
     "id": "49b28232-087f-4fd0-91a7-990ee674261d",
     "slug": "microsoft-gives-ai-agents-more-control-over-azure-infrastructure",
     "title": "Microsoft Gives AI Agents More Control Over Azure Infrastructure",
-    "tldr": "Azure Resource Manager MCP Server gains resource-changing capabilities as Microsoft expands Azure Copilot deployment and previews new SRE Agent governance features.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> Azure Resource Manager MCP Server gains resource-changing capabilities as Microsoft expands Azure Copilot deployment and previews new SRE Agent governance features.</p>",
+    "tldr": "Microsoft has updated Azure Resource Manager MCP Server to allow autonomous AI agents to perform infrastructure modifications.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Azure Resource Manager MCP Server gains capabilities to execute resource changes directly.</li><li>Microsoft is expanding Azure Copilot rollouts alongside governance features for its preview SRE Agent.</li></ul><h3>Why it matters</h3><p>Extending agent permissions to change infrastructure components marks a shift from read-only diagnostics toward automated cloud environment management and remediation.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "azure",
+      "ai agents",
+      "cloud infrastructure",
+      "devops"
     ],
     "sources": [
       {
@@ -341,9 +637,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-18T11:25:43.947Z",
-    "updatedAt": "2026-11-18T11:25:43.947Z",
+    "updatedAt": "2026-11-19T11:24:02.296Z",
     "publishedAt": "2026-11-17T08:00:00.000Z",
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
@@ -749,98 +1045,6 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
-    "id": "f0d4a3d6-0970-4f2c-b6d7-987345e346c8",
-    "slug": "angular-cli-22-2-4-released",
-    "title": "Angular CLI 22 updates",
-    "tldr": "Angular CLI releases in the v22 line include 22.3.0 release candidates alongside 22.2.x updates. These versions introduce deprecations for older build tools and test options in favor of modern defaults.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI has released versions spanning 22.3.0-rc.0, 22.3.0 pre-releases, and maintenance versions 22.2.2 through 22.2.7.</li><li>The testRunner schematic option in application, library, and ng-new is deprecated, signaling that future versions will configure Vitest exclusively.</li><li>The ng-packagr builder (@angular/build:ng-packagr) and associated programmatic APIs are deprecated.</li><li>Developers are directed to migrate library builds to the @angular/build:library builder instead.</li></ul><h3>Why it matters</h3><p>Angular is standardizing its test tooling around Vitest and simplifying library construction, requiring developers to adjust schematics and build pipeline configurations before deprecated builders are dropped.</p>",
-    "tags": [
-      "angular",
-      "angular cli",
-      "typescript",
-      "frontend",
-      "cli",
-      "release",
-      "tooling",
-      "javascript",
-      "vitest",
-      "build tools"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-rc.0",
-        "title": "Angular CLI 22.3.0-rc.0",
-        "publishedAt": "2026-11-12T14:03:01.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.7",
-        "title": "Angular CLI 22.2.7",
-        "publishedAt": "2026-11-12T13:32:42.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.5",
-        "title": "Angular CLI 22.3.0-next.5",
-        "publishedAt": "2026-11-05T00:11:35.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.6",
-        "title": "Angular CLI 22.2.6",
-        "publishedAt": "2026-11-04T22:41:48.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.4",
-        "title": "Angular CLI 22.3.0-next.4",
-        "publishedAt": "2026-10-28T10:05:41.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.5",
-        "title": "Angular CLI 22.2.5",
-        "publishedAt": "2026-10-28T10:00:30.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.4",
-        "title": "Angular CLI 22.2.4",
-        "publishedAt": "2026-10-22T13:38:22.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.3.0-next.1",
-        "title": "Angular CLI 22.3.0-next.1",
-        "publishedAt": "2026-10-07T07:14:29.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v22.2.2",
-        "title": "Angular CLI 22.2.2",
-        "publishedAt": "2026-10-07T07:10:57.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-23T08:25:16.497Z",
-    "updatedAt": "2026-11-14T10:00:45.539Z",
-    "publishedAt": "2026-11-12T14:03:01.000Z",
-    "runId": "1a7ac32b-3a42-492a-84fb-4d9af6a48766"
-  },
-  {
     "id": "388d151e-9574-4ece-80e8-522f5cb5f36a",
     "slug": "fewer-tokens-faster-uis-a2ui-macros-for-local-and-cloud-models",
     "title": "Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models",
@@ -871,111 +1075,6 @@
     "updatedAt": "2026-11-14T10:00:45.539Z",
     "publishedAt": "2026-11-12T00:22:27.000Z",
     "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
-  },
-  {
-    "id": "21636411-4af1-4385-804b-f77387875b7c",
-    "slug": "angular-22-updates",
-    "title": "Angular 22 updates",
-    "tldr": "Angular released version 22.3.0-rc.0 along with stable 22.2.x maintenance versions. The 22.2 release line introduces developer previews for template error boundaries, Router Resources, and private member access in templates.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular rolled out version 22.3.0-rc.0 alongside maintenance releases 22.2.4, 22.2.5, and 22.2.6.</li><li>Template error boundaries are available in developer preview to catch and handle UI render failures.</li><li>Router Resources have entered developer preview to optimize data handling alongside routing.</li><li>Templates gain support for accessing private class members directly.</li></ul><h3>Why it matters</h3><p>Template error boundaries and Router Resources introduce more resilient error handling and streamlined data loading patterns directly into Angular's core rendering and routing workflows.</p>",
-    "tags": [
-      "angular",
-      "architecture",
-      "web development",
-      "frontend",
-      "angular 22",
-      "error boundaries",
-      "router resources",
-      "javascript",
-      "typescript"
-    ],
-    "sources": [
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-rc.0",
-        "title": "Angular 22.3.0-rc.0",
-        "publishedAt": "2026-11-12T00:07:41.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.2.6",
-        "title": "Angular 22.2.6",
-        "publishedAt": "2026-11-12T00:01:30.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.2.5",
-        "title": "Angular 22.2.5",
-        "publishedAt": "2026-11-06T19:37:09.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.4",
-        "title": "Angular 22.3.0-next.4",
-        "publishedAt": "2026-11-05T23:00:46.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.3.0-next.3",
-        "title": "Angular 22.3.0-next.3",
-        "publishedAt": "2026-10-29T17:51:29.000Z"
-      },
-      {
-        "sourceId": "5d7162762e53",
-        "siteName": "Angular releases",
-        "url": "https://github.com/angular/angular/releases/tag/v22.2.4",
-        "title": "Angular 22.2.4",
-        "publishedAt": "2026-10-29T17:41:23.000Z"
-      },
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T15:45:57.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/angular-22-2-error-boundaries-router-resources-and-more/",
-        "title": "Angular 22.2: Error Boundaries, Router Resources, and More",
-        "publishedAt": "2026-09-28T00:00:00.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/09/23/what-is-new-angular-22.2",
-        "title": "What's new in Angular 22.2?",
-        "publishedAt": "2026-09-23T00:00:00.000Z"
-      },
-      {
-        "sourceId": "56e621a08449",
-        "siteName": "Angular Training Blog",
-        "url": "https://blog.angulartraining.com/whats-new-in-angular-22-1-9468b36d8d55?source=rss----8725e60f0d54---4",
-        "title": "What’s new in Angular 22.1?",
-        "publishedAt": "2026-08-21T13:16:57.000Z"
-      },
-      {
-        "sourceId": "73a4e84eff6d",
-        "siteName": "Ninja Squad",
-        "url": "https://blog.ninja-squad.com/2026/07/29/what-is-new-angular-22.1",
-        "title": "What's new in Angular 22.1?",
-        "publishedAt": "2026-07-29T00:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-14T10:00:45.539Z",
-    "publishedAt": "2026-11-12T00:07:41.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "0d9406d1-e9f5-4c37-831e-1b9a0f3fef71",
