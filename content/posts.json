@@ -1,5 +1,114 @@
 [
   {
+    "id": "abd13dba-14ee-4ba9-ae4c-beec4de77d59",
+    "slug": "the-momentum-across-the-global-angular-ecosystem-never-slows-down",
+    "title": "The momentum across the global Angular ecosystem never slows down!",
+    "tldr": "The momentum across the global Angular ecosystem never slows down!",
+    "bodyHtml": "",
+    "tags": [
+      "angular"
+    ],
+    "sources": [
+      {
+        "sourceId": "0d2eacde2168",
+        "siteName": "Angular Blog",
+        "url": "https://blog.angular.dev/the-momentum-across-the-global-angular-ecosystem-never-slows-down-7d69d0d07a69?source=rss----447683c3d9a3---4",
+        "title": "The momentum across the global Angular ecosystem never slows down!",
+        "publishedAt": "2026-11-20T05:01:02.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "publishedAt": "2026-11-20T05:01:02.000Z",
+    "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
+  },
+  {
+    "id": "ff2f7581-9355-4aec-b049-569601f1c16d",
+    "slug": "live-technical-training-wherever-you-are-a-vslive-benefit-for-visual-studio-subs",
+    "title": "Live technical training, wherever you are: A VSLive! benefit for Visual Studio subscribers",
+    "tldr": "Developers are constantly speaking to me about how AI tool mastery has become an essential part of their everyday work. But learning how to use these tools effectively takes more than experimenting with a few prompts, and it often requires opportunities to learn that go beyond documentation and tut…",
+    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> Developers are constantly speaking to me about how AI tool mastery has become an essential part of their everyday work. But learning how to use these tools effectively takes more than experimenting with a few prompts, and it often requires opportunities to learn that go beyond documentation and tutorials. Some of the best technical skill development takes […] The post Live technical training, wherever you are: A VSLive! benefit for Visual Studio subscribers appeared first on Visual Studio Blog.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/live-technical-training-wherever-you-are-a-vslive-benefit-for-visual-studio-subscribers/",
+        "title": "Live technical training, wherever you are: A VSLive! benefit for Visual Studio subscribers",
+        "publishedAt": "2026-11-19T21:30:48.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "publishedAt": "2026-11-19T21:30:48.000Z",
+    "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
+  },
+  {
+    "id": "57f29f38-c8df-40e0-9d2a-fb5b9034238d",
+    "slug": "microsoft-foundry-ships-dev-pack-adds-agent-network-controls-at-ignite",
+    "title": "Microsoft Foundry Ships Dev Pack, Adds Agent Network Controls at Ignite",
+    "tldr": "The Foundry Dev Pack, hosted-agent network controls, real-time voice and production Insights are generally available. Browser and deployment previews expand where agents can run.",
+    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The Foundry Dev Pack, hosted-agent network controls, real-time voice and production Insights are generally available. Browser and deployment previews expand where agents can run.</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/19/whats-new-in-microsoft-foundry-at-ignite-2026.aspx",
+        "title": "Microsoft Foundry Ships Dev Pack, Adds Agent Network Controls at Ignite",
+        "publishedAt": "2026-11-19T19:43:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "publishedAt": "2026-11-19T19:43:00.000Z",
+    "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
+  },
+  {
+    "id": "86591b0d-e415-4fe6-bedb-43358bc16187",
+    "slug": "net-11-asp-net-core-union-type-support-openapi-3-2-by-default-and-blazor-ai-comp",
+    "title": ".NET 11 : ASP.NET Core: Union Type Support, OpenAPI 3.2 by Default and Blazor AI Components",
+    "tldr": "Microsoft has released ASP.NET Core in .NET 11. The update adds C# union type support in JSON bodies, asynchronous validation for Minimal APIs, OpenAPI 3.2 by default, and SignalR authentication refresh. Blazor gains a CacheView component, client-side validation for static SSR forms, opt-in circuit…",
+    "bodyHtml": "<p><strong>InfoQ .NET:</strong> Microsoft has released ASP.NET Core in .NET 11. The update adds C# union type support in JSON bodies, asynchronous validation for Minimal APIs, OpenAPI 3.2 by default, and SignalR authentication refresh. Blazor gains a CacheView component, client-side validation for static SSR forms, opt-in circuit pause for inactive tabs, and experimental AI components. Zstandard compression is on by default. By Almir Vuk</p>",
+    "tags": [
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "655eccbecb12",
+        "siteName": "InfoQ .NET",
+        "url": "https://www.infoq.com/news/2026/11/asp-net-11-release/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=.NET",
+        "title": ".NET 11 : ASP.NET Core: Union Type Support, OpenAPI 3.2 by Default and Blazor AI Components",
+        "publishedAt": "2026-11-19T11:27:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "publishedAt": "2026-11-19T11:27:00.000Z",
+    "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
+  },
+  {
     "id": "efe1d603-6fa2-491d-9a94-96a23d6ec16e",
     "slug": "netwasm-0-10-speeds-up-c-on-webassembly-now-faster-than-mono-aot",
     "title": "NetWasm 0.10 Speeds Up C# on WebAssembly, Now Faster Than Mono AOT",
@@ -12053,37 +12162,5 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-25T00:00:00.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "c02a288a-8041-48ac-948c-6ba70fa6deac",
-    "slug": "one-validator-to-rule-them-all-part-2-advanced-error-handling-with-multi-languag",
-    "title": "One Validator to Rule Them All — Part 2: Advanced Error Handling with multi-language support.",
-    "tldr": "Integrating internationalization into full-stack shared Zod schemas requires separating descriptive error codes from localized UI text. Custom errorCode metadata preserves machine-readable error identification without polluting backend-shared validation modules with UI-specific translations.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Hardcoding localized strings directly into shared Zod schema messages inappropriately spreads frontend concerns to backend consumers.</li><li>Standard Zod error codes like 'custom' or 'too_small' lack descriptive precision for frontend form validation mapping.</li><li>Adding a reusable, machine-readable errorCode property to schema issues provides a distinct identifier for each validation rule failure.</li><li>Transformer functions convert schema issues into localized token structures (such as TranslocoToken) that pair translation keys with dynamic parameters.</li></ul><h3>Why it matters</h3><p>Decoupling validation metadata from UI localization ensures that schemas remain cleanly reusable across full-stack applications. This architecture avoids duplicate DTO mappers while ensuring the frontend can flexibly manage translations.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "zod",
-      "i18n",
-      "nestjs",
-      "typescript"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/one-validator-to-rule-them-all-part-2-advanced-error-handling-with-mul/",
-        "title": "One Validator to Rule Them All — Part 2: Advanced Error Handling with multi-language support.",
-        "publishedAt": "2026-07-23T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-23T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   }
 ]
