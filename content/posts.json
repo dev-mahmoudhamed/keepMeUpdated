@@ -1,5 +1,61 @@
 [
   {
+    "id": "9b8a8080-1104-495f-8944-7efb45542f51",
+    "slug": "can-c-15-union-types-replace-the-result-pattern",
+    "title": "Can C# 15 Union Types Replace the Result Pattern?",
+    "tldr": "C# 15 union types can replace the Result pattern. A generic union Result (T, Error) works like the Result class, and a generic validation decorator keeps…",
+    "bodyHtml": "<p><strong>Milan Jovanović:</strong> C# 15 union types can replace the Result pattern. A generic union Result (T, Error) works like the Result class, and a generic validation decorator keeps…</p>",
+    "tags": [
+      "dotnet",
+      "architecture"
+    ],
+    "sources": [
+      {
+        "sourceId": "3958049ea454",
+        "siteName": "Milan Jovanović",
+        "url": "https://milanjovanovic.tech/blog/csharp-union-types-vs-result-pattern",
+        "title": "Can C# 15 Union Types Replace the Result Pattern?",
+        "publishedAt": "2026-11-21T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-21T10:50:39.119Z",
+    "updatedAt": "2026-11-21T10:50:39.119Z",
+    "publishedAt": "2026-11-21T00:00:00.000Z",
+    "runId": "29f6f4c7-ba44-4156-8548-fa8f4a28ce38"
+  },
+  {
+    "id": "28041391-84a4-4535-a9f3-085802740356",
+    "slug": "ai-is-changing-the-cross-platform-decision-matrix",
+    "title": "AI is Changing the Cross-Platform Decision Matrix",
+    "tldr": "AI agents rebuilt a .NET MAUI app with platform UI in days. See what that cost to build, what it costs to maintain, and what changed at runtime, so you can weigh the same choice for your app. The post AI is Changing the Cross-Platform Decision Matrix appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> AI agents rebuilt a .NET MAUI app with platform UI in days. See what that cost to build, what it costs to maintain, and what changed at runtime, so you can weigh the same choice for your app. The post AI is Changing the Cross-Platform Decision Matrix appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/ai-cross-platform-decision-matrix/",
+        "title": "AI is Changing the Cross-Platform Decision Matrix",
+        "publishedAt": "2026-11-20T18:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-21T10:50:39.119Z",
+    "updatedAt": "2026-11-21T10:50:39.119Z",
+    "publishedAt": "2026-11-20T18:00:00.000Z",
+    "runId": "29f6f4c7-ba44-4156-8548-fa8f4a28ce38"
+  },
+  {
     "id": "abd13dba-14ee-4ba9-ae4c-beec4de77d59",
     "slug": "the-momentum-across-the-global-angular-ecosystem-never-slows-down",
     "title": "The momentum across the global Angular ecosystem never slows down!",
