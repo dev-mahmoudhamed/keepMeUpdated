@@ -12187,36 +12187,5 @@
     "updatedAt": "2026-10-26T08:44:24.936Z",
     "publishedAt": "2026-07-26T00:00:00.000Z",
     "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "74b01edc-e049-412d-9cda-2ede4299bdc7",
-    "slug": "the-system-design-behind-my-new-saas",
-    "title": "The System Design Behind My New SaaS",
-    "tldr": "A practical system design for running untrusted user code on self-owned hardware involves a multi-server VPS layout behind an isolated private mesh network.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The architecture is distributed across three Hetzner servers managed within a private WireGuard-based VPN via Headscale.</li><li>Only standard web ports 80 and 443 are publicly exposed to route traffic through a reverse proxy.</li><li>Submissions are queued via NATS and executed on an isolated worker server inside a sandbox with no network access.</li><li>Static frontend sites are served through Cloudflare for performance and cost efficiency.</li></ul><h3>Why it matters</h3><p>Self-hosting complex execution platforms securely on budget infrastructure is viable when isolating services via private networks and restricted ingress ports.</p>",
-    "tags": [
-      "system design",
-      "csharp",
-      "networking",
-      "security",
-      "self-hosting"
-    ],
-    "sources": [
-      {
-        "sourceId": "3958049ea454",
-        "siteName": "Milan Jovanović",
-        "url": "https://milanjovanovic.tech/blog/the-system-design-behind-my-new-saas",
-        "title": "The System Design Behind My New SaaS",
-        "publishedAt": "2026-07-25T00:00:00.000Z"
-      }
-    ],
-    "relevance": 4,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-25T00:00:00.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
