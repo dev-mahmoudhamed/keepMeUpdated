@@ -1,5 +1,89 @@
 [
   {
+    "id": "a20081f4-17bf-4922-830b-43c5a798d260",
+    "slug": "angular-cli-21-updates",
+    "title": "Angular CLI 21 updates",
+    "tldr": "The Angular CLI 21.2 maintenance stream has been updated, including versions 21.2.30, 21.2.29, and 21.2.27. Version 21.2.27 upgrades the project dependency on zod to version 4.6.6.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI published version 21.2.30 along with predecessor releases 21.2.29 and 21.2.27.</li><li>Release 21.2.27 bumps the core zod schema validation dependency to version 4.6.6.</li><li>The updates target core packages including @angular/cli, @angular/build, and associated devkit components.</li></ul><h3>Why it matters</h3><p>Teams maintaining Angular 21 projects receive updated dependencies and validation library patches needed for tooling security and stability.</p>",
+    "tags": [
+      "angular",
+      "cli",
+      "release",
+      "releases",
+      "angular cli",
+      "dependencies",
+      "frontend",
+      "zod",
+      "javascript tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.31",
+        "title": "Angular CLI 21.2.31",
+        "publishedAt": "2026-11-23T10:15:50.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.30",
+        "title": "Angular CLI 21.2.30",
+        "publishedAt": "2026-11-12T14:33:04.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.29",
+        "title": "Angular CLI 21.2.29",
+        "publishedAt": "2026-10-28T09:54:13.000Z"
+      },
+      {
+        "sourceId": "2440285b3f25",
+        "siteName": "Angular CLI releases",
+        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.27",
+        "title": "Angular CLI 21.2.27",
+        "publishedAt": "2026-10-15T02:50:17.000Z"
+      }
+    ],
+    "relevance": 7,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-10-24T17:34:52.694Z",
+    "updatedAt": "2026-11-23T12:06:39.216Z",
+    "publishedAt": "2026-11-23T10:15:50.000Z",
+    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
+  },
+  {
+    "id": "6d0ecf98-3dbd-4396-8737-3d32e5c0cdf3",
+    "slug": "adopt-net-11-without-surprises",
+    "title": "Adopt .NET 11 without surprises",
+    "tldr": "a canary pipeline lets you track .NET upgrade costs gradually",
+    "bodyHtml": "<p><strong>C# Digest:</strong> a canary pipeline lets you track .NET upgrade costs gradually</p>",
+    "tags": [
+      "csharp",
+      "newsletter"
+    ],
+    "sources": [
+      {
+        "sourceId": "612edc942ee0",
+        "siteName": "C# Digest",
+        "url": "https://csharpdigest.net/newsletters/2413-adopt-net-11-without-surprises",
+        "title": "Adopt .NET 11 without surprises",
+        "publishedAt": "2026-11-22T19:15:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-23T12:06:39.216Z",
+    "updatedAt": "2026-11-23T12:06:39.216Z",
+    "publishedAt": "2026-11-22T19:15:00.000Z",
+    "runId": "6d5aa9e6-ba94-4d1a-9190-6c5b5bbd1843"
+  },
+  {
     "id": "9b8a8080-1104-495f-8944-7efb45542f51",
     "slug": "can-c-15-union-types-replace-the-result-pattern",
     "title": "Can C# 15 Union Types Replace the Result Pattern?",
@@ -1110,55 +1194,6 @@
     "updatedAt": "2026-11-14T10:00:45.539Z",
     "publishedAt": "2026-11-12T15:00:31.000Z",
     "runId": "2969319d-f824-4c99-87f5-05b9a920d279"
-  },
-  {
-    "id": "a20081f4-17bf-4922-830b-43c5a798d260",
-    "slug": "angular-cli-21-updates",
-    "title": "Angular CLI 21 updates",
-    "tldr": "The Angular CLI 21.2 maintenance stream has been updated, including versions 21.2.30, 21.2.29, and 21.2.27. Version 21.2.27 upgrades the project dependency on zod to version 4.6.6.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI published version 21.2.30 along with predecessor releases 21.2.29 and 21.2.27.</li><li>Release 21.2.27 bumps the core zod schema validation dependency to version 4.6.6.</li><li>The updates target core packages including @angular/cli, @angular/build, and associated devkit components.</li></ul><h3>Why it matters</h3><p>Teams maintaining Angular 21 projects receive updated dependencies and validation library patches needed for tooling security and stability.</p>",
-    "tags": [
-      "angular",
-      "cli",
-      "release",
-      "releases",
-      "angular cli",
-      "dependencies",
-      "frontend",
-      "zod",
-      "javascript tools"
-    ],
-    "sources": [
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.30",
-        "title": "Angular CLI 21.2.30",
-        "publishedAt": "2026-11-12T14:33:04.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.29",
-        "title": "Angular CLI 21.2.29",
-        "publishedAt": "2026-10-28T09:54:13.000Z"
-      },
-      {
-        "sourceId": "2440285b3f25",
-        "siteName": "Angular CLI releases",
-        "url": "https://github.com/angular/angular-cli/releases/tag/v21.2.27",
-        "title": "Angular CLI 21.2.27",
-        "publishedAt": "2026-10-15T02:50:17.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-14T10:00:45.539Z",
-    "publishedAt": "2026-11-12T14:33:04.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
     "id": "28aefabb-fed1-408e-bad9-78985119124e",
@@ -12156,36 +12191,5 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-26T14:40:44.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "a2913b56-6bf5-4b9f-b323-aaddc5834f39",
-    "slug": "architektur-als-guardrail-fehlerklassen-strukturell-ausschlie-en",
-    "title": "Architektur als Guardrail: Fehlerklassen strukturell ausschließen",
-    "tldr": "Architectural boundaries like compact, schema-validated DSLs can structurally eliminate error classes in agentic UI systems instead of relying solely on runtime checks. In the Flight42 demo, shifting from direct markup generation to a Zod-validated DSL significantly reduced token usage, latency, and unwanted outputs.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Direct A2UI markup generation by AI models required substantial tokens and up to 37 seconds per dashboard assembly due to correction loops.</li><li>Restricting the agent to an application-specific DSL defined via a Zod schema enables the application to deterministically compile the interface layout and resolve data dependencies.</li><li>Structural constraints structurally prevent models from introducing invalid layouts, unknown components, or unauthorized content.</li><li>Compact DSLs improve cacheability for known interfaces, separating cached interface structure from freshly loaded bound data.</li></ul><h3>Why it matters</h3><p>Enforcing architectural constraints rather than dynamic runtime validation bounds AI agent output predictably and reduces operational latency. This pattern ensures business applications remain secure and deterministic when using generative UI frameworks.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "ai agents",
-      "a2ui",
-      "software architecture"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/architektur-als-guardrail-fehlerklassen-strukturell-ausschlie-en/",
-        "title": "Architektur als Guardrail: Fehlerklassen strukturell ausschließen",
-        "publishedAt": "2026-07-26T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-26T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   }
 ]
