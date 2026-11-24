@@ -1,5 +1,89 @@
 [
   {
+    "id": "5cc65dd8-10b6-4b11-a777-bcf97f8dfd0e",
+    "slug": "invariant-culture-string-interpolation-with-interpolatedstringhandler",
+    "title": "Invariant culture string interpolation with [InterpolatedStringHandler]",
+    "tldr": "In this post I show how you can use a custom [InterpolatedStringHandler] to ensure string interpolation formats values using the invariant culture",
+    "bodyHtml": "<p><strong>Andrew Lock – .NET Escapades:</strong> In this post I show how you can use a custom [InterpolatedStringHandler] to ensure string interpolation formats values using the invariant culture</p>",
+    "tags": [
+      "aspnetcore",
+      "dotnet"
+    ],
+    "sources": [
+      {
+        "sourceId": "145884eb4af6",
+        "siteName": "Andrew Lock – .NET Escapades",
+        "url": "https://andrewlock.net/invariant-culture-string-interpolation-with-interpolatedstringhandler/",
+        "title": "Invariant culture string interpolation with [InterpolatedStringHandler]",
+        "publishedAt": "2026-11-24T10:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-24T13:28:48.008Z",
+    "updatedAt": "2026-11-24T13:28:48.008Z",
+    "publishedAt": "2026-11-24T10:00:00.000Z",
+    "runId": "575ae6be-78f0-4f1a-996a-3284b5aaf9f8"
+  },
+  {
+    "id": "a1afa265-1eb2-4961-a457-dd82744cad72",
+    "slug": "new-in-net-11-faster-asp-net-core-apis-with-runtime-async",
+    "title": "New in .NET 11: Faster ASP.NET Core APIs with runtime async",
+    "tldr": ".NET 11 moves async and await work from compiler-generated state machines into the runtime. We build the same console app on .NET 10 and .NET 11, compare live stack traces, and look at what changes for allocations, the JIT, ExecutionContext, NativeAOT, and debugging, without touching your C# code.",
+    "bodyHtml": "<p><strong>elmah.io blog:</strong> .NET 11 moves async and await work from compiler-generated state machines into the runtime. We build the same console app on .NET 10 and .NET 11, compare live stack traces, and look at what changes for allocations, the JIT, ExecutionContext, NativeAOT, and debugging, without touching your C# code.</p>",
+    "tags": [
+      "dotnet",
+      "aspnetcore"
+    ],
+    "sources": [
+      {
+        "sourceId": "4ed3c18fe2b2",
+        "siteName": "elmah.io blog",
+        "url": "https://blog.elmah.io/new-in-net-11-faster-asp-net-core-apis-with-runtime-async/",
+        "title": "New in .NET 11: Faster ASP.NET Core APIs with runtime async",
+        "publishedAt": "2026-11-24T08:00:51.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-24T13:28:48.008Z",
+    "updatedAt": "2026-11-24T13:28:48.008Z",
+    "publishedAt": "2026-11-24T08:00:51.000Z",
+    "runId": "575ae6be-78f0-4f1a-996a-3284b5aaf9f8"
+  },
+  {
+    "id": "a975c34a-2bad-4469-a457-5989e7783cbd",
+    "slug": "run-local-models-in-your-net-apps-with-llama-on-windows",
+    "title": "Run local models in your .NET apps with Llama on Windows",
+    "tldr": "Install Llama on Windows from Hugging Face and the llama.cpp team, download an open model, and call it from a .NET 11 C# file-based app. The post Run local models in your .NET apps with Llama on Windows appeared first on .NET Blog.",
+    "bodyHtml": "<p><strong>.NET Blog:</strong> Install Llama on Windows from Hugging Face and the llama.cpp team, download an open model, and call it from a .NET 11 C# file-based app. The post Run local models in your .NET apps with Llama on Windows appeared first on .NET Blog.</p>",
+    "tags": [
+      "dotnet",
+      "csharp"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/local-models-dotnet-llama-windows/",
+        "title": "Run local models in your .NET apps with Llama on Windows",
+        "publishedAt": "2026-11-23T18:05:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-24T13:28:48.008Z",
+    "updatedAt": "2026-11-24T13:28:48.008Z",
+    "publishedAt": "2026-11-23T18:05:00.000Z",
+    "runId": "575ae6be-78f0-4f1a-996a-3284b5aaf9f8"
+  },
+  {
     "id": "a20081f4-17bf-4922-830b-43c5a798d260",
     "slug": "angular-cli-21-updates",
     "title": "Angular CLI 21 updates",
@@ -12094,102 +12178,5 @@
     "updatedAt": "2026-10-29T09:43:28.322Z",
     "publishedAt": "2026-07-27T17:00:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
-  },
-  {
-    "id": "baba1550-57a1-4864-bc1b-a7edd126fb43",
-    "slug": "implement-saml-as-an-external-provider-in-an-asp-net-core-identity-application-u",
-    "title": "Implement SAML as an external provider in an ASP.NET Core Identity application using Duende as an OIDC server",
-    "tldr": "An article details implementing SAML federation in an ASP.NET Core Identity application using Duende and Entra ID.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Uses Sustainsys.Saml2 for SAML client integration</li><li>Duende IdentityServer acts as an external authentication gateway</li><li>Microsoft Entra ID serves as the identity provider</li></ul><h3>Why it matters</h3><p>Demonstrates how to integrate legacy SAML authentication schemes into modern OpenID Connect architectures.</p>",
-    "tags": [
-      "aspnetcore",
-      "saml",
-      "auth",
-      "duende",
-      ".net",
-      "asp.net core",
-      "security",
-      "authentication"
-    ],
-    "sources": [
-      {
-        "sourceId": "6752279e1d66",
-        "siteName": "Damien Bowden",
-        "url": "https://damienbod.com/2026/07/27/implement-saml-as-an-external-provider-in-an-asp-net-core-identity-application-using-duende-as-an-oidc-server/",
-        "title": "Implement SAML as an external provider in an ASP.NET Core Identity application using Duende as an OIDC server",
-        "publishedAt": "2026-07-27T06:22:55.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-27T06:22:55.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "ec4456db-392c-43f2-8c61-842fd0c7fd76",
-    "slug": "choosing-the-right-rxjs-operator-for-action-streams",
-    "title": "Choosing the right RxJS Operator for Action Streams",
-    "tldr": "Implementing keyed concurrency with RxJS operators such as groupBy, switchMap, and concatMap isolates stream operations per entity ID. Choosing distinct operators across creates, updates, and deletes prevents race conditions and stale client-side states.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Keyed concurrency via groupBy enables concurrent execution for distinct entity IDs while applying operators like switchMap internally to handle actions for the same ID.</li><li>Unbounded groupBy groups can leak memory over time, but arbitrary duration timeouts can prematurely break isolation if requests are still in-flight.</li><li>Entity updates for the same ID are more robust when serialized rather than relying on a 'latest wins' switchMap strategy that risks stale server-side overwrites.</li><li>Entity creation generally warrants mergeMap, concatMap for ordered execution, or exhaustMap for single-submission protections, while deletes benefit from per-key exhaustMap.</li></ul><h3>Why it matters</h3><p>Properly structuring RxJS action streams prevents out-of-order API responses and unwanted request cancellations in complex applications. Aligning concurrency operators with domain actions ensures robust client-side state management alongside backend constraints.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "rxjs",
-      "state management",
-      "web development"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/choosing-the-right-rxjs-operator-for-action-streams/",
-        "title": "Choosing the right RxJS Operator for Action Streams",
-        "publishedAt": "2026-07-27T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-27T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "b7751454-5854-44fd-93bf-56ec7e7e2571",
-    "slug": "architecture-as-a-guardrail-structurally-ruling-out-entire-classes-of-errors",
-    "title": "Architecture as a Guardrail: Structurally Ruling Out Entire Classes of Errors",
-    "tldr": "Implementing architectural guardrails, such as a compact application-specific DSL instead of raw LLM-generated markup, can dramatically reduce token consumption and improve predictability in AI agent integrations.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Passing raw A2UI markup to models required excessive tokens and long execution times.</li><li>Limiting the agent to translate requests into a compact Zod-validated DSL reduced generation overhead.</li><li>Routing through a deterministic compiler prevents the model from generating unauthorized layouts or injected content.</li><li>The application fetches fresh data bound to the cached structural UI schema on every request.</li></ul><h3>Why it matters</h3><p>Architectural constraints eliminate entire error classes structurally rather than relying solely on runtime checks or corrections, ensuring higher predictability in business applications.</p>",
-    "tags": [
-      "architecture",
-      "ai-agents",
-      "safety",
-      "ai agents",
-      "angular",
-      "dsl"
-    ],
-    "sources": [
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/architecture-as-a-guardrail-structurally-ruling-out-entire-classes-of-errors/",
-        "title": "Architecture as a Guardrail: Structurally Ruling Out Entire Classes of Errors",
-        "publishedAt": "2026-07-26T14:40:44.000Z"
-      }
-    ],
-    "relevance": 6,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-24T17:34:52.694Z",
-    "publishedAt": "2026-07-26T14:40:44.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   }
 ]
