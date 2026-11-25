@@ -1,13 +1,146 @@
 [
   {
+    "id": "df88017a-487e-43cd-a309-3d5774b52b7a",
+    "slug": "vs-code-tries-to-catch-up-with-claude-co-in-computer-use",
+    "title": "VS Code Tries To Catch Up with Claude & Co. in Computer Use",
+    "tldr": "VS Code 1.147 integrates Copilot into signed-in Chrome and Edge sessions. A hands-on CMS test of the feature resulted in a browser crash and an incomplete article shell.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>VS Code 1.147 adds Copilot capabilities inside signed-in Edge and Chrome sessions.</li><li>A practical test on a CMS platform caused a browser crash.</li><li>The test execution left a mostly empty article shell.</li></ul><h3>Why it matters</h3><p>The update attempts to expand developer AI tooling into browser sessions, though early tests indicate stability challenges in real-world browser automation tasks.</p>",
+    "tags": [
+      "dotnet",
+      "vs code",
+      "copilot",
+      "browser automation",
+      "tools"
+    ],
+    "sources": [
+      {
+        "sourceId": "b5b21e937170",
+        "siteName": "Visual Studio Magazine",
+        "url": "https://visualstudiomagazine.com/articles/2026/11/24/vs-code-tries-to-catch-up-in-computer-use.aspx",
+        "title": "VS Code Tries To Catch Up with Claude & Co. in Computer Use",
+        "publishedAt": "2026-11-24T20:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "publishedAt": "2026-11-24T20:00:00.000Z",
+    "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
+  },
+  {
+    "id": "dc250e44-5a4b-4c10-ae07-25fb9e285525",
+    "slug": "introducing-documentextractionclient-preview-extract-documents-in-net",
+    "title": "Introducing DocumentExtractionClient (preview): Extract documents in .NET",
+    "tldr": "Microsoft has introduced a preview of DocumentExtractionClient in Microsoft.Extensions.DocumentExtraction to normalize document ingestion. The API turns PDFs, images, and Office documents into a unified object structure across multiple processing providers.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>DocumentExtractionClient provides a unified .NET API via ExtractAsync, returning an ExtractionDocument tree of text, tables, and figures with source tracking.</li><li>Supported starter providers include an in-process PDF parser, vision models through IChatClient, and Azure Content Understanding.</li><li>Outputs can feed directly into Microsoft.Extensions.DataIngestion pipelines to facilitate RAG, agent workflows, and context engineering.</li></ul><h3>Why it matters</h3><p>Developers can now swap underlying document parsing mechanisms, local parsers, or cloud vision models without having to rewrite consumption code for different SDK object models.</p>",
+    "tags": [
+      "dotnet",
+      "csharp",
+      ".net",
+      "ai",
+      "document extraction",
+      "rag"
+    ],
+    "sources": [
+      {
+        "sourceId": "131ee1c49b6b",
+        "siteName": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/document-extraction-dotnet-preview/",
+        "title": "Introducing DocumentExtractionClient (preview): Extract documents in .NET",
+        "publishedAt": "2026-11-24T18:05:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "publishedAt": "2026-11-24T18:05:00.000Z",
+    "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
+  },
+  {
+    "id": "3f522bb2-ade3-4012-940d-2af7cbaec644",
+    "slug": "visual-studio-november-update-faster-workflows-better-reviews",
+    "title": "Visual Studio November Update – Faster Workflows, Better Reviews",
+    "tldr": "The Visual Studio November update improves large-solution performance, adds MSBuild Restore for Open Folder, and introduces a revamped Copilot Chat engine. It also adds CSS color previews and Change Groups for pull request reviews.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Large-solution loading and closing overhead is reduced by reusing project-directory info and batching source-control icon updates.</li><li>Open Folder workflows now support MSBuild Restore directly on project and solution files.</li><li>Copilot Chat runs on the Microsoft Copilot SDK with drag-and-drop file attachments, Autopilot mode, and mid-task instruction steering.</li><li>Change Groups organizes large pull requests with summaries and review guidance, and CSS editing adds color swatches.</li></ul><h3>Why it matters</h3><p>The update reduces IDE latency during heavy development workflows and improves AI productivity with mid-generation control and better pull request organization.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet",
+      "visual studio",
+      "copilot",
+      "msbuild",
+      "performance",
+      "ide"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/visual-studio-november-update-faster-workflows-better-reviews/",
+        "title": "Visual Studio November Update – Faster Workflows, Better Reviews",
+        "publishedAt": "2026-11-24T17:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "publishedAt": "2026-11-24T17:00:00.000Z",
+    "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
+  },
+  {
+    "id": "91223fd6-7f90-4c3f-9684-c4035b5eaab9",
+    "slug": "beyond-the-prompt-discovering-trusted-technical-perspectives-with-your-visual-st",
+    "title": "Beyond the prompt: Discovering trusted technical perspectives with your Visual Studio subscription",
+    "tldr": "A recent Microsoft post highlights the importance of maintaining engineering discipline when using AI code generation tools. Visual Studio subscribers also receive access to CODE Magazine to help navigate software architecture tradeoffs.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>AI-generated code can compile and pass tests while still failing architectural, security, or coverage requirements.</li><li>Recommended practices include setting shared conventions for AI tools, evolving code review standards, and avoiding self-reinforcing AI tests.</li><li>Eligible Visual Studio subscribers can receive a one-year subscription to CODE Magazine for deep technical guidance and postmortems.</li></ul><h3>Why it matters</h3><p>Engineering discipline and external technical analysis remain essential to prevent subtle architecture and security pitfalls when adopting AI-generated code.</p>",
+    "tags": [
+      "visualstudio",
+      "dotnet",
+      "software engineering",
+      "ai",
+      "visual studio",
+      "testing",
+      "code quality"
+    ],
+    "sources": [
+      {
+        "sourceId": "73520d89a9de",
+        "siteName": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/beyond-the-prompt-discovering-trusted-technical-perspectives-with-your-visual-studio-subscription/",
+        "title": "Beyond the prompt: Discovering trusted technical perspectives with your Visual Studio subscription",
+        "publishedAt": "2026-11-24T11:00:58.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "publishedAt": "2026-11-24T11:00:58.000Z",
+    "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
+  },
+  {
     "id": "5cc65dd8-10b6-4b11-a777-bcf97f8dfd0e",
     "slug": "invariant-culture-string-interpolation-with-interpolatedstringhandler",
     "title": "Invariant culture string interpolation with [InterpolatedStringHandler]",
-    "tldr": "In this post I show how you can use a custom [InterpolatedStringHandler] to ensure string interpolation formats values using the invariant culture",
-    "bodyHtml": "<p><strong>Andrew Lock – .NET Escapades:</strong> In this post I show how you can use a custom [InterpolatedStringHandler] to ensure string interpolation formats values using the invariant culture</p>",
+    "tldr": "Andrew Lock explores methods to enforce invariant culture in C# string interpolation. Options range from global settings to string.Create and FormattableString.Invariant.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Standard string interpolation defaults to the current thread culture, leading to variable output for data like numbers across locales.</li><li>Globalization Invariant Mode sets invariant culture across the entire application, but cannot be relied on by shared libraries.</li><li>Modern .NET (6+) enables targeted formatting via string.Create using DefaultInterpolatedStringHandler without boxing overhead.</li><li>Legacy .NET Framework and .NET Standard 2.0 can use FormattableString.Invariant, though it incurs array and boxing allocations.</li></ul><h3>Why it matters</h3><p>Proper culture handling in string formatting is essential for reliable telemetry, logging, and serialized data exchange across different operating system locales.</p>",
     "tags": [
       "aspnetcore",
-      "dotnet"
+      "dotnet",
+      "c#",
+      ".net",
+      "string formatting",
+      "performance"
     ],
     "sources": [
       {
@@ -21,9 +154,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-24T13:28:48.008Z",
-    "updatedAt": "2026-11-24T13:28:48.008Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-24T10:00:00.000Z",
     "runId": "575ae6be-78f0-4f1a-996a-3284b5aaf9f8"
   },
@@ -31,11 +164,15 @@
     "id": "a1afa265-1eb2-4961-a457-dd82744cad72",
     "slug": "new-in-net-11-faster-asp-net-core-apis-with-runtime-async",
     "title": "New in .NET 11: Faster ASP.NET Core APIs with runtime async",
-    "tldr": ".NET 11 moves async and await work from compiler-generated state machines into the runtime. We build the same console app on .NET 10 and .NET 11, compare live stack traces, and look at what changes for allocations, the JIT, ExecutionContext, NativeAOT, and debugging, without touching your C# code.",
-    "bodyHtml": "<p><strong>elmah.io blog:</strong> .NET 11 moves async and await work from compiler-generated state machines into the runtime. We build the same console app on .NET 10 and .NET 11, compare live stack traces, and look at what changes for allocations, the JIT, ExecutionContext, NativeAOT, and debugging, without touching your C# code.</p>",
+    "tldr": ".NET 11 introduces Runtime Async V2, moving asynchronous method suspension and resumption from compiler-generated state machines directly into the runtime. This architectural shift reduces async execution overhead without requiring changes to user C# code.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>.NET 11 has been released as a Standard-Term Support (STS) version.</li><li>Runtime-native async shifts the handling of async/await away from compiler-generated state machines.</li><li>The runtime directly manages task suspension and resumption for eligible methods, lowering overhead in high-throughput async scenarios.</li><li>The feature can be enabled in eligible application code via csproj configuration (runtime-async=on).</li></ul><h3>Why it matters</h3><p>Offloading async orchestration to the runtime cuts memory and execution overhead for async-heavy applications without breaking existing C# async syntax.</p>",
     "tags": [
       "dotnet",
-      "aspnetcore"
+      "aspnetcore",
+      ".net 11",
+      "runtime async",
+      "c#",
+      "performance"
     ],
     "sources": [
       {
@@ -49,9 +186,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-24T13:28:48.008Z",
-    "updatedAt": "2026-11-24T13:28:48.008Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-24T08:00:51.000Z",
     "runId": "575ae6be-78f0-4f1a-996a-3284b5aaf9f8"
   },
@@ -59,11 +196,16 @@
     "id": "a975c34a-2bad-4469-a457-5989e7783cbd",
     "slug": "run-local-models-in-your-net-apps-with-llama-on-windows",
     "title": "Run local models in your .NET apps with Llama on Windows",
-    "tldr": "Install Llama on Windows from Hugging Face and the llama.cpp team, download an open model, and call it from a .NET 11 C# file-based app. The post Run local models in your .NET apps with Llama on Windows appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> Install Llama on Windows from Hugging Face and the llama.cpp team, download an open model, and call it from a .NET 11 C# file-based app. The post Run local models in your .NET apps with Llama on Windows appeared first on .NET Blog.</p>",
+    "tldr": "Llama on Windows provides a system tray application to discover, run, and chat with local LLMs on Windows 11. It hosts a llama.cpp server that .NET 11 applications can interact with using standard OpenAI-compatible endpoints.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Llama on Windows is a WinUI 3 open-source tray app backed by llama.cpp and Hugging Face model integration.</li><li>It exposes an OpenAI-compatible API locally on port 9931, eliminating the need for an external API key.</li><li>.NET developers can interact with local models using IChatClient from Microsoft.Extensions.AI.</li><li>The local server features automatic idle memory management and supports tool calling with capable models.</li></ul><h3>Why it matters</h3><p>Developers can run, evaluate, and test AI-driven .NET applications entirely offline on local hardware using standardized OpenAI API patterns.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net 11",
+      "llama.cpp",
+      "local ai",
+      "windows",
+      "llm"
     ],
     "sources": [
       {
@@ -77,9 +219,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-24T13:28:48.008Z",
-    "updatedAt": "2026-11-24T13:28:48.008Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-23T18:05:00.000Z",
     "runId": "575ae6be-78f0-4f1a-996a-3284b5aaf9f8"
   },
@@ -87,8 +229,8 @@
     "id": "a20081f4-17bf-4922-830b-43c5a798d260",
     "slug": "angular-cli-21-updates",
     "title": "Angular CLI 21 updates",
-    "tldr": "The Angular CLI 21.2 maintenance stream has been updated, including versions 21.2.30, 21.2.29, and 21.2.27. Version 21.2.27 upgrades the project dependency on zod to version 4.6.6.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular CLI published version 21.2.30 along with predecessor releases 21.2.29 and 21.2.27.</li><li>Release 21.2.27 bumps the core zod schema validation dependency to version 4.6.6.</li><li>The updates target core packages including @angular/cli, @angular/build, and associated devkit components.</li></ul><h3>Why it matters</h3><p>Teams maintaining Angular 21 projects receive updated dependencies and validation library patches needed for tooling security and stability.</p>",
+    "tldr": "Angular CLI release stream 21.2 has released updates, including versions 21.2.27, 21.2.29, 21.2.30, and 21.2.31. Version 21.2.27 bumps the zod dependency to 4.6.6.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>The Angular CLI 21.2 maintenance stream released versions 21.2.27, 21.2.29, 21.2.30, and 21.2.31.</li><li>Angular CLI 21.2.27 upgrades the project dependency on zod to version 4.6.6.</li></ul><h3>Why it matters</h3><p>Keeping maintenance dependencies updated ensures build tooling compatibility and addresses library vulnerabilities across Angular CLI projects.</p>",
     "tags": [
       "angular",
       "cli",
@@ -133,9 +275,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-23T12:06:39.216Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-23T10:15:50.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -143,11 +285,16 @@
     "id": "6d0ecf98-3dbd-4396-8737-3d32e5c0cdf3",
     "slug": "adopt-net-11-without-surprises",
     "title": "Adopt .NET 11 without surprises",
-    "tldr": "a canary pipeline lets you track .NET upgrade costs gradually",
-    "bodyHtml": "<p><strong>C# Digest:</strong> a canary pipeline lets you track .NET upgrade costs gradually</p>",
+    "tldr": "The latest developer roundup covers practical canary pipelines for .NET 11 adoption, C# 15 union types, SSE authentication strategies in ASP.NET Core, and Rider 2026.3 day-one support for .NET 11.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A canary CI pipeline targeting .NET 11 via Directory.Build.props allows gradual assessment of migration overhead.</li><li>C# 15 brings union types with exhaustive compiler pattern matching, supported directly by System.Text.Json and ASP.NET Core.</li><li>Rider 2026.3 adds day-one support for .NET 11, C# 15, Runtime Async debugging, and IDE-integrated coding agents.</li><li>Authentication for Server-Sent Events requires workarounds like cookies or query parameters for browser EventSource clients, while HttpClient supports bearer headers.</li></ul><h3>Why it matters</h3><p>Teams evaluating .NET 11 and C# 15 can leverage canary build setups and upgraded IDE tooling to test new language patterns such as union types without production risk.</p>",
     "tags": [
       "csharp",
-      "newsletter"
+      "newsletter",
+      ".net 11",
+      "c# 15",
+      "rider",
+      "asp.net core",
+      "devops"
     ],
     "sources": [
       {
@@ -161,9 +308,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-23T12:06:39.216Z",
-    "updatedAt": "2026-11-23T12:06:39.216Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-22T19:15:00.000Z",
     "runId": "6d5aa9e6-ba94-4d1a-9190-6c5b5bbd1843"
   },
@@ -171,11 +318,15 @@
     "id": "9b8a8080-1104-495f-8944-7efb45542f51",
     "slug": "can-c-15-union-types-replace-the-result-pattern",
     "title": "Can C# 15 Union Types Replace the Result Pattern?",
-    "tldr": "C# 15 union types can replace the Result pattern. A generic union Result (T, Error) works like the Result class, and a generic validation decorator keeps…",
-    "bodyHtml": "<p><strong>Milan Jovanović:</strong> C# 15 union types can replace the Result pattern. A generic union Result (T, Error) works like the Result class, and a generic validation decorator keeps…</p>",
+    "tldr": "C# 15 union types can replace the conventional Result pattern by providing generic return unions. This approach removes the need for explicit success flags while preserving decorator pipelines.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A generic union Result&lt;T&gt;(T, Error) eliminates the need for manual IsSuccess checks and exception-throwing Value accessors.</li><li>Pattern matching over union cases allows handlers to map directly to HTTP responses, while decorators can validate input without knowing T.</li><li>Generic union values are boxed into objects, but still outperformed traditional Result classes in benchmarks.</li><li>Endpoints must avoid returning the union object directly, as ASP.NET Core 11 serializes the inner error as a 200 OK by default.</li></ul><h3>Why it matters</h3><p>Replacing boilerplate Result classes with first-class union types gives developers stronger compiler verification for application error handling and cleaner pattern matching.</p>",
     "tags": [
       "dotnet",
-      "architecture"
+      "architecture",
+      "c# 15",
+      ".net 11",
+      "design patterns",
+      "error handling"
     ],
     "sources": [
       {
@@ -189,9 +340,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-21T10:50:39.119Z",
-    "updatedAt": "2026-11-21T10:50:39.119Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-21T00:00:00.000Z",
     "runId": "29f6f4c7-ba44-4156-8548-fa8f4a28ce38"
   },
@@ -199,11 +350,16 @@
     "id": "28041391-84a4-4535-a9f3-085802740356",
     "slug": "ai-is-changing-the-cross-platform-decision-matrix",
     "title": "AI is Changing the Cross-Platform Decision Matrix",
-    "tldr": "AI agents rebuilt a .NET MAUI app with platform UI in days. See what that cost to build, what it costs to maintain, and what changed at runtime, so you can weigh the same choice for your app. The post AI is Changing the Cross-Platform Decision Matrix appeared first on .NET Blog.",
-    "bodyHtml": "<p><strong>.NET Blog:</strong> AI agents rebuilt a .NET MAUI app with platform UI in days. See what that cost to build, what it costs to maintain, and what changed at runtime, so you can weigh the same choice for your app. The post AI is Changing the Cross-Platform Decision Matrix appeared first on .NET Blog.</p>",
+    "tldr": "An experiment using AI coding agents examined the viability of building platform-specific UIs versus cross-platform .NET MAUI. Agents successfully rebuilt an app with native UIs in days, but multi-platform code ownership still required substantial coordination.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A 31,000-line .NET MAUI app was rebuilt in 3 days using GitHub Copilot agents generating native UIKit and Android Views over shared C#.</li><li>The agent rewrite required under four hours of human time, 58 hours of model time, and about 3.293 billion gross input tokens.</li><li>Adding new features across two separate platform UIs required more worker model time, and coordinating agents used more model time than implementation agents.</li><li>Both .NET MAUI and platform UI run on .NET for iOS/Android, allowing code reuse across shared libraries.</li></ul><h3>Why it matters</h3><p>While AI coding agents drastically lower the barrier to building platform-specific user interfaces, maintaining parallel UI implementations continues to incur notable token and architectural overhead.</p>",
     "tags": [
       "dotnet",
-      "csharp"
+      "csharp",
+      ".net maui",
+      "ai agents",
+      "mobile development",
+      "github copilot",
+      "cross-platform"
     ],
     "sources": [
       {
@@ -217,9 +373,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-21T10:50:39.119Z",
-    "updatedAt": "2026-11-21T10:50:39.119Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-20T18:00:00.000Z",
     "runId": "29f6f4c7-ba44-4156-8548-fa8f4a28ce38"
   },
@@ -227,10 +383,13 @@
     "id": "abd13dba-14ee-4ba9-ae4c-beec4de77d59",
     "slug": "the-momentum-across-the-global-angular-ecosystem-never-slows-down",
     "title": "The momentum across the global Angular ecosystem never slows down!",
-    "tldr": "The momentum across the global Angular ecosystem never slows down!",
-    "bodyHtml": "",
+    "tldr": "The Angular community showcases ongoing developments including Signal-driven forms, full-stack workflows in Analog.js, asynchronous validation primitives, and early previews of Angular 22 features.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular form architectures are transitioning from RxJS pipelines toward native, declarative Signal-driven state.</li><li>Analog.js offers full-stack Angular capabilities with file-based routing, API routes, and SSR/SSG workflows.</li><li>Angular v21 Signal Forms introduces native async validation primitives like validateAsync and validateHttp.</li><li>Community previews and guides highlight architectural shifts underway ahead of Angular 22.</li></ul><h3>Why it matters</h3><p>Angular is progressively integrating Signals into core form and validation workflows, simplifying state architecture and decreasing reliance on complex RxJS streams.</p>",
     "tags": [
-      "angular"
+      "angular",
+      "analog.js",
+      "signals",
+      "frontend"
     ],
     "sources": [
       {
@@ -239,14 +398,21 @@
         "url": "https://blog.angular.dev/the-momentum-across-the-global-angular-ecosystem-never-slows-down-7d69d0d07a69?source=rss----447683c3d9a3---4",
         "title": "The momentum across the global Angular ecosystem never slows down!",
         "publishedAt": "2026-11-20T05:01:02.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/the-momentum-across-the-global-angular-ecosystem-never-slows-down/",
+        "title": "The momentum across the global Angular ecosystem never slows down!",
+        "publishedAt": "2026-11-20T00:00:00.000Z"
       }
     ],
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-20T11:13:36.136Z",
-    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-20T05:01:02.000Z",
     "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
   },
@@ -254,11 +420,15 @@
     "id": "ff2f7581-9355-4aec-b049-569601f1c16d",
     "slug": "live-technical-training-wherever-you-are-a-vslive-benefit-for-visual-studio-subs",
     "title": "Live technical training, wherever you are: A VSLive! benefit for Visual Studio subscribers",
-    "tldr": "Developers are constantly speaking to me about how AI tool mastery has become an essential part of their everyday work. But learning how to use these tools effectively takes more than experimenting with a few prompts, and it often requires opportunities to learn that go beyond documentation and tut…",
-    "bodyHtml": "<p><strong>Visual Studio Blog:</strong> Developers are constantly speaking to me about how AI tool mastery has become an essential part of their everyday work. But learning how to use these tools effectively takes more than experimenting with a few prompts, and it often requires opportunities to learn that go beyond documentation and tutorials. Some of the best technical skill development takes […] The post Live technical training, wherever you are: A VSLive! benefit for Visual Studio subscribers appeared first on Visual Studio Blog.</p>",
+    "tldr": "Visual Studio subscribers receive discounted access to live virtual training events through VSLive!. Upcoming courses focus on full-stack .NET with Copilot, legacy .NET modernization using AI agents, and Microsoft Foundry production deployments.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>VSLive! provides multi-day interactive, instructor-led workshops and technical deep dives.</li><li>Upcoming sessions cover .NET full stack with Copilot, legacy application modernization with AI agents, and Microsoft Foundry agent pipelines.</li><li>Eligible Visual Studio subscribers can obtain discounts of up to $900 for virtual and in-person events.</li></ul><h3>Why it matters</h3><p>These training opportunities help developers gain hands-on architectural and operational experience integrating AI coding agents and cloud services into production environments.</p>",
     "tags": [
       "visualstudio",
-      "dotnet"
+      "dotnet",
+      "visual studio",
+      "training",
+      "ai agents",
+      ".net"
     ],
     "sources": [
       {
@@ -272,9 +442,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-20T11:13:36.136Z",
-    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-19T21:30:48.000Z",
     "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
   },
@@ -282,10 +452,14 @@
     "id": "57f29f38-c8df-40e0-9d2a-fb5b9034238d",
     "slug": "microsoft-foundry-ships-dev-pack-adds-agent-network-controls-at-ignite",
     "title": "Microsoft Foundry Ships Dev Pack, Adds Agent Network Controls at Ignite",
-    "tldr": "The Foundry Dev Pack, hosted-agent network controls, real-time voice and production Insights are generally available. Browser and deployment previews expand where agents can run.",
-    "bodyHtml": "<p><strong>Visual Studio Magazine:</strong> The Foundry Dev Pack, hosted-agent network controls, real-time voice and production Insights are generally available. Browser and deployment previews expand where agents can run.</p>",
+    "tldr": "Microsoft Foundry has released the Foundry Dev Pack, hosted-agent network controls, real-time voice, and production Insights into general availability. Previews for browser and deployment features were also introduced.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Foundry Dev Pack and hosted-agent network controls are now generally available.</li><li>Real-time voice capabilities and production Insights reached general availability.</li><li>New browser and deployment previews expand target environments for AI agent execution.</li></ul><h3>Why it matters</h3><p>The general availability of network controls and monitoring Insights strengthens security and operational governance for enterprise-grade autonomous agents.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "microsoft foundry",
+      "ai agents",
+      "cloud",
+      "dev tools"
     ],
     "sources": [
       {
@@ -299,9 +473,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-20T11:13:36.136Z",
-    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-19T19:43:00.000Z",
     "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
   },
@@ -309,10 +483,15 @@
     "id": "86591b0d-e415-4fe6-bedb-43358bc16187",
     "slug": "net-11-asp-net-core-union-type-support-openapi-3-2-by-default-and-blazor-ai-comp",
     "title": ".NET 11 : ASP.NET Core: Union Type Support, OpenAPI 3.2 by Default and Blazor AI Components",
-    "tldr": "Microsoft has released ASP.NET Core in .NET 11. The update adds C# union type support in JSON bodies, asynchronous validation for Minimal APIs, OpenAPI 3.2 by default, and SignalR authentication refresh. Blazor gains a CacheView component, client-side validation for static SSR forms, opt-in circuit…",
-    "bodyHtml": "<p><strong>InfoQ .NET:</strong> Microsoft has released ASP.NET Core in .NET 11. The update adds C# union type support in JSON bodies, asynchronous validation for Minimal APIs, OpenAPI 3.2 by default, and SignalR authentication refresh. Blazor gains a CacheView component, client-side validation for static SSR forms, opt-in circuit pause for inactive tabs, and experimental AI components. Zstandard compression is on by default. By Almir Vuk</p>",
+    "tldr": "ASP.NET Core in .NET 11 introduces C# 15 union type support in JSON bodies, OpenAPI 3.2 by default, and SignalR authentication refresh. Blazor receives static SSR validation and rendering caching, while Kestrel throughput improves under invalid requests.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>C# 15 union types are supported in request/response JSON bodies across Minimal APIs and MVC.</li><li>OpenAPI 3.2 is generated by default via Microsoft.OpenApi 3.3.1, describing unions with anyOf schemas and SSE stream payloads.</li><li>SignalR adds automated authentication refresh, and Blazor passes refreshed credentials without terminating active server circuits.</li><li>Blazor features a CacheView component for SSR markup caching, client-side validation for static forms, and query-string-based QuickGrid pagination.</li><li>Kestrel's HTTP/1.1 parser avoids throwing exceptions on malformed requests, improving throughput under heavy invalid traffic by 20 to 40 percent.</li></ul><h3>Why it matters</h3><p>The release delivers notable performance optimizations in Kestrel and Blazor SSR, modernizes API documentation tooling to OpenAPI 3.2, and integrates native union types into API endpoints.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      "asp.net core",
+      ".net 11",
+      "blazor",
+      "kestrel",
+      "openapi"
     ],
     "sources": [
       {
@@ -326,9 +505,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-20T11:13:36.136Z",
-    "updatedAt": "2026-11-20T11:13:36.136Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-19T11:27:00.000Z",
     "runId": "bb2e6a3f-3e51-43e0-9e2d-618f079cf68a"
   },
@@ -977,6 +1156,34 @@
     "runId": "26a48a86-df81-4eb4-a2d2-21736c4ff1fc"
   },
   {
+    "id": "15cd14e4-852c-4133-9858-5f0a70475d52",
+    "slug": "withautocleanupinjectors-a-game-changer-for-route-providers",
+    "title": "withAutoCleanupInjectors – a game changer for route providers",
+    "tldr": "Why route providers keep stale state after you leave a page, and how Angular's withAutoCleanupInjectors() destroys them for you, with no manual reset().",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> Why route providers keep stale state after you leave a page, and how Angular's withAutoCleanupInjectors() destroys them for you, with no manual reset().</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/withautocleanupinjectors-a-game-changer-for-route-providers/",
+        "title": "withAutoCleanupInjectors – a game changer for route providers",
+        "publishedAt": "2026-11-16T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "publishedAt": "2026-11-16T00:00:00.000Z",
+    "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
+  },
+  {
     "id": "47343706-3bb3-4c1f-a422-5717fa906a0c",
     "slug": "net-11-updates",
     "title": ".NET 11 updates",
@@ -1349,14 +1556,21 @@
         "url": "https://www.angulararchitects.io/en/blog/fewer-tokens-faster-uis-a2ui-macros-for-local-and-cloud-models/",
         "title": "Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models",
         "publishedAt": "2026-11-12T00:22:27.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/fewer-tokens-faster-uis-a2ui-macros-for-local-and-cloud-models/",
+        "title": "Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models",
+        "publishedAt": "2026-11-12T00:00:00.000Z"
       }
     ],
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-11-12T10:50:26.406Z",
-    "updatedAt": "2026-11-14T10:00:45.539Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-12T00:22:27.000Z",
     "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
   },
@@ -1948,14 +2162,21 @@
         "url": "https://www.angulararchitects.io/en/blog/a2ui-express-token-optimized-generative-uis/",
         "title": "A2UI Express: Token-Optimized Generative UIs for Local and Cloud Models",
         "publishedAt": "2026-11-10T15:59:47.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/a2ui-express-token-optimized-generative-uis-for-local-and-cloud-models/",
+        "title": "A2UI Express: Token-Optimized Generative UIs for Local and Cloud Models",
+        "publishedAt": "2026-11-10T00:00:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-11-11T10:37:44.751Z",
-    "updatedAt": "2026-11-11T10:37:44.751Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-10T15:59:47.000Z",
     "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
   },
@@ -2022,6 +2243,62 @@
     "updatedAt": "2026-11-11T10:37:44.751Z",
     "publishedAt": "2026-11-10T08:00:35.000Z",
     "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
+  },
+  {
+    "id": "a4515355-2025-40d6-acda-7f94753101c3",
+    "slug": "ng-news-26-24-openapi-generator-slide-ng-and-angular-compiler-benchmarks",
+    "title": "Ng-News 26/24: OpenAPI Generator, slide.ng and Angular Compiler Benchmarks",
+    "tldr": "OpenAPI Generator can now generate Angular httpResource methods, and slide.ng brings Markdown...",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> OpenAPI Generator can now generate Angular httpResource methods, and slide.ng brings Markdown...</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/ng-news-26-24-openapi-generator-slide-ng-and-angular-compiler-benchmar/",
+        "title": "Ng-News 26/24: OpenAPI Generator, slide.ng and Angular Compiler Benchmarks",
+        "publishedAt": "2026-11-10T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
+  },
+  {
+    "id": "6f391e96-067c-4df8-abac-6cc13ffe50a3",
+    "slug": "angular-vs-react-in-ai-development-which-one-do-ai-agents-build-better",
+    "title": "Angular vs React in AI Development: Which One Do AI Agents Build Better?",
+    "tldr": "We gave one AI agent the same app spec 30 times, in Angular and in React. See which framework delivered more features, fewer type errors and lower cost.",
+    "bodyHtml": "<p><strong>Angular in Depth:</strong> We gave one AI agent the same app spec 30 times, in Angular and in React. See which framework delivered more features, fewer type errors and lower cost.</p>",
+    "tags": [
+      "angular",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-vs-react-in-ai-development-which-one-do-ai-agents-build-better/",
+        "title": "Angular vs React in AI Development: Which One Do AI Agents Build Better?",
+        "publishedAt": "2026-11-10T00:00:00.000Z"
+      }
+    ],
+    "relevance": 5,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
   },
   {
     "id": "d4747aa5-b736-4099-8ea6-d9ed6828e067",
@@ -2200,14 +2477,21 @@
         "url": "https://blog.angular.dev/core-vitals-optimization-ssr-deployments-and-signal-first-architecture-be82fd4a8c87?source=rss----447683c3d9a3---4",
         "title": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
         "publishedAt": "2026-11-06T15:01:04.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/core-vitals-optimization-ssr-deployments-and-signal-first-architecture/",
+        "title": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
+        "publishedAt": "2026-11-06T00:00:00.000Z"
       }
     ],
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-08T10:04:39.315Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-11-06T15:01:04.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -3033,14 +3317,21 @@
         "url": "https://blog.jetbrains.com/security/2026/10/compromised-emudhra-certificates-ides/",
         "title": "Compromised eMudhra Certificates: Update Your JetBrains IDEs, ReSharper, .NET Tools, Toolbox App, and Gateway Now",
         "publishedAt": "2026-10-30T15:24:48.000Z"
+      },
+      {
+        "sourceId": "b2ecdce82e12",
+        "siteName": "JetBrains .NET Blog",
+        "url": "https://blog.jetbrains.com/security/2026/11/java4shell-vulnerability/",
+        "title": "Java4Shell Vulnerability: Update Your JetBrains IDEs, ReSharper, .NET Tools, Toolbox App, and Gateway Now",
+        "publishedAt": "2026-11-24T17:03:53.000Z"
       }
     ],
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": false,
+    "aiPending": true,
     "createdAt": "2026-10-31T09:29:14.574Z",
-    "updatedAt": "2026-11-01T10:17:24.599Z",
+    "updatedAt": "2026-11-25T12:28:15.938Z",
     "publishedAt": "2026-10-30T15:24:48.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
   },
@@ -12112,71 +12403,6 @@
     "createdAt": "2026-10-29T09:43:28.322Z",
     "updatedAt": "2026-10-29T09:43:28.322Z",
     "publishedAt": "2026-07-28T16:00:14.000Z",
-    "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
-  },
-  {
-    "id": "df41c884-c71e-4a37-9174-3e11b3a39f24",
-    "slug": "from-dom-scraping-to-contracts-understanding-webmcp-part-1",
-    "title": "From DOM Scraping to Contracts: Understanding WebMCP (Part 1)",
-    "tldr": "WebMCP is an emerging W3C draft proposal enabling web applications to expose structured, schema-typed tools directly to browser-based AI agents. Angular has introduced experimental support for the draft specification.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>WebMCP aims to replace brittle DOM scraping and visual guessing by letting web pages explicitly declare tools, parameter schemas, and return types.</li><li>The draft is in development within the W3C Web Machine Learning Community Group with participation from Google and Microsoft, and is in Chrome origin trials.</li><li>Angular is the first framework with built-in experimental support, marked with 'Experimental' naming that remains subject to breaking changes.</li><li>WebMCP uses MCP tool concepts but omits the JSON-RPC wire protocol, resources, and prompts, as it is designed for interactive, tab-scoped browser environments.</li></ul><h3>Why it matters</h3><p>Exposing structured API contracts to in-browser agents significantly reduces model latency, token costs, and errors associated with reverse-engineering web pages.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "webmcp",
-      "ai agents",
-      "w3c",
-      "web standards"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/from-dom-scraping-to-contracts-understanding-webmcp-part-1/",
-        "title": "From DOM Scraping to Contracts: Understanding WebMCP (Part 1)",
-        "publishedAt": "2026-07-28T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-28T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "cbad7c99-54d6-4406-bbfb-a461eb1784a7",
-    "slug": "analyze-msbuild-binary-logs-with-copilot-in-vs-code",
-    "title": "Analyze MSBuild Binary Logs with Copilot in VS Code",
-    "tldr": "Microsoft has released the MSBuild Binlog Analyzer extension in preview for VS Code, providing Copilot-driven diagnostics and automated fixes for MSBuild binary logs. The tool is powered by an auto-installed Model Context Protocol server.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The extension uses the Microsoft.AITools.BinlogMcp Model Context Protocol (MCP) server to query .binlog files directly via Copilot Chat.</li><li>Features one-click root-cause identification and automated code fixes that recompile and compare before/after build logs.</li><li>Includes a Binlog Explorer sidebar breaking down project trees, slow targets, rebuild triggers, and diagnostic errors mapped to the VS Code Problems panel.</li><li>Enables automated build regression comparisons against a designated baseline binlog to highlight duration changes, diagnostic diffs, and package changes.</li><li>The underlying MCP server can run headlessly to evaluate builds in continuous integration environments.</li></ul><h3>Why it matters</h3><p>The tool eliminates the need for separate desktop binlog viewers, using MCP-grounded Copilot queries to rapidly diagnose build bottlenecks and automate build repairs directly in the editor.</p>",
-    "tags": [
-      "dotnet",
-      "csharp",
-      "msbuild",
-      "vs code",
-      "github copilot",
-      "mcp",
-      ".net"
-    ],
-    "sources": [
-      {
-        "sourceId": "131ee1c49b6b",
-        "siteName": ".NET Blog",
-        "url": "https://devblogs.microsoft.com/dotnet/msbuild-binlog-analyzer-vscode/",
-        "title": "Analyze MSBuild Binary Logs with Copilot in VS Code",
-        "publishedAt": "2026-07-27T17:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-29T09:43:28.322Z",
-    "updatedAt": "2026-10-29T09:43:28.322Z",
-    "publishedAt": "2026-07-27T17:00:00.000Z",
     "runId": "e2a5e3a6-e0ca-4a84-80fb-3d8241100aac"
   }
 ]
