@@ -12208,6 +12208,42 @@
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
   {
+    "id": "091412de-76da-4187-a87d-b03db454f9d3",
+    "slug": "copilotkit-for-angular-the-missing-link-for-agentic-ui",
+    "title": "CopilotKit for Angular: The Missing Link for Agentic UI",
+    "tldr": "Why consuming agents needs a real client library — and how to get started in minutes. The server side of Agentic AI is booming: agent frameworks, tool calling, memory, orchestration. But the moment an Angular application is supposed to integrate an agent — displaying its answers, calling client-sid…",
+    "bodyHtml": "<p><strong>Angular Architects:</strong> Why consuming agents needs a real client library — and how to get started in minutes. The server side of Agentic AI is booming: agent frameworks, tool calling, memory, orchestration. But the moment an Angular application is supposed to integrate an agent — displaying its answers, calling client-side tools, rendering real UI instead of walls […] The post CopilotKit for Angular: The Missing Link for Agentic UI appeared first on ANGULARarchitects.</p><p><strong>Angular in Depth:</strong> Warum das Konsumieren von Agenten eine echte Client-Bibliothek braucht – und wie der Einstieg in wenigen Minuten gelingt. Die Server-Seite von Agentic AI boomt: Agent-Frameworks, Tool Calling, Memory, Orchestrierung. Doch in dem Moment, in dem eine Angular-Anwendung einen Agenten einbinden soll – se</p>",
+    "tags": [
+      "angular",
+      "architecture",
+      "community"
+    ],
+    "sources": [
+      {
+        "sourceId": "6b4f9823bf00",
+        "siteName": "Angular Architects",
+        "url": "https://www.angulararchitects.io/en/blog/copilotkit-the-missing-link-for-agentic-ui-with-angular/",
+        "title": "CopilotKit for Angular: The Missing Link for Agentic UI",
+        "publishedAt": "2026-08-03T16:44:30.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/copilotkit-f-r-angular-der-missing-link-f-r-agentic-ui/",
+        "title": "CopilotKit für Angular: Der Missing Link für Agentic UI",
+        "publishedAt": "2026-08-03T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": true,
+    "createdAt": "2026-11-27T11:57:29.119Z",
+    "updatedAt": "2026-11-27T11:57:29.119Z",
+    "publishedAt": "2026-08-03T00:00:00.000Z",
+    "runId": "24ca6e95-0b9c-4096-bccc-665547d0b04c"
+  },
+  {
     "id": "5ae3d746-f7c9-48e0-bb1e-41c740154c9b",
     "slug": "give-your-angular-modal-a-url-three-router-based-approaches",
     "title": "Give Your Angular Modal a URL: Three Router-Based Approaches",
@@ -12337,123 +12373,5 @@
     "updatedAt": "2026-10-24T17:34:52.694Z",
     "publishedAt": "2026-07-31T15:00:15.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "35225fe7-8fce-4b57-b7c0-38e2ae6777c4",
-    "slug": "copilotkit-for-angular-the-missing-link-for-agentic-ui",
-    "title": "CopilotKit for Angular: The Missing Link for Agentic UI",
-    "tldr": "CopilotKit for Angular and the open AG-UI protocol provide frontend infrastructure to stream and render AI agent responses. In addition, MCP Apps extend the Model Context Protocol by turning tool output into interactive UI widgets.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Consuming AI agents requires handling event streams such as text fragments, tool calls, and approval signals without bloating application code.</li><li>AG-UI provides a backend-agnostic, open protocol connecting client applications to agent frameworks like Mastra, LangGraph, or Microsoft Agent Framework.</li><li>The Model Context Protocol (MCP) standardizes agent access to external tools, data sources, and resources.</li><li>MCP Apps extend MCP to deliver interactive web widgets inside sandboxed iframes rather than plain text responses, using postMessage communication.</li></ul><h3>Why it matters</h3><p>The combination of CopilotKit, AG-UI, and MCP Apps enables developers to build rich, interactive user interfaces for AI agents instead of plain chat text.</p>",
-    "tags": [
-      "angular",
-      "mcp",
-      "copilotkit",
-      "agentic-ui",
-      "ai",
-      "ui",
-      "agentic ui"
-    ],
-    "sources": [
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/copilotkit-the-missing-link-for-agentic-ui-with-angular/",
-        "title": "CopilotKit for Angular: The Missing Link for Agentic UI",
-        "publishedAt": "2026-08-03T16:44:30.000Z"
-      },
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/mcp-apps-in-angular-with-copilotkit-rich-chat-interfaces-instead-of-text-responses/",
-        "title": "MCP Apps in Angular with CopilotKit: Rich Chat Interfaces Instead of Text Responses",
-        "publishedAt": "2026-07-30T08:05:08.000Z"
-      },
-      {
-        "sourceId": "6b4f9823bf00",
-        "siteName": "Angular Architects",
-        "url": "https://www.angulararchitects.io/en/blog/agentic-ui-with-mcp-apps-tool-results-as-interactive-widgets/",
-        "title": "Agentic UI with MCP Apps: Tool Results as Interactive Widgets",
-        "publishedAt": "2026-07-30T08:01:43.000Z"
-      },
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/copilotkit-f-r-angular-der-missing-link-f-r-agentic-ui/",
-        "title": "CopilotKit für Angular: Der Missing Link für Agentic UI",
-        "publishedAt": "2026-08-03T00:00:00.000Z"
-      }
-    ],
-    "relevance": 7,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-30T08:01:43.000Z",
-    "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
-  },
-  {
-    "id": "c9ba9839-72b5-4596-9e0f-676d301593f6",
-    "slug": "mcp-apps-in-angular-mit-copilotkit-rich-chat-interfaces-instead-of-text-response",
-    "title": "MCP Apps in Angular mit CopilotKit: Rich Chat Interfaces Instead of Text Responses",
-    "tldr": "A detailed case study demonstrates integrating an MCP server with an Angular client using CopilotKit, Mastra, and the AG-UI protocol. The implementation uses MCP Apps to display tool execution results as interactive interfaces.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>The project integrates an external partner's hotel booking MCP server into an existing flight portal application.</li><li>MCP tools are declared with input and result schemas defined using Zod, along with a resourceUri pointing to the app's HTML assets.</li><li>Tools are registered via registerAppTool and corresponding UI resources via registerAppResource on a Node.js McpServer instance.</li><li>The MCP Inspector tool (npx @modelcontextprotocol/inspector) allows developers to inspect metadata, verify resources, and test tool invocations directly.</li></ul><h3>Why it matters</h3><p>This pattern demonstrates how full-stack developers can connect structured agent tool pipelines directly to custom web UIs across distributed services.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "copilotkit",
-      "mcp",
-      "mastra",
-      "typescript"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/mcp-apps-in-angular-mit-copilotkit-rich-chat-interfaces-instead-of-tex/",
-        "title": "MCP Apps in Angular mit CopilotKit: Rich Chat Interfaces Instead of Text Responses",
-        "publishedAt": "2026-07-30T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-30T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
-  },
-  {
-    "id": "7f33946b-64bb-467e-aedc-636d43a03fc1",
-    "slug": "agentic-ui-mit-mcp-apps-tool-ergebnisse-als-interaktive-widgets",
-    "title": "Agentic UI mit MCP Apps: Tool-Ergebnisse als interaktive Widgets",
-    "tldr": "MCP Apps extend the Model Context Protocol to present tool outputs as interactive UI widgets within sandboxed host environments. Communication between the host and embedded app relies on postMessage and the MCP Apps SDK.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>MCP, originally introduced by Anthropic in late 2024, provides tools, resources, and prompts, and is now governed under the Linux Foundation's Agentic AI Foundation.</li><li>MCP Apps allow tools to return interactive user interfaces referenced by a resourceUri in tool metadata.</li><li>The host renders the application in an iframe secured with sandbox attributes, typically relaxed with allow-scripts and allow-same-origin.</li><li>The MCP Apps SDK uses an App object in the widget and an AppBridge in the host, exchanging JSON messages via window.postMessage for data, sizing, and theme context.</li></ul><h3>Why it matters</h3><p>This architecture standardizes how host applications can securely render interactive, dynamic tool interfaces generated by external AI integrations.</p>",
-    "tags": [
-      "angular",
-      "community",
-      "mcp",
-      "mcp apps",
-      "agentic ui",
-      "web security"
-    ],
-    "sources": [
-      {
-        "sourceId": "17470cea5951",
-        "siteName": "Angular in Depth",
-        "url": "https://angularindepth.com/article/agentic-ui-mit-mcp-apps-tool-ergebnisse-als-interaktive-widgets/",
-        "title": "Agentic UI mit MCP Apps: Tool-Ergebnisse als interaktive Widgets",
-        "publishedAt": "2026-07-30T00:00:00.000Z"
-      }
-    ],
-    "relevance": 5,
-    "status": "published",
-    "origin": "auto",
-    "aiPending": false,
-    "createdAt": "2026-10-26T08:44:24.936Z",
-    "updatedAt": "2026-10-26T08:44:24.936Z",
-    "publishedAt": "2026-07-30T00:00:00.000Z",
-    "runId": "70dc8a98-8b0e-4a27-9dda-5a0b2560802b"
   }
 ]
