@@ -1,13 +1,75 @@
 [
   {
+    "id": "d518b578-e0e6-4a1c-a309-4062d84f5046",
+    "slug": "i-gave-claude-code-its-own-vps-and-locked-it-in-a-sandbox",
+    "title": "I Gave Claude Code Its Own VPS and Locked It in a Sandbox",
+    "tldr": "Claude Code can be configured to run unattended inside a sandboxed Docker container on an Ubuntu VPS. Outbound firewall rules and tmux sessions enable remote operation via Anthropic's Remote Control feature.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Isolation is achieved via Docker dev containers running as a non-root user with a default-deny firewall and read-only sandbox mounting.</li><li>Outbound network traffic is limited strictly to whitelisted hosts such as GitHub, Anthropic, and package managers like NuGet.</li><li>Tmux allows persistent sessions so the agent can keep processing tasks when SSH is disconnected.</li><li>Remote tasks can be issued directly from a mobile device using Anthropic's Remote Control feature and subscription auth.</li></ul><h3>Why it matters</h3><p>Running autonomous coding agents on developer laptops poses security risks to local credentials and SSH keys. Offloading them to isolated, firewalled VPS sandboxes provides safer background execution.</p>",
+    "tags": [
+      "ai",
+      "docker",
+      "security",
+      "devops"
+    ],
+    "sources": [
+      {
+        "sourceId": "3958049ea454",
+        "siteName": "Milan Jovanović",
+        "url": "https://milanjovanovic.tech/blog/claude-code-sandbox-vps",
+        "title": "I Gave Claude Code Its Own VPS and Locked It in a Sandbox",
+        "publishedAt": "2026-11-28T00:00:00.000Z"
+      }
+    ],
+    "relevance": 6,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-28T11:33:30.202Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
+    "publishedAt": "2026-11-28T00:00:00.000Z",
+    "runId": "bfcd6d6b-ec45-4787-8986-4e0190fb9637"
+  },
+  {
+    "id": "ab214162-4161-4509-aac4-54ff9ed0a31d",
+    "slug": "3-common-bottlenecks-that-make-ai-implementation-fail-in-your-team",
+    "title": "3 Common Bottlenecks That Make AI Implementation Fail in Your Team",
+    "tldr": "AI implementation in software teams often stalls due to common engineering bottlenecks. Key issues include Shadow AI and generating higher code volume without improving overall quality.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>AI adoption regularly encounters friction points inside development teams.</li><li>Shadow AI creates unmanaged workflows and integration challenges.</li><li>Code generation often increases overall volume without yielding proportional architectural or quality gains.</li></ul><h3>Why it matters</h3><p>Teams adopting AI development tools need to address organizational and quality pitfalls rather than focusing solely on raw output.</p>",
+    "tags": [
+      "ai",
+      "management",
+      "practices",
+      "software engineering"
+    ],
+    "sources": [
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/3-common-bottlenecks-that-make-ai-implementation-fail-in-your-team/",
+        "title": "3 Common Bottlenecks That Make AI Implementation Fail in Your Team",
+        "publishedAt": "2026-11-27T00:00:00.000Z"
+      }
+    ],
+    "relevance": 3,
+    "status": "published",
+    "origin": "auto",
+    "aiPending": false,
+    "createdAt": "2026-11-28T11:33:30.202Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
+    "publishedAt": "2026-11-27T00:00:00.000Z",
+    "runId": "bfcd6d6b-ec45-4787-8986-4e0190fb9637"
+  },
+  {
     "id": "4dc533b1-2714-42e8-afd3-c62a629aa533",
     "slug": "angular-addicts-55-route-resources-the-new-compiler-s-benchmark-error-boundaries",
     "title": "Angular Addicts #55: Route Resources, the new compiler's benchmark, Error Boundaries & more",
-    "tldr": "My favorite Angular resources of October, 2026",
-    "bodyHtml": "<p><strong>Angular Addicts:</strong> My favorite Angular resources of October, 2026</p>",
+    "tldr": "Angular Addicts #55 rounds up recent community resources covering modern Angular features and tooling. Highlights include route resources, reactive data fetching, and performance benchmarks for the new compiler.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Features new tutorials on route resources, non-blocking routing, and resource-based data fetching.</li><li>Spotlights community benchmarks and articles discussing the performance of the new Angular compiler.</li><li>Highlights articles exploring CopilotKit integration and agentic UI in Angular applications.</li></ul><h3>Why it matters</h3><p>Keeping track of routing enhancements, reactivity alternatives, and compiler performance updates helps Angular developers adjust to architectural shifts.</p>",
     "tags": [
       "angular",
-      "newsletter"
+      "newsletter",
+      "web development",
+      "javascript"
     ],
     "sources": [
       {
@@ -16,14 +78,21 @@
         "url": "https://www.angularaddicts.com/p/angular-addicts-55-route-resources-complier-benchmark-error-boundaries",
         "title": "Angular Addicts #55: Route Resources, the new compiler's benchmark, Error Boundaries & more",
         "publishedAt": "2026-11-26T08:47:24.000Z"
+      },
+      {
+        "sourceId": "17470cea5951",
+        "siteName": "Angular in Depth",
+        "url": "https://angularindepth.com/article/angular-addicts-55-route-resources-the-new-compilers-benchmark-error-b/",
+        "title": "Angular Addicts #55: Route Resources, the new compiler's benchmark, Error Boundaries & more",
+        "publishedAt": "2026-11-26T00:00:00.000Z"
       }
     ],
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-26T12:08:40.295Z",
-    "updatedAt": "2026-11-26T12:08:40.295Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-26T08:47:24.000Z",
     "runId": "a96fcb10-f321-4367-8bb8-4a6298b05823"
   },
@@ -31,10 +100,14 @@
     "id": "da945059-2b9b-4ffe-9c26-778dd62f1ce5",
     "slug": "net-maui-11-makes-coreclr-the-default-runtime-and-adds-incremental-xaml-hot-relo",
     "title": ".NET MAUI 11 Makes CoreCLR the Default Runtime and Adds Incremental XAML Hot Reload",
-    "tldr": "Microsoft released .NET 11 with a .NET MAUI update focused on product quality. CoreCLR is now the default runtime on all platforms, and XAML gets incremental hot reload, implicit namespaces and faster resource dictionaries. The release also adds device test templates and passkey support, and raises…",
-    "bodyHtml": "<p><strong>InfoQ .NET:</strong> Microsoft released .NET 11 with a .NET MAUI update focused on product quality. CoreCLR is now the default runtime on all platforms, and XAML gets incremental hot reload, implicit namespaces and faster resource dictionaries. The release also adds device test templates and passkey support, and raises the minimum Android and Apple platform versions. By Edin Kapić</p>",
+    "tldr": "Microsoft released .NET MAUI in .NET 11, setting CoreCLR as the default runtime across all platforms. The update also adds incremental XAML hot reload, implicit namespaces, and updated platform targets.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>CoreCLR replaces Mono as the default runtime across all supported platforms, utilizing composite partial ReadyToRun by default.</li><li>Incremental XAML hot reload updates controls and pages without full recreation and works with dotnet watch.</li><li>New UI improvements include lazy ResourceDictionary loading, trim-safe AncestorType bindings, and implicit XML namespaces.</li><li>Android minimum API level is raised to 24, dropping x86 support, while Apple builds require iOS 18.2+ and Xcode 26.4.</li><li>The legacy Microsoft.Maui.Controls.Compatibility package has been permanently removed.</li></ul><h3>Why it matters</h3><p>Switching to CoreCLR unifies the mobile and desktop runtime with the broader .NET ecosystem, improving startup times and trimming support while modernizing developer inner loops.</p>",
     "tags": [
-      "dotnet"
+      "dotnet",
+      ".net",
+      "maui",
+      "mobile",
+      "cross-platform"
     ],
     "sources": [
       {
@@ -48,9 +121,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-26T12:08:40.295Z",
-    "updatedAt": "2026-11-26T12:08:40.295Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-26T08:00:00.000Z",
     "runId": "a96fcb10-f321-4367-8bb8-4a6298b05823"
   },
@@ -58,8 +131,8 @@
     "id": "21636411-4af1-4385-804b-f77387875b7c",
     "slug": "angular-22-updates",
     "title": "Angular 22 updates",
-    "tldr": "Angular 22.3.0 introduces a performance-oriented Rust compiler, router error boundaries, and stricter template diagnostics. Unfinished prototypes for signal and selectorless components were removed.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>A new Rust-based compiler (ngp) accelerates build and rebuild times, omitting TypeScript type checking for templates to optimize performance.</li><li>The optional strictUnknownElements compiler flag identifies unmatched custom tags that were previously accepted when matched by an attribute.</li><li>Signal components and selectorless component prototypes have been removed from the codebase.</li><li>The release adds router error boundaries and a dedicated library builder.</li></ul><h3>Why it matters</h3><p>Build pipelines receive significant performance improvements through the Rust compiler, but developers should note that certain template diagnostics are skipped to achieve faster compile times.</p>",
+    "tldr": "Angular release 22.3.0 introduces a performance-oriented Rust compiler, router error boundaries, and stricter template diagnostics.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Angular 22.3.0 incorporates a new Rust-based compiler to accelerate build times.</li><li>Router error boundaries and stricter template diagnostics were added to the core framework.</li><li>Unfinished prototypes for signal and selectorless components were removed from this release.</li></ul><h3>Why it matters</h3><p>The migration of the Angular compiler pipeline to Rust provides significant build-time optimizations and better compile-time error detection.</p>",
     "tags": [
       "angular",
       "architecture",
@@ -182,9 +255,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-26T12:08:40.295Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-25T18:37:21.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -192,8 +265,8 @@
     "id": "963a84b1-dcef-4d28-bd49-8385fc4a6e1d",
     "slug": "angular-components-22-updates",
     "title": "Angular components 22 updates",
-    "tldr": "Angular Components published version 22.4.0-next.0 alongside maintenance releases across the 22.2.x series. The updates contain patches spanning Angular Material, the CDK, and ARIA support.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Angular Components 22.4.0-next.0 notes indicate no user-facing changes in that specific preview.</li><li>Associated 22.2.x and preview releases deliver maintenance fixes across the Material, CDK, and ARIA libraries.</li></ul><h3>Why it matters</h3><p>These continuous patch releases maintain stability and accessibility standards across core UI component packages.</p>",
+    "tldr": "Angular Components released versions 22.4.0-next.0 and maintenance patches across 22.3.x and 22.2.x. These releases deliver bug fixes and maintenance updates across Angular Material, CDK, and ARIA support.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Version 22.4.0-next.0 was released alongside patches for 22.3.x and 22.2.x series.</li><li>Updates include core component fixes for Angular Material and the Component Development Kit (CDK).</li><li>Targeted maintenance patches resolve accessibility and ARIA attribute behaviors across multiple components.</li></ul><h3>Why it matters</h3><p>These incremental releases maintain component library stability, accessibility compliance, and compatibility across active Angular version streams.</p>",
     "tags": [
       "angular",
       "material",
@@ -344,9 +417,9 @@
     "relevance": 7,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-24T17:34:52.694Z",
-    "updatedAt": "2026-11-26T12:08:40.295Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-25T13:18:24.000Z",
     "runId": "48e5d915-938e-4251-b85b-2e1c9ca64799"
   },
@@ -354,11 +427,14 @@
     "id": "b9c83842-b49f-4372-a708-b5598c301232",
     "slug": "why-ai-code-passes-tests-but-gets-architecture-wrong",
     "title": "Why AI Code Passes Tests but Gets Architecture Wrong",
-    "tldr": "An AI agent can follow every rule you wrote and still get the architecture wrong. Takeaways from Fanis Prodromou's webinar on staying in control.",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> An AI agent can follow every rule you wrote and still get the architecture wrong. Takeaways from Fanis Prodromou's webinar on staying in control.</p>",
+    "tldr": "AI coding agents frequently produce code that passes linters and tests but violates architectural boundaries. Because agents accelerate pull request volume, human architectural governance remains essential.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Agents generate syntactically correct code that passes automated checks while misplacing domain logic, such as putting business calculation rules into UI components.</li><li>AI agents easily follow documented syntactic rules, but they struggle with unwritten organizational boundaries and location decisions.</li><li>Automated linters can enforce structural rules, but humans must manage gatekeeping reviews for architectural decisions.</li></ul><h3>Why it matters</h3><p>Automated testing alone is insufficient to safeguard architectural integrity when relying on AI generation, requiring developers to codify architectural boundaries explicitly.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "ai",
+      "architecture",
+      "code review"
     ],
     "sources": [
       {
@@ -372,9 +448,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-26T12:08:40.295Z",
-    "updatedAt": "2026-11-26T12:08:40.295Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-25T00:00:00.000Z",
     "runId": "a96fcb10-f321-4367-8bb8-4a6298b05823"
   },
@@ -382,11 +458,15 @@
     "id": "586e6c17-b28e-442f-94dd-de6143cb1e44",
     "slug": "base-skill-setup-for-a-team-repository",
     "title": "Base Skill Setup for a Team Repository",
-    "tldr": "Four small agent skills for code review, commits, pull requests and review comments, kept in the repo so the whole team works the same way.",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> Four small agent skills for code review, commits, pull requests and review comments, kept in the repo so the whole team works the same way.</p>",
+    "tldr": "Storing standardized Agent Skills directly in repositories helps teams enforce consistent commit, PR, and review patterns across AI agents. Skills use markdown frontmatter and load dynamically based on project context.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Skills follow the open Agent Skills standard consisting of an isolated folder and a SKILL.md file with frontmatter metadata.</li><li>Storing skills inside repository roots exposes shared team conventions to agents such as Claude Code, GitHub Copilot, and Cursor.</li><li>Skills load progressively: agents inspect descriptions at startup and only load full prompt instructions when a relevant task matches.</li><li>Scoped skills can be restricted to specific directories or libraries via repository configuration paths.</li></ul><h3>Why it matters</h3><p>Embedding agent skills in source control standardizes development workflows, shortens onboarding, and prevents repetitive task prompts across engineering teams.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "developer tooling",
+      "ai",
+      "claude code",
+      "productivity"
     ],
     "sources": [
       {
@@ -400,9 +480,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-26T12:08:40.295Z",
-    "updatedAt": "2026-11-26T12:08:40.295Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-25T00:00:00.000Z",
     "runId": "a96fcb10-f321-4367-8bb8-4a6298b05823"
   },
@@ -1284,11 +1364,14 @@
     "id": "15cd14e4-852c-4133-9858-5f0a70475d52",
     "slug": "withautocleanupinjectors-a-game-changer-for-route-providers",
     "title": "withAutoCleanupInjectors – a game changer for route providers",
-    "tldr": "Why route providers keep stale state after you leave a page, and how Angular's withAutoCleanupInjectors() destroys them for you, with no manual reset().",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> Why route providers keep stale state after you leave a page, and how Angular's withAutoCleanupInjectors() destroys them for you, with no manual reset().</p>",
+    "tldr": "Angular 22.2 stabilized withAutoCleanupInjectors() to automatically clean up route-level EnvironmentInjectors. This prevents stale state and memory leaks caused by lingering route providers.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Route-level providers previously persisted indefinitely in EnvironmentInjectors, retaining stale data and bypassing ngOnDestroy.</li><li>Persistent route injectors caused subscriptions using takeUntilDestroyed() or DestroyRef to never complete.</li><li>Calling withAutoCleanupInjectors() in provideRouter automatically destroys route injectors on navigation, removing the need for manual store resets.</li><li>Prior to version 22.2, the feature was available under the experimental name withExperimentalAutoCleanupInjectors().</li></ul><h3>Why it matters</h3><p>This feature eliminates tedious manual cleanup code in route-level state stores, preventing UI flickering and route-related memory leaks.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "routing",
+      "state management",
+      "performance"
     ],
     "sources": [
       {
@@ -1302,9 +1385,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-25T12:28:15.938Z",
-    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-16T00:00:00.000Z",
     "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
   },
@@ -1664,15 +1747,17 @@
     "id": "388d151e-9574-4ece-80e8-522f5cb5f36a",
     "slug": "fewer-tokens-faster-uis-a2ui-macros-for-local-and-cloud-models",
     "title": "Fewer Tokens, Faster UIs: A2UI Macros for Local and Cloud Models",
-    "tldr": "A2UI Macros introduce coarse-grained component building blocks to simplify agentic UI creation. By generating high-level domain abstractions rather than individual low-level widgets, applications reduce LLM token usage and latency.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>A2UI uses primitives like Text, Row, and Button, which require large numbers of generated tokens and high inference times when assembling dashboards.</li><li>Using macro abstractions allows an LLM to specify coarse tiles and properties rather than full component trees, which the server expands into A2UI via a MacroExpander.</li><li>In a tested flight dashboard, high-level DSL definitions reduced generation time from 40 seconds to several seconds and cut token usage by a factor of 30.</li><li>Adding an inference cache for dashboard DSLs reduced execution time for repeated layouts to approximately 0.1 seconds.</li><li>A2UI macros, initially launched in Python, are now available for TypeScript and support local model execution such as Gemma 4.</li></ul><h3>Why it matters</h3><p>Reducing generative UI token consumption enables faster front-end response times, lowers API operational expenses, and makes running generative UI workflows on local models practical.</p>",
+    "tldr": "A2UI Macros introduce high-level abstractions to generative UIs, replacing low-level JSON component descriptions. Generating composite blocks instead of raw widgets cuts LLM latency and token consumption significantly.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Generating low-level UI elements (Text, Row, Column) token-by-token incurs high latency and token costs.</li><li>A2UI Macros let models specify high-level tiles and domain properties, which the server expands into full UI components.</li><li>Using macro abstractions reduced token usage by up to 30x and dropped dashboard generation time to a few seconds.</li><li>The simplified macro approach lowers compute overhead enough to support local, open-weight models like Gemma 4.</li></ul><h3>Why it matters</h3><p>Drastically cutting the token footprint makes runtime generative UIs cheaper, faster, and practical for local model deployment.</p>",
     "tags": [
       "angular",
       "architecture",
       "a2ui",
       "generative ui",
       "typescript",
-      "ai engineering"
+      "ai engineering",
+      "ai",
+      "frontend"
     ],
     "sources": [
       {
@@ -1693,9 +1778,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-12T10:50:26.406Z",
-    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-12T00:22:27.000Z",
     "runId": "bae41a83-f759-4537-9f4b-f6468b10ad2e"
   },
@@ -2269,8 +2354,8 @@
     "id": "8023884d-9af6-4877-bf8e-6ede9c489603",
     "slug": "a2ui-express-token-optimized-generative-uis-for-local-and-cloud-models",
     "title": "A2UI Express: Token-Optimized Generative UIs for Local and Cloud Models",
-    "tldr": "The A2UI project has introduced A2UI Express, a compact Domain Specific Language designed to lower LLM token consumption when generating dynamic user interfaces. Server-side Agent SDKs automatically translate this syntax into standard A2UI 1.0 or 0.9 messages.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>A2UI Express replaces verbose JSON structures with positional constructor calls (such as Text(\"Flight\", \"caption\", 1)) and variable assignments.</li><li>The DSL reduces characters by over 50% and uses roughly one-third fewer tokens compared to standard JSON representations.</li><li>Server-side translation handles converting A2UI Express into client-ready A2UI formats, with support for data binding expressions using the $ prefix.</li><li>Current Agent SDKs prioritize A2UI Express by default to optimize costs and latency, particularly for compact and local models.</li></ul><h3>Why it matters</h3><p>Generative UIs generated by LLMs often suffer from output token limits and latency; A2UI Express drastically cuts generation overhead, making complex agent-driven UIs faster and cheaper to run.</p>",
+    "tldr": "The A2UI project introduced A2UI Express, a compact domain-specific language designed to reduce token consumption in Generative UIs. Server SDKs translate this DSL into standard A2UI 1.0 and 0.9 JSON formats.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>A2UI's standard JSON format requires distinct objects for each UI element, leading to high token usage and slow generation.</li><li>Inference formats allow models to output alternate syntax that server SDKs translate into standard A2UI messages.</li><li>A2UI Express provides a compact DSL that current Agent SDKs prioritize to minimize output tokens.</li><li>Reducing payload size improves rendering performance for both cloud LLMs and resource-constrained local models.</li></ul><h3>Why it matters</h3><p>Optimizing generative UI syntax lowers API costs and enables dynamic UI generation on smaller, self-hosted LLMs.</p>",
     "tags": [
       "angular",
       "ai",
@@ -2278,7 +2363,8 @@
       "a2ui",
       "generative ui",
       "ai agents",
-      "dsl"
+      "dsl",
+      "web development"
     ],
     "sources": [
       {
@@ -2299,9 +2385,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-11T10:37:44.751Z",
-    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-10T15:59:47.000Z",
     "runId": "e8db9072-5d3e-4c88-ba83-6f007ab6e491"
   },
@@ -2373,11 +2459,14 @@
     "id": "a4515355-2025-40d6-acda-7f94753101c3",
     "slug": "ng-news-26-24-openapi-generator-slide-ng-and-angular-compiler-benchmarks",
     "title": "Ng-News 26/24: OpenAPI Generator, slide.ng and Angular Compiler Benchmarks",
-    "tldr": "OpenAPI Generator can now generate Angular httpResource methods, and slide.ng brings Markdown...",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> OpenAPI Generator can now generate Angular httpResource methods, and slide.ng brings Markdown...</p>",
+    "tldr": "Recent Angular ecosystem updates highlight benchmarks for the Rust-based compiler, OpenAPI Generator support for httpResource, and slide.ng. Early compiler benchmarks report cold builds running two to three times faster.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Cold builds using the experimental Rust and Oxc compiler pipeline ran two to three times faster with up to 50% lower memory usage.</li><li>OpenAPI Generator 7.27.0 added native support for generating Angular httpResource methods.</li><li>slide.ng enables Markdown-driven developer presentations that directly render live Angular components.</li><li>Angular 22.2 introduced the @boundary block to handle template error boundaries.</li></ul><h3>Why it matters</h3><p>The Rust compiler rewrite brings notable build and memory improvements to large Angular workspaces, while new client generators streamline modern signal-based data fetching.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "rust",
+      "tooling",
+      "compilers"
     ],
     "sources": [
       {
@@ -2391,9 +2480,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-25T12:28:15.938Z",
-    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-10T00:00:00.000Z",
     "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
   },
@@ -2401,11 +2490,14 @@
     "id": "6f391e96-067c-4df8-abac-6cc13ffe50a3",
     "slug": "angular-vs-react-in-ai-development-which-one-do-ai-agents-build-better",
     "title": "Angular vs React in AI Development: Which One Do AI Agents Build Better?",
-    "tldr": "We gave one AI agent the same app spec 30 times, in Angular and in React. See which framework delivered more features, fewer type errors and lower cost.",
-    "bodyHtml": "<p><strong>Angular in Depth:</strong> We gave one AI agent the same app spec 30 times, in Angular and in React. See which framework delivered more features, fewer type errors and lower cost.</p>",
+    "tldr": "A benchmark testing Claude Sonnet across 30 identical app builds revealed that Angular resulted in fewer type errors than React, while both achieved high functional completion rates.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Claude Sonnet built the same cinema ticket application 15 times in Angular 22 and 15 times in React 19.</li><li>Angular runs produced zero TypeScript compilation errors, whereas 6 of the 15 React builds shipped type errors.</li><li>Both frameworks attained a median of 100% on functional acceptance criteria (96.3% overall for Angular, 99.0% for React).</li><li>Development costs were comparable across frameworks, averaging roughly $4 per run.</li></ul><h3>Why it matters</h3><p>Strict, integrated compiler checks give Angular an advantage in preventing AI-generated type defects, though modern AI models can deliver comparable functional coverage across both frameworks.</p>",
     "tags": [
       "angular",
-      "community"
+      "community",
+      "ai",
+      "react",
+      "testing"
     ],
     "sources": [
       {
@@ -2419,9 +2511,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-25T12:28:15.938Z",
-    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-10T00:00:00.000Z",
     "runId": "cf6978c2-6add-4d8f-aaf5-da5cdf22eec2"
   },
@@ -2585,8 +2677,8 @@
     "id": "5434f2ee-8a6d-4217-9578-fec64cd9d0dc",
     "slug": "core-vitals-optimization-ssr-deployments-and-signal-first-architecture",
     "title": "Core Vitals Optimization, SSR Deployments, and Signal-First Architecture ⚡",
-    "tldr": "Angular Blog has highlighted topics covering Core Vitals optimization, SSR deployments, and signal-first architecture.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Covers optimization techniques for Core Web Vitals.</li><li>Addresses deployment considerations for Server-Side Rendering (SSR).</li><li>Discusses architectural patterns centered around Angular signals.</li></ul><h3>Why it matters</h3><p>These topics guide Angular developers on improving performance benchmarks and adopting reactive architectural practices.</p>",
+    "tldr": "Recent Angular technical guides highlight optimizations for Core Web Vitals, production SSR pipelines, and signal-driven architecture. Upcoming roadmap features include native debounce signals.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>New optimization guides provide concrete patterns for improving INP, LCP, and CLS scores in Angular apps.</li><li>Production SSR deployment discussions cover architectural pipeline setups and common hosting issues.</li><li>Architectural guidelines outline domain boundaries and module organization for enterprise Nx monorepos.</li><li>Roadmap previews show upcoming native Debounce Signals to simplify reactive state management without RxJS operator overhead.</li></ul><h3>Why it matters</h3><p>Adopting signal-first reactivity and Core Web Vital optimizations improves runtime performance and simplifies state orchestration in large Angular apps.</p>",
     "tags": [
       "angular",
       "frontend",
@@ -2614,9 +2706,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-07T09:50:56.612Z",
-    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-11-06T15:01:04.000Z",
     "runId": "d622442d-fca2-493e-8823-e33169012400"
   },
@@ -3425,15 +3517,16 @@
     "id": "b63dad31-fb30-4f56-8d91-b8cf5fa2fef7",
     "slug": "compromised-emudhra-certificates-update-your-jetbrains-ides-resharper-net-tools",
     "title": "Compromised eMudhra Certificates: Update Your JetBrains IDEs, ReSharper, .NET Tools, Toolbox App, and Gateway Now",
-    "tldr": "JetBrains has issued security updates across its IDEs, .NET tools, and utilities after eight eMudhra intermediate certificate private keys were compromised. Because these tools rely on internal trust stores rather than OS certificates, users must update directly.",
-    "bodyHtml": "<h3>Key points</h3><ul><li>Compromised private keys from eight eMudhra intermediate certificates could permit network attackers to impersonate remote services accessed by JetBrains products.</li><li>Operating system certificate updates do not protect JetBrains tools because IDEs, Gateway, ReSharper, and Toolbox depend on the JetBrains Runtime (JBR) trust store.</li><li>Updates block the compromised intermediates and untrust four root certificates, including emSign roots and AAA Certificate Services.</li><li>The embedded browser (JCEF) receives certificate updates from Google servers in versions 2025.3 and newer, while the jetbrainsd background service requires version 0.9.9728.</li><li>Versions 2025.1 and earlier of IDEs, alongside Toolbox 3.7 and older, will not receive security patches.</li></ul><h3>Why it matters</h3><p>Without updating the bundled runtime and background daemons, developers face potential man-in-the-middle attacks when their development environments connect to remote repositories and web services.</p>",
+    "tldr": "JetBrains published critical updates addressing compromised eMudhra intermediate certificates and the Java4Shell vulnerability across its IDEs and developer utilities. Because JetBrains tools use custom runtime trust stores, users must update directly.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Eight eMudhra intermediate certificate private keys were compromised, allowing potential network attackers to impersonate remote services.</li><li>The Java4Shell vulnerability (CVE-2026-114938) affects the bundled JetBrains Runtime on x86-64 CPUs with AVX-512 VBMI support.</li><li>JetBrains products rely on their own bundled trust stores, meaning operating system security updates do not resolve the certificate issue.</li><li>Patches have been deployed across IntelliJ IDEA, PyCharm, WebStorm, Rider, Toolbox App, and related tools.</li></ul><h3>Why it matters</h3><p>Failing to update bundled IDE runtimes leaves developer workstations vulnerable to remote code execution and network impersonation attacks.</p>",
     "tags": [
       "dotnet",
       "rider",
       "security",
       "jetbrains",
       "vulnerabilities",
-      "certificates"
+      "certificates",
+      "java"
     ],
     "sources": [
       {
@@ -3454,9 +3547,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-10-31T09:29:14.574Z",
-    "updatedAt": "2026-11-25T12:28:15.938Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-10-30T15:24:48.000Z",
     "runId": "e1d6545a-2874-487e-ac84-e961db9e33dc"
   },
@@ -12112,11 +12205,16 @@
     "id": "60a55b00-2628-471d-b288-14de34fc4ed3",
     "slug": "automatic-csrf-protection-based-on-fetch-metadata-headers-exploring-the-net-11-p",
     "title": "Automatic CSRF protection based on Fetch Metadata headers: Exploring the .NET 11 preview - Part 6",
-    "tldr": "In this post I describe the new Cross-Site Request Forgery protection added to ASP.NET Core that uses Fetch Metadata HTTP headers instead of antiforgery tokens",
-    "bodyHtml": "<p><strong>Andrew Lock – .NET Escapades:</strong> In this post I describe the new Cross-Site Request Forgery protection added to ASP.NET Core that uses Fetch Metadata HTTP headers instead of antiforgery tokens</p>",
+    "tldr": "ASP.NET Core in .NET 11 preview 6 introduces a new Cross-Site Request Forgery (CSRF) protection mechanism that utilizes Fetch Metadata HTTP headers instead of traditional synchronizer tokens. This approach aims to reduce reliance on the stateful Data Protection system required by earlier implementations.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>ASP.NET Core historically relied on the synchronizer token pattern, requiring tokens in cookies and rendered forms to be validated against each other.</li><li>Traditional CSRF protection depends on ASP.NET Core's Data Protection system, creating operational overhead to protect and persist state.</li><li>.NET 11 preview 6 adds support for validating requests using browser Fetch Metadata HTTP headers instead of tokens.</li><li>The new Fetch Metadata approach does not provide significant benefits for applications built using MVC or Razor Pages.</li></ul><h3>Why it matters</h3><p>Adopting Fetch Metadata HTTP headers allows web applications to block cross-site request forgery without managing token state or synchronizer tokens. This reduces server-side operational complexity associated with ASP.NET Core's Data Protection system.</p>",
     "tags": [
       "aspnetcore",
-      "dotnet"
+      "dotnet",
+      "asp.net core",
+      ".net 11",
+      "csrf",
+      "web security",
+      "http headers"
     ],
     "sources": [
       {
@@ -12130,9 +12228,9 @@
     "relevance": 5,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-26T12:08:40.295Z",
-    "updatedAt": "2026-11-26T12:08:40.295Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-08-04T09:00:00.000Z",
     "runId": "a96fcb10-f321-4367-8bb8-4a6298b05823"
   },
@@ -12211,12 +12309,16 @@
     "id": "091412de-76da-4187-a87d-b03db454f9d3",
     "slug": "copilotkit-for-angular-the-missing-link-for-agentic-ui",
     "title": "CopilotKit for Angular: The Missing Link for Agentic UI",
-    "tldr": "Why consuming agents needs a real client library — and how to get started in minutes. The server side of Agentic AI is booming: agent frameworks, tool calling, memory, orchestration. But the moment an Angular application is supposed to integrate an agent — displaying its answers, calling client-sid…",
-    "bodyHtml": "<p><strong>Angular Architects:</strong> Why consuming agents needs a real client library — and how to get started in minutes. The server side of Agentic AI is booming: agent frameworks, tool calling, memory, orchestration. But the moment an Angular application is supposed to integrate an agent — displaying its answers, calling client-side tools, rendering real UI instead of walls […] The post CopilotKit for Angular: The Missing Link for Agentic UI appeared first on ANGULARarchitects.</p><p><strong>Angular in Depth:</strong> Warum das Konsumieren von Agenten eine echte Client-Bibliothek braucht – und wie der Einstieg in wenigen Minuten gelingt. Die Server-Seite von Agentic AI boomt: Agent-Frameworks, Tool Calling, Memory, Orchestrierung. Doch in dem Moment, in dem eine Angular-Anwendung einen Agenten einbinden soll – se</p>",
+    "tldr": "CopilotKit for Angular bridges client-side applications and agentic AI systems by handling event streaming, client tool execution, and UI rendering. It enables Angular frontends to interact with emerging open standards without binding the client to specific backend agent frameworks.",
+    "bodyHtml": "<h3>Key points</h3><ul><li>Frontend agent consumption requires processing event streams like text fragments, tool calls, results, user approvals, and errors.</li><li>AG-UI provides an open protocol that decouples client interfaces from backend platforms like LangChain, LangGraph, Mastra, Spring AI, or Microsoft Agent Framework.</li><li>Complementary emerging specifications include A2UI for declarative UI component responses and MCP Apps for integrating third-party visualizations via the Model Context Protocol.</li><li>Official SDKs for these standards are low-level, creating a need for higher-level client libraries like CopilotKit to prevent infrastructure code from polluting application logic.</li></ul><h3>Why it matters</h3><p>Frontends integrating AI agents often suffer from repetitive infrastructure code to parse streams and coordinate UI rendering. A specialized client library simplifies integrating varied backend frameworks and combines standards like AG-UI, A2UI, and MCP Apps into a uniform programming model.</p>",
     "tags": [
       "angular",
       "architecture",
-      "community"
+      "community",
+      "copilotkit",
+      "agentic ai",
+      "frontend",
+      "ag-ui"
     ],
     "sources": [
       {
@@ -12237,9 +12339,9 @@
     "relevance": 6,
     "status": "published",
     "origin": "auto",
-    "aiPending": true,
+    "aiPending": false,
     "createdAt": "2026-11-27T11:57:29.119Z",
-    "updatedAt": "2026-11-27T11:57:29.119Z",
+    "updatedAt": "2026-11-28T11:33:30.202Z",
     "publishedAt": "2026-08-03T00:00:00.000Z",
     "runId": "24ca6e95-0b9c-4096-bccc-665547d0b04c"
   },
